@@ -1,6 +1,6 @@
-# 위즈랩 플랫폼
+# AstroBoy Front-end
 
-Repository 담당자 : @jhonWiz @WizBenjamin
+Repository 담당자 : @Jimmy
 
 ## dream 브랜치
 
