@@ -1,0 +1,81 @@
+.Page--BUILDER {
+  // write answer
+  .AnswerWriter {
+    margin-bottom: 25px;
+    // border: 1px solid red;
+  }
+  .AnswerWriterTitleLine {
+    font-size: 12px;
+    color: var(--W_Gray03);
+    display: flex;
+    margin-bottom: 10px;
+  }
+  .AnswerWriterTitle {
+    font-size: 14px;
+    flex: 1;
+  }
+
+  .AnswerWriterOpt {
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-left: 14px;
+    img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      opacity: 0;
+    }
+    .AnswerWriterOptChkHolder {
+      width: 14px;
+      height: 14px;
+      margin-right: 4px;
+      border: 1px solid #888;
+      border-radius: 3px;
+    }
+  }
+  .AnswerWriterOptActive {
+    img {
+      opacity: 1;
+    }
+    .AnswerWriterOptChkHolder {
+      border: 1px solid var(--W_PointColor);
+    }
+  }
+
+  .AnswerWriterWriters {
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+  }
+  .AnswerWriterInput {
+    width: calc(100% - 24px);
+    flex: 1;
+    resize: none;
+    background: var(--W_Gray01);
+    border: 0;
+    color: var(--W_Gray03);
+    padding: 12px;
+    font-family: inherit;
+  }
+  .AnswerWriterInput:focus {
+    outline: none;
+  }
+  .AnswerWriterCreate {
+    background: var(--W_PointColor);
+    color: var(--W_TextColorOnBG);
+    font-size: 14px;
+    text-align: center;
+    width: 70px;
+    line-height: 30px;
+    border-radius: 8px;
+    margin-top: 10px;
+    margin-left: auto;
+    cursor: pointer;
+  }
+  .AnswerWriterCodeWriter {
+    flex: 1;
+    margin-top: 10px;
+  }
+}

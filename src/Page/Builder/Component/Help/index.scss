@@ -1,0 +1,184 @@
+.Page--BUILDER {
+  .Help {
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0007;
+
+    .help_button {
+      font-size: 14px;
+      font-weight: bold;
+      border-radius: 15px;
+      border: none;
+      outline: none;
+      cursor: pointer;
+    }
+    .help_button-active {
+      color: var(--W_TextColorOnBG);
+      background-color: var(--W_PointColor);
+    }
+    .help_button-inactive {
+      color: var(--W_PointColor);
+      background-color: transparent;
+    }
+
+    .help_mainModal {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition: 0.05s transform;
+    }
+    .help_mainModal-anim {
+      transform: translate(-50%, -50%) scale(1.1);
+    }
+    .help_mainModal_img {
+      margin: 0 auto;
+      width: 276px;
+    }
+    .help_mainModal_frame {
+      position: relative;
+      width: 735px;
+      height: 331px;
+      border-radius: 20px;
+      background-color: var(--W_White);
+      box-shadow: 0 8px 40px 0 rgba(57, 62, 79, 0.5);
+    }
+    .help_mainModal_content {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .help_mainModal_title {
+      text-align: center;
+      font-size: 20px;
+      font-weight: bold;
+      color: var(--W_Gray03);
+    }
+    .help_mainModal_subtitle {
+      margin-top: 15px;
+      text-align: center;
+      font-size: 16px;
+      white-space: pre;
+      color: var(--W_Gray03);
+    }
+    .help_mainModal .help_button {
+      display: block;
+      margin: 0 auto;
+      width: 220px;
+      height: 35px;
+    }
+    .help_mainModal .help_button-active {
+      margin-top: 40px;
+    }
+    .help_mainModal .help_button-inactive {
+      margin-top: 10px;
+    }
+
+    .help_subModal {
+      position: absolute;
+      transition: 0.1s transform;
+    }
+    .help_subModal-anim {
+      transform: scale(1.1);
+    }
+    .help_subModal_frame {
+      position: relative;
+      padding: 32px;
+      width: 432px;
+      border-radius: 20px;
+      background-color: var(--W_White);
+      box-shadow: 0 8px 40px 0 rgba(57, 62, 79, 0.5);
+    }
+    .help_subModal_progress {
+      position: absolute;
+      top: 32px;
+      right: 32px;
+      font-size: 13px;
+      color: var(--W_Gray03);
+    }
+    .help_subModal_title {
+      width: calc(100% - 30px);
+      font-size: 20px;
+      font-weight: bold;
+      color: var(--W_Gray03);
+    }
+    .help_subModal_subtitle {
+      margin-top: 11px;
+      margin-bottom: 60px;
+      font-size: 16px;
+      white-space: pre-wrap;
+      color: var(--W_Gray03);
+    }
+    .help_subModal .help_button-active {
+      position: absolute;
+      bottom: 32px;
+      right: 32px;
+      width: 114px;
+      height: 35px;
+    }
+    .help_subModal .help_button-inactive {
+      position: absolute;
+      bottom: 32px;
+      left: 32px;
+    }
+
+    .help_subModal_anchor {
+      position: absolute;
+      z-index: 1;
+    }
+    .help_subModal_anchor-top {
+      top: -24px;
+      border-top: none;
+      border-right: 12px solid transparent;
+      border-bottom: 24px solid var(--W_White);
+      border-left: 12px solid transparent;
+    }
+    .help_subModal_anchor-topRight {
+      top: -24px;
+      right: 0;
+      border-top: none;
+      border-bottom: 48px solid var(--W_White);
+      border-left: 48px solid transparent;
+    }
+    .help_subModal_anchor-right {
+      right: -24px;
+      border-right: none;
+      border-top: 12px solid transparent;
+      border-left: 24px solid var(--W_White);
+      border-bottom: 12px solid transparent;
+    }
+    .help_subModal_anchor-bottom {
+      bottom: -24px;
+      border-bottom: none;
+      border-right: 12px solid transparent;
+      border-top: 24px solid var(--W_White);
+      border-left: 12px solid transparent;
+    }
+    .help_subModal_anchor-left {
+      left: -24px;
+      border-left: none;
+      border-top: 12px solid transparent;
+      border-right: 24px solid var(--W_White);
+      border-bottom: 12px solid transparent;
+    }
+
+    .help_imgModal {
+      position: absolute;
+      box-shadow: 0 8px 40px 0 rgba(57, 62, 79, 0.5);
+      border-radius: 20px;
+      overflow: hidden;
+    }
+    .help_imgModal img {
+      display: block;
+    }
+  }
+}

@@ -1,0 +1,152 @@
+.Page--OCP2--event--Result {
+  max-width: 1078px;
+  min-height: 100vh;
+  margin: 0 auto;
+
+  .event--pc {
+    display: block;
+  }
+
+  .event--mobile {
+    display: none;
+  }
+
+  img{
+    width: 100%;
+    display: block;
+  }
+
+  .wrapper {
+    position: relative;
+  }
+
+  .rowLink{
+    position: absolute;
+    top: 0;
+    left: 10%;
+    width: 80%;
+    height: 250px;
+  }
+
+  .columnLink {
+    position: absolute;
+    top: 110px;
+    left: 0;
+    width: 180px;
+    height: 240px;
+  }
+
+  .link01, .link09 {
+    top: 110px;
+  }
+
+  .link02, .link10 {
+    top: 490px;
+  }
+
+  .link03 {
+    top: 860px;
+  }
+
+  .link11 {
+    top: 900px;
+  }
+
+  .link04, .link12 {
+    left: 60px;
+  }
+
+  .link05, .link13 {
+    left: 250px;
+  }
+
+  .link06, .link14 {
+    left: 450px;
+  }
+
+  .link07, .link15 {
+    left: 640px;
+  }
+
+  .link08, .link16 {
+    left: 840px;
+  }
+
+  @media screen and (max-width: 1079px) {
+    .event--pc {
+      display: none;
+    }
+
+    .event--mobile {
+      display: block;
+    }
+
+    .rowLink{
+      position: absolute;
+      top: 0;
+      left: 10%;
+      width: 80%;
+      height: 26%;
+    }
+  
+    .columnLink {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 40%;
+      height: 16%;
+    }
+  
+    .link01, .link09 {
+      top: 6.5%;
+    }
+  
+    .link02, .link10 {
+      top: 40.5%;
+    }
+  
+    .link03, .link11 {
+      top: 74%;
+      height: 24%;
+    }
+  
+    .link04, .link12 {
+      top: 7%;
+      left: 8%;
+    }
+  
+    .link05, .link13 {
+      top: 7%;
+      left: 51%;
+    }
+
+    .link12, .link13 {
+      top: 7.5%;
+    }
+  
+    .link06, .link14 {
+      top: 24%;
+      left: 8%;
+    }
+  
+    .link07, .link15 {
+      top: 24%;
+      left: 51%;
+    }
+
+    .link14, .link15 {
+      top: 25.5%;
+    }
+  
+    .link08, .link16 {
+      top: 41%;
+      left: 30%;
+    }
+
+    .link16 {
+      top: 43.5%;
+    }
+  
+  }
+  
+}

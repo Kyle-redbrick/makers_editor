@@ -1,0 +1,28 @@
+.forgotpw {
+  width: 380px;
+  height: 320px;
+  text-align: center;
+
+  .forgotpw_title {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  .forgotpw_desc {
+    margin-top: 60px;
+    font-size: 16px;
+    text-align: left;
+    white-space: pre-wrap;
+    line-height: 1.6;
+  }
+
+  .popup_input {
+    margin-top: 10px;
+  }
+  .popup_button {
+    margin-top: 60px;
+  }
+  @media screen and (max-width: 1079px) {
+    margin: 0 auto;
+    width: 320px;
+  }
+}

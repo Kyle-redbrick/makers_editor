@@ -1,0 +1,58 @@
+.Page--OCPEventSignUp {
+  min-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  .OCPEventSignUp_Inner {
+    position: relative;
+    width: 1080px;
+    img {
+      width: 100%;
+    }
+  }
+  .OCPEventSignUp-btn {
+    cursor: pointer;
+    position: absolute;
+    top: 40%;
+    left: 27%;
+    width: 46%;
+    height: 5.3%;
+  }
+  .singUpImg {
+    display: block;
+    background: #ffffff;
+  }
+  .signUpUserList {
+    background: #bdea00;
+    box-sizing: border-box;
+    padding: 55px 58px;
+    font-size: 18px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2.27;
+    overflow: hidden;
+
+    span {
+      display: block;
+      float: left;
+      width: 50%;
+    }
+  }
+
+  @media screen and (max-width: 1079px) {
+    display: block;
+    .OCPEventSignUp_Inner {
+      width: 100%;
+      height: auto;
+    }
+
+    .signUpUserList span {
+      float: none;
+      font-size: 10px;
+      width: 100%;
+      text-align: center;
+    }
+  }
+}

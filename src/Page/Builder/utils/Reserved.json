@@ -1,0 +1,24 @@
+[
+  {
+    "id": "moveForward",
+    "type": "function",
+    "params": ["steps"],
+    "returns": {}
+  },
+  {
+    "id": "goTo",
+    "type": "function",
+    "params": ["x", "y"],
+    "returns": {}
+  },
+  {
+    "id": "clone",
+    "type": "function",
+    "params": [],
+    "returns": { "type": "object", "value": null }
+  },
+  {
+    "id": "global",
+    "type": "object"
+  }
+]

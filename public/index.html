@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="google" value="notranslate" />
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta
+      id="viewport"
+      name="viewport"
+      content="width=device-width,initial-scale=1.0"
+    />
+    <meta name="theme-color" content="#000000" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="위즈랩" />
+    <meta
+      property="og:description"
+      content="누구나 쉽게 게임을 만들며 코딩을 체험할 수 있는 소프트웨어 교육 서비스입니다."
+    />
+    <meta
+      property="og:image"
+      content="https://d1tz4sj00zmgsb.cloudfront.net/wizlab-thumbnail.png"
+    />
+    <meta property="og:url" content="https://dream.wizlab.net" />
+    <meta
+      name="description"
+      content="누구나 쉽게 게임을 만들며 코딩을 체험할 수 있는 소프트웨어 교육 서비스입니다."
+    />
+    <link rel="canonical" href="https://dream.wizlab.net" />
+    <meta
+      name="naver-site-verification"
+      content="ed09254b1a35da3e870d5fb8682e3dfbd49b6108"
+    />
+    <meta
+      name="google-site-verification"
+      content="GGb-QqFL5JVpMmbKFKMAF17B0xEkKI13sXF-PeiQ0O4"
+    />
+    <!-- Global site tag (gtag.js) - Google Ads: 623322625 -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=AW-623322625"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "AW-623322625");
+    </script>
+
+    <!-- Event snippet for 기타 conversion page -->
+    <script>
+      gtag("event", "conversion", {
+        send_to: "AW-623322625/3VtBCPW3v9wBEIHMnKkC"
+      });
+    </script>
+
+    <!-- Google Tag Manager -->
+    <script>
+      (function(w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-TS3NKTR");
+    </script>
+    <!-- End Google Tag Manager -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-168395916-1"
+    ></script>
+    <script src="//cdn.jsdelivr.net/bluebird/3.5.0/bluebird.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/url-search-params/1.1.0/url-search-params.js"></script>
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=default,Array.prototype.find,Array.prototype.findIndex"></script>
+    
+    <!-- Kakao share -->
+    <script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+    <script>
+      Kakao.init("15c9150c4f874b13050919da0c6d447a");
+    </script>
+
+    <!-- Facebook share -->
+    <script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId: "330485461262524",
+          autoLogAppEvents: true,
+          xfbml: true,
+          version: "v8.0"
+        });
+      };
+    </script>
+
+    <!-- play audio widthout user interaction-->
+    <audio id="dream-python-bgm">
+      <source src="" type="audio/mpeg">
+   </audio>
+
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-1.12.4.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"
+    ></script>
+    <script>
+      function setViewPortSize() {
+        const viewport = document.getElementById("viewport");
+        const width = Math.max(
+          document.documentElement.clientWidth,
+          window.innerWidth || 0
+        );
+
+        if (width < 1170) {
+          if (width >= 768 && width < 1170) {
+            viewport.setAttribute("content", "width=1334");
+          } else if (width !== 1170) {
+            viewport.setAttribute("content", "width=device-width");
+            // } else {
+            // viewport.setAttribute("content", "width=1250, initial-scale=1.0");
+          }
+        } else if (width === 1170) {
+          // document.body.scrollTo(0, 0);
+        }
+      }
+      setViewPortSize();
+      window.onload = function() {
+        setViewPortSize();
+        // alert("onload");
+      };
+      window.onresize = function() {
+        setViewPortSize();
+        // alert("onresize" + document.documentElement.clientWidth);
+      };
+
+      if (!Array.prototype.includes) {
+        Object.defineProperty(Array.prototype, "includes", {
+          enumerable: false,
+          value: function(obj) {
+            var newArr = this.filter(function(el) {
+              return el == obj;
+            });
+            return newArr.length > 0;
+          }
+        });
+      }
+      if (!Array.prototype.find) {
+        Object.defineProperty(Array.prototype, "find", {
+          value: function(predicate) {
+            // 1. Let O be ? ToObject(this value).
+            if (this == null) {
+              throw new TypeError('"this" is null or not defined');
+            }
+            var o = Object(this);
+            // 2. Let len be ? ToLength(? Get(O, "length")).
+            var len = o.length >>> 0;
+            // 3. If IsCallable(predicate) is false, throw a TypeError exception.
+            if (typeof predicate !== "function") {
+              throw new TypeError("predicate must be a function");
+            }
+            // 4. If thisArg was supplied, let T be thisArg; else let T be undefined.
+            var thisArg = arguments[1];
+            // 5. Let k be 0.
+            var k = 0;
+            // 6. Repeat, while k < len
+            while (k < len) {
+              // a. Let Pk be ! ToString(k).
+              // b. Let kValue be ? Get(O, Pk).
+              // c. Let testResult be ToBoolean(? Call(predicate, T, « kValue, k, O »)).
+              // d. If testResult is true, return kValue.
+              var kValue = o[k];
+              if (predicate.call(thisArg, kValue, k, o)) {
+                return kValue;
+              }
+              // e. Increase k by 1.
+              k++;
+            }
+
+            // 7. Return undefined.
+            return undefined;
+          }
+        });
+      }
+    </script>
+
+    <!--
+      manifest.json provides metadata used when your web app is added to the
+      homescreen on Android. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>Wizclass</title>
+  </head>
+  <script src="%PUBLIC_URL%/rollbar.js"></script>
+  <script type="text/javascript">
+    let lang = localStorage.getItem("wizLang");
+    if (!lang) lang = navigator.language;
+    function appendLink(href) {
+      let elHead, elLink;
+      elLink = document.createElement("link");
+      elLink.rel = "stylesheet";
+      elLink.type = "text/css";
+      elLink.href = href;
+      elHead = document.getElementsByTagName("head")[0];
+      elHead.appendChild(elLink);
+    }
+    if (lang !== "zh") {
+      appendLink(
+        "https://fonts.googleapis.com/css?family=Black+And+White+Picture|Black+Han+Sans|Cute+Font|Do+Hyeon|Dokdo|East+Sea+Dokdo|Gaegu|Gamja+Flower|Gothic+A1|Gugi|Hi+Melody|Jua|Kirang+Haerang|Nanum+Brush+Script|Nanum+Gothic|Nanum+Myeongjo|Nanum+Pen+Script|Noto+Sans+KR|Noto+Serif+KR|Poor+Story|Song+Myung|Stylish|Sunflower:300|Yeon+Sung&amp;subset=korean"
+      );
+      appendLink(
+        "https://fonts.googleapis.com/css?family=Source+Sans+Pro|Varela+Round"
+      );
+      appendLink("https://fonts.googleapis.com/earlyaccess/notosanskr.css");
+      appendLink(
+        "https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700"
+      );
+      appendLink(
+        "https://fonts.googleapis.com/css2?family=Inconsolata&display=swap"
+      );
+    }
+  </script>
+  
+  <body>
+    <noscript> You need to enable JavaScript to run this app. </noscript>
+    <div id="alert"></div>
+    <div id="root"></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-TS3NKTR"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden;"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <script src="%PUBLIC_URL%/phaser2.min.js"></script>
+    <script src="%PUBLIC_URL%/phaser2-joystick.js"></script>
+    <script src="%PUBLIC_URL%/ace/ace.js"></script>
+    <script src="%PUBLIC_URL%/ace/ext-language_tools.js"></script>
+    <script src="%PUBLIC_URL%/ace/wizschool-theme.js"></script>
+    <script src="%PUBLIC_URL%/ace/wizschool-theme-python.js"></script>
+    <script src="%PUBLIC_URL%/ace/wizschool-theme-light.js"></script>
+    <script src="%PUBLIC_URL%/game/colors.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/webrtc-adapter/6.4.0/adapter.min.js"
+    ></script>
+    <script src="%PUBLIC_URL%/janus.js"></script>
+    <script src="%PUBLIC_URL%/babylon/babylonConstant.js"></script>
+    <script src="%PUBLIC_URL%/babylon/babylonGame.js"></script>
+    <script src="%PUBLIC_URL%/babylon/babylonScene.js"></script>
+    <script src="%PUBLIC_URL%/babylon/babylonGameObject.js"></script>
+    <script src="%PUBLIC_URL%/babylon/babylonSound.js"></script>
+  </body>
+</html>

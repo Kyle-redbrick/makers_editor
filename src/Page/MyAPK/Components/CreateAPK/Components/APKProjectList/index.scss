@@ -1,0 +1,210 @@
+.APKProjectList {
+  width: 100%;
+  height: 100%;
+  color: white;
+  display: flex;
+  justify-content: center;
+
+  .APKProjectList_inner {
+    width: var(--innerWidth);
+  }
+  .APKProjectList-title {
+    font-size: 30px;
+    font-weight: bold;
+  }
+
+  .APKProjectList-subtitle {
+    font-size: 15px;
+    margin-bottom: 40px;
+  }
+
+  .APKProjectList_projectlist {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 60px;
+  }
+
+  .APKProjectList_pl_item {
+    transition: all 0.2s;
+    cursor: pointer;
+    position: relative;
+    --rightMargin: 20px;
+    --bottomMargin: 40px;
+    --itemCount: 6; // if you want to change this interface, change [itemCount] value together in ProjectItem Component
+    --itemWidth: calc(
+      (var(--innerWidth) - var(--rightMargin) * (var(--itemCount) - 1)) /
+        var(--itemCount)
+    );
+    margin-right: var(--rightMargin);
+    margin-bottom: var(--bottomMargin);
+    width: var(--itemWidth);
+
+    .APKProjectList_pl_it-check {
+      position: absolute;
+      left: 10px;
+      top: 10px;
+      width: 25px;
+      height: 25px;
+      background-color: #1db6ff;
+      border-radius: 5px;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .APKProjectList_pl_item-icon {
+      width: 100%;
+      height: var(--itemWidth);
+      border-radius: 5px;
+      overflow: hidden;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .APKProjectList_pl_item-icon-selected {
+      background-color: #000000;
+      opacity: 0.3;
+    }
+
+    .APKProjectList_pl_it_bottomWrap {
+      // border: 1px solid blue;
+    }
+
+    .APKProjectList_pl_it_bw-title {
+      font-size: 15px;
+      font-weight: 500;
+      width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .APKProjectList_pl_it_bw-date {
+      font-size: 15px;
+    }
+  }
+
+  .APKProjectList_pl_item-last {
+    margin-right: 0px;
+  }
+
+  .APKProjectList_footer {
+    --footerHeight: 90px;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: calc(100vh - var(--footerHeight) - 195px);
+    width: 100%;
+    height: var(--footerHeight);
+    padding: 30px;
+    background-color: #1db6ff;
+  }
+
+  .APKProjectList_footer-title {
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .APKProjectList_footer-completeBtn {
+    transition: all 0.2s;
+    cursor: pointer;
+    position: absolute;
+    right: calc((100vw - 1080px) / 2);
+    padding: 5px 26px;
+    border-radius: 20px;
+    font-size: 18px;
+    font-weight: 500;
+    background-color: white;
+    color: #1db6ff;
+  }
+
+  .APKProjectList_pl_item:hover,
+  .APKProjectList_footer-completeBtn:hover {
+    opacity: 0.6;
+    transform: scale(1.05);
+  }
+}
+
+@media screen and (max-width: 1079px) {
+  .APKProjectList {
+    .APKProjectList-title {
+      font-size: 24px;
+    }
+
+    .APKProjectList-subtitle {
+      font-size: 15px;
+      margin-bottom: 25px;
+    }
+
+    .APKProjectList_projectlist {
+      margin-bottom: 100px;
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .APKProjectList_pl_item {
+      --rightMargin: 15px;
+      --bottomMargin: 30px;
+      --itemCount: 3;
+      --itemWidth: calc(
+        (var(--innerWidth) - var(--rightMargin) * (var(--itemCount) - 1)) /
+          var(--itemCount)
+      );
+
+      .APKProjectList_pl_it_bw-title {
+        font-size: 14px;
+      }
+
+      .APKProjectList_pl_it_bw-date {
+        font-size: 13px;
+      }
+    }
+
+    .APKProjectList_footer {
+      --footerHeight: 120px;
+      top: calc(100vh - var(--footerHeight));
+      height: var(--footerHeight);
+      padding: 30px 50px;
+
+      flex-direction: column;
+    }
+
+    .APKProjectList_footer-title {
+      font-size: 15px;
+      font-weight: bold;
+    }
+
+    .APKProjectList_footer-completeBtn {
+      margin-top: 12px;
+      position: relative;
+      right: auto;
+      font-size: 15px;
+      width: 100px;
+      height: 35px;
+      padding: 0;
+      text-align: center;
+      padding-top: 4px;
+    }
+
+    .APKProjectList_pl_item:hover,
+    .APKProjectList_footer-completeBtn:hover {
+      opacity: 0.6;
+      transform: scale(1.05);
+    }
+  }
+}
+
+@media screen and (max-width: 779px) {
+  .APKProjectList {
+    .APKProjectList_pl_item {
+      --itemCount: 2;
+    }
+  }
+}

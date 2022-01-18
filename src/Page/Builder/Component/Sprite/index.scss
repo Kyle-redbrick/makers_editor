@@ -1,0 +1,87 @@
+.Page--BUILDER {
+  .SpriteContainer {
+    width: 100px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .SpriteContainer_Scene {
+    border-bottom: 1px solid var(--W_Gray01);
+    padding-top: 18px;
+  }
+
+  .SpriteContainer_Sprites {
+    flex: 1;
+    width: 100%;
+    overflow-y: auto;
+  }
+  .SpriteContainer_SceneImg {
+    background: var(--W_Gray06);
+    border-radius: 7px;
+    img {
+      cursor: pointer;
+      display: block;
+      width: 68px;
+      height: 68px;
+      margin-bottom: 7px;
+      object-fit: contain;
+      border-radius: 7px;
+    }
+  }
+  .SpriteContainer_SceneName {
+    font-size: 13px;
+    letter-spacing: -0.24px;
+    color: var(--W_Gray03);
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  .SpriteContainer_Line {
+    border-top: 1px solid var(--W_Gray01);
+    height: 15px;
+    width: 68px;
+    &.hidden {
+      display: none;  
+    }
+  }
+  .SpriteContainer_SceneTools {
+    height: 144px;
+    width: 68px;
+    &.hidden {
+      display: none;  
+    }
+  }
+  .Sprite_Add {
+    height: 68px;
+    width: 68px;
+    background: var(--W_Gray06);
+    cursor: pointer;
+    border-radius: 7px;
+    display: flex;
+    justify-content: center;
+  }
+  .Sprite_Add_Img {
+    display: block;
+    object-fit: none;
+  }
+
+  .SpriteContainer_SceneTools_BottomBtns {
+    margin-top: 17px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .SpriteContainer_SceneTools_BottomBtn {
+    background: var(--W_Gray06);
+    border-radius: 7px;
+    cursor: pointer;
+    display: block;
+    width: 28px;
+    height: 28px;
+    object-fit: scale-down;
+  }
+  .SpriteContainer_SceneTools_BottomImg {
+    width: 28px;
+    height: 28px;
+    object-fit: none;
+  }
+}

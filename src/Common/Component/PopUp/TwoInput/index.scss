@@ -1,0 +1,43 @@
+.popup_container {
+  .popup_twoInput {
+    text-align: center;
+    width: 300px;
+    .popup_header {
+      margin-bottom: 20px;
+    }
+    .popup_input-twoInput {
+      font-size: 14px;
+      width: 80%;
+      height: 100%;
+      border-radius: 3px;
+      background-color: #fff !important;
+      outline: none;
+      border: 0.5px solid #afafaf;
+      text-indent: 10px;
+      color: #2b2f4e !important;
+    }
+
+    .input-wrapper {
+      display: flex;
+      align-items: center;
+      margin-top: 20px;
+    }
+    .input-title {
+      font-size: 14px;
+      margin-right: 10px;
+    }
+
+    .twoInput_warning {
+      font-size: 12px;
+      color: #ff0c0c;
+      margin-bottom: -18px;
+    }
+  }
+}
+.popup_container-darkmode {
+  .popup_twoInput {
+    .popup_input-twoInput {
+      border: 1px solid #3f3f3f !important;
+    }
+  }
+}

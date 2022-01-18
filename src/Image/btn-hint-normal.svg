@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="54" height="54" viewBox="0 0 54 54">
+    <defs>
+        <rect id="b" width="54" height="54" rx="8"/>
+        <filter id="a" width="225.9%" height="225.9%" x="-63%" y="-48.1%" filterUnits="objectBoundingBox">
+            <feOffset dy="8" in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="10"/>
+            <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.05 0"/>
+        </filter>
+        <path id="c" d="M0 0h40v40H0z"/>
+        <path id="e" d="M17 25a1 1 0 0 1 0 2H9a1 1 0 0 1 0-2h8zM13 5a8 8 0 0 1 5 14.245V23a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-3.754A8 8 0 0 1 13 5zm0 2a6 6 0 0 0-3.957 10.51l.208.175.75.6L10 22h6v-3.715l.75-.6A6 6 0 0 0 13 7zm1 8a1 1 0 0 1 0 2h-2a1 1 0 0 1 0-2h2zm11-4a1 1 0 0 1 0 2h-2a1 1 0 0 1 0-2h2zM3 11a1 1 0 0 1 0 2H1a1 1 0 0 1 0-2h2zm19.414-7.414a1 1 0 0 1 0 1.414L21 6.414A1 1 0 0 1 19.586 5L21 3.586a1 1 0 0 1 1.414 0zm-18.828 0a1 1 0 0 1 1.414 0L6.414 5A1 1 0 0 1 5 6.414L3.586 5a1 1 0 0 1 0-1.414zM13 0a1 1 0 0 1 1 1v2a1 1 0 0 1-2 0V1a1 1 0 0 1 1-1z"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <use fill="#000" filter="url(#a)" xlink:href="#b"/>
+            <use fill="#63BAF5" xlink:href="#b"/>
+        </g>
+        <g transform="translate(7 7)">
+            <mask id="d" fill="#fff">
+                <use xlink:href="#c"/>
+            </mask>
+            <g mask="url(#d)">
+                <g transform="translate(7 6)">
+                    <mask id="f" fill="#fff">
+                        <use xlink:href="#e"/>
+                    </mask>
+                    <path stroke="#000" stroke-opacity=".05" d="M17 24.5a1.5 1.5 0 0 1 0 3H9a1.5 1.5 0 0 1 0-3h8zm1.5-5.02V23a1.5 1.5 0 0 1-1.5 1.5H9A1.5 1.5 0 0 1 7.5 23V19.48a8.5 8.5 0 1 1 11 0zm-8 2.02h5v-3.455l.937-.75A5.5 5.5 0 1 0 7.5 13c0 1.594.682 3.088 1.865 4.127l.199.167.937.75V21.5zm3.5-7a1.5 1.5 0 0 1 0 3h-2a1.5 1.5 0 0 1 0-3h2zm11-4a1.5 1.5 0 0 1 0 3h-2a1.5 1.5 0 0 1 0-3h2zm-22 0a1.5 1.5 0 0 1 0 3H1a1.5 1.5 0 0 1 0-3h2zm19.768-7.268a1.5 1.5 0 0 1 0 2.122l-1.414 1.414a1.5 1.5 0 0 1-2.122-2.122l1.414-1.414a1.5 1.5 0 0 1 2.122 0zm-19.536 0a1.5 1.5 0 0 1 2.122 0l1.414 1.414a1.5 1.5 0 1 1-2.122 2.122L3.232 5.354a1.5 1.5 0 0 1 0-2.122zM13-.5A1.5 1.5 0 0 1 14.5 1v2a1.5 1.5 0 0 1-3 0V1A1.5 1.5 0 0 1 13-.5z"/>
+                    <g mask="url(#f)">
+                        <path fill="#FFF" d="M-7-6h40v40H-7z"/>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

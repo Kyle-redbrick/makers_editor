@@ -1,0 +1,165 @@
+.Page--BUILDER {
+  .JanusMonitor {
+    .WebRTCRnd {
+      z-index: 100;
+      margin-left: 3%;
+    }
+    .WebRTCVideo {
+      box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.2);
+      // background: #ffffff;
+      position: relative;
+
+      .Timer {
+        font-size: 16px;
+        color: #3a405b;
+      }
+
+      .VideoBox {
+        background: #000000;
+        overflow: hidden;
+      }
+
+      .VideoBox--info {
+        background: rgba(255, 255, 255, 0.7);
+        position: relative;
+        z-index: 3;
+        font-size: 12px;
+        line-height: 18px;
+      }
+      .VideoBox--info:after {
+        content: "";
+        display: block;
+        clear: both;
+      }
+      .VideoBox--email {
+        float: left;
+        padding-left: 6px;
+      }
+      .VideoBox--bitrate {
+        float: right;
+        padding-right: 6px;
+      }
+
+      .VideoBoxRooms {
+        background: rgba(255, 255, 255, 0.6);
+        font-size: 14px;
+        height: 250px;
+        overflow: scroll;
+      }
+      .VideoBoxRoom {
+        position: relative;
+        border-bottom: 1px solid #555555;
+        padding: 5px;
+      }
+
+      .VideoBoxRoomStudentId,
+      .VideoBoxRoomTutorId {
+        width: 80%;
+        margin-bottom: 5px;
+      }
+
+      .VideoBoxRoomButton {
+        cursor: pointer;
+        position: absolute;
+        border-radius: 4px;
+      }
+      .VideoBoxRoomButton-Enter {
+        top: 9px;
+        right: 8px;
+        padding: 5px;
+        background: #23d8af;
+      }
+      .VideoBoxRoomButton-Sync {
+        top: 9px;
+        right: 48px;
+        padding: 4px;
+        border: 1px solid #23d8af;
+      }
+
+      .video {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        object-fit: cover;
+        transform: scaleX(-1);
+      }
+
+      .VideoBox--others {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        padding-top: 56.25%;
+        // background-color: green;
+      }
+
+      .VideoBox--mine {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        padding-top: 56.25%;
+        // padding-top: 16.87%;
+        // top: 34px;
+        // right: 0;
+        // background-color: pink;
+        // border: 2px solid #23d8af;
+        // box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.2);
+        // -webkit-transform: rotateY(180deg);
+        // transform: rotateY(180deg);
+      }
+      .VideoBox--mine--on {
+        z-index: 3;
+      }
+      .VideoBox--mine--off {
+        z-index: 0;
+      }
+    }
+
+    .DrawingBoard {
+      position: fixed;
+      right: 0;
+      top: 50px;
+      z-index: 900;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+
+      #drawCanvas {
+        // border: 12px solid red;
+      }
+
+      .closeBtn {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        cursor: pointer;
+        background-image: url("../../../../Image/close-bk-btn.svg");
+        background-size: 100% 100%;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: #ffffff;
+      }
+
+      .CanvasContainer__colorlist {
+        position: absolute;
+        top: 60px;
+        left: 0px;
+      }
+
+      .CanvasContainer__colors {
+        cursor: pointer;
+        list-style: none;
+        width: 30px;
+        height: 30px;
+        border-radius: 25px;
+        float: left;
+        margin-right: 10px;
+      }
+    }
+  }
+}

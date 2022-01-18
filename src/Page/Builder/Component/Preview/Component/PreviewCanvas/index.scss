@@ -1,0 +1,14 @@
+.Page--BUILDER {
+  .previewCanvas {
+    position: absolute;
+    min-width: 100%;
+    min-height: 100%;
+  }
+}
+
+.ocpView {
+  .previewCanvas {
+    width: 100%;
+    height: 100%;
+  }
+}

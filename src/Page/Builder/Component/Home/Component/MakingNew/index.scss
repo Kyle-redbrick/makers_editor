@@ -1,0 +1,41 @@
+.builder--home__makingNew {
+  position: relative;
+
+  .makingNew__title {
+    font-size: 20px;
+    color: #ffffff;
+    margin-bottom: 20px;
+  }
+
+  .making__item p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .making__item span {
+    display: inline-block;
+    width: 35px;
+    margin-left: 4px;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: -0.05px;
+    color: #393e4f;
+    background-color: #ffffff;
+  }
+
+  .makingNew__bottom {
+    margin-top: 73px;
+  }
+  
+  .bottom__templateItems {
+    display: flex;
+    flex-wrap: wrap;
+    width: calc(100vw - 268px);
+  }
+
+  .templateItem {
+    margin-bottom: 45px;
+  }
+}

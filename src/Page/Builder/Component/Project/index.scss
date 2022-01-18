@@ -1,0 +1,213 @@
+.Page--BUILDER {
+  .ProjectContainer {
+    position: fixed;
+    background: var(--W_White);
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 30;
+    overflow-y: scroll;
+    display: flex;
+    justify-content: center;
+  }
+  .ProjectContainer:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+  .ProjectContainer__inner {
+    width: 100%;
+    margin-top: 37px;
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+
+  .Project__myProject {
+    margin-bottom: 35px;
+  }
+  .Project__template__header,
+  .Project__myProject__header {
+    border-bottom: 1px solid var(--W_Gray01);
+    padding-bottom: 20px;
+  }
+  .Project__myProject__header {
+    display: flex;
+    justify-content: space-between;
+  }
+  .Project__title {
+    font-size: 20px;
+    letter-spacing: -0.37px;
+    color: var(--W_Gray03);
+  }
+  .ProjectItems {
+    position: relative;
+    margin-top: 35px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  .ProjectItem__wrapper {
+    margin-bottom: 47px;
+    display: flex;
+    justify-content: center;
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+
+  .ProjectItem {
+    position: relative;
+    width: 100%;
+
+    .ProjectItem_ImgWrap {
+      position: relative;
+      width: 100%;
+      display: block;
+      padding-top: 100%; /* 1:1 Aspect Ratio */
+    }
+    .ProjectItem__img {
+      cursor: pointer;
+      border-radius: 11px;
+      box-shadow: 0 2px 4px 0 var(--W_Gray01);
+
+      display: block;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .info__name {
+      width: 160px;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: -0.24px;
+      color: var(--W_Gray03);
+      margin-top: 11px;
+    }
+  }
+
+  .ProjectItemEmpty {
+    .ProjectItem_ImgWrap {
+      padding-top: 50%; /* 2:1 Aspect Ratio */
+    }
+  }
+
+  .ProjectItem__myproject {
+    position: relative;
+    background-color: var(--W_White);
+    box-shadow: 0 2px 4px 0 var(--W_Gray01);
+    border-radius: 11px;
+    border: solid 1px var(--W_Gray01);
+    width: 100%;
+
+    .ProjectItem_ImgWrap {
+      position: relative;
+      width: 100%;
+      display: block;
+      padding-top: 100%; /* 1:1 Aspect Ratio */
+    }
+    .ProjectItem__img {
+      cursor: pointer;
+      border-top-right-radius: 11px;
+      border-top-left-radius: 11px;
+      display: block;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+    }
+    .ProjectItem__info_wrapper {
+      overflow: hidden;
+    }
+    .ProjectItem__info {
+      margin: 10px 8px 12px 8px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .info__name {
+      width: 160px;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: -0.24px;
+      color: var(--W_Gray03);
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+    .info__date {
+      font-size: 12px;
+      letter-spacing: -0.22px;
+      color: var(--W_Gray02);
+      line-height: 1.5;
+    }
+
+    &:hover {
+      .info__name {
+        text-overflow: initial;
+        transform: translateX(0);
+        animation: marquee 5s linear infinite;
+        overflow: visible;
+      }
+    }
+
+    @keyframes marquee {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+  }
+
+  .ProjectItem_type {
+    display: none;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: auto;
+    padding: 2px 6px;
+    font-size: 12px;
+    color: #fff;
+    background: #000;
+    border-radius: 3px;
+  }
+
+  //search
+  .search__container {
+    width: 242px;
+    height: 30px;
+    border-radius: 17px;
+    position: relative;
+    img {
+      display: block;
+      position: absolute;
+      top: 7px;
+      right: 15px;
+    }
+  }
+  .serach__input {
+    font-size: 14px;
+    width: 100%;
+    height: 100%;
+    border-radius: 17px;
+    background-color: var(--W_Gray01);
+    outline: none;
+    border: none;
+    text-indent: 10px;
+    color: var(--W_White);
+    letter-spacing: -0.37px;
+  }
+  .serach__input:hover {
+    color: var(--W_Gray02);
+  }
+}

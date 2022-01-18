@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="953" height="279" viewBox="0 0 953 279">
+    <g fill="none" fill-rule="evenodd">
+        <path fill="#2F3443" d="M0 0H953V279H0z"/>
+        <text font-family="AppleSDGothicNeo-Regular, Apple SD Gothic Neo" font-size="20" letter-spacing="-.369">
+            <tspan x="42" y="64" fill="#FFF">1 </tspan> <tspan x="53.661" y="64" fill="#949494">// 여기부터 코드를 작성해보세요.</tspan>
+        </text>
+    </g>
+</svg>

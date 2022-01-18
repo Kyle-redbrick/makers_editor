@@ -1,0 +1,136 @@
+.GameRankingContainer {
+  width: 364px;
+  height: 364px;
+  border-radius: 7px;
+  border: solid 1px #8592a6;
+  background-color: white;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .Close {
+    position: absolute;
+    right: 18px;
+    top: 18px;
+    width: 14px;
+    height: 14px;
+    opacity: 0.54;
+    cursor: pointer;
+  }
+
+  .Header {
+    width: 332px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .Header__ranking {
+      width: 56px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        position: absolute;
+        z-index: 1;
+      }
+      p {
+        color: white;
+        position: relative;
+        z-index: 2;
+        font-size: 18px;
+        font-weight: bold;
+      }
+    }
+    .Header__score {
+      font-size: 28px;
+      font-weight: 600;
+      color: #23d8af;
+    }
+  }
+
+  .Body {
+    width: 332px;
+    height: 236px;
+    margin-top: 6px;
+
+    .Body__rankingLabel {
+      line-height: 32px;
+      background-color: #8592a6;
+      font-size: 16px;
+      font-weight: 600;
+      color: white;
+      text-align: center;
+      border-top-left-radius: 7px;
+      border-top-right-radius: 7px;
+    }
+
+    .Body__content {
+      height: 203px;
+      overflow: scroll;
+      border-bottom-left-radius: 7px;
+      border-bottom-right-radius: 7px;
+      border: solid 1px #8592a6;
+
+      .Body__item--bg0 {
+        background-color: white;
+      }
+
+      .Body__item--bg1 {
+        background-color: #e3e8f0;
+      }
+
+      .Body--user {
+        outline: 2px solid #23d8af;
+        outline-offset: -2px;
+      }
+
+      .Body__row {
+        color: #3a405b;
+        width: 330px;
+
+        td:nth-child(1) {
+          width: 54px;
+          font-size: 16px;
+          font-weight: 500;
+          text-align: center;
+        }
+        td:nth-child(2) {
+          .Body__item__icon {
+            width: 24px;
+            height: 24px;
+            border-radius: 12px;
+            margin-right: 6px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+          }
+        }
+        td:nth-child(3) {
+          width: 250px;
+          font-size: 16px;
+          font-weight: 600;
+          position: relative;
+          p:nth-child(1) {
+            max-width: 130px;
+            float: left;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          }
+          p:nth-child(2) {
+            text-align: left;
+            max-width: 100px;
+            float: right;
+            padding-right: 10px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+        }
+      }
+    }
+  }
+}

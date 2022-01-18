@@ -1,0 +1,27 @@
+.chatContextmenu {
+  z-index: 100;
+  background: var(--W_White);
+  position: absolute;
+  left: 35px;
+  width: 99px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+.social_menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.social_icon {
+  margin-right: 11px;
+}
+.social_text {
+  font-size: 13px;
+  color: var(--W_Gray03);
+  text-align: center;
+  font-weight: 500;
+  line-height: 1.5;
+}

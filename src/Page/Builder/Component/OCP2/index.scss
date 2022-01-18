@@ -1,0 +1,43 @@
+.Page--BUILDER {
+  .videoclass_customContent {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .videoclass_ocp2Events_container {
+    position: absolute;
+    top: 74.5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    width: 80%;
+    padding-top: 14%;
+  }
+  .videoclass_ocp2Events {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    height: 100%;
+  }
+  .videoclass_ocp2Event {
+    width: 100%;
+    padding: 6px;
+    cursor: pointer;
+    transition: 0.1s transform;
+
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 12px;
+      object-fit: contain;
+      user-select: none;
+      -webkit-user-drag: none;
+    }
+  }
+  .videoclass_ocp2Event:hover {
+    transform: scale(1.05);
+  }
+}

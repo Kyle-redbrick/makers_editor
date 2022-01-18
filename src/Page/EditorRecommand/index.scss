@@ -1,0 +1,274 @@
+.Page--EditorRecommand {
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .Recommand__Game {
+    width: 100%;
+    padding: 100px 0;
+    background-color: #282c36;
+    color: #fff;
+
+    .Home--Inner {
+      width: 1080px;
+      margin: 0 auto;
+    }
+
+    .Recommand__Game__Wrapper {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .Recommand__Game__Box {
+      position: relative;
+      width: 529px;
+      margin-bottom: 100px;
+      cursor: pointer;
+      overflow: hidden;
+    }
+
+    .playStoreIcon {
+      position: absolute;
+      top: 210px;
+      right: 10px;
+      width: 166px;
+      height: 51px;
+    }
+
+    .Recommand__Game__Box:nth-child(2n) {
+      margin-left: 21px;
+    }
+
+    .Recommand__Game__Image_Wrapper {
+      position: relative;
+      max-width: 529px;
+      height: 271px;
+      overflow: hidden;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 529px;
+        height: 137px;
+        background-image: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0) 29%,
+          #000000
+        );
+      }
+
+      img {
+        pointer-events: none;
+      }
+    }
+
+    .Recommand__Game__Box:active .Recommand__Game__Image_Wrapper::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 529px;
+      height: 271px;
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    .Recommand__Game__Box img {
+      position: relative;
+      width: 100%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition: 0.5s transform;
+    }
+
+    .Recommand__Game__Box:hover {
+      .Game__Title {
+        border-bottom: 1px solid #fff;
+      }
+
+      img.game_icon {
+        transform: translate(-50%, -50%) scale(1.1);
+      }
+    }
+
+    .Recommand__Game__Title,
+    .Game__Title {
+      font-weight: bold;
+      font-size: 24px;
+      letter-spacing: -0.44px;
+      border-bottom: 1px solid transparent;
+    }
+
+    .Recommand__Game__Title {
+      margin-bottom: 35px;
+    }
+
+    .Game__Title {
+      display: inline-block;
+      margin: 21px 9px 10px 0;
+      transition: 0.5s border;
+    }
+
+    .Recommand__Game__ViewMore {
+      position: relative;
+      display: inline-block;
+      margin-left: 12px;
+      font-weight: normal;
+      cursor: pointer;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 5px;
+        right: -18px;
+        background: url("../../Image/icon-more-all.svg") no-repeat center/cover;
+        width: 12px;
+        height: 12px;
+      }
+    }
+
+    .Recommand__Game__ViewMore,
+    .Game__Maker {
+      font-size: 15px;
+      letter-spacing: -0.28px;
+      color: #afafaf;
+    }
+
+    .Game__Maker {
+      display: inline-block;
+    }
+
+    .Game__Info {
+      word-break: keep-all;
+      font-size: 15px;
+      line-height: 1.67;
+      letter-spacing: -0.28px;
+    }
+  }
+
+  @media screen and (max-width: 1079px) {
+    .Recommand__Game {
+      box-sizing: border-box;
+      padding: 48px 20px;
+      height: auto;
+
+      .Recommand__Game__Box {
+        width: 100%;
+        margin-bottom: 31px;
+      }
+
+      .Recommand__Game__Box:nth-child(2n) {
+        margin-left: 0;
+      }
+
+      .playStoreIcon {
+        width: 110px;
+        height: 34px;
+        top: calc((100vw - 42px) * 0.5122 - 45px);
+      }
+
+      .Home--Inner {
+        width: 100%;
+      }
+
+      .Recommand__Game__Wrapper {
+        display: block;
+      }
+
+      .Recommand__Game__Image_Wrapper {
+        width: 100%;
+        max-width: 100%;
+        height: calc((100vw - 42px) * 0.5122);
+
+        &:after {
+          width: 100%;
+          height: 50%;
+        }
+      }
+
+      .Game__Title,
+      .Game__Maker {
+        max-width: 100%;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+
+      .Recommand__Game__Box:active .Recommand__Game__Image_Wrapper::after {
+        width: 100%;
+        height: 100%;
+      }
+
+      .Recommand__Game__Title {
+        font-size: 18px;
+        letter-spacing: -0.33px;
+      }
+
+      .Recommand__Game__ViewMore {
+        font-size: 14px;
+        letter-spacing: -0.26px;
+      }
+
+      .Recommand__Game__Info_Wrapper {
+        margin: 25px 0 15px;
+      }
+
+      .Game__Title {
+        font-size: 18px;
+        letter-spacing: -0.33px;
+        margin: 0 6px 0 0;
+      }
+    }
+
+    .Home__Guide__Banner {
+      position: relative;
+      height: 80px;
+      box-sizing: border-box;
+
+      .Home--Inner {
+        width: 100%;
+        padding: 22px 0 0 20px;
+      }
+
+      .Guide__Button__Wrapper,
+      .Home__Guide__Banner__Title,
+      .Home__Guide__Banner__SubTitle {
+        display: none;
+      }
+
+      .Home__Guide__Banner__Mobile__Title,
+      .Home__Guide__Banner__Mobile__SubTitle {
+        display: block;
+        line-height: 1.5;
+      }
+
+      .Home__Guide__Banner__Mobile__Title {
+        font-size: 15px;
+        font-weight: bold;
+        letter-spacing: -0.28px;
+        margin-bottom: 2px;
+      }
+
+      .Home__Guide__Banner__Mobile__SubTitle {
+        font-size: 12px;
+        letter-spacing: -0.22px;
+        font-weight: normal;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 24px;
+        transform: translate(0, -50%);
+        background: url("../../Image//link-arrow.svg") no-repeat center/cover;
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+      }
+    }
+  }
+}

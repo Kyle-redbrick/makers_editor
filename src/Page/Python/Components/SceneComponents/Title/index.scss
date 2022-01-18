@@ -1,0 +1,46 @@
+.pythonTitleWrapper {
+  width: 100%;
+  height: 100%;
+
+  .pythonTitle {
+    .titleNameBox {
+      position: relative;
+      width: 938px;
+      height: 256px;
+      background: url("../../../../../Image/newPython/title-box@2x.png")
+        no-repeat center/cover;
+    }
+
+    .titleText {
+      width: 75%;
+      position: absolute;
+      left: 50%;
+      top: 49.6%;
+      transform: translateX(-50%);
+      font-size: 24px;
+      text-align: center;
+      color: #00fffc;
+      animation: textOpacity 2s ease-out 0s none running;
+      animation-fill-mode: forwards;
+    }
+
+    @keyframes textOpacity {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    .defaultMessage {
+      margin-top: 35px;
+      font-size: 22px;
+      text-align: center;
+      color: #ffffff;
+      opacity: 0;
+      animation: textOpacity 1s ease-out 1s none running;
+      animation-fill-mode: forwards;
+    }
+  }
+}

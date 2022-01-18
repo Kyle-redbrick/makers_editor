@@ -1,0 +1,14 @@
+.Page--BUILDER {
+  .FullScreenButton {
+    position: fixed;
+    z-index: 1;
+    right: 28px;
+    bottom: 20px;
+    img {
+      cursor: pointer;
+      display: block;
+      width: 43px;
+      height: 43px;
+    }
+  }
+}

@@ -1,0 +1,297 @@
+$Vertical_width_px: 730px;
+$ScreenBtnGroup_height_px: 0px;
+
+.DetailGameContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.DetailGameContainer--FULL {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 600;
+  height: 100vh;
+  width: 100vw;
+  // border: 2px solid red;
+  background-color: #000000;
+}
+
+.GameLayout {
+  height: 100%;
+  width: 100%;
+  // margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+
+  @media screen and (max-width: 1170px) {
+    border-radius: 0;
+  }
+}
+
+.GameLayout--FULL--HORI--TB {
+  width: 100vw;
+  height: calc(100vw * 9 / 16 + #{$ScreenBtnGroup_height_px});
+}
+.GameLayout--FULL--HORI--LR {
+  width: calc((100vh - 40px) / 9 * 16);
+  height: calc(100vh - 40px);
+}
+.GameLayout--FULL--VERT--TB {
+  width: 100vw;
+  height: calc(100vw * 16 / 9 + #{$ScreenBtnGroup_height_px});
+}
+.GameLayout--FULL--VERT--LR {
+  width: calc((100vh - 40px) / 16 * 9);
+  height: calc(100vh - 40px);
+}
+
+.GameLayout--NOFULL--HORI--TB {
+  width: $Vertical_width_px;
+  height: calc(#{$Vertical_width_px} * 9 / 16 + #{$ScreenBtnGroup_height_px});
+}
+.GameLayout--NOFULL--HORI--LR {
+  width: $Vertical_width_px;
+  height: calc(#{$Vertical_width_px} * 9 / 16 + #{$ScreenBtnGroup_height_px});
+}
+.GameLayout--NOFULL--VERT--TB {
+  width: calc(#{$Vertical_width_px} * 9 / 16);
+  height: calc(#{$Vertical_width_px} + #{$ScreenBtnGroup_height_px});
+}
+.GameLayout--NOFULL--VERT--LR {
+  width: calc(#{$Vertical_width_px} * 9 / 16);
+  height: calc(#{$Vertical_width_px} + #{$ScreenBtnGroup_height_px});
+}
+.GameScreen {
+  width: 100%;
+  // height: calc(100% - 38px);
+  height: 100%;
+  position: relative;
+}
+
+.GameScreen__block {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0);
+  border-radius: 16px;
+  z-index: 2;
+
+  @media screen and (max-width: 1170px) {
+    border-radius: 0;
+  }
+}
+.GameScreen iframe {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  width: 1px;
+  min-width: 100%;
+  *width: 100%;
+}
+
+.GameScreen__ranking--off {
+  z-index: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+}
+.GameScreen__ranking--on {
+  z-index: 2;
+  position: absolute;
+  top: calc(50% - 182px);
+  left: calc(50% - 182px);
+  width: auto;
+  height: auto;
+}
+
+.GameBtnGroup {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 2;
+}
+
+.FullBtn {
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  -webkit-backdrop-filter: blur(30px);
+  backdrop-filter: blur(30px);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+  border: solid 1px rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.FullBtn__img {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.PlayBtn {
+  display: flex;
+  align-items: center;
+  width: 75px;
+  height: 22px;
+  border-radius: 5px;
+  // opacity: 0.8;
+  padding-left: 14px;
+  cursor: pointer;
+}
+.PlayBtn--play {
+  background-color: #1fb6ff;
+}
+.PlayBtn--stop {
+  background-color: #f05c63;
+}
+
+.PlayBtn__img {
+  width: 22px;
+  height: 22px;
+}
+.PlayBtn__text {
+  color: #fcfcfc;
+  font-size: 14px;
+  font-weight: bold;
+  // margin-left: 2px;
+}
+
+// progress circle
+.GameScreen--progress {
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+.GameScreen--progress__left {
+  position: absolute;
+  clip: rect(0, 100px, 100px, 50px);
+}
+
+.GameScreen--progress__right {
+  position: absolute;
+  clip: rect(0px, 50px, 100px, 0px);
+}
+
+.GameScreen--progress span {
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+  position: absolute;
+  opacity: 0.5;
+  border: 10px solid #23d8af;
+}
+
+.GameScreen--progress__left span {
+  clip: rect(0px, 50px, 100px, 0px);
+  animation: rotate-left 1s infinite linear;
+}
+
+.GameScreen--progress__right span {
+  clip: rect(0, 100px, 100px, 50px);
+  animation: rotate-right 1s infinite linear;
+}
+
+.BlockedNoti {
+  width: 100%;
+  height: 100%;
+  padding-top: 56.25%;
+  background-color: #3a405b;
+  position: relative;
+  min-height: 300px;
+}
+.BlockedNoti__inner {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  // height: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 5%;
+}
+.BlockedNoti__text {
+  text-align: center;
+  white-space: pre-wrap;
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.BlockedNoti__chromeBtn {
+  margin-top: 30px;
+  max-width: 100%;
+  width: 240px;
+  height: auto;
+
+  cursor: pointer;
+  outline: none;
+}
+
+@keyframes rotate-left {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  50% {
+    -webkit-transform: rotate(180deg);
+  }
+  100% {
+    -webkit-transform: rotate(180deg);
+  }
+}
+
+@keyframes rotate-right {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  50% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(180deg);
+  }
+}
+
+@media screen and (max-width: 1079px) {
+  .GameLayout--NOFULL--HORI--TB {
+    width: calc(100vw - 30px);
+    height: calc((100vw - 30px) * 9 / 16 + #{$ScreenBtnGroup_height_px});
+  }
+  .GameLayout--NOFULL--HORI--LR {
+    width: calc(100vw - 30px);
+    height: calc((100vw - 30px) * 9 / 16 + #{$ScreenBtnGroup_height_px});
+  }
+  .GameLayout--NOFULL--VERT--TB {
+    width: calc(100vw - 30px);
+    height: calc((100vw - 30px) * 16 / 9 + #{$ScreenBtnGroup_height_px});
+  }
+  .GameLayout--NOFULL--VERT--LR {
+    width: calc(100vw - 30px);
+    height: calc((100vw - 30px) * 16 / 9 + #{$ScreenBtnGroup_height_px});
+  }
+}

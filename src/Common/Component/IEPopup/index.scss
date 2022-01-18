@@ -1,0 +1,65 @@
+.IEPopup__wrapper {
+  background: #000000;
+  z-index: 10;
+  position: absolute;
+  width: 100%;
+  .IEPopup {
+    width: 1080px;
+    height: 100px;
+    margin: 0 auto;
+  }
+  .IEPopup__download {
+    float: left;
+    margin-top: 30px;
+    margin-right: 19px;
+    cursor: pointer;
+  }
+  .IEPopup__download__img {
+    width: 160px;
+    height: 40px;
+    vertical-align: middle;
+  }
+  .IEPopup__message {
+    font-size: 18px;
+    color: white;
+    line-height: 100px;
+    float: left;
+  }
+  .IEPopup__close {
+    cursor: pointer;
+    float: right;
+    margin-top: 33px;
+    width: 38px;
+  }
+  .IEPopup__close__img {
+    vertical-align: middle;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .IEPopup__wrapper {
+    .IEPopup {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+    .IEPopup__download {
+      float: none;
+      padding-top: 10px;
+      padding-left: 10px;
+      margin: 0;
+    }
+    .IEPopup__message {
+      float: none;
+      line-height: 1;
+      padding: 10px;
+      margin-top: 20px;
+    }
+    .IEPopup__close {
+      float: none;
+      position: absolute;
+      right: 10px;
+      top: 20px;
+      margin-top: 0;
+    }
+  }
+}

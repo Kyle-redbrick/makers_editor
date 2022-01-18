@@ -1,0 +1,315 @@
+.GameList {
+  width: 1170px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding-top: 29.5px;
+
+  .backBtn {
+    img {
+      width: 32px;
+      height: 32px;
+      cursor: pointer;
+    }
+  }
+
+  .GameMore__Title {
+    margin-top: 19.5px;
+    font-size: 22px;
+    font-weight: bold;
+    color: #fff;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 19.5px 0 30px;
+  }
+
+  .CourseTabList {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      margin-bottom: 30px;
+      border: solid 2px rgba(255, 255, 255, 0.3);
+      border-radius: 27.5px;
+      padding: 14px 22px 14px;
+      color: #ffffff;
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 24px;
+      letter-spacing: 0.38px;
+      text-align: center;
+      cursor: pointer;
+    
+      &:not(:last-child) {
+        margin-right: 10px;
+      }
+    
+      &.active{
+        background-color: #ff6f44;
+        border-color: #ff6f44;
+      }
+    
+      @media screen and (max-width: 1169px){
+        padding: 12px 17px 12px;
+        margin-bottom: 10px;
+        font-size: 15px;
+        white-space: nowrap;
+        border-radius: 21px;
+        border: solid 1.5px rgba(255, 255, 255, 0.2);
+        display: inline-block;
+      }
+    }
+  }
+
+  .GameMore__Game__Wrapper {
+    display: flex;
+    flex-wrap: wrap;
+
+    > .Game__Box:nth-child(6n + 1) {
+      margin-left: 0;
+    }
+  }
+
+  // GameBox
+  .Game__Box {
+    cursor: pointer;
+    margin: 0 0 40px;
+
+    .Game__Box__Image__Wrapper {
+      position: relative;
+      width: 170px;
+      height: 170px;
+      border-radius: 16px;
+      border: solid 1px rgba(255, 255, 255, 0.1);
+      overflow: hidden;
+    }
+
+    .Game__Info {
+      width: 170px;
+      margin: 0 auto;
+    }
+
+    .Game__Box__Image {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition: 0.5s transform;
+
+      &:hover {
+        transform: translate(-50%, -50%) scale(1.1);
+      }
+    }
+
+    .typeIcon {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 53px;
+      height: 53px;
+    }
+
+    .Game__Box:active .Game__Box__Image__Wrapper::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.3);
+      width: 100%;
+      height: 100%;
+    }
+
+    .Game__Info__Top {
+      min-height: 86px;
+    }
+
+    .Game__Box__Title {
+      display: inline-block;
+      max-width: 98%;
+      font-size: 20px;
+      font-weight: 500;
+      color: #ffffff;
+      margin: 20px 0 8px;
+      overflow: hidden;
+      border-bottom: 1px solid transparent;
+      transition: 0.5s border;
+      white-space: normal;
+      line-height: 1.3;
+      max-height: 2.6em;
+      word-wrap: break-word; 
+      display: -webkit-box; 
+      -webkit-line-clamp: 2; 
+      -webkit-box-orient: vertical; 
+    }
+
+    // .Game__Box:hover .Game__Box__Title {
+    //   border-bottom: 1px solid #fff;
+    // }
+
+    .Game__Box__Maker {
+      position: relative;
+      font-size: 18px;
+      color: rgba(255, 255, 255, 0.5);
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      padding-left: 27px;
+      line-height: 22px;
+    }
+
+    .Game__User__Icon {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+    }
+
+    .Game__Etc {
+      margin-top: 10px;
+      line-height: 16px;
+      
+      span {
+        position: relative;
+        padding-left: 18px;
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.5);
+        margin-right: 9px;
+        font-weight: 500;
+      }
+
+      .like::after,
+      .view::after,
+      .comment::after {
+        content: "";
+        width: 16px;
+        height: 16px;
+        position: absolute;
+        top: 2px;
+        left: 0;
+        background: url("../../../../Image/dreamclass/play-likes-icon.svg") no-repeat center/cover;
+      }
+
+      .view::after {
+        background: url("../../../../Image/dreamclass/play-views-icon.svg") no-repeat center/cover;
+      }
+
+      .comment::after {
+        background: url("../../../../Image/dreamclass/play-comments-icon.svg") no-repeat center/cover;
+      }
+    }
+  }
+
+  .Game__Box + .Game__Box {
+    margin-left: 30px;
+  }
+
+  .GameList__SearchPlaceholder {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 30px;
+    height: 270px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    
+    .GameList__SearchPlaceholder_Icon {
+      margin: auto auto 0 auto;
+      width: 150px;
+      height: 150px;
+      object-fit: contain;
+    }
+    .GameList__SearchPlaceholder_Message {
+      margin: 20px auto auto auto;
+      font-size: 22px;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.5);
+    }
+  }
+  .GameList__SearchPlaceholderGames {
+    margin-top: 20px;
+
+    .GameList__SearchPlaceholderGames_Title {
+      margin-bottom: 30px;
+      font-size: 22px;
+      font-weight: bold;
+    }
+  }
+  
+
+  @media screen and (max-width:1170px) {
+    .Page--Inner {
+      width: 88.33vw;
+    }
+
+    .backBtn {
+      margin: 20px 0 21.5px;
+    }
+
+    .GameMore__Title {
+      padding-bottom: 20px;
+    }
+
+    .CourseTabList {
+      flex-wrap: wrap;
+    }
+
+    .GameMore__Game__Wrapper {
+      margin-top: 10px;
+      margin-bottom: 50px;
+    }
+
+    .GameMore__Game__Wrapper {
+      display: flex;
+      flex-wrap: wrap;
+
+      .Game__Box {
+        width: 42.77vw;
+        margin-left: auto;
+        margin-bottom: 20px;
+
+        .Game__Box__Image__Wrapper {
+          width: 42.77vw;
+          height: 42.77vw;
+        }
+
+        .Game__Info {
+          width: 42.77vw;
+
+          .Game__Box__Title {
+            font-size: 16px;
+          }
+
+          .Game__Box__Maker {
+            .Game__User__Icon {
+              width: 18px;
+              height: 18px;
+            }
+            font-size: 14px;
+          }
+        }
+
+        .Game__Info__Top {
+          min-height: 60px;
+        }
+      }
+  
+      > .Game__Box:nth-child(2n + 1) {
+        margin-left: 0;
+      }
+    }
+    
+  }
+}
+.GameList-search {
+  padding-top: 0;
+
+  .GameMore__Title {
+    padding-top: 10px;
+    font-size: 16px;
+    font-weight: normal;
+    color: rgba(255, 255, 255, 0.5);
+  }
+}

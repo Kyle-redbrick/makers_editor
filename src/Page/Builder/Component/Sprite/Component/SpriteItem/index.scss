@@ -1,0 +1,64 @@
+.Page--BUILDER {
+  .SpriteItem {
+    cursor: pointer;
+    position: relative;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .SpriteItemSelected {
+    box-sizing: border-box;
+    .SpriteItemThumb {
+      border: 1px solid var(--W_PointColor);
+    }
+  }
+  .SpriteItemRemove {
+    cursor: pointer;
+    position: absolute;
+    top: 5px;
+    right: 21px;
+    img {
+      display: block;
+      width: 12px;
+      height: 12px;
+    }
+  }
+  .SpriteItemLock {
+    position: absolute;
+    top: 5px;
+    right: 21px;
+    img {
+      display: block;
+    }
+  }
+
+  .SpriteItemThumb {
+    cursor: pointer;
+    width: 68px;
+    height: 68px;
+    background-color: var(--W_Gray06);
+    border-radius: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .SpriteItemThumbImg {
+    display: block;
+    object-fit: cover;
+    width: 90%;
+    height: 90%;
+  }
+  .SpriteItemThumbImgBG {
+  }
+  .SpriteItemName {
+    text-align: center;
+    width: 90%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 12px;
+    letter-spacing: -0.26px;
+    color: var(--W_Gray03);
+    margin: 6px 0;
+  }
+}

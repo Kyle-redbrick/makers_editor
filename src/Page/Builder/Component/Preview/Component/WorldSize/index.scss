@@ -1,0 +1,32 @@
+.preview_worldSize {
+  margin: auto 0 auto auto;
+  display: flex;
+  color: var(--W_Gray03);
+  pointer-events: none;
+
+  .preview_worldSize_size {
+    margin-left: 6px;
+    display: flex;
+    font-size: 13px;
+    pointer-events: auto;
+
+    input {
+      width: 48px;
+      height: 21px;
+      margin: auto 0 auto 6px;
+      padding: 0 6px;
+      text-align: right;
+      color: var(--W_Gray03);
+      background-color: var(--W_HeaderBG);
+      border: 1px solid var(--W_Gray01);
+      border-radius: 3px;
+      box-sizing: border-box;
+      outline: none;
+    }
+    input[type="number"]::-webkit-outer-spin-button,
+    input[type="number"]::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
+}

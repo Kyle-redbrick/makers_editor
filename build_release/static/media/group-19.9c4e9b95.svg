@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="10px" height="14px" viewBox="0 0 10 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 64 (101010) - https://sketch.com -->
+    <title>52959B96-7190-4FD1-BF6D-094A571DCCE2</title>
+    <desc>Created with sketchtool.</desc>
+    <g id="design-system" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon" transform="translate(-98.000000, -637.000000)">
+            <g id="Group-19" transform="translate(95.000000, 636.000000)">
+                <rect id="Rectangle-Copy-70" x="0" y="0" width="16" height="16"></rect>
+                <g id="italic" transform="translate(3.000000, 1.000000)" fill="#E5E6E8" fill-rule="nonzero">
+                    <path d="M9.589,1 C9.58351559,0.446101574 9.13292558,0 8.579,0 L4.079,0 C3.52507442,0 3.07448441,0.446101574 3.069,1 L3.069,1.463 C3.069,2.0208076 3.5211924,2.473 4.079,2.473 L5.145,2.473 L2.574,11.526 L1.421,11.526 C0.867074424,11.5259728 0.416484411,11.9721016 0.410999504,12.526 L0.410999504,12.989 C0.410734612,13.2570419 0.517027851,13.5141963 0.706468365,13.7038244 C0.895908879,13.8934525 1.15295799,14 1.421,14 L5.993,14 C6.54963567,13.9983466 7.00000246,13.5466381 7,12.99 L7,12.527 C6.99451559,11.9731016 6.54392558,11.5269728 5.99,11.527 L4.861,11.527 L7.432,2.474 L8.579,2.474 C9.1368076,2.474 9.589,2.0218076 9.589,1.464 L9.589,1 Z" id="Italic"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,54 @@
+.builder--home__myPublished {
+  height: 100%;
+  overflow-y: auto;
+
+  .myPublished__title {
+    font-size: 20px;
+    color: #ffffff;
+    margin-bottom: 45px;
+  }
+  .bottom__header {
+    display: flex;
+  }
+
+  .bottom__projectItems {
+    display: flex;
+    flex-wrap: wrap;
+    width: calc(100vw - 268px);
+  }
+
+  .projectItem__toggle {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .projectItem {
+    margin-bottom: 45px;
+  }
+
+  .projectItem__detail {
+    bottom: 30px;
+  }
+
+  .bottom__time {
+    margin-bottom: 3px;
+  }
+
+  .toggle__text {
+    margin: 0 5px 3px 0;
+    font-size: 12px;
+    letter-spacing: -0.22px;
+    color: #ffffff;
+  }
+
+  .toggle__img {
+    margin-top: 2px;
+    width: 35px;
+    height: 15px;
+    cursor: pointer;
+  }
+
+  .toggle__img:hover {
+    opacity: 1;
+  }
+}

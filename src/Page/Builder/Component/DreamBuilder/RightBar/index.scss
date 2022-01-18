@@ -1,0 +1,33 @@
+.dream .RightBar {
+  position:fixed;
+  right: 22px;
+  top: 302px;
+  display: flex;
+  flex-direction: column;
+  .btn {
+    cursor: pointer;
+    width: 44px;
+    height: 44px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15);
+    background-color: #393e4f;
+    border-radius: 22px;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    
+    img {
+      display: block;
+    }
+    &.hidden {
+      display: none;
+    }
+  }
+  .btnActive {
+    background-color: var(--W_PointColor);
+  }
+}
+.dream .RightBar_block {
+  top: 200px;
+} 

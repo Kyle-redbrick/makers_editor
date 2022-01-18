@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="240" viewBox="0 0 240 240">
+    <defs>
+        <linearGradient id="9hcr4le49a" x1="50%" x2="25.531%" y1="0%" y2="105.327%">
+            <stop offset="0%" stop-color="#9E78D4"/>
+            <stop offset="100%" stop-color="#636EDF"/>
+        </linearGradient>
+        <linearGradient id="jy7mhgj25b" x1="44.257%" x2="55.743%" y1="50%" y2="55.465%">
+            <stop offset="0%" stop-color="#4B2C58"/>
+            <stop offset="100%" stop-color="#774F87"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g>
+                <g>
+                    <path d="M0 0H240V240H0z" transform="translate(-557 -154) translate(461 139) translate(96 15)"/>
+                    <g>
+                        <g transform="translate(-557 -154) translate(461 139) translate(96 15) translate(20 25)">
+                            <g transform="translate(20.616 42.235)">
+                                <path fill="url(#9hcr4le49a)" d="M51.083 13.504c7.414-7.112 30.553 4.742 51.682 26.476 21.13 21.734 32.249 45.118 24.835 52.23-.597.572-1.295 1.022-2.086 1.353-1.368 1.213-4.038 2.583-8.01 4.11-6.7 2.576-44.213 17.215-112.538 43.915-1.54-.337-2.755-1.121-3.645-2.354-.89-1.233-1.33-2.741-1.32-4.526 9.67-26.594 18.063-48.426 25.18-65.496 10.674-25.605 21.539-46.74 23.481-51.227.161-.371.323-.722.485-1.052.361-1.378 1.001-2.533 1.936-3.43z"/>
+                                <ellipse cx="89.617" cy="52.212" fill="url(#jy7mhgj25b)" rx="18.579" ry="54.821" transform="rotate(-44 89.617 52.212)"/>
+                            </g>
+                            <path stroke="#8FBCEA" stroke-linecap="round" stroke-linejoin="round" stroke-width="7.2" d="M82.028 27.657L105.035 33.41 97.899 54.623 115.294 61.247 108.575 82.417" transform="rotate(29 98.66 55.037)"/>
+                            <path stroke="#A79AEF" stroke-linecap="round" stroke-linejoin="round" stroke-width="5.4" d="M0 70.47s6.713-1.44 20.138-4.316l-6.779 17.608 12.24.003-1.998 10.188"/>
+                            <path stroke="#ECBBBA" stroke-linecap="round" stroke-linejoin="round" stroke-width="5.4" d="M69.427 35.848c-9.038 6.533-12.576 13.167-10.615 19.903"/>
+                            <path stroke="#E7B1B1" stroke-linecap="round" stroke-linejoin="round" stroke-width="7.2" d="M194.409 113.583c-17.625-10.773-36.192-11.883-55.7-3.332"/>
+                            <circle cx="45.874" cy="112.914" r="5.399" fill="#DB6028" transform="rotate(45 45.874 112.914)"/>
+                            <circle cx="140.591" cy="63.547" r="7.199" fill="#E38DA7" transform="rotate(45 140.59 63.547)"/>
+                            <circle cx="188.337" cy="127.023" r="2.699" fill="#E0762F" transform="rotate(45 188.337 127.023)"/>
+                            <circle cx="134.276" cy="164.973" r="5.399" fill="#DF7665" transform="rotate(45 134.276 164.973)"/>
+                            <path stroke="#AF97EF" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.3" d="M184.704 144.256L190.137 158.542 174.309 158.518 178.375 174.571 164.118 174.55 164.135 185.697" transform="rotate(109 177.128 164.977)"/>
+                            <circle cx="141.493" cy="17.771" r="9.898" stroke="#EDCE65" stroke-width="5.4" transform="rotate(45 141.493 17.771)"/>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

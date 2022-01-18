@@ -1,0 +1,50 @@
+.QRPopup {
+  background: var(--W_White);
+  border-radius: 18px;
+  /* header */
+  .QRPopup__header {
+    .header__title {
+      color: var(--W_Gray03);
+    }
+  }
+
+  .QR__desc {
+    color: var(--W_Gray03);
+  }
+
+  // PhoneDropDown
+  .PhoneDD__header {
+    border: 1px solid var(--W_Gray01);
+    background-color: var(--editorColor11);
+  }
+  .PhoneDD__countryRow {
+    border-right: 1px solid var(--W_Gray01);
+  }
+
+  .PhoneDD__title {
+    color: var(--W_Gray03);
+  }
+  .PhoneDD__input {
+    background-color: var(--editorColor11);
+    color: var(--W_Gray03);
+  }
+
+  .PhoneDD__body {
+    background-color: var(--W_White);
+    border: solid 1px var(--W_Gray01);
+  }
+  .PhoneDD__item {
+    color: var(--W_Gray03);
+  }
+  .PhoneDD__item--on {
+    background-color: var(--W_Gray01);
+  }
+  .PhoneDD__item:hover {
+    background-color: var(--W_Gray01);
+  }
+  .QRPopupSNSItem {
+    img {
+      border: none;
+    }
+  }
+}

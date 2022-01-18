@@ -1,0 +1,89 @@
+.NotiPopup {
+  width: 370px;
+  max-height: 460px;
+  background-color: #151516;
+  color: #c4c4c4;
+  overflow-y: scroll;
+  border-radius: 16px;
+
+  .NotiContent {
+    height: 100%;
+  }
+  
+  .NotiItem {
+    min-height: 72px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #19191a;
+  }
+  .NotiItem:hover {
+    background-color: #151516;
+  }
+  .NotiItemCursor {
+    cursor: pointer;
+  }
+
+  .NotiItemIcon {
+    width: 40px;
+    height: 40px;
+    margin: 16px 10px auto 20px;
+    border-radius: 20px;
+  }
+  .NotiItemProjecticon {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    min-height: 40px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .NotiItemInfo {
+    margin-right: 20px;
+    width: 100%;
+    flex: 1;
+    font-size: 14px;
+  }
+  .NotiItemMsg {
+  }
+  .NotiItemDate {
+    font-size: 12px;
+    margin-top: 3px;
+  }
+  .NotiItemMore {
+    cursor: pointer;
+    line-height: 45px;
+    text-align: center;
+  }
+  .NotiEmpty {
+    box-sizing: border-box;
+    padding: 10px;
+    height: 84px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 1.47;
+    color: rgba(255, 255, 255, 0.5);
+    span {
+      line-height: 64px;
+    }
+  }
+  .NotiClose {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 20px;
+    height: 20px;
+    display: block;
+    cursor: pointer;
+    z-index: 3;
+  }
+  @media screen and (max-width: 1079px) {
+    width: 100%;
+    height: 100%;
+    max-height: unset;
+  }
+}
+
+

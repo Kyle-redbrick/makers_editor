@@ -1,0 +1,24 @@
+.social_menus {
+  width: 400px;
+  background-color: #140f25;
+
+  .social_menu {
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+    font-size: 16px;
+    color: #ffffff;
+    border-top: 1px solid #97979797;
+    cursor: pointer;
+  }
+  .social_menu:first-of-type {
+    border: none;
+  }
+  .social_menu-cancel {
+    color: #848484;
+  }
+
+  @media screen and (max-width: 1079px) {
+    width: 300px;
+  }
+}

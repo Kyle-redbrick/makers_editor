@@ -1,0 +1,126 @@
+.LectureSlide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .LectureSlide--Tutor {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+
+    .LectureSlide--Content {
+      width: 100%;
+      border: 1px solid #979797;
+      text-align: center;
+    }
+
+    .LectureSlide--Content--content {
+      height: auto;
+      img {
+        width: 100%;
+      }
+    }
+
+    .LectureSlide--Content--control {
+      background-color: #eee;
+      height: 64px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .Control--firstbutton,
+    .Control--lastbutton {
+      border: none;
+      background: none;
+      cursor: pointer;
+      font-size: 16px;
+      color: #4a4a4a;
+    }
+
+    .Control--firstbutton {
+      margin-left: 52px;
+    }
+
+    .Control--lastbutton {
+      margin-right: 58px;
+    }
+
+    .Control--prev,
+    .Control--next {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .Control--prev--text {
+      color: #4a4a4a;
+      margin-left: 8px;
+      font-size: 16px;
+    }
+
+    .Control--next--text {
+      color: #4a4a4a;
+      margin-right: 8px;
+      font-size: 16px;
+    }
+
+    .Control--pageinfo {
+      font-size: 20px;
+      font-style: bold;
+      color: #4a4a4a;
+    }
+
+    .Exit {
+      width: 38px;
+      height: 34px;
+      margin-left: 8px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: white;
+      cursor: pointer;
+
+      img {
+        margin-bottom: 4px;
+      }
+    }
+  }
+
+  .LectureSlide--Student {
+    width: 50%;
+
+    .LectureSlide--Content {
+      width: 100%;
+      border: 1px solid #979797;
+      text-align: center;
+    }
+
+    .LectureSlide--Content--content {
+      height: auto;
+      img {
+        width: 100%;
+      }
+    }
+
+    .LectureSlide--Content--control {
+      background-color: #eee;
+      height: 64px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+    }
+    .Control--pageinfo {
+      font-size: 20px;
+      font-style: bold;
+      color: #4a4a4a;
+    }
+  }
+}

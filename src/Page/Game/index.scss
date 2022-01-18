@@ -1,0 +1,459 @@
+.Page--Game {
+  width: 100%;
+  background: #000000;
+  color: #ffffff;
+  margin-bottom: 69px;
+  a {
+    color: inherit;
+    text-decoration: inherit;
+    outline: inherit;
+  }
+
+  // slick
+  .slick-slider {
+    width: 1200px;
+    min-height: 287px;
+  }
+
+  .slick-prev, .slick-next {
+    width: 35px;
+    height: 35px;
+    left: -40px;
+    background: url("../../Image/dreamclass/play-slide-back-active.svg") no-repeat center/cover;
+
+    &::before {
+      display: none;
+    }
+
+    &.slick-disabled {
+      background: url("../../Image/dreamclass/play-slide-back-inactive.svg") no-repeat center/cover;
+    }
+  }
+
+  .slick-next {
+    left: unset;
+    right: -40px;
+    background: url("../../Image/dreamclass/play-slide-next-active.svg") no-repeat center/cover;
+
+    &.slick-disabled {
+      background: url("../../Image/dreamclass/play-slide-next-inactive.svg") no-repeat center/cover;
+    }
+  }
+
+  .GameSearchWrapper {
+    width: 1170px;
+    margin: 0 auto;
+    padding-top: 20px;
+  }
+  .GameSearch {
+    width: 370px;
+    height: 52px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    margin-bottom: 30px;
+    position: relative;
+    input {
+      display:block;
+      width:calc(100% - 16px - 50px);
+      height:100%;
+      border:none;
+      background:transparent;
+      outline: none;
+      padding-left: 16px;
+      padding-right: 50px;
+      font-size: 16px;
+      color: rgba(255, 255, 255, 0.5);
+    }
+    img {
+      display:block;
+      position: absolute;
+      right:13px;
+      top:13px;
+      cursor: pointer;
+    }
+  }
+  
+  .GamesSection {
+    position: relative;
+    width: 1170px;
+    margin: 0 auto;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 20px;
+    padding-bottom: 40px;
+  }
+
+  .GamesTitle {
+    margin-bottom: 30px;
+    font-size: 22px;
+    font-weight: bold;
+  }
+
+  .GameAllButton {
+    position: absolute;
+    top: 26px;
+    right: 0;
+    font-size: 15px;
+    color: #ff6f44;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  // editors game item
+  .EditorsGameItem {
+    display: block;
+    cursor: pointer;
+    width: 370px;
+    height: 287px;
+    border-radius: 16px;
+    overflow: hidden;
+    color: inherit;
+    text-decoration: inherit;
+    outline: none;
+  }
+  .EditorsGameItemImg {
+    display: block;
+    width: 100%;
+    height: 208px;
+    object-fit: cover;
+  }
+  .EditorsGameItemInfo {
+    box-sizing: border-box;
+    height: calc(100% - 208px);
+    padding: 21px 20px;
+    background-color: #1c1c1c;
+  }
+  .EditorsGameItemIcon {
+    position: absolute;
+    width: 38px;
+    height: 38px;
+  }
+  .EditorsGameItemTitle,
+  .EditorsGameItemDesc {
+    position: relative;
+    top: -3px;
+    margin-left: 48px;
+  }
+  .EditorsGameItemTitle,
+  .EditorGameItemUserName {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: 500;
+  }
+  .EditorsGameItemTitle {
+    font-size: 16px;
+  }
+  .EditorsGameItemDesc {
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    color: #8d8d92;
+  }
+  .EditorGameItemUserIcon {
+    width: 20px;
+    height: 20px;
+    border: solid 0.9px rgba(255, 255, 255, 0.1);
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  .EditorGameItemUserName {
+    margin-left: 7px;
+  }
+
+  //game item 공통 부분 여기서 처리
+  .GameItem {
+    position: relative;
+    display: flex;
+    cursor: pointer;
+    width: 370px;
+  }
+  .GameItemImg {
+    box-sizing: border-box;
+    display: block;
+    object-fit: cover;
+    border-radius: 16px;
+    border: solid 1px rgba(255, 255, 255, 0.1);
+  }
+  .GameItemIcon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 53px;
+    height: 53px;
+  }
+  .GameItemInfo {
+    width: 100%;
+    margin-left: 15px;
+  }
+  .GameItemUserInfo {
+    display: flex;
+    align-items: center;
+  }
+  .GameItemTitle {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    width: 220px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word; 
+	  display: -webkit-box;
+    line-height: 1.3; 
+	  max-height: 2.6em;
+    -webkit-line-clamp: 2;
+	  -webkit-box-orient: vertical;
+  }
+  .GameItemUserIcon {
+    object-fit: cover;
+    width: 22px;
+    height: 22px;
+  }
+  .GameItemUserName {
+    width: 193px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-left: 5px;
+    font-size: 18px;
+    line-height: 1.22;
+    color: rgba(255, 255, 255, 0.5);
+  }
+  .GameItemCounts {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .GameItemCountImg {
+    position: relative;
+    top: 1px;
+    margin-right: 2px;
+    display: block;
+  }
+  .GameItemCount {
+    display: flex;
+    font-size: 12px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.5);
+    margin-right: 10px;
+  }
+
+  //game item 타입별 다른 부분만 여기서 처리
+  .GameItemLarge {
+    flex-direction: column;
+    width: 170px;
+    .GameItemImg {
+      width: 170px;
+      height: 170px;
+    }
+    .GameItemInfo {
+      margin-left: 0;
+      height: 126px;
+    }
+
+    .GameItemTitle {
+      width: 170px;
+      margin-top: 20px;
+    }
+  }
+  .GameItemMedium {
+    width: 100%;
+    &.GameItem0,
+    &.GameItem2,
+    &.GameItem4 {
+      padding-bottom: 15px;
+
+      .GameItemInfo {
+        position: relative;
+        width: calc(100% - 135px - 15px - 30px); // 15px: left margin, 30px: right margin
+        height: calc(135px + 14.5px);
+        border-bottom: solid 1px rgba(255, 255, 255, 0.2);
+      }
+      .GameItemCounts {
+        bottom: 14.5px;
+      }
+    }
+
+    .GameItemImg {
+      width: 135px;
+      height: 135px;
+      min-width: 135px;
+      min-height: 135px;
+    }
+  }
+  .GameItemSmall {
+    width: 100%;
+    &.GameItem0,
+    &.GameItem1,
+    &.GameItem3,
+    &.GameItem4 {
+      padding-bottom: 15px;
+
+      .GameItemInfo {
+        position: relative;
+        width: calc(100% - 90px - 15px - 30px); // 15px: left margin, 30px: right margin
+        height: calc(90px + 14.5px);
+        border-bottom: solid 1px rgba(255, 255, 255, 0.2);
+
+        .GameItemCounts {
+          bottom: 14.5px;
+        }
+      }
+    }
+
+    .GameItemImg {
+      width: 90px;
+      height: 90px;
+      min-width: 90px;
+      min-height: 90px;
+    }
+
+    .GameItemTitle {
+      width: 270px;
+      font-size: 20px;
+      font-weight: 500;
+      margin-bottom: 8px;
+      height: 1.3em;
+      -webkit-line-clamp: 1;
+    }
+
+    .GameItemUserName {
+      width: 243px;
+    }
+  }
+
+  @media screen and (max-width: 1169px) {
+    .GameSearchWrapper,
+    .GameSearch,
+    .GamesSection {
+      width: calc(100vw - 42px);
+    }
+
+    // slick
+    .slick-slider {
+      min-height: unset;
+      width: calc(100vw - 21px);
+    }
+
+    .slick-arrow {
+      display: none !important;
+    }
+
+    // editors game item
+    .EditorsGameItem {
+      width: calc(100vw - 42px);
+      height: calc((100vw - 42px) * (179 / 318) + 69px); // 69px : EditorsGameItemInfo의 고정 높이
+    }
+
+    .EditorsGameItemImg {
+     height: calc((100vw - 42px) * (179 / 318));
+    }
+
+    .EditorsGameItemInfo {
+      padding: 16px 15px;
+      border-radius: 0 0 16px 16px;
+      height: 69px;
+    }
+
+    // 공통
+    .GamesTitle {
+      margin-bottom: 20px;
+    }
+
+    .GameItem {
+      width: 100%;
+      .GameItemTitle {
+        width: 100%;
+        font-size: 16px;
+        margin-bottom: 5px;
+      }
+      .GameItemUserIcon {
+        width: 18px;
+        height: 18px;
+      }
+      .GameItemInfo {
+        width: 100%;
+        margin-left: 10px;
+      }
+      .GameItemUserName {
+        font-size: 14px;
+      }
+    }
+
+    .GameItemSmall {
+      &.GameItem0,
+      &.GameItem1,
+      &.GameItem3,
+      &.GameItem4 {
+        .GameItemInfo {
+          width: calc(100vw - 42px - 20vw - 10px);
+          height: calc(20vw + 14.5px);
+
+          .GameItemCounts {
+            bottom: 14.5px;
+          }
+        }
+      }
+
+      .GameItemTitle {
+        width: calc(100vw - 42px - 20vw - 10px);
+        margin-bottom: 5px;
+      }
+      .GameItemUserName {
+        width: calc(100vw - 42px - 20vw - 10px - 18px - 5px);
+      }
+
+      .GameItemImg {
+        width: 20vw;
+        height: 20vw;
+        min-width: 20vw;
+        min-height: 20vw;
+      }
+    }
+
+    .GameItemMedium {
+      &.GameItem0,
+      &.GameItem2,
+      &.GameItem4 {
+        .GameItemInfo{
+          width: calc(100vw - 42px - 33.33vw - 10px);
+          height: calc(33.33vw + 14.5px);
+        }
+      }
+
+      .GameItemImg {
+        width: 33.33vw;
+        height: 33.33vw;
+        min-width: 33.33vw;
+        min-height: 33.33vw;
+      }
+
+      .GameItemTitle {
+        width: calc(100vw - 42px - 33.33vw - 10px);
+      }
+      .GameItemUserName {
+        width: calc(100vw - 42px - 33.33vw - 10px - 18px - 5px);
+      }
+    }
+
+    .GameItemLarge {
+      width: calc((100vw - 42px) * (154 / 318));
+      .GameItemImg {
+        width: 100%;
+        height: calc((100vw - 42px) * (154 / 318));
+      }
+      .GameItemInfo {
+        height: 103px;
+        margin-left: 0;
+      }
+      .GameItemTitle {
+        margin-top: 15px;
+        margin-bottom: 5px;
+      }
+      .GameItemUserName {
+        width: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,58 @@
+.Page--Mypage {
+  margin-top: 20px;
+  min-width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  .Mypage--Inner {
+    width: 1170px;
+  }
+
+  .Mypage__Activity {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+
+    .Activity_Contents {
+      margin-top: 40px;
+      margin-bottom: 100px;
+    }
+  }
+}
+
+@media screen and (max-width: 1169px) {
+  .Page--Mypage {
+    .Mypage--Inner {
+      width: calc(100vw - 42px);
+    }
+
+    .Mypage__Activity {
+      margin-top: 30px;
+      
+      .Activity_Tabs {
+        margin-top: 23px;
+        display: flex;
+
+        .Activity_Tabs-tap {
+          width: unset;
+          margin: 0 15px;
+        }
+      }
+      .Activity_Tabs_Ani {
+        display: none;
+      }
+      .Activity_Contents {
+        width: 100%;
+        margin: 0 0 50px;
+      }
+    }
+
+    .UserInfoTemplate-tooltip {
+      display: none;
+    }
+  }
+}

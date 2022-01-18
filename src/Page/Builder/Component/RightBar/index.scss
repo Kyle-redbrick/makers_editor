@@ -1,0 +1,39 @@
+.Page--BUILDER {
+  .RightBar {
+    position: absolute;
+    right: 25px;
+    top: 16px;
+    display: flex;
+    z-index: 3;
+  }
+  .RightBarButton {
+    position: relative;
+    cursor: pointer;
+    font-weight: bold;
+    width: 38px;
+    height: 38px;
+    text-align: center;
+    background: var(--W_White);
+    box-shadow: 5px 5px 15px 0px var(--W_Shadow);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+  }
+  .RightBarButton_Active {
+    background-color: var(--W_PointColor);
+  }
+  .RightBarRedDot {
+    background: var(--W_Red);
+    display: block;
+    padding: 3px;
+    font-size: 10px;
+    color: var(--W_White);
+    line-height: 1em;
+    border-radius: 10px;
+    position: absolute;
+    top: 3px;
+    right: 3px;
+  }
+}

@@ -1,0 +1,184 @@
+.Page--BUILDER {
+  .ProjectListContainer {
+    z-index: 10;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .Modal__overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    opacity: 0.5;
+  }
+
+  .Modal__layout {
+    position: relative;
+    z-index: 2;
+    width: 438px;
+    height: 496px;
+    background: white;
+    border-radius: 7px;
+    box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.2);
+    padding: 16px;
+  }
+  .Modal__header {
+    display: flex;
+    margin-bottom: 24px;
+    margin-top: 14px;
+  }
+  .Modal__title {
+    font-weight: bolder;
+    width: 100%;
+    text-align: center;
+    line-height: 24px;
+    font-size: 28px;
+    color: #000000;
+  }
+  .Modal__closeBtn {
+    width: 24px;
+    height: 24px;
+    position: relative;
+    cursor: pointer;
+    // left: 103px;
+    // top: 5px;
+  }
+
+  /* category */
+  .ProjectList_OptionBox {
+    display: flex;
+    position: relative;
+  }
+  .CategoryDD__header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    width: 304px;
+    height: 40px;
+    border-radius: 4px;
+    border: solid 1px #e3e8f0;
+    background-color: #fcfcfc;
+    padding: 10px 8px 10px 20px;
+  }
+  .CategoryDD__header.DD_toggle_on {
+    box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.24), 0 0 8px 0 rgba(0, 0, 0, 0.12);
+    background-color: var(--white);
+    border: 0px;
+  }
+  .ProjectList_Option--title {
+    font-size: 12px;
+  }
+  .DD_arrow--on {
+    width: 24px;
+    height: 24px;
+    background: url("../../../../Image/arrow-drop-up-btn.svg");
+  }
+  .DD_arrow--off {
+    width: 24px;
+    height: 24px;
+    background: url("../../../../Image/arrow-drop-down-btn.svg");
+  }
+  .ProjectList_Option--body {
+    overflow: hidden;
+    position: absolute;
+    top: 37px;
+    left: 0;
+    background-color: #ffffff;
+    width: 100%;
+    -moz-box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.24);
+    box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.24);
+    border-radius: 0px 0px 4px 4px;
+  }
+  .CategoryDD__body.DD_toggle_off {
+    box-shadow: none;
+    border-top: 10px;
+  }
+  .ProjectList_Option__list {
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    overflow-y: auto;
+    padding-top: 8px;
+    padding-bottom: 14px;
+    border-top: 1px solid rgba(0, 0, 0, 0.12);
+  }
+  .DD__item {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 32px;
+    font-size: 12px;
+    line-height: 1.25;
+    color: rgba(0, 0, 0, 0.87);
+    padding-left: 20px;
+    cursor: pointer;
+  }
+  .DD__item.select--on {
+    background-color: #eeeeee;
+  }
+  .ItemBox--on {
+    background-color: rgba(35, 216, 175, 0.2);
+  }
+  .ProjectList_ListArea {
+    margin-top: 24px;
+    height: 330px;
+    overflow: scroll;
+  }
+  .list_ItemBox {
+    display: flex;
+    cursor: pointer;
+  }
+  .list_ItemBox:hover {
+    background-color: rgba(235, 235, 235, 0.28);
+  }
+  .list_Item_row {
+    margin: 3px 0px 3px 10px;
+    width: 240px;
+  }
+  .list_Item_title {
+    font-size: 16px;
+    color: #4a4a4a;
+    padding-left: 4px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .ProjectList__row {
+    margin-top: 24px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .two_btn {
+    cursor: pointer;
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 16px;
+    color: #23d8af;
+    outline: none;
+    width: 155px;
+    height: 43px;
+    border-radius: 25px;
+    border: solid 1px #23d8af;
+  }
+
+  .btn_yes {
+    background-color: #23d8af;
+    color: white;
+    margin-left: 16px;
+  }
+}

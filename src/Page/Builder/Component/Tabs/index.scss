@@ -1,0 +1,121 @@
+.HeaderTabs {
+  display: flex;
+  align-items: center;
+  font-family: "Noto Sans KR", sans-serif;
+  width: 100%;
+  height: 44px;
+  padding-left: 172px;
+  background: #161925;
+  padding-top: 10px;
+  .HeaderTab {
+    width: calc((100% - 172px) / 5);
+    max-width: 246px;
+    box-shadow: inset 0 -1px 0 0 #282c36;
+    display: flex;
+    align-items: center;
+    height: 44px;
+    cursor: pointer;
+    position: relative;
+  }
+  .TutorTab::before {
+    content: "";
+    top: 0;
+    left: 0;
+    width: 0.1px;
+    height: 68px;
+    background: #393e4f;
+  }
+  .HeaderTab__items {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    pointer-events: none;
+    padding: 0 10px;
+  }
+  .HeaderTab__item {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    pointer-events: none;
+    height: 44px;
+  }
+  .HeaderTab__icons {
+    display: flex;
+    align-items: center;
+  }
+  .HeaderTab__icons > * {
+    margin-left: 4px;
+  }
+  .HeaderTab__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 98px;
+    height: 26px;
+    border-radius: 6px;
+    background-color: #393e4f;
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 1;
+    color: #ffffff;
+  }
+  img + span {
+    margin-left: 4px;
+  }
+  span + span {
+    margin-left: 4px;
+  }
+
+  .HeaderTab__num {
+    padding: 1px 7px;
+    border-radius: 5px;
+    border: solid 1px rgba(255, 255, 255, 0.3);
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    color: #ffffff;
+    margin: 0 10px;
+    pointer-events: none;
+  }
+  .HeaderTab__name {
+    font-size: 16px;
+    line-height: 1.63;
+    color: #ffffff;
+    pointer-events: none;
+  }
+  .HeaderTab__numT--active {
+    background-color: #1db6ff;
+  }
+  .HeaderTab__num1--active {
+    // background-color: #ff7d3a;
+  }
+  .HeaderTab__num2--active {
+    // background-color: #ff4672;
+  }
+  .HeaderTab__num3--active {
+    // background-color: #b271ff;
+  }
+  .HeaderTab__num4--active {
+    // background-color: #00dbac;
+  }
+  .HeaderTab__numT {
+    // background-color: rgba(29, 182, 255, 0.5);
+  }
+  .HeaderTab__num1 {
+    // background-color: rgba(255, 125, 58, 0.5);
+  }
+  .HeaderTab__num2 {
+    // background-color: rgba(255, 70, 144, 0.5);
+  }
+  .HeaderTab__num3 {
+    // background-color: rgba(178, 113, 255, 0.5);
+  }
+  .HeaderTab__num4 {
+    // background-color: rgba(0, 219, 172, 0.5);
+  }
+  .active {
+    background-color: #303442;
+    border-radius: 10px 10px 0 0;
+    position: relative;
+  }
+}

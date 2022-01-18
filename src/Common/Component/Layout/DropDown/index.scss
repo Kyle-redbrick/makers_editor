@@ -1,0 +1,179 @@
+.DD {
+  display: flex;
+  position: relative;
+  color: white;
+  .DD__header {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+
+    .DDUserInfoWrapper {
+      display: flex;
+      align-items: center;
+
+      img {
+        width: 20px;
+        margin-right: 10px;
+      }
+    }
+  }
+
+  .DD__body {
+    width: 100%;
+    position: absolute;
+    top: 70px;
+  }
+
+  .DD__list {
+    padding: 30px 20px 20px 20px;
+    position: absolute;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    width: 270px;
+    height: 297px;
+    overflow-y: auto;
+    border-radius: 16px;
+    box-shadow: 0 20px 50px 0 rgba(0, 0, 0, 0.5);
+    background-color: #1c1c1c;
+    animation: openAnimation 0.3s ease-in-out forwards;
+  }
+}
+
+@keyframes openAnimation {
+  0% {
+    opacity: 0;
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.DD__user {
+  .DD__body {
+    width: 130px;
+    left: -226px;
+  }
+}
+
+.DDItem-user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 15px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.DDItem-user-info {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.DDItem-user-icon {
+  width: 60px;
+  height: 60px;
+}
+
+.DDItem-user-name {
+  max-width: 230px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.DDItem-user-name {
+  line-height: 1;
+  margin: 20px 0 7px;
+}
+
+.DDItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 40px;
+  cursor: pointer;
+  
+  span {
+    font-size: 16px;
+    font-weight: 500;
+  }
+}
+
+.DDItem-mypage {
+  height: 50px;
+  padding-bottom: 10px;
+  border-bottom: solid 1px rgba(255, 255, 255, 0.2);
+  margin: 30px 0 10px;
+}
+
+.DDItem__text {
+  line-height: 40px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #ffffff;
+}
+.DD__userIconSize {
+  width: 44px;
+  height: 44px;
+}
+
+@media screen and (max-width: 1169px) {
+  .DD {
+    .DD__body {
+      width: 93.88vw;
+      top : 50px;
+      left: unset;
+      right: 3px;
+    }
+    .DD__list {
+      width: 93.88vw;
+      height: 240px;
+      padding: 10px 20px 20px;
+    }
+    .DDItem-user {
+      display: flex;
+      flex-direction: row;
+      margin-top: 20px;
+
+      .UserIconWrapper_Icon {
+        width: 60px;
+        height: 60px;
+      }
+
+      .DDItem-user-info  {
+        margin-left: 15px;
+        text-align: left;
+      }
+
+      .DDItem-user-name {
+        display: block;
+        margin: 0 0 7px 0;
+      }
+
+      .DDItem-user-name,
+      .DDItem-user-email {
+        width: 100%;
+      }
+    }
+    .DD__userIconSize {
+      width: 34px;
+      height: 34px;
+      .UserIconWrapper_Icon {
+        width: 34px;
+        height: 34px;
+        display: block;
+      }
+    }
+  }
+}

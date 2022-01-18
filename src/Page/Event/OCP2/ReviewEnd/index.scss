@@ -1,0 +1,21 @@
+.Page--OCPEventReview {
+  min-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  .OCPEventReview_Inner {
+    position: relative;
+    width: 1080px;
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  @media screen and (max-width: 1079px) {
+    .OCPEventReview_Inner {
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,101 @@
+.OCPCertificationContainer {
+  position: relative;
+  .OCPCertification {
+  }
+  //tools
+  .OCPCertificationContainerTools {
+    float: right;
+    display: flex;
+  }
+  .OCPCertificationContainerTools:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+  .OCPCertificationPrint {
+    padding: 15px;
+    font-size: 18px;
+    background-color: #1db6ff;
+    color: white;
+    margin-top: 20px;
+    width: 150px;
+    text-align: center;
+    cursor: pointer;
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+
+  // img
+  .OCPCertificationImg {
+    display: block;
+    width: 877px;
+    height: 619px;
+    object-fit: contain;
+  }
+  .OCPCertificationTexts {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: #434343;
+    font-family: "Noto Sans KR", sans-serif;
+  }
+
+  .OCPCertificationTexts_titleWrap {
+    position: absolute;
+    top: 60px;
+    left: 60px;
+  }
+
+  .OCPCertificationTexts_tw-title {
+    color: #f1948a;
+    font-weight: bold;
+    font-size: 25px;
+  }
+
+  .OCPCertificationTexts_tw-missionTitle {
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  .OCPCertificationTextOrgName {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 270px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .OCPCertificationText_School {
+    // border: 1px solid red;
+    margin-right: 20px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .OCPCertificationText_Name {
+    font-size: 26px;
+    font-weight: bold;
+    letter-spacing: 10px;
+  }
+  .OCPCertificationText_Date {
+    position: absolute;
+    top: 450px;
+    left: 372px;
+    font-size: 16px;
+    letter-spacing: 1.4px;
+  }
+}
+
+@media print {
+  .no-printme {
+    display: none;
+  }
+  .printme {
+    display: block;
+  }
+}
+
+@page {
+  size: landscape;
+}

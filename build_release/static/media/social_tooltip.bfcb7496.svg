@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12">
+    <g fill="none" fill-rule="evenodd">
+        <circle cx="6" cy="6" r="6" fill="#FFF"/>
+        <text fill="#191A25" font-family="NanumBarunGothicBold, NanumBarunGothic" font-size="10" font-weight="bold" letter-spacing="-.117">
+            <tspan x="3.6" y="9.4">?</tspan>
+        </text>
+    </g>
+</svg>

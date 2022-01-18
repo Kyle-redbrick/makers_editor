@@ -1,0 +1,82 @@
+.Page--BUILDER {
+  .SceneContainer {
+    width: 100%;
+    height: 100%;
+    box-shadow: 5px 5px 15px 0px var(--W_Shadow);
+    background: alpha;
+    border-radius: 20px;
+    background-color: var(--W_White);
+  }
+  .SceneTitleLine {
+    line-height: 38px;
+    display: flex;
+    border-bottom: 1px solid var(--W_Gray01);
+  }
+
+  .SceneTitle {
+    margin-left: 30px;
+    text-align: center;
+    width: 100%;
+    font-size: 13px;
+    color: var(--W_Gray03);
+  }
+  .SceneClose {
+    cursor: pointer;
+    width: 30px;
+    text-align: center;
+    margin-right: 10px;
+  }
+
+  // content
+  .SceneContent {
+    height: calc(100% - 102px);
+    background: var(--W_White);
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    border-radius: 0 0 20px 20px;
+    overflow: auto;
+  }
+
+  .Scene_Setting {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 13px 25px 15px 22px;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 82.19%;
+      height: 1px;
+      background: #282c36;
+    }
+  }
+
+  .Scene_Add,
+  .Scene_Copy {
+    float: left;
+    height: 36px;
+    width: 105px;
+    background: var(--W_Gray06);
+    cursor: pointer;
+    border-radius: 7px;
+    display: flex;
+    justify-content: center;
+  }
+  .Scene_Copy {
+    color: #fff;
+    line-height: 68px;
+    font-size: 13px;
+    margin-left: 7px;
+  }
+  .Scene_Copy_Img,
+  .Scene_Add_Img {
+    display: block;
+    object-fit: none;
+  }
+}

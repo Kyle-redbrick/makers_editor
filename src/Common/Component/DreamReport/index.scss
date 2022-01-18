@@ -1,0 +1,51 @@
+.report {
+  width: 300px;
+  text-align: center;
+
+  .report_icon {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+  }
+
+  textarea {
+    margin-top: 20px;
+    padding: 14px 16px;
+    width: 100%;
+    height: 90px;
+    font-family: "Noto Sans KR", sans-serif;
+    color: white;
+    background-color: #fff2;
+    border: none;
+    border-radius: 10px;
+    box-sizing: border-box;
+    resize: none;
+    outline: none;
+
+    &:placeholder {
+      color: #fff8;
+    }
+  }
+
+  .popup_buttons {
+    display: block;
+  }
+  .popup_button:disabled {
+    pointer-events: none;
+    opacity: 0.3;
+  }
+  .popup_button-cancel {
+    width: 100%;
+    height: 50px;
+    font-weight: bold;
+    color: #ff6f44;
+    border: none;
+    cursor: pointer;
+  }
+}
+.report-success {
+  .popup_buttons {
+    margin-top: 30px;
+    margin-bottom: 40px;
+  }
+}

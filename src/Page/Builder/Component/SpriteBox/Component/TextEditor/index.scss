@@ -1,0 +1,204 @@
+.TextEditor {
+  width: 726px;
+  height: 440px;
+  position: relative;
+
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  background: var(--W_White);
+
+  //top
+  .row__top {
+    line-height: 35px;
+    height: 36px;
+    display: flex;
+    border-bottom: 1px solid var(--W_Gray01);
+  }
+  .title {
+    margin-left: 30px;
+    text-align: center;
+    width: 100%;
+    font-size: 15px;
+    color: var(--W_Gray03);
+  }
+  .closeBtn {
+    cursor: pointer;
+    text-align: center;
+    position: absolute;
+    right: 16px;
+    top: 11px;
+  }
+
+  .TextEditor__row1 {
+    border-bottom: 1px solid var(--W_Gray01);
+    height: 40px;
+  }
+  .TextEditor__row2 {
+    height: 285px;
+    margin: 16px 16px 16px 28px;
+  }
+
+  // // TextEditorBar
+  .TextEditorBar {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+  .TextEditorBar__row1 {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 13px;
+    margin-right: 19px;
+  }
+  .TextEditorBar__row2 {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  //fontDD
+  .FontDD {
+    width: 131px;
+  }
+  // fontsize
+  .TextEditorBar__fontsize {
+    width: 65px;
+    height: 32px;
+    border-radius: 12px;
+    background-color: var(--W_Gray01);
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--W_Gray03);
+    border: none;
+    text-align: center;
+    margin-left: 9px;
+  }
+  .TextEditorBar__fontsize:focus {
+    outline: none;
+  }
+
+  // styleGroup
+  .TextEditorButton {
+    width: 18px;
+    height: 18px;
+    border: 0;
+    margin-right: 18px;
+    cursor: pointer;
+    text-align: center;
+    background: var(--W_White);
+  }
+  .TextEditorButton:focus {
+    outline: 0;
+  }
+
+  .TextEditorButton__fontweight--on {
+    background-image: url("../../../../../../Image/builder/group-18-copy.svg");
+    background-repeat: no-repeat;
+    background-position-x: center;
+    margin-right: 15px;
+  }
+  .TextEditorButton__fontweight--off {
+    background-image: url("../../../../../../Image/builder/group-18.svg");
+    background-repeat: no-repeat;
+    background-position-x: center;
+    margin-right: 15px;
+  }
+  .TextEditorButton__fontstyle--on {
+    background-image: url("../../../../../../Image/builder/group-19-copy.svg");
+    background-repeat: no-repeat;
+    background-position-x: center;
+  }
+  .TextEditorButton__fontstyle--off {
+    background-image: url("../../../../../../Image/builder/group-19.svg");
+    background-repeat: no-repeat;
+    background-position-x: center;
+  }
+
+  .TextEditorButton__color {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 14px;
+  }
+  .TextEditorButton__color__A {
+    font-family: "Jua", sans-serif;
+    font-size: 17px;
+    line-height: 0.8;
+    text-align: center;
+  }
+  .TextEditorButton__color__line {
+    height: 3px;
+    border-radius: 25%;
+  }
+
+  // pickerGroup
+  .TextEditorBar__pickerGroup {
+    display: flex;
+  }
+  .TextEditorButton__emoji--on {
+    background-image: url("../../../../../../Image/builder/emoji-2-copy.svg");
+    background-repeat: no-repeat;
+    background-position-x: center;
+  }
+  .TextEditorButton__emoji--off {
+    background-image: url("../../../../../../Image/builder/emoji-2.svg");
+    background-repeat: no-repeat;
+    background-position-x: center;
+  }
+
+  // dropdown
+  .ColorDD {
+    position: absolute;
+    left: 200px;
+    top: 40px;
+  }
+  .EmojiDD {
+    position: absolute;
+    right: 200px;
+    top: 40px;
+  }
+
+  // // TextEditorBoard
+  .TextEditorArea {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    padding: 0;
+    resize: none;
+    background-color: inherit;
+  }
+  .TextEditorArea:focus {
+    outline: none;
+  }
+
+  .emoji-mart-scroll {
+    border-bottom: 0;
+    margin-bottom: 6px;
+  }
+
+  .emoji-mart-scroll + .emoji-mart-bar {
+    display: none;
+  }
+
+  .applyBtn {
+    width: 103px;
+    height: 27px;
+    border-radius: 20px;
+    border: solid 1px var(--W_PointColor);
+    color: var(--W_PointColor);
+    background: var(--W_White);
+    font-size: 12px;
+    font-weight: 500;
+
+    cursor: pointer;
+  }
+  .TextEditor__bottom {
+    text-align: right;
+    margin-right: 16px;
+  }
+}

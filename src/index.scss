@@ -1,0 +1,485 @@
+html,
+body,
+header,
+div,
+footer {
+  padding: 0;
+  border: 0;
+  margin: 0;
+  box-sizing: border-box;
+  //   font: inherit;
+  //   color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-width: 100%;
+  min-height: 100vh;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+@font-face {
+  font-family: CookieRunBoldTTF;
+  src: url("./font/CookieRunBold.woff");
+}
+
+@font-face {
+  font-family: CookieRunTTF;
+  src: url("./font/CookieRunRegular.ttf");
+}
+
+.en {
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.ko {
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+#wizAlert {
+  white-space: pre;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+
+  .overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  .report_popup {
+    position: relative;
+    z-index: 2;
+    margin: 169px auto;
+    padding: 36px 24px;
+    width: 438px;
+    text-align: center;
+    color: #3a405b;
+    border-radius: 18px;
+    background: #fff;
+
+    .report_popup_title {
+      font-size: 28px;
+      font-weight: bold;
+    }
+    .report_popup_subtitle {
+      margin-top: 6px;
+      font-size: 16px;
+    }
+    .report_popup_textarea {
+      margin-top: 18px;
+      margin-bottom: 0;
+      height: 120px;
+      border-radius: 6px;
+    }
+    .report_popup_buttons {
+      margin-top: 12px;
+    }
+    .report_popup_button {
+      width: 155px;
+      height: 43px;
+      border-radius: 25px;
+      border: none;
+      font-size: 18px;
+      font-weight: bold;
+      color: #fff;
+      cursor: pointer;
+      outline: none;
+    }
+    .report_popup_button:hover {
+      opacity: 0.8;
+    }
+    .report_popup_button-cancel {
+      background-color: #e3e8f0;
+    }
+    .report_popup_button-report {
+      margin-left: 12px;
+      background-color: #32dab4;
+    }
+  }
+
+  .onebtn_wrapper {
+    position: relative;
+    z-index: 2;
+    background: #fff;
+    width: 438px;
+    max-width: 90%;
+    margin: 169px auto;
+    text-align: center;
+    color: #3a405b;
+    border-radius: 18px;
+    padding: 44px 15px;
+
+    .closeBtn {
+      position: absolute;
+      right: 15px;
+      top: 15px;
+      background-image: url("Image/close-btn-popup.svg");
+      background-position: center center;
+      background-repeat: no-repeat;
+      width: 24px;
+      height: 24px;
+      cursor: pointer;
+    }
+
+    .title {
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 24px;
+      white-space: pre-wrap;
+    }
+    .message {
+      font-size: 18px;
+      margin-bottom: 55px;
+    }
+
+    .okBtn {
+      cursor: pointer;
+      outline: none;
+      display: block;
+      margin: 0 auto;
+      width: 155px;
+      height: 43px;
+      border-radius: 25px;
+      border: 0;
+      background-color: #32dab4;
+      font-size: 18px;
+      font-weight: bold;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .freeTiralMessage {
+      font-size: 18px;
+      margin-bottom: 16px;
+    }
+
+    .contact {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+      color: #000000;
+      font-size: 18px;
+      opacity: 0.5;
+    }
+
+    .callImage {
+      width: 15px;
+      height: 15px;
+      margin-right: 11px;
+      background-image: url("Image/call-answer.svg");
+    }
+  }
+
+  .twobtn_wrapper {
+    position: relative;
+    z-index: 2;
+    background: #fff;
+    width: 400px;
+    max-width: 90%;
+    margin: 169px auto;
+    text-align: center;
+    color: #181818;
+    border-radius: 30px;
+    padding: 50px 15px 30px;
+    font-size: 20px;
+
+    .two_btns {
+      margin-top: 64px;
+      height: 58px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .two_btn {
+      cursor: pointer;
+      display: block;
+      font-size: 26px;
+      font-weight: bold;
+      width: 160px;
+      height: 58px;
+      line-height: 58px;
+      border-radius: 100px;
+      text-decoration: none;
+      color: #fff;
+      float: left;
+      outline: none;
+      -webkit-appearance: none;
+      border: solid 1px #e3e8f0;
+    }
+    .title {
+      font-size: 23px;
+      font-weight: bold;
+      margin-bottom: 12px;
+      white-space: pre-wrap;
+    }
+    .message {
+      font-size: 16px;
+    }
+    .checkbox_wrapper {
+      display: block;
+      position: relative;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: -20px;
+      margin-top: 30px;
+    }
+    .twobtn_checkbox {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      cursor: pointer;
+      height: 0;
+      width: 0;
+    }
+
+    /* Create a custom checkbox */
+    .twobtn_checkbox__mark {
+      position: absolute;
+      top: 1px;
+      left: 90px;
+      height: 18px;
+      width: 18px;
+      background-color: transparent;
+      border: 2px solid #8592a6;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+
+    /* On mouse-over, add a grey background color */
+    .checkbox_wrapper:hover .twobtn_checkbox ~ .twobtn_checkbox__mark {
+      border: 2px solid #23d8af;
+      opacity: 0.5;
+    }
+
+    /* When the checkbox is checked, add a green background */
+    .checkbox_wrapper .twobtn_checkbox:checked ~ .twobtn_checkbox__mark {
+      background-color: #ffffff;
+      border: 2px solid #23d8af;
+    }
+
+    /* Create the checkmark/indicator (hidden when not checked) */
+    .twobtn_checkbox__mark:after {
+      content: "";
+      position: absolute;
+      display: none;
+    }
+
+    /* Show the checkmark when checked */
+    .checkbox_wrapper .twobtn_checkbox:checked ~ .twobtn_checkbox__mark:after {
+      display: block;
+    }
+
+    /* Style the checkmark/indicator */
+    .checkbox_wrapper .twobtn_checkbox__mark:after {
+      background-image: url("./Image/checkbox-on-btn.svg");
+      background-size: 100% 100%;
+      width: 100%;
+      height: 100%;
+    }
+
+    #two_btn_ok {
+      background-color: #f05c63;
+      margin-right: 20px;
+    }
+    #two_btn_main_color {
+      background-color: #32dab4;
+      margin-right: 20px;
+    }
+
+    #two_btn_cancel {
+      background-color: #e3e8f0;
+    }
+  }
+
+  .title__two_msg {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 24px;
+    white-space: pre-wrap;
+  }
+  .message__two_msg {
+    font-size: 28px;
+    font-weight: bold;
+  }
+  textarea {
+    width: 85%;
+    height: 100px;
+    margin-bottom: -50px;
+    padding: 14px;
+    background-color: #fcfcfc;
+    border: solid 1px #ebebeb;
+    font-size: 16px;
+    resize: none;
+  }
+  textarea:focus {
+    outline: 0;
+    caret-color: #32dab4;
+  }
+
+  .message__holder {
+    background: #ebebeb;
+    padding: 12px 0;
+    margin: 24px 60px -50px;
+    width: 275px;
+    // margin: 0 auto;
+    font-size: 16px;
+    font-weight: normal;
+  }
+  .message__holder__kv__row {
+    position: relative;
+    text-align: left;
+    line-height: 24px;
+    // border: 1px solid red;
+  }
+  .message__holder__kv__row:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+  .message_kv {
+    font-size: 28px;
+    font-weight: bold;
+  }
+  .message__holder__key {
+    font-weight: bold;
+    float: left;
+    margin-left: 20px;
+  }
+  .message__holder__value {
+    font-weight: normal;
+    // float: left;
+    position: absolute;
+    left: 95px;
+    top: 0;
+    width: 150px;
+  }
+
+  .PopUp_wrapper {
+    position: relative;
+    z-index: 2;
+    background: #fff;
+    width: 438px;
+    max-width: 90%;
+    margin: 169px auto;
+    text-align: center;
+    border-radius: 18px;
+    padding: 44px 15px;
+    .title {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 12px;
+      white-space: pre-wrap;
+    }
+    .message {
+      font-size: 16px;
+    }
+    .image {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .name {
+      margin-top: 14px;
+      font-size: 28px;
+      font-weight: bold;
+    }
+    .rating {
+      width: 100%;
+      margin-top: 14px;
+      .rating_star {
+        margin: 2px;
+      }
+    }
+    .textarea {
+      margin-top: 14px;
+      margin-bottom: 48px;
+    }
+    .stars {
+      display: inline-block;
+      .star {
+        background-position: center;
+        background-repeat: no-repeat;
+        display: inline-block;
+        height: 24px;
+        margin: 4px;
+        width: 24px;
+      }
+      .on {
+        background-image: url("./Image/star-on.svg");
+      }
+      .off {
+        background-image: url("./Image/star-off.svg");
+      }
+    }
+    .statusMessage {
+      margin: 20px 40px;
+      text-align: left;
+      white-space: normal;
+      display: block;
+      word-break: break-all;
+      .title {
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 2;
+        color: #23d8af;
+      }
+      .content {
+        font-size: 16px;
+        font-weight: normal;
+        line-height: 1.5;
+        color: #000000;
+      }
+    }
+    .registerButton {
+      margin-top: 20px;
+      width: 155px;
+      height: 43px;
+      border-width: 0px;
+      border-radius: 25px;
+      font-size: 18px;
+      font-weight: 600;
+      color: #ffffff;
+      background-color: #32dab4;
+      cursor: pointer;
+    }
+    .registerButton:focus {
+      outline: none;
+    }
+  }
+}

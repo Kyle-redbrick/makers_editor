@@ -1,0 +1,72 @@
+/* Customize the container */
+.SquareCheckbox {
+  display: block;
+  position: relative;
+  padding-left: 18px;
+  margin-bottom: 18px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.SquareCheckbox__input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  //   bottom: 0;
+  //   right: 0;
+  //   margin: auto;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.SquareCheckbox__mark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 18px;
+  width: 18px;
+  background-color: transparent;
+  border: 2px solid #8592a6;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+/* On mouse-over, add a grey background color */
+.SquareCheckbox:hover .SquareCheckbox__input ~ .SquareCheckbox__mark {
+  border: 2px solid #1db6ff;
+  opacity: 0.5;
+}
+
+/* When the checkbox is checked, add a green background */
+.SquareCheckbox .SquareCheckbox__input:checked ~ .SquareCheckbox__mark {
+  background-color: #ffffff;
+  border: 2px solid #8592a6;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.SquareCheckbox__mark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.SquareCheckbox .SquareCheckbox__input:checked ~ .SquareCheckbox__mark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.SquareCheckbox .SquareCheckbox__mark:after {
+  background-image: url("../../../../Image/checkbox-on-btn.svg");
+  background-size: 100% 100%;
+  width: 100%;
+  height: 100%;
+}

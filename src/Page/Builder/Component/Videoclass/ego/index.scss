@@ -1,0 +1,118 @@
+.ego {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 200;
+  --egoImageSize: 90px;
+  .ego_image {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    min-width: var(--egoImageSize);
+    min-height: var(--egoImageSize);
+    max-width: var(--egoImageSize);
+    max-height: var(--egoImageSize);
+    cursor: pointer;
+    pointer-events: visible;
+  }
+  .ego_image:hover {
+    min-width: calc(var(--egoImageSize) + 3px);
+    min-height: calc(var(--egoImageSize) + 3px);
+    max-width: calc(var(--egoImageSize) + 3px);
+    max-height: calc(var(--egoImageSize) + 3px);
+  }
+  .ego_bubble {
+    position: absolute;
+    left: 60px;
+    bottom: 54px;
+    padding: 12px 24px 18px 18px;
+    min-width: 90px;
+    max-width: 80%;
+    min-height: 60px;
+    max-height: 80%;
+    overflow-y: scroll;
+    border: 2px solid rgba(66, 165, 245, 0.6);
+    border-radius: 6px;
+    background-color: white;
+    box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.2);
+    opacity: 1;
+    transition: opacity 0.2s ease-out;
+    cursor: default;
+    pointer-events: visible;
+  }
+  .ego_bubble_img {
+    right: 3%;
+    top: 3%;
+    max-width: 94%;
+    max-height: 94%;
+    width: 94%;
+    height: 94%;
+  }
+  .ego_bubble::-webkit-scrollbar {
+    display: none;
+  }
+  .ego_bubble_name {
+    margin-bottom: 3px;
+    font-size: 16px;
+    font-weight: bold;
+    color: rgba(66, 165, 245, 0.6);
+  }
+  .ego_bubble_messages {
+    display: block;
+  }
+  .ego_bubble_message_text {
+    font-size: 14px;
+    font-weight: 500;
+    white-space: pre-wrap;
+  }
+  .ego_bubble_message_image {
+    max-width: 100%;
+    margin: 0 auto;
+    margin-top: 6px;
+    border-radius: 6px;
+  }
+  .ego_bubble-hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .ego_event {
+    display: flex;
+    flex-direction: column;
+    width: 420px;
+    cursor: pointer;
+  }
+  .ego_event_desc {
+    text-align: center;
+    font-weight: bold;
+    white-space: pre;
+  }
+  .ego_event img {
+    margin-top: 12px;
+    width: 100%;
+    border-radius: 6px;
+  }
+  .ego_event_detail {
+    margin: 18px auto 0 auto;
+    padding: 6px 60px;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    background-color: rgba(66, 165, 245, 0.6);
+    border-radius: 18px;
+  }
+}
+
+.ocpView {
+  .ego {
+    --egoImageSize: 66px;
+  }
+  .ego_bubble_img {
+    top: unset;
+    bottom: 3%;
+    max-height: 82%;
+  }
+}

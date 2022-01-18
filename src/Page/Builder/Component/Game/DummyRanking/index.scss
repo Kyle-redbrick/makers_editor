@@ -1,0 +1,82 @@
+.Page--BUILDER {
+  .DummyRankingContainer {
+    position: absolute;
+    left: calc(50% - 100px);
+    top: calc(50% - 100px);
+    width: 200px;
+    height: 200px;
+    border-radius: 7px;
+    border: solid 1px #666666;
+    background-color: white;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .DummyRankingClose {
+      position: absolute;
+      right: 18px;
+      top: 10px;
+      width: 14px;
+      height: 14px;
+      opacity: 0.54;
+      cursor: pointer;
+    }
+
+    .DummyRankingHeader {
+      width: 168px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .DummyRankingHeader__ranking {
+        width: 56px;
+        height: 56px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+          width: 40px;
+          height: 40px;
+          position: absolute;
+          z-index: 1;
+        }
+      }
+    }
+
+    .DummyRankingBody {
+      width: 175px;
+      height: 128px;
+      margin-top: 6px;
+
+      .DummyRankingBody__rankingLabel {
+        line-height: 25px;
+        background-color: #666666;
+        font-size: 13px;
+        font-weight: 600;
+        color: white;
+        text-align: center;
+        border-top-left-radius: 7px;
+        border-top-right-radius: 7px;
+      }
+
+      .DummyRankingBody__content {
+        height: 90px;
+        overflow: auto;
+        border-bottom-left-radius: 7px;
+        border-bottom-right-radius: 7px;
+        border: solid 1px #666666;
+      }
+
+      .DummyRankingBody__Text {
+        display: flex;
+        align-items: center;
+        height: 30px;
+        font-size: 12px;
+        background-color: #dddddd;
+      }
+    }
+  }
+}

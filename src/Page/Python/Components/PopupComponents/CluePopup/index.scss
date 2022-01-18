@@ -1,0 +1,53 @@
+.pythonCluePopup {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  .clueContentBox {
+    box-sizing: border-box;
+    width: 726px;
+    height: 402px;
+    // margin: 55px 125px 24px;
+    padding: 3px;
+    border: solid 0.5px rgba(0, 236, 255, 0.7);
+  }
+
+  .clueContent {
+    width: 100%;
+    height: 100%;
+
+    video {
+      width: 100%;
+      height: 100%;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  button {
+    width: 126px;
+    height: 42px;
+    margin-top: 24px;
+    border: none;
+    font-size: 18px;
+    text-align: center;
+    color: #ffffff;
+    outline: none;
+    font-family: "Noto Sans KR", sans-serif;
+    cursor: pointer;
+  }
+
+  .confirmBtn {
+    background: url("../../../../../Image/newPython/alert-confirm-btn@2x.png")
+      no-repeat center/cover;
+    &:hover {
+      background: url("../../../../../Image/newPython/alert-confirm-btn-hover@2x.png")
+        no-repeat center/cover;
+    }
+  }
+}

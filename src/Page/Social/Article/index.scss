@@ -1,0 +1,255 @@
+.social .article {
+  margin-bottom: 60px;
+  padding: 36px 64px 0 64px;
+  width: 100%;
+  border-radius: 15px;
+  color: #fff;
+  background-color: #19191a;
+  box-shadow: 10px 4px 40px 0 rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+
+  button {
+    padding: 0;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+
+  .article_header {
+    display: flex;
+    height: 50px;
+  }
+  .article_user {
+    display: flex;
+    height: 100%;
+  }
+  .article_user_img {
+    margin-right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    object-fit: cover;
+    cursor: pointer;
+  }
+  .article_user_section {
+    margin: auto 0;
+  }
+  .article_user_info {
+    display: flex;
+  }
+  .article_user_name {
+    margin: auto 0;
+    font-size: 14px;
+    cursor: pointer;
+    max-width: 750px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  .article_user_divider {
+    margin: auto 4px;
+    width: 1px;
+    height: 1px;
+    background-color: #7c7c7e;
+  }
+  .article_user_subscribe {
+    font-size: 14px;
+    color: #1bb6ff;
+    line-height: 1;
+  }
+  .article_user_subscribe-active {
+    color: #7c7c7e;
+  }
+  .article_user_date {
+    margin-top: 7px;
+    font-size: 14px;
+    color: #7c7c7e;
+  }
+  .article_user_official {
+    display: flex;
+    align-items: flex-start;
+    margin-left: 3px;
+    margin-top: 3px;
+  }
+  .article_user_official_img {
+    width: 15px;
+    height: 15px;
+  }
+
+  .article_more {
+    margin-left: auto;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+  }
+
+  .article_title_wrapper {
+    display: flex;
+    margin-top: 16px;
+  }
+  .article_title {
+    margin-right: 10px;
+    width: 100%;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .article_quest {
+    margin-left: auto;
+    width: 158px;
+    min-width: 158px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 15px;
+    text-align: center;
+    border-radius: 20px;
+    border: solid 1px #ffffff;
+    cursor: default;
+  }
+  .article_quest-mobile {
+    display: none;
+  }
+  .article_quest-end {
+    font-weight: bold;
+    color: #000;
+    background-color: #fff;
+  }
+
+  .article_contents {
+    min-height: 60px;
+    overflow: hidden;
+  }
+  .article_contents-fold {
+    max-height: 420px;
+    pointer-events: none;
+  }
+  .article_contents_more {
+    display: flex;
+    padding-top: 20px;
+    cursor: pointer;
+  }
+  .article_contents_more_img {
+    margin: auto;
+  }
+  .article_contents .draftEditor {
+    background-color: transparent;
+    font-size: 18px;
+  }
+
+  .article_tags {
+    margin-top: 16px;
+  }
+  .article_tag {
+    margin-right: 10px;
+    font-size: 14px;
+    color: #7c7c7e;
+    cursor: pointer;
+  }
+
+  .article_reactions {
+    display: flex;
+    margin: 16px -64px 0 -64px;
+    height: 60px;
+    border-top: solid 1px #242424;
+  }
+  .article_reaction {
+    display: flex;
+    width: 50%;
+  }
+  .article_reaction-like {
+    cursor: pointer;
+  }
+  .article_reaction-comment {
+    cursor: default;
+  }
+  .article_reaction_img {
+    margin: auto 8px auto auto;
+    width: 20px;
+    height: 20px;
+  }
+  .article_reaction_count {
+    margin: auto auto auto 0;
+    font-size: 14px;
+    color: #7c7c7e;
+  }
+
+  .article_comments {
+    margin: 0 -64px;
+    padding: 20px 64px 20px 64px;
+    border-top: solid 1px #242424;
+  }
+  .article_comments_more {
+    margin: 0 -64px;
+    margin-bottom: 20px;
+    text-align: center;
+    border-bottom: solid 1px #242424;
+    cursor: pointer;
+  }
+  .article_comments_more_text {
+    margin-top: -20px;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    font-size: 14px;
+    color: #7c7c7e;
+  }
+  .article_comments_more_img {
+    margin: auto 0 auto 5px;
+    width: 12px;
+    height: 12px;
+  }
+
+  .article_newComment {
+    margin: 0 -64px;
+    padding: 40px 64px 20px 64px;
+    border-top: solid 1px #242424;
+  }
+
+  @media screen and (max-width: 1079px) {
+    margin-bottom: 20px;
+    padding: 18px 24px 0 24px;
+    border: none;
+
+    .article_user_name {
+      max-width: calc(100vw - 170px);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .article_user_subscribe {
+      display: none;
+    }
+    .article_quest {
+      display: none;
+    }
+    .article_quest-mobile {
+      display: block;
+    }
+    .article_reactions {
+      margin: 16px -24px 0 -24px;
+    }
+    .article_contents .draftEditor {
+      font-size: 14px;
+    }
+    .article_user_divider {
+      display: none;
+    }
+    .article_comments {
+      margin: 0 -24px;
+      padding: 12px;
+      border-top: solid 1px #242424;
+    }
+    .article_comments_more {
+      margin: 0 -24px;
+    }
+    .article_comments_more_text {
+      margin-top: -12px;
+    }
+    .article_newComment {
+      margin: 0 -24px;
+      padding: 12px;
+      border-top: solid 1px #242424;
+    }
+  }
+}

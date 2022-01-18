@@ -1,0 +1,14 @@
+.popup_twobutton {
+  text-align: center;
+  width: 337px;
+  margin-top: 15px;
+  .popup_button {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    width: 48% !important;
+    border-radius: 50px;
+  }
+  .popup_button-cancel {
+    margin-right: auto !important;
+  }
+}

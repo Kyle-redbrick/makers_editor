@@ -1,0 +1,233 @@
+import React, { memo } from "react";
+import { Link, useParams } from "react-router-dom";
+import { FormattedMessage } from "react-intl";
+import styled from "@emotion/styled";
+
+import { COLOR, PAGE, renderCurrentPage } from "./../Constants";
+import { IMAGE } from "./../Constants/Images";
+
+
+const Self = styled.div`
+  width: 270px;
+  margin-right: 30px;
+
+  @media screen and (max-width: 1169px) {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 70px;
+  }
+`;
+
+const Br = styled.div`
+  height: 1px;
+  margin: 3px 10px 2px;
+  background-color: rgba(255, 255, 255, 0.1);
+
+  @media screen and (max-width: 1169px) {
+    width: 100vw;
+    margin: 0;
+    height: 0;
+  }
+`
+
+const Icon = styled.img`
+  width: 33px;
+  height: 33px;
+  margin-right: 7px;
+
+  @media screen and (max-width: 1169px) {
+    margin-left: 21px;
+  }
+`
+
+const Item = styled.div`
+  padding: 0 10px;
+  display: flex;
+  font-size: 18px;
+  line-height: 1.22;
+  color: #fff;
+  height: 52px;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 10px;
+
+  ${(props) => props.active && `
+    background-color: ${COLOR.ORANGE};
+  `}
+
+  @media screen and (max-width: 1169px) {
+    padding: 0;
+    border-radius: 0;
+  }
+`
+
+const Group = styled.div`
+  padding: 10px 0;
+  ${(props) => props.height && `min-height: ${props.height}px`};
+
+  @media screen and (max-width: 1169px) {
+    padding: 0;
+  }
+`
+
+const LnbLink = styled(Link)`
+  text-decoration: none;
+`
+
+const LnbWrap = styled.div`
+  position: relative;
+  border-radius: 16px;
+  background-color: #1c1c1c;
+  padding: 10px;
+
+  @media screen and (max-width: 1169px) {
+    position: absolute;
+    background-color: #181818;
+    border-radius: 10px;
+    padding: 0;
+    box-shadow: 0 20px 50px 0 rgba(0, 0, 0, 0.5);
+    z-index: 10;
+    width: 88.33vw;
+    overflow: hidden;
+    left: 50%;
+    transform: translateX(-50%);
+
+    ${(props) => props.isMobile && `
+      &::before {
+        content: '';
+        position: absolute;
+        top: 15px;
+        right: 21px;
+        width: 20px;
+        height: 20px;
+        background: url(${IMAGE.ICON_DROPDOWN});
+        pointer-events: none;
+      }
+    `
+    }
+
+    ${(props) => props.isLmsMobileMenuOn && `
+      &::before {
+        transform: rotate(180deg);
+      }
+    `}
+
+    ${(props) => props.fixed && `
+      position: fixed;
+      top: 0;
+      left: 50%;
+
+      heigth: 50px;
+      transform: translateX(-50%);
+    `
+    }
+  }
+
+`
+
+const Title = styled.div`
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 1.33;
+  color: #fff;
+  padding: 10px;
+
+  @media screen and (max-width: 1169px) {
+    display: none;
+  }
+`
+
+const LnbLinkComponent = memo(({ active, icon, link, title, isMobile, isLmsMobileMenuOn, onClickLmsMobileMenu }) => {
+  if (isMobile) {
+    if (!isLmsMobileMenuOn && !active) {
+      return <></>;
+    }
+  } 
+  return (
+    <LnbLink to={link}>
+      <Item active={active} onClick={onClickLmsMobileMenu}>
+        <Icon 
+          alt={`${title} 아이콘`}
+          src={icon}
+        />
+        {title}
+      </Item>
+    </LnbLink>
+  );
+});
+
+const Lnb = ({ path, fixed, isMobile, isLmsMobileMenuOn, onClickLmsMobileMenu, ...props }) => {
+  let { id } = useParams();
+
+  return (
+    <Self {...props}>
+      <LnbWrap isMobile={isMobile} fixed={fixed} isLmsMobileMenuOn={isLmsMobileMenuOn}>
+        <Title><FormattedMessage id="ID_HEADER_LMS" /></Title>
+        <Group>
+          <LnbLinkComponent
+            active={renderCurrentPage(path) === PAGE.DASHBOARD}
+            icon={renderCurrentPage(path) === PAGE.DASHBOARD ? IMAGE.LNB_DASHBOARD_OFF : IMAGE.LNB_DASHBOARD_ON}
+            link="/lms"
+            title={<FormattedMessage id="ID_LMS_DASHBOARD" />}
+            isMobile={isMobile}
+            isLmsMobileMenuOn={isLmsMobileMenuOn}
+            onClickLmsMobileMenu={onClickLmsMobileMenu}
+          />
+        </Group>
+        <Br />
+        <Group height={isMobile ? "auto" : 234}>
+          <LnbLinkComponent
+            active={renderCurrentPage(path) === PAGE.COURSE && id === "1"}
+            icon={renderCurrentPage(path) === PAGE.COURSE && id === "1" ? IMAGE.LNB_PUZZLE_ON : IMAGE.LNB_PUZZLE_OFF}
+            link="/lms/course/1"
+            title={<FormattedMessage id="ID_LMS_COURSE_1" />}
+            isMobile={isMobile}
+            isLmsMobileMenuOn={isLmsMobileMenuOn}
+            onClickLmsMobileMenu={onClickLmsMobileMenu}
+          />
+          <LnbLinkComponent
+            active={renderCurrentPage(path) === PAGE.COURSE && id === "2"}
+            icon={renderCurrentPage(path) === PAGE.COURSE && id === "2" ? IMAGE.LNB_JS_ON : IMAGE.LNB_JS_OFF}
+            link="/lms/course/2"
+            title={<FormattedMessage id="ID_LMS_COURSE_2" />}
+            isMobile={isMobile}
+            isLmsMobileMenuOn={isLmsMobileMenuOn}
+            onClickLmsMobileMenu={onClickLmsMobileMenu}
+          />
+          <LnbLinkComponent
+            active={renderCurrentPage(path) === PAGE.COURSE && id === "3"}
+            icon={renderCurrentPage(path) === PAGE.COURSE && id === "3" ? IMAGE.LNB_PYTHON_ON : IMAGE.LNB_PYTHON_OFF}
+            link="/lms/course/3"
+            title={<FormattedMessage id="ID_LMS_COURSE_3" />}
+            isMobile={isMobile}
+            isLmsMobileMenuOn={isLmsMobileMenuOn}
+            onClickLmsMobileMenu={onClickLmsMobileMenu}
+          />
+        </Group>
+        <Br />
+        <Group>
+          {/* <LnbLinkComponent
+            active={renderCurrentPage(path) === PAGE.INVENTORY}
+            icon={renderCurrentPage(path) === PAGE.INVENTORY ? IMAGE.LNB_INVENTORY_OFF : IMAGE.LNB_INVENTORY_ON}
+            link="/lms/inventory"
+            title="나의 인벤토리"
+            isMobile={isMobile}
+            isLmsMobileMenuOn={isLmsMobileMenuOn}
+            onClickLmsMobileMenu={onClickLmsMobileMenu}
+          /> */}
+          <LnbLinkComponent
+            active={renderCurrentPage(path) === PAGE.QNA}
+            icon={renderCurrentPage(path) === PAGE.QNA ? IMAGE.LNB_QNA_OFF : IMAGE.LNB_QNA_ON}
+            link="/lms/questions"
+            title={<FormattedMessage id="ID_LMS_QUESTION" />}
+            isMobile={isMobile}
+            isLmsMobileMenuOn={isLmsMobileMenuOn}
+            onClickLmsMobileMenu={onClickLmsMobileMenu}
+          />
+        </Group>
+      </LnbWrap>
+    </Self>
+  );
+};
+
+export default Lnb;

@@ -1,0 +1,96 @@
+.dream {
+  .dream_menu {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #393e4f;
+    transition: 0.2s right ease-out;
+
+    button {
+      border: none;
+      outline: none;
+      cursor: pointer;
+    }
+    .dream_mission-menu-header {
+      display: flex;
+      justify-content: space-between;
+      margin: 25px 10px 0 10px;
+  
+      button {
+        width: 41px;
+        height: 41px;
+      }
+  
+      .slide-home-btn{
+        background: url('../../../../../Image/builder/slider-home-btn.svg');
+      }
+  
+      .slide-close-btn{
+        background: url('../../../../../Image/builder/slider-close-btn.svg');
+      }
+    }
+    .dream_mission-list-wrapper {
+      padding-left: 10px;
+      margin-top: 10px;
+    }
+    .dream_mission-list-title {
+      font-size: 20px;
+      font-weight: 500;
+      color: #ffffff;
+      padding-left: 10px;
+      line-height: 44px;
+    }
+    .dream_mission-list {
+      line-height: 44px;
+      padding-left: 0;
+      list-style: none;
+      counter-reset: li;
+      
+      li {
+        position: relative;
+        width: calc(100% - 30px);
+        font-size: 16px;
+        font-weight: 500;
+        color: #ffffff;
+        counter-increment: li;
+        padding-left: 20px;
+        cursor: pointer;
+  
+        &::before {
+          content: counter(li);
+          margin-right: 10px;
+          font-size: 16px;
+          font-weight: 500;
+        }
+  
+        &.selected {
+          border-radius: 5px;
+          background-color: #1db6ff;
+        }
+  
+        &.completed::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: 44px;
+          height: 44px;
+          background-image: url('../../../../../Image/builder/slide-list-check.svg');
+        }
+
+        &.disabled {
+          opacity: 0.3;
+          pointer-events: none;
+        }
+      }
+    }
+  }
+  .dream_menu-open {
+    right: 0;
+  }
+  .dream_menu-close {
+    right: 100%;
+    pointer-events: none;
+  }
+}

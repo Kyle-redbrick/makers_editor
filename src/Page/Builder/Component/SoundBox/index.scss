@@ -1,0 +1,154 @@
+.Page--BUILDER {
+  .SoundBoxContainer {
+    width: 100%;
+    height: 100%;
+    box-shadow: 5px 5px 15px 0px var(--W_Shadow);
+    background: alpha;
+    border-radius: 20px;
+    background-color: var(--W_White);
+  }
+  .SoundBoxTitleLine {
+    line-height: 38px;
+    display: flex;
+    border-bottom: 1px solid var(--W_Gray01);
+  }
+  .SoundBoxTitle {
+    margin-left: 30px;
+    text-align: center;
+    width: 100%;
+    font-size: 13px;
+    color: var(--W_Gray03);
+  }
+  .SoundBoxClose {
+    cursor: pointer;
+    width: 30px;
+    text-align: center;
+    margin-right: 10px;
+  }
+
+  // content
+  .SoundBoxContent {
+    height: calc(100% - 38px);
+    background: var(--W_White);
+    display: flex;
+    border-radius: 0 0 20px 20px;
+  }
+  .SoundBoxContentLeft {
+    width: 130px;
+    border-right: 1px solid var(--W_Gray01);
+    height: 100%;
+    overflow: auto;
+  }
+  .SoundBoxContentRight {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    padding-left: 12px;
+  }
+
+  // category
+  .SoundBoxCategories {
+    margin-top: 18px;
+  }
+  .SoundBoxCategoryItemName {
+    margin-top: 32px;
+    padding-left: 14px;
+    font-size: 15px;
+    letter-spacing: -0.28px;
+    color: var(--W_Gray03);
+    margin-bottom: 7px;
+  }
+
+  // subcategory
+  .SoundBoxSubCategories {
+  }
+  .SoundBoxSubCategoryItem {
+    cursor: pointer;
+    line-height: 26px;
+    .SoundBoxSubCategoryItemName {
+      padding-left: 14px;
+      padding-right: 16px;
+      letter-spacing: -0.22px;
+      color: var(--W_Gray03);
+      font-size: 12px;
+      font-weight: 300;
+      display: inline-block;
+    }
+  }
+  .SoundBoxSubCategoryItemActive {
+    .SoundBoxSubCategoryItemName {
+      color: var(--W_TextColorOnBG);
+      background-color: var(--W_PointColor);
+      border-radius: 0 13px 13px 0;
+    }
+  }
+
+  //sound item
+  .SoundBoxAssetTitle {
+    margin-top: 17px;
+  }
+  .SoundBoxAssetTitleCategory {
+    font-size: 12px;
+    font-weight: 300;
+    letter-spacing: -0.22px;
+    color: var(--W_Gray03);
+  }
+  .SoundBoxAssetTitleSubCategory {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: -0.24px;
+    color: var(--W_Gray03);
+    margin-bottom: 4px;
+  }
+  .SoundBoxAssets {
+  }
+  .SoundBoxAsset {
+    position: relative;
+    height: 33px;
+    border-bottom: 1px solid var(--W_Gray01);
+    margin-right: 14px;
+    display: flex;
+    align-items: center;
+  }
+  .SoundBoxAssetImage {
+    img {
+      width: 18px;
+      height: 18px;
+    }
+  }
+  .SoundBoxAssetName {
+    font-size: 13px;
+    letter-spacing: -0.24px;
+    color: var(--W_Gray03);
+    margin-left: 10px;
+    width: 100%;
+    max-width: 80%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  .SoundBoxAssetSelect {
+    cursor: pointer;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 80%;
+    height: 100%;
+  }
+  .SoundBoxAssetAdd {
+    cursor: pointer;
+    img {
+      display: block;
+      width: 15px;
+      height: 15px;
+    }
+  }
+  .SoundBoxAssetRemove {
+    cursor: pointer;
+    img {
+      display: block;
+      width: 15px;
+      height: 15px;
+    }
+  }
+}

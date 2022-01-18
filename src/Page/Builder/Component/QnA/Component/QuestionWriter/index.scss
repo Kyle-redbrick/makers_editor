@@ -1,0 +1,115 @@
+.Page--BUILDER {
+  .QuestionWriter {
+    width: 100%;
+    height: 100%;
+    padding: 16px;
+  }
+  // .QuestionWriterTitle {
+  //   font-size: 14px;
+  //   margin-bottom: 12px;
+  // }
+  .QuestionWriterBack {
+    cursor: pointer;
+    font-size: 24px;
+    width: 30px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 15px;
+    background-color: var(--W_Gray04);
+    position: fixed;
+    left: 14px;
+    top: 3px;
+    background-color: transparent;
+  }
+
+  .QuestionWriterDesc {
+    font-size: 14px;
+    margin-bottom: 47px;
+  }
+  .QuestionWriterInput {
+    width: calc(100% - 24px);
+    flex: 1;
+    resize: none;
+    background: var(--W_Gray01);
+    border: 0;
+    color: var(--W_Gray03);
+    padding: 12px;
+    font-family: inherit;
+  }
+  .QuestionWriterInput:focus {
+    outline: none;
+  }
+  .QuestionWriterOpts {
+    display: flex;
+    position: absolute;
+    top: 80px;
+    right: 16px;
+  }
+  .QuestionWriterOpt {
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-left: 14px;
+    img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      opacity: 0;
+    }
+    .QuestionWriterOptChkHolder {
+      width: 14px;
+      height: 14px;
+      margin-right: 4px;
+      border: 1px solid #888;
+      border-radius: 3px;
+    }
+  }
+  .QuestionWriterOptActive {
+    img {
+      opacity: 1;
+    }
+    .QuestionWriterOptChkHolder {
+      border: 1px solid var(--W_PointColor);
+    }
+  }
+  .QuestionWriterCodeWriter {
+    flex: 1;
+    margin-top: 10px;
+  }
+  .QuestionWriterWriters {
+    height: 352px;
+    display: flex;
+    flex-direction: column;
+  }
+  .QuestionWriterCreate {
+    background: var(--W_PointColor);
+    color: var(--W_TextColorOnBG);
+    font-size: 14px;
+    text-align: center;
+    width: 70px;
+    line-height: 30px;
+    border-radius: 8px;
+    margin-top: 10px;
+    margin-left: auto;
+    cursor: pointer;
+  }
+
+  .QuestionWriterTitleInput {
+    width: calc(100% - 24px);
+    height: 30px;
+    background: var(--W_Gray01);
+    border: 0;
+    color: var(--W_Gray03);
+    padding: 0 12px;
+    font-family: inherit;
+    margin-bottom: 10px;
+  }
+  .QuestionWriterTitleInput:focus {
+    outline: none;
+  }
+  .QuestionWriterSubTitle {
+    font-size: 14px;
+    margin-bottom: 6px;
+  }
+}

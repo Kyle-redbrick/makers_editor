@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="22" height="26" viewBox="0 0 22 26">
+    <g fill="none" fill-rule="evenodd">
+        <g fill="#FFF">
+            <path d="M17.794 7.26c0-4.01-3.187-7.26-7.118-7.26C6.746 0 3.56 3.25 3.56 7.26 3.559 15.73 0 18.15 0 18.15h21.353s-3.559-2.42-3.559-10.89M13.088 20.003c-.526.925-1.495 1.494-2.544 1.494S8.526 20.927 8 20.003" transform="translate(0 4)"/>
+        </g>
+        <circle cx="15.5" cy="6.5" r="6.5" fill="#FB2942"/>
+        <text fill="#FFF" font-family="NotoSansCJKkr-Black, Noto Sans CJK KR" font-size="7" font-weight="700" letter-spacing="-.099">
+            <tspan x="13" y="10">N</tspan>
+        </text>
+    </g>
+</svg>

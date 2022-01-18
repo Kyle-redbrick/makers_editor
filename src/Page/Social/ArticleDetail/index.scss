@@ -1,0 +1,29 @@
+.articledetail {
+  width: 660px;
+  color: #fff;
+
+  .articledetail_draft {
+    caret-color: transparent;
+  }
+  figure {
+    margin: 12px;
+  }
+  .draftmedia {
+    display: flex;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  .draftmedia_image {
+    width: 100%;
+  }
+  .draftmedia_code {
+    width: 100%;
+
+    .ace_error {
+      background: none;
+    }
+    .ace_warning {
+      background: none;
+    }
+  }
+}

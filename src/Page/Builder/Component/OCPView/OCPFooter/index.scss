@@ -1,0 +1,86 @@
+.ocpView_footer {
+  position: relative;
+  display: flex;
+  height: calc(60px + 48px);
+  min-height: 60px;
+  color: var(--W_FooterTitle);
+  background-color: var(--W_FooterBG);
+  user-select: none;
+  -webkit-user-drag: none;
+  padding-bottom: 48px;
+
+  .ocpView_footer_left {
+    position: absolute;
+    left: 20px;
+    top: 3px;
+    display: flex;
+    flex-direction: row;
+  }
+  .ocpView_footer_nav {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .ocpView_footer_nav_title {
+    line-height: 50px;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 0 20px;
+    width: 30vw;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  .ocpView_footer_stageControl {
+    display: flex;
+    margin: auto;
+    height: 100%;
+  }
+  .ocpView_footer_stageArrow {
+    margin: auto 0;
+    height: 78%;
+    cursor: pointer;
+  }
+  .ocpView_footer_stageArrow-disable {
+    opacity: 0.24;
+    pointer-events: none;
+    cursor: default;
+  }
+  .ocpView_footer_stageCount {
+    margin: auto 42px;
+    padding-bottom: 2px;
+    font-size: 18px;
+    font-weight: 500;
+  }
+  .ocpView_footer_nextLevel {
+    position: absolute;
+    display: flex;
+    height: calc(100% - 48px);
+    top: calc(50% - 24px);
+    right: 42px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    span {
+      margin: auto 0;
+      padding-bottom: 3px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+    img {
+      margin: auto 0 auto 6px;
+      height: 24px;
+    }
+  }
+}
+
+@media screen and (max-height: 300px) {
+  .ocpView_footer {
+    display: none;
+  }
+}

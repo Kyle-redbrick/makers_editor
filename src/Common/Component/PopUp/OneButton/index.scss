@@ -1,0 +1,9 @@
+.popup_onebutton {
+  text-align: center;
+  width: 300px;
+  margin-top: 20px;
+  
+  @media screen and (max-width: 1170px) {
+      width: calc(88.33vw - 60px);
+  }
+}

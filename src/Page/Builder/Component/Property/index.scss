@@ -1,0 +1,179 @@
+.Page--BUILDER {
+  .handle {
+    cursor: move;
+  }
+  .Property {
+    overflow-y: scroll;
+    width: 270px;
+    height: 100%;
+    box-shadow: 5px 5px 15px 0px var(--W_Shadow);
+    border-radius: 20px;
+    padding-bottom: 20px;
+    overflow: hidden;
+    background-color: var(--W_White);
+  }
+
+  //title line
+  .PropertyTitleLine {
+    line-height: 38px;
+    display: flex;
+    border-bottom: 1px solid var(--W_Gray01);
+  }
+  .PropertyTitle {
+    margin-left: 30px;
+    text-align: center;
+    width: 100%;
+    font-size: 13px;
+    color: var(--W_Gray03);
+  }
+  .PropertyClose {
+    cursor: pointer;
+    width: 30px;
+    text-align: center;
+    float: right;
+    margin-right: 10px;
+  }
+
+  .PropertyContent {
+    max-height: calc(100vh - 90px);
+    overflow-y: auto;
+  }
+
+  //section
+  .PropertySection {
+    padding-right: 24px;
+    padding-left: 24px;
+  }
+  .section__top {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+  //section 1 - img,name,btns
+  .PropertyIcon {
+    width: 100%;
+    border-radius: 7px;
+    border-radius: 7px;
+    background-color: var(--W_Gray05);
+    height: 101px;
+    margin-top: 11px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+  .PropertyBtns {
+    display: flex;
+    margin-top: 15px;
+    background-color: var(--W_Gray05);
+    border-radius: 12px;
+    height: 37px;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 24px;
+    padding-right: 9px;
+  }
+  .propertyBtns__title {
+    font-size: 13px;
+    letter-spacing: -0.24px;
+    color: var(--W_Gray03);
+  }
+  .PropertyBtns__group {
+    display: flex;
+  }
+  .PropertyBtn {
+    margin-left: 10px;
+    // padding: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+
+  //section 2 - size,position,angle
+  .PropertyValue {
+    margin-top: 19px;
+  }
+  .PropertyValue:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+  .PropertyValueTitle {
+    float: left;
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--W_Gray02);
+    padding-top: 2px;
+  }
+  .PropertUnit {
+    font-family: "Roboto";
+    float: right;
+    text-align: right;
+    width: 17px;
+    line-height: 21px;
+    font-size: 13px;
+    vertical-align: middle;
+  }
+  .PropertyValueInput {
+    float: right;
+    font-size: 14px;
+    color: var(--W_Gray02);
+    input {
+      box-sizing: border-box;
+      color: var(--W_Gray03);
+      width: 52px;
+      height: 20px;
+      background-color: var(--W_Gray05);
+      border: none;
+      padding: 0 5px;
+      text-align: right;
+    }
+    .input__position {
+      width: 52px;
+      margin: 0;
+    }
+
+    input[type="number"]::-webkit-outer-spin-button,
+    input[type="number"]::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
+
+  .PropertyValueInput:nth-child(2) .input__position {
+    margin-left: 9px;
+  }
+
+  .PropertyValue__position {
+    // margin-left: 14px;
+  }
+
+  //section3 - animations
+  .PropertyAnimationTitle {
+    margin-top: 19px;
+    float: none;
+  }
+
+  .PropertyAnimations {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 16px;
+  }
+  .DrawerAnimationItem__wrapper {
+    width: 33%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  //section3 - text
+  .PropertyTextTitle {
+    float: none;
+    margin-top: 19px;
+    margin-bottom: 17px;
+  }
+}

@@ -1,0 +1,51 @@
+.ocpView_header {
+  position: relative;
+  display: flex;
+  padding: 0 30px;
+  height: 60px;
+  min-height: 60px;
+  color: var(--W_HeaderTitle);
+  background-color: var(--W_HeaderBG);
+
+  .ocpView_header_logo {
+    margin: auto 0;
+    padding-bottom: 3px;
+    height: 42%;
+  }
+
+  .ocpView_header_title {
+    margin: auto 0 auto 30px;
+    font-size: 15px;
+  }
+
+  .ocpView_header_levels {
+    display: flex;
+    margin: auto 0 auto auto;
+    .ocpView_header_level {
+      margin-right: 6px;
+      width: 24px;
+      height: 24px;
+      line-height: 22px;
+      text-align: center;
+      color: white;
+      background-color: #0073a9;
+      border-radius: 50%;
+    }
+    .ocpView_header_level-current {
+      background-color: #63baf5;
+    }
+    .ocpView_header_level-active {
+      cursor: pointer;
+    }
+    .ocpView_header_level-inactive {
+      opacity: 0.24;
+    }
+  }
+
+  .ocpView_header_themeSwitch {
+    margin: auto 0 auto 18px;
+    padding-top: 2px;
+    width: 66px;
+    height: 33px;
+  }
+}

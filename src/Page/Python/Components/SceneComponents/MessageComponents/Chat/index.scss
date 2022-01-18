@@ -1,0 +1,136 @@
+.pythonChat {
+  position: absolute;
+  left: 0;
+  bottom: 1.38%;
+  width: 100%;
+  height: 30.22%;
+  display: none;
+
+  &.show {
+    display: block;
+  }
+
+  .imgArea {
+    position: relative;
+    float: left;
+    left: 3%;
+    width: 20.12%;
+    height: 100%;
+    background: url("../../../../../../Image/newPython/character-bg@2x.png")
+      no-repeat center/contain;
+
+    .characterImgWrapper {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80% !important;
+      height: 80% !important;
+      overflow: hidden;
+    }
+
+    .characterImg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .characterImg.woman {
+      background: url("../../../../../../Image/newPython/py_image_list.png")
+        no-repeat;
+      background-size: 500%;
+      // background-position: 100% 0;
+      // x번째는 position 첫번째 값으로 0, 25, 50 ,75 ,100
+      // y번째는 position 두번째 값으로 0, 33, 66, 100
+    }
+
+    .characterImg.man {
+      background: url("../../../../../../Image/newPython/ython_image_list.png")
+        no-repeat;
+      background-size: 500%;
+      // background-position: 100% 0;
+    }
+
+    .characterName {
+      width: 89%;
+      height: 33%;
+      position: absolute;
+      bottom: -5px;
+      left: -10px;
+      background: url("../../../../../../Image/newPython/name-bg@2x.png")
+        no-repeat center/contain;
+
+      span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        font-weight: 500;
+        letter-spacing: 3.92px;
+        white-space: nowrap;
+      }
+    }
+  }
+
+  &.cursorDefault .textArea {
+    cursor: default;
+  }
+
+  .textArea {
+    position: relative;
+    left: -3%;
+    background: #000140;
+    padding: 3% 5%;
+    float: right;
+    width: 75.91%;
+    height: 100%;
+    box-sizing: border-box;
+    cursor: pointer;
+    background: url("../../../../../../Image/newPython/chat-script-bg@2x.png")
+      no-repeat center/contain;
+    display: flex;
+    align-items: center;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  .textAreaMe {
+    position: relative;
+    left: 0;
+    background: #000140;
+    padding: 3% 5%;
+    float: right;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    cursor: pointer;
+    background: url("../../../../../../Image/newPython/script-bg@2x.png")
+      no-repeat center/contain;
+    display: flex;
+    align-items: center;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  &.cursorDefault .textAreaMe {
+    cursor: default;
+  }
+
+  .arrowImage {
+    position: absolute;
+    bottom: 18%;
+    right: 4.8192%;
+  }
+
+  .hide {
+    display: none;
+  }
+}

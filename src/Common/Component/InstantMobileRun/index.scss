@@ -1,0 +1,118 @@
+.InstantMobileRun {
+  width: 426px;
+  height: 395px;
+  padding-top: 75px;
+  background-color: var(--W_White);
+  .Popup__closeBtn {
+    position: absolute;
+    right: 24px;
+    top: 24px;
+    cursor: pointer;
+    filter: var(--W_Filter01);
+  }
+
+  .title {
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: -0.37px;
+    color: var(--W_Gray03);
+    text-align: center;
+    white-space: pre-wrap;
+  }
+  .text {
+    font-size: 13px;
+    color: var(--W_Gray03);
+    text-align: center;
+    line-height: 2.3;
+    font-weight: normal;
+  }
+
+  .waiting__phone {
+    width: 118px;
+    height: 182px;
+    border-radius: 8px;
+    border: solid 2px var(--W_Gray01);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+  }
+  .waiting__phone__inner {
+    width: 104px;
+    height: 168px;
+    border-radius: 8px;
+    background-color: var(--W_Gray01);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .waiting__icon {
+    border: 5px solid var(--W_White);
+    border-top-color: var(--W_PointColor);
+    border-radius: 50%;
+    width: 43px;
+    height: 43px;
+    animation: spin 1s linear infinite;
+  }
+  .title--waiting {
+    margin-top: 15px;
+    margin-bottom: 4px;
+  }
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .title--retry {
+    margin-bottom: 20px;
+  }
+  .Popup__caseList {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 0;
+    margin: 0;
+    list-style-type: decimal;
+    text-align: center;
+  }
+
+  .Popup__storeRow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .Popup__store {
+    width: 129px;
+    height: 40px;
+    background-size: 100% 100%;
+    margin-top: 9px;
+  }
+  .Popup__store--apple {
+    background-image: url("../../../Image/builder/app-store.png");
+    margin-right: 8.3px;
+  }
+  .Popup__store--google {
+    background-image: url("../../../Image/builder/play-store.png");
+  }
+
+  .retry__submitBtn {
+    outline: none;
+    cursor: pointer;
+    -webkit-appearance: none;
+    width: 156px;
+    height: 41px;
+    border-radius: 20px;
+    border: 1px solid var(--W_PointColor);
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--W_PointColor);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 26px;
+  }
+}

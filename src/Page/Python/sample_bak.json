@@ -1,0 +1,231 @@
+{
+  "level": 1,
+  "goal": "1. NIS에 온 걸 환영합니다.",
+  "scenes": [
+    {
+      "id": 1,
+      "title": "#신1",
+      "scripts": [
+        {
+          "id": "A14",
+          "type": "chat",
+          "character": "py",
+          "text": "도감을 눌러봐!",
+          "targetNoti": "info"
+        },
+        {
+          "id": "A5",
+          "type": "chat",
+          "character": "파이",
+          "text": "안녕하세요?"
+        },
+        {
+          "id": "A17",
+          "type": "media",
+          "fileExtension": "video",
+          "mediaFile": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+          "option": "outro"
+        },
+        {
+          "id": "A19",
+          "type": "announce",
+          "text": "끝이야"
+        },
+        {
+          "id": "A4",
+          "type": "media",
+          "fileExtension": "image",
+          "mediaFile": "https://miro.medium.com/max/1838/1*MI686k5sDQrISBM6L8pf5A.jpeg",
+          "timeOut": "1000"
+        },
+        {
+          "id": "A13",
+          "type": "media",
+          "fileExtension": "video",
+          "mediaFile": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
+          "timeOut": "1000"
+        },
+        {
+          "id": "A1",
+          "type": "intro",
+          "text": "1번신을 시작해볼까?"
+        },
+        {
+          "id": "A2",
+          "type": "announce",
+          "text": "HELLO?"
+        },
+        {
+          "id": "A3",
+          "type": "announce",
+          "text": "HELLO2?"
+        },
+        {
+          "id": "A6",
+          "type": "chat",
+          "character": "이선",
+          "text": "안녕하세요 이선입니까까까까까까?",
+          "pointText": "이선입니까"
+        },
+        {
+          "id": "A7",
+          "type": "chat",
+          "character": "이선",
+          "text": "안녕하세요 이선입니다.?"
+        },
+        {
+          "id": "A8",
+          "type": "question",
+          "options": [
+            { "title": "질문1", "text": "질문1입니다.", "destination": "8" },
+            { "title": "질문2", "text": "질문2입니다.", "destination": "10" },
+            { "title": "질문3", "text": "질문3입니다.", "destination": "9" }
+          ]
+        },
+        {
+          "id": "A9",
+          "type": "announce",
+          "text": "1번을 택했군요"
+        },
+        {
+          "id": "A10",
+          "type": "announce",
+          "text": "3번을 택했군요"
+        },
+        {
+          "id": "A11",
+          "type": "announce",
+          "text": "2번을 택했군요"
+        },
+        {
+          "id": "A12",
+          "type": "chat",
+          "character": "ython",
+          "text": "우리 같이 떠나자!"
+        },
+        {
+          "id": "A15",
+          "type": "announce",
+          "text": "단서 버튼을 클릭해보세요.",
+          "targetNoti": "clue"
+        },
+        {
+          "id": "A16",
+          "type": "announce",
+          "text": "단서에서 이렇게 말했어"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "#신2",
+      "scripts": [
+        {
+          "id": "A1",
+          "type": "intro",
+          "text": "2번신을 시작해볼까?"
+        },
+        {
+          "id": "A2",
+          "type": "announce",
+          "text": "HELLO?"
+        },
+        {
+          "id": "A3",
+          "type": "announce",
+          "text": "HELLO2?"
+        },
+        {
+          "id": "A4",
+          "type": "media",
+          "mediaFile": "https://miro.medium.com/max/1838/1*MI686k5sDQrISBM6L8pf5A.jpeg",
+          "timeOut": "3000"
+        },
+        {
+          "id": "A5",
+          "type": "chat",
+          "character": "py",
+          "text": "안녕하세요?"
+        },
+        {
+          "id": "A6",
+          "type": "chat",
+          "character": "ython",
+          "text": "안녕하세요 이선입니까까까까까까?"
+        },
+        {
+          "id": "A7",
+          "type": "chat",
+          "character": "ython",
+          "text": "안녕하세요 이선입니다.?"
+        },
+        {
+          "id": "A8",
+          "type": "question",
+          "options": [
+            { "title": "질문1", "text": "질문1입니다.", "destination": "8" },
+            { "title": "질문2", "text": "질문2입니다.", "destination": "10" },
+            { "title": "질문3", "text": "질문3입니다.", "destination": "9" }
+          ]
+        },
+        {
+          "id": "A9",
+          "type": "announce",
+          "text": "1번을 택했군요"
+        },
+        {
+          "id": "A10",
+          "type": "announce",
+          "text": "3번을 택했군요"
+        },
+        {
+          "id": "A11",
+          "type": "announce",
+          "text": "2번을 택했군요"
+        },
+        {
+          "id": "A12",
+          "type": "chat",
+          "character": "ython",
+          "text": "우리 같이 떠나자!"
+        },
+        {
+          "id": "A13",
+          "type": "announce",
+          "text": "코딩해보세요",
+          "targetNoti": "editor"
+        },
+        {
+          "id": "A14",
+          "type": "chat",
+          "character": "py",
+          "text": "도감을 눌러봐!",
+          "targetNoti": "dogam"
+        },
+        {
+          "id": "A15",
+          "type": "announce",
+          "text": "끝이야"
+        },
+        {
+          "id": "A16",
+          "type": "result",
+          "list": [
+            {
+              "text": "산술연산자 출력함수를 획득하였습니다.",
+              "pointText": "산술연산자"
+            },
+            {
+              "text": "print 출력함수를 획득하였습니다.",
+              "pointText": "print"
+            },
+            {
+              "text": "int 출력함수를 획득하였습니다.",
+              "pointText": "int"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

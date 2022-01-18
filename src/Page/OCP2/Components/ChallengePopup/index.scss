@@ -1,0 +1,53 @@
+.OcpPopup {
+  width: 320px;
+  .popup_title {
+    font-size: 22px;
+    font-weight: bold;
+    white-space: pre-wrap;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  .popup_subtitle {
+    img {
+      display: block;
+      margin: 0 auto;
+      width: 100%;
+    }
+  }
+
+  .popup_button {
+    margin: 30px auto 0 auto;
+    width: 100%;
+    height: 54px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #1db6ff;
+    border: none;
+    box-sizing: border-box;
+    white-space: pre;
+    cursor: pointer;
+    outline: none;
+  }
+
+  .OcpPopup__checkbox {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+  }
+  .SquareCheckbox {
+    margin-right: 10px;
+  }
+
+  .SquareCheckbox:hover .SquareCheckbox__input ~ .SquareCheckbox__mark {
+    border: 2px solid #1db6ff;
+    opacity: 0.5;
+  }
+
+  .SquareCheckbox .SquareCheckbox__mark:after {
+    filter: invert(51%) sepia(95%) saturate(785%) hue-rotate(169deg)
+      brightness(99%) contrast(104%);
+  }
+}

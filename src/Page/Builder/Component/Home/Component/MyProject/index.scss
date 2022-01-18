@@ -1,0 +1,30 @@
+.builder--home__myProject {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  max-width: 100%;
+  overflow-y: auto;
+  padding-bottom: 200px;
+
+  .myProject__title {
+    font-size: 20px;
+    color: #ffffff;
+    margin-bottom: 45px;
+  }
+  .bottom__header {
+    display: flex;
+  }
+  .bottom__projectItems {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .projectItem {
+    margin-bottom: 45px;
+  }
+
+  .projectItem__detail {
+    bottom: 10px;
+  }
+}

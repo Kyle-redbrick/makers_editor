@@ -1,0 +1,163 @@
+.Page--Setting {
+  min-width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  // Inner
+  .Setting--Inner {
+    width: 1080px;
+  }
+
+  .Setting_Head {
+    margin-top: 110px;
+    display: flex;
+    justify-content: center;
+
+    .Setting_Head-iconWrap {
+      width: 187px;
+      height: 196px;
+    }
+  }
+
+  .Setting_SelectView {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+
+    .Setting_Tabs {
+      margin-top: 23px;
+      display: flex;
+
+      .Setting_Tabs-tooltip {
+        display: flex;
+        cursor: help;
+      }
+
+      .Setting_Tabs-tooltipMobile {
+        display: none;
+      }
+
+      .Setting_Tabs-title {
+        margin-right: 9px;
+      }
+
+      .Setting_Tabs-tap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 540px;
+        height: 60px;
+        font-size: 18px;
+        font-weight: bold;
+        color: #a1a2ac;
+        cursor: pointer;
+        -webkit-transition: all 0.3s;
+        -moz-transition: all 0.3s;
+        transition: all 0.3s;
+      }
+
+      .Setting_Tabs-tap:hover {
+        opacity: 0.7;
+      }
+    }
+
+    .Setting_Tabs_Ani {
+      height: 2px;
+      width: 100%;
+      position: relative;
+
+      .Setting_Tabs_Ani-bar {
+        position: absolute;
+        width: 540px;
+        background-color: white;
+        height: 2px;
+        -webkit-transition: all 0.3s;
+        -moz-transition: all 0.3s;
+        transition: all 0.3s;
+      }
+    }
+
+    .Setting_Contents {
+      width: 100%;
+      margin-top: 49px;
+      margin-bottom: 200px;
+    }
+  }
+
+  // ------------
+
+  .Setting__IconSection {
+  }
+
+  .Setting__EdgeSection {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    .Setting__EdgeSection__TitleWrapper {
+      display: flex;
+      align-items: center;
+
+      .Setting__EdgeSection__TitleWrapper--title {
+        color: white;
+        font-size: 20px;
+        margin-left: 20px;
+        font-weight: bold;
+      }
+    }
+
+    .Setting__IconSection__IconWrapper {
+      margin-top: 10px;
+      border-top: 1px solid #eeeeee70;
+
+      .Setting__IconSection__IconWrapper--edge {
+        width: 100px;
+        border-radius: 50%;
+        cursor: pointer;
+        -webkit-transition: all 0.3s;
+        -moz-transition: all 0.3s;
+        transition: all 0.3s;
+      }
+      .Setting__IconSection__IconWrapper--edge:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1079px) {
+  .Page--Setting {
+    .Setting--Inner {
+      width: 100%;
+    }
+
+    .Setting_SelectView {
+      .Setting_Tabs {
+        margin-top: 23px;
+        display: flex;
+
+        .Setting_Tabs-tap {
+          width: unset;
+          margin: 0 15px;
+        }
+
+        .Setting_Tabs-tooltip {
+          display: none;
+        }
+
+        .Setting_Tabs-tooltipMobile {
+          display: flex;
+        }
+      }
+      .Setting_Tabs_Ani {
+        display: none;
+      }
+
+      .Setting_Contents {
+        margin-top: 10px;
+      }
+    }
+  }
+}

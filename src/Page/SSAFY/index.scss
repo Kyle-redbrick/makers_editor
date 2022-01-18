@@ -1,0 +1,159 @@
+.Page--SSAFY {
+  min-width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  .SSAFY--Inner {
+    width: 1080px;
+    color: #fff;
+  }
+
+  //search
+  .Search__highlight {
+    color: #ffdc00;
+  }
+  .SSAFY-search-empty {
+    text-align: center;
+    font-size: 20px;
+  }
+  .SSAFY_Search {
+    margin-top: 40px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .SSAFY_SearchWrap {
+    width: 318px;
+    height: 55px;
+    background: #000000;
+    border-radius: 28px;
+    border: solid 1px #262626;
+    position: relative;
+  }
+  .SSAFY_SearchInput {
+    position: absolute;
+    left: 5%;
+    top: 0;
+    width: 75%;
+    height: 100%;
+    background: transparent;
+    color: #fff;
+    outline: none;
+    border: none;
+    font-size: 20px;
+  }
+  .SSAFY_SearchInput:focus {
+  }
+  .SSAFY_SearchIcon {
+    position: absolute;
+    right: 25px;
+    top: 17px;
+    width: 26px;
+    height: 26px;
+    // cursor: pointer;
+  }
+
+  // banner
+  .SSAFY_MainBannerPC {
+    width: 100%;
+    position: relative;
+  }
+  .SSAFY_MainBannerPC_BG {
+    display: block;
+    border-radius: 10px;
+  }
+  .SSAFY_MainBannerPC_Logo {
+    display: block;
+    position: absolute;
+    left: 35px;
+    top: 35px;
+  }
+  .SSAFY_MainBannerPC_Title {
+    display: block;
+    position: absolute;
+    left: 300px;
+    top: 70px;
+  }
+  .SSAFY_MainBannerMobile {
+    display: none;
+  }
+
+  //games
+  .SSAFY-games {
+    color: #fff;
+    .GameHeader {
+      margin-top: 45px;
+      position: relative;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .GameTitle {
+      display: inline;
+      font-size: 32px;
+      font-weight: bold;
+      line-height: 1.53;
+      letter-spacing: -0.89px;
+      text-align: center;
+      color: #fcfcfc;
+    }
+
+    .GameItems {
+      margin-top: 28px;
+      width: 100%;
+      // display: flex;
+      // flex-wrap: wrap;
+      // justify-content: space-between;
+    }
+    .GameItem {
+      display: inline-block;
+      width: 143px;
+      margin-right: 11px;
+      margin-bottom: 21px;
+      position: relative;
+    }
+    .GameMore {
+      margin-left: 10px;
+    }
+  }
+}
+
+@media screen and (max-width: 1079px) {
+  .Page--SSAFY {
+    .SSAFY--Inner {
+      width: 96%;
+    }
+    .SSAFY_SearchWrap {
+      width: 100%;
+    }
+    .SSAFY_MainBannerPC {
+      display: none;
+    }
+    .SSAFY_MainBannerMobile {
+      display: block;
+      border-radius: 6px;
+      // background-color: rgb(107, 127, 247);
+      padding: 20px;
+      background-image: url("../../Image/ssafy_bg_m.png");
+      background-size: 100% 100%;
+    }
+    .SSAFY_MainBannerMobile_Title {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .GameItems {
+      .GameItem {
+        width: 49%;
+        margin-left: 0;
+        margin-right: 1%;
+      }
+    }
+  }
+}

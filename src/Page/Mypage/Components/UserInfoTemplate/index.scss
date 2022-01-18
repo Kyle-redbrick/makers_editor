@@ -1,0 +1,295 @@
+.UserInfoTemplate {
+  display: flex;
+  height: 244px;
+  border-radius: 16px;
+  background-color: #1c1c1c;
+
+  .UserInfoTemplate-tooltip {
+    display: flex;
+  }
+
+  .UserInfoTemplate-tooltipMobile {
+    display: none;
+    cursor: pointer;
+    width: 12px;
+    height: 12px;
+  }
+
+  .UserInfoTemplate_UserInfo {
+    display: flex;
+    align-items: center;
+    width: 690px;
+    color: white;
+    position: relative;
+
+    .UserInfoTemplate_UserInfo_setting {
+      position: absolute;
+      right: calc(6%);
+      top: calc(10%);
+      cursor: pointer;
+    }
+
+    .UserInfoTemplate_UserInfo_ImgWrap {
+      margin-left: 30px;
+
+      .UserInfoTemplate_UserInfo_ImgWrap-icon {
+        width: 184px;
+        height: 184px;
+      }
+      .UserIconWrapper_Icon {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .UserInfoTemplate_UserInfo_setting_Btn {
+      display: inline-flex;
+      align-items: center;
+      width: 75px;
+      height: 34px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      color: inherit;
+      border-radius: 10px;
+      background-color: rgba(255, 255, 255, 0.3);
+      cursor: pointer;
+    }
+
+    .UserInfoTemplate_UserInfo_TextWrap {
+      max-width: 446px;
+      min-height: 89px;
+      margin-left: 30px;
+  
+      .UserInfoTemplate_UserInfo_TextWrap_FirstLine-nik {
+        font-size: 30px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
+      .UserInfoTemplate_UserInfo_TextWrap-status {
+        margin-bottom: 20px;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 1.11;
+        color: rgba(255, 255, 255, 0.75);
+      }
+
+      .UserInfoTemplate_UserInfo_TextWrap_FirstLine-nik,
+      .UserInfoTemplate_UserInfo_TextWrap-status {
+        width: 100%;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+    }
+
+    .UserInfoTemplate_UserInfo_Bits {
+      display: inline-flex;
+      align-items: center;
+      width: auto;
+      height: 36px;
+      margin-bottom: 20px;
+      padding: 0 12px 0 0;
+      border-radius: 22px;
+      background-color: rgba(255, 255, 255, 0.1);
+
+      .bits {
+        position: relative;
+        top: 1px;
+        font-size: 12px;
+        font-weight: bold;
+        line-height: 1;
+        color: rgba(255, 255, 255, 0.5);
+        margin-left: 4px;
+      }
+    }
+  }
+
+  .UserInfoTemplate_Wrap {
+    display: flex;
+    align-items: center;
+  }
+
+  .UserInfoTemplate_ItemWrap {
+    box-sizing: border-box;
+    width: 140px;
+    height: 140px;
+    color: white;
+    display: flex;
+    border-radius: 10px;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 5px 0 17px;
+
+    &.active {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+    
+    .UserInfoTemplate_ItemWrap_Inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .UserInfoTemplate_ItemWrap_Image {
+      width: 60px;
+      height: 60px;
+    }
+
+    .UserInfoTemplate_ItemWrap_TitleWrap {
+      display: flex;
+      align-items: center;
+      .UserInfoTemplate_ItemWrap_TitleWrap-title {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1.5;
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+      img {
+        width: 12px;
+        height: 12px;
+      }
+    }
+
+    .UserInfoTemplate_ItemWrap_BottomWrap-num {
+      width: 100%;
+      font-size: 24px;
+      color: white;
+      line-height: 1;
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    & + .UserInfoTemplate_ItemWrap {
+      margin-left: 20px;
+    }
+  }
+
+}
+
+@media screen and (max-width: 1169px) {
+  .UserInfoTemplate {
+    width: 100%;
+    height: initial;
+    display: block;
+
+    .UserInfoTemplate_UserInfo {
+      flex-direction: column;
+      width: 100%;
+      margin: 0 auto;
+      padding-top: 20px;
+
+      .UserInfoTemplate_UserInfo_ImgWrap {
+        margin: 0 0 10px 0;
+        .UserInfoTemplate_UserInfo_ImgWrap-icon {
+          width: 80px;
+          height: 80px;
+        }
+      }
+
+      .UserInfoTemplate_UserInfo_TextWrap {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin-left: 0;
+
+        .UserInfoTemplate_UserInfo_TextWrap_FirstLine {
+          width: 100%;
+
+          .UserInfoTemplate_UserInfo_TextWrap_FirstLine-nik {
+            width: 100%;
+            margin-bottom: 10px;
+            font-size: 24px;
+            text-align: center;
+          }
+        }
+
+        .UserInfoTemplate_UserInfo_Bits {
+          font-size: 14px;
+          span {
+            font-size: 10px;
+          }
+        }
+
+        .UserInfoTemplate_UserInfo_etc {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 20px;
+
+          .UserInfoTemplate_UserInfo_TextWrap-status {
+            max-width: 100%;
+            font-size: 16px;
+            text-align: center;
+          }
+  
+          .UserInfoTemplate_UserInfo_setting_Btn {
+            margin: 0 auto;
+          }
+        }
+
+      }
+    }
+
+    .UserInfoTemplate_ItemWrap {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      padding-top: 27px;
+      margin-bottom: 15px;
+
+      .UserInfoTemplate_ItemWrap_TitleWrap {
+        margin-top: 0;
+        display: flex;
+        align-items: center;
+        .UserInfoTemplate_ItemWrap_TitleWrap-title {
+          font-size: 14px;
+          line-height: 14px;
+          letter-spacing: -0.9px;
+          margin-right: 5px;
+        }
+
+        img {
+          width: 12px;
+          height: 12px;
+        }
+      }
+      .UserInfoTemplate_ItemWrap_BottomWrap {
+        justify-content: center;
+      }
+
+      & + .UserInfoTemplate_ItemWrap {
+        margin-left: 15px;
+      }
+    }
+
+
+    .UserInfoTemplate_Wrap {
+      padding: 0 16px;
+
+      .UserInfoTemplate_ItemWrap {
+        height: 100px;
+        padding: 5px 0 10px;
+      }
+
+      .UserInfoTemplate_ItemWrap_Image {
+        width: 40px;
+        height: 40px;
+      }
+
+      .UserInfoTemplate_ItemWrap_TitleWrap-title {
+        font-size: 12px;
+      }
+
+      .UserInfoTemplate_ItemWrap_BottomWrap-num {
+        font-size: 18px;
+        margin-top: 5px;
+      }
+    }
+  }
+}

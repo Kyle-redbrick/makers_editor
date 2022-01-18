@@ -1,0 +1,63 @@
+.tutorialPopup {
+  position: sticky;
+  width: 100%;
+  height: 50px;
+  background-color: #1b1c1e;
+  z-index: 1;
+  animation: showTutorialPopup 1s forwards;
+
+  &.hide {
+    display: none;
+  }
+
+  @keyframes showTutorialPopup {
+    0% {
+      height: 0;
+      opacity: 0;
+    }
+    100% {
+      height: 50px;
+      opacity: 1;
+    }
+  }
+
+  .tutorialPopupWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 1170px;
+    height: 100%;
+    margin: 0 auto;
+  }
+
+  .leftArea {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  .text {
+    margin-left: 10px;
+    color: #ffffff;
+  }
+
+  .closeIcon {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+
+  @media screen and (max-width: 1169px) {
+    .tutorialPopupWrapper {
+      width: 100%;
+      padding-left: 8px;
+    }
+
+    .closeIcon {
+      right: 8px;
+    }
+  }
+}

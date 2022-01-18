@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="22px" viewBox="0 0 20 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 64 (101010) - https://sketch.com -->
+    <title>860E87BA-7D2C-4399-9A0E-2DFD5ABB400B</title>
+    <desc>Created with sketchtool.</desc>
+    <g id="design-system" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon" transform="translate(-44.000000, -622.000000)">
+            <g id="Group-8" transform="translate(43.000000, 622.000000)">
+                <g id="Group-9-Copy-2">
+                    <rect id="Rectangle" x="0" y="0" width="22" height="22"></rect>
+                    <g id="lock" transform="translate(1.913043, 0.956522)" stroke="#858997" stroke-linecap="round" stroke-linejoin="round">
+                        <rect id="Rectangle" x="0" y="8.60869565" width="18.173913" height="11.4782609" rx="1"></rect>
+                        <path d="M3.82608696,8.60869565 L3.82608696,4.7826087 C3.82608696,2.14124685 6.18145849,0 9.08695652,0 C11.9924546,0 14.3478261,2.14124685 14.3478261,4.7826087 L14.3478261,8.60869565" id="Path"></path>
+                    </g>
+                </g>
+                <g id="Group-12-Copy-2" transform="translate(6.000000, 9.900000)">
+                    <rect id="Rectangle-Copy-18" x="0" y="0" width="9.52380952" height="11"></rect>
+                    <g id="eye-2" transform="translate(0.414079, 2.263043)" stroke="#858997" stroke-linecap="round" stroke-linejoin="round">
+                        <g id="eye" transform="translate(0.062112, 0.236957)">
+                            <path d="M0,3.26086957 C0,3.26086957 1.58102767,0 4.34782609,0 C7.11462451,0 8.69565217,3.26086957 8.69565217,3.26086957 C8.69565217,3.26086957 7.11462451,6.52173913 4.34782609,6.52173913 C1.58102767,6.52173913 0,3.26086957 0,3.26086957 Z" id="Path"></path>
+                            <ellipse id="Oval" cx="4.34782609" cy="3.26086957" rx="1.18577075" ry="1.22282609"></ellipse>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

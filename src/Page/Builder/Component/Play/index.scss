@@ -1,0 +1,41 @@
+.Page--BUILDER {
+  .PlayContainer {
+  }
+  .PlayButton {
+    cursor: pointer;
+    position: fixed;
+    bottom: 56px;
+    right: 13px;
+    z-index: 3;
+    width: 70px;
+    height: 70px;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .FullScreenBtn {
+    display: none;
+  }
+}
+
+.ocpView {
+  .PlayButton {
+    right: 24px;
+    top: 86px;
+  }
+  .FullScreenBtn {
+    cursor: pointer;
+    display: block;
+    position: absolute;
+    bottom: 120px;
+    right: 44px;
+    z-index: 3;
+    width: 30px;
+    height: 30px;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

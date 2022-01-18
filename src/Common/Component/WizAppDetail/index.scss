@@ -1,0 +1,606 @@
+#wizappDetail {
+  width: 100vw;
+  height: 100vh;
+  max-height: 100vh;
+  overflow-y: auto;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.65);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+
+  .wizappDetail__inner {
+    position: relative;
+    top: 50px;
+    width: 770px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #1c1c1c;
+    box-shadow: 0 20px 50px 0 rgba(0, 0, 0, 0.5);
+    overflow-y: auto;
+    border-radius: 16px;
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* header */
+  .wizappDetail__header {
+    position: relative;
+    display: flex;
+    width: 100%;
+    margin: 0 0 22px;
+  }
+
+  .header__project--thumbnail {
+    position: relative;
+    top: 0;
+    width: 83px;
+    height: 83px;
+    border-radius: 11px;
+    border: solid 1px rgba(255, 255, 255, 0.1);
+    display: inline-block;
+    margin-right: 17px;
+    overflow: hidden;
+    img {
+      width: 83px;
+      height: 83px;
+      object-fit: cover;
+    }
+  }
+
+  .info__title {
+    font-size: 30px;
+    font-weight: bold;
+    color: #ffffff;
+    max-width: 630px;
+    margin-top: 10px;
+  }
+  .info__sub,
+  .info__sub__date {
+    font-size: 18px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.5);
+  }
+  .createDate::after {
+    position: relative;
+    right: 1px;
+    content: "ㆍ";
+  }
+
+  .header__project--buttons > div:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+  .header__project--buttons {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    > div {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 74px;
+      height: 69px;
+      margin-bottom: 19.5px;
+      border-radius: 10px;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    > div img {
+      margin: 5px 0;
+      width: 34px;
+      height: 34px;
+    }
+
+    > div + div {
+      margin-left: 38px;
+    }
+
+    label {
+      font-size: 13px;
+      color: #ffffff;
+      line-height: 1.15;
+      cursor: pointer;
+    }
+  }
+  .shareDetailBox{
+    position: absolute;
+    top: -200px;
+    width: 181px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 20px 50px 0 rgba(0, 0, 0, 0.5);
+    border: solid 1px rgba(255, 255, 255, 0.1);
+    background-color: #1c1c1c;
+    z-index: 10;
+
+    > div {
+      box-sizing: border-box;
+      padding: 8px;
+      display: flex;
+      align-items: center;
+      height: 50px;
+      position: relative;
+      z-index: 1;
+
+      &:hover{
+        border-radius: 10px;
+        background-color: #292929;
+      }
+    }
+
+    span {
+      font-size: 16px;
+      color: #ffffff;
+      margin-left: 5px;
+    }
+
+    &::before{ 
+      content: "";
+      position: absolute;
+      left: 46%;
+      bottom: -35px;
+      width: 40px;
+      height: 40px;
+      border-radius: 5px;
+      background: #1c1c1c;
+      transform: rotate(45deg) translateX(-50%);
+      z-index: 0;
+    }
+  }
+
+  .shareButton.open {
+    border-radius: 10px;
+    background-color: #292929;
+  }
+
+  .header__project--buttons.pc {
+    .replyButton {
+      img {
+        margin-top: 13px;
+      }
+      .CountLabel {
+        top: 31px;
+      }
+    }
+  }
+  .viewCount {
+    position: relative;
+    margin-left: 25px;
+    &::before {
+      content: "";
+      position: absolute;
+      top: calc(50% + 1px);
+      left: -25px;
+      transform: translateY(-50%);
+      background: url("../../../Image/dreamclass/play-views-icon.svg") no-repeat center/cover;
+      width: 20px;
+      height: 20px;
+    }
+  }
+  .header__project--info {
+    display: inline-block;
+  }
+  .header__close {
+    position: absolute;
+    top: 50px;
+    right: calc((100% - 770px) / 2 - 10px - 36px );
+    width: 36px;
+    height: 36px;
+    border-radius: 18px;
+    -webkit-backdrop-filter: blur(30px);
+    backdrop-filter: blur(30px);
+    background-color: rgba(237, 237, 237, 0.8);
+    cursor: pointer;
+
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 22px;
+      height: 22px;
+    }
+  }
+
+  .header__close--pc {
+    position: fixed;
+    display: block;
+  }
+  .header__close--mobile {
+    display: none;
+  }
+  .wizappDetail__content {
+    width: 100%;
+    position: relative;
+    text-align: center;
+    border-radius: 10px;
+  }
+  .content__game {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .content__description {
+    text-align: left;
+    font-size: 15px;
+    line-height: 1.67;
+    letter-spacing: -0.28px;
+    color: #ffffff;
+    white-space: pre-wrap;
+  }
+  .description {
+    font-size: 16px;
+    line-height: 1.56;
+    color: #ffffff;
+    padding-left: 75px;
+    word-break: break-all;
+    white-space: pre-wrap;
+  }
+  .description--fold {
+    height: 100px;
+    overflow: hidden;
+  }
+  .description--full {
+    height: initial;
+  }
+  .description--more {
+    margin-top: 12px;
+    font-size: 16px;
+    line-height: 1.56;
+    color: #ffffff;
+    cursor: pointer;
+  }
+  .content__user {
+    position: relative;
+    padding: 19.5px 0 39.5px;
+    border-top: solid 1px rgba(255, 255, 255, 0.1);
+    border-bottom: solid 1px rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    text-align: left;
+
+    .content__maker__wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+
+      > a {
+        display: flex;
+        align-content: center;
+      }
+    }
+
+    .user__img {
+      box-sizing: border-box;
+      float: left;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      margin-right: 15px;
+      border: solid 1px rgba(255, 255, 255, 0.1);
+    }
+    .user__info__box {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .user__officialImg {
+      position: relative;
+      top: 2px;
+      width: 15px;
+      height: 15px;
+      margin-left: 5px;
+    }
+    .user__name {
+      font-size: 15px;
+      font-weight: bold;
+      color: #ffffff;
+      max-width: 650px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .user__organization {
+      font-weight: bolder;
+    }
+    .user__subscribe,
+    .user__statusMessage {
+      font-size: 12px;
+      letter-spacing: -0.22px;
+      color: #afafaf;
+    }
+    .user__subscribe {
+      height: 18px;
+      margin-bottom: 3px;
+    }
+  }
+
+  .UserSubscribe {
+    width: 100px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: #ff6f44;
+    border: none;
+    font-size: 16px;
+    color: #ffffff;
+    transition: 0.3s background;
+    cursor: pointer;
+
+    span {
+      pointer-events: none;
+    }
+  }
+  .UserSubscribe.subscribe,
+  .UserSubscribe.false:active {
+    background-color: #5b5b5b;
+  }
+  .UserSubscribe:focus {
+    outline: none;
+  }
+  .wizappDetail__bottom {
+    width: 100%;
+    border-top: solid 1px rgba(255, 255, 255, 0.1);
+  }
+  .wizappDetail__bottom--wrapper {
+    display: flex;
+    width: 100%;
+    padding-top: 17px;
+  }
+  .content__maker__title, .wizappDetail__bottom--comment-count {
+    font-size: 22px;
+    font-weight: bold;
+    color: #ffffff;
+  }
+  
+  .content__maker__title {
+    margin-bottom: 20px;
+  }
+
+  .wizappDetail__bottom--comment-count {
+    padding-top: 19.5px;
+  }
+
+  .wizappDetail__bottom--comment {
+    color: black;
+    width: 100%;
+  }
+
+  .wizappDetail__bottom--games {
+    margin-left: auto;
+  }
+
+  .wizappDetail__bottom--games > div {
+    margin-bottom: 30px;
+  }
+
+  .gameItem {
+    width: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 15px;
+    letter-spacing: -0.28px;
+    text-align: left;
+    margin-bottom: 30px;
+
+    a {
+      width: 100%;
+    }
+  }
+
+  .gameItem__projectimg-wrapper {
+    width: 180px;
+    height: 180px;
+    overflow: hidden;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .gameItem__projectimg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 1s transform;
+  }
+
+  .gameItem__projectname {
+    font-weight: 500;
+    color: #ffffff;
+    margin-bottom: 3px;
+    width: 180px;
+    height: 24px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .gameItem__projectname__text {
+    border-bottom: 1px solid transparent;
+    transition: 1s border;
+  }
+
+  .gameItem__username {
+    color: #afafaf;
+  }
+
+  .gameItem:hover {
+    .gameItem__projectimg {
+      transform: scale(1.1);
+    }
+    .gameItem__projectname__text {
+      border-bottom: 1px solid #ffffff;
+    }
+  }
+}
+
+@media screen and (max-width: 1079px) {
+  #wizappDetail {
+    background-color: #1c1c1c;
+    z-index: 10;
+
+    .wizappDetail__inner {
+      top: 0;
+      width: 100%;
+      height: 100vh;
+      padding: 20px 21px 0;
+      border-radius: 0;
+      margin-bottom: 0;
+    }
+    
+    .wizappDetail__header {
+      display: block;
+      margin: 0 0 20px;
+    }
+    .header__project--thumbnail {
+      display: none;
+    }
+    .info__title {
+      max-width: 79.44vw;
+      font-size: 22px;
+      font-weight: bold;
+      line-height: 1.45;
+      margin-top: 0;
+    }
+    .info__sub {
+      padding-top: 5px;
+    }
+    .info__sub__date {
+      font-size: 14px;
+      letter-spacing: -0.26px;
+    }
+    .header__project--buttons {
+      & > div {
+        width: 72px;
+      }
+
+      > div + div {
+        margin-left: 10px;
+      }
+    }
+    .header__close--pc {
+      display: none;
+    }
+    .header__close--mobile {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 22px;
+      height: 22px;
+      background: transparent;
+    }
+    .content__game {
+      margin-bottom: 10px;
+    }
+    .content__description {
+      font-size: 14px;
+      line-height: 1.79;
+      margin-top: 21px;
+    }
+    .content__user {
+      height: auto;
+      margin-top: 0;
+      padding: 19.5px 0 29.5px;
+
+      .user__img {
+        width: 60px;
+        height: 60px;
+        margin-right: 15px;
+      }
+      .user__name {
+        max-width: 38.88vw;
+        font-size: 15px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+      .user__organization {
+        font-weight: bolder;
+      }
+      .user__statusMessage {
+        display: none;
+      }
+      .user__subscribe {
+        margin-top: 7px;
+        font-size: 13px;
+        font-weight: 500;
+        color: rgba(255, 255, 255, 0.5);
+      }
+      .description, .description--full {
+        max-width: 88.33vw;
+        height: auto;
+      }
+    }
+    .game__copyButton {
+      display: none;
+    }
+    .UserSubscribe {
+      top: 19.5px;
+    }
+    .wizappDetail__bottom--wrapper {
+      display: block;
+    }
+    .wizappDetail__bottom--comment-count__pc {
+      display: none;
+    }
+    .wizappDetail__bottom--comment {
+      max-width: 1080px;
+    }
+    .wizappDetail__bottom--games {
+      display: block;
+      margin: 54px 0 18px 0;
+      width: 100%;
+      height: auto;
+    }
+
+    .shareDetailBox{
+      border-radius: 16px;
+      top: -210px;
+    }
+
+    .gameItem {
+      display: inline-block;
+      width: calc((100% - 15px) / 2);
+    }
+
+    .gameItem:nth-child(2n) {
+      margin-left: 15px;
+    }
+
+    .gameItem__projectimg-wrapper {
+      width: 100%;
+      height: 44.5vw;
+    }
+
+    .gameItem__projectimg {
+      border-radius: 5px;
+    }
+
+    .gameItem__projectname {
+      margin-bottom: 3px;
+      width: 100%;
+      font-size: 14px;
+      letter-spacing: -0.26px;
+    }
+
+    .gameItem__username {
+      width: inherit;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-size: 12px;
+      letter-spacing: -0.22px;
+    }
+  }
+}

@@ -1,0 +1,55 @@
+.EventPopup {
+  position: fixed;
+  top: 60px;
+  left: calc(50% - 540px);
+  z-index: 10;
+  width: 1080px;
+  margin: 0 auto;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  opacity: 1;
+  .EventPopupWrapper {
+    width: 300px;
+    background: black;
+    pointer-events: all;
+    box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.5);
+  }
+
+  .EventPopupImg img {
+    display: block;
+    width: 100%;
+    height: 335px;
+    // height: auto;
+  }
+
+  .EventPopupBtns {
+    background: #151424;
+    display: flex;
+  }
+  .EventPopupBtn {
+    cursor: pointer;
+    flex: 1;
+    line-height: 40px;
+    text-align: center;
+    border-top: 1px solid #000;
+    color: #fff;
+    font-size: 14px;
+  }
+  .EventPopupBtnLeft {
+    border-right: 1px solid #000;
+  }
+
+  @media screen and (max-width: 1079px) {
+    .EventPopupWrapper {
+      margin: 0 auto;
+    }
+  }
+}
+
+.EventPopupHidden {
+  opacity: 0;
+  pointer-events: none;
+  .EventPopupWrapper {
+    pointer-events: none;
+  }
+}

@@ -1,0 +1,121 @@
+.dream .dream_mission {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  button { 
+    border: none;
+    padding: 0;
+    outline: none;
+    cursor: pointer;
+    background: transparent;
+  }
+
+  .dream_mission-header {
+    position: relative;
+    width: 100%;
+    height: 51px;
+    -webkit-backdrop-filter: blur(50px);
+    backdrop-filter: blur(50px);
+    background-color: rgba(255, 255, 255, 0.8);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.25;
+  }
+
+  .menu-list-btn{
+    position: absolute;
+    top: 6px;
+    left: 8.5px;
+    width: 41px;
+    height: 41px;
+    background: url('../../../../../Image/builder/slide-menu-list-btn.svg') no-repeat center/cover;
+    cursor: pointer;
+    outline: none;
+  }
+
+  .dream_mission-title{
+    line-height: 51px;
+  }
+
+  .dream_mission-body {
+    width: calc(100% - 3px);
+    height: calc(100vh - 51px - 62px);
+    overflow-y: auto;
+
+    /* width */
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      border-radius: 3.5px;
+      background-color: rgba(0, 0, 0, 0.15);
+    }
+
+    .dreamslide {
+      width: 100%;
+    }
+  }
+
+  .dream_mission-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 62px;
+    -webkit-backdrop-filter: blur(50px);
+    backdrop-filter: blur(50px);
+    background-color: rgba(255, 255, 255, 0.8);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+
+    button {
+      width: 106px;
+      height: 44px;
+      background-color: rgba(136, 136, 182, 0.1);
+
+      .icon {
+        display: inline-block;
+        width: 44px;
+        height: 44px;
+      }
+
+      &.on {
+        background-color: rgba(29, 182, 255, 0.2);
+      }
+
+      &.off {
+        pointer-events: none;
+      }
+    }
+  }
+
+  .dream_mission-current{
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0 33px;
+  }
+
+  .slide-prev-btn {
+    border-radius: 100px 5px 5px 100px;
+    &.on .icon {
+      background: url('../../../../../Image/builder/slider-prev-btn-on.svg');
+    }
+    &.off .icon {
+      background: url('../../../../../Image/builder/slider-prev-btn-off.svg');
+    }
+  }
+
+  .slide-next-btn {
+    border-radius: 5px 100px 100px 5px;
+    &.on .icon {
+      background: url('../../../../../Image/builder/slider-next-btn-on.svg');
+    }
+    &.off .icon {
+      background: url('../../../../../Image/builder/slider-next-btn-off.svg');
+    }
+  }
+}

@@ -1,0 +1,46 @@
+.Quest {
+  width: 100%;
+
+  .Quest_GridContainer {
+    display: grid;
+    grid-template-columns: 162px 162px 162px 162px 162px;
+    grid-gap: 87px 67.12px;
+
+    .Quest_GridItem {
+      width: 162px;
+      height: 162px;
+      background-color: #151424;
+      border-radius: 50%;
+
+      .Quest_GridItem-icon {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        background-color: #2c2f4f;
+      }
+
+      .Quest_GridItem-date {
+        margin-top: 15px;
+        display: flex;
+        justify-content: center;
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 19px;
+        letter-spacing: -0.8px;
+        color: #a1a2ac;
+      }
+    }
+  }
+  .Quest_Wrapper_ItemWrapper {
+    display: flex;
+    flex-wrap: wrap;
+
+    .Quest_Wrapper_ItemWrapper-item {
+      .Quest_Wrapper-icon {
+        width: 90px;
+        height: 90px;
+        display: block;
+      }
+    }
+  }
+}

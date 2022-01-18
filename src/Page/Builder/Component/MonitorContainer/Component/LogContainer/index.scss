@@ -1,0 +1,77 @@
+.WebRTCLogRnd {
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+.WebRTCLogTitle {
+  background: rgba(255, 255, 255, 0.5);
+  border: rgba(0, 0, 0, 0.5) solid 1px;
+  padding: 5px;
+  font-weight: bold;
+}
+.WizLiveLogWrapper {
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  width: 100%;
+  height: 300px;
+  color: #ffffff;
+  overflow: scroll;
+  padding: 5px;
+  font-weight: bold;
+}
+.WizLiveLogTabs {
+  height: 50px;
+}
+
+.WizLiveLogTab {
+  display: block;
+  background: rgba(255, 255, 255, 0.5);
+  width: 35px;
+  height: 35px;
+  // border: 4px solid #00000000;
+  float: left;
+  margin-right: 10px;
+}
+.WizLiveLogTab--on {
+  background: #23d8af;
+}
+.WizLiveLogTab--off {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.WizLiveLogGames {
+  // height: 43px;
+}
+.WizLiveLogGames:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.WizLiveLogGame {
+  display: block;
+  background: rgba(255, 255, 255, 0.5);
+  width: 120px;
+  line-height: 35px;
+  text-align: center;
+  float: left;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+.WizLiveLogGame--on {
+  background: #23d8af;
+}
+.WizLiveLogGame--off {
+  background: rgba(255, 255, 255, 0.5);
+}
+.WizLiveLogAPI {
+  line-height: 35px;
+  text-align: center;
+  width: 100px;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.WizLiveLogSubTitle {
+  line-height: 25px;
+}

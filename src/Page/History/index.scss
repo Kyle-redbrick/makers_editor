@@ -1,0 +1,17 @@
+.Page--History {
+  min-width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  .History-inner {
+    width: 1000px;
+  }
+
+  .History_Overview {
+    color: white;
+    margin-bottom: 30px;
+  }
+}

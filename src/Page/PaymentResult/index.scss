@@ -1,0 +1,193 @@
+.Page--PaymentResult {
+  min-width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #282c36;
+
+  .paymentResult {
+    margin: 100px auto 0 auto;
+    width: 1080px;
+    color: white;
+  }
+  section {
+    align-items: center;
+  }
+  .paymentResult_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  section {
+    display: flex;
+    margin-top: 56px;
+  }
+  .paymentResult_header_title {
+    font-size: 30px;
+    font-weight: bold;
+  }
+  .paymentResult_header_ticketCount {
+    font-size: 15px;
+    font-weight: 500;
+    span {
+      margin-left: 35px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+  }
+  .paymentResult_header_buyTicketBtn {
+    margin-left: auto;
+    padding: 6px 36px 7px 38px;
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+    background-color: #1db6ff;
+    border-radius: 21px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+
+  .paymentResult_ticketHistories {
+    margin-top: 48px;
+    border-top: 2px solid #afafaf;
+  }
+  .paymentResult_ticketHistory {
+    display: flex;
+    height: 110px;
+    border-bottom: 2px solid #202531;
+  }
+  .paymentResult_ticketHistory_type {
+    width: 60px;
+    font-size: 18px;
+    font-weight: bold;
+    margin: auto 0;
+    text-align: center;
+  }
+  .paymentResult_ticketHistory_type-add {
+    color: #1db6ff;
+  }
+  .paymentResult_ticketHistory_type-use {
+    color: #afafaf;
+  }
+  .paymentResult_ticketHistory_title {
+    margin: auto 0 auto 40px;
+    font-size: 18px;
+    font-weight: bold;
+    // width: 100%;
+    width: calc(100% - 265px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .paymentResult_ticketHistory_date {
+    margin-top: 1px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #afafaf;
+  }
+  .paymentResult_ticketHistory_right {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 150px;
+  }
+  .paymentResult_ticketHistory_amount {
+    font-size: 18px;
+    font-weight: 500;
+    color: #afafaf;
+    width: 70px;
+    text-align: center;
+  }
+  .amount__use {
+    width: 15px;
+    height: 2px;
+    background-color: #afafaf;
+    margin: 0 auto;
+  }
+
+  .paymentResult_ticketHistory_tickets {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .history__not__exist {
+    text-align: center;
+    margin-top: 200px;
+  }
+  .paymentResult_myApk {
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 500;
+    color: #ffffff;
+    text-decoration: underline;
+  }
+}
+
+@media screen and (max-width: 1079px) {
+  .Page--PaymentResult {
+    .paymentResult {
+      width: calc(100% - 40px);
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+    .paymentResult_myApk {
+      font-size: 12px;
+    }
+    section {
+      margin-top: 34px;
+    }
+
+    .paymentResult_header_title {
+      font-size: 20px;
+    }
+    .paymentResult_header_ticketCount {
+      font-size: 14px;
+      span {
+        font-size: 15px;
+        margin-left: 12px;
+      }
+    }
+    .paymentResult_ticketHistories {
+      margin-top: 34px;
+    }
+    .paymentResult_ticketHistory {
+      position: relative;
+    }
+    .paymentResult_ticketHistory_type {
+      font-size: 15px;
+      width: 35px;
+    }
+    .paymentResult_ticketHistory_title {
+      margin-left: 18px;
+      font-size: 15px;
+      width: calc(100% - 240px);
+      margin-right: 20px;
+    }
+    .paymentResult_ticketHistory_date {
+      font-size: 14px;
+    }
+
+    .paymentResult_ticketHistory_right {
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-end;
+    }
+
+    .paymentResult_ticketHistory_amount {
+      text-align: right;
+    }
+
+    .amount__use {
+      position: relative;
+      right: -27px;
+    }
+    .paymentResult_ticketHistory_tickets {
+      font-size: 15px;
+      width: 45px;
+      text-align: right;
+      margin-top: 10px;
+    }
+  }
+}

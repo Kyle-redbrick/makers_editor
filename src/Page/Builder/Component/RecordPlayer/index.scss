@@ -1,0 +1,83 @@
+.Page--BUILDER {
+  .RecordPlayer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 100;
+  }
+  .RecordPlayerClickArea {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  .RecordPlayer__Slider {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 100px;
+    padding: 0 50px;
+    padding-top: 10px;
+    width: 100%;
+    background: var(--W_Dim);
+  }
+
+  .RecordPlayer__Slider__on {
+    // display: inline-block;
+  }
+
+  .RecordPlayer__Slider__off {
+    display: none;
+  }
+
+  .videos {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    video {
+      width: 240px;
+      height: auto;
+    }
+  }
+
+  .controllerBtns {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .controlBtn {
+    background-color: transparent;
+    border: 0;
+    outline: none;
+    margin-right: 10px;
+  }
+
+  .playButton {
+    background-image: url("../../../../Image/record-play-icon.png");
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+  }
+
+  .pauseButton {
+    background-image: url("../../../../Image/record-pause-icon.png");
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+  }
+
+  .durationTimer {
+    white-space: nowrap;
+    color: var(--W_White);
+    font-size: 15px;
+    margin-right: 20px;
+  }
+}

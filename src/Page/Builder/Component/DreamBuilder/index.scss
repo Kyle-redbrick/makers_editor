@@ -1,0 +1,48 @@
+.Page--BUILDER.dream {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  height: 100vh;
+
+  .dream_section {
+    position: relative;
+    height: 100%;
+  }
+  .dream_section-left {
+    width: 35%;
+    background-color: white;
+  }
+  .dream_section-right {
+    flex: 1;
+  }
+  .dream_section-overlay {
+    &::after {
+      position: absolute;
+      z-index: 10;
+      top: 0;
+      left: 0;
+      content: '';
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.5);
+      cursor: pointer;
+    }
+  }
+
+  .dream_mission {
+    z-index: 0;
+  }
+  .dream_menu {
+    z-index: 1;
+  }
+  .PlayButton {
+    z-index: 2;
+  }
+  .GameContainer {
+    z-index: 3;
+  }
+  .dream_wizmate {
+    z-index: 4;
+  }
+}

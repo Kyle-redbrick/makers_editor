@@ -1,0 +1,393 @@
+.APKItem {
+  // APKItem properties
+  --itemHeight: 214px;
+
+  position: relative;
+  width: 100%;
+  height: var(--itemHeight);
+  display: flex;
+  flex-direction: column;
+  color: white;
+  padding: 0 28px 28px 30px;
+  border-radius: 5px;
+  border: solid 1px #202531;
+  background-color: #393e4f;
+  margin-bottom: 20px;
+
+  .APKItem_header {
+    display: flex;
+    justify-content: space-between;
+    min-height: 54px;
+    align-items: center;
+    border-bottom: 1px solid #282c36;
+  }
+
+  .APKItem_h-appName,
+  .APKItem_h_pbw-text {
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+  .APKItem_h_projectBtnWrap {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.2s;
+
+    img {
+      margin-left: 5px;
+      width: 12px;
+      height: 12px;
+    }
+  }
+
+  .APKItem_content {
+    position: relative;
+    width: 100%;
+    height: 108px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+  }
+
+  .APKItem-shareBtn {
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: all 0.2s;
+    background-color: #282c36;
+    border-radius: 20px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    img {
+      display: block;
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  .APKItem-icon {
+    width: 108px;
+    height: 100%;
+    border-radius: 5px;
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 5px;
+    }
+  }
+
+  .APKItem_apkInfo {
+    margin-left: 20px;
+    height: 90px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: calc(100% - 410px);
+  }
+
+  .APKItem_ai_topwrap {
+    display: flex;
+    align-items: center;
+  }
+
+  .APKItem_ai_tw-packageName {
+    margin-right: 20px;
+    font-size: 15px;
+  }
+
+  .APKItem_ai_tw-version {
+    font-size: 15px;
+    font-weight: 500;
+  }
+
+  .APKItem_ai_fw-createText,
+  .APKItem_ai_fw-updateText {
+    font-size: 15px;
+    margin-right: 20px;
+  }
+
+  .APKItem_ai_flexWrap {
+    display: flex;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+  }
+
+  .APKItem_ai-createdAt {
+    margin-bottom: 5px;
+  }
+
+  .APKItem_ai-createdAt,
+  .APKItem_ai-updatedAt {
+    font-size: 15px;
+  }
+
+  .APKItem_rightWrap_cancel,
+  .APKItem_rightWrap_ongoing {
+    right: 0px;
+    height: 100%;
+    position: absolute;
+  }
+
+  .APKItem_rightWrap_cancel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .APKItem_rightWrap_ongoing {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      margin-left: 10px;
+      width: 30px;
+      height: 30px;
+      animation: rotate 1s linear infinite;
+      -webkit-animation: rotate 1s linear infinite;
+    }
+  }
+
+  .APKItem_rightWrap_ongoing-text {
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+  .APKItem_rightWrap_complete {
+    position: absolute;
+    right: 0px;
+    height: 100%;
+    width: 256px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .rightWrap_cancel_top {
+    width: 100%;
+    text-align: right;
+  }
+
+  .shareImg {
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .rightWrap_cancel_bottom {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+  .apk__edit,
+  .apk__download {
+    width: 120px;
+    height: 35px;
+    border: 1px solid #1db6ff;
+    border-radius: 5px;
+    padding-top: 6px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #1db6ff;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .apk__download {
+    background-color: #1db6ff;
+    color: white;
+  }
+  .APKItem_rw_cc_flexWrap {
+    display: flex;
+    font-size: 18px;
+    font-weight: 500;
+
+    img {
+      width: 30px;
+      height: 30px;
+      animation: rotate 1s linear infinite;
+      -webkit-animation: rotate 1s linear infinite;
+    }
+  }
+
+  .APKItem_rw_cc_fw-text {
+    margin-right: 10px;
+  }
+
+  .APKItem_rw_cc_fw-retryBtn {
+    transition: all 0.2s;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 500;
+    color: #1db6ff;
+  }
+
+  /** hover style */
+  .APKItem_h_projectBtnWrap:hover,
+  .APKItem-shareBtn:hover,
+  .APKItem_rw_cc_fw-retryBtn:hover,
+  .apk__edit:hover,
+  .apk__download:hover,
+  .shareImg:hover {
+    opacity: 0.5;
+    transform: scale(1.05);
+  }
+
+  .APKItem_rightWrap_ongoing_mobile,
+  .APKItem_rightWrap_cancel_mobile {
+    display: none;
+  }
+
+  /** Animations */
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    50% {
+      transform: rotate(180deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+@media screen and (max-width: 1079px) {
+  .APKItem {
+    // APKItem properties
+    height: auto;
+    padding: 0 8px 13px 8px;
+
+    .APKItem_header {
+      min-height: 46px;
+    }
+
+    .APKItem_h-appName,
+    .APKItem_h_pbw-text {
+    }
+
+    .APKItem_h_projectBtnWrap {
+      display: none;
+    }
+
+    .APKItem_content {
+      position: relative;
+      margin-top: 14px;
+      margin-bottom: 50px;
+      height: initial;
+    }
+
+    .APKItem-shareBtn {
+      img {
+      }
+    }
+
+    .APKItem-icon {
+      width: 72px;
+      height: 72px;
+    }
+
+    .APKItem_apkInfo {
+      margin-left: 10px;
+      width: calc(100% - 82px);
+      height: 72px;
+      // padding: calc(var(--contentHeight) / 20) 0;
+    }
+
+    .APKItem_ai_tw-packageName {
+      margin-right: 20px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      width: 92px;
+      font-size: 14px;
+    }
+
+    .APKItem_ai_tw-version {
+    }
+
+    .APKItem_ai_fw-createText,
+    .APKItem_ai_fw-updateText {
+      margin-right: 10px;
+    }
+
+    .APKItem_ai-createdAt {
+      margin-bottom: 2px;
+    }
+
+    .APKItem_ai_fw-updateText,
+    .APKItem_ai-updatedAt,
+    .APKItem_ai_fw-createText,
+    .APKItem_ai-createdAt {
+      font-size: 12px;
+    }
+
+    .APKItem_rightWrap_cancel,
+    .APKItem_rightWrap_ongoing {
+      display: none;
+    }
+
+    .APKItem_rightWrap_cancel_mobile,
+    .APKItem_rightWrap_ongoing_mobile {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+
+    .APKItem_rightWrap_ongoing_mobile {
+      .APKItem_rightWrap_ongoing-text {
+      }
+
+      img {
+        margin-left: 10px;
+        width: 20px;
+        height: 20px;
+        animation: rotate 1s linear infinite;
+        -webkit-animation: rotate 1s linear infinite;
+      }
+    }
+
+    .APKItem_rw_cc_flexWrap {
+    }
+
+    .APKItem_rw_cc_fw-text {
+      margin-right: 10px;
+    }
+
+    .APKItem_rw_cc_fw-retryBtn {
+    }
+
+    /** hover style */
+    .APKItem_h_projectBtnWrap:hover,
+    .APKItem_rw_cc_fw-retryBtn:hover {
+      opacity: 0.5;
+      transform: scale(1.05);
+    }
+
+    .APKItem_rightWrap_complete {
+      width: 100%;
+      height: 170%;
+      right: initial;
+      bottom: -50px;
+      margin: 0 auto;
+    }
+    .rightWrap_cancel_top {
+      height: 72px;
+    }
+
+    .rightWrap_cancel_bottom {
+      width: 260px;
+      margin: 0 auto;
+    }
+    .apk__edit,
+    .apk__download {
+      width: 112px;
+      height: 30px;
+      padding-top: 3px;
+    }
+  }
+}

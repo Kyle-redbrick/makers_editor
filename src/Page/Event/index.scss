@@ -1,0 +1,251 @@
+.Page--Event {
+  min-width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background: #000000;
+
+  .noEventText {
+    color: #ffffff;
+  }
+
+  .Event_Inner {
+    width: 1170px;
+  }
+
+  .Event_Title {
+    margin-top: 20px;
+    padding-bottom: 19.5px;
+    font-size: 30px;
+    font-weight: bold;
+    letter-spacing: 0.18px;
+    color: #ffffff;
+    border-bottom: solid 1px rgba(255, 255, 255, 0.2);
+  }
+
+  .EventItem_Wrap-category {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.75);
+  }
+
+  .Event_TabsWeb {
+    height: 28px;
+    display: flex;
+    align-items: center;
+    color: #7c7c7e;
+  }
+
+  .Event_TabsMobile {
+    display: none;
+  }
+
+  .Event_Tabs-tab {
+    position: relative;
+    margin-right: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    height: 100%;
+    font-size: 15px;
+    line-height: 1.6;
+    letter-spacing: -0.28px;
+    color: #afafaf;
+
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+    cursor: pointer;
+
+    &::after {
+      position: absolute;
+      right: -18px;
+      content: "";
+      width: 1px;
+      height: 15px;
+      background: #afafaf;
+    }
+  }
+  .Event_Tabs-tab:last-child::after {
+    width: 0;
+  }
+  .Event_Tabs-tab:hover {
+    font-weight: bold;
+    color: #ffffff;
+  }
+
+  .Event_ItemSec {
+    width: 1170px;
+    margin-top: 19.5px;
+    margin-bottom: 100px;
+  }
+
+  .Event_ItemSec-item {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  /** Event Item */
+  .EventItem {
+    position: relative;
+    margin-bottom: 70px;
+    width: 570px;
+    overflow: hidden;
+    text-decoration: none;
+
+    .EventItem_Img_Wrapper {
+      position: relative;
+      width: 100%;
+      height: 204px;
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: 204px;
+      object-fit: cover;
+      transition: 0.5s transform;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+
+    &:active .EventItem_Img_Wrapper::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 204px;
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+
+    .EventItem_Wrap {
+      padding: 20px 0 0;
+      color: #ffffff;
+    }
+
+    .EventItem_Wrap-subTitle {
+      font-size: 15px;
+      font-weight: 500;
+      letter-spacing: 0.11px;
+    }
+
+    .EventItem_Wrap-title {
+      position: relative;
+      font-size: 20px;
+      font-weight: 500;
+      margin: 0 0 5px;
+    }
+
+    .new-event {
+      position: relative;
+      bottom: 2px;
+      font-size: 15px;
+      font-weight: bold;
+      letter-spacing: 0.11px;
+      color: #1db6ff;
+      margin-left: 9px;
+    }
+
+    .EventItem_Wrap_DateWrap {
+      display: flex;
+      font-size: 18px;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    &.event-end::after {
+      content: "마감";
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      width: 50px;
+      line-height: 33px;
+      border-radius: 9px;
+      border: solid 1px rgba(255, 255, 255, 0.2);
+      background-color: #000000;
+      font-size: 15px;
+      font-weight: bold;
+      text-align: center;
+      color: #ffffff;
+    }
+  }
+}
+
+@media screen and (max-width: 1169px) {
+  .Page--Event {
+    .Event_Inner {
+      width: 88.33vw;
+    }
+
+    .Event_Title {
+      margin-top: 20px;
+      margin-bottom: 19.5px;
+      font-size: 24px;
+    }
+
+    .Event_TabsWeb {
+      display: none;
+    }
+
+    .Event_TabsMobile {
+      display: flex;
+      justify-content: flex-start;
+      margin-top: 32px;
+    }
+
+    .Event_Tabs-tab {
+      font-size: 14px;
+    }
+
+    .Event_ItemSec {
+      width: auto;
+    }
+
+    .Event_ItemSec-item {
+      width: 100%;
+    }
+
+    /** Event Item */
+    .EventItem {
+      width: 100%;
+      margin-right: 0;
+      margin-bottom: 30px;
+
+      .EventItem_Img_Wrapper {
+        height: auto;
+        border-radius: 16px;
+
+        img {
+          height: 29.44vw;
+        }
+      }
+
+      .EventItem_Wrap {
+        padding: 15px 0 0;
+      }
+
+      .EventItem_Wrap-subTitle {
+        font-size: 14px;
+      }
+
+      .EventItem_Wrap-title {
+        font-size: 16px;
+      }
+
+      .EventItem_Wrap_DateWrap {
+        font-size: 14px;
+      }
+    }
+  }
+}

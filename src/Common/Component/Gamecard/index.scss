@@ -1,0 +1,139 @@
+// .Home__GameWrapper_Games {
+.Gamecard {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+
+  .Gamecard__ImageWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 100%; /* 1:1 Aspect Ratio */
+    position: relative;
+    height: 0;
+    border-radius: 5px;
+    overflow: hidden;
+    .img {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      -webkit-transition: all 0.3s;
+      -moz-transition: all 0.3s;
+      transition: all 0.3s;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center center;
+    }
+    .Gamecard__ImageWrapper__ButtonWrapper {
+      display: none;
+      position: absolute;
+      min-width: 50%;
+      height: 50px;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+  }
+
+  .Gamecard_SubInfoWrapper {
+    display: flex;
+    align-items: center;
+
+    .Gamecard_SubInfoWrapper_ItemWrapper {
+      display: flex;
+      align-items: center;
+      img {
+        position: relative;
+        top: 1px;
+        width: 12px;
+        height: 12px;
+      }
+
+      .Gamecard_SubInfoWrapper_ItemWrapper-text {
+        margin-left: 3px;
+        margin-right: 9px;
+        font-size: 12px;
+        letter-spacing: -0.22px;
+        color: #afafaf;
+      }
+    }
+  }
+
+  .Gamecard_Info_Wrapper {
+    position: relative;
+  }
+
+  .Gamecard_UserWrapper_Icon {
+    position: absolute;
+    top: 18px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+  }
+
+  .Gamecard-gameTitle {
+    margin-top: 15px;
+    max-height: 27px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 15px;
+    font-weight: bold;
+    color: #ffffff;
+    letter-spacing: -0.28px;
+  }
+
+  .Gamecard_GameWrapper {
+    margin: 10px 0 3px 28px;
+
+    .Gamecard-userName {
+      max-width: 176px;
+      height: 22px;
+      margin-top: 10px;
+      font-size: 15px;
+      letter-spacing: -0.28px;
+      color: #afafaf;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
+}
+.Gamecard:hover .Gamecard__ImageWrapper .img {
+  transform: scale(1.1);
+}
+
+@media screen and (max-width: 1079px) {
+  .Gamecard {
+    .Gamecard_UserWrapper_Icon {
+      top: 7px;
+      width: 15px;
+      height: 15px;
+    }
+
+    .Gamecard-gameTitle {
+      margin-top: 0;
+      font-size: 14px;
+      max-height: 22px;
+      letter-spacing: -0.26px;
+    }
+
+    .Gamecard_GameWrapper {
+      margin: 5px 0 0 18px;
+
+      .Gamecard-userName {
+        max-width: 100%;
+        height: 18px;
+        margin-top: 3px;
+        font-size: 12px;
+        letter-spacing: -0.22px;
+      }
+    }
+  }
+}

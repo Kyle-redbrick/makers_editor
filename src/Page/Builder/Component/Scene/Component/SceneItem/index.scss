@@ -1,0 +1,68 @@
+.Page--BUILDER {
+  .Scene_Item {
+    position: relative;
+    margin-top: 13px;
+    margin-left: 15px;
+  }
+
+  .SceneInfo {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .Scene_Item_Selected {
+    .Scene_Thumb {
+      border: 1px solid var(--W_PointColor);
+      border-radius: 7px;
+    }
+  }
+
+  .Scene_Remove {
+    cursor: pointer;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    img {
+      display: block;
+      width: 12px;
+      height: 12px;
+    }
+  }
+  .Scene_Thumb {
+    width: 68px;
+    height: 68px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid transparent;
+    border-radius: 7px;
+    background-color: var(--W_Gray06);
+  }
+  .Scene_Thumb_Img {
+    border-radius: 7px;
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    // bord
+  }
+  .Scene_Name {
+    font-size: 14px;
+    letter-spacing: -0.26px;
+    color: var(--W_Gray03);
+    margin: 6px 0;
+  }
+
+  .Scene_Sprites {
+  }
+  .Scene_Sprites_Active {
+  }
+
+  // horizontal
+  .Scene_Item_Horizontal {
+  }
+
+  // vertical
+  .Scene_Item_Vertical {
+  }
+}

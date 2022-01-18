@@ -1,0 +1,28 @@
+.pythonSelect {
+  .buttonWrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  button + button {
+    margin-top: 50px;
+  }
+
+  button {
+    box-sizing: border-box;
+    width: 708px;
+    height: 62px;
+    padding: 0 20px;
+    font-size: 20px;
+    font-weight: 500;
+    color: #fbfbfb;
+    text-align: left;
+    background: url("../../../../../Image/newPython/select-box@2x.png")
+      no-repeat center/cover;
+
+    &:hover {
+      background: url("../../../../../Image/newPython/select-box-hover@2x.png")
+        no-repeat center/cover;
+    }
+  }
+}

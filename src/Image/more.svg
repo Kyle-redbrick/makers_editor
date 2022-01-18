@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="12" height="22" viewBox="0 0 12 22">
+    <defs>
+        <path id="prefix__a" d="M0 0H1921V5364H0z"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g transform="translate(-1449 -2474) translate(0 -1155)">
+            <use fill="#191A25" xlink:href="#prefix__a"/>
+        </g>
+        <path stroke="#FFF" stroke-width="2" d="M1444 2480L1454 2490 1464 2480" transform="translate(-1449 -2474) rotate(-90 1454 2485)"/>
+        <path stroke="#FFF" stroke-width="1.5" d="M1445 2480L1455 2490 1465 2480" transform="translate(-1449 -2474) rotate(-90 1455 2485)"/>
+    </g>
+</svg>

@@ -1,0 +1,122 @@
+.Page--BUILDER {
+  // detail
+  .QuestionDetail {
+    height: 100%;
+    padding: 24px;
+  }
+  .QuestionDetailBack {
+    cursor: pointer;
+    font-size: 24px;
+    width: 30px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 15px;
+    background-color: var(--W_Gray04);
+    position: fixed;
+    left: 14px;
+    top: 3px;
+    background-color: transparent;
+  }
+  .QuestionDetailUserInfo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .QuestionDetailUserIcon {
+    margin-right: 5px;
+    img {
+      display: block;
+      width: 30px;
+      height: 30px;
+      border-radius: 15px;
+      object-fit: cover;
+    }
+  }
+  .QuestionDetailUserName {
+    font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+  }
+  .QuestionDetailDate {
+    font-size: 12px;
+    width: 150px;
+    text-align: right;
+  }
+  .QuestionDetailTitle {
+    font-size: 16px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid var(--W_Gray04);
+    padding-bottom: 10px;
+  }
+  .QuestionDetailCode {
+    height: 250px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+  }
+  .QuestionDetailShowProject {
+    cursor: pointer;
+    border-radius: 4px;
+    background: var(--W_PointColor);
+    color: var(--W_TextColorOnBG);
+    font-size: 12px;
+    padding: 2px 6px;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .QuestionDetailContent {
+    position: relative;
+    font-size: 14px;
+    border-bottom: 1px solid var(--W_Gray04);
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    white-space: pre-line;
+    word-break: break-all;
+  }
+
+  // detail answers
+  .QuestionDetailAnswers {
+  }
+  .QuestionDetailAnswer {
+    padding: 10px;
+    padding-bottom: 25px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid var(--W_Gray04);
+  }
+  .QuestionDetailAnswerUserInfo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .QuestionDetailAnswerUserIcon {
+    margin-right: 5px;
+    img {
+      display: block;
+      width: 30px;
+      height: 30px;
+      border-radius: 15px;
+      object-fit: cover;
+    }
+  }
+  .QuestionDetailAnswerUserName {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+  }
+  .QuestionDetailAnswerDate {
+    font-size: 12px;
+    width: 150px;
+    text-align: right;
+  }
+  .QuestionDetailAnswerContent {
+    font-size: 14px;
+    white-space: pre-wrap;
+    word-break: break-all;
+  }
+  .QuestionDetailAnswerCode {
+    margin-top: 20px;
+    width: 100%;
+    height: 180px;
+  }
+}

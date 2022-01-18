@@ -1,0 +1,67 @@
+.Page--OCPEventOnlineCamp {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 100%;
+
+  .OCPEventOnlineCamp {
+    position: relative;
+    width: 1080px;
+  }
+  .OCPEventOnlineCamp_imgPC,
+  .OCPEventOnlineCamp_imgM {
+    width: 100%;
+  }
+  .OCPEventOnlineCamp_imgM {
+    display: none;
+  }
+  .OCPEventOnlineCamp_applyBtn {
+    position: absolute;
+    width: 44%;
+    height: 1.9%;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+  }
+  .OCPEventOnlineCamp_applyBtn-0 {
+    top: 35.9623%;
+  }
+  .OCPEventOnlineCamp_applyBtn-1 {
+    top: 54.0813%;
+  }
+  .OCPEventOnlineCamp_applyBtn-2 {
+    top: 74.6%;
+  }
+  .OCPEventOnlineCamp_applyBtn-3 {
+    top: 92.8%;
+  }
+
+  @media screen and (max-width: 1079px) {
+    .OCPEventOnlineCamp {
+      width: 100%;
+    }
+    .OCPEventOnlineCamp_imgPC {
+      display: none;
+    }
+    .OCPEventOnlineCamp_imgM {
+      display: block;
+    }
+    .OCPEventOnlineCamp_applyBtn {
+      width: 80%;
+      height: 1.28%;
+    }
+    .OCPEventOnlineCamp_applyBtn-0 {
+      top: 37.4%;
+    }
+    .OCPEventOnlineCamp_applyBtn-1 {
+      top: 55.9813%;
+    }
+    .OCPEventOnlineCamp_applyBtn-2 {
+      top: 76.7%;
+    }
+    .OCPEventOnlineCamp_applyBtn-3 {
+      top: 95.2%;
+    }
+  }
+}

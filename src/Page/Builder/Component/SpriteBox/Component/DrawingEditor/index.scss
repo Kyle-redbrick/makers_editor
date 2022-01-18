@@ -1,0 +1,251 @@
+.DrawingEditor {
+  font-size: 20px;
+  // max-width: 80vw;
+  max-height: 80vh;
+  position: relative;
+  overflow: auto;
+  background: var(--W_White);
+  width: 70vw;
+  // height: 80vh;
+  .DrawingEditor__CanvasHolder {
+    // max-height: 70vh;
+  }
+  //title line
+  .DrawingEditorTitleLine {
+    line-height: 28px;
+    display: flex;
+    border-bottom: 1px solid var(--W_Gray01);
+  }
+  .DrawingEditorTitle {
+    margin-left: 30px;
+    text-align: center;
+    width: 100%;
+    font-size: 13px;
+    color: var(--W_Gray03);
+  }
+  .DrawingEditorClose {
+    cursor: pointer;
+    width: 30px;
+    text-align: center;
+    margin-right: 10px;
+  }
+
+  //top tools
+  .DrawingEditorTopTools {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 32px;
+    border-bottom: 1px solid var(--W_Gray01);
+  }
+  //top tools left
+  .DrawingEditorTopToolsLeft {
+    display: flex;
+    flex-direction: row;
+    // border: 2px solid red;
+    margin-left: 21px;
+  }
+  //top tools right
+  .DrawingEditorTopToolsRight {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 16px;
+  }
+  .DrawingEditorFill {
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+  }
+  .DrawingEditor__label {
+    font-size: 12px;
+    letter-spacing: -0.22px;
+    color: var(--W_Gray03);
+    margin-bottom: 4px;
+  }
+  .FillBtn {
+    width: 19px;
+    height: 19px;
+  }
+  .ColorDD {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+  }
+
+  //main area
+  .DrawingEditorContent {
+    display: flex;
+    flex-direction: row;
+  }
+  .DrawingEditorLeftTools {
+    float: left;
+    width: 47px;
+    height: 332px;
+    border: 1px solid var(--W_Gray01);
+    display: flex;
+    flex-direction: column;
+    margin: 0 11px;
+    margin-top: 11px;
+    align-items: center;
+  }
+  .DrawingEditorBoard {
+    border: 1px solid var(--W_Gray01);
+    margin-top: 14px;
+    margin-right: 16px;
+    margin-bottom: 64px;
+    width: 100%;
+  }
+
+  //bottom area
+  .DrawingEditorBottom {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    right: 16px;
+    bottom: 23px;
+  }
+
+  // // // // ManageBtn
+  .ManageBtn {
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-left: 8px;
+  }
+  .ManageBtn--undo {
+    background-image: url("../../../../../../Image/builder/corner-up-left.svg");
+  }
+  .ManageBtn--redo {
+    background-image: url("../../../../../../Image/builder/corner-up-right.svg");
+  }
+  .ManageBtn--delete {
+    background-image: url("../../../../../../Image/builder/group-10-copy-2.svg");
+  }
+
+  //layer btn
+  .LayerBtn__icon {
+    cursor: pointer;
+    width: 25px;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-right: 8px;
+  }
+  .LayerBtn__text {
+    display: none;
+  }
+
+  .LayerBtn__icon--paste {
+    background-image: url("../../../../../../Image/builder/clone.svg");
+  }
+  .LayerBtn__icon--forward {
+    background-image: url("../../../../../../Image/builder/arrow-up-copy-2.svg");
+  }
+  .LayerBtn__icon--backward {
+    background-image: url("../../../../../../Image/builder/arrow-up-copy-3.svg");
+  }
+  .LayerBtn__icon--front {
+    background-image: url("../../../../../../Image/builder/chevrons-up.svg");
+  }
+  .LayerBtn__icon--back {
+    background-image: url("../../../../../../Image/builder/chevrons-down.svg");
+  }
+
+  // // // // ToolBtn
+  .ToolBtn {
+    width: 25px;
+    height: 25px;
+    margin-top: 11px;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .ToolBtn--select--off {
+    background-image: url("../../../../../../Image/builder/mouse-pointer.svg");
+  }
+  .ToolBtn--select--on {
+    background-image: url("../../../../../../Image/builder/mouse-pointer-copy.svg");
+  }
+  .ToolBtn--pen--off {
+    background-image: url("../../../../../../Image/builder/pen-tool.svg");
+  }
+  .ToolBtn--pen--on {
+    background-image: url("../../../../../../Image/builder/pen-tool-copy.svg");
+  }
+  .ToolBtn--text--off {
+    background-image: url("../../../../../../Image/builder/group-39.svg");
+  }
+  .ToolBtn--text--on {
+    background-image: url("../../../../../../Image/builder/group-39-copy.svg");
+  }
+  .ToolBtn--line--off {
+    background-image: url("../../../../../../Image/builder/group-40.svg");
+  }
+  .ToolBtn--line--on {
+    background-image: url("../../../../../../Image/builder/group-40-copy.svg");
+  }
+  .ToolBtn--circle--off {
+    background-image: url("../../../../../../Image/builder/oval.svg");
+  }
+  .ToolBtn--circle--on {
+    background-image: url("../../../../../../Image/builder/oval-copy-2.svg");
+  }
+  .ToolBtn--rectangle--off {
+    background-image: url("../../../../../../Image/builder/rectangle.svg");
+  }
+  .ToolBtn--rectangle--on {
+    background-image: url("../../../../../../Image/builder/rectangle-copy.svg");
+  }
+  .ToolBtn--triangle--off {
+    background-image: url("../../../../../../Image/builder/triangle.svg");
+  }
+  .ToolBtn--triangle--on {
+    background-image: url("../../../../../../Image/builder/triangle-copy.svg");
+  }
+
+  .FileBtn__icon {
+    width: 25px;
+    height: 25px;
+    margin-left: 10px;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+  }
+  .FileBtn__text {
+    display: none;
+  }
+
+  .FileBtn__icon--image {
+    background-image: url("../../../../../../Image/builder/image-copy.svg");
+  }
+  .FileBtn__icon--export {
+    background-image: url("../../../../../../Image/builder/load-copy.svg");
+  }
+  .FileBtn__icon--mobileImage {
+    background-image: url("../../../../../../Image/builder/camera-copy.svg");
+  }
+
+  .applyBtn {
+    cursor: pointer;
+    width: 103px;
+    height: 27px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    border: solid 1px var(--W_PointColor);
+    color: var(--W_PointColor);
+    background: var(--W_White);
+    margin-left: 29px;
+  }
+}

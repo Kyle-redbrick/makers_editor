@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="13px" height="13px" viewBox="0 0 13 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 64 (101010) - https://sketch.com -->
+    <title>38952397-AC89-4614-9225-050E3648950D</title>
+    <desc>Created with sketchtool.</desc>
+    <g id="design-system" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon" transform="translate(-48.000000, -747.000000)">
+            <g id="Group-16" transform="translate(47.000000, 746.000000)">
+                <rect id="Rectangle" x="0" y="0" width="15" height="15"></rect>
+                <g id="eye-off" transform="translate(1.500000, 1.500000)" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9.24,9.53437799 C8.30759452,10.1451584 7.17224044,10.4835297 6,10.5 C2.18181818,10.5 0,6.75001163 0,6.75001163 C0.678485398,5.66340359 1.61952843,4.71405266 2.76,3.96564526 M4.85454545,3.11252291 C5.22999944,3.03699791 5.61439858,2.99924454 6,3.00001145 C9.81818182,3.00001145 12,6.75001163 12,6.75001163 C11.6688979,7.28232592 11.2740302,7.78347846 10.8218182,8.24531949 M7.15636364,7.74375855 C6.74842782,8.11998209 6.13406064,8.27484912 5.55427874,8.14760519 C4.97449685,8.02036126 4.5217704,7.63130066 4.37370427,7.13305214 C4.22563815,6.63480363 4.40584761,6.10683346 4.84363636,5.75626471" id="Shape"></path>
+                    <line x1="0" y1="0" x2="12" y2="12" id="Path"></line>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

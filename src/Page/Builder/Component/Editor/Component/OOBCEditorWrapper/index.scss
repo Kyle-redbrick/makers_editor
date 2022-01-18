@@ -1,0 +1,109 @@
+.oobcEditorWrapper {
+  width: 100%;
+  height: 100%;
+  background-color: var(--W_Gray01);
+
+  .oobceditor {
+    z-index: 1;
+  }
+  .oobcEditorWrapper_lock {
+    z-index: 2;
+  }
+}
+.oobcEditorWrapper-locked {
+  pointer-events: none;
+}
+
+.oobcEditorWrapper .oobceditor {
+  width: 100%;
+  height: 100%;
+  font-weight: bold;
+  background-color: transparent;
+
+  .oobceditor_utils {
+    top: 102px;
+    right: 24px;
+    bottom: unset;
+  }
+
+  .oobceditor_selector_category {
+    color: #fff;
+    background-color: #272b37;
+    border-top: 1px solid #393e4f;
+  }
+  .oobceditor_selector_category-current {
+    background-color: #393e4f;
+    border-top: 1px solid #393e4f;
+  }
+
+  .oobceditor_selector_close {
+    color: #fff;
+    background-color: #2f3443;
+    border-top: 1px solid #393e4f;
+  }
+
+  .oobceditor_selector_prototypes {
+    background-color: #393e4f;
+  }
+  .oobceditor_selector_prototypes_inner {
+    background-color: #2f3443;
+  }
+
+  .oobceditor_constanteditor {
+    background-color: #2f3443;
+  }
+  .oobceditor_constanteditor_input {
+    color: white;
+    background-color: #272b37;
+    border: 1px solid #141821;
+  }
+  .oobceditor_constanteditor_input-blurred {
+    color: #444;
+  }
+  .oobceditor_constanteditor_numpad {
+    background-color: #393e4f;
+    border-top: none;
+    box-shadow: none;
+  }
+  .oobceditor_constanteditor_button {
+    font-size: 14px;
+    font-weight: 500;
+    color: white;
+    border-radius: 21px;
+  }
+  .oobceditor_constanteditor_button-clear {
+    background-color: transparent;
+    border: 1px solid white;
+    box-shadow: none;
+  }
+  .oobceditor_constanteditor_button-cancel {
+    color: #1db6ff;
+    background-color: transparent;
+    border: 1px solid #1db6ff;
+    box-shadow: none;
+  }
+  .oobceditor_constanteditor_button-confirm {
+    background-color: #1db6ff;
+    border: 1px solid #1db6ff;
+    box-shadow: none;
+  }
+}
+
+.oobcEditorWrapper .oobcEditorWrapper_lock {
+  position: absolute;
+  display: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--W_Dim);
+
+  .oobcEditorWrapper_lock_message {
+    margin: auto;
+    font-size: 18px;
+    color: white;
+  }
+}
+.oobcEditorWrapper-locked .oobcEditorWrapper_lock {
+  display: flex;
+}

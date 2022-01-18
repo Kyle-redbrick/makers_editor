@@ -1,0 +1,57 @@
+.pythonOnebuttonAlert {
+  position: relative;
+  width: 440px;
+  height: 279px;
+  padding: 33px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  background: url("../../../../../Image/newPython/alert-bg@2x.png") no-repeat
+    center/contain;
+
+  .text {
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+    height: auto;
+    font-size: 20px;
+    color: #00fffc;
+    vertical-align: middle;
+  }
+
+  .btnWrapper {
+    width: 320px;
+    position: absolute;
+    left: 67%;
+    bottom: 50px;
+    transform: translateX(-50%);
+  }
+
+  button {
+    width: 147px;
+    height: 49px;
+    border: none;
+    padding: 0;
+    font-size: 18px;
+    text-align: center;
+    color: #ffffff;
+    outline: none;
+    font-family: "Noto Sans KR", sans-serif;
+    cursor: pointer;
+  }
+
+  button + button {
+    margin-left: 26px;
+  }
+
+  .confirmBtn {
+    background: url("../../../../../Image/newPython/alert-confirm-btn@2x.png")
+      no-repeat center/cover;
+    &:hover {
+      background: url("../../../../../Image/newPython/alert-confirm-btn-hover@2x.png")
+        no-repeat center/cover;
+    }
+  }
+}

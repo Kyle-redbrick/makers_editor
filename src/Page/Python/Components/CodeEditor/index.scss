@@ -1,0 +1,279 @@
+.pythonCodeEditor {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 4px;
+  margin-left: 0.78125vw;
+  background: rgba(0, 0, 0, 0.4);
+  border: solid 1px rgba(0, 236, 255, 0.5);
+  overflow: hidden;
+
+  &.close {
+    display: none !important;
+  }
+
+  &.open {
+    display: flex !important;
+  }
+
+  .resetBtnBlink,
+  .submitBtnBlink,
+  .playBtnBlink {
+      animation: BLINK-BTN 1s infinite;
+  }
+
+  @-webkit-keyframes BLINK-BTN {
+    0%   { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+
+  .test{
+    border-radius: 5px;
+    padding: 1px 12px 2px;
+    border-radius: 4px;
+    background-color: #07fe4e;
+    box-shadow: 0 0 5px 2px rgba(7, 254, 78, 0.38);
+    color: #272727;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 5;
+  }
+
+  .codeEditorBtnWrapper {
+    display: flex;
+    align-items: center;
+    height: 26px;
+    margin-bottom: 12px;
+
+    button {
+      display: flex;
+      align-items: center;
+      padding-right: 12px;
+      height: 28px;
+      color: #00fffc;
+      background: transparent;
+
+      img {
+        position: relative;
+        top: 1px;
+        display: block;
+        width: 20px;
+        height: 20px;
+      }
+      border: solid 1px rgba(0, 236, 255, 0.46);
+      background-color: rgba(0, 198, 255, 0.21);
+
+      &:hover {
+        background-color: rgba(0, 198, 255, 0.4);
+      }
+    }
+
+    .submitBtn {
+      background-color: rgba(0, 180, 154, 0.35);
+      &:hover {
+        background-color: rgba(0, 180, 154, 0.6);
+      }
+    }
+
+    button + button {
+      margin-left: 7px;
+    }
+  }
+
+  .codeEditor {
+    box-sizing: border-box;
+    padding: 6px;
+    background: transparent;
+    position: relative;
+    flex: 1 1 auto;
+    overflow: hidden;
+
+    .btnWrapper {
+      position: absolute;
+      bottom: 34px;
+      right: 34px;
+
+      display: flex;
+      flex-direction: column;
+
+      button {
+        padding: 0;
+        border: none;
+        background: transparent;
+      }
+
+      button + button {
+        margin-top: 10px;
+      }
+    }
+
+    .codeTextArea {
+      height: 94%;
+      width: 100%;
+      overflow-y: auto;
+
+      /* width */
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+
+      /* Track */
+      ::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 5px grey;
+        border-radius: 10px;
+        width: 50%;
+      }
+
+      /* Handle */
+      ::-webkit-scrollbar-thumb {
+        background: #393e4f;
+        border-radius: 10px;
+      }
+    }
+
+    .CodeMirror {
+      width: 95%;
+      height: 100%;
+    }
+
+    .CodeMirror-linenumber {
+      text-align: left;
+      color: #a6a6a6;
+    }
+
+    .ace_button1 {
+      background:#07fe4e;
+      cursor: pointer !important;
+      color:#272727;
+      position: relative;
+      overflow: hidden;
+      font-weight: bold;
+      border-radius: 4px;
+
+    }
+    .ace_button1:before {
+      content:"@!1";
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      background:#07fe4e;
+      color:transparent;
+      border-top-left-radius: 4px;
+      border-bottom-left-radius: 4px;
+    }
+    .ace_button1:after {
+      content:"@!1";
+      height: 100%;
+      position: absolute;
+      right: 0;
+      top: 0;
+      background:#07fe4e;
+      color:transparent;
+      border-top-right-radius: 4px;
+      border-bottom-right-radius: 4px;
+    }
+
+    .ace_button2 {
+      background:orangered;
+      cursor: pointer !important;
+      color:#fff;
+      position: relative;
+      overflow: hidden;
+      font-weight: bold;
+      border-radius: 4px;
+    }
+    .ace_button2:before {
+      content:"@!2";
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      background:orangered;
+      color:transparent;
+      border-top-left-radius: 4px;
+      border-bottom-left-radius: 4px;
+    }
+    .ace_button2:after {
+      content:"@!2";
+      height: 100%;
+      position: absolute;
+      right: 0;
+      top: 0;
+      background:orangered;
+      color:transparent;
+      border-top-right-radius: 4px;
+      border-bottom-right-radius: 4px;
+    }
+  }
+
+  .executionView {
+    width: 100%;
+    height: auto;
+
+    .executionHeader {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      line-height: 29px;
+      background: linear-gradient(to bottom, #004c67, #00375c);
+      cursor: pointer;
+
+      span {
+        padding-left: 10px;
+        font-size: 14px;
+        color: #00fffc;
+      }
+
+      .execIconOn,
+      .execIconOff {
+        width: 18px;
+        height: 18px;
+        padding-right: 16px;
+        background: url("../../../../Image/newPython/ic-on@2x.png") no-repeat
+          center/contain;
+      }
+
+      .execIconOn {
+        transform: rotate(180deg);
+      }
+    }
+
+    .executionBody {
+      min-height: 100px;
+      max-height: 100px;
+      overflow-y: auto;
+      font-size: 14px;
+      color: #cfcfd0;
+      margin: 0 4px 4px 4px;
+
+      /* width */
+      &::-webkit-scrollbar {
+        width: 4px;
+      }
+
+      /* Track */
+      &::-webkit-scrollbar-track {
+        background: transparent;
+      }
+
+      /* Handle */
+      &::-webkit-scrollbar-thumb {
+        border-radius: 0;
+        background-color: rgba(0, 122, 165, 0.4);
+      }
+    }
+  }
+}
+
+// CodeMirror
+
+.react-codemirror2 {
+  .cm-s-monokai.CodeMirror {
+    background: transparent;
+  }
+  .cm-s-monokai .CodeMirror-gutters {
+    background: transparent;
+  }
+}

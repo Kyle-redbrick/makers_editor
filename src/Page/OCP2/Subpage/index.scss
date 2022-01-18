@@ -1,0 +1,211 @@
+.Page--OCP2SubPage {
+  min-width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  .OCPSubPage__inner {
+    width: 1080px;
+    padding-top: 60px;
+  }
+  .Learn__top {
+    color: white;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  .Learn__level {
+    display: inline;
+    border-radius: 50px;
+    border: solid 1px #979797;
+    background-color: #ffffff;
+    font-family: "Noto sans KR";
+    font-size: 19px;
+    font-weight: 900;
+    line-height: 1.47;
+    color: #0e0e0e;
+    padding: 8px 25px;
+    margin-bottom: 33px;
+  }
+  .Learn__title {
+    img {
+      height: 70px;
+    }
+  }
+  .Learn__desc {
+    margin-top: 45px;
+    img {
+      height: 50px;
+    }
+  }
+
+  .OCPSub_Game {
+    margin-top: 73px;
+    margin-bottom: 68px;
+    width: 100%;
+    .OCPSub_Game_Inner {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%;
+    }
+    .OCPSub_Game_IFrame {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .print__warpper {
+    // text-align: right;
+    // padding-right: 2.6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    border-bottom: 1px solid #6a6a6a;
+    padding-bottom: 18px;
+  }
+  .print_wrapper_right {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .print__warpper_print {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 23px;
+    cursor: pointer;
+  }
+  .printBtn {
+    width: 21px;
+    height: auto;
+    margin-left: 9px;
+  }
+  .stageBox__container {
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 60px;
+    .stageBox__container__inner {
+      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+      text-align: center;
+    }
+    .stageBox__wrapper {
+      margin-bottom: 60px;
+      flex-grow: 1;
+      flex-shrink: 0;
+      flex-basis: calc(20% - 20px);
+      padding-right: 10px;
+      padding-left: 10px;
+    }
+
+    .img__wrapper {
+      color: black;
+      text-align: center;
+      cursor: pointer;
+      position: relative;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    .clearImg__wrapper {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0px;
+      left: 0;
+    }
+    .clearImg {
+      width: 153px;
+      height: 153px;
+    }
+
+    .stageBox {
+      width: 153px;
+      height: 153px;
+      border-radius: 50%;
+    }
+
+    .stageBox__index {
+      font-size: 16px;
+      font-weight: bold;
+      text-align: center;
+      color: #ffffff;
+    }
+    .stageBox__title {
+      font-family: "Noto sans KR";
+      font-size: 18px;
+      line-height: 1.56;
+      text-align: center;
+      color: #adadae;
+      margin-top: 6px;
+    }
+    .stageBox__desc {
+      font-size: 15px;
+      line-height: 1.33;
+      text-align: center;
+      color: #ffffff;
+      font-family: "Noto sans KR";
+      font-weight: normal;
+      white-space: pre;
+    }
+  }
+  .wizlive_banner {
+    margin-bottom: 50px;
+    img {
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 1079px) {
+  .Page--OCPSubPage {
+    .OCPSubPage__inner {
+      padding: 10px 20px;
+      width: 100%;
+    }
+    .stageBox__container {
+      justify-content: center;
+    }
+
+    .OCPSub_Game {
+      width: 100%;
+      margin: 30px auto;
+      .OCPSub_Game_Inner {
+      }
+      .OCPSub_Game_IFrame {
+      }
+    }
+
+    .Learn__title {
+      img {
+        max-width: 80vw;
+        height: auto;
+      }
+    }
+    .Learn__desc {
+      margin-top: 0px;
+      img {
+        display: none;
+        max-width: 80vw;
+        height: auto;
+      }
+    }
+    .print__warpper {
+      display: none;
+    }
+    .stageBox__wrapper {
+      // border: 1px solid yellow;
+      width: 50%;
+    }
+  }
+}

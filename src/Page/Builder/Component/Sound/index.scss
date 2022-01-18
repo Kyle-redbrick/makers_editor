@@ -1,0 +1,91 @@
+.Page--BUILDER {
+  .SoundContainer {
+    min-width: 100px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .SoundContainer_Sounds {
+    flex: 1;
+    width: 100%;
+    overflow-y: auto;
+  }
+  .Sound_Item {
+    cursor: pointer;
+    position: relative;
+    margin-top: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .SoundItemThumb {
+    cursor: pointer;
+    width: 68px;
+    height: 68px;
+    background-color: var(--W_Gray06);
+    border-radius: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .SoundItemThumbImg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: none;
+  }
+  .SoundItemName {
+    text-align: center;
+    width: 68px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 12px;
+    letter-spacing: -0.26px;
+    color: var(--W_Gray03);
+    margin: 6px 0;
+  }
+
+  .SoundRemoveButton {
+    cursor: pointer;
+    position: absolute;
+    top: 3px;
+    right: 19px;
+    img {
+      display: block;
+      width: 15px;
+      height: 15px;
+    }
+  }
+
+  .Sound_Item_Active {
+    .SoundItemThumb {
+      border: 1px solid var(--W_PointColor);
+    }
+  }
+
+  .SoundContainer_Line {
+    border-top: 1px solid var(--W_Gray01);
+    height: 15px;
+    width: 68px;
+  }
+
+  .SoundContainer_Tools {
+    height: 100px;
+    width: 68px;
+  }
+
+  .Sound_Add {
+    height: 68px;
+    width: 68px;
+    background: var(--W_Gray06);
+    cursor: pointer;
+    border-radius: 7px;
+    display: flex;
+    justify-content: center;
+  }
+  .Sound_Add_Img {
+    display: block;
+    object-fit: none;
+  }
+}

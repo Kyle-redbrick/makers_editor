@@ -1,0 +1,87 @@
+// FontDropDown
+.FontDD {
+  display: flex;
+  position: relative;
+  width: 100%;
+}
+.FontDD__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 15px;
+  padding-right: 12px;
+  cursor: pointer;
+  width: 100%;
+  height: 32px;
+  border-radius: 12px;
+  border: solid 1px var(--W_Gray01);
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--W_Gray03);
+}
+.header__list--on {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.FontDD__title {
+}
+.FontDD__arrow {
+  width: 15px;
+  height: 15px;
+}
+.FontDD__arrow--on {
+  background-image: url("../../../Image/builder/group-17-up.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.FontDD__arrow--on.darkMode {
+  background-image: url("../../../Image/builder/group-17-up_darkmode.svg");
+}
+.FontDD__arrow--off {
+  background-image: url("../../../Image/builder/group-17.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.FontDD__arrow--off.darkMode {
+  background-image: url("../../../Image/builder/group-17_darkmode.svg");
+}
+.FontDD__body {
+  position: absolute;
+  top: 29px;
+  left: 0;
+  background-color: var(--W_White);
+  border: solid 1px var(--W_Gray01);
+  width: 100%;
+}
+.FontDD__list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-height: 370px;
+  border-radius: 4px;
+  overflow-y: auto;
+}
+.FontDD__item {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  width: calc(100% - 27px);
+  cursor: pointer;
+  font-size: 13px;
+  line-height: 2.3;
+  color: var(--W_Gray03);
+  border-bottom: 1px solid var(--W_Gray01);
+  margin-left: 15px;
+  margin-right: 12px;
+}
+.FontDD__item--on {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    left: -15px;
+    width: calc(100% + 27px);
+    height: 100%;
+    background-color: var(--editorColor08);
+  }
+}

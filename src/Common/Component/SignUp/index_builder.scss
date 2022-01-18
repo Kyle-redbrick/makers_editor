@@ -1,0 +1,62 @@
+.signup {
+  .signup_phone {
+    display: flex;
+    margin-left: auto;
+    border: 1px solid #afafaf;
+    input {
+      border: none;
+    }
+    .select_input {
+      color: black;
+      background-color: white;
+    }
+    .select_fields {
+      background-color: white;
+      border: 1px solid #afafaf;
+      color: #afafaf;
+    }
+    .select_field:hover {
+      background-color: #afafaf;
+      color: black;
+    }
+  }
+  .signup_agreement_box {
+    border: 1px solid #aaa;
+  }
+
+  .signup_agreement_box_inner {
+    background-color: #aaa;
+  }
+
+  .signup_agreement_arrow {
+    filter: invert(100%) sepia(1%) saturate(5%) hue-rotate(304deg)
+      brightness(100%) contrast(109%);
+  }
+  .signup_msg,
+  .signup_link_desc {
+    color: #aaa;
+  }
+
+  .PhoneDD__countryRow {
+    border: solid 1px #afafaf;
+    border-right: none;
+    cursor: pointer;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+  }
+  .PhoneDD__body {
+    position: absolute;
+    top: 37px;
+    border: solid 1px #afafaf;
+    z-index: 10;
+    background-color: white;
+    width: 276px;
+  }
+
+  .PhoneDD__item:hover {
+    background-color: #afafaf;
+  }
+}
