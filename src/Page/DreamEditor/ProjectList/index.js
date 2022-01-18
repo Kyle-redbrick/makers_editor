@@ -351,10 +351,10 @@ class ProjectList extends Component {
           <div className="dreamEditor_projectList_title">프로젝트 목록</div>
           <select
             className="dreamEditor_projectList_locale"
-            value={localStorage.getItem("wizLang") || "ko"}
+            value={localStorage.getItem("wizLang") || "en"}
             onChange={this.onChangeLocale}
           >
-            {["ko","en","zh","jp"].map(locale => (
+            {["en","jp"].map(locale => (
               <option key={locale} value={locale}>{locale}</option>
             ))}
           </select>

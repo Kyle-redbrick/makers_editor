@@ -45,7 +45,7 @@ const getNavigatorLanguage = () => {
   lang = str.replace(/-[A-Z]*/, "");
   // localStorage.setItem("wizLang", lang);
   // return lang;
-  localStorage.setItem("wizLang", "en");
+  //localStorage.setItem("wizLang", "en");
   return "en";
 };
 
