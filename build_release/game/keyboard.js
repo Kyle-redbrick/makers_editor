@@ -1,1 +1,0 @@
-function convertKey(r){if(!r)return r;switch(r=r.toLowerCase()){case" ":return"space";case"arrowup":return"up";case"arrowdown":return"down";case"arrowleft":return"left";case"arrowright":return"right";case"escape":return"esc";default:return r}}
