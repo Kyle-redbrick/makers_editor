@@ -276,14 +276,14 @@ const App = () => {
           />
           <Route
             exact
-            path="/course/:id"  
+            path="/course/:id"
             render={() => <HandleQueryString Component={CourseDetail} />}
           />
           <Route exact path="/courses" component={Courses} />
           <Route exact path="/pythonPage/:myDreamProjectId" component={PythonPage} />
           <Route exact path="/ranking" component={Ranking} />
         </div>
-        <ToastContainer  />
+        <ToastContainer />
         <SubscribeManager />
       </Suspense>
     </Router>

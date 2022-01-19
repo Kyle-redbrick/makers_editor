@@ -7,7 +7,8 @@ import { showPopUp } from "../../PopUp";
 import * as userInfoActions from "../../../Store/Reducer/UserInfo";
 import SignIn from "../../SignIn";
 import SignUp from "../../SignUp";
-import logoImg from "../../../../Image/dreamclass/logo.png";
+// import logoImg from "../../../../Image/dreamclass/logo.png";
+import logoImg from "../../../../Image/dreamclass/astroboy_logo.png"
 import searchImg from "../../../../Image/dreamclass/search.svg";
 import NotiOnIcon from "../../../../Image/dreamclass/notification-bell-new-notification.svg";
 import NotiOffIcon from "../../../../Image/dreamclass/notification-bell-normal.svg";
@@ -53,17 +54,17 @@ class Header extends Component {
     if (!localStorage.getItem("tutorialPopupStatus")) {
       window.addEventListener('scroll', this.onScroll);
     } else {
-      this.setState({isHeaderFixed : true});
+      this.setState({ isHeaderFixed: true });
     }
   }
 
   onScroll = () => {
     if (window.scrollY > 50) {
-      if ( this.state.isHeaderFixed !== true ) {
-        this.setState({isHeaderFixed : true});
+      if (this.state.isHeaderFixed !== true) {
+        this.setState({ isHeaderFixed: true });
       }
     } else {
-      this.setState({isHeaderFixed : false});
+      this.setState({ isHeaderFixed: false });
     }
   }
 
@@ -114,11 +115,10 @@ class Header extends Component {
   };
 
   handleClickURL = url => {
-    this.setState({ isMobileMenuOn: false }, () =>
-      {
-        this.props.history.push(url);
-        window.location.reload();
-      }
+    this.setState({ isMobileMenuOn: false }, () => {
+      this.props.history.push(url);
+      window.location.reload();
+    }
     );
   };
 
@@ -128,7 +128,7 @@ class Header extends Component {
 
   onChangeSearchValue = ({ target }) => {
     const value = target.value;
-    this.setState({ searchValue : value })
+    this.setState({ searchValue: value })
   }
 
   onFocusSearch = () => {
@@ -136,7 +136,7 @@ class Header extends Component {
   }
 
   onSubmitSearchValue = () => {
-    if( this.state.searchValue ) {
+    if (this.state.searchValue) {
       const query = { keyword: this.state.searchValue };
       const queryString = QueryString.stringify(query);
       this.props.history.replace("/courses?" + queryString);
@@ -145,7 +145,7 @@ class Header extends Component {
   }
 
   handleClickOutside = () => {
-    this.setState({isSearchBarOpen: false, isSearchFocusOn: false, searchValue: "", isNotiPopupOn: false})
+    this.setState({ isSearchBarOpen: false, isSearchFocusOn: false, searchValue: "", isNotiPopupOn: false })
   }
 
   handleClickMobileSearchBar = () => {
@@ -246,32 +246,32 @@ class Header extends Component {
             </div>
             <div className="header_menus">
               <div className="header_menu_icon searchBtn" onClick={handleClickSearchBar}>
-                <img src={searchImg} alt=""/>
+                <img src={searchImg} alt="" />
               </div>
               <div className={`header_menu_icon searchBar ${isSearchBarOpen ? "open" : "close"}`}>
-                <input 
+                <input
                   type="text"
-                  placeholder= {intl.formatMessage({ id: "ID_HEADER_SEARCH_PLACEHOLDER" })}
+                  placeholder={intl.formatMessage({ id: "ID_HEADER_SEARCH_PLACEHOLDER" })}
                   value={searchValue}
                   onFocus={onFocusSearch}
-                  onChange={(e) =>{onChangeSearchValue(e)}}
+                  onChange={(e) => { onChangeSearchValue(e) }}
                   onKeyUp={handleOnKeyUp}
                 />
-                <img className="openSearchIcon" src={searchImg} alt="" onClick={onSubmitSearchValue}/>
+                <img className="openSearchIcon" src={searchImg} alt="" onClick={onSubmitSearchValue} />
               </div>
               <div className={`header_menu_icon searchResult ${isSearchFocusOn ? "open" : "close"}`}>
                 <p className="quickLink">
-                  {intl.formatMessage({id: "ID_DREAM_HEADER_QUICK_LINK"})}
+                  {intl.formatMessage({ id: "ID_DREAM_HEADER_QUICK_LINK" })}
                 </p>
                 <ul className="searchResultList">
                   <li onClick={() => handleClickURL("/courses?courseType=oobc")}>
-                    {intl.formatMessage({id: "ID_DREAM_HEADER_OOBC"})}
+                    {intl.formatMessage({ id: "ID_DREAM_HEADER_OOBC" })}
                   </li>
                   <li onClick={() => handleClickURL("/courses?courseType=javascript")}>
-                    {intl.formatMessage({id: "ID_DREAM_HEADER_JS"})}
+                    {intl.formatMessage({ id: "ID_DREAM_HEADER_JS" })}
                   </li>
                   <li onClick={() => handleClickURL("/courses?courseType=python")}>
-                    {intl.formatMessage({id: "ID_DREAM_HEADER_PYTHON"})}
+                    {intl.formatMessage({ id: "ID_DREAM_HEADER_PYTHON" })}
                   </li>
                 </ul>
               </div>
@@ -373,14 +373,14 @@ class Header extends Component {
               <div className="header_menu_icon searchBar">
                 <input
                   type="text"
-                  placeholder= {intl.formatMessage({ id: "ID_HEADER_SEARCH_PLACEHOLDER" })}
+                  placeholder={intl.formatMessage({ id: "ID_HEADER_SEARCH_PLACEHOLDER" })}
                   value={searchValue}
                   onChange={(e) => { onChangeSearchValue(e) }}
                   onClick={!isMobileSearchBarOn && handleClickMobileSearchBar}
                   onFocus={onFocusSearch}
                   onKeyUp={handleOnKeyUp}
                 />
-                <img src={searchImg} alt="" onClick={onSubmitSearchValue}/>
+                <img src={searchImg} alt="" onClick={onSubmitSearchValue} />
                 {isMobileSearchBarOn &&
                   <span
                     className="closeSearchBarBtn"
@@ -430,11 +430,11 @@ class Header extends Component {
               {
                 isMobileSearchBarOn &&
                 <div className={`header_menu_icon searchResult ${isSearchFocusOn ? "open" : "close"}`}>
-                  <p className="quickLink">{intl.formatMessage({id: "ID_DREAM_HEADER_QUICK_LINK"})}</p>
+                  <p className="quickLink">{intl.formatMessage({ id: "ID_DREAM_HEADER_QUICK_LINK" })}</p>
                   <ul className="searchResultList">
-                    <li onClick={() => handleClickURL("/courses?courseType=oobc")}>{intl.formatMessage({id: "ID_DREAM_HEADER_OOBC"})}</li>
-                    <li onClick={() => handleClickURL("/courses?courseType=javascript")}>{intl.formatMessage({id: "ID_DREAM_HEADER_JS"})}</li>
-                    <li onClick={() => handleClickURL("/courses?courseType=python")}>{intl.formatMessage({id: "ID_DREAM_HEADER_PYTHON"})}</li>
+                    <li onClick={() => handleClickURL("/courses?courseType=oobc")}>{intl.formatMessage({ id: "ID_DREAM_HEADER_OOBC" })}</li>
+                    <li onClick={() => handleClickURL("/courses?courseType=javascript")}>{intl.formatMessage({ id: "ID_DREAM_HEADER_JS" })}</li>
+                    <li onClick={() => handleClickURL("/courses?courseType=python")}>{intl.formatMessage({ id: "ID_DREAM_HEADER_PYTHON" })}</li>
                   </ul>
                 </div>
               }
