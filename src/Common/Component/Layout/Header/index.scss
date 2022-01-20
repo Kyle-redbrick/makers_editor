@@ -311,6 +311,11 @@
     display: none;
   }
 
+
+  .header_link_social, .header_link_ranking, .header_link_event, .header_link_news {
+    display: none;
+  }
+
   .header_notification {
     z-index: 1000;
     position: absolute;
@@ -678,4 +683,5 @@
       text-decoration: none;
     }
   }
+
 }
