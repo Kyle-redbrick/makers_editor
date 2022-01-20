@@ -16,8 +16,8 @@ import View from "./View";
 class Container extends Component {
   constructor(props) {
     super(props);
-    this.state = { 
-      shouldSlideRerender: false, 
+    this.state = {
+      shouldSlideRerender: false,
       isTutorialShow: false,
       isAstroBoyProject: false
     };
@@ -31,15 +31,15 @@ class Container extends Component {
       .getMyDreamProject(myDreamLectureProjectId)
       .then(res => res.json())
       .then(myDreamProject => {
-        if(!myDreamProject) {
+        if (!myDreamProject) {
           window.alert("no myDreamProject");
           return;
         }
 
         // temp: 테스트 계정의 프로젝트는 유저 인증 생략하기
-        if(myDreamProject.email !== "test@wizschool.io" && myDreamProject.email !== this.props.email) {
-            window.alert("invalid user");
-            return;
+        if (myDreamProject.email !== "test@wizschool.io" && myDreamProject.email !== this.props.email) {
+          window.alert("invalid user");
+          return;
         }
         // if(myDreamProject.email !== this.props.email) {
         //   window.alert("invalid user");
@@ -48,7 +48,7 @@ class Container extends Component {
 
         try {
           myDreamProject.project.template = JSON.parse(myDreamProject.project.localized[0].template)
-        } catch(err) {
+        } catch (err) {
           window.alert("wrong template");
           return;
         }
@@ -58,49 +58,49 @@ class Container extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    if(this.props.myProject) {
-      if(!prevProps.myProject || prevProps.myProject.id !== this.props.myProject.id) {
+    if (this.props.myProject) {
+      if (!prevProps.myProject || prevProps.myProject.id !== this.props.myProject.id) {
         this.didSetMyProject();
       }
     }
-    if(prevProps.currentMission !== this.props.currentMission) {
+    if (prevProps.currentMission !== this.props.currentMission) {
       this.didSetCurrentMission();
     }
-    if(prevProps.isConditionsClear !== this.props.isConditionsClear) {
-      if(this.props.currentMission && this.props.isConditionsClear) {
+    if (prevProps.isConditionsClear !== this.props.isConditionsClear) {
+      if (this.props.currentMission && this.props.isConditionsClear) {
         this.didClearConditions();
       }
     }
-    if(prevProps.editorMode !== this.props.editorMode) {
+    if (prevProps.editorMode !== this.props.editorMode) {
       this.didShowTutorialPopup();
     }
   }
   didSetMyProject() {
     const { myProject } = this.props;
 
-    const missions = 
+    const missions =
       (myProject.project.template.missions || [])
-      .map((mission, index) => ({
-        ...mission, 
-        isCompleted: index < myProject.completedMissionNum
-      }))
+        .map((mission, index) => ({
+          ...mission,
+          isCompleted: index < myProject.completedMissionNum
+        }))
 
     let currentMissionIndex = this.props.isReplaying ? 0 : myProject.completedMissionNum;
-    if(currentMissionIndex > missions.length - 1) {
+    if (currentMissionIndex > missions.length - 1) {
       currentMissionIndex = missions.length - 1
     }
-    
+
     this.props.setDreamMissions(missions);
     this.props.setCurrentDreamMissionIndex(currentMissionIndex);
     this.save();
   }
   didSetCurrentMission() {
-    if(!this.props.currentMission) return;
+    if (!this.props.currentMission) return;
 
-    if(this.missionSetTimer) {
+    if (this.missionSetTimer) {
       clearTimeout(this.missionSetTimer);
     }
-  
+
     // TODO: Refer to the following issue.
     // Issue Link: https://www.notion.so/wizschool/b77303a59acc4be7886ec81875607bf6
     this.missionSetTimer = setTimeout(() => {
@@ -110,16 +110,16 @@ class Container extends Component {
           this.props.setProject({ state });
           this.forceSlideRerender();
         });
-      } catch(err) {
+      } catch (err) {
         window.alert("wrong mission state");
       }
     }, 200);
   }
   didClearConditions() {
-    if(!this.props.currentMission.isCompleted || this.props.isReplaying) {
+    if (!this.props.currentMission.isCompleted || this.props.isReplaying) {
       this.props.completeCurrentDreamMission();
 
-      if(this.props.currentMissionIndex < this.props.missions.length - 1) {
+      if (this.props.currentMissionIndex < this.props.missions.length - 1) {
         this.didClearMission();
       } else {
         this.didClearProject();
@@ -136,18 +136,18 @@ class Container extends Component {
   }
 
   saveMissionClear() {
-    if(this.props.isReplaying) {
+    if (this.props.isReplaying) {
       return;
     }
 
     this.save({ completedMissionNum: this.props.currentMissionIndex + 1 });
   }
   saveProjectClear() {
-    if(this.props.isReplaying) {
+    if (this.props.isReplaying) {
       return;
     }
 
-    this.save({ 
+    this.save({
       completedMissionNum: this.props.missions.length,
       completed: true
     });
@@ -158,7 +158,7 @@ class Container extends Component {
       .saveMyDreamProject(myDreamLectureProjectId, values)
       .then(res => res.json())
       .then(json => {
-        if(json.success) {
+        if (json.success) {
           console.log(this.props.intl.formatMessage({ id: "ID_DREAMBUILDER_SAVE_LECTURE" }));
         } else {
           console.warn(`${this.props.intl.formatMessage({ id: "ID_DREAMBUILDER_SAVE_LECTURE_ERROR" })}(${json.reason})`);
@@ -167,7 +167,7 @@ class Container extends Component {
   }
 
   alertMissionClear() {
-    if(!this.props.currentMission.conditions || this.props.currentMission.conditions.length < 1) return;
+    if (!this.props.currentMission.conditions || this.props.currentMission.conditions.length < 1) return;
     setTimeout(() => {
       showPopUp(
         <MissionClearPopUp
@@ -175,7 +175,9 @@ class Container extends Component {
             this.props.setIsPlaying(false);
             this.props.setCurrentDreamMissionIndex(this.props.currentMissionIndex + 1);
           }}
-        />, { dismissButton: false }
+        />, { dismissButton: false,
+              defaultPadding: false
+            }
       );
     }, 2000);
   }
@@ -184,25 +186,28 @@ class Container extends Component {
       showPopUp(
         <ProjectClearPopUp
           onClickCancel={() => {
-            if(this.props.isReplaying) {
+            if (this.props.isReplaying) {
               window.close();
-            } else { 
+            } else {
               this.createDeveloping(window.close);
             }
           }}
           onClickConfirm={() => {
-            if(this.props.isReplaying) {
-              if(this.props.myProject.developing.isDeleted) {
+            if (this.props.isReplaying) {
+              if (this.props.myProject.developing.isDeleted) {
                 this.createDeveloping(this.linkToDeveloping);
               } else {
                 this.linkToDeveloping(this.props.myProject.developing);
               }
-            } else { 
+            } else {
               this.createDeveloping(this.linkToDeveloping);
             }
           }}
         />,
-        { dismissButton: false }
+        {
+          dismissButton: false,
+          defaultPadding: false
+        }
       );
     }, 1000);
   }
@@ -223,7 +228,7 @@ class Container extends Component {
       .postDevelopingProject(params)
       .then(res => res.json())
       .then(developing => {
-        if(callback) {
+        if (callback) {
           callback(developing);
         }
       })
@@ -231,10 +236,10 @@ class Container extends Component {
   getManipulatedProjectState() {
     const state = JSON.parse(JSON.stringify(this.props.projectState));
     state.preview.isPlaying = false;
-    for(let sceneId in state.scene.scenes) {
+    for (let sceneId in state.scene.scenes) {
       const scene = state.scene.scenes[sceneId];
       scene.isHiddenLockSprites = false;
-      for(let spriteId in scene.sprites) {
+      for (let spriteId in scene.sprites) {
         const sprite = scene.sprites[spriteId];
         sprite.locked = false;
       }
@@ -252,32 +257,32 @@ class Container extends Component {
     });
   }
 
-  didShowTutorialPopup = async() => {
+  didShowTutorialPopup = async () => {
     // temp : astro boy 동영상을 보여주기 위한 임시조치
     const title =
       this.props.project
       && this.props.project.localized[0]
       && this.props.project.localized[0].title
-    if(title === "Catch the Super Magnet") {
-      return this.setState({ isAstroBoyProject : true });
+    if (title === "Catch the Super Magnet") {
+      return this.setState({ isAstroBoyProject: true });
     }
-    
+
     const didShowTutorialPopup = localStorage.getItem(`didShowTutorial_${this.props.editorMode}`);
     if (didShowTutorialPopup) this.setState({ isTutorialShow: false });
     else this.setState({ isTutorialShow: true });
   }
-  
+
   hiddenTutorial = () => {
     this.setState({ isTutorialShow: false });
   }
-  
+
   hiddenAstroBoyPopup = () => {
-    this.setState({ isAstroBoyProject : false });
+    this.setState({ isAstroBoyProject: false });
   }
-  
+
   render() {
     return (
-      <View 
+      <View
         {...this.props}
         shouldSlideRerender={this.state.shouldSlideRerender}
         isTutorialShow={this.state.isTutorialShow}
@@ -290,7 +295,7 @@ class Container extends Component {
 }
 
 export default connect(
-  state => ({ 
+  state => ({
     project: state.dream.myProject && state.dream.myProject.project,
     editorMode: state.scene.editorMode,
     email: state.userinfo.email,
@@ -307,7 +312,7 @@ export default connect(
       preview: state.preview
     }
   }),
-  { 
+  {
     setProject: projectActions.setProject,
     setIsPlaying: previewActions.setIsPlaying,
     setMyDreamProject: dreamActions.setMyDreamProject,
