@@ -34,14 +34,14 @@
   }
 
   .header_logo {
-    width: 100px;
-    height: 44px;
+    width: 124px;
+    height: 65px;
     a {
       display: inline-block;
     }
     img {
-      width: 100px;
-      height: 44px;
+      width: 124px;
+      height: 65px;
     }
   }
   .header_menus {
@@ -74,8 +74,9 @@
     }
 
     .lms {
-      width: 83px;
+      width: 114px;
       height: 40px;
+      padding: 0 9px;
       line-height: 40px;
       border-radius: 6px;
       background-color: #ff6f44;
@@ -86,7 +87,7 @@
         text-decoration: none;
         color: #ffffff;
         font-size: 16px;
-        font-weight: bold;
+        font-weight: 500;
       }
     }
 
@@ -123,7 +124,7 @@
     .searchBar{
       position: absolute;
       top: -4px;
-      right: 217px;
+      right: 250px;
       margin-right: 0;
       padding: 14px 50px 14px 16px;
       width: 844px;
@@ -155,7 +156,7 @@
       }
 
       &.open {
-        width: 844px;
+        width: 800px;
         .openSearchIcon {
           display: block;
           cursor: pointer;
@@ -250,7 +251,7 @@
   }
 
   .header_links {
-    margin-left: 18px;
+    margin-left: 25px;
     display: flex;
     font-weight: 500;
     
@@ -258,8 +259,7 @@
   .header_link {
     line-height: 40px;
     margin: 0 20px 0 0;
-    padding: 0 10px;
-    border: 1pxs solid red;
+    padding: 0 16px;
     color: #ffffff;
     font-size: 16px;
     font-weight: 500;
@@ -308,6 +308,11 @@
     right: -7px;
   }
   .header_link_on .header_link_dot {
+    display: none;
+  }
+
+
+  .header_link_social, .header_link_ranking, .header_link_event, .header_link_news {
     display: none;
   }
 
@@ -363,9 +368,14 @@
     border-bottom: 10px solid #151516;
   }
 
+  #header_menu_signIn {
+    margin-left: 34px;
+    margin-right: 14px;
+  }
+
   #header_menu_signUp {
-    width: 120px;
-    height: 35px;
+    width: 114px;
+    height: 40px;
     line-height: 35px;
     margin-left: 30px;
     margin-top: -2px;
@@ -673,4 +683,5 @@
       text-decoration: none;
     }
   }
+
 }
