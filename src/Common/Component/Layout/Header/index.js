@@ -171,6 +171,7 @@ class Header extends Component {
       handleOnKeyUp
     } = this;
     let links = [
+      "intro",
       "builder",
       // "tutorial",
       "game",
@@ -181,7 +182,8 @@ class Header extends Component {
       // "challenge",
       // "trial",
       "myapk",
-      "news"
+      "news",
+      "Admin"
     ];
     if (userinfo.organization) {
       if (userinfo.organization.toLowerCase() === "ssafy") {
