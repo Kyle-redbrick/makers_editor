@@ -182,8 +182,7 @@ class Header extends Component {
       // "challenge",
       // "trial",
       "myapk",
-      "news",
-      "Admin"
+      "news"
     ];
     if (userinfo.organization) {
       if (userinfo.organization.toLowerCase() === "ssafy") {
