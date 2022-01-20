@@ -1,3 +1,4 @@
+
 .popup_container {
   position: fixed;
   z-index: 100;
@@ -84,6 +85,8 @@
   }
   .popup_buttons {
     display: flex;
+    align-items: flex-end;
+    height: 44px;
   }
   .popup_button {
     margin: 20px auto 0 auto;
@@ -92,7 +95,7 @@
     font-size: 16px;
     font-weight: bold;
     color: #fff;
-    background-color: #1db6ff;
+    background-color: #4313AB;
     border: none;
     box-sizing: border-box;
     white-space: pre;
@@ -103,9 +106,9 @@
     opacity: 0.75;
   }
   .popup_button-cancel {
-    background: transparent;
-    color: #1db6ff;
-    border: 1px solid #1db6ff;
+    // background: transparent;
+    // color: #1db6ff;
+    // border: 1px solid #1db6ff;
   }
   .popup_button-cancel:hover {
     opacity: 0.6;

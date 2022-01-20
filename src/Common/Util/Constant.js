@@ -31,7 +31,7 @@ export const URL = {
     // if(locale === "zh") {
     //   return "https://tianchengai-etc.oss-cn-beijing.aliyuncs.com"
     // } else {
-    //   return "https://d21hhf2g9kirkh.cloudfront.net"
+    //   return "https://d21hhf2g9kirkh.cdfront.net"
     // }
     return "https://d21hhf2g9kirkh.cloudfront.net"
   }

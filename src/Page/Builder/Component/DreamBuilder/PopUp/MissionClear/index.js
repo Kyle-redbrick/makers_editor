@@ -3,7 +3,8 @@ import { injectIntl } from "react-intl";
 import "./index.scss"
 
 // import clearImg from "../../../../../../Image/dream_missionClear.svg";
-import clearImg from "../../../../../../Image/astroboy.png";
+// import clearImg from "../../../../../../Image/astroboy.png";
+import clearImg from "../../../../../../Image/mission-clear-img.svg"
 
 function MissionClear(props) {
   return  (
