@@ -1,6 +1,7 @@
 const zh = {
   ID_TITLE: "WizLab",
   ID_HEADER_LANG: "中文（简体）",
+  ID_HEADER_LINK_INTRO: "Intro",
   ID_HEADER_LINK_BUILDER: "Build",
   ID_HEADER_LINK_TUTORIAL: "Learn",
   ID_HEADER_LINK_GAME: "Play",
@@ -334,7 +335,7 @@ const zh = {
   ID_BUILDER_EDITPOP_CODE_CLOSE: "不公开",
   ID_WIZAPP_CATEGORY_GAME: "游戏",
   ID_WIZAPP_CATEGORY_UTIL: "Utility ",
-  ID_HOME_COPY_INFO: `Copyright @ 2021 MULTICAMPUS. All Rights Reserved.`,
+  ID_HOME_COPY_INFO: `Copyright @ Tezuka production. All Rights Reserved.`,
   ID_HOME_FOOTER_01: `营业执照号 636-87-01115    |    通讯销售登记号 第2019-首尔江南-00100号    |    首尔特别市 江南区 江南大道94路10 K-square 701号 `,
   ID_FOOTER_TERMS: "使用条款",
   ID_FOOTER_PRIVACY: "个人信息处理方针",

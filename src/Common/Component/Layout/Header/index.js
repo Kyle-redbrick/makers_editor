@@ -171,6 +171,7 @@ class Header extends Component {
       handleOnKeyUp
     } = this;
     let links = [
+      "intro",
       "builder",
       // "tutorial",
       "game",

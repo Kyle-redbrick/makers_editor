@@ -124,7 +124,7 @@
     .searchBar{
       position: absolute;
       top: -4px;
-      right: 217px;
+      right: 250px;
       margin-right: 0;
       padding: 14px 50px 14px 16px;
       width: 844px;
@@ -156,7 +156,7 @@
       }
 
       &.open {
-        width: 844px;
+        width: 800px;
         .openSearchIcon {
           display: block;
           cursor: pointer;
