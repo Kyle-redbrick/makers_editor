@@ -28,7 +28,7 @@ export default function View(props) {
   ]
 
   const badgeIcon = (type, shadow) => {
-    switch(type) {
+    switch (type) {
       case "javascript":
         return shadow ? badgeJsShadow : badgeJs;
       case "oobc":
@@ -42,48 +42,48 @@ export default function View(props) {
     return (
       <Link to={`?pId=${item.pId}`} className="Game__Box" key={i}>
         <div className="Game__Box__Image__Wrapper">
-          <img 
+          <img
             src={
               (item.hasOwnProperty("project") && item.project.icon) ||
               (item.hasOwnProperty("published") && item.published.icon) ||
               item.icon
             }
-             alt="" className="Game__Box__Image" />
+            alt="" className="Game__Box__Image" />
           <img className="typeIcon" src={badgeIcon('oobc', true)} alt="" />
         </div>
         <div className="Game__Info">
           <div className="Game__Info__Top">
-          <p className="Game__Box__Title">
-            {(item.hasOwnProperty("project") && item.project.name) ||
-            (item.hasOwnProperty("published") && item.published.name) ||
-            item.name}
-          </p>
-          <p className="Game__Box__Maker">
-            <img className="Game__User__Icon"
-              src={(item.hasOwnProperty("project") && item.project.user.icon) ||
+            <p className="Game__Box__Title">
+              {(item.hasOwnProperty("project") && item.project.name) ||
+                (item.hasOwnProperty("published") && item.published.name) ||
+                item.name}
+            </p>
+            <p className="Game__Box__Maker">
+              <img className="Game__User__Icon"
+                src={(item.hasOwnProperty("project") && item.project.user.icon) ||
                   (item.hasOwnProperty("published") && item.published.user.icon) ||
-                  item.user.icon} 
-              alt="" />
-            {(item.hasOwnProperty("project") && item.project.user.name) ||
-            (item.hasOwnProperty("published") && item.published.user.name) ||
-            item.user.name}
-          </p>
+                  item.user.icon}
+                alt="" />
+              {(item.hasOwnProperty("project") && item.project.user.name) ||
+                (item.hasOwnProperty("published") && item.published.user.name) ||
+                item.user.name}
+            </p>
           </div>
           <div className="Game__Etc">
             <span className="like">
               {(item.hasOwnProperty("project") && item.project.likeCount) ||
-              (item.hasOwnProperty("published") && item.published.likeCount) ||
-              item.likeCount || 0}
+                (item.hasOwnProperty("published") && item.published.likeCount) ||
+                item.likeCount || 0}
             </span>
             <span className="view">
               {(item.hasOwnProperty("project") && item.project.viewCount) ||
-              (item.hasOwnProperty("published") && item.published.viewCount) ||
-              item.viewCount || 0}
+                (item.hasOwnProperty("published") && item.published.viewCount) ||
+                item.viewCount || 0}
             </span>
             <span className="comment">
               {(item.hasOwnProperty("project") && item.project.commentCount) ||
-              (item.hasOwnProperty("published") && item.published.commentCount) ||
-              item.commentCount || 0}
+                (item.hasOwnProperty("published") && item.published.commentCount) ||
+                item.commentCount || 0}
             </span>
           </div>
         </div>
@@ -97,19 +97,20 @@ export default function View(props) {
         <div className="Page--Inner">
           <div className="backBtn">
             <Link to="/game">
-              <img src={backIcon} alt="back icon"/>
+              <img src={backIcon} alt="back icon" />
             </Link>
           </div>
           <p className="GameMore__Title">
             {title}
+
           </p>
           <ul className="CourseTabList">
             {COURSES.map((course) => {
               return (
-                <li 
-                  className={selectedTab === course.id ? "active" : ""} 
+                <li
+                  className={selectedTab === course.id ? "active" : ""}
                   key={course.id}
-                  onClick={()=>handleSelectedTab(course.id)}
+                  onClick={() => handleSelectedTab(course.id)}
                 >
                   {course.title}
                 </li>
