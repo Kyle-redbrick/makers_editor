@@ -35,13 +35,15 @@ export default function(props) {
     const subModalButtonText = {
       "next" : {
         "ko" : "다음",
+        "jp" : "次へ",
         "zh" : "下一页",
         "en" : "next"
       },
       "skip" : {
         "ko" : "스킵하기",
+        "jp" : "スキップする",
         "zh" : "跳过",
-        "en" : "skip"
+        "en" : "Skip"
       }
     }
 
