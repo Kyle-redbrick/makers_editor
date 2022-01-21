@@ -135,6 +135,7 @@ const zh = {
   ID_WIZAPP_RECOMMENDS_TAG: "WizPick!",
   ID_WIZAPP_NEWS_TITLE: "WizLab新游戏",
   ID_WIZAPP_NEWS_TAG: "NEW!",
+  ID_INTRO_ABOUT_ASTROBOY: "About Astro Boy Go!",
   ID_GAME_EDITOR_TITLE: "主编推荐游戏",
   ID_GAME_EDITOR_MORE: "지난 추천 게임보기",
   ID_GAME_WEEKLY_LIKE_TITLE: "本周人气游戏",

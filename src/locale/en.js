@@ -135,6 +135,7 @@ const en = {
   ID_WIZAPP_RECOMMENDS_TAG: "WizPick!",
   ID_WIZAPP_NEWS_TITLE: "WizLab new games",
   ID_WIZAPP_NEWS_TAG: "NEW!",
+  ID_INTRO_ABOUT_ASTROBOY: "About Astro Boy Go!",
   ID_GAME_EDITOR_TITLE: "Editor Recommended Games",
   ID_GAME_EDITOR_MORE: "지난 추천 게임보기",
   ID_GAME_WEEKLY_LIKE_TITLE: "Weekly Popular Games",

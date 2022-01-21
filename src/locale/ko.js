@@ -135,6 +135,7 @@ const ko = {
   ID_WIZAPP_RECOMMENDS_TAG: "WizPick!",
   ID_WIZAPP_NEWS_TITLE: "위즈랩 신규게임",
   ID_WIZAPP_NEWS_TAG: "NEW!",
+  ID_INTRO_ABOUT_ASTROBOY: "아스트로 코딩 고! 란...",
   ID_GAME_EDITOR_TITLE: "에디터 추천 게임",
   ID_GAME_EDITOR_MORE: "지난 추천 게임보기",
   ID_GAME_WEEKLY_LIKE_TITLE: "주간 인기 게임",
