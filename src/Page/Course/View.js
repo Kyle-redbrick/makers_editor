@@ -233,6 +233,10 @@ const View = (props) => {
 
   const init = async () => {
     const _coursesResult = await getCourses();
+
+    console.log("_coursesResult",_coursesResult)
+
+
     const _courses = new Map();
     _coursesResult.forEach((_course) => {
       const course = new Course(_course);

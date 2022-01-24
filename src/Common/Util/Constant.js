@@ -10,8 +10,6 @@ export const URL = {
   ORIGIN: `https://${subdomain}wizlab.net/`,
   WIZLIVE: `https://${subdomain}wizlive.com`,
   WIZLIVE_WWW: `https://www.${subdomain}wizlive.com`,
-  JANUS_SOCKET_SERVER: `https://wizlive.wizschool.io:3000/`,
-  JANUS_SERVER: `https://wizlive.wizschool.io:8089/janus`,
   ICE_SERVERS: [
   {
       urls: [
