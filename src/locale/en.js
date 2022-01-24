@@ -147,6 +147,10 @@ const en = {
   ID_INTRO_ASTRO_CODING_TITLE: "About Astro Coding Go!",
   ID_INTRO_ASTRO_CODING_DETAIL: "Go on an adventure as a member of Team Astro! Try different coding projects with Astro. Astro Coding go! is structured to help students learn coding naturally through interesting stories in a project-based curriculum. Build basic coding foundations with block coding and develop professional skills with JavaScript. From the North Pole, desert, sea, and to space! We invite you to explore all over the world.",
   ID_INTRO_ASTRO_BLOCK_TITLE: "Astro Coding Go - Block Coding",
+  ID_INTRO_BLOCKCODING_ELEMENTARY: "Courses for students new to coding.\nLearn to code by creating simple games with block coding.",
+  ID_INTRO_BLOCKCODING_BASIC: "This course teaches basic programming and algorithm principles with block coding. Try different kinds of projects, such as avoiding obstacles and platformer games.",
+  ID_INTRO_BLOCKCODING_ADVANCED: "This block coding course teaches advanced programming concepts. Use essential CS concepts such as conditional statement, loop statement, and duplication to create the project.",
+  
   ID_GAME_EDITOR_TITLE: "Editor Recommended Games",
   ID_GAME_EDITOR_MORE: "지난 추천 게임보기",
   ID_GAME_WEEKLY_LIKE_TITLE: "Weekly Popular Games",

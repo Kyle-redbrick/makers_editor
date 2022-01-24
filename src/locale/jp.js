@@ -147,6 +147,10 @@ const jp = {
   ID_INTRO_ASTRO_CODING_TITLE: "アトムコーディングGo！とは",
   ID_INTRO_ASTRO_CODING_DETAIL: "チームアトムの一員となって旅立つ冒険！アトムと一緒に多様なコーディングプロジェクトに挑戦してみましょう。アトムコーディングGo！はリアルなストーリーやプロジェクト基盤カリキュラムを通して学生が吸収するように、コーディングを学べる構成となっています。ブロックコーディングを通して基本コーディングの概念を整え、JavaScriptで専門的なスキルを身に着けてみましょう。北極、砂漠、海から宇宙まで！色んなところを飛び回るミッションにみなさんをお招きいたします。",
   ID_INTRO_ASTRO_BLOCK_TITLE: "Astro Coding Go - Block Coding",
+  ID_INTRO_BLOCKCODING_ELEMENTARY: "コーディングを初めて接する学生のためのコース。\nブロックコーディングで簡単なゲームを作りながら、コーディングの原理について学びます。",
+  ID_INTRO_BLOCKCODING_BASIC: "ブロックコーディングを通してプログラミングの基礎とアルゴリズムの原理を学ぶコースです。障害物をよける、プラットフォームゲームなどの多様な種類のプロジェクトに挑戦できます。",
+  ID_INTRO_BLOCKCODING_ADVANCED: "上級プログラミング概念に挑戦するブロックコーディングのコースです。条件文、繰り返し文、複製などの必須CS概念を自由に活用し、プロジェクトを作成します。",
+
   ID_GAME_EDITOR_TITLE: "Editor Recommended Games",
   ID_GAME_EDITOR_MORE: "지난 추천 게임보기",
   ID_GAME_WEEKLY_LIKE_TITLE: "Weekly Popular Games",

@@ -6,10 +6,11 @@
     --second-section-width: 770px;
     font-family: 'Poppins', sans-serif;
     color: #FFFFFF;
+    word-break: keep-all;
 
     .intro__section-banner {
         position: relative;
-        background: #F38227;
+        background: #FF8929;
         height: 512px;
 
         .intro-banner {
@@ -19,7 +20,11 @@
             width: 100%;
             height : 100%;
             max-width: 1334px;
-            background: url("../../Image/astro-intro-banner.png") no-repeat center/cover;
+            background: url("../../Image/astro-gradient-banner.png") no-repeat center/cover;
+            
+            @media only screen and (max-width: 1334px){
+                background: url("../../Image/astro-intro-banner.png") no-repeat center/cover;
+            }
         }
     }
 
@@ -126,6 +131,45 @@
 
             .second__section__title {
                 margin-bottom: 30px;
+            }
+
+            .astro_blockcoding__contents {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                row-gap: 30px;
+
+                .astro_blockcoding__content{
+                    box-sizing: border-box;
+                    display: inline-block;
+                    padding: 29px 32px 29px;
+                    width: 100%;
+                    // height: 208px;
+                    background: #1C1C1C;
+                    border-radius: 16px;
+                    
+                    .astro_blockcoding__header{
+                        margin-bottom: 15px;
+                        display: flex;
+                        align-items: center;
+                        font-size: 24px;
+                        line-height: 40px;
+                        font-weight: 700;
+                        img {
+                            width: 33px;
+                            height: 33px;
+                            margin-right: 12px;
+                        }
+                    }
+
+                    .astro_blockcoding__detail{
+                        font-weight: 400;
+                        font-size: 18px;
+                        line-height: 28px;
+                        color: rgba(255, 255, 255, 0.5);
+                        margin-right: 230px;
+                    }
+                }
             }
         }
 

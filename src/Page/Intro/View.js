@@ -4,9 +4,14 @@ import { FormattedMessage } from "react-intl";
 import SuzuImg from "../../Image/img_Suzu.png";
 import AstroBoyImg from "../../Image/img_AstroBoy.png";
 import AstroKittyImg from "../../Image/img_AstroKitty.png";
+import BlockIcon from "../../Image/intro-block-coding-icon.png";
 import "./index.scss";
 
 function View(props) {
+    const {
+        blockCodingCourses,
+        javaCodingCourses,
+    } = props;
 
     return (
         <Layout>
@@ -91,8 +96,21 @@ function View(props) {
                             <FormattedMessage id="ID_INTRO_ASTRO_BLOCK_TITLE" />
                         </div>
                         {/* video */}
-                        <div class="astro_blockcoding__contents">
-
+                        <div className="astro_blockcoding__contents">
+                            {blockCodingCourses.map((course) => (
+                                <div class="astro_blockcoding__content">
+                                    <div class="astro_blockcoding__header">
+                                        <img src={BlockIcon} alt="blockcoding-icon" />
+                                        <FormattedMessage id={course.title} />
+                                    </div>
+                                    <div class="astro_blockcoding__detail">
+                                        <FormattedMessage id={course.detail} />
+                                    </div>
+                                    {/* <button className="astro_blockcoding_button">
+                                Learn Now
+                            </button> */}
+                                </div>
+                            ))}
                         </div>
                     </div>
 

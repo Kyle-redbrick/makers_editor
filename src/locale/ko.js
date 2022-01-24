@@ -147,6 +147,10 @@ const ko = {
   ID_INTRO_ASTRO_CODING_TITLE: "아스트로 코딩 고! 란...",
   ID_INTRO_ASTRO_CODING_DETAIL: "팀 아톰의 일원이 되어 떠나는 모험! 아톰과 함께 다양한 코딩 프로젝트에 도전해 보세요. 아스트로 코딩 고! 는 생생한 스토리와 프로젝트 기반 커리큘럼을 통해 학생이 흡수하듯 코딩을 배울 수 있도록 구성되어 있습니다. 블로코딩을 통해 기본 코딩 개념을 다지고, 자바스크립트로 전문 기량을 키워보세요. 북극, 사막, 바다에서부터 우주까지!  곳곳을 누비는 미션에 여러분을 초대합니다.",
   ID_INTRO_ASTRO_BLOCK_TITLE: "Astro Coding Go - Block Coding",
+  ID_INTRO_BLOCKCODING_ELEMENTARY: "코딩을 처음 접하는 학생을 위한 과정.\n블록 코딩으로 간단한 게임을 만들며 코딩의 원리에 대해 배워나갑니다..",
+  ID_INTRO_BLOCKCODING_BASIC: "블록 코딩을 통해 기초 프로그래밍과 알고리즘 원리를 배우는 과정입니다. 장애물 피하기, 플랫포머 게임 등 다양한 종류의 프로젝트에 도전할 수 있습니다.",
+  ID_INTRO_BLOCKCODING_ADVANCED: "상급 프로그래밍 개념에 도전하는 블록코딩 과정입니다. 조건문, 반복문, 복제 등의 필수 CS 개념을 자유롭게 활용해 프로젝트를 제작합니다. .",
+
   ID_GAME_EDITOR_TITLE: "에디터 추천 게임",
   ID_GAME_EDITOR_MORE: "지난 추천 게임보기",
   ID_GAME_WEEKLY_LIKE_TITLE: "주간 인기 게임",
