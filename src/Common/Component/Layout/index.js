@@ -19,6 +19,7 @@ const Layout = props => {
       {props.isGame && (
         <div className="layout_background layout_top_bg" alt="layout_top_bg" />
       )}
+      
       <Footer />
     </div>
   );
