@@ -16,7 +16,6 @@ import Preload from "./Component/Preload";
 // import Project from "./Component/Project";
 import Socket from "./Component/Socket";
 import AudioPlayer from "./Component/AudioPlayer";
-import Live from "./Component/Live";
 import Video from "./Component/Video";
 import API from "./Component/API";
 import Chat from "./Component/Chat";
@@ -31,7 +30,6 @@ import OCP from "./Component/OCP";
 // import OCP2BLOCK from "./Component/OCP2BLOCK";
 import OCP2 from "./Component/OCP2";
 import Tutorial from "./Component/Tutorial";
-import JanusSocket from "./Component/JanusSocket";
 import RecordPlayer from "./Component/RecordPlayer";
 import Help from "./Component/Help";
 import Home from "./Component/Home";
@@ -43,10 +41,6 @@ import MultiSocket from "./Component/MultiSocket";
 
 // MONITOR
 import MonitorContainer from "./Component/MonitorContainer";
-
-//MultiLive
-import MultiLive from "./Component/MultiLive";
-import MultiLiveMonitor from "./Component/MultiLiveMonitor";
 
 export default function(props) {
   const {
@@ -125,9 +119,6 @@ export default function(props) {
           <Preload />
           <AudioPlayer />
           <Socket pageType={pageType} {...liveProps} />
-          {pageType === PAGETYPE.WIZLIVE && isTutor && (
-            <JanusSocket reservationId={reservationId} />
-          )}
           <Header
             location={location}
             openProjectPopup={openProjectPopup}
@@ -170,31 +161,6 @@ export default function(props) {
                 popupStates={popupStates}
                 handleSelectTab={handleSelectTab}
                 isTutor={isTutor}
-              />
-            )}
-            {popupStates.live && (
-              <Live
-                handleSelectTab={handleSelectTab}
-                handleChangeZIndex={handleChangeZIndex}
-                zIndex={popupZIndexes.indexOf("live") + popupZIndexOffset}
-                {...liveProps}
-              />
-            )}
-            {/* MultiLive */}
-            {popupStates.live1v4 && (
-              <MultiLive
-                handleSelectTab={handleSelectTab}
-                handleChangeZIndex={handleChangeZIndex}
-                zIndex={popupZIndexes.indexOf("live") + popupZIndexOffset}
-                {...liveProps}
-              />
-            )}
-            {popupStates.monitor1v4 && (
-              <MultiLiveMonitor
-                handleSelectTab={handleSelectTab}
-                handleChangeZIndex={handleChangeZIndex}
-                zIndex={popupZIndexes.indexOf("live") + popupZIndexOffset}
-                {...liveProps}
               />
             )}
             {popupStates.videoclass && (
