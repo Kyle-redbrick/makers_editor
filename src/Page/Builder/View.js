@@ -39,8 +39,6 @@ import DreamBuilder from "./Component/DreamBuilder";
 import Tabs from "./Component/Tabs";
 import MultiSocket from "./Component/MultiSocket";
 
-// MONITOR
-import MonitorContainer from "./Component/MonitorContainer";
 
 export default function(props) {
   const {
@@ -132,7 +130,6 @@ export default function(props) {
           {pageType === PAGETYPE.MONITOR_1V4 && (
             <Tabs {...liveProps} isMonitor={pageType === "monitor_1v4"} />
           )}
-          {pageType === "monitor" && <MonitorContainer location={location} />}
 
           {/* MultiLive Socket */}
           {pageType === PAGETYPE.WIZLIVE_1V4 && <MultiSocket {...liveProps} />}
