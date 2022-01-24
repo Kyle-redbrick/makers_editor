@@ -1,3 +1,4 @@
+
 .builder--home__newProjectPopup {
   padding: 0 26px;
   .newGamePopup__row {
@@ -12,6 +13,7 @@
   }
 
   .newGamePopup__row--title {
+    white-space: nowrap;
     width: 78px;
     line-height: 32px;
     font-size: 13px;
@@ -19,6 +21,8 @@
   }
 
   .format__buttons {
+    display: flex;
+    flex-direction: row;
     width: 191px;
     height: 32px;
     border-radius: 6px;
