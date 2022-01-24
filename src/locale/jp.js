@@ -150,7 +150,9 @@ const jp = {
   ID_INTRO_BLOCKCODING_ELEMENTARY: "コーディングを初めて接する学生のためのコース。\nブロックコーディングで簡単なゲームを作りながら、コーディングの原理について学びます。",
   ID_INTRO_BLOCKCODING_BASIC: "ブロックコーディングを通してプログラミングの基礎とアルゴリズムの原理を学ぶコースです。障害物をよける、プラットフォームゲームなどの多様な種類のプロジェクトに挑戦できます。",
   ID_INTRO_BLOCKCODING_ADVANCED: "上級プログラミング概念に挑戦するブロックコーディングのコースです。条件文、繰り返し文、複製などの必須CS概念を自由に活用し、プロジェクトを作成します。",
-
+  ID_INTRO_ASTRO_JAVASCRIPT_TITLE: "Astro Coding Go - Javascript Coding",
+  ID_INTRO_JAVASCRIPT_BASIC: "ブロックコーディングに慣れたか、もしくはコーディングを始める高学年の学生のためのJavaScriptコースです。JSを使ってプロジェクトに挑戦しながら、プログラミングの基盤を整えます。",
+  ID_INTRO_JAVASCRIPT_ADVANCED: "JavaScriptとリスト、関数を含むCS概念を自由に活用し、上級プロジェクトを進めます。",
   ID_GAME_EDITOR_TITLE: "Editor Recommended Games",
   ID_GAME_EDITOR_MORE: "지난 추천 게임보기",
   ID_GAME_WEEKLY_LIKE_TITLE: "Weekly Popular Games",

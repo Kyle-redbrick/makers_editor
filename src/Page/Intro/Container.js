@@ -33,6 +33,16 @@ class Container extends Component {
 
             ],
             javaCodingCourses: [
+                {
+                    "title": "Basic",
+                    "detail": "ID_INTRO_JAVASCRIPT_BASIC",
+                    "route": ""
+                },
+                {
+                    "title": "Advanced",
+                    "detail": "ID_INTRO_JAVASCRIPT_ADVANCED",
+                    "route": ""
+                },
 
             ]
         };

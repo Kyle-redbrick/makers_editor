@@ -150,7 +150,9 @@ const ko = {
   ID_INTRO_BLOCKCODING_ELEMENTARY: "코딩을 처음 접하는 학생을 위한 과정.\n블록 코딩으로 간단한 게임을 만들며 코딩의 원리에 대해 배워나갑니다..",
   ID_INTRO_BLOCKCODING_BASIC: "블록 코딩을 통해 기초 프로그래밍과 알고리즘 원리를 배우는 과정입니다. 장애물 피하기, 플랫포머 게임 등 다양한 종류의 프로젝트에 도전할 수 있습니다.",
   ID_INTRO_BLOCKCODING_ADVANCED: "상급 프로그래밍 개념에 도전하는 블록코딩 과정입니다. 조건문, 반복문, 복제 등의 필수 CS 개념을 자유롭게 활용해 프로젝트를 제작합니다. .",
-
+  ID_INTRO_ASTRO_JAVASCRIPT_TITLE: "Astro Coding Go - Javascript Coding",
+  ID_INTRO_JAVASCRIPT_BASIC: "블록코딩에 익숙해졌거나, 코딩을 시작하는 고학년 학생을 위한 자바스크립트 과정입니다. JS를 사용한 프로젝트에 도전하면서 프로그래밍의 기반을 다집니다. ",
+  ID_INTRO_JAVASCRIPT_ADVANCED: "자바스크립트와 리스트, 함수를 비롯한 CS 개념을 자유롭게 활용하여 상급 프로젝트를 진행합니다. ",
   ID_GAME_EDITOR_TITLE: "에디터 추천 게임",
   ID_GAME_EDITOR_MORE: "지난 추천 게임보기",
   ID_GAME_WEEKLY_LIKE_TITLE: "주간 인기 게임",

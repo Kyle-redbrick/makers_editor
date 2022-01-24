@@ -5,12 +5,14 @@ import SuzuImg from "../../Image/img_Suzu.png";
 import AstroBoyImg from "../../Image/img_AstroBoy.png";
 import AstroKittyImg from "../../Image/img_AstroKitty.png";
 import BlockIcon from "../../Image/intro-block-coding-icon.png";
+import JavaSIcon from "../../Image/intro-javascript-icon.png";
 import "./index.scss";
 
 function View(props) {
     const {
+        characters,
         blockCodingCourses,
-        javaCodingCourses,
+        javaCodingCourses
     } = props;
 
     return (
@@ -81,7 +83,7 @@ function View(props) {
                 <div className="second__section">
                     <div className="second__section--astrocoding">
                         {/* video */}
-                        <div className="astrocoding__content">
+                        <div className="astrocoding_intro__content">
                             <div className="second__section__title">
                                 <FormattedMessage id="ID_INTRO_ASTRO_CODING_TITLE" />
                             </div>
@@ -96,27 +98,47 @@ function View(props) {
                             <FormattedMessage id="ID_INTRO_ASTRO_BLOCK_TITLE" />
                         </div>
                         {/* video */}
-                        <div className="astro_blockcoding__contents">
+                        <div className="astro_coding__contents">
                             {blockCodingCourses.map((course) => (
-                                <div class="astro_blockcoding__content">
-                                    <div class="astro_blockcoding__header">
+                                <div class="astro_coding__content">
+                                    <div class="astro_coding__header">
                                         <img src={BlockIcon} alt="blockcoding-icon" />
                                         <FormattedMessage id={course.title} />
                                     </div>
-                                    <div class="astro_blockcoding__detail">
+                                    <div class="astro_coding__detailWrapper">
+                                    <div class="astro_coding__detail">
                                         <FormattedMessage id={course.detail} />
                                     </div>
-                                    {/* <button className="astro_blockcoding_button">
-                                Learn Now
-                            </button> */}
+                                    <button className="astro_coding__button">
+                                        Learn Now
+                                    </button>
+                                    </div>
                                 </div>
                             ))}
                         </div>
                     </div>
 
-                    <div className="second__section--javacoding">
-
-
+                    <div className="second__section--javascript-coding">
+                        <div className="second__section__title">
+                            <FormattedMessage id="ID_INTRO_ASTRO_JAVASCRIPT_TITLE" />
+                        </div>
+                        {/* video */}
+                        <div className="astro_coding__contents">
+                            {javaCodingCourses.map((course) => (
+                                <div class="astro_coding__content">
+                                    <div class="astro_coding__header">
+                                        <img src={JavaSIcon} alt="blockcoding-icon" />
+                                        <FormattedMessage id={course.title} />
+                                    </div>
+                                    <div class="astro_coding__detail">
+                                        <FormattedMessage id={course.detail} />
+                                    </div>
+                                    <button className="astro_coding__button">
+                                        Learn Now
+                                    </button>
+                                </div>
+                            ))}
+                        </div>
                     </div>
 
                 </div>
