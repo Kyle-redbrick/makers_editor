@@ -135,9 +135,7 @@ const ja = {
   ID_WIZAPP_RECOMMENDS_TAG: "WizPick!",
   ID_WIZAPP_NEWS_TITLE: "WizLab new games",
   ID_WIZAPP_NEWS_TAG: "NEW!",
-<<<<<<< HEAD:src/locale/ja.js
   ID_GAME_EDITOR_TITLE: "エディターおすすめのゲーム",
-=======
   ID_INTRO_ABOUT_ASTROBOY_GO_TITLE: "About Astro Boy Go!",
   ID_INTRO_ABOUT_ASTROBOY_GO: "Astro, the most advanced AI robot with a human boy appearance, sets out to solve\nproblems happening all over the world together with Astro Kitty, a ktten-like robot,\nand Suzu, a super intelligent human girl as a team.",
   ID_INTRO_CHARACTER_TITLE: "Characters",
@@ -157,7 +155,6 @@ const ja = {
   ID_INTRO_JAVASCRIPT_BASIC: "ブロックコーディングに慣れたか、もしくはコーディングを始める高学年の学生のためのJavaScriptコースです。JSを使ってプロジェクトに挑戦しながら、プログラミングの基盤を整えます。",
   ID_INTRO_JAVASCRIPT_ADVANCED: "JavaScriptとリスト、関数を含むCS概念を自由に活用し、上級プロジェクトを進めます。",
   ID_GAME_EDITOR_TITLE: "Editor Recommended Games",
->>>>>>> christina/intro-page:src/locale/jp.js
   ID_GAME_EDITOR_MORE: "지난 추천 게임보기",
   ID_GAME_WEEKLY_LIKE_TITLE: "週間人気ゲーム",
   ID_GAME_MONTLY_LIKE_TITLE: "月間人気ゲーム",
