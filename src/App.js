@@ -21,6 +21,7 @@ const PythonPage = lazy(() => import("./Page/Python"));
 const Builder = lazy(() => import("./Page/Builder"));
 const Builder3D = lazy(() => import("./Page/Builder3D"));
 const Tutorial = lazy(() => import("./Page/Tutorial"));
+const Intro = lazy(() => import("./Page/Intro"));
 const Game = lazy(() => import("./Page/Game"));
 // const GameMore = lazy(() => import("./Page/GameViewMore"));
 const EditorRecommand = lazy(() => import("./Page/EditorRecommand"));
@@ -124,6 +125,12 @@ const App = () => {
             exact
             path="/editorRecommend"
             render={() => <HandleQueryString Component={EditorRecommand} />}
+          />
+          {/* intro */}
+          <Route
+            exact
+            path="/intro"
+            render={() => <HandleQueryString Component={Intro} />}
           />
           {/* game */}
           <Route

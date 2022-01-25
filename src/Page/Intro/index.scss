@@ -1,0 +1,196 @@
+.Page--Intro {
+
+  display: flex;
+  flex-direction: column;
+  --first-section-width: 1170px;
+  --second-section-width: 770px;
+  font-family: 'Poppins', sans-serif;
+  color: #FFFFFF;
+  word-break: keep-all;
+
+  .intro__section-banner {
+    position: relative;
+    background: #FF8929;
+    height: 512px;
+
+    .intro-banner {
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      height : 100%;
+      max-width: 1334px;
+      background: url("../../Image/astro-gradient-banner.png") no-repeat center/cover;
+
+      @media only screen and (max-width: 1334px){
+        background: url("../../Image/astro-intro-banner.png") no-repeat center/cover;
+      }
+    }
+  }
+
+
+
+  .first_section {
+    width: var(--first-section-width);
+    margin: 0 auto;
+    
+    .first_section__header {
+      font-size: 36px;
+      line-height: 40px;
+      font-weight: 700;
+    }
+    .first_section__body {
+      white-space: pre-wrap;
+      line-height: 32px;
+      font-size: 20px;
+      font-weight: 400;
+    }
+  }
+
+  .first_section--intro {
+    margin: 50px 0 60px;
+
+    .first_section__header {
+      margin-bottom: 20px;
+    }
+  }
+
+  .character--header {
+      margin-bottom: 40px;
+  }
+
+  .character_cards {
+      display: flex;
+      justify-content: space-between;
+      column-gap: 24px;
+      margin-bottom: 130px;
+
+      img {
+          margin: 0 38px 40px;
+          width: 298px;
+          height: 293px;
+      }
+      .character_card {
+          padding: 24px 0 29px;
+          height: 581px;
+          background: linear-gradient(180deg, #60FF9F 0%, #0047FF 100%);
+          border-radius: 16px;
+      }
+
+      .character_card__contents {
+          white-space: pre-wrap;
+          margin: 0 18px;
+
+          .character_card__name {
+              margin-bottom: 23px;
+              font-weight: 700;
+              font-size: 24px;
+              line-height: 24px;
+          }
+
+          .character_card__details {
+              font-size: 18px;
+              line-height: 28px;
+              font-weight: 400;
+          }
+      }
+  }
+
+  .second_section {
+    width: var(--second-section-width);
+    margin: 0 auto;
+
+    .second_section__title {
+      font-size: 30px;
+      font-weight: 700;
+      margin-bottom: 30px;
+      line-height: 40px;
+    }
+    .second_section__detail {
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 32px;
+      color: rgba(255, 255, 255, 0.5);
+
+    }
+    .second_section--astrocoding{
+      padding-bottom: 82px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+
+      .astrocoding_intro__content{
+        margin-top: 30px;
+        padding: 10px;
+
+        .second_section__title {
+          margin-bottom: 20px;
+        }
+      }
+    }
+
+    .second_section--blockcoding {
+      margin: 50px 0 66px;
+    }
+
+    .second_section--javascript-coding {
+      margin-bottom: 158px;
+    }
+
+    .astro_coding__contents {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      row-gap: 30px;
+
+      .astro_coding__content{
+        box-sizing: border-box;
+        display: inline-block;
+        padding: 29px 32px 29px;
+        width: 100%;
+        background: #1C1C1C;
+        border-radius: 16px;
+          
+        .astro_coding__header{
+          margin-bottom: 15px;
+          display: flex;
+          align-items: center;
+          font-size: 24px;
+          line-height: 40px;
+          font-weight: 700;
+          img {
+            width: 33px;
+            height: 33px;
+            margin-right: 12px;
+          }
+        }
+
+        .astro_coding__detail{
+          font-weight: 400;
+          font-size: 18px;
+          line-height: 28px;
+          color: rgba(255, 255, 255, 0.5);
+          margin-right: 40px;
+        }
+
+        .astro_coding__detailWrapper {
+          display: flex;
+          align-items: flex-end;
+        }
+
+
+        .astro_coding__button {
+          cursor: pointer;
+          border:none;
+          font-family: 'Poppins', sans-serif;
+          font-size: 16px;
+          line-height: 24px;
+          font-weight: 600;
+          color: #FFFFFF;
+          background: #FF6F44;
+          border-radius: 10px;
+          width: 153px;
+          height: 54px;
+        }
+      }
+    }
+  }
+}
