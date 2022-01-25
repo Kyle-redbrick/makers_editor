@@ -1177,7 +1177,7 @@ const ja = {
   ID_DREAM_CONTENT_TITLE: "おすすめコンテンツ",
   ID_DREAM_CONTENT_SUBTITLE: "今日のミッションはこれ！",
   ID_DREAM_CATEGORY_TITLE_LABEL: "カテゴリー",
-  ID_DREAM_CATEGORY_TITLE: "Whatever you choose, it's bound to be fun!",
+  ID_DREAM_CATEGORY_TITLE: "どんなことを学びましょうか？",
   ID_DREAM_TUTORIAL_START: "Start",
   ID_DREAM_LMS_TITLE: "Dashboard",
   ID_DREAM_LMS_TODAY: "Today",
