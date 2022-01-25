@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
+import AstroBoyImg from "../../Image/img_AstroBoy.png";
+import AstroKittyImg from "../../Image/img_AstroKitty.png";
+import SuzuImg from "../../Image/img_Suzu.png";
 import View from "./View";
 
 class Container extends Component {
@@ -9,9 +12,19 @@ class Container extends Component {
         this.state = {
             characters: [
                 {
-                    "img": "",
-                    "name": "",
-                    "detail": ""
+                    "img": AstroBoyImg,
+                    "name": "ID_INTRO_CHARACTER_ASTROBOY_TITLE",
+                    "detail": "ID_INTRO_CHARACTER_ASTROBOY"
+                },
+                {
+                    "img": AstroKittyImg,
+                    "name": "ID_INTRO_CHARACTER_ASTROKITTY_TITLE",
+                    "detail": "ID_INTRO_CHARACTER_ASTROKITTY"
+                },
+                {
+                    "img": SuzuImg,
+                    "name": "ID_INTRO_CHARACTER_SUZU_TITLE",
+                    "detail": "ID_INTRO_CHARACTER_SUZU"
                 }
             ],
             blockCodingCourses: [

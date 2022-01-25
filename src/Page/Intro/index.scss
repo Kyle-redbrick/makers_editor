@@ -169,20 +169,20 @@
                     font-size: 18px;
                     line-height: 28px;
                     color: rgba(255, 255, 255, 0.5);
-                    margin-right: 230px;
+                    margin-right: 40px;
 
                 }
 
-                // .astro_coding__detailWrapper {
-                //     display: flex;
+                .astro_coding__detailWrapper {
+                    display: flex;
+                    align-items: flex-end;
+                }
 
-
-                // }
 
                 .astro_coding__button {
-
-                    z-index: 1;
-                    position: relative;
+                    cursor: pointer;
+                    border:none;
+                    font-family: 'Poppins', sans-serif;
                     font-size: 16px;
                     line-height: 24px;
                     font-weight: 600;
@@ -191,8 +191,6 @@
                     border-radius: 10px;
                     width: 153px;
                     height: 54px;
-                    margin-left: auto;
-
                 }
             }
         }
