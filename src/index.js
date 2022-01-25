@@ -21,32 +21,25 @@ import "slick-carousel/slick/slick-theme.css";
 
 addLocaleData([...en, ...ko, ...zh, ...ja]);
 
-// const getNavigatorLanguage = () => {
-//   let lang;
-//   lang = localStorage.getItem("wizLang");
-//   if (lang && ["ko", "en", "zh"].includes(lang)) return lang;
+const getNavigatorLanguage = () => {
 
-//   var str;
-//   if (navigator.languages && navigator.languages.length) {
-//     str = navigator.languages[0];
-//   } else {
-//     str =
-//       navigator.userLanguage ||
-//       navigator.language ||
-//       navigator.browserLanguage ||
-//       "en";
-//   }
-//   lang = str.replace(/-[A-Z]*/, "");
-//   if (!["ko", "en", "zh"].includes(lang)) {
-//     lang = "en";
-//   }
-//   // localStorage.setItem("wizLang", lang);
-//   // return lang;
-//   //localStorage.setItem("wizLang", "en");
-//   return "en";
-// };
+  let lang;
+  switch(window.location.hostname) {
+    case "astroboy-dev.wizclass.com":
+      lang = "ja"
+      break;
+    case "astroboy-dev-en.wizclass.com":
+      lang = "en"
+      break;
+    default:
+      lang = "en"
+      break;
+  }
 
-const defaultLang = "ja"//getNavigatorLanguage();
+  return lang;
+};
+
+const defaultLang = getNavigatorLanguage();
 
 //initialize GA
 // ReactGA.initialize("UA-132407065-3");
