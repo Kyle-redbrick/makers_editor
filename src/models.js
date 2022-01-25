@@ -164,37 +164,37 @@ export class Course {
     this.totalProjectNum = 0;
     this.progress = 0
 
-    this.displayType = 
-      _course.localized[0]
-      && _course.localized[0].displayType;
-    this.phrase = 
-      _course.localized[0]
-      && _course.localized[0].phrase;
-    this.phrase2 = 
-      _course.localized[0]
-      && _course.localized[0].phrase2;
-    this.introduction = 
-      _course.localized[0]
-      && _course.localized[0].introduction;
-    this.title = 
-      _course.localized[0]
-      && _course.localized[0].title;
+    // this.displayType = 
+    //   _course.localized[0]
+    //   && _course.localized[0].displayType;
+    // this.phrase = 
+    //   _course.localized[0]
+    //   && _course.localized[0].phrase;
+    // this.phrase2 = 
+    //   _course.localized[0]
+    //   && _course.localized[0].phrase2;
+    // this.introduction = 
+    //   _course.localized[0]
+    //   && _course.localized[0].introduction;
+    // this.title = 
+    //   _course.localized[0]
+    //   && _course.localized[0].title;
 
-    if (_course.iconURL) {
-      this.icon = _course.iconURL && _course.iconURL.toDreamclassS3URL();
-    }
+    // if (_course.iconURL) {
+    //   this.icon = _course.iconURL && _course.iconURL.toDreamclassS3URL();
+    // }
 
-    if (_course.localized[0] && _course.localized[0].videoURL) {
-      this.video =
-        _course.localized[0].videoURL
-        && _course.localized[0].videoURL.toDreamclassS3URL();
-    }
+    // if (_course.localized[0] && _course.localized[0].videoURL) {
+    //   this.video =
+    //     _course.localized[0].videoURL
+    //     && _course.localized[0].videoURL.toDreamclassS3URL();
+    // }
 
-    if (_course.localized[0] && _course.localized[0].posterURL) {
-      this.poster =
-        _course.localized[0].posterURL
-        && _course.localized[0].posterURL.toDreamclassS3URL();
-    }
+    // if (_course.localized[0] && _course.localized[0].posterURL) {
+    //   this.poster =
+    //     _course.localized[0].posterURL
+    //     && _course.localized[0].posterURL.toDreamclassS3URL();
+    // }
 
     if (_course.progress !== undefined) {
       this.progress = Number(_course.progress);
