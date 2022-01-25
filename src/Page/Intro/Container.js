@@ -1,8 +1,5 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
-import AstroBoyImg from "../../Image/img_AstroBoy.png";
-import AstroKittyImg from "../../Image/img_AstroKitty.png";
-import SuzuImg from "../../Image/img_Suzu.png";
 import View from "./View";
 
 class Container extends Component {
