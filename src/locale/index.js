@@ -1,13 +1,13 @@
 import ko from "./ko";
 import zh from "./zh";
 import en from "./en";
-import jp from "./jp";
+import ja from "./ja";
 
 
 const locale = {
   ko,
   en,
-  jp,
+  ja,
   zh
 };
 

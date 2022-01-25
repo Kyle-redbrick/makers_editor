@@ -1,4 +1,4 @@
-const jp = {
+const ja = {
   ID_TITLE: "WizLab",
   ID_HEADER_LANG: "English",
   ID_HEADER_LINK_INTRO: "Intro",
@@ -1253,4 +1253,4 @@ const jp = {
   ID_INPUT_POPUP_CANCLE: "Cancel",
   ID_INPUT_POPUP_CONFIRM: "Confirm"
 };
-export default jp;
+export default ja;
