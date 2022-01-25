@@ -6,11 +6,11 @@ import UserInfo from "../../Common/Component/UserInfo";
 
 
 export default function (props) {
-    return (
-        <Provider store={store}>
-            <UserInfo>
-                <Container {...props} />
-            </UserInfo>
-        </Provider>
-    );
+  return (
+    <Provider store={store}>
+      <UserInfo>
+        <Container {...props} />
+      </UserInfo>
+    </Provider>
+  );
 }
