@@ -9,14 +9,9 @@ import SuzuImg from "../../Image/img_Suzu.png";
 import "./index.scss";
 
 function View(props) {
-  const {
-    blockCodingCourses,
-    javaCodingCourses
-  } = props;
 
   return (
     <Layout>
-
       <div className="Page--Intro">
         <div className="intro__section-banner">
           <div className="intro-banner" />
@@ -100,27 +95,60 @@ function View(props) {
             </div>
             {/* video */}
             <div className="astro_coding__contents">
-              {blockCodingCourses.map((course) => (
-                <div key={course.id} className="astro_coding__content">
 
-                  <div className="astro_coding__header">
-                    <img src={BlockIcon} alt="blockcoding-icon" />
-                    {course.title}
-                  </div>
-
-                  <div className="astro_coding__detailWrapper">
-                    <div className="astro_coding__detail">
-                      <FormattedMessage id={course.detail} />
-                    </div>
-                    <div className="astro_coding__detailWrapper_right">
-                      <button className="astro_coding__button">
-                        Learn Now
-                      </button>
-                    </div>
-                  </div>
-
+              <div className="astro_coding__content">
+                <div className="astro_coding__header">
+                  <img src={BlockIcon} alt="blockcoding-icon" />
+                  Elementary
                 </div>
-              ))}
+
+                <div className="astro_coding__detailWrapper">
+                  <div className="astro_coding__detail">
+                    <FormattedMessage id="ID_INTRO_BLOCKCODING_ELEMENTARY" />
+                  </div>
+                  <div className="astro_coding__detailWrapper_right">
+                    <button className="astro_coding__button">
+                      Learn Now
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div className="astro_coding__content">
+                <div className="astro_coding__header">
+                  <img src={BlockIcon} alt="blockcoding-icon" />
+                  Basic
+                </div>
+
+                <div className="astro_coding__detailWrapper">
+                  <div className="astro_coding__detail">
+                    <FormattedMessage id="ID_INTRO_BLOCKCODING_BASIC" />
+                  </div>
+                  <div className="astro_coding__detailWrapper_right">
+                    <button className="astro_coding__button">
+                      Learn Now
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div className="astro_coding__content">
+                <div className="astro_coding__header">
+                  <img src={BlockIcon} alt="blockcoding-icon" />
+                  Advanced
+                </div>
+
+                <div className="astro_coding__detailWrapper">
+                  <div className="astro_coding__detail">
+                    <FormattedMessage id="ID_INTRO_BLOCKCODING_ADVANCED" />
+                  </div>
+                  <div className="astro_coding__detailWrapper_right">
+                    <button className="astro_coding__button">
+                      Learn Now
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -130,31 +158,47 @@ function View(props) {
             </div>
             {/* video */}
             <div className="astro_coding__contents">
-              {javaCodingCourses.map((course) => (
-                <div key={course.id} className="astro_coding__content">
 
-                  <div className="astro_coding__header">
-                    <img src={JavaSIcon} alt="blockcoding-icon" />
-                    {course.title}
+              <div className="astro_coding__content">
+                <div className="astro_coding__header">
+                  <img src={JavaSIcon} alt="blockcoding-icon" />
+                  Basic
+                </div>
+
+                <div className="astro_coding__detailWrapper">
+                  <div className="astro_coding__detail">
+                    <FormattedMessage id="ID_INTRO_JAVASCRIPT_BASIC" />
                   </div>
-
-                  <div className="astro_coding__detailWrapper">
-                    <div className="astro_coding__detail">
-                      <FormattedMessage id={course.detail} />
-                    </div>
-                    <div className="astro_coding__detailWrapper_right">
-                      <button className="astro_coding__button">
-                        Learn Now
-                      </button>
-                    </div>
+                  <div className="astro_coding__detailWrapper_right">
+                    <button className="astro_coding__button">
+                      Learn Now
+                    </button>
                   </div>
                 </div>
-              ))}
+              </div>
+
+              <div className="astro_coding__content">
+
+                <div className="astro_coding__header">
+                  <img src={JavaSIcon} alt="blockcoding-icon" />
+                  Advanced
+                </div>
+
+                <div className="astro_coding__detailWrapper">
+                  <div className="astro_coding__detail">
+                    <FormattedMessage id="ID_INTRO_JAVASCRIPT_ADVANCED" />
+                  </div>
+                  <div className="astro_coding__detailWrapper_right">
+                    <button className="astro_coding__button">
+                      Learn Now
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-
     </Layout>
   );
 }
