@@ -9,16 +9,19 @@ class Container extends Component {
     this.state = {
       blockCodingCourses: [
         {
+          "id":1,
           "title": "Elementary",
           "detail": "ID_INTRO_BLOCKCODING_ELEMENTARY",
           "route": ""
         },
         {
+          "id": 2,
           "title": "Basic",
           "detail": "ID_INTRO_BLOCKCODING_BASIC",
           "route": ""
         },
         {
+          "id": 3,
           "title": "Advanced",
           "detail": "ID_INTRO_BLOCKCODING_ADVANCED",
           "route": ""
@@ -27,11 +30,13 @@ class Container extends Component {
       ],
       javaCodingCourses: [
         {
+          "id":1,
           "title": "Basic",
           "detail": "ID_INTRO_JAVASCRIPT_BASIC",
           "route": ""
         },
         {
+          "id":2,
           "title": "Advanced",
           "detail": "ID_INTRO_JAVASCRIPT_ADVANCED",
           "route": ""

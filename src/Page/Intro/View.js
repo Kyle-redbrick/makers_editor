@@ -101,18 +101,18 @@ function View(props) {
             {/* video */}
             <div className="astro_coding__contents">
               {blockCodingCourses.map((course) => (
-                <div class="astro_coding__content">
+                <div key={course.id} className="astro_coding__content">
 
-                  <div class="astro_coding__header">
+                  <div className="astro_coding__header">
                     <img src={BlockIcon} alt="blockcoding-icon" />
-                    <FormattedMessage id={course.title} />
+                    {course.title}
                   </div>
 
-                  <div class="astro_coding__detailWrapper">
-                    <div class="astro_coding__detail">
+                  <div className="astro_coding__detailWrapper">
+                    <div className="astro_coding__detail">
                       <FormattedMessage id={course.detail} />
                     </div>
-                    <div class="astro_coding__detailWrapper_right">
+                    <div className="astro_coding__detailWrapper_right">
                       <button className="astro_coding__button">
                         Learn Now
                       </button>
@@ -131,18 +131,18 @@ function View(props) {
             {/* video */}
             <div className="astro_coding__contents">
               {javaCodingCourses.map((course) => (
-                <div class="astro_coding__content">
+                <div key={course.id} className="astro_coding__content">
 
-                  <div class="astro_coding__header">
+                  <div className="astro_coding__header">
                     <img src={JavaSIcon} alt="blockcoding-icon" />
-                    <FormattedMessage id={course.title} />
+                    {course.title}
                   </div>
 
-                  <div class="astro_coding__detailWrapper">
-                    <div class="astro_coding__detail">
+                  <div className="astro_coding__detailWrapper">
+                    <div className="astro_coding__detail">
                       <FormattedMessage id={course.detail} />
                     </div>
-                    <div class="astro_coding__detailWrapper_right">
+                    <div className="astro_coding__detailWrapper_right">
                       <button className="astro_coding__button">
                         Learn Now
                       </button>
