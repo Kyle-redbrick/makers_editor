@@ -14,24 +14,25 @@ function View(props) {
 
     return (
         <Layout>
+            
             <div className="Page--Intro">
                 <div className="intro__section-banner">
                     <div className="intro-banner" />
                 </div>
 
-                <div className="first__section">
-                    <div className="intro__section intro__section--intro">
-                        <div className="intro__section__header">
+                <div className="first_section">
+                    <div className="first_section first_section--intro">
+                        <div className="first_section__header">
                             <FormattedMessage id="ID_INTRO_ABOUT_ASTROBOY_GO_TITLE" />
                         </div>
-                        <div className="intro__section__body">
+                        <div className="first_section__body">
                             <FormattedMessage id="ID_INTRO_ABOUT_ASTROBOY_GO" />
                         </div>
                     </div>
 
 
-                    <div className="intro__section intro__section--character">
-                        <div className="intro__section__header character--header">
+                    <div className="first_section first_section--character">
+                        <div className="first_section__header character--header">
                             <FormattedMessage id="ID_INTRO_CHARACTER_TITLE" />
                         </div>
 
@@ -53,22 +54,22 @@ function View(props) {
                     </div>
                 </div>
 
-                <div className="second__section">
+                <div className="second_section">
 
-                    <div className="second__section--astrocoding">
+                    <div className="second_section--astrocoding">
                         {/* video */}
                         <div className="astrocoding_intro__content">
-                            <div className="second__section__title">
+                            <div className="second_section__title">
                                 <FormattedMessage id="ID_INTRO_ASTRO_CODING_TITLE" />
                             </div>
-                            <div className="second__section__detail">
+                            <div className="second_section__detail">
                                 <FormattedMessage id="ID_INTRO_ASTRO_CODING_DETAIL" />
                             </div>
                         </div>
                     </div>
 
-                    <div className="second__section--blockcoding">
-                        <div className="second__section__title">
+                    <div className="second_section--blockcoding">
+                        <div className="second_section__title">
                             <FormattedMessage id="ID_INTRO_ASTRO_BLOCK_TITLE" />
                         </div>
                         {/* video */}
@@ -97,8 +98,8 @@ function View(props) {
                         </div>
                     </div>
 
-                    <div className="second__section--javascript-coding">
-                        <div className="second__section__title">
+                    <div className="second_section--javascript-coding">
+                        <div className="second_section__title">
                             <FormattedMessage id="ID_INTRO_ASTRO_JAVASCRIPT_TITLE" />
                         </div>
                         {/* video */}
@@ -127,11 +128,6 @@ function View(props) {
                     </div>
                 </div>
             </div>
-
-
-
-
-
 
         </Layout>
     );
