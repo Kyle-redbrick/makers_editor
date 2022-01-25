@@ -9,6 +9,8 @@ import App from "./App";
 import en from "react-intl/locale-data/en";
 import ko from "react-intl/locale-data/ko";
 import zh from "react-intl/locale-data/zh";
+import ja from "react-intl/locale-data/ja";
+
 import locale from "./locale";
 
 import { IntlProvider, addLocaleData } from "react-intl";
@@ -17,34 +19,34 @@ import ReactGA from "react-ga";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-addLocaleData([...en, ...ko, ...zh]);
+addLocaleData([...en, ...ko, ...zh, ...ja]);
 
-const getNavigatorLanguage = () => {
-  let lang;
-  lang = localStorage.getItem("wizLang");
-  if (lang && ["ko", "en", "zh"].includes(lang)) return lang;
+// const getNavigatorLanguage = () => {
+//   let lang;
+//   lang = localStorage.getItem("wizLang");
+//   if (lang && ["ko", "en", "zh"].includes(lang)) return lang;
 
-  var str;
-  if (navigator.languages && navigator.languages.length) {
-    str = navigator.languages[0];
-  } else {
-    str =
-      navigator.userLanguage ||
-      navigator.language ||
-      navigator.browserLanguage ||
-      "en";
-  }
-  lang = str.replace(/-[A-Z]*/, "");
-  if (!["ko", "en", "zh"].includes(lang)) {
-    lang = "en";
-  }
-  // localStorage.setItem("wizLang", lang);
-  // return lang;
-  //localStorage.setItem("wizLang", "en");
-  return "en";
-};
+//   var str;
+//   if (navigator.languages && navigator.languages.length) {
+//     str = navigator.languages[0];
+//   } else {
+//     str =
+//       navigator.userLanguage ||
+//       navigator.language ||
+//       navigator.browserLanguage ||
+//       "en";
+//   }
+//   lang = str.replace(/-[A-Z]*/, "");
+//   if (!["ko", "en", "zh"].includes(lang)) {
+//     lang = "en";
+//   }
+//   // localStorage.setItem("wizLang", lang);
+//   // return lang;
+//   //localStorage.setItem("wizLang", "en");
+//   return "en";
+// };
 
-const defaultLang = getNavigatorLanguage();
+const defaultLang = "ja"//getNavigatorLanguage();
 
 //initialize GA
 // ReactGA.initialize("UA-132407065-3");

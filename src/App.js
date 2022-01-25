@@ -76,7 +76,7 @@ const App = () => {
       <FAQChatbotManager />
       <Suspense fallback={<SplashView />}>
         {/* <div className={`${lang}`} style={{ backgroundColor: "#282c36" }}> */}
-        <div className={"jp"} style={{ backgroundColor: "#282c36" }}>
+        <div className={"ja"} style={{ backgroundColor: "#282c36" }}>
           <Route
             exact
             path="/"
