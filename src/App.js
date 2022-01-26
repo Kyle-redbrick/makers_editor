@@ -71,13 +71,12 @@ const SplashView = () => {
 };
 
 const App = () => {
-  const lang = localStorage.getItem("wizLang");
+  const lang = localStorage.getItem("lang");
   return (
     <Router>
       <FAQChatbotManager />
       <Suspense fallback={<SplashView />}>
-        {/* <div className={`${lang}`} style={{ backgroundColor: "#282c36" }}> */}
-        <div className={"ja"} style={{ backgroundColor: "#282c36" }}>
+        <div className={`${lang}`} style={{ backgroundColor: "#282c36" }}>
           <Route
             exact
             path="/"

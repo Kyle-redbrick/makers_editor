@@ -14,8 +14,7 @@ export default function(props) {
     onClickSkip
   } = props;
   const getText = (type) => {
-    // const language = localStorage.getItem("wizLang"); 
-    const language = "en";
+    const language = localStorage.getItem("lang"); ;
 
     if(language === "ko") {
       return currentStep[type]
@@ -31,7 +30,7 @@ export default function(props) {
   }
 
   const getSubModalButtonText = (type) => {
-    const language = localStorage.getItem("wizLang"); 
+    const language = localStorage.getItem("lang"); 
     const subModalButtonText = {
       "next" : {
         "ko" : "다음",
