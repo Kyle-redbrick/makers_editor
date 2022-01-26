@@ -228,7 +228,7 @@ const View = (props) => {
     //     console.error(e);
     //   });
 
-    showIntroPopup();
+    //showIntroPopup();
   }, []);
 
   const init = async () => {
