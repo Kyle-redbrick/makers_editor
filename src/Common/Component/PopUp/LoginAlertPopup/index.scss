@@ -1,0 +1,35 @@
+.popup-login-alert{
+    position: relative;
+    width: 430px;
+    box-shadow: 0 20px 50px 0 rgba(0, 0, 0, 0.5);
+    background-color: #1c1c1c;
+    border-radius: 16px;
+}
+
+.popup-login-alert--contents {
+    padding: 30px 20px 40px;
+    text-align: center;
+}
+.popup-login-alert-message{
+    padding: 20px 30px 10px;
+    margin: 10px 0 20px 0;
+    font-size: 20px;
+}
+
+.popup-login-alert-confirm {
+    width: 370px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: #ff6f44;
+    border: none;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1.2;
+    letter-spacing: 0.38px;
+    cursor: pointer;
+    color: #fff;
+  
+    &:focus {
+      outline: none;
+    }
+}
