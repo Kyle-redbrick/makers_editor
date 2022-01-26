@@ -156,6 +156,8 @@ const ja = {
   ID_INTRO_JAVASCRIPT_ADVANCED: "JavaScriptとリスト、関数を含むCS概念を自由に活用し、上級プロジェクトを進めます。",
   ID_INTRO_CODING_LEARN: "学習",
   ID_INTRO_CODING_ELEMENTARY: "エレメンタリー",
+  ID_INTRO_CODING_BASIC: "ベーシック",
+  ID_INTRO_CODING_ADVANCED: "アドバンス",
   ID_GAME_EDITOR_TITLE: "エディターおすすめのゲーム",
   ID_GAME_EDITOR_MORE: "지난 추천 게임보기",
   ID_GAME_WEEKLY_LIKE_TITLE: "週間人気ゲーム",

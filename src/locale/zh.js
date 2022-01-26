@@ -155,6 +155,8 @@ const zh = {
   ID_INTRO_JAVASCRIPT_ADVANCED: "Advanced projects use CS concepts including JavaScript, lists, and functions.",
   ID_INTRO_CODING_LEARN: "Learn Now",
   ID_INTRO_CODING_ELEMENTARY: "Elementary",
+  ID_INTRO_CODING_BASIC: "Basic",
+  ID_INTRO_CODING_ADVANCED: "Advanced",
   ID_GAME_EDITOR_TITLE: "主编推荐游戏",
   ID_GAME_EDITOR_MORE: "지난 추천 게임보기",
   ID_GAME_WEEKLY_LIKE_TITLE: "本周人气游戏",
