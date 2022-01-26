@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./index.scss";
+import { FormattedMessage } from "react-intl";
 
 const LoginAlertPopup = ({ message, onSubmit, ...props }) => {
   const { dismiss } = props;
@@ -7,11 +8,13 @@ const LoginAlertPopup = ({ message, onSubmit, ...props }) => {
     <div className="popup-login-alert">
       <div className='popup-login-alert--contents'>
         <div className="popup-login-alert-message">
-          You need to sign in to proceed.
+          <FormattedMessage id="ID_POPUP_LOGIN_ALERT" />
         </div>
         <button className="popup-login-alert-confirm" onClick={async () => {
           dismiss();
-        }}>Confirm</button>
+        }}>
+          <FormattedMessage id="ID_POPUP_LOGIN_ALERT_BUTTON" />
+        </button>
       </div>
     </div>
   );

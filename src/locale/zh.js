@@ -47,6 +47,8 @@ const zh = {
   ID_HOME_RANK_LEVELPOINT: "포인트 {count} 점",
   ID_HOME_RANK_CREATOR_FOLLOW_BUTTON: "구독하기",
   ID_HOME_RANK_CREATOR_FOLLOWING_BUTTON: "关注",
+  ID_POPUP_LOGIN_ALERT: "You need to sign in to proceed.",
+  ID_POPUP_LOGIN_ALERT_BUTTON: "Confirm",
   ID_SIGNIN: "登录",
   ID_SIGNIN_CONFIRM: "登录",
   ID_SIGNIN_EMAIL: "电子邮箱",

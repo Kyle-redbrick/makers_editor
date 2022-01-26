@@ -47,6 +47,8 @@ const en = {
   ID_HOME_RANK_LEVELPOINT: "포인트 {count} 점",
   ID_HOME_RANK_CREATOR_FOLLOW_BUTTON: "구독하기",
   ID_HOME_RANK_CREATOR_FOLLOWING_BUTTON: "Subscribing",
+  ID_POPUP_LOGIN_ALERT: "You need to sign in to proceed.",
+  ID_POPUP_LOGIN_ALERT_BUTTON: "Confirm",
   ID_SIGNIN: "Sign-in",
   ID_SIGNIN_CONFIRM: "Sign-in",
   ID_SIGNIN_EMAIL: "e-mail",
