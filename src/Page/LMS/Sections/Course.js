@@ -14,33 +14,38 @@ import { Course, Lecture/*, Project*/ } from "../../../models";
 
 import LectureComponent from "./../Components/Lecture";
 
-const PROJECT_LEVEL_EASY = "easy";
-const PROJECT_LEVEL_NORMAL = "normal";
-const PROJECT_LEVEL_HARD = "hard";
+const PROJECT_LEVEL_ELEMENTARY = "elementary";
+const PROJECT_LEVEL_BASIC = "basic";
+const PROJECT_LEVEL_ADVANCED = "advenced";
+const PROJECT_LEVEL_ADVANCED_JS = "advenced";
+const PROJECT_LEVEL_MASTERTY = "masterty";
+
 
 const PROJECT_LEVELS = [
   {
     grade: 1,
-    level: PROJECT_LEVEL_EASY,
+    level: PROJECT_LEVEL_ELEMENTARY,
     title: "초보자 프로젝트",
   },
   {
     grade: 2,
-    level: PROJECT_LEVEL_NORMAL,
+    level: PROJECT_LEVEL_BASIC,
     title: "숙련자 프로젝트",
   },
   {
     grade: 3,
-    level: PROJECT_LEVEL_HARD,
+    level: PROJECT_LEVEL_ADVANCED,
     title: "전문가 프로젝트",
   },
 ];
 
 const initLevels = () => {
   const _levels = new Map();
-  _levels.set(PROJECT_LEVEL_EASY, []);
-  _levels.set(PROJECT_LEVEL_NORMAL, []);
-  _levels.set(PROJECT_LEVEL_HARD, []);
+  _levels.set(PROJECT_LEVEL_ELEMENTARY, []);
+  _levels.set(PROJECT_LEVEL_BASIC, []);
+  _levels.set(PROJECT_LEVEL_ADVANCED, []);
+  _levels.set(PROJECT_LEVEL_ADVANCED_JS, []);
+  _levels.set(PROJECT_LEVEL_MASTERTY, []);
   return _levels;
 };
 
@@ -250,6 +255,9 @@ const CoursePage = ({ courseId, email, ...props }) => {
   const init = async () => {
     const _levels = initLevels();
     const course = await getMyCourseSummary({ courseId, email });
+
+
+    console.log("course",course)
 
     course.lectures.forEach((lecture) => {
       const _lectures = _levels.get(lecture.level);

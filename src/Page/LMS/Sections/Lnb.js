@@ -203,6 +203,28 @@ const Lnb = ({ path, fixed, isMobile, isLmsMobileMenuOn, onClickLmsMobileMenu, .
             isLmsMobileMenuOn={isLmsMobileMenuOn}
             onClickLmsMobileMenu={onClickLmsMobileMenu}
           />
+
+          <LnbLinkComponent
+            active={renderCurrentPage(path) === PAGE.COURSE && id === "4"}
+            icon={renderCurrentPage(path) === PAGE.COURSE && id === "4" ? IMAGE.LNB_PYTHON_ON : IMAGE.LNB_PYTHON_OFF}
+            link="/lms/course/4"
+            title={<FormattedMessage id="ID_LMS_COURSE_4" />}
+            isMobile={isMobile}
+            isLmsMobileMenuOn={isLmsMobileMenuOn}
+            onClickLmsMobileMenu={onClickLmsMobileMenu}
+          />
+
+          <LnbLinkComponent
+            active={renderCurrentPage(path) === PAGE.COURSE && id === "5"}
+            icon={renderCurrentPage(path) === PAGE.COURSE && id === "5" ? IMAGE.LNB_PYTHON_ON : IMAGE.LNB_PYTHON_OFF}
+            link="/lms/course/5"
+            title={<FormattedMessage id="ID_LMS_COURSE_5" />}
+            isMobile={isMobile}
+            isLmsMobileMenuOn={isLmsMobileMenuOn}
+            onClickLmsMobileMenu={onClickLmsMobileMenu}
+          />
+
+
         </Group>
         <Br />
         <Group>
