@@ -245,6 +245,9 @@ const View = (props) => {
     setCourses(_courses);
 
     const _lecturesResult = await getLectures({ keyword: props.keyword });
+
+    console.log("_lecturesResult",_lecturesResult)
+
     const _lectures = [];
     _lecturesResult.rows.forEach((_lecture) => {
       const lecture = new Lecture(_lecture);

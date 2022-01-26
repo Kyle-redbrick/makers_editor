@@ -7,6 +7,7 @@ import * as request from "./HTTPRequest";
 import en from "react-intl/locale-data/en";
 import ko from "react-intl/locale-data/ko";
 import zh from "react-intl/locale-data/zh";
+import ja from "react-intl/locale-data/ja";
 import locale from "../../locale";
 
 import starImageOff from "../../Image/star-off.svg";
@@ -14,30 +15,9 @@ import starImageOn from "../../Image/star-on.svg";
 
 import { IntlProvider, addLocaleData } from "react-intl";
 
-addLocaleData([...en, ...ko, ...zh]);
+addLocaleData([...en, ...ko, ...zh, ...ja]);
 
-const getNavigatorLanguage = () => {
-  let lang;
-  lang = localStorage.getItem("wizLang");
-  if (lang && ["ko", "en", "zh"].includes(lang)) return lang;
-  var str;
-  if (navigator.languages && navigator.languages.length) {
-    str = navigator.languages[0];
-  } else {
-    str =
-      navigator.userLanguage ||
-      navigator.language ||
-      navigator.browserLanguage ||
-      "en";
-  }
-  lang = str.replace(/-[A-Z]*/, "");
-  // localStorage.setItem("wizLang", lang);
-  // return lang;
-  //localStorage.setItem("wizLang", "en");
-  return "en";
-};
-
-const defaultLang = getNavigatorLanguage();
+const defaultLang = localStorage.getItem("lang");
 
 export const showStudentFeedbackPopUp = callback => {
   const handleClose = e => {

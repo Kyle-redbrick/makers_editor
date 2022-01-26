@@ -4,21 +4,21 @@ import { addLocaleData, IntlProvider } from "react-intl";
 import en from "react-intl/locale-data/en";
 import ko from "react-intl/locale-data/ko";
 import zh from "react-intl/locale-data/zh";
+import ja from "react-intl/locale-data/ja";
 import locale from "../../locale";
 import PopUp, { showPopUp } from "../Component/PopUp";
 
 const CheckBlockedUser = userinfo => {
   if (userinfo && userinfo.blocked) {
     const endDate = moment(userinfo.blocked.endDate, "YYYY-MM-DD");
-    let lang = localStorage.getItem("wizLang")
-      ? localStorage.getItem("wizLang")
-      : "en";
+    let lang = localStorage.getItem("lang");
+
     const intlProvider = new IntlProvider({
       locale: lang,
       messages: locale[lang]
     });
     const { intl } = intlProvider.getChildContext();
-    addLocaleData([...en, ...ko, ...zh]);
+    addLocaleData([...en, ...ko, ...zh, ...ja]);
 
     showPopUp(
       <PopUp.OneButton

@@ -32,10 +32,11 @@ const getNavigatorLanguage = () => {
       lang = "en"
       break;
     default:
-      lang = "en"
+      lang = "ja"
       break;
   }
 
+  localStorage.setItem("lang", lang);
   return lang;
 };
 
