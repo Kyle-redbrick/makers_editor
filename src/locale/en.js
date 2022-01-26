@@ -153,6 +153,8 @@ const en = {
   ID_INTRO_ASTRO_JAVASCRIPT_TITLE: "Astro Coding Go - Javascript Coding",
   ID_INTRO_JAVASCRIPT_BASIC: "This JavaScript course is for advanced students who are familiar with block coding or are beginning to code. Create projects using JS and build a programming foundation.",
   ID_INTRO_JAVASCRIPT_ADVANCED: "Advanced projects use CS concepts including JavaScript, lists, and functions.",
+  ID_INTRO_CODING_LEARN: "Learn Now",
+  ID_INTRO_CODING_ELEMENTARY: "Elementary",
   ID_GAME_EDITOR_TITLE: "Editor Recommended Games",
   ID_GAME_EDITOR_MORE: "지난 추천 게임보기",
   ID_GAME_WEEKLY_LIKE_TITLE: "Weekly Popular Games",

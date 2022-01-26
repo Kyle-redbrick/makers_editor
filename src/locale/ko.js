@@ -153,6 +153,8 @@ const ko = {
   ID_INTRO_ASTRO_JAVASCRIPT_TITLE: "Astro Coding Go - Javascript Coding",
   ID_INTRO_JAVASCRIPT_BASIC: "블록코딩에 익숙해졌거나, 코딩을 시작하는 고학년 학생을 위한 자바스크립트 과정입니다. JS를 사용한 프로젝트에 도전하면서 프로그래밍의 기반을 다집니다. ",
   ID_INTRO_JAVASCRIPT_ADVANCED: "자바스크립트와 리스트, 함수를 비롯한 CS 개념을 자유롭게 활용하여 상급 프로젝트를 진행합니다. ",
+  ID_INTRO_CODING_LEARN: "Learn Now",
+  ID_INTRO_CODING_ELEMENTARY: "Elementary",
   ID_GAME_EDITOR_TITLE: "에디터 추천 게임",
   ID_GAME_EDITOR_MORE: "지난 추천 게임보기",
   ID_GAME_WEEKLY_LIKE_TITLE: "주간 인기 게임",
