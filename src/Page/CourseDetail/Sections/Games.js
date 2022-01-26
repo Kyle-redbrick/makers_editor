@@ -10,6 +10,7 @@ import GameItem from "../Components/GameItem";
 const Self = styled.div`
   width: 100%;  
   padding-bottom: 39.5px;
+  display: none;
 `;
 
 const Row = styled.div`

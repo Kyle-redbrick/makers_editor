@@ -97,7 +97,7 @@ const PublishItem = props => {
               {published.likeCount}
             </div>
           </div>
-          <div className="Publish_GridItem_SubInfo_Item">
+          <div className="Publish_GridItem_SubInfo_Item" style={{display: "none"}}>
             <img src={commentIcon} alt="img" />
             <div className="Publish_GridItem_SubInfo_Item-text">
               {published.commentCount}

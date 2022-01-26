@@ -70,13 +70,14 @@ export default function View(props) {
           handleSelectTab={handleSelectTab}
           selectedTab={selectedTab}
         />
-        <ItemWrap
+        {/* <ItemWrap
           intl={intl}
           mode="subscribe"
           count={user.subscribeCount}
           image={followerIcon}
           handleSelectTab={handleSelectTab}
           selectedTab={selectedTab}
+          style={{display: "none"}}
         />
         <ItemWrap
           intl={intl}
@@ -85,7 +86,8 @@ export default function View(props) {
           image={followingIcon}
           handleSelectTab={handleSelectTab}
           selectedTab={selectedTab}
-        />
+          style={{display: "none"}}
+        /> */}
       </div>
     </section>
   );

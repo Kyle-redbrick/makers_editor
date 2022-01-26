@@ -79,7 +79,7 @@ function View(props) {
               <img src={isLiked ? likeOnImg : likeOffImg} alt="like" />
               <label className="CountLabel">{project.likeCount}</label>
             </div>
-            <div className="replyButton" onClick={moveToComment}>
+            <div className="replyButton" onClick={moveToComment} style={{display: "none"}}>
               <img src={replyIconImg} alt="reply" />
               <label className="CountLabel">{allCommentCount}</label>
             </div>
@@ -161,6 +161,7 @@ function View(props) {
 
               {!isMine && (
                 <button
+                  style={{display: "none"}}
                   className={`UserSubscribe UserInfo__subscribe ${isSubscribed &&
                     "subscribe"}`}
                   onClick={() => handleSubscribe(project.user.email)}
@@ -183,7 +184,7 @@ function View(props) {
             )}
           </div>
         </div>
-        <div className="wizappDetail__bottom">
+        <div className="wizappDetail__bottom" style={{display: "none"}}>
           <p className="wizappDetail__bottom--comment-count">
             <FormattedMessage id="ID_WIZAPPDETAIL_COMMENT" />
           </p>

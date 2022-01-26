@@ -12,6 +12,7 @@ import { postComment } from "../api";
 const Self = styled.div`
   width: 100%;
   padding-bottom: 160px;
+  display: none;
 
   @media screen and (max-width: 1169px){
     padding-bottom: 50px;
