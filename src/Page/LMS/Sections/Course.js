@@ -27,16 +27,16 @@ const PROJECT_LEVELS = [
     level: PROJECT_LEVEL_ELEMENTARY,
     title: "초보자 프로젝트",
   },
-  {
-    grade: 2,
-    level: PROJECT_LEVEL_BASIC,
-    title: "숙련자 프로젝트",
-  },
-  {
-    grade: 3,
-    level: PROJECT_LEVEL_ADVANCED,
-    title: "전문가 프로젝트",
-  },
+  // {
+  //   grade: 2,
+  //   level: PROJECT_LEVEL_BASIC,
+  //   title: "숙련자 프로젝트",
+  // },
+  // {
+  //   grade: 3,
+  //   level: PROJECT_LEVEL_ADVANCED,
+  //   title: "전문가 프로젝트",
+  // },
 ];
 
 const initLevels = () => {
@@ -227,8 +227,8 @@ const ProjectComponent = memo(({ grade, lectures = [], title }) => {
   return (
     <ProjectWrap>
       <ProjectGrade>
-        <Star grade={grade} />
-        {title}
+        {/* <Star grade={grade} />
+        {title} */}
       </ProjectGrade>
 
       <ProjectCardsWrap>
