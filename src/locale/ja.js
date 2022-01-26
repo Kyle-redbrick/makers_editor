@@ -1020,7 +1020,7 @@ const ja = {
   ID_MYPAGE_SETTING_STATUS_IMG_UPLOAD: "이미지 업로드",
   ID_EMPTY_EVENT: "There are currently no events.",
   ID_LEAEN_BUTTON_LEARN_AGAIN: "Learn again",
-  ID_LEAEN_BUTTON_LEARN_NOW: "Learn Now",
+  ID_LEAEN_BUTTON_LEARN_NOW: "学習",
   ID_LEAEN_BUTTON_LEARN_CONTINUE: "Continue",
   ID_GAMEPOPUP_SEARCH_INFO: "게임 이름이나 크리에이터 이름을 검색해보세요",
   ID_GAMEPOPUP_SEARCH_INFO2: "검색어를 입력해주세요",
