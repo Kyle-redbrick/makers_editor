@@ -5,6 +5,7 @@ import { postMyDreamProject } from "../../Util/HTTPRequest"
 import * as Popup from "../PopUp";
 import IntroPopup from "../../../Page/CourseDetail/Components/IntroPopup";
 import AlertPopup from "../../../Page/CourseDetail/Components/AlertPopup";
+import LoginAlertPopup from "../PopUp/LoginAlertPopup";
 import { isMobileOnly } from "react-device-detect";
 import { FormattedMessage } from "react-intl";
 
@@ -32,7 +33,7 @@ const Self = styled.button`
     font-size: 16px;
     font-weight: 500;
 
-    ${(props) => props.fixed && 
+    ${(props) => props.fixed &&
     `
     padding: 0;
     box-sizing: border-box;
@@ -41,8 +42,8 @@ const Self = styled.button`
     border-radius: 17px;
     font-size: 12px;
     text-align: center;
-    ` 
-    }
+    `
+  }
 
     ${(props) => props.title && `
       width: calc(50% - 5px);
@@ -54,7 +55,7 @@ const Self = styled.button`
       height: 40px;
 
       ${(props) =>
-        props.completed && `background-color: #5b5b5b;`}
+      props.completed && `background-color: #5b5b5b;`}
     `}
   }
 `;
@@ -62,12 +63,12 @@ const Self = styled.button`
 const getRedirectURLOf = myDreamProject => {
   try {
     const { type } = myDreamProject.project.lecture.course;
-    if(type === "python") {
+    if (type === "python") {
       return `/pythonPage/${myDreamProject.id}`;
     } else {
       return `/dreamclass/${myDreamProject.id}`;
     }
-  } catch(err) {
+  } catch (err) {
     console.error(err);
     return null;
   }
@@ -81,14 +82,14 @@ export const Learn = ({ id: projectId, lectureId, title, fixed, ...props }) => {
         .then(res => res.json())
         .then(myDreamProject => {
           const redirectURL = getRedirectURLOf(myDreamProject);
-          if(redirectURL) {
+          if (redirectURL) {
             const didIntroPopup = localStorage.getItem(`didIntroPopup_${myDreamProject.project.lecture.course.type}`);
 
             if (isMobileOnly) {
               return Popup.showPopUp(<AlertPopup />, {
-                 defaultPadding: false,
-                 dismissButton: false,
-                });
+                defaultPadding: false,
+                dismissButton: false,
+              });
             }
             window.open(redirectURL, "_blank");
             // if (!didIntroPopup) {
@@ -103,6 +104,12 @@ export const Learn = ({ id: projectId, lectureId, title, fixed, ...props }) => {
             // } else {
             //   window.open(redirectURL, "_blank");
             // }
+          }
+          else {
+            Popup.showPopUp(<LoginAlertPopup />, {
+              defaultPadding: false,
+              dismissButton: false,
+            });
           }
         })
         .catch(err => {
@@ -120,13 +127,13 @@ export const Learn = ({ id: projectId, lectureId, title, fixed, ...props }) => {
 };
 
 export const LearnAgain = ({ ...props }) => {
-  return <Learn title={<FormattedMessage id="ID_LEAEN_BUTTON_LEARN_AGAIN" />} { ...props } />
+  return <Learn title={<FormattedMessage id="ID_LEAEN_BUTTON_LEARN_AGAIN" />} {...props} />
 };
 
 export const LearnNow = ({ ...props }) => {
-  return <Learn title={<FormattedMessage id="ID_LEAEN_BUTTON_LEARN_NOW" /> } { ...props } />
+  return <Learn title={<FormattedMessage id="ID_LEAEN_BUTTON_LEARN_NOW" />} {...props} />
 };
 
 export const LearnContinue = ({ ...props }) => {
-  return <Learn title={<FormattedMessage id="ID_LEAEN_BUTTON_LEARN_CONTINUE" /> } { ...props } />
+  return <Learn title={<FormattedMessage id="ID_LEAEN_BUTTON_LEARN_CONTINUE" />} {...props} />
 };
