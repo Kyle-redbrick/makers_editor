@@ -62,7 +62,7 @@ const Widget = styled.div`
   display: flex;
   flex-direction: column;
 
-  ${(props) => props.height && `height: ${props.height}px;`}
+  ${(props) => props.height && `height: 460px;`}
 
   ${(props) => props.graph &&
     `
@@ -502,7 +502,14 @@ const GraphProgressPercent = styled.div`
 const CircularWrap = styled.div`
   display: flex;
   align-items: center;
+  flex-flow: row wrap;
   flex: 1;
+  
+  &:before, &:after {
+    content: '';
+    width: 100%;
+    order: 1;
+  }
 
   @media screen and (max-width: 1169px) {
     flex-direction: column;
@@ -521,6 +528,13 @@ const CircularItem = styled.div`
   flex-direction: column;
   height: 220px;
   position: relative;
+  &:nth-child(n + 4) {
+    order: 1;
+  }
+
+  &:nth-child(n + 8) {
+    order: 2;
+  }
 
   &:before {
     content: "";
@@ -597,29 +611,29 @@ const QuestItemComponent = memo(({ active, children }) => {
 });
 
 const getMyCourseProgress = courses => {
-    return courses.map(course => course.lectures.reduce((total, { projects }) => {
-      for(let project of projects) {
-        if (project.myProject && project.myProject.completedAt) {
-          total += 1;
-        }
+  return courses.map(course => course.lectures.reduce((total, { projects }) => {
+    for (let project of projects) {
+      if (project.myProject && project.myProject.completedAt) {
+        total += 1;
       }
-      return total;
-    }, 0));
+    }
+    return total;
+  }, 0));
 }
 
 
 const findRecommendProject = async (data) => {
   let recommendProjectId = DEFAULT_PROJECT_ID;
-  findRecommendProjectLoop : 
-  for(let course of data) {
-    for(let lecture of course.lectures) {
-      for(let project of lecture.projects) {
-        if(project.myProject) {
-          if(!project.myProject.completedAt) {
+  findRecommendProjectLoop:
+  for (let course of data) {
+    for (let lecture of course.lectures) {
+      for (let project of lecture.projects) {
+        if (project.myProject) {
+          if (!project.myProject.completedAt) {
             recommendProjectId = project.id;
             break findRecommendProjectLoop;
           }
-        } else { 
+        } else {
           recommendProjectId = project.id;
           break findRecommendProjectLoop;
         }
@@ -648,13 +662,13 @@ const Dashboard = ({ ...props }) => {
 
   const init = async () => {
     const dashboard = await getDashboard({ email: props.email });
-    console.log("dashboard",dashboard)
+    console.log("dashboard", dashboard)
     const myCourses = await getMyCourses({ userId: props.userId })
-    console.log("myCourses",myCourses)
+    console.log("myCourses", myCourses)
     const courseProgress = getMyCourseProgress(myCourses);
     const recommendProject = await findRecommendProject(myCourses);
-    console.log("recommendProject",recommendProject)
-    
+    console.log("recommendProject", recommendProject)
+
 
 
     // setCardsCount(dashboard.cardsCount);
@@ -664,11 +678,11 @@ const Dashboard = ({ ...props }) => {
     // setRecentMyCards(dashboard.myCardsRecent.map(({ card }) => new MyCard(card)));
     setTodayQuests(dashboard.todayAchievements.map((qt) => new TodayQuest(qt)));
     setRecommendedProject(new RecommendedProject({
-        title : recommendProject.localized[0] && recommendProject.localized[0].title,
-        thumbnailURL: recommendProject.lecture.localized[0] && recommendProject.lecture.localized[0].h_thumbnailURL,
-        pathname: `/course/${recommendProject.lecture.id}`, 
-        lecture: recommendProject.lecture
-      })
+      title: recommendProject.localized[0] && recommendProject.localized[0].title,
+      thumbnailURL: recommendProject.lecture.localized[0] && recommendProject.lecture.localized[0].h_thumbnailURL,
+      pathname: `/course/${recommendProject.lecture.id}`,
+      lecture: recommendProject.lecture
+    })
     );
 
     setTotalDreamPoint(dashboard.totalDreamPoint);
@@ -715,9 +729,9 @@ const Dashboard = ({ ...props }) => {
                 </UserInfo>
                 <StyledLink to="/mypage">
                   <Button
-                    type="button" 
-                    width={props.isMobile ? 92 : 130} 
-                    style={{ position: props.isMobile ? "absolute" : "static", left: "79px", bottom: 0, fontSize: "14px"}}
+                    type="button"
+                    width={props.isMobile ? 92 : 130}
+                    style={{ position: props.isMobile ? "absolute" : "static", left: "79px", bottom: 0, fontSize: "14px" }}
                   >
                     <FormattedMessage id="ID_DREAM_LMS_MYPAGE" />
                   </Button>
