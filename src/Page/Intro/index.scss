@@ -175,19 +175,22 @@
           align-items: flex-end;
         }
 
-
         .astro_coding__button {
-          cursor: pointer;
-          border:none;
-          font-family: 'Poppins', sans-serif;
-          font-size: 16px;
-          line-height: 24px;
-          font-weight: 600;
-          color: #FFFFFF;
-          background: #FF6F44;
-          border-radius: 10px;
+          display: flex;
           width: 153px;
           height: 54px;
+          border-radius: 10px;
+          background-color: #ff6f44;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+    
+          a {
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: 600;
+          }
         }
       }
     }

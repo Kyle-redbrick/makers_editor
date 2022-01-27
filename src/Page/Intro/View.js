@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Layout from "../../Common/Component/Layout";
 import { FormattedMessage } from "react-intl";
 import BlockIcon from "../../Image/intro-block-coding-icon.png";
@@ -107,9 +108,11 @@ function View(props) {
                     <FormattedMessage id="ID_INTRO_BLOCKCODING_ELEMENTARY" />
                   </div>
                   <div className="astro_coding__detailWrapper_right">
-                    <button className="astro_coding__button">
-                      <FormattedMessage id="ID_INTRO_CODING_LEARN" />
-                    </button>
+                    <div className="astro_coding__button">
+                      <Link to="/lms/course/1">
+                        <FormattedMessage id="ID_INTRO_CODING_LEARN" />
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -125,9 +128,11 @@ function View(props) {
                     <FormattedMessage id="ID_INTRO_BLOCKCODING_BASIC" />
                   </div>
                   <div className="astro_coding__detailWrapper_right">
-                    <button className="astro_coding__button">
-                      <FormattedMessage id="ID_INTRO_CODING_LEARN" />
-                    </button>
+                    <div className="astro_coding__button">
+                      <Link to="/lms/course/4">
+                        <FormattedMessage id="ID_INTRO_CODING_LEARN" />
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -143,9 +148,11 @@ function View(props) {
                     <FormattedMessage id="ID_INTRO_BLOCKCODING_ADVANCED" />
                   </div>
                   <div className="astro_coding__detailWrapper_right">
-                    <button className="astro_coding__button">
-                      <FormattedMessage id="ID_INTRO_CODING_LEARN" />
-                    </button>
+                    <div className="astro_coding__button">
+                      <Link to="/lms/course/5">
+                        <FormattedMessage id="ID_INTRO_CODING_LEARN" />
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -170,9 +177,11 @@ function View(props) {
                     <FormattedMessage id="ID_INTRO_JAVASCRIPT_BASIC" />
                   </div>
                   <div className="astro_coding__detailWrapper_right">
-                    <button className="astro_coding__button">
-                      <FormattedMessage id="ID_INTRO_CODING_LEARN" />
-                    </button>
+                    <div className="astro_coding__button">
+                      <Link to="/lms/course/6">
+                        <FormattedMessage id="ID_INTRO_CODING_LEARN" />
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -189,9 +198,11 @@ function View(props) {
                     <FormattedMessage id="ID_INTRO_JAVASCRIPT_ADVANCED" />
                   </div>
                   <div className="astro_coding__detailWrapper_right">
-                    <button className="astro_coding__button">
-                      <FormattedMessage id="ID_INTRO_CODING_LEARN" />
-                    </button>
+                    <div className="astro_coding__button">
+                      <Link to="/lms/course/7">
+                        <FormattedMessage id="ID_INTRO_CODING_LEARN" />
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </div>
