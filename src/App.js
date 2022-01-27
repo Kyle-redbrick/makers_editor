@@ -50,8 +50,6 @@ const OCP2EventChallenge = lazy(() => import("./Page/Event/OCP2/ChallengeEnd"));
 const OCP2Sub = lazy(() => import("./Page/OCP2/Subpage"));
 const Payment = lazy(() => import("./Page/Payment"));
 const PaymentResult = lazy(() => import("./Page/PaymentResult"));
-const MyAPK = lazy(() => import("./Page/MyAPK"));
-const CreateAPK = lazy(() => import("./Page/MyAPK/Components/CreateAPK"));
 const News = lazy(() => import("./Page/News"));
 const NewsDetail = lazy(() => import("./Page/NewsDetail"));
 const CourseDetail = lazy(() => import("./Page/CourseDetail"));
@@ -236,8 +234,6 @@ const App = () => {
             render={() => <HandleQueryString Component={OCP2EventChallenge} />}
           />
 
-          <Route exact path="/myapk" component={MyAPK} />
-          <Route exact path="/myapk/createAPK" component={CreateAPK} />
           <Route exact path="/news" component={News} />
           <Route exact path="/news/detail/:id" component={NewsDetail} />
           <Route
