@@ -63,7 +63,6 @@ const Categories = ({ children, courses = [], items, ...props }) => {
     ...courses,
   ];
 
-  console.log("COURSES",COURSES)
   return (
     <Self {...props}>
       <Container>

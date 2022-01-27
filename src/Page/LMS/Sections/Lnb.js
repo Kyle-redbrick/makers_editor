@@ -159,6 +159,8 @@ const LnbLinkComponent = memo(({ active, icon, link, title, isMobile, isLmsMobil
 const Lnb = ({ path, fixed, isMobile, isLmsMobileMenuOn, onClickLmsMobileMenu, ...props }) => {
   let { id } = useParams();
 
+  console.log("path",path)
+
   return (
     <Self {...props}>
       <LnbWrap isMobile={isMobile} fixed={fixed} isLmsMobileMenuOn={isLmsMobileMenuOn}>
@@ -186,18 +188,18 @@ const Lnb = ({ path, fixed, isMobile, isLmsMobileMenuOn, onClickLmsMobileMenu, .
             onClickLmsMobileMenu={onClickLmsMobileMenu}
           />
           <LnbLinkComponent
-            active={renderCurrentPage(path) === PAGE.COURSE && id === "2"}
-            icon={renderCurrentPage(path) === PAGE.COURSE && id === "2" ? IMAGE.LNB_JS_ON : IMAGE.LNB_JS_OFF}
-            link="/lms/course/2"
+            active={renderCurrentPage(path) === PAGE.COURSE && id === "4"}
+            icon={renderCurrentPage(path) === PAGE.COURSE && id === "4" ? IMAGE.LNB_JS_ON : IMAGE.LNB_JS_OFF}
+            link="/lms/course/4"
             title={<FormattedMessage id="ID_LMS_COURSE_2" />}
             isMobile={isMobile}
             isLmsMobileMenuOn={isLmsMobileMenuOn}
             onClickLmsMobileMenu={onClickLmsMobileMenu}
           />
           <LnbLinkComponent
-            active={renderCurrentPage(path) === PAGE.COURSE && id === "3"}
-            icon={renderCurrentPage(path) === PAGE.COURSE && id === "3" ? IMAGE.LNB_PYTHON_ON : IMAGE.LNB_PYTHON_OFF}
-            link="/lms/course/3"
+            active={renderCurrentPage(path) === PAGE.COURSE && id === "5"}
+            icon={renderCurrentPage(path) === PAGE.COURSE && id === "5" ? IMAGE.LNB_PYTHON_ON : IMAGE.LNB_PYTHON_OFF}
+            link="/lms/course/5"
             title={<FormattedMessage id="ID_LMS_COURSE_3" />}
             isMobile={isMobile}
             isLmsMobileMenuOn={isLmsMobileMenuOn}
@@ -205,9 +207,9 @@ const Lnb = ({ path, fixed, isMobile, isLmsMobileMenuOn, onClickLmsMobileMenu, .
           />
 
           <LnbLinkComponent
-            active={renderCurrentPage(path) === PAGE.COURSE && id === "4"}
-            icon={renderCurrentPage(path) === PAGE.COURSE && id === "4" ? IMAGE.LNB_PYTHON_ON : IMAGE.LNB_PYTHON_OFF}
-            link="/lms/course/4"
+            active={renderCurrentPage(path) === PAGE.COURSE && id === "6"}
+            icon={renderCurrentPage(path) === PAGE.COURSE && id === "6" ? IMAGE.LNB_PYTHON_ON : IMAGE.LNB_PYTHON_OFF}
+            link="/lms/course/6"
             title={<FormattedMessage id="ID_LMS_COURSE_4" />}
             isMobile={isMobile}
             isLmsMobileMenuOn={isLmsMobileMenuOn}
@@ -215,9 +217,9 @@ const Lnb = ({ path, fixed, isMobile, isLmsMobileMenuOn, onClickLmsMobileMenu, .
           />
 
           <LnbLinkComponent
-            active={renderCurrentPage(path) === PAGE.COURSE && id === "5"}
-            icon={renderCurrentPage(path) === PAGE.COURSE && id === "5" ? IMAGE.LNB_PYTHON_ON : IMAGE.LNB_PYTHON_OFF}
-            link="/lms/course/5"
+            active={renderCurrentPage(path) === PAGE.COURSE && id === "7"}
+            icon={renderCurrentPage(path) === PAGE.COURSE && id === "7" ? IMAGE.LNB_PYTHON_ON : IMAGE.LNB_PYTHON_OFF}
+            link="/lms/course/7"
             title={<FormattedMessage id="ID_LMS_COURSE_5" />}
             isMobile={isMobile}
             isLmsMobileMenuOn={isLmsMobileMenuOn}

@@ -648,9 +648,13 @@ const Dashboard = ({ ...props }) => {
 
   const init = async () => {
     const dashboard = await getDashboard({ email: props.email });
+    console.log("dashboard",dashboard)
     const myCourses = await getMyCourses({ userId: props.userId })
+    console.log("myCourses",myCourses)
     const courseProgress = getMyCourseProgress(myCourses);
     const recommendProject = await findRecommendProject(myCourses);
+    console.log("recommendProject",recommendProject)
+    
 
 
     // setCardsCount(dashboard.cardsCount);

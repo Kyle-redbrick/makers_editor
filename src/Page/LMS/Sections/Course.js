@@ -14,11 +14,11 @@ import { Course, Lecture/*, Project*/ } from "../../../models";
 
 import LectureComponent from "./../Components/Lecture";
 
-const PROJECT_LEVEL_ELEMENTARY = "elementary";
-const PROJECT_LEVEL_BASIC = "basic";
-const PROJECT_LEVEL_ADVANCED = "advenced";
-const PROJECT_LEVEL_ADVANCED_JS = "advenced";
-const PROJECT_LEVEL_MASTERTY = "masterty";
+const PROJECT_LEVEL_ELEMENTARY = "basic";
+// const PROJECT_LEVEL_BASIC = "basic";
+// const PROJECT_LEVEL_ADVANCED = "advenced";
+// const PROJECT_LEVEL_ADVANCED_JS = "advenced";
+// const PROJECT_LEVEL_MASTERTY = "masterty";
 
 
 const PROJECT_LEVELS = [
@@ -42,10 +42,10 @@ const PROJECT_LEVELS = [
 const initLevels = () => {
   const _levels = new Map();
   _levels.set(PROJECT_LEVEL_ELEMENTARY, []);
-  _levels.set(PROJECT_LEVEL_BASIC, []);
-  _levels.set(PROJECT_LEVEL_ADVANCED, []);
-  _levels.set(PROJECT_LEVEL_ADVANCED_JS, []);
-  _levels.set(PROJECT_LEVEL_MASTERTY, []);
+  // _levels.set(PROJECT_LEVEL_BASIC, []);
+  // _levels.set(PROJECT_LEVEL_ADVANCED, []);
+  // _levels.set(PROJECT_LEVEL_ADVANCED_JS, []);
+  // _levels.set(PROJECT_LEVEL_MASTERTY, []);
   return _levels;
 };
 
