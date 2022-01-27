@@ -163,12 +163,12 @@ function View(props) {
               <div className="astro_coding__content">
                 <div className="astro_coding__header">
                   <img src={JavaSIcon} alt="blockcoding-icon" />
-                  <FormattedMessage id="ID_INTRO_CODING_BASIC" />
+                  <FormattedMessage id="ID_INTRO_CODING_ADVANCED" />
                 </div>
 
                 <div className="astro_coding__detailWrapper">
                   <div className="astro_coding__detail">
-                    <FormattedMessage id="ID_INTRO_JAVASCRIPT_BASIC" />
+                    <FormattedMessage id="ID_INTRO_JAVASCRIPT_ADVANCED" />
                   </div>
                   <div className="astro_coding__detailWrapper_right">
                     <Link to="/lms/course/6" className="astro_coding__button">
@@ -182,12 +182,12 @@ function View(props) {
 
                 <div className="astro_coding__header">
                   <img src={JavaSIcon} alt="blockcoding-icon" />
-                  <FormattedMessage id="ID_INTRO_CODING_ADVANCED" />
+                  <FormattedMessage id="ID_INTRO_CODING_MASTERY" />
                 </div>
 
                 <div className="astro_coding__detailWrapper">
                   <div className="astro_coding__detail">
-                    <FormattedMessage id="ID_INTRO_JAVASCRIPT_ADVANCED" />
+                    <FormattedMessage id="ID_INTRO_JAVASCRIPT_MASTERY" />
                   </div>
                   <div className="astro_coding__detailWrapper_right">
                     <Link to="/lms/course/7" className="astro_coding__button">
