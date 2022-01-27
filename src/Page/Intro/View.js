@@ -99,7 +99,7 @@ function View(props) {
               <div className="astro_coding__content">
                 <div className="astro_coding__header">
                   <img src={BlockIcon} alt="blockcoding-icon" />
-                  Elementary
+                  <FormattedMessage id="ID_INTRO_CODING_ELEMENTARY" />
                 </div>
 
                 <div className="astro_coding__detailWrapper">
@@ -108,7 +108,7 @@ function View(props) {
                   </div>
                   <div className="astro_coding__detailWrapper_right">
                     <button className="astro_coding__button">
-                      Learn Now
+                      <FormattedMessage id="ID_INTRO_CODING_LEARN" />
                     </button>
                   </div>
                 </div>
@@ -117,7 +117,7 @@ function View(props) {
               <div className="astro_coding__content">
                 <div className="astro_coding__header">
                   <img src={BlockIcon} alt="blockcoding-icon" />
-                  Basic
+                  <FormattedMessage id="ID_INTRO_CODING_BASIC" />
                 </div>
 
                 <div className="astro_coding__detailWrapper">
@@ -126,7 +126,7 @@ function View(props) {
                   </div>
                   <div className="astro_coding__detailWrapper_right">
                     <button className="astro_coding__button">
-                      Learn Now
+                      <FormattedMessage id="ID_INTRO_CODING_LEARN" />
                     </button>
                   </div>
                 </div>
@@ -135,7 +135,7 @@ function View(props) {
               <div className="astro_coding__content">
                 <div className="astro_coding__header">
                   <img src={BlockIcon} alt="blockcoding-icon" />
-                  Advanced
+                  <FormattedMessage id="ID_INTRO_CODING_ADVANCED" />
                 </div>
 
                 <div className="astro_coding__detailWrapper">
@@ -144,7 +144,7 @@ function View(props) {
                   </div>
                   <div className="astro_coding__detailWrapper_right">
                     <button className="astro_coding__button">
-                      Learn Now
+                      <FormattedMessage id="ID_INTRO_CODING_LEARN" />
                     </button>
                   </div>
                 </div>
@@ -162,7 +162,7 @@ function View(props) {
               <div className="astro_coding__content">
                 <div className="astro_coding__header">
                   <img src={JavaSIcon} alt="blockcoding-icon" />
-                  Basic
+                  <FormattedMessage id="ID_INTRO_CODING_BASIC" />
                 </div>
 
                 <div className="astro_coding__detailWrapper">
@@ -171,7 +171,7 @@ function View(props) {
                   </div>
                   <div className="astro_coding__detailWrapper_right">
                     <button className="astro_coding__button">
-                      Learn Now
+                      <FormattedMessage id="ID_INTRO_CODING_LEARN" />
                     </button>
                   </div>
                 </div>
@@ -181,7 +181,7 @@ function View(props) {
 
                 <div className="astro_coding__header">
                   <img src={JavaSIcon} alt="blockcoding-icon" />
-                  Advanced
+                  <FormattedMessage id="ID_INTRO_CODING_ADVANCED" />
                 </div>
 
                 <div className="astro_coding__detailWrapper">
@@ -190,7 +190,7 @@ function View(props) {
                   </div>
                   <div className="astro_coding__detailWrapper_right">
                     <button className="astro_coding__button">
-                      Learn Now
+                      <FormattedMessage id="ID_INTRO_CODING_LEARN" />
                     </button>
                   </div>
                 </div>

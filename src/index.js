@@ -24,7 +24,7 @@ addLocaleData([...en, ...ko, ...zh, ...ja]);
 const getNavigatorLanguage = () => {
 
   let lang;
-  switch(window.location.hostname) {
+  switch (window.location.hostname) {
     case "astroboy-dev.wizclass.com":
       lang = "ja"
       break;

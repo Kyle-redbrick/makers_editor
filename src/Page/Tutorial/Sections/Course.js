@@ -1,4 +1,4 @@
-import React, { useCallback, useRef, useState} from "react";
+import React, { useCallback, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { FormattedMessage } from "react-intl";
 import styled from "@emotion/styled";
@@ -295,8 +295,8 @@ const Course = ({ item, ...props }) => {
             controls={true}
             ref={videoRef}
             poster={item.poster}
-            onPlay={()=> setPlaying(true)}
-            onPause={()=> setPlaying(false)}
+            onPlay={() => setPlaying(true)}
+            onPause={() => setPlaying(false)}
           >
             <VideoSource src={item.video} />
           </Video>
