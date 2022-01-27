@@ -60,8 +60,6 @@ const LMS = lazy(() => import("./Page/LMS"));
 const Ranking = lazy(() => import("./Page/Ranking"));
 const DreamEditor = lazy(() => import("./Page/DreamEditor"));
 
-// const Home = lazy(() => import("./Page/Home"));
-
 const SplashView = () => {
   return (
     <div
@@ -92,8 +90,6 @@ const App = () => {
               "/builder_readonly/:pId",
               "/qna_readonly/:questionId",
               "/builder/:pId/:templateId",
-              "/wizlive/:pId",
-              "/wizlive_1v4/:pId",
               "/videoclass",
               "/ocp/:grade/:step",
               "/ocp2/:grade/:step",
@@ -101,8 +97,6 @@ const App = () => {
               "/sef/:grade/:step",
               "/tutorial/:level",
               "/recordPlayer/:reservationId",
-              "/monitor/:type",
-              "/monitor_1v4",
               "/ocp2/block/:grade/:step",
               "/ocp2/js/:type/:grade/:step",
               "/dreamclass/:id"
