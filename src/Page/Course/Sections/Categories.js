@@ -4,6 +4,7 @@ import styled from "@emotion/styled";
 import TitleLabel from "../Components/TitleLabel";
 import Title from "../Components/Title";
 import Category from "../Components/Category";
+import CategoryIntro from "../Components/CategoryIntro";
 import CategorizedItem from "../Components/CategorizedItem";
 import Container from "../Components/Container";
 
@@ -86,6 +87,17 @@ const Categories = ({ children, courses = [], items, ...props }) => {
             </Category>
           ))}
         </CategoriesRow>
+
+        {COURSES.map((course) => (
+          <CategoryIntro
+            active={selectedCategoryId === course.id}
+            categoryId={course.id}
+            key={course.id}
+            onClick={handleClickCategory}
+          >
+            {selectedCategoryId === course.id && course.introduction}
+          </CategoryIntro>
+        ))}
 
         <Items>
           {items

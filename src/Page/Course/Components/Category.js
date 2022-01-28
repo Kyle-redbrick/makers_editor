@@ -3,7 +3,7 @@ import noop from "lodash/noop";
 import styled from "@emotion/styled";
 
 const Self = styled.div`
-  margin: 30px 0;
+  margin: 30px 0 15px;
   border: solid 2px rgba(255, 255, 255, 0.3);
   border-radius: 27.5px;
   padding: 14px 22px 14px;
