@@ -567,18 +567,6 @@ const CircularItem = styled.div`
     order: 2;
   }
 
-
-
-  // &:before {
-  //   content: "";
-  //   width: 1px;
-  //   height: 160px;
-  //   background: rgba(255, 255, 255, 0.1);
-  //   position: absolute;
-  //   left: 0;
-  //   top: 30px;
-  // }
-
   @media screen and (max-width: 1169px) {
     &:before {
       display: none;
