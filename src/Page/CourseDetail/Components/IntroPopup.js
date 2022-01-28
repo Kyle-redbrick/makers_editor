@@ -77,7 +77,7 @@ const PlayButton = styled.div`
   `} 
 `
 
-const IntroPopup = ({ btnAction,id, url, type }) => {
+const IntroPopup = ({ redirectURL ,id, url, type }) => {
   const videoRef = useRef();
   const [playing, setPlaying] = useState(false);
 
@@ -92,8 +92,7 @@ const IntroPopup = ({ btnAction,id, url, type }) => {
   const goToLearn = useCallback(
     () => {
       Popup.hidePopUp();
-      //window.open(url, "_blank");
-      btnAction()
+      window.open(redirectURL, "_blank");
     },
     [Popup.hidePopUp]
   );
@@ -107,7 +106,7 @@ const IntroPopup = ({ btnAction,id, url, type }) => {
     () => {
       Popup.hidePopUp();
       //window.open(url, "_blank");
-      btnAction()
+      window.open(redirectURL, "_blank");
     },
     [Popup.hidePopUp]
   );

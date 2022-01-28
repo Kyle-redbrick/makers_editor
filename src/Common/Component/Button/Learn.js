@@ -82,16 +82,17 @@ export const Learn = ({ id: projectId, isShowVideo,videoURL, lectureId, title, f
   const handleClick = useCallback(
     () => {
 
-      if(isShowVideo){
-        Popup.showPopUp(<IntroPopup btnAction={onClickSkipBtn} url={videoURL} />, {
-          dismissButton: false,
-          defaultPadding: false,
-          darkmode: true,
-          mobileFullscreen: true,
-        });
-      }else{
-        onClickSkipBtn()
-      }
+      // if(isShowVideo){
+      //   Popup.showPopUp(<IntroPopup btnAction={onClickSkipBtn} url={videoURL} />, {
+      //     dismissButton: false,
+      //     defaultPadding: false,
+      //     darkmode: true,
+      //     mobileFullscreen: true,
+      //   });
+      // }else{
+      //   onClickSkipBtn()
+      // }
+      onClickSkipBtn()
     },
     [projectId]
   );
@@ -111,7 +112,21 @@ export const Learn = ({ id: projectId, isShowVideo,videoURL, lectureId, title, f
             dismissButton: false,
           });
         }
-        window.open(redirectURL, "_blank");
+
+        if(isShowVideo){
+          Popup.showPopUp(<IntroPopup redirectURL={redirectURL} url={videoURL} />, {
+            dismissButton: false,
+            defaultPadding: false,
+            darkmode: true,
+            mobileFullscreen: true,
+          });
+        }else{
+          window.open(redirectURL, "_blank");
+        }
+
+
+
+        //window.open(redirectURL, "_blank");
         // if (!didIntroPopup) {
         //   Popup.showPopUp(<IntroPopup id={lectureId} url={redirectURL} type={myDreamProject.project.lecture.course.type}/>, {
         //     dismissButton: false,
