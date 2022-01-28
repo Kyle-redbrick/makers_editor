@@ -70,7 +70,7 @@ const App = () => {
   const lang = localStorage.getItem("lang");
   return (
     <Router>
-      <FAQChatbotManager />
+      {/* <FAQChatbotManager /> */}
       <Suspense fallback={<SplashView />}>
         <div className={`${lang}`} style={{ backgroundColor: "#282c36" }}>
           <Route
@@ -281,6 +281,7 @@ const App = () => {
           <Route exact path="/ranking" component={Ranking} />
         </div>
         <ToastContainer />
+        <SubscribeManager />
       </Suspense>
     </Router>
   );

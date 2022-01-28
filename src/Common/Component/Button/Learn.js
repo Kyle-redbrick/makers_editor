@@ -77,6 +77,7 @@ const getRedirectURLOf = myDreamProject => {
 export const Learn = ({ id: projectId, isShowVideo,videoURL, lectureId, title, fixed, ...props }) => {
 
   console.log("item!!!!!~!~!~!",props ,isShowVideo ,videoURL)
+  console.log(props)
 
   const handleClick = useCallback(
     () => {
