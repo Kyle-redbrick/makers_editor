@@ -281,7 +281,6 @@ const App = () => {
           <Route exact path="/ranking" component={Ranking} />
         </div>
         <ToastContainer />
-        <SubscribeManager />
       </Suspense>
     </Router>
   );
