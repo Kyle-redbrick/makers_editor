@@ -502,13 +502,20 @@ const GraphProgressPercent = styled.div`
 const CircularWrap = styled.div`
   display: flex;
   align-items: center;
+  justify-content: flex-start;
   flex-flow: row wrap;
   flex: 1;
   
-  &:before, &:after {
+  &:before {
     content: '';
     width: 100%;
     order: 1;
+  }
+
+  &:after {
+    content: '';
+    width: 33.33%;
+    order: 2;
   }
 
   @media screen and (max-width: 1169px) {
@@ -528,6 +535,30 @@ const CircularItem = styled.div`
   flex-direction: column;
   height: 220px;
   position: relative;
+
+  &:first-child{
+    &:before {
+      content: "";
+      width: 1px;
+      height: 160px;
+      background: rgba(255, 255, 255, 0.1);
+      position: absolute;
+      left: 0;
+      top: 30px;
+    }
+  }
+
+  &:nth-child(4){
+    &:before {
+      content: "";
+      width: 1px;
+      height: 160px;
+      background: rgba(255, 255, 255, 0.1);
+      position: absolute;
+      left: 0;
+      top: 30px;
+    }
+  } 
   &:nth-child(n + 4) {
     order: 1;
   }
@@ -536,15 +567,17 @@ const CircularItem = styled.div`
     order: 2;
   }
 
-  &:before {
-    content: "";
-    width: 1px;
-    height: 160px;
-    background: rgba(255, 255, 255, 0.1);
-    position: absolute;
-    left: 0;
-    top: 30px;
-  }
+
+
+  // &:before {
+  //   content: "";
+  //   width: 1px;
+  //   height: 160px;
+  //   background: rgba(255, 255, 255, 0.1);
+  //   position: absolute;
+  //   left: 0;
+  //   top: 30px;
+  // }
 
   @media screen and (max-width: 1169px) {
     &:before {
