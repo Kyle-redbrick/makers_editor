@@ -103,9 +103,9 @@ const View = ({ courseId }) => {
           fixed={scrollFixed}
           // onClickLearnNow={handleClickLearnNow}
         />
-        <Br />
+        {/* <Br /> */}
         <Lectures items={projects} />
-        <Br />
+        {/* <Br /> */}
         {
           lecture.type !== 'python' && (
             <>

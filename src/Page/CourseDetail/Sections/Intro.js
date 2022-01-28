@@ -244,7 +244,7 @@ const Intro = ({ fixed, lecture, ...props }) => {
               <Title fixed={fixed}>{lecture.title}</Title>
               <Categories fixed={fixed}>{lecture && lecture.course && `${lecture.course.title} | ${lecture.course.displayType} | ${props.intl.formatMessage({ id: "ID_PROJECT_TITLE" })} ${lecture.numberString}`}</Categories>
             </TitleWrap>
-            {shortcutProject && <LearnNow id={shortcutProject.id} fixed={fixed} lectureId={lecture.id} />}
+            {/* {shortcutProject && <LearnNow id={shortcutProject.id} fixed={fixed} lectureId={lecture.id} />} */}
           </Row>
         </Container>
       </IntroHeader>
