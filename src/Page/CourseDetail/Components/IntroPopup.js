@@ -134,7 +134,7 @@ const IntroPopup = ({ btnAction,id, url, type }) => {
     <Self>
       <LearnVideoWrap>
         <Video controls={true} ref={videoRef} onEnded={endVideo}>
-          <VideoSource src="https://d21hhf2g9kirkh.cloudfront.net/dream_tutorial.mp4" />
+          <VideoSource src={url} />
         </Video>
         <PlayButton playing={playing} onClick={playVideo} />
       </LearnVideoWrap>

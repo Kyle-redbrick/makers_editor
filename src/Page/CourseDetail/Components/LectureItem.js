@@ -359,12 +359,12 @@ const LectureItem = ({ item, ...props }) => {
             </PlayButton>
           )}
           {item.completed ? (
-            <LearnAgain completed id={item.id} videoURL={item.videoURL} isShowVideo={true}/>
+            <LearnAgain completed id={item.id} videoURL={item.videoURL} isShowVideo={false}/>
           ) : (
             item.completedMissionNum === 0 ? (
               <LearnNow id={item.id} videoURL={item.videoURL} isShowVideo={true}/>
             ) : (
-              <LearnContinue id={item.id} videoURL={item.videoURL} isShowVideo={true}/>
+              <LearnContinue id={item.id} videoURL={item.videoURL} isShowVideo={false}/>
             )
           )}
         </ButtonWrap>
