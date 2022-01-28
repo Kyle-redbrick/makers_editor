@@ -122,6 +122,10 @@ export class Project {
       _project.localized[0]
       && _project.localized[0].thumbnailURL
       && _project.localized[0].thumbnailURL.toDreamclassS3URL();
+    this.videoURL = 
+      _project.localized[0]
+      && _project.localized[0].videoURL
+      && _project.localized[0].videoURL.toDreamclassS3URL();
     
 
     this.tags = [];

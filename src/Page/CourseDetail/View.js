@@ -35,6 +35,10 @@ const View = ({ courseId }) => {
 
   const init = useCallback(() => {
     getLecture({ id: courseId }).then((lecture) => {
+
+      console.log("lecture~~~~~~~~~~~~~~",lecture)
+
+
       if (lecture) {
         setProjects(lecture.projects.map((p) => new Project(p, lecture)));
         if(lecture.publishedList) {

@@ -300,6 +300,10 @@ const ButtonWrap = styled.div`
 `;
 
 const LectureItem = ({ item, ...props }) => {
+
+
+  console.log("~~~~~~~~~~~~~~~~~~~",item)
+
   const handleClickGame = useCallback(
     () => {
       Popup.showPopUp(<GamePopup url={item.sampleGameUrl} />, {
@@ -355,12 +359,12 @@ const LectureItem = ({ item, ...props }) => {
             </PlayButton>
           )}
           {item.completed ? (
-            <LearnAgain completed id={item.id} />
+            <LearnAgain completed id={item.id} videoURL={item.videoURL} isShowVideo={true}/>
           ) : (
             item.completedMissionNum === 0 ? (
-              <LearnNow id={item.id} />
+              <LearnNow id={item.id} videoURL={item.videoURL} isShowVideo={true}/>
             ) : (
-              <LearnContinue id={item.id} />
+              <LearnContinue id={item.id} videoURL={item.videoURL} isShowVideo={true}/>
             )
           )}
         </ButtonWrap>

@@ -74,50 +74,67 @@ const getRedirectURLOf = myDreamProject => {
   }
 }
 
-export const Learn = ({ id: projectId, lectureId, title, fixed, ...props }) => {
+export const Learn = ({ id: projectId, isShowVideo,videoURL, lectureId, title, fixed, ...props }) => {
+
+  console.log("item!!!!!~!~!~!",props ,isShowVideo ,videoURL)
 
   const handleClick = useCallback(
     () => {
-      postMyDreamProject({ projectId })
-        .then(res => res.json())
-        .then(myDreamProject => {
-          const redirectURL = getRedirectURLOf(myDreamProject);
-          if (redirectURL) {
-            const didIntroPopup = localStorage.getItem(`didIntroPopup_${myDreamProject.project.lecture.course.type}`);
 
-            if (isMobileOnly) {
-              return Popup.showPopUp(<AlertPopup />, {
-                defaultPadding: false,
-                dismissButton: false,
-              });
-            }
-            window.open(redirectURL, "_blank");
-            // if (!didIntroPopup) {
-            //   Popup.showPopUp(<IntroPopup id={lectureId} url={redirectURL} type={myDreamProject.project.lecture.course.type}/>, {
-            //     dismissButton: false,
-            //     dismissOverlay: true,
-            //     defaultPadding: false,
-            //     darkmode: true,
-            //     mobileFullscreen: true,
-            //     overflow: true,
-            //   });
-            // } else {
-            //   window.open(redirectURL, "_blank");
-            // }
-          }
-          else {
-            Popup.showPopUp(<LoginAlertPopup />, {
-              defaultPadding: false,
-              dismissButton: false,
-            });
-          }
-        })
-        .catch(err => {
-          console.error(err);
+      if(isShowVideo){
+        Popup.showPopUp(<IntroPopup btnAction={onClickSkipBtn} url={videoURL} />, {
+          dismissButton: false,
+          defaultPadding: false,
+          darkmode: true,
+          mobileFullscreen: true,
         });
+      }else{
+        onClickSkipBtn()
+      }
     },
     [projectId]
   );
+
+
+  const onClickSkipBtn = ()=>{
+    postMyDreamProject({ projectId })
+    .then(res => res.json())
+    .then(myDreamProject => {
+      const redirectURL = getRedirectURLOf(myDreamProject);
+      if (redirectURL) {
+        const didIntroPopup = localStorage.getItem(`didIntroPopup_${myDreamProject.project.lecture.course.type}`);
+  
+        if (isMobileOnly) {
+          return Popup.showPopUp(<AlertPopup />, {
+            defaultPadding: false,
+            dismissButton: false,
+          });
+        }
+        window.open(redirectURL, "_blank");
+        // if (!didIntroPopup) {
+        //   Popup.showPopUp(<IntroPopup id={lectureId} url={redirectURL} type={myDreamProject.project.lecture.course.type}/>, {
+        //     dismissButton: false,
+        //     dismissOverlay: true,
+        //     defaultPadding: false,
+        //     darkmode: true,
+        //     mobileFullscreen: true,
+        //     overflow: true,
+        //   });
+        // } else {
+        //   window.open(redirectURL, "_blank");
+        // }
+      }
+      else {
+        Popup.showPopUp(<LoginAlertPopup />, {
+          defaultPadding: false,
+          dismissButton: false,
+        });
+      }
+    })
+    .catch(err => {
+      console.error(err);
+    });
+  }
 
   return (
     <Self onClick={handleClick} type="button" fixed={fixed} title={title} {...props}>
@@ -127,13 +144,19 @@ export const Learn = ({ id: projectId, lectureId, title, fixed, ...props }) => {
 };
 
 export const LearnAgain = ({ ...props }) => {
+  console.log("props!!!!!!!!",props)
+
   return <Learn title={<FormattedMessage id="ID_LEAEN_BUTTON_LEARN_AGAIN" />} {...props} />
 };
 
 export const LearnNow = ({ ...props }) => {
+  console.log("props!!!!!!!!",props)
+
   return <Learn title={<FormattedMessage id="ID_LEAEN_BUTTON_LEARN_NOW" />} {...props} />
 };
 
 export const LearnContinue = ({ ...props }) => {
+  console.log("props!!!!!!!!",props)
+
   return <Learn title={<FormattedMessage id="ID_LEAEN_BUTTON_LEARN_CONTINUE" />} {...props} />
 };

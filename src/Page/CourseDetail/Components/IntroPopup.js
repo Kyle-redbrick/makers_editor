@@ -77,7 +77,7 @@ const PlayButton = styled.div`
   `} 
 `
 
-const IntroPopup = ({ id, url, type }) => {
+const IntroPopup = ({ btnAction,id, url, type }) => {
   const videoRef = useRef();
   const [playing, setPlaying] = useState(false);
 
@@ -91,10 +91,9 @@ const IntroPopup = ({ id, url, type }) => {
 
   const goToLearn = useCallback(
     () => {
-      localStorage.setItem(`didIntroPopup_${type}`, true);
-
       Popup.hidePopUp();
-      window.open(url, "_blank");
+      //window.open(url, "_blank");
+      btnAction()
     },
     [Popup.hidePopUp]
   );
@@ -103,6 +102,16 @@ const IntroPopup = ({ id, url, type }) => {
     videoRef.current.play();
     setPlaying(true);
   }, [videoRef]);
+
+  const endVideo = useCallback(
+    () => {
+      Popup.hidePopUp();
+      //window.open(url, "_blank");
+      btnAction()
+    },
+    [Popup.hidePopUp]
+  );
+
   
   const videoSrc = (type) => {
     if (type === "oobc") return "/oobc_intro.mp4";
@@ -124,8 +133,8 @@ const IntroPopup = ({ id, url, type }) => {
   return (
     <Self>
       <LearnVideoWrap>
-        <Video controls={true} ref={videoRef}>
-          <VideoSource src={videoSrc(type).toDreamclassS3URL()} />
+        <Video controls={true} ref={videoRef} onEnded={endVideo}>
+          <VideoSource src="https://d21hhf2g9kirkh.cloudfront.net/dream_tutorial.mp4" />
         </Video>
         <PlayButton playing={playing} onClick={playVideo} />
       </LearnVideoWrap>
