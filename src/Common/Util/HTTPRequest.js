@@ -17,9 +17,6 @@ export const fetchRequest = (url, method, param) => {
 
   headers["locale"] = localStorage.getItem("wizLang");
   headers["domain"] = localStorage.getItem(window.location.hostname);
-  console.log(window.location.hostname)
-
-  console.log(localStorage.getItem("wizLang"))
 
   const requestInfo = {
     method: method,

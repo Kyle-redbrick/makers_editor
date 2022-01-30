@@ -255,10 +255,6 @@ const CoursePage = ({ courseId, email, ...props }) => {
   const init = async () => {
     const _levels = initLevels();
     const course = await getMyCourseSummary({ courseId, email });
-
-
-    console.log("course",course)
-
     course.lectures.forEach((lecture) => {
       const _lectures = _levels.get(lecture.level);
       _lectures.push(new Lecture(lecture));

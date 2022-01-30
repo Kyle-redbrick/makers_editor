@@ -301,9 +301,6 @@ const ButtonWrap = styled.div`
 
 const LectureItem = ({ item, ...props }) => {
 
-
-  console.log("~~~~~~~~~~~~~~~~~~~",item)
-
   const handleClickGame = useCallback(
     () => {
       Popup.showPopUp(<GamePopup url={item.sampleGameUrl} />, {

@@ -105,8 +105,6 @@ export default function View(props) {
     async (_keyword, _courseType) => {
       const _coursesResult = await getCourses();
 
-      console.log("_coursesResult",_coursesResult)
-
       const _courses = new Map();
       _coursesResult.forEach((_course) => {
         const course = new Course(_course);
@@ -117,7 +115,6 @@ export default function View(props) {
 
       const queryString = QueryString.stringify({ keyword: _keyword, courseType: _courseType });
       const _lecturesResult = await getLectures({ queryString });
-      console.log("_lecturesResult",_lecturesResult)
 
       const _lectures = [];
       _lecturesResult.rows.forEach((_lecture) => {

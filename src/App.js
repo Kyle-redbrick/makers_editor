@@ -13,7 +13,6 @@ import { PAGE } from "./Page/LMS/Constants";
 import Home from "./Page/Course";
 import WizAppDetail from "./Common/Component/WizAppDetail";
 import { SubscribeManager } from "./Common/Util/Subscribe";
-import FAQChatbotManager from "./Common/Util/FAQChatbotManager";
 
 // python test
 const PythonPage = lazy(() => import("./Page/Python"));
@@ -70,7 +69,6 @@ const App = () => {
   const lang = localStorage.getItem("lang");
   return (
     <Router>
-      {/* <FAQChatbotManager /> */}
       <Suspense fallback={<SplashView />}>
         <div className={`${lang}`} style={{ backgroundColor: "#282c36" }}>
           <Route
