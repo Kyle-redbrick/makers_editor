@@ -23,7 +23,7 @@ const BannerWrap = styled.div`
 
 const Banner = styled.div`
   position: relative;
-  background-image: url(${({pcImgURL}) => pcImgURL});
+  background-image: url("${({pcImgURL}) => pcImgURL}");
   background-size: cover;
   height: 330px;
   border-radius: 16px;
@@ -56,7 +56,7 @@ const Banner = styled.div`
   }
 
   @media screen and (max-width: 768px) {
-    background-image: url(${({mobileImgURL}) => mobileImgURL});
+    background-image: url("${({mobileImgURL}) => mobileImgURL}");
   }
 `;
 
@@ -68,7 +68,7 @@ const SubTitle = styled.div`
   line-height: 1;
   letter-spacing: 0.8px;
   color: #bbbbbb;
-  margin-bottom: 10px;
+  margin-bottom: 29px;
   z-index: 1;
 
   @media screen and (max-width:1169px) {
@@ -79,6 +79,7 @@ const SubTitle = styled.div`
 const Title = styled.h5`
   position: relative;
   text-shadow: 0 2px 20px #000000;
+  font-family: "Noto Sans KR", sans-serif;
   font-size: 36px;
   font-weight: bold;
   line-height: 1.11;
