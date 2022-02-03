@@ -189,7 +189,7 @@ const View = (props) => {
   useEffect(() => {
     getBanners().then((_banners) => {
       const banners = _banners.map(_banner => new Banner(_banner));
-      setMainBanners(banners.filter(banner => banner.type === "main"));
+      setMainBanners(banners.filter(banner => banner.type === "MAIN"));
       setSubBanners(banners.filter(banner => banner.type === "sub"));
     });
 
@@ -285,7 +285,7 @@ const View = (props) => {
       <Global styles={GlobalStyle} />
       <Self>
         <Banners items={mainBanners} isMobile={isMobile}/>
-        <SubBanner items={subBanners} />
+        {/* <SubBanner items={subBanners} /> */}
 
         <Br />
 

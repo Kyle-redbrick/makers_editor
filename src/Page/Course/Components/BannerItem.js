@@ -23,7 +23,7 @@ const BannerWrap = styled.div`
 
 const Banner = styled.div`
   position: relative;
-  background-image: url(${({pcImgURL}) => pcImgURL});
+  background-image: url("${({pcImgURL}) => pcImgURL}");
   background-size: cover;
   height: 330px;
   border-radius: 16px;
@@ -56,7 +56,7 @@ const Banner = styled.div`
   }
 
   @media screen and (max-width: 768px) {
-    background-image: url(${({mobileImgURL}) => mobileImgURL});
+    background-image: url("${({mobileImgURL}) => mobileImgURL}");
   }
 `;
 
