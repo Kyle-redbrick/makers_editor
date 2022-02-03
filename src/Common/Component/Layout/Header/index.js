@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { Link, withRouter } from "react-router-dom";
 import onClickOutside from "react-onclickoutside";
 import { showPopUp } from "../../PopUp";
+import LoginAlertPopup from "../../PopUp/LoginAlertPopup";
 import * as userInfoActions from "../../../Store/Reducer/UserInfo";
 import SignIn from "../../SignIn";
 import SignUp from "../../SignUp";
@@ -83,6 +84,18 @@ class Header extends Component {
     }
   };
 
+  checkLogin = (e) => {
+    const isLoggedIn = localStorage.getItem("wizToken");
+    if(!isLoggedIn) {
+      e.preventDefault();
+      showPopUp(<LoginAlertPopup />, {
+        defaultPadding: false,
+        dismissButton: false,
+      });
+  
+    }
+  }
+
   onClickSignIn = () => {
     this.setState({ isMobileMenuOn: false });
     showPopUp(<SignIn />, { darkmode: true, mobileFullscreen: true });
@@ -159,6 +172,7 @@ class Header extends Component {
     const { userinfo, intl, hideHeader } = this.props;
     const { isMobileMenuOn, isSearchBarOpen, searchValue, isSearchFocusOn, isMobileSearchBarOn, isHeaderFixed } = this.state;
     const {
+      checkLogin,
       onClickSignIn,
       onClickSignUp,
       handleToggleMobileMenu,
@@ -277,7 +291,7 @@ class Header extends Component {
                 </ul>
               </div>
               <div className="lms">
-                <Link to="/lms">
+                <Link to="/lms" onClick={checkLogin} >
                   {intl.formatMessage({ id: "ID_HEADER_LMS" })}
                 </Link>
               </div>
@@ -425,7 +439,7 @@ class Header extends Component {
                     );
                   })}
               </div>
-              <Link to="/lms" className="header_lms_btn">
+              <Link to="/lms" onClick={checkLogin} className="header_lms_btn">
                 {intl.formatMessage({ id: "ID_HEADER_LMS" })}
               </Link>
               {
