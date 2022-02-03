@@ -62,7 +62,7 @@ const Widget = styled.div`
   display: flex;
   flex-direction: column;
 
-  ${(props) => props.height && `height: 460px;`}
+  ${(props) => props.height == 3 && `height: 460px;`}
 
   ${(props) => props.graph &&
     `
