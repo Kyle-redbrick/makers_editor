@@ -1,6 +1,9 @@
 import React from "react";
 import styled from "@emotion/styled";
 import { Link } from "react-router-dom";
+import * as Popup from "../../../Common/Component/PopUp";
+import LoginAlertPopup from "../../../Common/Component/PopUp/LoginAlertPopup"
+// import LoginAlertPopup from "../PopUp/LoginAlertPopup";
 
 const Self = styled.div``;
 
@@ -111,11 +114,44 @@ const Desc = styled.p`
   }
 `;
 
+
+// const BLink = ({item, ...props })=> {
+//   const isLoggedIn = localStorage.getItem("wizToken");
+
+//   const checkLogin = (e) => {
+//     const isLoggedIn = localStorage.getItem("wizToken");
+//     if(!isLoggedIn) {
+//       e.preventDefault();
+//     } else {
+//       console.log(1111, "check", isLoggedIn);
+//     }
+//   }
+
+//   return (
+//     <BannerLink to={item.link} onClick={checkLogin}>
+
+//     </BannerLink>
+//   );
+// }
+
 const BannerItem = ({ item, ...props }) => {
+
+  const checkLogin = (e) => {
+  const isLoggedIn = localStorage.getItem("wizToken");
+  if(!isLoggedIn && item.link!="/intro") {
+    e.preventDefault();
+    Popup.showPopUp(<LoginAlertPopup />, {
+      defaultPadding: false,
+      dismissButton: false,
+    });
+
+  }
+}
+
   return (
     <Self {...props}>
       <BannerWrap>
-        <BannerLink to={item.link}>
+      <BannerLink to={item.link} onClick={checkLogin}>
           <Banner pcImgURL={item.background} mobileImgURL={item.mobileBackground}>
             <SubTitle>{item.label}</SubTitle>
             <Title>{item.title}</Title>
