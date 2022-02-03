@@ -3,7 +3,6 @@ import styled from "@emotion/styled";
 import { Link } from "react-router-dom";
 import * as Popup from "../../../Common/Component/PopUp";
 import LoginAlertPopup from "../../../Common/Component/PopUp/LoginAlertPopup"
-// import LoginAlertPopup from "../PopUp/LoginAlertPopup";
 
 const Self = styled.div``;
 
@@ -113,26 +112,6 @@ const Desc = styled.p`
     white-space: pre-wrap;
   }
 `;
-
-
-// const BLink = ({item, ...props })=> {
-//   const isLoggedIn = localStorage.getItem("wizToken");
-
-//   const checkLogin = (e) => {
-//     const isLoggedIn = localStorage.getItem("wizToken");
-//     if(!isLoggedIn) {
-//       e.preventDefault();
-//     } else {
-//       console.log(1111, "check", isLoggedIn);
-//     }
-//   }
-
-//   return (
-//     <BannerLink to={item.link} onClick={checkLogin}>
-
-//     </BannerLink>
-//   );
-// }
 
 const BannerItem = ({ item, ...props }) => {
 
