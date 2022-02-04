@@ -726,7 +726,7 @@ const Dashboard = ({ ...props }) => {
       <Title hidden={props.isMobile}><FormattedMessage id="ID_DREAM_LMS_TITLE" /></Title>
       <Row>
         <Col col={2}>
-          <Widget height={props.isMobile ? "auto" : 290}>
+          <Widget height={props.isMobile ? "auto" : 296}>
             <WidgetTitle><FormattedMessage id="ID_DREAM_LMS_TODAY" /></WidgetTitle>
             <WidgetBody>
               <Greeting>
