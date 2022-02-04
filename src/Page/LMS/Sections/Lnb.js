@@ -161,6 +161,21 @@ const Lnb = ({ path, fixed, isMobile, isLmsMobileMenuOn, onClickLmsMobileMenu, c
 
   const onclickAutBtn = (course) => {
     console.log(course)
+    showPopUp(
+      <CertificateForm
+        // it={formData.it}
+        // stem={formData.stem}
+        // sdg={formData.sdg}
+        // certificate={formData.certificate}
+        // onClickSubmit={() => {
+        //   this.alertCertificate(formData);
+        // }}
+      />,
+      {
+        dismissButton: false,
+        defaultPadding: false
+      }
+    )
   }
 
   return (
