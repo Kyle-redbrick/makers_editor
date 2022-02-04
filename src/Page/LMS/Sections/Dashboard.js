@@ -61,7 +61,6 @@ const Widget = styled.div`
   margin-bottom: 30px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 
   ${(props) => props.height && `height: ${props.height}px;`}
 
@@ -455,7 +454,6 @@ const RecommendArrowIcon = styled.img`
 
 const GraphProgressWrap = styled.div`
   width: 311.5px;
-  height: 460px;
   padding: 20px;
 
   @media screen and (max-width: 1169px) {
@@ -468,7 +466,7 @@ const GraphProgressWrap = styled.div`
 const ProgressTitle = styled.div`
   font-size: 22px;
   font-weight: bold;
-  line-height: 1.45;
+  line-height: 1.45;ß
   color: #fff;
 `;
 
