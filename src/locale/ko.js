@@ -1230,6 +1230,7 @@ const ko = {
   ID_LMS_QUEST_CLEAR: "미션 완료",
   ID_LMS_QUEST_DATE: "최근 실행일",
   ID_LMS_QUEST_STUDY_TIME: "학습시간",
+  ID_LMS_QUEST_STUDY_TIME_MIN: "분",
   ID_COURSE_DETAIL_QUEST: "퀘스트",
   ID_COURSE_DETAIL_KEY_COMMAND: "주요 명령어",
   ID_COURSE_DETAIL_PLAY_GAME: "게임 해보기",

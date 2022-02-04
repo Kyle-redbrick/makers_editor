@@ -201,27 +201,27 @@ const Project = ({ project, ...props }) => {
           </Progress>
           {project.progress >= 100 ? (
             <ProgressText>
-              <FormattedMessage id="ID_LMS_QUEST_CLEAR" />
+              <FormattedMessage id="ID_LMS_QUEST_ALL_CLEAR" />
             </ProgressText>
           ) : (
             <ProgressText>
-              {progressText} <FormattedMessage id="ID_LMS_QUEST" />
+              {progressText} <FormattedMessage id="ID_LMS_QUEST_CLEAR" />
             </ProgressText>
           )}
         </ProgressWrap>
       </TitleWrap>
 
       <LectureDate>
-        <Label><FormattedMessage id="ID_LMS_QUEST" /> </Label>
+        <Label><FormattedMessage id="ID_LMS_QUEST_DATE" /> </Label>
         {project.myProject
           && project.myProject.lastStudiedAt
           ? moment(project.myProject.lastStudiedAt).format("YYYY.MM.DD")
           : "-"}
         <br />
-        <Label><FormattedMessage id="ID_LMS_QUEST" /> </Label>
+        <Label><FormattedMessage id="ID_LMS_QUEST_STUDY_TIME" /> </Label>
         {project.myProject
           && project.myProject.studiedMinutes
-          ? project.myProject.studiedMinutes + "분"
+          ? project.myProject.studiedMinutes + " min"
           : "-"}
       </LectureDate>
 
