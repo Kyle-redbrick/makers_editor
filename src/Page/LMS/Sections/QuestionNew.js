@@ -174,8 +174,8 @@ const InputWrap = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 129px;
-  height: 34px;
+  width: 170px;
+  height: 45px;
   margin: 0 10px 10px 0;
   padding: 0 12px 0 3px;
   border-radius: 10px;
@@ -377,7 +377,7 @@ const QnaNew = ({ ...props }) => {
         e.preventDefault();
         Popup.showPopUp(
           <AlertPopup
-            message="질문을 등록하시겠습니까?"
+            message={intl.formatMessage({id: "ID_QNA_QUESTION_POST_ALERT"})}
             onSubmit={() => handleSubmitPost()}
           />,
           popupConfig

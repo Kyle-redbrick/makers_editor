@@ -8,6 +8,8 @@ import { IMAGE } from "./../Constants/Images";
 import * as Popup from "../../../Common/Component/PopUp";
 import AlertPopup from "../Components/AlertPopup";
 
+import { FormattedMessage, injectIntl } from "react-intl";
+
 const Self = styled.div`
   position: absolute;
   right: 0;
@@ -78,6 +80,8 @@ const popupConfig = {
 }
 
 const QuestionMore = ({ item, ...props }) => {
+
+  const { intl } = props;
   const [show, setShow] = useState(false);
   let history = useHistory();
 
@@ -117,19 +121,19 @@ const QuestionMore = ({ item, ...props }) => {
           <>
             <PopupItem onClick={editQuestion}>
               <Icon alt="수정 아이콘" src={IMAGE.ICON_EDIT} />
-              수정
+              <FormattedMessage id="ID_COURSE_DETAIL_EDIT" />
             </PopupItem>
             <PopupItem onClick={() => {
               Popup.showPopUp(
                 <AlertPopup
-                  message="질문을 삭제하시겠습니까?"
+                  message={intl.formatMessage({id: "ID_QNA_QUESTION_DELETE_ALERT"})}
                   onSubmit={() => deleteQuestion(item.id)}
                 />,
                 popupConfig
               );
             }}>
               <Icon alt="삭제 아이콘" src={IMAGE.ICON_TRASH} />
-              삭제
+              <FormattedMessage id="ID_COURSE_DETAIL_DELETE" />
             </PopupItem>
           </>
         )}
@@ -143,4 +147,5 @@ export default connect(
     userId: state.userinfo.id,
   }),
   {}
-)(QuestionMore);
+)(injectIntl(QuestionMore));
+

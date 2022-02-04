@@ -926,11 +926,16 @@ const zh = {
   ID_QNA_QUESTION_STUDY: "学习相关问题",
   ID_QNA_QUESTION_ANSWERED: "已回复",
   ID_QNA_QUESTION_UNANSWERED: "等待回复",
+  ID_QNA_QUESTION_POST_ALERT: "질문을 등록하시겠습니까?",
+  ID_QNA_QUESTION_EDIT_ALERT: "질문을 수정하시겠습니까?",
+  ID_QNA_QUESTION_DELETE_ALERT: "질문을 삭제하시겠습니까?",
   ID_QNA_PREV: "上一页",
   ID_QNA_NEXT: "下一页",
   ID_QNA_ANSWER_WRITE_SUCCESS: "답변이 등록되었습니다.",
   ID_QNA_ANSWER_WRITE_WARN: "내용을 입력해주세요.",
   ID_QNA_REFRESH: "새로고침",
+  ID_QNA_ALERT_CONFIRM: "확인",
+  ID_QNA_ALERT_CANCEL: "취소",
   ID_HEADER_LMS: "我的学习",
   CONDITION_IS_PLAYING: "게임이 실행 중인지",
   CONDITION_DID_PLAY_ONCE: "최소 한 번 게임 실행하기",
@@ -1277,6 +1282,8 @@ const zh = {
   ID_BUILDER_MYPUBLISHED: "已发布应用程序",
   ID_INPUT_PLACEHOLDER: "请输入内容。",
   ID_INPUT_POPUP_CANCLE: "取消",
-  ID_INPUT_POPUP_CONFIRM: "确认"
+  ID_INPUT_POPUP_CONFIRM: "确认",
+  ID_COMMENT_TITLE: "댓글",
+  ID_DATE_FORMAT_MIN: "minutes ago",
 };
 export default zh;

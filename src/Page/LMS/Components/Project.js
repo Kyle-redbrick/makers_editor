@@ -1,5 +1,5 @@
 import React, { useCallback } from "react";
-import { FormattedMessage } from "react-intl";
+import { FormattedMessage, injectIntl } from "react-intl";
 import moment from "moment";
 import styled from "@emotion/styled";
 import * as LearnButtons from "../../../Common/Component/Button/Learn";
@@ -184,6 +184,8 @@ const Project = ({ project, ...props }) => {
     [GamePopup, Popup.showPopUp]
   );
 
+  const { intl } = props;
+
   const progressText = `${
       project.completedMissionNum > project.totalMissionNum
         ? project.totalMissionNum
@@ -221,7 +223,7 @@ const Project = ({ project, ...props }) => {
         <Label><FormattedMessage id="ID_LMS_QUEST_STUDY_TIME" /> </Label>
         {project.myProject
           && project.myProject.studiedMinutes
-          ? project.myProject.studiedMinutes + " min"
+          ? project.myProject.studiedMinutes + intl.formatMessage({id: "ID_LMS_QUEST_STUDY_TIME_MIN"})
           : "-"}
       </LectureDate>
 
@@ -246,4 +248,4 @@ const Project = ({ project, ...props }) => {
   );
 };
 
-export default Project;
+export default injectIntl(Project);

@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "@emotion/styled";
+import {FormattedMessage} from "react-intl";
 
 import { IMAGE } from "./../Constants/Images";
 import { COLOR } from "./../Constants";
@@ -79,8 +80,8 @@ const AlertPopup = ({ message, onSubmit, ...props }) => {
           if (result.success) {
             dismiss()
           }
-        }}>확인</ConfirmButton>
-        <CancelButton onClick={() => dismiss()}>취소</CancelButton>
+        }}><FormattedMessage id="ID_QNA_ALERT_CONFIRM" /></ConfirmButton>
+        <CancelButton onClick={() => dismiss()}><FormattedMessage id="ID_QNA_ALERT_CANCEL" /></CancelButton>
       </Content>
     </Self>
   );
