@@ -1,0 +1,68 @@
+import React from "react";
+import { injectIntl } from "react-intl";
+import "./index.scss"
+import Certificate from "../Certificate";
+import { showPopUp } from "../../../../../../Common/Component/PopUp";
+// import * as request from "../../../../Common/Util/HTTPRequest";
+import clearImg from "../../../../../../Image/quest-clear-img-astroboy.svg"
+
+function CertificateForm(props) {
+
+  const alertCertificate = () => {
+    showPopUp(
+      <Certificate
+
+      />, {
+      dismissButton: false,
+      defaultPadding: false
+    });
+  }
+
+  return (
+    <div className="dream_projectClear">
+      <img className="dream_projectClear_image" src={clearImg} alt="clear" />
+      <p className="popup_title">{props.intl.formatMessage({ id: "ID_DREAM_BUILDER_QUEST_CLEAR" })}</p>
+      <div className="popup_subtitle">
+        {props.intl.formatMessage({ id: "ID_DREAM_BUILDER_QUEST_CLEAR_SUBTITLE" })}
+      </div>
+
+      <div className="questClear_certificate_form">
+        <div className="questClear_certificate_row">
+          <label for="certificate_name" className="questClear_certificate_label">Name</label>
+          <input type="text" id="certificate_name" className="questClear_certificate_field">
+          </input>
+        </div>
+        <div className="questClear_certificate_row">
+          <label for="certificate_class" className="questClear_certificate_label">Class</label>
+          <input type="text" id="certificate_class" className="questClear_certificate_field">
+          </input>
+        </div>
+      </div>
+
+      <div className="popup_buttons">
+        <button
+          className="popup_button popup_button-cancel"
+          onClick={() => {
+            if (props.onClickCancel) props.onClickCancel();
+            if (props.dismiss) props.dismiss();
+          }}
+        >
+          {props.intl.formatMessage({ id: "ID_DREAM_BUILDER_QUEST_CLEAR_CANCEL_BUTTON" })}
+        </button>
+        <button
+          className="popup_button"
+          onClick={() => {
+            console.log(3333, props);
+            alertCertificate(props);
+            if (props.onClickSubmit) props.onClickSubmit();
+            if (props.dismiss) props.dismiss();
+          }}
+        >
+          {props.intl.formatMessage({ id: "ID_DREAM_BUILDER_QUEST_CLEAR_CONFIRM_BUTTON" })}
+        </button>
+      </div>
+    </div>
+  );
+}
+
+export default injectIntl(CertificateForm);
