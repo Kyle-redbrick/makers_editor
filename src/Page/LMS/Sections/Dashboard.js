@@ -61,6 +61,7 @@ const Widget = styled.div`
   margin-bottom: 30px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 
   ${(props) => props.height && `height: ${props.height}px;`}
 
