@@ -466,7 +466,7 @@ const GraphProgressWrap = styled.div`
 const ProgressTitle = styled.div`
   font-size: 22px;
   font-weight: bold;
-  line-height: 1.45;ß
+  line-height: 1.45;
   color: #fff;
 `;
 
