@@ -170,8 +170,8 @@ const InputWrap = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 129px;
-  height: 34px;
+  width: 170px;
+  height: 45px;
   margin: 0 10px 10px 0;
   padding: 0 12px 0 3px;
   border-radius: 10px;
@@ -378,7 +378,7 @@ const QnaUpdate = ({ item, ...props}) => {
         e.preventDefault();
         Popup.showPopUp(
           <AlertPopup
-            message="질문을 수정하시겠습니까?"
+            message={intl.formatMessage({id: "ID_QNA_QUESTION_EDIT_ALERT"})}
             onSubmit={() => handleSubmitUpdate()}
           />,
           popupConfig
@@ -440,7 +440,7 @@ const QnaUpdate = ({ item, ...props}) => {
           ))
         )}
         <ButtonWrap>
-          <SubmitButton type="submit" width={150} height={50}>수정</SubmitButton>
+          <SubmitButton type="submit" width={150} height={50}><FormattedMessage id="ID_COURSE_DETAIL_EDIT" /></SubmitButton>
         </ButtonWrap>
       </Form>
     </Self>

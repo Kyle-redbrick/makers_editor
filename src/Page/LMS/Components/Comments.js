@@ -10,6 +10,8 @@ import { Comment } from "../../../models"
 
 import { getComments, postComment } from "../api";
 
+import {FormattedMessage} from "react-intl";
+
 const Self = styled.div`
   width: 100%;
   padding-bottom: 160px;
@@ -91,7 +93,7 @@ const Comments = ({ questionId, items, onAfterSubmit, ...props }) => {
   return (
     <Self {...props}>
       <Container>
-        <Title>댓글</Title>
+        <Title><FormattedMessage id="ID_COMMENT_TITLE" /></Title>
         <CommentWrite
           commentId="root"
           onDisappear={handleDisappearCommentWrite}

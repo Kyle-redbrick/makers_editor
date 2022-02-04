@@ -1,5 +1,5 @@
 import React, { useCallback } from "react";
-import { FormattedMessage } from "react-intl";
+import { FormattedMessage, injectIntl } from "react-intl";
 import moment from "moment";
 import styled from "@emotion/styled";
 import * as LearnButtons from "../../../Common/Component/Button/Learn";
@@ -184,6 +184,8 @@ const Project = ({ project, ...props }) => {
     [GamePopup, Popup.showPopUp]
   );
 
+  const { intl } = props;
+
   const progressText = `${
       project.completedMissionNum > project.totalMissionNum
         ? project.totalMissionNum
@@ -201,27 +203,27 @@ const Project = ({ project, ...props }) => {
           </Progress>
           {project.progress >= 100 ? (
             <ProgressText>
-              <FormattedMessage id="ID_LMS_QUEST_CLEAR" />
+              <FormattedMessage id="ID_LMS_QUEST_ALL_CLEAR" />
             </ProgressText>
           ) : (
             <ProgressText>
-              {progressText} <FormattedMessage id="ID_LMS_QUEST" />
+              {progressText} <FormattedMessage id="ID_LMS_QUEST_CLEAR" />
             </ProgressText>
           )}
         </ProgressWrap>
       </TitleWrap>
 
       <LectureDate>
-        <Label><FormattedMessage id="ID_LMS_QUEST" /> </Label>
+        <Label><FormattedMessage id="ID_LMS_QUEST_DATE" /> </Label>
         {project.myProject
           && project.myProject.lastStudiedAt
           ? moment(project.myProject.lastStudiedAt).format("YYYY.MM.DD")
           : "-"}
         <br />
-        <Label><FormattedMessage id="ID_LMS_QUEST" /> </Label>
+        <Label><FormattedMessage id="ID_LMS_QUEST_STUDY_TIME" /> </Label>
         {project.myProject
           && project.myProject.studiedMinutes
-          ? project.myProject.studiedMinutes + "분"
+          ? project.myProject.studiedMinutes + intl.formatMessage({id: "ID_LMS_QUEST_STUDY_TIME_MIN"})
           : "-"}
       </LectureDate>
 
@@ -246,4 +248,4 @@ const Project = ({ project, ...props }) => {
   );
 };
 
-export default Project;
+export default injectIntl(Project);

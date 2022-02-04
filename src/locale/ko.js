@@ -926,11 +926,16 @@ const ko = {
   ID_QNA_QUESTION_STUDY: "학습질문",
   ID_QNA_QUESTION_ANSWERED: "답변완료",
   ID_QNA_QUESTION_UNANSWERED: "답변대기",
+  ID_QNA_QUESTION_POST_ALERT: "질문을 등록하시겠습니까?",
+  ID_QNA_QUESTION_EDIT_ALERT: "질문을 수정하시겠습니까?",
+  ID_QNA_QUESTION_DELETE_ALERT: "질문을 삭제하시겠습니까?",
   ID_QNA_PREV: "이전",
   ID_QNA_NEXT: "다음",
   ID_QNA_ANSWER_WRITE_SUCCESS: "답변이 등록되었습니다.",
   ID_QNA_ANSWER_WRITE_WARN: "내용을 입력해주세요.",
   ID_QNA_REFRESH: "새로고침",
+  ID_QNA_ALERT_CONFIRM: "확인",
+  ID_QNA_ALERT_CANCEL: "취소",
   ID_HEADER_LMS: "나의 학습",
   CONDITION_IS_PLAYING: "게임이 실행 중인지",
   CONDITION_DID_PLAY_ONCE: "최소 한 번 게임 실행하기",
@@ -1230,6 +1235,7 @@ const ko = {
   ID_LMS_QUEST_CLEAR: "미션 완료",
   ID_LMS_QUEST_DATE: "최근 실행일",
   ID_LMS_QUEST_STUDY_TIME: "학습시간",
+  ID_LMS_QUEST_STUDY_TIME_MIN: "분",
   ID_COURSE_DETAIL_QUEST: "퀘스트",
   ID_COURSE_DETAIL_KEY_COMMAND: "주요 명령어",
   ID_COURSE_DETAIL_PLAY_GAME: "게임 해보기",
@@ -1276,6 +1282,8 @@ const ko = {
   ID_BUILDER_MYPUBLISHED: "퍼블리싱 앱",
   ID_INPUT_PLACEHOLDER: "입력하세요",
   ID_INPUT_POPUP_CANCLE: "취소",
-  ID_INPUT_POPUP_CONFIRM: "확인"
+  ID_INPUT_POPUP_CONFIRM: "확인",
+  ID_COMMENT_TITLE: "댓글",
+  ID_DATE_FORMAT_MIN: "분 전"
 };
 export default ko;

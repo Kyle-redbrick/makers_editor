@@ -2,6 +2,8 @@ import React from "react";
 import { FormattedMessage, injectIntl } from "react-intl";
 import moment from "moment";
 import "moment/locale/ko";
+
+
 import styled from "@emotion/styled";
 
 import IMAGE from "./../Constants/Images";
