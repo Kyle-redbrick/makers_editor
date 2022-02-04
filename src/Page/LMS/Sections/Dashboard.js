@@ -677,6 +677,8 @@ const Dashboard = ({ ...props }) => {
   const [todayCompletedDreamPoint, setTodayCompletedDreamPoint] = useState(0);
 
   useEffect(() => {
+    console.log("useEffect")
+
     init();
   }, []);
 
@@ -837,7 +839,8 @@ const Dashboard = ({ ...props }) => {
             </GraphProgressWrap>
             <CircularWrap>
               {coursesForProgress.map((course) => (
-                <CircularItem key={course.type}>
+                <CircularItem key={course.id}>
+                  {console.log(course)}
                   <CircularProgressBarComponent
                     value={course.progress}
                     color={renderTypeColor(course.type)}

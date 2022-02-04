@@ -156,8 +156,12 @@ const LnbLinkComponent = memo(({ active, icon, link, title, isMobile, isLmsMobil
   );
 });
 
-const Lnb = ({ path, fixed, isMobile, isLmsMobileMenuOn, onClickLmsMobileMenu, ...props }) => {
+const Lnb = ({ path, fixed, isMobile, isLmsMobileMenuOn, onClickLmsMobileMenu, coursesProgress, ...props }) => {
   let { id } = useParams();
+
+  const onclickAutBtn = (course) => {
+    console.log(course)
+  }
 
   return (
     <Self {...props}>
@@ -247,7 +251,25 @@ const Lnb = ({ path, fixed, isMobile, isLmsMobileMenuOn, onClickLmsMobileMenu, .
             onClickLmsMobileMenu={onClickLmsMobileMenu}
           />
         </Group>
+        
       </LnbWrap>
+      
+      <Br />
+      <Br />
+
+      <LnbWrap>
+        <Group>
+          {
+            coursesProgress.map(
+              (course) => { 
+                if(course.progress==100){
+                  return <button key={course.id} onClick={onclickAutBtn}>{course.title}</button> 
+                }
+              }
+            )
+          }
+        </Group>
+       </LnbWrap>
     </Self>
   );
 };

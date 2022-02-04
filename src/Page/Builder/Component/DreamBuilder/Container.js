@@ -182,6 +182,9 @@ class Container extends Component {
     }, 2000);
   }
   alertProjectClear() {
+
+    console.log(this.props)
+
     setTimeout(() => {
       showPopUp(
         <ProjectClearPopUp
@@ -193,15 +196,17 @@ class Container extends Component {
             }
           }}
           onClickConfirm={() => {
-            if (this.props.isReplaying) {
-              if (this.props.myProject.developing.isDeleted) {
-                this.createDeveloping(this.linkToDeveloping);
-              } else {
-                this.linkToDeveloping(this.props.myProject.developing);
-              }
-            } else {
-              this.createDeveloping(this.linkToDeveloping);
-            }
+            // if (this.props.isReplaying) {
+            //   if (this.props.myProject.developing.isDeleted) {
+            //     this.createDeveloping(this.linkToDeveloping);
+            //   } else {
+            //     this.linkToDeveloping(this.props.myProject.developing);
+            //   }
+            // } else {
+            //   this.createDeveloping(this.linkToDeveloping);
+            // }
+            this.props.history.replace(`/lms`);
+
           }}
         />,
         {
