@@ -16,7 +16,7 @@
   .wizappDetail__inner {
     position: relative;
     top: 50px;
-    height: 62%;
+    height: 835px;
     width: 770px;
     padding: 20px;
     display: flex;
@@ -24,7 +24,7 @@
     align-items: center;
     background-color: #1c1c1c;
     box-shadow: 0 20px 50px 0 rgba(0, 0, 0, 0.5);
-    overflow-y: auto;
+    overflow-y: hidden;
     border-radius: 16px;
   }
 
