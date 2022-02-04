@@ -62,7 +62,8 @@ const Widget = styled.div`
   display: flex;
   flex-direction: column;
 
-  ${(props) => props.height == 3 && `height: 460px;`}
+  ${(props) => props.height && `height: ${props.height}px;`}
+
 
   ${(props) => props.graph &&
     `
@@ -453,6 +454,7 @@ const RecommendArrowIcon = styled.img`
 
 const GraphProgressWrap = styled.div`
   width: 311.5px;
+  height: 460px;
   padding: 20px;
 
   @media screen and (max-width: 1169px) {
@@ -763,7 +765,7 @@ const Dashboard = ({ ...props }) => {
           </Widget>
         </Col>
         <Col col={1}>
-          <Widget height={props.isMobile ? "auto" : 290}>
+          <Widget height={props.isMobile ? "auto" : 296}>
             <WidgetTitle><FormattedMessage id="ID_DREAM_LMS_TODAY_GOAL" /></WidgetTitle>
             <WidgetBody>
               {todayQuests.length ? (
@@ -825,7 +827,7 @@ const Dashboard = ({ ...props }) => {
           </StyledLink>
         </Col>
         <Col>
-          <Widget graph height={props.isMobile ? "auto" : 220}>
+          <Widget graph height={props.isMobile ? "auto" : 460}>
             <GraphProgressWrap>
               <WidgetTitle><FormattedMessage id="ID_DREAM_LMS_TODAY_GOAL_GRAPH" /></WidgetTitle>
               <WidgetBody>
