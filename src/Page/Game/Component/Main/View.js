@@ -9,7 +9,6 @@ import badgeJsShadow from "../../../../Image/dreamclass/badge-js-shadow@2x.png";
 import badgePuzzleShadow from "../../../../Image/dreamclass/badge-oobc-shadow@2x.png";
 import likeIcon from "../../../../Image/dreamclass/play-likes-icon.svg";
 import viewIcon from "../../../../Image/dreamclass/play-views-icon.svg";
-import commentIcon from "../../../../Image/dreamclass/play-comments-icon.svg";
 import "./index.scss";
 
 const editorsProjectsSettings = {
@@ -195,8 +194,6 @@ const GameItem = props => {
           <div className="GameItemCount">{props.likeCount}</div>
           <img className="GameItemCountImg" src={viewIcon} alt="count icon" />
           <div className="GameItemCount">{props.viewCount}</div>
-          <img className="GameItemCountImg" src={commentIcon} alt="count icon" />
-          <div className="GameItemCount">{props.commentCount}</div>
         </div>
       </div>
     </Link>
