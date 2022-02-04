@@ -2,6 +2,9 @@ import React, { memo } from "react";
 import { Link, useParams } from "react-router-dom";
 import { FormattedMessage } from "react-intl";
 import styled from "@emotion/styled";
+import { showPopUp } from "../../../Common/Component/PopUp"
+import CertificateForm from "../PopUp/CertificateForm";
+
 
 import { COLOR, PAGE, renderCurrentPage } from "./../Constants";
 import { IMAGE } from "./../Constants/Images";
