@@ -1,7 +1,6 @@
 import React from "react";
 import { injectIntl } from "react-intl";
 import "./index.scss"
-import Certificate from "../Certificate";
 import { showPopUp } from "../../../../Common/Component/PopUp";
 // import * as request from "../../../../Common/Util/HTTPRequest";
 import clearImg from "../../../../Image/quest-clear-img-astroboy.svg"
