@@ -6,6 +6,9 @@ import { showPopUp } from "../../../Common/Component/PopUp";
 import html2canvas from "html2canvas";
 import { OCPGame } from "../../Util/Constant";
 
+import backgroundImage from "../../../Image/certificate-bg.png";
+
+
 class Container extends Component {
   printCertificate() {
     const html = document.querySelector("html");
@@ -62,22 +65,26 @@ class Container extends Component {
         <div className="OCPCertification">
           <img
             className="OCPCertificationImg"
-            src={OCPGame[type].itemInfo[grade].certificationImg}
+            src={backgroundImage}//{OCPGame[type].itemInfo[grade].certificationImg}
             alt="certificationImg"
           />
           <div className="OCPCertificationTexts">
             <div className="OCPCertificationTexts_titleWrap">
               <div className="OCPCertificationTexts_tw-title">
-                {`${OCPGame[type].title} ${
-                  type === "game"
-                    ? "텍스트코딩"
-                    : type === "block"
-                    ? "블록코딩"
-                    : ""
-                }`}
+                {
+                  // `${OCPGame[type].title} ${
+                  //   type === "game"
+                  //     ? "텍스트코딩"
+                  //     : type === "block"
+                  //     ? "블록코딩"
+                  //     : ""
+                  // }`
+                  "hello"
+                }
               </div>
               <div className="OCPCertificationTexts_tw-missionTitle">
-                {OCPGame[type].itemInfo[grade].title}
+                {/* {OCPGame[type].itemInfo[grade].title} */}
+                hello
               </div>
             </div>
             <div className="OCPCertificationTextOrgName">

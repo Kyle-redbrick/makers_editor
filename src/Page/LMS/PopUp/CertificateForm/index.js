@@ -6,11 +6,14 @@ import { showPopUp } from "../../../../Common/Component/PopUp";
 // import * as request from "../../../../Common/Util/HTTPRequest";
 import clearImg from "../../../../Image/quest-clear-img-astroboy.svg"
 
+import Print from "../../../../Common/Component/OCPCertification";
+
+
 function CertificateForm(props) {
 
   const alertCertificate = () => {
     showPopUp(
-      <Certificate
+      <Print 
 
       />, {
       dismissButton: false,
