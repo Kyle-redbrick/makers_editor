@@ -139,6 +139,112 @@ const Title = styled.div`
     display: none;
   }
 `
+const CertWrap = styled.div`
+  position: relative;
+  margin-top: 16px;
+
+  @media screen and (max-width: 1169px) {
+    position: absolute;
+    background-color: #181818;
+    border-radius: 10px;
+    padding: 0;
+    box-shadow: 0 20px 50px 0 rgba(0, 0, 0, 0.5);
+    z-index: 10;
+    width: 88.33vw;
+    overflow: hidden;
+    left: 50%;
+    transform: translateX(-50%);
+
+    ${(props) => props.isMobile && `
+      &::before {
+        content: '';
+        position: absolute;
+        top: 15px;
+        right: 21px;
+        width: 20px;
+        height: 20px;
+        background: url(${IMAGE.ICON_DROPDOWN});
+        pointer-events: none;
+      }
+    `
+    }
+
+    ${(props) => props.isLmsMobileMenuOn && `
+      &::before {
+        transform: rotate(180deg);
+      }
+    `}
+
+    ${(props) => props.fixed && `
+      position: fixed;
+      top: 0;
+      left: 50%;
+
+      heigth: 50px;
+      transform: translateX(-50%);
+    `
+    }
+  }
+`
+
+const CertContainer = styled.div`
+  width: 270px;
+  height: 68px;
+  margin-top: 14px;
+  border-radius: 16px;
+  background: #333333;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+`
+const CertIcon = styled.img`
+  position: relative;
+  left: 18px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+`
+const CatIcon = styled.img`
+  position: absolute;
+  top: 10px;
+  right: 10px;
+`
+const CertGrade = styled.div`
+  position: absolute;
+  left:56px;
+  top:11px;
+  font-family: Noto Sans KR;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 22px;
+  color: rgba(255, 255, 255, 0.5);
+`
+
+const CertDesc = styled.div`
+  position: absolute;
+  left:56px;
+  bottom:12px;
+  font-family: Noto Sans KR;
+  font-size: 14px;
+  line-height: 22px;
+  color: #FFFFFF;
+`
+
+const CartButton = ({ course, onclickCertBtn }) => {
+  return (
+    <CertContainer onClick={onclickCertBtn}>
+      <CertIcon src={IMAGE.ICON_CERT }/>
+      <CertGrade>{course.title}</CertGrade>
+      <CertDesc>Get your certificate Now!</CertDesc>
+      <CatIcon  src={course.type=="javascript" ? IMAGE.ICON_CERT_JS : IMAGE.ICON_CERT_BLOCK }/>
+    </CertContainer>
+  )
+}
+
 
 const LnbLinkComponent = memo(({ active, icon, link, title, isMobile, isLmsMobileMenuOn, onClickLmsMobileMenu }) => {
   if (isMobile) {
@@ -162,7 +268,7 @@ const LnbLinkComponent = memo(({ active, icon, link, title, isMobile, isLmsMobil
 const Lnb = ({ path, fixed, isMobile, isLmsMobileMenuOn, onClickLmsMobileMenu, coursesProgress, ...props }) => {
   let { id } = useParams();
 
-  const onclickAutBtn = (course) => {
+  const onclickCertBtn = (course) => {
     console.log(course)
     showPopUp(
       <CertificateForm
@@ -272,22 +378,22 @@ const Lnb = ({ path, fixed, isMobile, isLmsMobileMenuOn, onClickLmsMobileMenu, c
         
       </LnbWrap>
       
-      <Br />
-      <Br />
-
-      <LnbWrap>
-        <Group>
+      <CertWrap isMobile={isMobile} fixed={fixed} isLmsMobileMenuOn={isLmsMobileMenuOn}>
           {
             coursesProgress.map(
               (course) => { 
-                if(course.progress==100){
-                  return <button key={course.id} onClick={onclickAutBtn}>{course.title}</button> 
+                if(course.progress == 100){
+                  return <CartButton
+                    key={course.id}
+                    onclickCertBtn={onclickCertBtn}
+                    course={course}>
+                </CartButton>
                 }
               }
             )
           }
-        </Group>
-       </LnbWrap>
+
+       </CertWrap>
     </Self>
   );
 };

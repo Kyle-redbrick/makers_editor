@@ -1,4 +1,4 @@
-import React from "react";
+import React,{ useRef } from "react";
 import { injectIntl } from "react-intl";
 import "./index.scss"
 import { showPopUp } from "../../../../Common/Component/PopUp";
@@ -10,10 +10,14 @@ import Print from "../../../../Common/Component/OCPCertification";
 
 function CertificateForm(props) {
 
+  const nameInput = useRef("")
+  const classInput = useRef("")
+
   const alertCertificate = () => {
     showPopUp(
       <Print 
-
+        name={nameInput.current.value}
+        class={classInput.current.value}
       />, {
       dismissButton: false,
       defaultPadding: false
@@ -30,13 +34,13 @@ function CertificateForm(props) {
 
       <div className="questClear_certificate_form">
         <div className="questClear_certificate_row">
-          <label for="certificate_name" className="questClear_certificate_label">Name</label>
-          <input type="text" id="certificate_name" className="questClear_certificate_field">
+          <label htmlFor="certificate_name" className="questClear_certificate_label">Name</label>
+          <input type="text" id="certificate_name" className="questClear_certificate_field" ref={nameInput}>
           </input>
         </div>
         <div className="questClear_certificate_row">
-          <label for="certificate_class" className="questClear_certificate_label">Class</label>
-          <input type="text" id="certificate_class" className="questClear_certificate_field">
+          <label htmlFor="certificate_class" className="questClear_certificate_label">Class</label>
+          <input type="text" id="certificate_class" className="questClear_certificate_field" ref={classInput}>
           </input>
         </div>
       </div>
@@ -54,7 +58,6 @@ function CertificateForm(props) {
         <button
           className="popup_button"
           onClick={() => {
-            console.log(3333, props);
             alertCertificate(props);
             if (props.onClickSubmit) props.onClickSubmit();
             if (props.dismiss) props.dismiss();

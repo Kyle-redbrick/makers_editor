@@ -4,12 +4,17 @@ import moment from "moment";
 import "./index.scss";
 import { showPopUp } from "../../../Common/Component/PopUp";
 import html2canvas from "html2canvas";
-import { OCPGame } from "../../Util/Constant";
+//import { OCPGame } from "../../Util/Constant";
 
 import backgroundImage from "../../../Image/certificate-bg.png";
 
 
 class Container extends Component {
+  constructor(props) {
+    super(props);
+    console.log(props)
+  }
+
   printCertificate() {
     const html = document.querySelector("html");
     const printContents = document.querySelector(".OCPCertification").innerHTML;
@@ -18,11 +23,11 @@ class Container extends Component {
     html.appendChild(printDiv);
     printDiv.innerHTML = printContents;
     document.body.style.display = "none";
-    document.title = "온라인코딩파티 with 위즈랩";
+    //document.title = "온라인코딩파티 with 위즈랩";
     window.print();
     document.body.style.display = "block";
     printDiv.style.display = "none";
-    document.title = "위즈랩";
+    //document.title = "위즈랩";
     if (this.props.callback) this.props.callback();
     showPopUp(null);
   }
@@ -43,13 +48,7 @@ class Container extends Component {
     //TODO 다운로드 파일 타입 이름 변경
     downloadLink.setAttribute(
       "download",
-      `코딩파티인증서_${
-        this.props.type === "escape"
-          ? "방탈출"
-          : this.props.type === "game"
-          ? "게임개발자"
-          : "게임개발자 - 블록"
-      }_${this.props.grade}_${this.props.name}.png`
+      `download.png`
     );
     downloadLink.setAttribute("href", imgURL);
     downloadLink.click();
@@ -71,28 +70,18 @@ class Container extends Component {
           <div className="OCPCertificationTexts">
             <div className="OCPCertificationTexts_titleWrap">
               <div className="OCPCertificationTexts_tw-title">
-                {
-                  // `${OCPGame[type].title} ${
-                  //   type === "game"
-                  //     ? "텍스트코딩"
-                  //     : type === "block"
-                  //     ? "블록코딩"
-                  //     : ""
-                  // }`
-                  "hello"
-                }
+                {this.props.name}
               </div>
               <div className="OCPCertificationTexts_tw-missionTitle">
-                {/* {OCPGame[type].itemInfo[grade].title} */}
-                hello
+                {this.props.class}
               </div>
             </div>
             <div className="OCPCertificationTextOrgName">
-              <div className="OCPCertificationText_School">{organization}</div>
+              <div className="OCPCertificationText_School">Is awarded with this certificate for successfully fulfilling requirements of Elementary Block Coding, a software education course offered by iGroup, and completing 5 projects utilizing Event, Sequence, Physical Engine.</div>
               <div className="OCPCertificationText_Name">{name}</div>
             </div>
             <div className="OCPCertificationText_Date">
-              {moment().format("YYYY년 M월 DD일")}
+              {moment().format('YYYY MM DD')}
             </div>
           </div>
         </div>
@@ -102,14 +91,14 @@ class Container extends Component {
             className="OCPCertificationContainerTool OCPCertificationPrint"
             onClick={() => this.downloadCertificate()}
           >
-            다운로드
+            Download
           </div>
 
           <div
             className="OCPCertificationContainerTool OCPCertificationPrint"
             onClick={() => this.printCertificate()}
           >
-            인쇄하기
+            Print
           </div>
         </div>
       </div>

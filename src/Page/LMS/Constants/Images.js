@@ -23,6 +23,9 @@ import iconSetting from "../../../Image/lms/icon-setting.svg"
 import iconEdit from "../../../Image/lms/icon-edit.svg";
 import iconTrash from "../../../Image/lms/icon-trash.svg";
 import iconRank from "../../../Image/lms/icon-ranking.svg"
+import iconCert from "../../../Image/lms/icon-certificate.svg"
+import iconCertBlock from "../../../Image/lms/icon-cert-block.svg"
+import iconCertJs from "../../../Image/lms/icon-cert-js.svg"
 
 import iconStar1 from "../../../Image/lms/icon-star-1.svg";
 import iconStar2 from "../../../Image/lms/icon-star-2.svg";
@@ -85,6 +88,10 @@ export const IMAGE = {
   ICON_EDIT: iconEdit,
   ICON_TRASH: iconTrash,
   ICON_RANK: iconRank,
+  ICON_CERT:iconCert,
+  ICON_CERT_BLOCK:iconCertBlock,
+  ICON_CERT_JS:iconCertJs,
+
 
   ICON_STAR_1: iconStar1,
   ICON_STAR_2: iconStar2,

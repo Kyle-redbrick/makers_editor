@@ -4,8 +4,8 @@
   }
   //tools
   .OCPCertificationContainerTools {
-    float: right;
     display: flex;
+    float: right;
   }
   .OCPCertificationContainerTools:after {
     content: "";
@@ -15,7 +15,7 @@
   .OCPCertificationPrint {
     padding: 15px;
     font-size: 18px;
-    background-color: #1db6ff;
+    background-color: #4313AB;
     color: white;
     margin-top: 20px;
     width: 150px;
@@ -23,13 +23,14 @@
     cursor: pointer;
     margin-right: 10px;
     margin-left: 10px;
+    border-radius: 50px;
   }
 
   // img
   .OCPCertificationImg {
     display: block;
-    width: 877px;
-    height: 619px;
+    width: 909px;
+    height: 583px;
     object-fit: contain;
   }
   .OCPCertificationTexts {
