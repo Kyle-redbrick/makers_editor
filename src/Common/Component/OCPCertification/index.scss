@@ -5,7 +5,8 @@
   //tools
   .OCPCertificationContainerTools {
     display: flex;
-    float: right;
+    // justify-content: center;
+    float: left;
   }
   .OCPCertificationContainerTools:after {
     content: "";
@@ -18,7 +19,7 @@
     background-color: #4313AB;
     color: white;
     margin-top: 20px;
-    width: 150px;
+    width: 162px;
     text-align: center;
     cursor: pointer;
     margin-right: 10px;
@@ -42,49 +43,47 @@
     color: #434343;
     font-family: "Noto Sans KR", sans-serif;
   }
-
-  .OCPCertificationTexts_titleWrap {
-    position: absolute;
-    top: 60px;
-    left: 60px;
-  }
-
-  .OCPCertificationTexts_tw-title {
-    color: #f1948a;
-    font-weight: bold;
-    font-size: 25px;
-  }
-
-  .OCPCertificationTexts_tw-missionTitle {
-    font-size: 16px;
-    font-weight: 500;
-  }
-
+  
   .OCPCertificationTextOrgName {
     display: flex;
+    flex-direction: column;
     align-items: center;
     position: absolute;
-    top: 270px;
+    top: 245px;
     left: 50%;
     transform: translateX(-50%);
   }
   .OCPCertificationText_School {
-    // border: 1px solid red;
-    margin-right: 20px;
-    font-size: 18px;
-    font-weight: bold;
+    margin-top: 18px;
+    font-family: Poppins;
+    font-size: 15px;
+    line-height: 24px;    
+    text-align: center;
+    color: #484848;
   }
   .OCPCertificationText_Name {
-    font-size: 26px;
-    font-weight: bold;
-    letter-spacing: 10px;
+    font-family: Alex Brush;
+    font-size: 60px;
+    line-height: 75px;
+    text-align: center;
+    color: #1D1D1B;
   }
+
+  .OCPCertificationText_Class {
+    font-family: CookieRunOTF;
+    font-size: 18px;
+    line-height: 24px;
+    text-align: center;
+    color: #1D1D1B;
+  }
+
   .OCPCertificationText_Date {
-    position: absolute;
-    top: 450px;
-    left: 372px;
-    font-size: 16px;
-    letter-spacing: 1.4px;
+    margin-top: 50px;
+    font-family: CookieRunOTF;
+    font-size: 20px;
+    line-height: 27px;
+    text-align: center;
+    color: #1D1D1B;
   }
 }
 

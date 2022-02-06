@@ -4,7 +4,6 @@ import moment from "moment";
 import "./index.scss";
 import { showPopUp } from "../../../Common/Component/PopUp";
 import html2canvas from "html2canvas";
-//import { OCPGame } from "../../Util/Constant";
 
 import backgroundImage from "../../../Image/certificate-bg.png";
 
@@ -23,11 +22,10 @@ class Container extends Component {
     html.appendChild(printDiv);
     printDiv.innerHTML = printContents;
     document.body.style.display = "none";
-    //document.title = "온라인코딩파티 with 위즈랩";
+    //document.title = "wizclass";
     window.print();
     document.body.style.display = "block";
     printDiv.style.display = "none";
-    //document.title = "위즈랩";
     if (this.props.callback) this.props.callback();
     showPopUp(null);
   }
@@ -64,40 +62,27 @@ class Container extends Component {
         <div className="OCPCertification">
           <img
             className="OCPCertificationImg"
-            src={backgroundImage}//{OCPGame[type].itemInfo[grade].certificationImg}
+            src={backgroundImage}
             alt="certificationImg"
           />
           <div className="OCPCertificationTexts">
-            <div className="OCPCertificationTexts_titleWrap">
-              <div className="OCPCertificationTexts_tw-title">
-                {this.props.name}
-              </div>
-              <div className="OCPCertificationTexts_tw-missionTitle">
-                {this.props.class}
-              </div>
-            </div>
+ 
             <div className="OCPCertificationTextOrgName">
+              <div className="OCPCertificationText_Name">{this.props.name}</div>
+              <div className="OCPCertificationText_Class">{this.props.class}</div>
               <div className="OCPCertificationText_School">Is awarded with this certificate for successfully fulfilling requirements of Elementary Block Coding, a software education course offered by iGroup, and completing 5 projects utilizing Event, Sequence, Physical Engine.</div>
-              <div className="OCPCertificationText_Name">{name}</div>
-            </div>
-            <div className="OCPCertificationText_Date">
-              {moment().format('YYYY MM DD')}
+              <div className="OCPCertificationText_Date">
+                {moment().format('YYYY MM DD')}
+              </div>
             </div>
           </div>
         </div>
 
         <div className="OCPCertificationContainerTools">
-          <div
-            className="OCPCertificationContainerTool OCPCertificationPrint"
-            onClick={() => this.downloadCertificate()}
-          >
+          <div className="OCPCertificationPrint" onClick={(e) => this.downloadCertificate(e)}>
             Download
           </div>
-
-          <div
-            className="OCPCertificationContainerTool OCPCertificationPrint"
-            onClick={() => this.printCertificate()}
-          >
+          <div className="OCPCertificationPrint" onClick={(e) => this.printCertificate(e)}>
             Print
           </div>
         </div>
