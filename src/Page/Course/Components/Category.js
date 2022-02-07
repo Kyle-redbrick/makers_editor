@@ -14,6 +14,9 @@ const Self = styled.div`
   letter-spacing: 0.38px;
   text-align: center;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+
 
   &:not(:last-child) {
     margin-right: 10px;

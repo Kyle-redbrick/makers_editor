@@ -1,7 +1,9 @@
 .Page--BUILDER {
   .Header {
     position: relative;
-    height: 32px;
+    height: 60px;
+    display: flex;
+    align-items: center;
     z-index: 5;
     background: var(--W_HeaderBG);
     color: var(--W_HeaderTitle);
@@ -12,7 +14,7 @@
     margin-left: 22px;
   }
   .HeaderRight {
-    float: right;
+    margin-left: auto;
   }
   .HeaderProjectItems {
     display: flex;

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { injectIntl } from "react-intl";
+import { FormattedMessage, injectIntl } from "react-intl";
 import onClickOutside from "react-onclickoutside";
 import { SketchPicker } from "react-color";
 import { Picker } from "emoji-mart";
@@ -182,7 +182,9 @@ class TextEditor extends Component {
     return (
       <div className="TextEditor">
         <div className="TextEditor__row row__top">
-          <div className="title">텍스트상자</div>
+          <div className="title">
+            <FormattedMessage id="ID_TEXT_BOX_TITLE" />
+          </div>
           <img
             src={colorTheme === "darkMode" ? closeImg_darkmode : closeImg}
             alt="img"
@@ -334,10 +336,12 @@ class TextEditor extends Component {
         <div className="TextEditor__bottom">
           {!isUploading ? (
             <button className="applyBtn" onClick={handleApply}>
-              적용하기
+              <FormattedMessage id="ID_WIZLAB_DRAWING_SAVE" />
             </button>
           ) : (
-            <button className="applyBtn off">적용중입니다.</button>
+            <button className="applyBtn off">
+              <FormattedMessage id="ID_WIZLAB_DRAWING_SAVING" />
+            </button>
           )}
         </div>
       </div>
