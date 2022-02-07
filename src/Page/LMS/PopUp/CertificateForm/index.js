@@ -16,6 +16,7 @@ function CertificateForm(props) {
   const alertCertificate = () => {
     showPopUp(
       <Print 
+        course={props.course}
         name={nameInput.current.value}
         class={classInput.current.value}
       />, {
@@ -27,7 +28,7 @@ function CertificateForm(props) {
   return (
     <div className="dream_projectClear">
       <img className="dream_projectClear_image" src={clearImg} alt="clear" />
-      <p className="popup_title">{props.intl.formatMessage({ id: "ID_DREAM_BUILDER_QUEST_CLEAR" })}</p>
+      <p className="popup_title">{props.intl.formatMessage({ id: "ID_DREAM_BUILDER_COURSE_CLEAR" })}</p>
       <div className="popup_subtitle">
         {props.intl.formatMessage({ id: "ID_DREAM_BUILDER_QUEST_CLEAR_SUBTITLE" })}
       </div>
@@ -53,7 +54,7 @@ function CertificateForm(props) {
             if (props.dismiss) props.dismiss();
           }}
         >
-          {props.intl.formatMessage({ id: "ID_DREAM_BUILDER_QUEST_CLEAR_CANCEL_BUTTON" })}
+          {props.intl.formatMessage({ id: "ID_DREAM_BUILDER_COURSE_CLEAR_CANCEL_BUTTON" })}
         </button>
         <button
           className="popup_button"
@@ -63,7 +64,7 @@ function CertificateForm(props) {
             if (props.dismiss) props.dismiss();
           }}
         >
-          {props.intl.formatMessage({ id: "ID_DREAM_BUILDER_QUEST_CLEAR_CONFIRM_BUTTON" })}
+          {props.intl.formatMessage({ id: "ID_DREAM_BUILDER_COURSE_CLEAR_SUBMIT_BUTTON" })}
         </button>
       </div>
     </div>

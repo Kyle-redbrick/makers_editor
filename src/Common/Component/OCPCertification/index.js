@@ -6,12 +6,40 @@ import { showPopUp } from "../../../Common/Component/PopUp";
 import html2canvas from "html2canvas";
 
 import backgroundImage from "../../../Image/certificate-bg.png";
-
+import { injectIntl } from "react-intl";
 
 class Container extends Component {
   constructor(props) {
     super(props);
-    console.log(props)
+    this.state = {
+      certDesc: ""
+    };
+  }
+
+  componentDidMount() {
+    this.setCertDesc(this.props.course.id)
+  }
+
+  setCertDesc(id) {
+    switch (id) {
+      case 1:
+        this.setState({ certDesc: this.props.intl.formatMessage({ id: "ID_CERT_ELEMENTARY_BLOCK_DESC" }) });
+        break;
+      case 4:
+        this.setState({certDesc: this.props.intl.formatMessage({ id: "ID_CERT_BASIC_BLOCK_DESC" })});
+        break;
+      case 5:
+        this.setState({certDesc: this.props.intl.formatMessage({ id: "ID_CERT_ADVANCED_BLOCK_DESC" })});
+        break;
+      case 6:
+        this.setState({certDesc: this.props.intl.formatMessage({ id: "ID_CERT_ADVANCED_JS_DESC" })});
+        break;
+      case 7:
+        this.setState({certDesc: this.props.intl.formatMessage({ id: "ID_CERT_MASTERY_JS_DESC" })});
+        break;
+      default:
+        break;
+    }
   }
 
   printCertificate() {
@@ -70,7 +98,7 @@ class Container extends Component {
             <div className="OCPCertificationTextOrgName">
               <div className="OCPCertificationText_Name">{this.props.name}</div>
               <div className="OCPCertificationText_Class">{this.props.class}</div>
-              <div className="OCPCertificationText_School">Is awarded with this certificate for successfully fulfilling requirements of Elementary Block Coding, a software education course offered by iGroup, and completing 5 projects utilizing Event, Sequence, Physical Engine.</div>
+              <div className="OCPCertificationText_School">{this.state.certDesc}</div>
               <div className="OCPCertificationText_Date">
                 {moment().format('YYYY MM DD')}
               </div>
@@ -93,4 +121,4 @@ class Container extends Component {
 
 export default connect(state => ({
   email: state.userinfo.email
-}))(Container);
+}))(injectIntl(Container));

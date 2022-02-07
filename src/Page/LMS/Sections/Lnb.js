@@ -236,7 +236,7 @@ const CertDesc = styled.div`
 
 const CartButton = ({ course, onclickCertBtn }) => {
   return (
-    <CertContainer onClick={onclickCertBtn}>
+    <CertContainer onClick={()=> onclickCertBtn(course)}>
       <CertIcon src={IMAGE.ICON_CERT }/>
       <CertGrade>{course.title}</CertGrade>
       <CertDesc>Get your certificate Now!</CertDesc>
@@ -269,10 +269,9 @@ const Lnb = ({ path, fixed, isMobile, isLmsMobileMenuOn, onClickLmsMobileMenu, c
   let { id } = useParams();
 
   const onclickCertBtn = (course) => {
-    console.log(course)
     showPopUp(
       <CertificateForm
-        // it={formData.it}
+      course={course}
         // stem={formData.stem}
         // sdg={formData.sdg}
         // certificate={formData.certificate}

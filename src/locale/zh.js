@@ -1157,6 +1157,9 @@ const zh = {
   ID_DREAM_BUILDER_MISSION_CLEAR_SUBTITLE: `做得真棒!\n让我们继续完成下一个任务吧!`,
   ID_DREAM_BUILDER_MISSION_CLEAR_CANCEL_BUTTON: "留在此任务",
   ID_DREAM_BUILDER_MISSION_CLEAR_CONFIRM_BUTTON: "下一个任务",
+  ID_DREAM_BUILDER_COURSE_CLEAR: "COURSE CLEAR",
+  ID_DREAM_BUILDER_COURSE_CLEAR_CANCEL_BUTTON: "Cancel",
+  ID_DREAM_BUILDER_COURSE_CLEAR_SUBMIT_BUTTON: "Submit",
   ID_DREAM_BUILDER_QUEST_CLEAR: "QUEST CLEAR",
   ID_DREAM_BUILDER_QUEST_CLEAR_SUBTITLE: `恭喜您！已成功完成所有任务。\n请添加更多创意，制作出专属属于你的精彩游戏吧!`,
   ID_DREAM_BUILDER_QUEST_CLEAR_CANCEL_BUTTON: "留在此任务",
@@ -1285,5 +1288,12 @@ const zh = {
   ID_INPUT_POPUP_CONFIRM: "确认",
   ID_COMMENT_TITLE: "댓글",
   ID_DATE_FORMAT_MIN: "minutes ago",
+
+  ID_CERT_ELEMENTARY_BLOCK_DESC:"is awarded with this certificate for successfully fulfilling requirements of Elementary Block Coding, a software education course offered by iGroup, and completing 5 projects utilizing Event, Sequence, Physical Engine.",
+  ID_CERT_BASIC_BLOCK_DESC:"is awarded with this certificate for successfully fulfilling requirements of Basic Block Coding, a software education course offered by iGroup, and completing 15 projects utilizing Event, Sequence, Physical Engine, Variable, and Conditional Statement.",
+  ID_CERT_ADVANCED_BLOCK_DESC:"is awarded with this certificate for successfully fulfilling requirements of Advanced Block Coding, a software education course offered by iGroup, and completing 4 projects utilizing Pysical Engine,  Variable,  Conditional Statement, Clone, and Loop.",
+  ID_CERT_ADVANCED_JS_DESC:"is awarded with this certificate for successfully fulfilling requirements of Advanced JavaScript, a software education course offered by iGroup, and completing 8 projects utilizing Event, Sequence, Physical Engine, Random Number,  Varibale, Conditional Statement, and Operator.",
+  ID_CERT_MASTERY_JS_DESC:"is awarded with this certificate for successfully fulfilling requirements of JavaScript Mastery, a software education course offered by iGroup, and completing 4 projects utilizing Random Number, Variable, Conditional Statement, Operator, List, Index,  Loop, and Function.",
+  
 };
 export default zh;

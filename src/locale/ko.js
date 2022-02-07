@@ -1157,6 +1157,9 @@ const ko = {
   ID_DREAM_BUILDER_MISSION_CLEAR_SUBTITLE: `멋지게 해내셨어요!\n이대로 끝까지 달려 볼까요?`,
   ID_DREAM_BUILDER_MISSION_CLEAR_CANCEL_BUTTON: "머무르기",
   ID_DREAM_BUILDER_MISSION_CLEAR_CONFIRM_BUTTON: "다음 미션",
+  ID_DREAM_BUILDER_COURSE_CLEAR: "COURSE CLEAR",
+  ID_DREAM_BUILDER_COURSE_CLEAR_CANCEL_BUTTON: "Cancel",
+  ID_DREAM_BUILDER_COURSE_CLEAR_SUBMIT_BUTTON: "Submit",
   ID_DREAM_BUILDER_QUEST_CLEAR: "QUEST CLEAR",
   ID_DREAM_BUILDER_QUEST_CLEAR_SUBTITLE: `축하합니다! 모든 미션에 성공했어요.\n아이디어를 추가해서 여러분만의 멋진 게임을 만들어 보세요!`,
   ID_DREAM_BUILDER_QUEST_CLEAR_CANCEL_BUTTON: "머무르기",
@@ -1284,6 +1287,13 @@ const ko = {
   ID_INPUT_POPUP_CANCLE: "취소",
   ID_INPUT_POPUP_CONFIRM: "확인",
   ID_COMMENT_TITLE: "댓글",
-  ID_DATE_FORMAT_MIN: "분 전"
+  ID_DATE_FORMAT_MIN: "분 전",
+
+  ID_CERT_ELEMENTARY_BLOCK_DESC:"is awarded with this certificate for successfully fulfilling requirements of Elementary Block Coding, a software education course offered by iGroup, and completing 5 projects utilizing Event, Sequence, Physical Engine.",
+  ID_CERT_BASIC_BLOCK_DESC:"is awarded with this certificate for successfully fulfilling requirements of Basic Block Coding, a software education course offered by iGroup, and completing 15 projects utilizing Event, Sequence, Physical Engine, Variable, and Conditional Statement.",
+  ID_CERT_ADVANCED_BLOCK_DESC:"is awarded with this certificate for successfully fulfilling requirements of Advanced Block Coding, a software education course offered by iGroup, and completing 4 projects utilizing Pysical Engine,  Variable,  Conditional Statement, Clone, and Loop.",
+  ID_CERT_ADVANCED_JS_DESC:"is awarded with this certificate for successfully fulfilling requirements of Advanced JavaScript, a software education course offered by iGroup, and completing 8 projects utilizing Event, Sequence, Physical Engine, Random Number,  Varibale, Conditional Statement, and Operator.",
+  ID_CERT_MASTERY_JS_DESC:"is awarded with this certificate for successfully fulfilling requirements of JavaScript Mastery, a software education course offered by iGroup, and completing 4 projects utilizing Random Number, Variable, Conditional Statement, Operator, List, Index,  Loop, and Function.",
+  
 };
 export default ko;

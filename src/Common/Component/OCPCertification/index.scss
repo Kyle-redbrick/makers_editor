@@ -5,14 +5,10 @@
   //tools
   .OCPCertificationContainerTools {
     display: flex;
-    // justify-content: center;
-    float: left;
+    justify-content: center;
+    //float: left;
   }
-  .OCPCertificationContainerTools:after {
-    content: "";
-    display: block;
-    clear: both;
-  }
+
   .OCPCertificationPrint {
     padding: 15px;
     font-size: 18px;
@@ -39,7 +35,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    // height: 100%;
     color: #434343;
     font-family: "Noto Sans KR", sans-serif;
   }
