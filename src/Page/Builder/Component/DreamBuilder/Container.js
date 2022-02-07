@@ -19,7 +19,10 @@ class Container extends Component {
     this.state = {
       shouldSlideRerender: false,
       isTutorialShow: false,
-      isAstroBoyProject: false
+      isAstroBoyProject: false,
+      it: "",
+      stem: "",
+      sdg: ""
     };
   }
   componentDidMount() {
@@ -175,19 +178,33 @@ class Container extends Component {
             this.props.setIsPlaying(false);
             this.props.setCurrentDreamMissionIndex(this.props.currentMissionIndex + 1);
           }}
-        />, { dismissButton: false,
-              defaultPadding: false
-            }
+        />, {
+        dismissButton: false,
+        defaultPadding: false
+      }
       );
     }, 2000);
   }
   alertProjectClear() {
-
-    console.log(this.props)
+    request
+      .getMyDreamProjectInfo(this.props.project.id)
+      .then(res => res.json())
+      .then(json => {
+        this.setState({ it: json.it });
+        this.setState({ stem: json.stem });
+        this.setState({ sdg: json.sdg });
+        this.setState({ certficate: json.certficate });
+        console.log(11111, json);
+        console.log(11111, "after setState", this.state);
+      });
 
     setTimeout(() => {
       showPopUp(
         <ProjectClearPopUp
+          it={this.state.it}
+          stem={this.state.stem}
+          sdg={this.state.sdg}
+          certificate={this.state.certificate}
           onClickCancel={() => {
             if (this.props.isReplaying) {
               window.close();
