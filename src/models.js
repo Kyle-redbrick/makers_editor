@@ -167,6 +167,7 @@ export class Course {
     this.completedProjectNum = 0;
     this.totalProjectNum = 0;
     this.progress = 0
+    this.certIssued = _course.certIssued
 
     this.displayType = 
       _course.localized[0]

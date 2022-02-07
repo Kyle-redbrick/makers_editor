@@ -381,7 +381,7 @@ const Lnb = ({ path, fixed, isMobile, isLmsMobileMenuOn, onClickLmsMobileMenu, c
           {
             coursesProgress.map(
               (course) => { 
-                if(course.progress == 100){
+                if(course.progress == 100 && !course.certIssued){
                   return <CartButton
                     key={course.id}
                     onclickCertBtn={onclickCertBtn}

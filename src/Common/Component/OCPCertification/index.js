@@ -83,6 +83,11 @@ class Container extends Component {
     }
     showPopUp(null);
   }
+
+  async disableCertBtn () {
+
+  }
+
   render() {
     const { name, organization, grade, type } = this.props;
     return (

@@ -1293,11 +1293,11 @@ const ja = {
   ID_COMMENT_TITLE: "コメント",
   ID_DATE_FORMAT_MIN: "minutes ago",
 
-  ID_CERT_ELEMENTARY_BLOCK_DESC:"is awarded with this certificate for successfully fulfilling requirements of Elementary Block Coding, a software education course offered by iGroup, and completing 5 projects utilizing Event, Sequence, Physical Engine.",
-  ID_CERT_BASIC_BLOCK_DESC:"is awarded with this certificate for successfully fulfilling requirements of Basic Block Coding, a software education course offered by iGroup, and completing 15 projects utilizing Event, Sequence, Physical Engine, Variable, and Conditional Statement.",
-  ID_CERT_ADVANCED_BLOCK_DESC:"is awarded with this certificate for successfully fulfilling requirements of Advanced Block Coding, a software education course offered by iGroup, and completing 4 projects utilizing Pysical Engine,  Variable,  Conditional Statement, Clone, and Loop.",
-  ID_CERT_ADVANCED_JS_DESC:"is awarded with this certificate for successfully fulfilling requirements of Advanced JavaScript, a software education course offered by iGroup, and completing 8 projects utilizing Event, Sequence, Physical Engine, Random Number,  Varibale, Conditional Statement, and Operator.",
-  ID_CERT_MASTERY_JS_DESC:"is awarded with this certificate for successfully fulfilling requirements of JavaScript Mastery, a software education course offered by iGroup, and completing 4 projects utilizing Random Number, Variable, Conditional Statement, Operator, List, Index,  Loop, and Function.",
+  ID_CERT_ELEMENTARY_BLOCK_DESC:" (　) あなたは iGroup主催のソフトウェアの教育課程である(　)を修了するためのすべての要求事項を満たし、(　)を活用して(　)個のプロジェクトを自ら完成したため、この修了証を授与いたします。",
+  ID_CERT_BASIC_BLOCK_DESC:" (　) あなたは iGroup主催のソフトウェアの教育課程である(　)を修了するためのすべての要求事項を満たし、(　)を活用して(　)個のプロジェクトを自ら完成したため、この修了証を授与いたします。",
+  ID_CERT_ADVANCED_BLOCK_DESC:" (　) あなたは iGroup主催のソフトウェアの教育課程である(　)を修了するためのすべての要求事項を満たし、(　)を活用して(　)個のプロジェクトを自ら完成したため、この修了証を授与いたします。",
+  ID_CERT_ADVANCED_JS_DESC:" (　) あなたは iGroup主催のソフトウェアの教育課程である(　)を修了するためのすべての要求事項を満たし、(　)を活用して(　)個のプロジェクトを自ら完成したため、この修了証を授与いたします。",
+  ID_CERT_MASTERY_JS_DESC:" (　) あなたは iGroup主催のソフトウェアの教育課程である(　)を修了するためのすべての要求事項を満たし、(　)を活用して(　)個のプロジェクトを自ら完成したため、この修了証を授与いたします。",
   
 };
 export default ja;
