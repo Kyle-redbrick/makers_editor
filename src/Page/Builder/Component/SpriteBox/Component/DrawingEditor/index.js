@@ -4,7 +4,7 @@ import { SketchPicker } from "react-color";
 import DrawingCanvas from "./DrawingCanvas";
 import onClickOutside from "react-onclickoutside";
 import ReactTooltip from "react-tooltip";
-import { injectIntl } from "react-intl";
+import { FormattedMessage, injectIntl } from "react-intl";
 import * as socketActions from "../../../../Store/Reducer/socket";
 import * as sceneActions from "../../../../Store/Reducer/scene";
 // import LoadingPopup from "../../../Common/LoadingPopup";
@@ -361,7 +361,9 @@ class DrawingEditor extends Component {
     return (
       <div className="DrawingEditor">
         <div className="DrawingEditorTitleLine">
-          <div className="DrawingEditorTitle">Paint</div>
+          <div className="DrawingEditorTitle">
+            <FormattedMessage id="ID_DRAWING_EDITOR_TITLE" />
+          </div>
           <div className="DrawingEditorClose">
             <img
               onClick={this.props.dismiss}
@@ -521,10 +523,12 @@ class DrawingEditor extends Component {
           )} */}
           {!isUploading ? (
             <button className="applyBtn" onClick={handleApply}>
-              적용하기
+              <FormattedMessage id="ID_WIZLAB_DRAWING_SAVE" />
             </button>
           ) : (
-            <button className="applyBtn off">적용중입니다.</button>
+            <button className="applyBtn off">
+              <FormattedMessage id="ID_WIZLAB_DRAWING_SAVING" />
+            </button>
           )}
         </div>
       </div>
