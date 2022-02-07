@@ -1,4 +1,4 @@
-import React,{ useRef } from "react";
+import React, { useRef, useState } from "react";
 import { injectIntl } from "react-intl";
 import "./index.scss"
 import { showPopUp } from "../../../../Common/Component/PopUp";
@@ -10,12 +10,29 @@ import Print from "../../../../Common/Component/OCPCertification";
 
 function CertificateForm(props) {
 
+  const [name, setName] = useState("");
+  const [warning, setWarning] = useState("");
+  const [class_name, setClassName] = useState("");
+
   const nameInput = useRef("")
   const classInput = useRef("")
 
+
   const alertCertificate = () => {
+    if (name === "" && class_name === "") {
+      setWarning(props.intl.formatMessage({ id: "ID_CERTIFICATE_ALERT_NAME_CLASS" }));
+      return;
+    }
+    if (name === "") {
+      setWarning(props.intl.formatMessage({ id: "ID_CERTIFICATE_ALERT_NAME" }));
+      return;
+    }
+    if (class_name === "") {
+      setWarning(props.intl.formatMessage({ id: "ID_CERTIFICATE_ALERT_CLASS" }));;
+      return;
+    }
     showPopUp(
-      <Print 
+      <Print
         course={props.course}
         name={nameInput.current.value}
         class={classInput.current.value}
@@ -24,6 +41,8 @@ function CertificateForm(props) {
       dismissButton: false,
       defaultPadding: false
     });
+
+
   }
 
   return (
@@ -37,15 +56,19 @@ function CertificateForm(props) {
       <div className="questClear_certificate_form">
         <div className="questClear_certificate_row">
           <label htmlFor="certificate_name" className="questClear_certificate_label">Name</label>
-          <input type="text" id="certificate_name" className="questClear_certificate_field" ref={nameInput}>
+          <input type="text" id="certificate_name" className="questClear_certificate_field"
+            value={name} onChange={e => setName(e.target.value)} ref={nameInput}>
           </input>
         </div>
+
         <div className="questClear_certificate_row">
           <label htmlFor="certificate_class" className="questClear_certificate_label">Class</label>
-          <input type="text" id="certificate_class" className="questClear_certificate_field" ref={classInput}>
+          <input type="text" id="certificate_class" className="questClear_certificate_field"
+            value={class_name} onChange={e => setClassName(e.target.value)} ref={classInput}>
           </input>
         </div>
       </div>
+      <div className="questClear_warningmsg">{warning}</div>
 
       <div className="popup_buttons">
         <button
@@ -61,8 +84,6 @@ function CertificateForm(props) {
           className="popup_button"
           onClick={() => {
             alertCertificate(props);
-            if (props.onClickSubmit) props.onClickSubmit();
-            if (props.dismiss) props.dismiss();
           }}
         >
           {props.intl.formatMessage({ id: "ID_DREAM_BUILDER_COURSE_CLEAR_SUBMIT_BUTTON" })}
