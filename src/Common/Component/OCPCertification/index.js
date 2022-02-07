@@ -4,6 +4,7 @@ import moment from "moment";
 import "./index.scss";
 import { showPopUp } from "../../../Common/Component/PopUp";
 import html2canvas from "html2canvas";
+import * as request from "../../../Common/Util/HTTPRequest";
 
 import backgroundImage from "../../../Image/certificate-bg.png";
 import { injectIntl } from "react-intl";
@@ -56,6 +57,7 @@ class Container extends Component {
     printDiv.style.display = "none";
     if (this.props.callback) this.props.callback();
     showPopUp(null);
+    this.disableCertBtn()
   }
 
   async downloadCertificate() {
@@ -82,10 +84,14 @@ class Container extends Component {
       this.props.callback();
     }
     showPopUp(null);
+    this.disableCertBtn()
   }
 
   async disableCertBtn () {
+    const isShowCert = await request.addCertificateInfo({courseId:this.props.course.id,name:this.props.name, userClass:this.props.class})
+    console.log("isShowCert",isShowCert ,{courseId:this.props.course.id,name:this.props.name, userClass:this.props.class})
 
+    //courseId
   }
 
   render() {
