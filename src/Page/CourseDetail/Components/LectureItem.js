@@ -269,7 +269,7 @@ const Tag = styled.div`
   color: #fff;
   padding: 0 5px;
   margin-right: 5px;
-  height: 18px;
+  height: 25px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -315,11 +315,10 @@ const LectureItem = ({ item, ...props }) => {
     [GamePopup, Popup.showPopUp]
   );
 
-  const progressText = `${
-    item.completedMissionNum > item.totalMissionNum
+  const progressText = `${item.completedMissionNum > item.totalMissionNum
       ? item.totalMissionNum
       : item.completedMissionNum
-  }/${item.totalMissionNum}`
+    }/${item.totalMissionNum}`
 
   return (
     <Self {...props}>
@@ -356,12 +355,12 @@ const LectureItem = ({ item, ...props }) => {
             </PlayButton>
           )}
           {item.completed ? (
-            <LearnAgain completed id={item.id} videoURL={item.videoURL} isShowVideo={false}/>
+            <LearnAgain completed id={item.id} videoURL={item.videoURL} isShowVideo={false} />
           ) : (
             item.completedMissionNum === 0 ? (
-              <LearnNow id={item.id} videoURL={item.videoURL} isShowVideo={true}/>
+              <LearnNow id={item.id} videoURL={item.videoURL} isShowVideo={true} />
             ) : (
-              <LearnContinue id={item.id} videoURL={item.videoURL} isShowVideo={false}/>
+              <LearnContinue id={item.id} videoURL={item.videoURL} isShowVideo={false} />
             )
           )}
         </ButtonWrap>
