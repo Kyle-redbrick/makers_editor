@@ -149,7 +149,6 @@ const Results = memo(({ children, courses, items, ...props }) => {
                 key={course.id}
                 onClick={handleClickCategory}
               >
-                {/* <img src={course.} */}
                 {course.title}
               </Category>
             ))}

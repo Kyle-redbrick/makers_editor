@@ -11,7 +11,6 @@ import mypageIcon from "../../../../Image/dreamclass/header-bar-24-account-setti
 import signOutIcon from "../../../../Image/dreamclass/header-bar-24-sign-out.svg";
 
 import "./index.scss";
-import { tsObjectKeyword } from "@babel/types";
 
 const DDItem = ({ user, text, url, onClick }) => {
   if (user) {
