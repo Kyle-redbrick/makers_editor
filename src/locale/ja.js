@@ -1298,11 +1298,12 @@ const ja = {
   ID_COMMENT_TITLE: "コメント",
   ID_DATE_FORMAT_MIN: "minutes ago",
 
-  ID_CERT_ELEMENTARY_BLOCK_DESC: "ブロックコーディング エレメンタリー あなたは iGroup主催のソフトウェアの教育課程である5を修了するためのすべての要求事項を満たし、Event, Sequence, Physical Engine を活用してイベント、座標、物理個のプロジェクトを自ら完成したため、この修了証を授与いたします。",
-  ID_CERT_BASIC_BLOCK_DESC: "ブロックコーディング ベーシック あなたは iGroup主催のソフトウェアの教育課程である15を修了するためのすべての要求事項を満たし、Event, Sequence, Physical Engine, Variable, and Conditional Statement, を活用してイベント、座標、物理、変数, 条件文個のプロジェクトを自ら完成したため、この修了証を授与いたします。",
-  ID_CERT_ADVANCED_BLOCK_DESC: "ブロックコーディング アドバンス あなたは iGroup主催のソフトウェアの教育課程である4を修了するためのすべての要求事項を満たし、Pysical Engine,  Variable,  Conditional Statement, Clone, and Loop を活用してイベント、座標、物理、変数, 条件文,繰り返し文,複製個のプロジェクトを自ら完成したため、この修了証を授与いたします。",
-  ID_CERT_ADVANCED_JS_DESC: "JS アドバンス あなたは iGroup主催のソフトウェアの教育課程である8を修了するためのすべての要求事項を満たし、Event, Sequence, Physical Engine, Random Number,  Varibale, Conditional Statement, and Operator を活用してイベント、座標、物理、乱数, 変数, 条件文,繰り返し文,複製,演算子個のプロジェクトを自ら完成したため、この修了証を授与いたします。",
-  ID_CERT_MASTERY_JS_DESC: "JS マスター あなたは iGroup主催のソフトウェアの教育課程である4を修了するためのすべての要求事項を満たし、Random Number, Variable, Conditional Statement, Operator, List, Index,  Loop, and Function を活用してイベント、座標、物理、乱数, 変数, 条件文,繰り返し文,複製,演算子,配列、関数個のプロジェクトを自ら完成したため、この修了証を授与いたします。",
 
+  ID_CERT_ELEMENTARY_BLOCK_DESC:"あなたは iGroup主催のソフトウェアの教育課程であるブロックコーディングエレメンタリーを修了するためのすべての要求事項を満たし、イベント、座標、物理を活用して5個のプロジェクトを自ら完成したため、この修了証を授与いたします。",
+  ID_CERT_BASIC_BLOCK_DESC:"あなたは iGroup主催のソフトウェアの教育課程であるブロックコーディングベーシックを修了するためのすべての要求事項を満たし、イベント、座標、物理、変数, 条件文を活用して15個のプロジェクトを自ら完成したため、この修了証を授与いたします。",
+  ID_CERT_ADVANCED_BLOCK_DESC:"あなたは iGroup主催のソフトウェアの教育課程であるブロックコーディングアドバンスを修了するためのすべての要求事項を満たし、イベント、座標、物理、変数, 条件文,繰り返し文,複製を活用して4個のプロジェクトを自ら完成したため、この修了証を授与いたします。",
+  ID_CERT_ADVANCED_JS_DESC:"あなたは iGroup主催のソフトウェアの教育課程であるJSアドバンスを修了するためのすべての要求事項を満たし、イベント、座標、物理、乱数, 変数, 条件文,繰り返し文,複製,演算子を活用して8個のプロジェクトを自ら完成したため、この修了証を授与いたします。",
+  ID_CERT_MASTERY_JS_DESC:"あなたは iGroup主催のソフトウェアの教育課程であるJSマスターを修了するためのすべての要求事項を満たし、イベント、座標、物理、乱数, 変数, 条件文,繰り返し文,複製,演算子,配列、関数を活用して4個のプロジェクトを自ら完成したため、この修了証を授与いたします。",
+  
 };
 export default ja;
