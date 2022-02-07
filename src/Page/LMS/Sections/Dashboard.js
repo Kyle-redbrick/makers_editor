@@ -62,7 +62,8 @@ const Widget = styled.div`
   display: flex;
   flex-direction: column;
 
-  ${(props) => props.height == 3 && `height: 460px;`}
+  ${(props) => props.height && `height: ${props.height}px;`}
+
 
   ${(props) => props.graph &&
     `
@@ -724,7 +725,7 @@ const Dashboard = ({ ...props }) => {
       <Title hidden={props.isMobile}><FormattedMessage id="ID_DREAM_LMS_TITLE" /></Title>
       <Row>
         <Col col={2}>
-          <Widget height={props.isMobile ? "auto" : 290}>
+          <Widget height={props.isMobile ? "auto" : 296}>
             <WidgetTitle><FormattedMessage id="ID_DREAM_LMS_TODAY" /></WidgetTitle>
             <WidgetBody>
               <Greeting>
@@ -763,7 +764,7 @@ const Dashboard = ({ ...props }) => {
           </Widget>
         </Col>
         <Col col={1}>
-          <Widget height={props.isMobile ? "auto" : 290}>
+          <Widget height={props.isMobile ? "auto" : 296}>
             <WidgetTitle><FormattedMessage id="ID_DREAM_LMS_TODAY_GOAL" /></WidgetTitle>
             <WidgetBody>
               {todayQuests.length ? (
@@ -825,7 +826,7 @@ const Dashboard = ({ ...props }) => {
           </StyledLink>
         </Col>
         <Col>
-          <Widget graph height={props.isMobile ? "auto" : 220}>
+          <Widget graph height={props.isMobile ? "auto" : 460}>
             <GraphProgressWrap>
               <WidgetTitle><FormattedMessage id="ID_DREAM_LMS_TODAY_GOAL_GRAPH" /></WidgetTitle>
               <WidgetBody>
