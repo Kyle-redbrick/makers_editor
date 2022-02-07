@@ -11,6 +11,7 @@ import mypageIcon from "../../../../Image/dreamclass/header-bar-24-account-setti
 import signOutIcon from "../../../../Image/dreamclass/header-bar-24-sign-out.svg";
 
 import "./index.scss";
+import { tsObjectKeyword } from "@babel/types";
 
 const DDItem = ({ user, text, url, onClick }) => {
   if (user) {
@@ -32,7 +33,7 @@ const DDItem = ({ user, text, url, onClick }) => {
       <Link to={url} style={{ textDecoration: "none" }}>
         <div className="DDItem DDItem-mypage" onClick={onClick}>
           <div className="DDItem__text">{text}</div>
-          <img src={mypageIcon} alt=""/>
+          <img src={mypageIcon} alt="" />
         </div>
       </Link>
     );
@@ -40,7 +41,7 @@ const DDItem = ({ user, text, url, onClick }) => {
   return (
     <div className="DDItem" onClick={onClick}>
       <div className="DDItem__text">{text}</div>
-      <img src={signOutIcon} alt=""/>
+      <img src={signOutIcon} alt="" />
     </div>
   );
 };
@@ -67,6 +68,9 @@ class DropDown extends Component {
   onClickLogout = () => {
     localStorage.removeItem("wizToken");
     this.props.updateUserInfo();
+    this.props.history.replace({
+      pathname: "/"
+    });
   };
 
   render() {

@@ -286,7 +286,7 @@ const View = (props) => {
       <Self>
         <Banners items={mainBanners} isMobile={isMobile}/>
         {/* <SubBanner items={subBanners} /> */}
-
+ 
         <Br />
 
         <Contents items={popularLectures} />

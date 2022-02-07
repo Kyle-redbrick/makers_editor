@@ -46,6 +46,16 @@ const Items = styled.div`
   }
 `;
 
+const Icon = styled.div`
+  display: flex;
+  img{
+    height: 25px;
+    margin-right: 8px;
+  }
+`;
+
+
+
 const Categories = ({ children, courses = [], items, ...props }) => {
   const [selectedCategoryId, setSelectedCategoryId] = useState("all");
 
@@ -83,6 +93,9 @@ const Categories = ({ children, courses = [], items, ...props }) => {
               key={course.id}
               onClick={handleClickCategory}
             >
+              <Icon>
+                <img className="category_image" src={course.icon} />
+              </Icon>
               {course.title}
             </Category>
           ))}

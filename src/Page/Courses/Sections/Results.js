@@ -95,7 +95,7 @@ const Results = memo(({ children, courses, items, ...props }) => {
   const [selectedCategoryId, setSelectedCategoryId] = useState("all");
 
   useEffect(() => {
-    if ( courseType ) {
+    if (courseType) {
       let courseId = 0;
 
       switch (courseType) {
@@ -117,7 +117,7 @@ const Results = memo(({ children, courses, items, ...props }) => {
       }
     }
   }, [])
-  
+
   const handleClickCategory = useCallback(
     (categoryId) => {
       setSelectedCategoryId(categoryId);
@@ -149,6 +149,7 @@ const Results = memo(({ children, courses, items, ...props }) => {
                 key={course.id}
                 onClick={handleClickCategory}
               >
+                {/* <img src={course.} */}
                 {course.title}
               </Category>
             ))}
