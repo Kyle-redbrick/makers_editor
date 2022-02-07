@@ -1,13 +1,15 @@
 
 .popup_container .dream_missionClear {
+  font-family: 'Poppins', sans-serif;
   display: flex;
   margin:auto;
-  padding-top: 7px;
+  padding-top: 17px;
   flex-direction: column;
-  width: 332px;
+  width: 390px;
+  background: linear-gradient(146.74deg, #5B16CC -3.82%, #56B1CC 99.59%);
 
   .dream_missionClear_image {
-    margin: 0 auto;
+    margin: 0 auto 11px;
     height: 192px;
     width: 242px;
   }
@@ -30,14 +32,14 @@
   }
 
   .popup_buttons{
-    margin-bottom: 12px;
+    margin: 0 auto 34px;
   }
 
   .popup_button {
     font-family: 'Poppins', sans-serif;
     border-radius: 50px;
-    margin-top: 30px;
     font-size: 16px;
+    width: 160px;
     line-height: 24px;
     font-weight: 500;
   }
