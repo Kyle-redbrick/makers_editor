@@ -102,14 +102,14 @@ const IntroPopup = ({ redirectURL ,id, url, type }) => {
     setPlaying(true);
   }, [videoRef]);
 
-  const endVideo = useCallback(
-    () => {
-      Popup.hidePopUp();
-      //window.open(url, "_blank");
-      window.open(redirectURL, "_blank");
-    },
-    [Popup.hidePopUp]
-  );
+  // const endVideo = useCallback(
+  //   () => {
+  //     Popup.hidePopUp();
+  //     //window.open(url, "_blank");
+  //     window.open(redirectURL, "_blank");
+  //   },
+  //   [Popup.hidePopUp]
+  // );
 
   
   const videoSrc = (type) => {
@@ -132,7 +132,7 @@ const IntroPopup = ({ redirectURL ,id, url, type }) => {
   return (
     <Self>
       <LearnVideoWrap>
-        <Video controls={true} ref={videoRef} onEnded={endVideo}>
+        <Video controls={true} ref={videoRef} >
           <VideoSource src={url} />
         </Video>
         <PlayButton playing={playing} onClick={playVideo} />

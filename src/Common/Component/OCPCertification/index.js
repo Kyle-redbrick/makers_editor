@@ -79,10 +79,10 @@ class Container extends Component {
         </div>
 
         <div className="OCPCertificationContainerTools">
-          <div className="OCPCertificationPrint" onClick={(e) => this.downloadCertificate(e)}>
+          <div className="OCPCertificationPrint" onClick={() => this.downloadCertificate()}>
             Download
           </div>
-          <div className="OCPCertificationPrint" onClick={(e) => this.printCertificate(e)}>
+          <div className="OCPCertificationPrint" onClick={() => this.printCertificate()}>
             Print
           </div>
         </div>
