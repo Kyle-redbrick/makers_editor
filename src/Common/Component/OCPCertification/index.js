@@ -90,7 +90,7 @@ class Container extends Component {
   async disableCertBtn () {
     const isShowCert = await request.addCertificateInfo({courseId:this.props.course.id,name:this.props.name, userClass:this.props.class})
     console.log("isShowCert",isShowCert ,{courseId:this.props.course.id,name:this.props.name, userClass:this.props.class})
-
+    this.props.updateCourses()
     //courseId
   }
 

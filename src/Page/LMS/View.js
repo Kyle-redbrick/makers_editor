@@ -75,6 +75,7 @@ const View = (props) => {
           isLmsMobileMenuOn={isLmsMobileMenuOn}
           onClickLmsMobileMenu={onClickLmsMobileMenu}
           coursesProgress={props.coursesProgress}
+          updateCourses={props.updateCourses}
         />
         {console.log("props.path",props.path)}
         {props.path === PAGE.COURSE && <CourseById courseId={props.courseId} {...props} />}

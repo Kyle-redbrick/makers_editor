@@ -13,7 +13,11 @@ class Container extends Component {
       coursesProgress: [],
     };
   }
-
+  
+  // updateCourses(){
+  //   console.log(1111)
+  //   //this.getData()
+  // }
 
   componentDidMount() {
     console.log(this.props)
@@ -31,8 +35,9 @@ class Container extends Component {
   }
 
 
+
   render() {
-    return <View courseId={this.props.match && this.props.match.params.id} coursesProgress={this.state.coursesProgress} {...this.props} />;
+    return <View courseId={this.props.match && this.props.match.params.id} coursesProgress={this.state.coursesProgress} updateCourses={this.getData} {...this.props} />;
   }
 }
 

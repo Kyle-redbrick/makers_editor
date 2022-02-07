@@ -265,14 +265,14 @@ const LnbLinkComponent = memo(({ active, icon, link, title, isMobile, isLmsMobil
   );
 });
 
-const Lnb = ({ path, fixed, isMobile, isLmsMobileMenuOn, onClickLmsMobileMenu, coursesProgress, ...props }) => {
+const Lnb = ({ path, fixed, isMobile, isLmsMobileMenuOn, onClickLmsMobileMenu, coursesProgress, updateCourses, ...props }) => {
   let { id } = useParams();
 
   const onclickCertBtn = (course) => {
     showPopUp(
       <CertificateForm
       course={course}
-        // stem={formData.stem}
+      updateCourses={updateCourses}
         // sdg={formData.sdg}
         // certificate={formData.certificate}
         // onClickSubmit={() => {
