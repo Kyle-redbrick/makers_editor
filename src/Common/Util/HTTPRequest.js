@@ -1492,6 +1492,11 @@ export const postMyDreamProject = ({ projectId }) => {
 export const saveMyDreamProject = (id, updateValues) => {
   return fetchRequest(URL.API_SERVER + `myDreamProject/${id}/save`, "PUT", updateValues);
 };
+
+export const getMyDreamProjectInfo = id => {
+  return fetchRequest(URL.API_SERVER + `myDreamProject/${id}/get`, "GET");
+}
+
 export const dreamUpload = formData => {
   const headers = {};
   if (localStorage.getItem("wizToken")) {
@@ -1519,16 +1524,16 @@ export const getPythonCategoryItembooks = () => {
 };
 
 // ranking page
-export const getMyRanking = ( param ) => {
-  const { type, email} = param;
+export const getMyRanking = (param) => {
+  const { type, email } = param;
   let query = `type=${type}&email=${email}`
   return fetchRequest(URL.API_SERVER + `userRanking?${query}`, "GET");
 }
 
-export const getUserRankings = ( param ) => {
+export const getUserRankings = (param) => {
   const { limit, offset, type, searchKey } = param;
   let query = `type=${type}`
-  if(searchKey) {
+  if (searchKey) {
     query += `&searchKey=${searchKey}`
   } else {
     query += `&limit=${limit}&offset=${offset}`
@@ -1544,7 +1549,7 @@ export const getSemester = () => {
   return fetchRequest(URL.API_SERVER + `semester`, "GET");
 }
 
-export const checkShareGame = ({type}) => {
+export const checkShareGame = ({ type }) => {
   return fetchRequest(URL.API_SERVER + `achievement/checkShareGame`, "POST", { type });
 }
 
