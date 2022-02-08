@@ -34,6 +34,8 @@ const defaultLang = localStorage.getItem("lang");
 
 class PopUpContainer extends Component {
   componentDidMount() {
+
+    console.log("slhjflkasjdlkfj lkasdjfklsdf ",this.props)
     setTimeout(() => {
       const overlay = document.getElementById("popup_overlay");
       if (overlay) overlay.classList.remove("popup_overlay-invisible");
@@ -52,7 +54,8 @@ class PopUpContainer extends Component {
       darkmode,
       overflow,
       mobileFullscreen,
-      pythonPopup
+      pythonPopup,
+      isbackTrans
     } = this.props;
     return (
       <div
@@ -70,7 +73,7 @@ class PopUpContainer extends Component {
         <div id="popup_scrollable" className="popup_scrollable">
           <div
             id="popup_contents"
-            className={`popup_contents popup_contents-larged ${
+            className={` ${isbackTrans? "popup_contents_opacity": "popup_contents"} popup_contents-larged ${
               defaultPadding ? "popup_contents-defaultPadding" : ""
             } ${scrollable ? "popup_contents-scrollable" : ""} ${
               overflow ? "popup_contents-overflow-show" : ""
@@ -97,13 +100,13 @@ class PopUpContainer extends Component {
   }
 }
 
-export const showPopUp = (content, options = {}) => {
+export const showPopUp = (content, options = {} ,isbackTrans) => {
   const root = document.getElementById("root");
   let popup = document.getElementById("popup");
   if (!popup) {
     popup = document.createElement("div");
     popup.setAttribute("id", "popup");
-    popup.classList.add(localStorage.getItem("wizLang"));
+    popup.classList.add(defaultLang);
     root.appendChild(popup);
     window.onhashchange = function() {
       showPopUp();
@@ -146,6 +149,7 @@ export const showPopUp = (content, options = {}) => {
               mobileFullscreen={mobileFullscreen}
               enterToConfirm={enterToConfirm}
               pythonPopup={pythonPopup}
+              isbackTrans={isbackTrans}
             >
               {React.cloneElement(content, { dismiss })}
             </PopUpContainer>

@@ -40,7 +40,7 @@ function CertificateForm(props) {
       />, {
       dismissButton: false,
       defaultPadding: false
-    });
+    },{isBackTrans:true});
 
 
   }
