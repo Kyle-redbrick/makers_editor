@@ -55,7 +55,7 @@ class PopUpContainer extends Component {
       overflow,
       mobileFullscreen,
       pythonPopup,
-      isbackTrans
+      isBackTrans
     } = this.props;
     return (
       <div
@@ -73,7 +73,7 @@ class PopUpContainer extends Component {
         <div id="popup_scrollable" className="popup_scrollable">
           <div
             id="popup_contents"
-            className={` ${isbackTrans? "popup_contents_opacity": "popup_contents"} popup_contents-larged ${
+            className={` ${isBackTrans? "popup_contents_opacity": "popup_contents"} popup_contents-larged ${
               defaultPadding ? "popup_contents-defaultPadding" : ""
             } ${scrollable ? "popup_contents-scrollable" : ""} ${
               overflow ? "popup_contents-overflow-show" : ""
@@ -100,7 +100,7 @@ class PopUpContainer extends Component {
   }
 }
 
-export const showPopUp = (content, options = {} ,isbackTrans) => {
+export const showPopUp = (content, options = {} ,isBackTrans) => {
   const root = document.getElementById("root");
   let popup = document.getElementById("popup");
   if (!popup) {
@@ -149,7 +149,7 @@ export const showPopUp = (content, options = {} ,isbackTrans) => {
               mobileFullscreen={mobileFullscreen}
               enterToConfirm={enterToConfirm}
               pythonPopup={pythonPopup}
-              isbackTrans={isbackTrans}
+              isBackTrans={isBackTrans}
             >
               {React.cloneElement(content, { dismiss })}
             </PopUpContainer>
