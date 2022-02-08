@@ -269,7 +269,7 @@ const Tag = styled.div`
   color: #fff;
   padding: 0 5px;
   margin-right: 5px;
-  height: 25px;
+  height: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
