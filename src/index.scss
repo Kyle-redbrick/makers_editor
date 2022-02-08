@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+@import url('http://fonts.cdnfonts.com/css/alex-brush');
 
 html,
 body,
@@ -51,6 +52,19 @@ code {
   src: url("./font/CookieRunRegular.ttf");
 }
 
+@font-face {
+  font-family: CookieRunBoldOTF;
+  src: url("./font/CookieRunBold.otf");
+}
+
+@font-face {
+  font-family: CookieRunOTF;
+  src: url("./font/CookieRunRegular.otf");
+}
+@font-face {
+  font-family: CookieRunBlackOTF;
+  src: url("./font/CookieRunBlack.otf");
+}
 .en {
   font-family: "Source Sans Pro", sans-serif;
 }
