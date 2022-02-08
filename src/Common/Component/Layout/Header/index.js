@@ -274,7 +274,7 @@ class Header extends Component {
                 />
                 <img className="openSearchIcon" src={searchImg} alt="" onClick={onSubmitSearchValue} />
               </div>
-              <div className={`header_menu_icon searchResult ${isSearchFocusOn ? "open" : "close"}`}>
+              {/* <div className={`header_menu_icon searchResult ${isSearchFocusOn ? "open" : "close"}`}>
                 <p className="quickLink">
                   {intl.formatMessage({ id: "ID_DREAM_HEADER_QUICK_LINK" })}
                 </p>
@@ -289,7 +289,7 @@ class Header extends Component {
                     {intl.formatMessage({ id: "ID_DREAM_HEADER_PYTHON" })}
                   </li>
                 </ul>
-              </div>
+              </div> */}
               <div className="lms">
                 <Link to="/lms" onClick={checkLogin} >
                   {intl.formatMessage({ id: "ID_HEADER_LMS" })}
