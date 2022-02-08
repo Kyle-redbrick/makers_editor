@@ -1,281 +1,255 @@
-export default `### **주식회사 위즈스쿨 이용약관**
+export default `### **Redbrick Inc. Terms of Use Agreement**
 
-**제 1 조 (목적)**
-이 약관은 주식회사 위즈스쿨에서 제공하는 서비스 및 제반서비스의 이용과 관련하여 위즈스쿨과 이용자와의 권리, 의무 및 책임사항 등을 규정함을 목적으로 합니다.
+**Article 1 (Purpose)**
+This Agreement aims to stipulate the rights, obligations, and responsibilities of Red Brick and its users in relation to the use of services and various services provided by Red Brick Co., Ltd.
 
-**제 2 조 (정의)**
-이 약관에서 사용하는 용어의 정의는 다음과 같습니다.
+**Article 2 (Definition)**
+The definitions of terms used in these terms and conditions are as follows.
 
-“이용자”라 함은 “wizschool.io”의 사이트에 접속하여 이 약관에 따라 “wizschool.io”가 제공하는 "서비스" 및 제반서비스를 이용하는 회원 및 비회원을 말합니다.
-“회원"이라 함은 회사의 "서비스"에 접속하여 이 약관에 따라 "회사"와 이용계약을 체결하고 "회사"가 제공하는 "서비스"를 이용하는 고객을 말합니다.
-“아이디(id)"이라 함은 "회원"의 식별과 "서비스" 이용을 위하여 "회원"이 정하고 "회사"가 승인하는 문자와 숫자의 조합을 의미합니다. 
-“서비스”라 함은 “wizschool.io”가 제공하는 프로그래밍 교육 플랫폼 등 “wizschool.io”가 “이용자”에게 전자적으로 제공하는 용역 및 온라인/오프라인 서비스를 의미합니다. “서비스”는“wizschool.io”가 제공하는 “콘텐츠”를 포함하는 개념이며, 본 계약에서는 “서비스 및 콘텐츠”로 표시하는 경우도 있습니다.
-“비밀번호(PASSWORD)”라 함은 "회원"이 부여 받은 "아이디와 일치되는 “회원"임을 확인하고 비밀보호를 위해 "회원” 자신이 정한 문자 또는 숫자의 조합을 의미합니다.
-”게시물”이라 함은 "회원”이 "서비스"를 이용함에 있어 "서비스상"에 게시한 부호ㆍ문자ㆍ음성ㆍ음향ㆍ화상ㆍ동영상 등의 정보 형태의 글, 사진, 동영상 및 각종 파일과 링크 등을 의미합니다.
+The term "user" refers to members and non-members who access the site of "redbrick.space" and use all the services provided by "redbrick.space" under these terms and conditions.
+"Member" refers to a customer who accesses the company's "service" and enters into a contract of use with the "company" in accordance with these terms and conditions and uses the "service" provided by the "company".
+The term "id" means a combination of letters and numbers determined by "members" and approved by "company" for the identification of "members" and the use of "services".
+"Service" refers to services and online/offline services that "redbrick.space" provides to "users" electronically, including programming training platforms provided by "redbrick.space." "Service" is a concept that includes "content" provided by "redbrick.space," and in some cases, it is marked as "service and content" in this contract.
+The term "password" means a combination of letters or numbers set by the "member" to confirm that the "member" is a "member" that matches the "ID" granted and to protect the confidentiality.
+The term "post" means articles, photos, videos, and links in the form of information such as signs, text, voice, sound, images, and videos posted on "Service" by "members" in using "service."
 
-**제 3 조 (약관의 게시와 개정)**
-주식회사 위즈스쿨(이하 “회사”)은 이 약관의 내용, 상호, 대표자 성명, 영업소 소재지 주소, 전화번호, 모사전송번호, 전자우편주소, 사업자등록번호, 통신판매업 신고번호 및 개인정보관리책임자 등을 이용자가 쉽게 알 수 있도록 온라인 서비스초기화면에 게시합니다. 다만, 약관은 이용자가 연결화면을 통하여 볼 수 있도록 할 수 있습니다.
+**Article 3 (Posting and Revision of Terms and Conditions)**
+Redbrick Co., Ltd. (hereinafter referred to as "Company") posts the contents of the terms and conditions, the name of the representative, the address of the office, the phone number, the copy transmission number, e-mail address, business registration number, and the personal information management officer. However, the terms and conditions can be viewed through the connection screen.
 
-”회사”는 이 약관의 내용을 "회원"이 쉽게 알 수 있도록 서비스 초기 화면에 게시합니다.
-“회사”는 "약관의규제에관한법률", "정보통신망이용촉진및정보보호등에관한법률(이하 "정보통신망법")" 등 관련법을 위배하지 않는 범위에서 이 약관을 개정할 수 있습니다.
-“회사”가 약관을 개정할 경우에는 적용일자 및 개정사유를 명시하여 현행약관과 함께 제1항의 방식에 따라 그 개정약관의 적용일자 30일 전부터 적용일자 전일까지 공지합니다. 다만, 회원에게 불리한 약관의 개정의 경우에는 공지 외에 로그인시 동의창 등의 전자적 수단을 통해 따로 명확히 통지하도록 합니다.
-“회사”가 전항에 따라 개정약관을 공지 또는 통지하면서 회원에게 30일 기간 내에 의사표시를 하지 않으면 의사표시가 표명된 것으로 본다는 뜻을 명확하게 공지 또는 통지하였음에도 회원이 명시적으로 거부의 의사표시를 하지 아니한 경우 회원이 개정약관에 동의한 것으로 봅니다.
-“회원”이 개정약관의 적용에 동의하지 않는 경우 회사는 개정 약관의 내용을 적용할 수 없으며, 이 경우 회원은 이용계약을 해지할 수 있습니다. 다만, 기존 약관을 적용할 수 없는 특별한 사정이 있는 경우에는 회사는 이용계약을 해지할 수 있습니다.
+"Company" posts the contents of these terms and conditions on the initial screen of the service so that "members" can easily understand them.
+"Company" may amend these terms and conditions to the extent that they do not violate related laws such as "Act on Regulation of Terms and Conditions" and "Act on Promotion of Information and Communication Network Utilization and Information Protection (hereinafter referred to as the "Information and Communication Network Act").
+If the "company" revises the terms and conditions, the date of application and the reason for the amendment will be specified and announced along with the current terms and conditions from 30 days before the date of application. However, in the case of amendments to the terms and conditions unfavorable to the member, in addition to the notice, separate notice should be made through electronic means such as consent window when logging in.
+If the "company" clearly notifies or notifies the member of the revised terms and conditions and does not express its intention within 30 days, it is deemed that the member has agreed to the revised terms and conditions. If the "member" disagrees with the application of the revised terms and conditions, the company cannot apply the revised terms and conditions, and in this case, the member may terminate the contract of use. However, if there are special circumstances in which the existing terms and conditions cannot be applied, the company may terminate the contract.
 
-**제 4 조 (약관의 해석)**
-“회사”는 “서비스”의 원활한 제공을 위하여 별도의 이용정책을 둘 수 있으며, 이 약관에서 정하지 아니한 사항이나 해석에 대해서는 이용정책, 관계법령 또는 상관례에 따릅니다.
+**Article 4 (Interpretation of Terms and Conditions)**
+"Company" may have a separate use policy for the smooth provision of "services", and matters or interpretations not prescribed in these terms and conditions shall be governed by the use policy, relevant laws, or regulations.
 
-**제 5 조 (이용계약 체결)**
-이용계약은 "회원"이 되고자 하는 자(이하 "가입신청자")가 약관의 내용에 대하여 동의를 한 다음 회원가입신청을 하고 "회사"가 이러한 신청에 대하여 승낙함으로써 체결됩니다.
-“회사"는 "가입신청자"의 신청에 대하여 "서비스" 이용을 승낙함을 원칙으로 합니다. 다만, "회사"는 다음 각 호에 해당하는 신청에 대하여는 승낙을 하지 않거나 사후에 이용계약을 해지할 수 있습니다.
-가입신청자가 이 약관에 의하여 이전에 회원자격을 상실한 적이 있는 경우, 단 "회사"의 회원 재가입 승낙을 얻은 경우에는 예외로 함.
-허위의 정보를 기재하거나, "회사"가 제시하는 내용을 기재하지 않은 경우
-”가입신청자”의 귀책사유로 인하여 승인이 불가능하거나 기타 규정한 제반 사항을 위반하며 신청하는 경우
-3. 제1항에 따른 신청에 있어 "회사"는 "회원"의 종류에 따라 전문기관을 통한 실명확인 및 본인인증을 요청할 수 있습니다.
-4. "회사"는 서비스관련설비의 여유가 없거나, 기술상 또는 업무상 문제가 있는 경우에는 승낙을 유보할 수 있습니다.
-5. 제2항과 제4항에 따라 회원가입신청의 승낙을 하지 아니하거나 유보한 경우, "회사"는 원칙적으로 이를 가입신청자에게 알리도록 합니다.
-6. 이용계약의 성립 시기는 "회사"가 가입완료를 신청절차 상에서 표시한 시점으로 합니다.
-7. "회사"는 "회원"에 대해 회사정책에 따라 등급별로 구분하여 이용시간, 이용횟수, 서비스 메뉴 등을 세분하여 이용에 차등을 둘 수 있습니다.
-8. "회사"는 "회원"에 대하여 "영화 및 비디오물의진흥에관한법률" 및 "청소년보호법"등에 따른 등급 및 연령 준수를 위해 이용제한이나 등급별 제한을 할 수 있습니다.
+**Article 5 (Termination of Use Agreement)**
+The contract for use is concluded by a person who intends to become a "member" (hereinafter referred to as a "subscription applicant") agreeing to the terms and conditions, then applying for membership, and the "company" approves these applications.
+In principle, "Company" accepts the use of "Service" for the application of "Applicant for Subscription". However, the "company" may not accept any of the following applications or terminate the contract afterwards. Exceptions shall be made in cases where the applicant for membership has previously lost his/her membership under these terms and conditions, but has obtained consent to re-subscribe as a member of the "company".
+If false information is entered, approval is impossible due to reasons attributable to the "applicant" or if the application is in violation of other prescribed matters, the "company" may request real name verification and identity authentication through a specialized institution according to the type of "member".
+4. "Company" may withhold consent if there is no room for service-related facilities, technical or business problems.
+5. If the application for membership is not approved or reserved pursuant to paragraphs 2 and 4, the "company" shall, in principle, notify the applicant for membership.
+6. The establishment of the use contract is the time when the "company" indicates the completion of the subscription in the application process.
+7. "Company" can differentiate the use of "members" by subdividing the hours of use, the number of uses, and the service menu by classifying them by grade according to the company policy.
+8. "Company" may impose restrictions on "members" by grade or grade to comply with the "Act on the Promotion of Movies and Videos" and the "Youth Protection Act".
 
-**제 6 조 (회원정보의 변경)**
-”회원"은 개인정보관리화면을 통하여 언제든지 본인의 개인정보를 열람하고 수정할 수 있습니다. 다만, 서비스 관리를 위해 필요한 “아이디” 등은 수정이 불가능합니다.
-“회원"은 회원가입신청 시 기재한 사항이 변경되었을 경우 온라인으로 수정을 하거나 전자우편 기타 방법으로 "회사"에 대하여 그 변경사항을 알려야 합니다.
-“회원"은 개인정보관리화면을 통하여 언제든지 본인의 개인정보를 열람하고 수정할 수 있습니다. 다만, 서비스 관리를 위해 필요한 “아이디” 등은 수정이 불가능합니다.
-제2항의 변경사항을 "회사"에 알리지 않아 발생한 불이익에 대하여 "회사"는 책임지지 않습니다.
 
-**제 7 조 (개인정보보호 의무) **
-1. "회사"는 "정보통신망법" 등 관계 법령이 정하는 바에 따라 "회원"의 개인정보를 보호하기 위해 노력합니다. 개인정보의 보호 및 사용에 대해서는 관련법 및 2. "회사"의 개인정보처리방침이 적용됩니다. 다만, "회사"의 공식 사이트 이외의 링크된 사이트에서는 "회사"의 개인정보처리방침이 적용되지 않습니다.
+**Article 6 (Change of member information)**
+"Member" can view and modify one's personal information at any time through the personal information management screen. However, the "ID" required for service management cannot be modified. 
+"Member" shall revise online or inform "Company" of the changes made in the application for membership registration by e-mail or other means.
+"Members" can view and modify their personal information at any time through the personal information management screen. However, the "ID" required for service management cannot be modified.
+The "company" is not responsible for any disadvantages caused by not notifying the "company" of the changes in paragraph (2).
 
-**제 8 조 ("회원"의 "아이디" 및 "비밀번호"의 관리에 대한 의무)**
-“회원”의 “아이디”와 “비밀번호”에 관한 관리책임은 “회원”에게 있으며, 이를 제 3자가 이용하도록 하여서는 안 됩니다.
-“회사”는 “회원”의 “아이디”가 개인정보 유출 우려가 있거나, 반사회적 또는 미풍양속에 어긋나거나 “회사” 및 “회사”의 운영자로 오인할 우려가 있는 경우, 해당 “아이디”의 이용을 제한할 수 있습니다.
-“회원"은 "아이디" 및 "비밀번호"가 도용되거나 제3자가 사용하고 있음을 인지한 경우에는 이를 즉시 "회사"에 통지하고 "회사"의 안내에 따라야 합니다.
-제3항의 경우에 해당 "회원"이 "회사"에 그 사실을 통지하지 않거나, 통지한 경우에도 "회사"의 안내에 따르지 않아 발생한 불이익에 대하여 "회사"는 책임지지 않습니다. 
+**Article 7 (Duties to Protect Personal Information)**
+"Company" strives to protect the personal information of "members" as prescribed by relevant laws such as the "Information and Communication Network Act". The relevant laws and 2. "Company"'s personal information processing policy apply to the protection and use of personal information. However, the company's personal information processing policy does not apply to linked sites other than the company's official site.
 
-**제 9 조 ("회원"에 대한 통지)**
-“회사"가 "회원"에 대한 통지를 하는 경우 이 약관에 별도 규정이 없는 한 서비스 화면, 전자우편주소 등으로 할 수 있습니다.
-“회사”는 “회원” 전체에 대해 통지의 경우 7일 이상 “회사”의 공지사항에 게시함으로써 제1항의 통지에 갈음할 수 있습니다. 
+**Article 8 (duty to manage "ID" and "password" of "member")**
+The "ID" and "password" of "member" are responsible for the management of "ID" and "password" of "member"
+"Company" may restrict the use of "ID" if the "ID" of "members" is feared to leak personal information, violate antisocial or aesthetic customs, or may be mistaken as the operator of "company" and "company".
+If a "member" recognizes that "ID" and "password" are stolen or are being used by a third party, he/she must immediately notify the "company" and follow the guidance of the "company".
+In the case of paragraph (3), even if the "member" does not notify the "company" of the fact or notifies the "company", the "company" is not responsible for any disadvantages caused by failure to comply with the "company" guidance.
 
-**제 10 조 ("회사"의 의무)**
-”회사"는 관련법과 이 약관이 금지하거나 미풍양속에 반하는 행위를 하지 않으며, 계속적이고 안정적으로 "서비스"를 제공하기 위하여 최선을 다하여 노력합니다.
- "회사"는 "회원"이 안전하게 "서비스"를 이용할 수 있도록 개인정보(신용정보 포함)보호를 위해 보안시스템을 갖추어야 하며 개인정보처리방침을 공시하고 준수합니다.
-“회사"는 서비스이용과 관련하여 발생하는 ”회원”의 불만 또는 피해구제요청을 적절하게 처리할 수 있도록 필요한 인력 및 시스템을 구비합니다.
-”회사"는 서비스이용과 관련하여 "회원"으로부터 제기된 의견이나 불만이 정당하다고 인정할 경우에는 이를 처리하여야 합니다. "회원"이 제기한 의견이나 불만사항에 대해서는 게시판을 활용하거나 전자우편 등을 통하여 "회원"에게 처리과정 및 결과를 전달합니다.
+**Article 9 (Notification of "Member")**
+If "Company" notifies "Member", it may be used as a service screen, e-mail address, etc., unless otherwise specified in these terms and conditions.
+"Company" may replace the notice under paragraph (1) by posting the entire "member" on the notice of "Company" for at least 7 days.
 
-**제 11 조 ("회원"의 의무)**
- "회원"은 다음 행위를 하여서는 안 됩니다.
- - 신청 또는 변경 시 허위내용의 등록
- - 타인의 정보도용
- - “회사"가 게시한 정보의 변경
- - “회사"가 정한 정보 이외의 정보(컴퓨터 프로그램 등) 등의 송신 또는 게시
- - “회사"와 기타 제3자의 저작권 등 지적재산권에 대한 침해
- - “회사" 및 기타 제3자의 명예를 손상시키거나 업무를 방해하는 행위
- - 외설 또는 폭력적인 메시지, 화상, 음성, 기타 공서양속에 반하는 정보를 "서비스"에 공개 또는 게시하는 행위
- - 회사의 동의 없이 영리를 목적으로 "서비스"를 사용하는 행위
- - 기타 불법적이거나 부당한 행위
-2. “회원"은 관계법, 이 약관의 규정, 이용정책, 이용안내 및 "서비스"와 관련하여 공지한 주의사항, "회사"가 통지하는 사항 등을 준수하여야 하며, 기타 "회사"의 업무에 방해되는 행위를 하여서는 안 됩니다.
+**Article 10 ("Company")**
+"Company" does not engage in acts prohibited or contrary to customs and customs, and shall continue to do its best to provide "service" in a stable manner.
+"Company" must have a security system to protect personal information (including credit information) so that "members" can safely use "services" and disclose and comply with personal information processing policies.
+The "company" has the necessary manpower and system to properly handle complaints or damage relief requests from "members" arising from the use of the service.
+"Company" shall deal with any opinions or complaints raised by "members" regarding the use of the service if deemed justifiable. For opinions or complaints raised by "members," use the bulletin board or deliver the process and results to "members" through e-mail.
 
-**제 12 조 ("서비스"의 제공 등)**
-회사는 회원에게 아래와 같은 서비스를 제공합니다.
- - 프로그래밍 교육 서비스
- - 프로그래밍 저작 플랫폼
- - 프로그래밍 저작물 공유 플랫폼
- - 프로그래밍 교육 관련 커뮤니티
- -  기타 "회사"가 추가 개발하거나 다른 회사와의 제휴계약 등을 통해 "회원"에게 제공하는 일체의 서비스
-2. 회사는 "서비스"를 일정범위로 분할하여 각 범위 별로 이용가능시간을 별도로 지정할 수 있습니다. 다만, 이러한 경우에는 그 내용을 사전에 공지합니다.
-3. “서비스"는 연중무휴, 1일 24시간 제공함을 원칙으로 합니다.
-4. “회사"는 컴퓨터 등 정보통신설비의 보수점검, 교체 및 고장, 통신두절 또는 운영상 상당한 이유가 있는 경우 "서비스"의 제공을 일시적으로 중단할 수 있습니다. 이 경우 "회사"는 "회원"에게 통지합니다. 다만, "회사"가 사전에 통지할 수 없는 부득이한 사유가 있는 경우 사후에 통지할 수 있습니다.
-5. ”회사"는 서비스의 제공에 필요한 경우 정기점검을 실시할 수 있으며, 정기점검시간은 서비스제공화면에 공지한 바에 따릅니다.
+**Article 11 (the obligation of "members") **
+"members" shall not do the following:
+ - Registration of false information upon application or change.
+ - Use information from others.
+ - Change of information posted by "Company".
+ - Transmission or posting of information (computer programs, etc.) other than information prescribed by "Company"
+ - Infringement of intellectual property rights such as copyrights of "company" and other third parties.
+ - An act of damaging the reputation of the "company" and other third parties or interfering with business.
+ - The act of disclosing or posting obscene or violent messages, images, voices, and other information contrary to public order in "services"
+ - The act of using "service" for profit without the consent of the company.
+ - Other illegal or unfair acts.
+2. "Member" shall comply with the relevant laws, the provisions of these terms and conditions, the usage policy, the instructions for use, and the precautions notified by "Company" and shall not interfere with other "Company" business.
 
-**제 13 조 ("서비스"의 변경)**
-“회사"는 상당한 이유가 있는 경우에 운영상, 기술상의 필요에 따라 제공하고 있는 전부 또는 일부 "서비스"를 변경할 수 있습니다.
-  2. “서비스"의 내용, 이용방법, 이용시간에 대하여 변경이 있는 경우에는 변경사유, 변경될 서비스의 내용 및 제공일자 등은 그 변경 전에 해당 서비스 초기화면에 게시하여야 합니다.
-3. “회사"는 무료로 제공되는 서비스의 일부 또는 전부를 회사의 정책 및 운영의 필요상 수정, 중단, 변경할 수 있으며, 이에 대하여 관련법에 특별한 규정이 없는 한 "회원"에게 별도의 보상을 하지 않습니다.
+**Article 12 (Providing Services, etc.)**
+The company provides the following services to its members.
+ - Programming education service.
+ - Programming authoring platform.
+ - Programming work sharing platform.
+ - A community related to programming education.
+ - All other services provided to "members" through additional development by "company" or partnership contracts with other companies.
+2. The company may divide the "service" into a certain range and designate a separate available time for each range. However, in this case, the contents are notified in advance.
+3. In principle, "service" is provided 24 hours a day, 24/7.
+4. "Company" may temporarily suspend the provision of "service" if there are significant reasons for maintenance inspection, replacement and failure of information and communication facilities such as computers, communication failure, or operation. In this case, "Company" notifies "Member". However, if there is an unavoidable reason why the "company" cannot notify in advance, it may be notified afterwards.
+5. The "company" may conduct regular inspections if necessary for the provision of services, and the regular inspection time shall be in accordance with the notice made in the Service Republic of Korea.
 
-**제 14 조 (정보의 제공 및 광고의 게재)**
-”회사"는 "회원"이 "서비스" 이용 중 필요하다고 인정되는 다양한 정보를 공지사항이나 전자우편 등의 방법으로 "회원"에게 제공할 수 있습니다. 다만, "회원"은 관련법에 따른 거래관련 정보 및 고객문의 등에 대한 답변 등을 제외하고는 언제든지 전자우편에 대해서 수신 거절을 할 수 있습니다.
-제1항의 정보를 전화 및 모사전송기기에 의하여 전송하려고 하는 경우에는 "회원"의 사전 동의를 받아서 전송합니다. 다만, "회원"의 거래관련 정보 및 고객문의 등에 대한 회신에 있어서는 제외됩니다.
-“회사"는 "서비스"의 운영과 관련하여 서비스 화면, 홈페이지, 전자우편 등에 광고를 게재할 수 있습니다. 광고가 게재된 전자우편을 수신한 "회원"은 수신거절을 "회사"에게 할 수 있습니다.
-”이용자(회원, 비회원 포함)"는 회사가 제공하는 서비스와 관련하여 게시물 또는 기타 정보를 변경, 수정, 제한하는 등의 조치를 취하지 않습니다.
+**Article 13 ("Change in Services")**
+"Company" may, if there are significant reasons, change all or some "services" provided according to operational and technical needs.
+2. If there is a change in the content, method of use, and time of use of "Service", the reason for change, the content of the service to be changed, and the date of provision shall be posted on the initial page of the service before the change.
+3. "Company" may modify, suspend, or change some or all of the services provided free of charge due to the need for the company's policies and operations, and shall not compensate "members" unless otherwise specified in the relevant laws.
 
-**제 15 조 ("게시물"의 저작권)**
-”회원"이 "서비스" 내에 게시한 "게시물"의 저작권은 해당 게시물의 저작자에게 귀속됩니다.
-“회원"은 본인이 작성한 게시물(작품)을 서비스내에 공개할 경우 다음 각 호의 사항을 허락하며, 구체적인 내용은 “회사” 저작권 이용정책에 따릅니다.
- - 내가 만든 게시물(작품) 공개 시, 내가 만든 게시물(작품)과 그 소스코드의 공개를 동의합니다.
- - 내가 만든 게시물(작품) 공개 시, 다른 사람이 나의 게시물(작품)을 이용하는 것을 허락합니다
- - 내가 만든 게시물(작품) 공개 시, 다른 사람이 나의 게시물(작품)을 수정하는 것을 허락합니다.(2차 저작물 제작 포함)
-3. "회원"이 "서비스" 내에 게시하는 "게시물"은 검색결과 내지 "서비스" 및 관련 프로모션 등에 노출될 수 있으며, 해당 노출을 위해 필요한 범위 내에서는 일부 수정, 복제, 편집되어 게시될 수 있습니다. 이 경우, 회사는 저작권법 규정을 준수하며, "회원"은 언제든지 고객센터 또는 "서비스" 내 관리기능을 통해 해당 게시물에 대해 삭제, 비공개 등의 조치를 취할 수 있습니다.
-4. “회사"는 제2항 이외의 방법으로 "회원"의 "게시물"을 이용하고자 하는 경우에는 전화, 팩스, 전자우편 등을 통해 사전에 "회원"의 동의를 얻어야 합니다.
+**Article 14 (Providing Information and Publishing Advertisements)**
+"Company" may provide "Member" with various information deemed necessary during the use of "Service" to "Member" through announcements or e-mail. However, "members" may refuse to receive e-mail at any time, except for transaction-related information and customer inquiries under the relevant laws. If you intend to transmit the information under paragraph (1) by phone or mother-in-law transmitter, send it with the prior consent of the "member". However, it is excluded from "members"'s reply to transaction-related information and customer inquiries. "Company" can post advertisements on the service screen, homepage, and e-mail in connection with the operation of "Service". Upon receiving the e-mail with the advertisement posted, the "member" may refuse to receive it to the "company". "Users (including members, non-members)" do not take measures such as changing, modifying, or restricting posts or other information in relation to services provided by the company.
 
-**제 16 조 ("게시물"의 관리)**
-“회원"의 "게시물"이 "정보통신망법" 및 "저작권법"등 관련법에 위반되는 내용을 포함하는 경우, 권리자는 관련법이 정한 절차에 따라 해당 "게시물"의 게시중단 및 삭제 등을 요청할 수 있으며, "회사"는 관련법에 따라 조치를 취하여야 합니다.
-”회사"는 전항에 따른 권리자의 요청이 없는 경우라도 권리침해가 인정될 만한 사유가 있거나 기타 회사 정책 및 관련법에 위반되는 경우에는 관련법에 따라 해당 "게시물"에 대해 임시조치 등을 취할 수 있습니다.
+**Article 15 ("Post")**
+The copyright of "Post" posted within "Service" by "Member" belongs to the author of the post.
+"Member" shall allow the following matters when a post (work) he/she has written is disclosed on the service, and the details shall be in accordance with the "Company" copyright use policy.
+ - When I release my post (work), I agree to disclose my post (work) and its source code.
+ - When I release my post (work), I allow others to use my post (work).
+ - When I release my post (work), I allow someone else to modify my post (work). (Including the production of the second work)
+3. Posts posted by "members" within "services" may be exposed to search results, "services" and related promotions, and may be partially modified, reproduced, edited and posted within the scope necessary for such exposure. In this case, the company complies with the copyright law regulations, and "members" may take measures such as deletion or non-disclosure of the post at any time through the customer center or the management function within the "service".
+4. If the "company" intends to use the "post" of "members" in a way other than paragraph (2), it must obtain consent from the "members" in advance through telephone, fax, e-mail, etc.
 
-**제 17 조 (권리의 귀속)**
-“서비스"에 대한 저작권 및 지적재산권은 "회사"에 귀속됩니다. 단, "회원"의 "게시물" 및 제휴계약에 따라 제공된 저작물 등은 제외합니다.
-“회사"는 서비스와 관련하여 "회원"에게 "회사"가 정한 이용조건에 따라 계정, 콘텐츠, 등을 이용할 수 있는 이용권만을 부여하며, "회원"은 이를 양도, 판매, 담보제공 등의 처분행위를 할 수 없습니다.
+**Article 16 ("post" management)**
+If the "post" of  "members" contains in violation of related laws such as the "Information and Communication Network Act" and the "Copyright Act", the right holder may request the suspension or deletion of the "post" in accordance with the relevant laws.
+Even if there is no request from the right holder under the preceding paragraph, the "company" may take temporary measures against the "post" in accordance with the relevant laws if the infringement of the right is recognized or in violation of other company policies and related laws.
 
-**제 18 조 (포인트)**
-"회사"는 서비스의 효율적 이용 및 운영을 위해 사전 공지 후 "포인트"의 일부 또는 전부를 조정할 수 있으며, "포인트"는 회사가 정한 기간에 따라 주기적으로 소멸할 수 있습니다.
+**Article 17 (the attribution of rights)**
+Copyright and intellectual property rights of "Service" belong to the "Company". However, "posts" of "members" and works provided under the partnership contract are excluded.
+In relation to the service, "Company" only grants "members the right to use accounts, contents, etc. according to the terms of use set by "Company", and "members" cannot transfer, sell, or provide collateral.
 
-**제 19 조 (계약해제, 해지 등)**
-”회원"은 언제든지 서비스 초기화면의 고객센터 또는 내 정보 관리 메뉴 등을 통하여 이용계약 해지 신청을 할 수 있으며, "회사"는 관련법 등이 정하는 바에 따라 이를 즉시 처리하여야 합니다.
-“회원"이 계약을 해지할 경우, 관련법 및 개인정보취급방침에 따라 "회사"가 회원정보를 보유하는 경우를 제외하고는 해지 즉시 "회원"의 모든 데이터는 소멸됩니다.
-“회원"이 계약을 해지하는 경우, "회원"이 작성한 "게시물" 중 프로젝트 등과 같이 본인 계정에 등록된 게시물 일체는 삭제됩니다. 다만, 공용게시판에 등록된 “게시물”, 공유 등이 되어 재게시된 “게시물”은 삭제되지 않으니, 직접 삭제 또는 “회사”에 삭제 요청을 통하여 사전에 삭제 후 탈퇴하시기 바랍니다.
-전항과 관련하여 “회원”이 저작자가 아니거나 타인이 공동으로 권리를 보유한 “게시물”의 경우 삭제되지 않을 수 있습니다.
+**Article 18 (Point)**
+For the efficient use and operation of the service, "Company" may adjust part or all of the "points" after prior notice, and "points" may periodically lapse according to the period set by the Company.
 
-**제 20 조 (이용제한 등)**
-“회사"는 "회원"이 이 약관의 의무를 위반하거나 "서비스"의 정상적인 운영을 방해한 경우, 경고, 일시정지, 영구이용정지 등으로 "서비스" 이용을 단계적으로 제한할 수 있습니다.
-“회사"는 전항에도 불구하고, 결제도용, "저작권법" 및 "컴퓨터프로그램보호법"을 위반한 불법프로그램의 제공 및 운영방해, "정보통신망법"을 위반한 불법통신 및 해킹, 악성프로그램의 배포, 접속권한 초과행위 등과 같이 관련법을 위반한 경우에는 즉시 영구이용정지를 할 수 있습니다. 본 항에 따른 영구이용정지 시 "서비스" 이용을 통해 획득한 "포인트" 및 기타 혜택 등도 모두 소멸되며, "회사"는 이에 대해 별도로 보상하지 않습니다.
-”회사"는 "회원"이 계속해서 3개월 이상 로그인하지 않는 경우, 회원정보의 보호 및 운영의 효율성을 위해 이용을 제한할 수 있습니다.
-“회사"는 본 조의 이용제한 범위 내에서 제한의 조건 및 세부내용은 이용정책에서 정하는 바에 의합니다.
-본 조에 따라 "서비스" 이용을 제한하거나 계약을 해지하는 경우에는 "회사"는 제9조["회원"에 대한 통지]에 따라 통지합니다.
-“회원"은 본 조에 따른 이용제한 등에 대해 "회사"가 정한 절차에 따라 이의신청을 할 수 있습니다. 이 때 이의가 정당하다고 "회사"가 인정하는 경우 "회사"는 즉시 "서비스"의 이용을 재개합니다.
+**Article 19 (Termination, Termination, etc.)** 
+"Member" may apply for termination of the contract at any time through the customer center or my information management menu on the service initial page, and "Company" shall handle it immediately as prescribed by relevant laws.
+If a "member" terminates the contract, all data of the "member" will be extinguished immediately after termination, except if the "company" holds member information in accordance with the relevant laws and personal information handling policies.
+If "members" terminate the contract, all posts registered in their accounts, such as projects, among "posts" created by "members" will be deleted. However, "posts" registered on the public bulletin board and re-posted by sharing will not be deleted, so please delete them directly or delete them from the "company" in advance.
+In relation to the preceding paragraph, it may not be deleted if the "member" is not the author or if it is a "post" jointly held by another person.
 
-**제 21 조 (책임제한)**
-“회사"는 천재지변 또는 이에 준하는 불가항력으로 인하여 "서비스"를 제공할 수 없는 경우에는 "서비스" 제공에 관한 책임이 면제됩니다.
-“회사"는 "회원"의 귀책사유로 인한 "서비스" 이용의 장애에 대하여는 책임을 지지 않습니다.
-“회사"는 "회원"이 "서비스"와 관련하여 게재한 정보, 자료, 사실의 신뢰도, 정확성 등의 내용에 관하여는 책임을 지지 않습니다.
-“회사"는 "회원" 간 또는 "회원"과 제3자 상호간에 "서비스"를 매개로 하여 거래 등을 한 경우에는 책임이 면제됩니다.
-“회사"는 무료로 제공되는 서비스 이용과 관련하여 관련법에 특별한 규정이 없는 한 책임을 지지 않습니다.
+**Article 20 (Restriction of Use, etc.)**
+"Company" may gradually restrict the use of "Service" by warning, suspension, permanent suspension, etc.
+If "Member" violates the obligations of these terms and conditions or interferes with the normal operation of "Service".
+Notwithstanding the preceding paragraph, "Company" may immediately suspend payment, provision and operation of illegal programs in violation of the Copyright Act and Computer Program Protection Act, illegal communication and hacking in violation of the Information and Communication Network Act, distribution of malicious programs, and access rights.
+In the event of permanent suspension of use under this paragraph, all "points" and other benefits obtained through the use of "service" will be extinguished, and "company" will not compensate for this separately.
+"Company" may restrict its use for the efficiency of protecting and operating member information if "members" continue to not log in for more than three months.
+The "company" shall be subject to the conditions and details of the restrictions within the scope of the restrictions on the use of this Article as prescribed by the usage policy.
+In the event of restricting the use of "services" or terminating the contract pursuant to this Article, "Company" shall notify in accordance with Article 9 ("notification of members").
+"Member" may file an objection to restrictions on use under this Article in accordance with the procedures set by "Company". At this time, if the "company" admits that the objection is justified, the "company" immediately resumes the use of the "service".
 
-**제 22 조 (준거법 및 재판관할)**
- "회사"와 "회원" 간 제기된 소송은 대한민국법을 준거법으로 합니다.
- "회사"와 "회원"간 발생한 분쟁에 관한 소송은 제소 당시의 "회원"의 주소에 의하고, 주소가 없는 경우 거소를 관할하는 지방법원의 전속관할로 합니다. 단, 제소 당시 "회원"의 주소 또는 거소가 명확하지 아니한 경우의 관할법원은 민사소송법에 따라 정합니다.
+**Article 21 (Limited Liability)**
+"Company" is exempted from liability for providing "service" if it is unable to provide "service" due to natural disasters or equivalent force majeure.
+"Company" shall not be liable for any disability in the use of "service" due to reasons attributable to "members.
+"Company" is not responsible for the information, data, reliability of facts, accuracy, etc. posted by "Member" in relation to "Service".
+"Company" is exempt from liability if it makes transactions between "members" or between "members" and third parties through "services".
+The "company" shall not be liable for the use of free services unless otherwise specified in the relevant laws.
 
-**제 24조(이용계약의 성립 등)**
-“이용자"는 “회사”가 제공하는 다음 또는 이와 유사한 절차에 의하여 이용신청을 합니다. “회사”는 계약 체결 전에 각 호의 사항에 관하여 "이용자"가 정확하게 이해하고 실수 또는 착오 없이 거래할 수 있도록 정보를 제공합니다.
-“콘텐츠" 또는 “서비스” 목록의 열람 및 선택
- 전자우편주소 등의 입력
-약관내용, 청약철회가 불가능한 "콘텐츠"나 “서비스”에 대해 “회사”가 취한 조치에 관련한 내용에 대한 확인
-이 약관에 동의하고 위 제3호의 사항을 확인하거나 거부하는 표시(예, 마우스 클릭)
-“콘텐츠" 또는 “서비스”의 이용신청에 관한 확인 또는 “회사”의 확인에 대한 동의 결제방법의 선택
-3. “회사”는 "이용자"의 이용신청이 다음 각 호에 해당하는 경우에는 승낙하지 않거나 승낙을 유보할 수 있습니다. 
-실명이 아니거나 타인의 명의를 이용한 경우 
-허위의 정보를 기재하거나, “회사”가 제시하는 내용을 기재하지 않은 경우
+**Article 22 (Approval Law and Jurisdiction)**
+Litigation filed between "Company" and "Member" shall be governed by the law of the Republic of Korea.
+Litigation regarding disputes between "company" and "members" shall be governed by the address of the "members" at the time of filing, and if there is no address, it shall be under the exclusive jurisdiction of the district court having jurisdiction over the residence. However, if the address or residence of the "member" is not clear at the time of filing, the competent court shall determine in accordance with the Civil Procedure Act.
 
+**Article 24 (the establishment of a use contract, etc.)**
+"User" shall apply for use by the following or similar procedures provided by "Company".
+The "Company" provides information so that the "user" can accurately understand the matters in each subparagraph and make transactions without mistakes or errors before signing a contract.
+3. Confirmation of the terms and conditions of entry, such as the "content" or "service" list, and the "content" or "service" that cannot be withdrawn from subscription. Indication (e.g., mouse-click) confirmation of the "content" or "service" application. In the case where it is not a real name or the name of another person is used, false information is entered, or the contents presented by the "company" are not entered.
+
+Article 25 (Special Regulations on Contracts for Minor Use) "Company" shall take measures to notify minors themselves or legal representatives before signing the contract that if minors under the age of 20 want to use paid services, they can cancel the contract if they do not obtain consent or approval after signing the contract.
 **제 25 조(미성년자 이용계약에 관한 특칙)**
 “회사”는 만 20세 미만의 미성년이용자가 유료서비스를 이용하고자 하는 경우에 부모 등 법정 대리인의 동의를 얻거나, 계약체결 후 추인을 얻지 않으면 미성년자 본인 또는 법정대리인이 그 계약을 취소할 수 있다는 내용을 계약체결 전에 고지하는 조치를 취합니다.
 
-**제 26 조(수신확인통지·이용신청 변경 및 취소)**
-위즈스쿨은 "이용자"의 이용신청이 있는 경우 "이용자"에게 수신확인통지를 합니다.
-수신확인통지를 받은 "이용자"는 의사표시의 불일치 등이 있는 경우에는 수신확인통지를 받은 후 즉시 이용신청 변경 및 취소를 요청할 수 있고, “회사”는 서비스 제공 전에 "이용자"의 요청이 있는 경우에는 지체 없이 그 요청에 따라 처리하여야 합니다.
+**Article 26 (Reception Confirmation Notice, Change and Cancellation of Application for Use)**
+Redbrick notifies "User" of receipt confirmation if there is an application for use by "User".
+If there is a disagreement in the expression of intention, the "user" who has received the notification of receipt may immediately request to change or cancel the application, and if the "company" requests the "user" before providing the service, it shall be processed without delay.
 
-**제 27 조(위즈스쿨의 의무)**
-“회사”는 법령과 이 약관이 정하는 권리의 행사와 의무의 이행을 신의에 좇아 성실하게 하여야 합니다.
-“회사”는 "이용자"가 “콘텐츠” 및 “서비스” 이용 및 그 대금내역을 수시로 확인할 수 있도록 조치합니다.
-“회사”는 “콘텐츠” 및 “서비스” 이용과 관련하여 "이용자"로부터 제기된 의견이나 불만이 정당하다고 인정할 경우에는 이를 지체없이 처리합니다. 이용자가 제기한 의견이나 불만사항에 대해서는 게시판을 활용하거나 전자우편 등을 통하여 그 처리과정 및 결과를 전달합니다.
-“회사”는 이 약관에서 정한 의무 위반으로 인하여 "이용자"가 입은 손해를 배상합니다.
+**Article 27 (Red Brick's obligation)**
+"Company" must faithfully exercise the rights and obligations prescribed by the statutes and these terms and conditions in good faith.
+"Company" shall take measures so that "users" can frequently check the use of "content" and "service" and its payment details.
+"Company" shall handle any opinions or complaints raised by "users" regarding the use of "content" and "service" without delay. For opinions or complaints raised by users, use the bulletin board or deliver the process and results through e-mail.
+The "company" compensates the "user" for damages caused by the violation of the obligations stipulated in these terms and conditions.
 
-**제 28 조("이용자"의 의무)**
-"이용자"는 다음 행위를 하여서는 안 됩니다.
-신청 또는 변경 시 허위내용의 기재
-타인의 정보도용
-“회사”에 게시된 정보의 변경
-“회사”가 금지한 정보(컴퓨터 프로그램 등)의 송신 또는 게시
-“회사”와 기타 제3자의 저작권 등 지적재산권에 대한 침해
-“회사”및 기타 제3자의 명예를 손상시키거나 업무를 방해하는 행위
-외설 또는 폭력적인 말이나 글, 화상, 음향, 기타 공서양속에 반하는 정보를 “회사”의 사이트에 공개 또는 게시하는 행위
-기타 불법적이거나 부당한 행위
-9. ”이용자"는 관계법령, 이 약관의 규정, 이용안내 및 "콘텐츠"와 “서비스”와 관련하여 공지한 주의사항, “회사”가 통지하는 사항 등을 준수하여야 하며, 기타 “회사”의 업무에 방해되는 행위를 하여서는 안 됩니다.
+**Article 28 (the obligation of "user")**
+"user" shall not do the following: 
+Transmission or posting of information (computer programs, etc.) prohibited by "company" and other third parties' copyright infringement of intellectual property rights such as "company" or other illegal words, texts, video, sound, or other public order.You can't stand.
 
-**제 29 조(지급방법)**
-“콘텐츠" 및 “서비스”의 이용에 대한 대금지급방법은 다음 각 호의 방법 중 가능한 방법으로 할 수 있습니다. 다만, “회사”는 "이용자"의 지급방법에 대하여 어떠한 명목의 수수료도 추가하여 징수하지 않습니다.
-폰뱅킹, 인터넷뱅킹, 메일 뱅킹 등의 각종 계좌이체
-선불카드, 직불카드, 신용카드 등의 각종 카드결제
-마일리지 등 위즈스쿨이 지급한 포인트에 의한 결제
-위즈스쿨과 계약을 맺었거나 위즈스쿨이 인정한 상품권에 의한 결제
-전화 또는 휴대전화를 이용한 결제
-기타 전자적 지급방법에 의한 대금지급 등
+**Article 29 (Payment Method)**
+The payment method for the use of "Content" and "Service" may be made in any of the following ways. 
+However, "Company" does not collect any additional fees for the payment method of "user".
+Payments made by Red Brick through points paid by Red Brick, such as prepaid cards, debit cards, credit cards, and other credit cards, or payment by phone or mobile phone recognized by Red Brick.
 
-**제 30조(유료 콘텐츠 및 유료 서비스의 제공 및 중단)**
-유료 콘텐츠 및 유료 서비스는 연중무휴, 1일 24시간 제공함을 원칙으로 합니다.
-“회사”는 컴퓨터 등 정보통신설비의 보수점검, 교체 및 고장, 통신두절 또는 운영상 이유가 있는 경우 유료 콘텐츠 또는 유료 서비스의 제공을 일시적으로 중단할 수 있습니다. 이 경우 “회사”는 제9조["회원"에 대한 통지]에 정한 방법으로 "이용자"에게 통지합니다. 다만, “회사”가 사전에 통지할 수 없는 부득이한 사유가 있는 경우 사후에 통지할 수 있습니다.
-“회사”는 상당한 이유 없이 유료 콘텐츠 또는 유료 서비스의 제공이 일시적으로 중단됨으로 인하여 "이용자"가 입은 손해에 대하여 배상합니다. 다만, “회사”가 고의 또는 과실이 없음을 입증하는 경우에는 그러하지 아니합니다.
-“회사”는 유료 콘텐츠 또는 유료 서비스의 제공에 필요한 경우 정기점검을 실시할 수 있으며, 정기점검시간은 서비스제공화면에 공지한 바에 따릅니다.
-사업종목의 전환, 사업의 포기, 업체 간의 통합 등의 이유로 유료 콘텐츠 또는 유료 서비스를 제공할 수 없게 되는 경우에는“회사”는 제9조["회원"에 대한 통지]에 정한 방법으로 "이용자"에게 통지하고 당초 “회사”에서 제시한 조건에 따라 "이용자"에게 보상합니다. 다만, “회사”가 보상기준 등을 고지하지 아니하거나, 고지한 보상기준이 적절하지 않은 경우에는 "이용자"들의 마일리지 또는 적립금 등을 현물 또는 현금으로 "이용자"에게 지급합니다.
+**Article 30 (Providing and Suspending Paid Contents and Paid Services)**
+In principle, paid contents and paid services are provided 24 hours a day, 24/7.
+"Company" may temporarily suspend the provision of paid content or paid services if there is a reason for maintenance inspection, replacement and failure of information and communication facilities such as computers, communication failure, or operation.
+In this case, the "company" notifies the "user" in the manner specified in Article 9[Notification of Members]. However, if there is an unavoidable reason why the "company" cannot notify in advance, it may be notified afterwards.
+The "company" compensates the "user" for damages caused by the temporary suspension of the provision of paid content or paid services for no considerable reason. However, this is not the case if the "company" proves that there is no intention or negligence.
+"Company" may conduct regular inspections if necessary for the provision of paid content or paid services, and the regular inspection time shall be as notified in the Service Republican-myeon.
+In the event that paid content or paid services cannot be provided due to the conversion of business items, abandonment of business, or integration between companies, "Company" shall notify "User" in the manner specified in Article 9 ("Notification of Members") and compensate "User" in accordance with the conditions originally suggested by "Company". However, if the "company" does not notify the compensation standards, etc., or the compensation standards notified are not appropriate, the mileage or reserves of "users" shall be paid to "users" in kind or in cash.
 
-**제 31조(유료 콘텐츠 및 유료 서비스의 변경)**
-“회사”는 상당한 이유가 있는 경우에 운영상, 기술상의 필요에 따라 제공하고 있는 콘텐츠와 서비스를 변경할 수 있습니다.
-“회사”는 유료 콘텐츠 및 유료 서비스의 내용, 이용방법, 이용시간을 변경할 경우에 변경사유, 변경될 콘텐츠서비스의 내용 및 제공일자 등을 그 변경 전 7일 이상 해당 콘텐츠초기화면에 게시합니다.
-제2항의 경우에 변경된 내용이 중대하거나 "이용자"에게 불리한 경우에는 “회사”가 해당 유료 콘텐츠 및 유료 서비스를 제공받는 "이용자"에게 제9조["회원"에 대한 통지]에 정한 방법으로 통지하고 동의를 받습니다. 이때, “회사”는 동의를 거절한 "이용자"에 대하여는 변경전 콘텐츠 또는 서비스를 제공합니다. 다만, 그러한 콘텐츠 또는 서비스 제공이 불가능할 경우 유료 서비스 제공 계약을 해지할 수 있습니다.
-“회사”는 유료 콘텐츠 또는 유료 서비스에 대한 제1항에 의한 유료 콘텐츠 및 유료 서비스의 변경에 대한 제3항에 의한 계약의 해지로 인하여 "이용자"가 입은 손해를 배상합니다.
+**Article 31 (Change of Paid Content and Paid Services)**
+"Company" may change the content and services it provides according to operational and technical needs if there are significant reasons.
+"Company" posts the contents of paid content and paid services, how to use them, the reasons for change in case of changing the usage time, the contents of the content service to be changed, and the date of provision on the initial screen for at least 7 days before the change.
+In the case of paragraph (2), if the changes are significant or unfavorable to the "user", the "company" shall notify the "user" who is provided with the relevant paid content and paid services in the manner specified in Article 9 ("members" and obtain consent. At this time, the "company" provides content or service before the change to the "user" who refuses to consent.
+However, if such content or service cannot be provided, the paid service provision contract may be terminated. "Company" compensates for damages suffered by "user" due to the termination of the contract under paragraph (3) for changes in paid content or paid services under paragraph (1).
 
-**제 32조(정보의 제공 및 광고의 게재)**
-“회사”는 "이용자"가 콘텐츠 또는 서비스 이용 중 필요하다고 인정되는 다양한 정보를 공지사항이나 전자우편 등의 방법으로 "회원"에게 제공할 수 있습니다. 다만, "회원"은 언제든지 전자우편 등을 통하여 수신 거절을 할 수 있습니다.
-제1항의 정보를 전화 및 모사전송기기에 의하여 전송하려고 하는 경우에는 "회원"의 사전 동의를 받아서 전송합니다.
-“회사”는 "콘텐츠"서비스 제공과 관련하여 콘텐츠 또는 서비스 화면, 홈페이지, 전자우편 등에 광고를 게재할 수 있습니다. 광고가 게재된 전자우편 등을 수신한 "회원"은 수신거절을 “회사”에게 할 수 있습니다.
+**Article 32 (Providing Information and Publishing Advertisements)**
+"Company" may provide "Member" with various information deemed necessary by "User" during the use of content or services through notices or e-mails. However, "members" can refuse receipt at any time through e-mail.
+If you intend to transmit the information under paragraph (1) by phone or mother-in-law transmitter, send it with the prior consent of the "member".
+"Company" can post advertisements on content or service screens, homepages, e-mails, etc. in connection with the provision of "content" services.
+A "member" who receives an e-mail with an advertisement may refuse to receive it to the "company".
 
-**제 33조(게시물의 삭제)**
-“회사”는 게시판에 정보통신망이용촉진 및 정보보호 등에 관한 법률을 위반한 청소년유해매체물이 게시되어 있는 경우에는 이를 지체 없이 삭제 합니다. 다만, 19세 이상의 "이용자"만 이용할 수 있는 게시판은 예외로 합니다.
-“회사”가 운영하는 게시판 등에 게시된 정보로 인하여 법률상 이익이 침해된 자는 “회사”에게 당해 정보의 삭제 또는 반박내용의 게재를 요청할 수 있습니다. 이 경우 “회사”는 지체 없이 필요한 조치를 취하고 이를 즉시 신청인에게 통지합니다.
+**Article 33 (Delete Post)**
+"Company" shall delete harmful media for youth in violation of the Act on Promotion of Information and Communication Network Utilization and Information Protection without delay. However, exceptions are made to bulletin boards that can only be used by "users" aged 19 or older.
+A person whose legal interests have been violated due to information posted on a bulletin board operated by the "Company" may request the "Company" to delete or publish the information. In this case, the "company" will take necessary measures without delay and notify the applicant immediately.
 
-**제 34조(저작권 등의 귀속)**
-“회사”가 작성한 저작물, 특히 “회사”가 제공하는 “콘텐츠”와 “서비스” 에 대한 저작권 기타 지적재산권은 "“회사”에 귀속합니다.
-“회사”가 제공하는 서비스 중 제휴계약에 의해 제공되는 저작물에 대한 저작권 기타 지적재산권은 해당 제공업체에 귀속합니다.
-”이용자"는 “회사”가 제공하는 서비스를 이용함으로써 얻은 정보나 저작물 중“회사” 또는 제공업체에 지적재산권이 귀속된 정보나 저작물을 “회사” 또는 제공업체의 사전승낙 없이 복제, 전송, 출판, 배포, 방송 기타 방법에 의하여 영리목적으로 이용하거나 제3자에게 이용하게 하여서는 안 됩니다. “이용자”는 “회사”가 제공하는 유료 및 무료 콘텐츠를 “이용자”와 “회사”와의 이용계약의 목적에 부합하는 범위 내에서만 이용 가능합니다.
-“회사”는 약정에 따라 "이용자"의 저작물을 사용하는 경우 당해 "이용자"의 허락을 받습니다.
+**Article 34 (Copyright, etc.)**
+Copyrights and other intellectual property rights to "Contents" and "Services" provided by "Company" belong to "Company".
+Copyright and other intellectual property rights for works provided by the partnership contract among the services provided by the "Company" belong to the relevant provider.
+"Users" shall not use information or works obtained from the use of services provided by "Company" or information or works attributable to intellectual property rights to "Company" or provider for profit or to third parties without prior consent from "Company" or provider.
+"Users" can only use paid and free content provided by "Company" to the extent that it meets the purpose of the contract with "Users" and "Company." "Company" shall obtain permission from the relevant "user" if it uses the work of "user" under the agreement.
 
-**제 35조(개인정보보호)**
-“회사”는 "정보통신망법" 등 관계 법령이 정하는 바에 따라 "이용자"의 개인정보를 보호하기 위해 노력합니다. 개인정보의 보호 및 사용에 대해서는 관련법 및“회사”의 개인정보취급방침이 적용됩니다.
+**Article 35 (Personal Information Protection)**
+"Company" strives to protect the personal information of "Users" as prescribed by relevant laws such as the "Information and Communication Network Act". For the protection and use of personal information, the relevant laws and "company"'s personal information handling policy apply.
 
-**제 36조조의1(청약철회)**
-“회사”의 유료 콘텐츠 및 유료 서비스는 청약철회가 가능한 상품과 청약철회가 제한되는 상품으로 구분되어 제공되며, 이러한 내용은 “이용자”가 유료 콘텐츠 및 유료 서비스를 구매할 시 거래 화면에 고지합니다. “회사”와 청약철회가 가능한 유료 콘텐츠 및 유료 서비스 이용에 관한 계약을 체결한 “이용자”는 구매일 또는 유료 콘텐츠 및 유료 서비스 이용가능일로부터 7일 이내에는 청약의 철회를 할 수 있습니다.
-“이용자”는 다음 각 호의 어느 하나에 해당하는 경우에는 회사의 의사에 반하여 제1항에 따른 청약철회 등을 할 수 없습니다. 다만, 회사가 제3항에 따른 조치를 하지 아니하는 경우에는 제2호부터 제5호까지의 규정에 해당하는 경우에도 청약철회 등을 할 수 있습니다.
-“이용자”에게 책임이 있는 사유로 재화 등이 멸실되거나 훼손된 경우
-“이용자”이 재화를 사용 또는 일부 소비한 경우
-시간이 지나 다시 판매하기 곤란할 경우
-복제 가능한 재화 등의 포장을 훼손한 경우
-용역 또는 「문화산업진흥 기본법」 제2조제5호의 디지털콘텐츠의 제공이 개시된 경우(다만, 가분적 용역 또는 가분적 디지털콘텐츠로 구성된 계약의 경우에는 제공이 개시되지 아니한 부분에 대하여는 그러하지 아니하다)
-그 밖에 거래의 안전을 위하여 대통령령으로 정하는 경우
-“회사”는 제1항, 제2항 제2호부터 제5호까지 규정에 따라 청약철회 등이 불가능한 재화 등의 경우에는 그 사실을 재화 등의 포장이나 그밖에 “이용자”가 쉽게 알 수 있는 곳에 명확하게 적시하거나 시험 사용 상품을 제공하는 등의 방법으로 청약철회 등의 권리 행사가 방해받지 아니하도록 조치하여야 합니다. 다만, 제2항 제5호 중 디지털콘텐츠에 대하여 “이용자”가 청약철회등을 할 수 없는 경우에는 청약철회등이 불가능하다는 사실의 표시와 함께 대통령령으로 정하는 바에 따라 시험 사용 상품을 제공하는 등의 방법으로 청약철회등의 권리 행사가 방해받지 아니하도록 하여야 합니다. 만약 “회사”가 이러한 조치를 하지 아니한 경우에는 제2항 제2호 내지 제5호의 청약철회 제한사유에도 불구하고 “이용자”은 청약철회를 할 수 있습니다.
-“이용자”는 제1항 내지 제3항의 규정에도 불구하고 유료 콘텐츠 및 유료 서비스의 내용이 표시·광고 내용과 다르거나 계약내용과 다르게 이행된 경우에는 구매일 또는 유료 콘텐츠 및 유료 서비스 이용 가능일로부터 3월 이내, 그 사실을 안 날 또는 알 수 있었던 날부터 30일 이내에 청약철회를 할 수 있습니다.
-“이용자”는 구두 또는 서면(전자문서 포함), 전자우편으로 청약철회를 할 수 있습니다.
 
-**제 36조의2(“회사”의 귀책으로 인한 유료 콘텐츠 이용계약의 청약철회)**
-“이용자"는 다음 각 호의 사유가 있을 때에는 당해 "콘텐츠"를 공급받은 날로부터 3월 이내 또는 그 사실을 안 날 또는 알 수 있었던 날부터 30일 이내에 콘텐츠이용계약을 해제·해지할 수 있습니다.
-이용계약에서 약정한 "콘텐츠"가 제공되지 않는 경우
-제공되는 "콘텐츠"가 표시·광고 등과 상이하거나 현저한 차이가 있는 경우
-기타 "콘텐츠"의 결함으로 정상적인 이용이 현저히 불가능한 경우
-“이용자”는 구두 또는 서면(전자문서 포함), 전자우편으로 청약철회를 할 수 있습니다.
-“회사”는 제3항에 따라 "이용자"가 표시한 청약철회 또는 계약해제·해지의 의사표시를 수신한 후 지체 없이 이러한 사실을 "이용자"에게 회신합니다.
-“이용자"는 제2항의 사유로 계약해제·해지의 의사표시를 하기 전에 상당한 기간을 정하여 완전한 "콘텐츠" 혹은 서비스이용의 하자에 대한 치유를 요구할 수 있습니다.
+**Article 36-1 (Withdrawl of Subscription)**
+The paid contents and paid services of "Company" are divided into products that can be withdrawn and products that are restricted from withdrawing subscription, and these contents are notified on the transaction screen when "users" purchase paid content and paid services.
+Users who have signed a contract with "Company" on the use of paid content and paid services that can be withdrawn can withdraw their subscription within seven days from the date of purchase or the date of availability of paid content and paid services.
+The "user" may not withdraw subscription pursuant to paragraph (1) against the will of the company in any of the following cases. However, if the company does not take measures pursuant to paragraph (3), the subscription may be withdrawn even if it falls under the provisions of subparagraphs 2 through 5.
+If goods, etc., are lost or damaged due to reasons responsible to the "user", if the "user" uses or consumes goods, it is difficult to resell them over time, or if digital content under Article 2 Subparagraph 5 of the Framework Act on Cultural Industry is initiated (but not provided). Measures should be taken to ensure that the exercise of rights, such as withdrawal of subscription, is not disturbed by clearly specifying where possible or providing test-use products. However, if a "user" is unable to withdraw subscription, etc. for digital content in paragraph (2) 5, the exercise of rights, such as withdrawal of subscription, shall not be disturbed by providing trial products as prescribed by Presidential Decree.
+If the "company" fails to take such measures, the "user" may withdraw the subscription despite the reasons for restriction on withdrawal of subscription under paragraph (2) 2 through 5.
+Notwithstanding the provisions of paragraphs (1) to (3), "Users" may withdraw their subscription within three months from the date of purchase or the date of availability of paid content and paid service if the contents of paid content and paid service are different from the contract.
+"Users" may withdraw their subscription verbally, in writing (including electronic documents), or by e-mail.
 
-**제 37조("이용자"의 청약철회와 계약해제·해지의 효과)**
-1. “회사”는 "이용자"가 청약철회의 의사표시를 한 날로부터 또는 "이용자"에게 계약해제·해지의 의사표시에 대하여 회신한 날로부터 3영업일 이내에 대금의 결제와 동일한 방법으로 이를 환급하여야 하며, 동일한 방법으로 환불이 불가능할 때에는 이를 사전에 고지하여야 합니다. 이 경우 “회사”가 "이용자"에게 환급을 지연한 때에는 그 지연기간에 대하여 공정거래위원회가 정하여 고시하는 지연이자율을 곱하여 산정한 지연이자를 지급합니다.
-2. “회사”가 제1항에 따라 환급할 경우에 "이용자"가 유료 콘텐츠 및 유료 서비스 이용으로부터 얻은 이익에 해당하는 금액을 공제하고 환급할 수 있습니다.
-3. “회사”는 위 대금을 환급함에 있어서 "이용자"가 신용카드 또는 전자화폐 등의 결제수단으로 재화 등의 대금을 지급한 때에는 지체 없이 당해 결제수단을 제공한 사업자로 하여금 재화 등의 대금의 청구를 정지 또는 취소하도록 요청합니다. 다만, 제2항의 금액공제가 필요한 경우에는 그러하지 아니할 수 있습니다.
-4. “회사”, "콘텐츠 등의 대금을 지급 받은 자" 또는 "이용자와 콘텐츠이용계약을 체결한 자"가 동일인이 아닌 경우에 각자는 청약철회 또는 계약해제·해지로 인한 대금환급과 관련한 의무의 이행에 있어서 연대하여 책임을 집니다.
-5. “회사”는 "이용자"에게 본 약관과 관련 법령에서 허용하는 청약철회를 이유로 위약금 또는 손해배상을 청구하지 않습니다. 그러나 "이용자"의 계약해제·해지는 손해배상의 청구에 영향을 미치지 않습니다.
+**Article 36-2 (withdrawal of subscription to a paid content use contract attributable to the "company")**
+"User" may terminate or terminate the content use contract within three months from the date of supply or 30 days from the date of knowing the fact.
+If the "content" agreed in the usage contract is not provided, the "content" provided is different from or significantly different from display and advertisement, or if it is significantly impossible to use normally due to other "content" defects, "user" may withdraw subscription by oral or written (including electronic documents) or e-mail.
+"Company" shall, without delay, reply to "User" after receiving an expression of intention to withdraw or terminate the subscription indicated by "User" pursuant to paragraph (3). The "user" may request complete "content" or cure for defects in service use for a considerable period of time before expressing his intention to terminate or terminate the contract for the reasons under paragraph (2).
 
-**제 38조(과오금)**
-1. “회사”는 과오금이 발생한 경우 이용대금의 결제와 동일한 방법으로 과오금 전액을 환불하여야 합니다. 다만, 동일한 방법으로 환불이 불가능할 때는 이를 사전에 고지합니다.
-2. “회사”의 책임 있는 사유로 과오금이 발생한 경우 “회사”는 계약비용, 수수료 등에 관계없이 과오금 전액을 환불합니다. 다만, "이용자"의 책임 있는 사유로 과오금이 발생한 경우, “회사”가 과오금을 환불하는 데 소요되는 비용은 합리적인 범위 내에서 "이용자"가 부담하여야 합니다.
-3. “회사”는 "이용자"가 주장하는 과오금에 대해 환불을 거부할 경우에 정당하게 이용대금이 부과되었음을 입증할 책임을 집니다.
-4. “회사”는 과오금의 환불절차를 디지털콘텐츠이용자보호지침에 따라 처리합니다.
+**Article 37 (the effect of withdrawal of subscription and cancellation or termination of a contract)**
+1. The "company" shall refund the payment in the same way as the payment within three business days from the date the "user" expresses his intention to withdraw the subscription or within three business days from the date of replying to the termination or termination of the contract, and shall notify in advance. In this case, when the "company" delays the refund to the "user", the delayed interest calculated by multiplying the delayed interest rate determined and notified by the Fair Trade Commission shall be paid for the delayed period.
+2. If the "company" refunds pursuant to paragraph (1), the "user" may deduct and refund the amount equivalent to the profits from the use of paid content and paid services.
+3. In refunding the above payment, "Company" requests the business operator who provided the payment method to suspend or cancel the claim for goods, etc. without delay when "user" pays for goods, etc. by payment method such as credit card or electronic money. However, this may not be the case if the amount deduction under paragraph (2) is necessary.
+4. If "company," "person who has been paid for content, etc." or "person who has signed a content use contract with the user" are not the same person, each is jointly responsible for the fulfillment of obligations related to subscription withdrawal, contract cancellation, or termination.
+5. The "company" shall not claim a penalty or compensation for damages from the "user" on the grounds of withdrawal of subscription permitted by these terms and conditions and related laws. However, it does not affect the "user"'s claim for damages to be terminated or terminated.
 
-**제 39조(콘텐츠하자 등에 의한 이용자피해보상)**
-“회사”는 콘텐츠하자 등에 의한 이용자피해보상의 기준·범위·방법 및 절차에 관한 사항을 디지털콘텐츠이용자보호지침에 따라 처리합니다.
+**Article 38 (overpayment)**
+1. In the event of an overpayment , the "company" shall refund the entire amount of the error in the same way as the payment of the usage amount. However, if it is impossible to refund in the same way, we will notify you in advance.
+2. In the event of an overpayment due to responsible reasons for the "company", the "company" will refund the full amount of the overpayment regardless of the contract cost or fee. However, in the event of an overpayment due to responsible reasons for the "user", the "user" shall bear the expenses incurred for the "company" to refund the overpayment within a reasonable range.
+3. "Company" is responsible for proving that the usage fee has been duly charged in the event of refusal to refund the overpayment claimed by "user".
+4. The "company" handles the refund procedure for overpayment in accordance with the digital content user protection guidelines.
 
-**제 40조(면책조항)**
-1. “회사”는 천재지변 또는 이에 준하는 불가항력으로 인하여 "콘텐츠"와 “서비스”를 제공할 수 없는 경우에는 "콘텐츠"와 “서비스” 제공에 관한 책임이 면제됩니다.
-2. “회사”는 "이용자"의 귀책사유로 인한 "콘텐츠"와 “서비스” 이용의 장애에 대하여는 책임을 지지 않습니다.
-3. “회사”는 "회원"이 "콘텐츠"와 관련하여 게재한 정보, 자료, 사실의 신뢰도, 정확성 등의 내용에 관하여는 책임을 지지 않습니다.
-4. “회사”는 "이용자" 상호간 또는 "이용자"와 제3자 간에 "콘텐츠"와 “서비스”를 매개로 하여 발생한 분쟁 등에 대하여 책임을 지지 않습니다.
+**Article 39 (User Damage Compensation by Content Defects)**
+"Company" shall handle matters related to the standards, scope, methods, and procedures of user damage compensation by content defects, etc. in accordance with digital content user protection guidelines.
 
-**제 41조(분쟁의 해결)**
-1. “회사”는 분쟁이 발생하였을 경우에 "이용자"가 제기하는 정당한 의견이나 불만을 반영하여 적절하고 신속한 조치를 취합니다. 다만, 신속한 처리가 곤란한 경우에 “회사”는 "이용자"에게 그 사유와 처리일정을 통보합니다.
+**Article 40 (Exemption clause)**
+1. If the "company" is unable to provide "content" and "service" due to natural disasters or equivalent force majeure, the "company" is exempted from liability for providing "content" and "service".
+2. "Company" shall not be liable for obstacles in the use of "content" and "service" due to reasons attributable to "user".
+3. "Company" is not responsible for the information, data, reliability of facts, accuracy, etc. posted by "members" in relation to "content".
+4. "Company" shall not be liable for disputes arising from "content" and "service" between "users" or between "users" and third parties.
 
-**제 42조(준거법 및 관할법원)**
-1. “회사”와 “이용자” 간 제기된 소송은 대한민국법을 준거법으로 합니다.
-2. “회사”와 “이용자”간 발생한 분쟁에 관한 소송은 제소 당시의 “이용자”의 주소에 의하고, 주소가 없는 경우 거소를 관할하는 지방법원의 전속관할로 합니다. 단, 제소 당시 “이용자”의 주소 또는 거소가 명확하지 아니한 경우의 관할법원은 민사소송법에 따라 정합니다.
-3. 해외에 주소나 거소가 있는 “이용자”의 경우 “회사”와 “이용자”간 발생한 분쟁에 관한 소송은 전항에도 불구하고 대한민국 서울중앙지방법원을 관할법원으로 합니다.
+**Article 41 (Resolution of Dispute)**
+1. “In the event of a dispute, the "company" takes appropriate and prompt action by reflecting the legitimate opinions or complaints raised by the "user." However, if it is difficult to expedite the process, the "company" notifies the "user" of the reason and processing schedule.
 
-**제 43조(기타조항)**
-1. 회원은 상대방의 사전 서면 동의 없이 이 약관상의 권리와 의무를 제3자에게 양도 할 수 없습니다.
-2. 이 약관과 관련하여 당사자 간의 합의에 의하여 추가로 작성된 계약서, 협정서, 통보서 등과 회사의 정책변경, 법령의 제정·개정 또는 공공기관의 고시·지침 등에 의하여 회사가 서비스를 통해 회원에게 공지하는 내용도 본 약관의 일부를 구성합니다.
+**Article 42 (Applicable Law and competent court)**
+1. Litigation filed between "company" and "user" shall be governed by Korean law.
+2. A lawsuit regarding a dispute between the "company" and the "user" shall be governed by the address of the "user" at the time of filing, and if there is no address, it shall be under the exclusive jurisdiction of the district court having jurisdiction over the residence. However, if the address or residence of the "user" is not clear at the time of filing, the competent court shall determine in accordance with the Civil Procedure Act.
+3. In the case of "users" with addresses or residences abroad, the Seoul Central District Court of Korea shall be the competent court for disputes between "company" and "users" despite the preceding paragraph.
 
-이 약관은 2019년 1월 1일부터 적용됩니다.
-주식회사 위즈스쿨
+**Article 43 (Other provisions)**
+1. Members may not transfer the rights and obligations under these terms and conditions to a third party without prior written consent from the other party.
+2. Contracts, agreements, notifications, changes in the company's policies, enactments and revisions of laws, or notices and guidelines by public institutions, etc., additionally prepared by agreement between the parties, form part of these terms and conditions.
+
+These terms and conditions will take effect on January 1, 2019.
+Red Brick Co., Ltd.
 `;

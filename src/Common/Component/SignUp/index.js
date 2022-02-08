@@ -21,6 +21,8 @@ import privacy from "./Agreements/privacy";
 import privacy_jp from "./Agreements/privacy-jp";
 import privacy_en from "./Agreements/privacy-en";
 import advertisement from "./Agreements/advertisement";
+import advertisement_jp from "./Agreements/advertisement-jp";
+import advertisement_en from "./Agreements/advertisement-en";
 import arrowImg from "../../../Image/signup_arrow.svg";
 import PhoneDropDown from "../QRPopup/PhoneDropDown";
 
@@ -38,10 +40,12 @@ class SignUp extends Component {
     else if (this.locale == "ja") {
       privacyDoc = privacy_jp;
       termDoc = terms_jp;
+      adDoc = advertisement_jp;
     }
     else if (this.locale == "en") {
       privacyDoc = privacy_en;
       termDoc = terms_en;
+      adDoc = advertisement_en;
     }
 
     this.agreements = [
@@ -763,10 +767,10 @@ class SignUp extends Component {
               <div key={index} className="signup_agreement">
                 <div
                   className={`signup_agreement_box ${warning_agreement !== "" &&
-                      !this.state[agreement.id] &&
-                      agreement.id !== "agreed_advertisement"
-                      ? "signup_agreement_box-warning"
-                      : ""
+                    !this.state[agreement.id] &&
+                    agreement.id !== "agreed_advertisement"
+                    ? "signup_agreement_box-warning"
+                    : ""
                     }`}
                   onClick={() => {
                     onClickAgreement(agreement.id);
