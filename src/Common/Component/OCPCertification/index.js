@@ -55,8 +55,8 @@ class Container extends Component {
     window.print();
     document.body.style.display = "block";
     printDiv.style.display = "none";
-    if (this.props.callback) this.props.callback();
-    showPopUp(null);
+    // if (this.props.callback) this.props.callback();
+    //showPopUp(null);
     this.disableCertBtn()
   }
 
@@ -80,10 +80,8 @@ class Container extends Component {
     );
     downloadLink.setAttribute("href", imgURL);
     downloadLink.click();
-    if (this.props.callback) {
-      this.props.callback();
-    }
-    showPopUp(null);
+    // if (this.props.callback) {this.props.callback();}
+    //showPopUp(null);
     this.disableCertBtn()
   }
 
