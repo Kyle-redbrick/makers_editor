@@ -15,7 +15,11 @@ import SignIn from "../SignIn";
 import "./index.scss";
 
 import terms from "./Agreements/terms";
+import terms_jp from "./Agreements/terms-jp";
+import terms_en from "./Agreements/terms-en";
 import privacy from "./Agreements/privacy";
+import privacy_jp from "./Agreements/privacy-jp";
+import privacy_en from "./Agreements/privacy-en";
 import advertisement from "./Agreements/advertisement";
 import arrowImg from "../../../Image/signup_arrow.svg";
 import PhoneDropDown from "../QRPopup/PhoneDropDown";
@@ -24,30 +28,43 @@ class SignUp extends Component {
   constructor(props) {
     super(props);
     this.locale = props.intl.locale;
+    let privacyDoc = privacy;
+    let termDoc = terms;
+    let adDoc = advertisement;
+
     if (this.locale === "zh") {
       this.locale = "zh-CN";
     }
+    else if (this.locale == "ja") {
+      privacyDoc = privacy_jp;
+      termDoc = terms_jp;
+    }
+    else if (this.locale == "en") {
+      privacyDoc = privacy_en;
+      termDoc = terms_en;
+    }
+
     this.agreements = [
       {
         id: "agreed_terms",
         title: this.props.intl.formatMessage({
           id: "ID_SIGNUP_TERMS_AGREEMENT_TERMSOFUSE"
         }),
-        text: terms
+        text: termDoc
       },
       {
         id: "agreed_privacy",
         title: this.props.intl.formatMessage({
           id: "ID_SIGNUP_TERMS_AGREEMENT_PRIVACY"
         }),
-        text: privacy
+        text: privacyDoc
       },
       {
         id: "agreed_advertisement",
         title: this.props.intl.formatMessage({
           id: "ID_SIGNUP_TERMS_AGREEMENT_AD"
         }),
-        text: advertisement
+        text: adDoc
       }
     ];
 
@@ -393,9 +410,9 @@ class SignUp extends Component {
         countryCode,
         icon:
           DEFAULT_PROFILE_IMAGES[
-            Math.floor(
-              Math.random() * Math.floor(DEFAULT_PROFILE_IMAGES.length)
-            )
+          Math.floor(
+            Math.random() * Math.floor(DEFAULT_PROFILE_IMAGES.length)
+          )
           ],
         isMarketingAgreement: agreed_advertisement,
         recaptchaToken
@@ -559,9 +576,8 @@ class SignUp extends Component {
               <span className="signup_input_title_dot">*</span>
             </div>
             <input
-              className={`popup_input ${
-                warning_email !== "" ? "popup_input-warning" : ""
-              }`}
+              className={`popup_input ${warning_email !== "" ? "popup_input-warning" : ""
+                }`}
               id="email"
               placeholder={formatMessage({ id: "ID_SIGNUP_EMAIL_PLACEHOLDER" })}
               value={email}
@@ -579,9 +595,8 @@ class SignUp extends Component {
               <span className="signup_input_title_dot">*</span>
             </div>
             <input
-              className={`popup_input ${
-                warning_password !== "" ? "popup_input-warning" : ""
-              }`}
+              className={`popup_input ${warning_password !== "" ? "popup_input-warning" : ""
+                }`}
               id="password"
               type="password"
               placeholder={formatMessage({ id: "ID_SIGNUP_PW_PLACEHOLDER" })}
@@ -596,9 +611,8 @@ class SignUp extends Component {
               <span className="signup_input_title_dot">*</span>
             </div>
             <input
-              className={`popup_input ${
-                warning_password !== "" ? "popup_input-warning" : ""
-              }`}
+              className={`popup_input ${warning_password !== "" ? "popup_input-warning" : ""
+                }`}
               id="password_re"
               type="password"
               placeholder={formatMessage({ id: "ID_SIGNUP_PW_RE_PLACEHOLDER" })}
@@ -616,9 +630,8 @@ class SignUp extends Component {
               <span className="signup_input_title_dot">*</span>
             </div>
             <input
-              className={`popup_input ${
-                warning_name !== "" ? "popup_input-warning" : ""
-              }`}
+              className={`popup_input ${warning_name !== "" ? "popup_input-warning" : ""
+                }`}
               id="name"
               placeholder={formatMessage({ id: "ID_SIGNUP_NAME_PLACEHOLDER" })}
               value={name}
@@ -644,14 +657,12 @@ class SignUp extends Component {
               />
 
               <div
-                className={`signup_phone ${
-                  warning_phone !== "" ? "signup_phone-warning" : ""
-                }`}
+                className={`signup_phone ${warning_phone !== "" ? "signup_phone-warning" : ""
+                  }`}
               >
                 <input
-                  className={`popup_input popup_input-phone ${
-                    warning_phone !== "" ? "popup_input-warning" : ""
-                  }`}
+                  className={`popup_input popup_input-phone ${warning_phone !== "" ? "popup_input-warning" : ""
+                    }`}
                   id="phone"
                   placeholder={formatMessage({
                     id: "ID_SIGNUP_PHONE_PLACEHOLDER"
@@ -677,14 +688,12 @@ class SignUp extends Component {
           </div>
           <div className="signup_input_wrapper signup__padding">
             <div
-              className={`signup_phone ${
-                warning_phone !== "" ? "signup_phone-warning" : ""
-              }`}
+              className={`signup_phone ${warning_phone !== "" ? "signup_phone-warning" : ""
+                }`}
             >
               <input
-                className={`popup_input popup_input-smscode ${
-                  warning_phone !== "" ? "popup_input-warning" : ""
-                }`}
+                className={`popup_input popup_input-smscode ${warning_phone !== "" ? "popup_input-warning" : ""
+                  }`}
                 id="smsCode"
                 placeholder={formatMessage({
                   id: "ID_SIGNUP_SMSCODE_PLACEHOLDER"
@@ -753,13 +762,12 @@ class SignUp extends Component {
             {agreements.map((agreement, index) => (
               <div key={index} className="signup_agreement">
                 <div
-                  className={`signup_agreement_box ${
-                    warning_agreement !== "" &&
-                    !this.state[agreement.id] &&
-                    agreement.id !== "agreed_advertisement"
+                  className={`signup_agreement_box ${warning_agreement !== "" &&
+                      !this.state[agreement.id] &&
+                      agreement.id !== "agreed_advertisement"
                       ? "signup_agreement_box-warning"
                       : ""
-                  }`}
+                    }`}
                   onClick={() => {
                     onClickAgreement(agreement.id);
                   }}
@@ -796,9 +804,8 @@ class SignUp extends Component {
           </div>
 
           <div
-            className={`signup_recaptch ${
-              this.state.warning_recaptchaToken ? "signup_recaptch-warning" : ""
-            }`}
+            className={`signup_recaptch ${this.state.warning_recaptchaToken ? "signup_recaptch-warning" : ""
+              }`}
           >
             <ReCaptcha
               size="normal"

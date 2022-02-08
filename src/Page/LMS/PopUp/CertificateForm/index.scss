@@ -29,8 +29,8 @@
     }
   
     .popup_subtitle {
-      margin-top: 0;
-      margin-bottom: 26px;
+      margin: 0 auto 26px;
+      width: 336px;
       text-align: center;
       font-size: 14px;
       font-weight: 400;
@@ -112,6 +112,7 @@
         .questClear_certificate_field {
           width: 257px;
           height: 30px;
+          color: #ffffff;
           background: rgba(0, 0, 0, 0.15);
           border: none;
           border-radius: 3px;

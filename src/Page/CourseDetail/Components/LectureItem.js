@@ -247,7 +247,7 @@ const ProgressBar = styled.div``;
 const ProgressText = styled.div`
   font-size: 16px;
   line-height: 1;
-  letter-spacing: -0.1px;
+  white-space: nowrap;
   color: rgba(255, 255, 255, 0.5);
 `;
 
@@ -316,8 +316,8 @@ const LectureItem = ({ item, ...props }) => {
   );
 
   const progressText = `${item.completedMissionNum > item.totalMissionNum
-      ? item.totalMissionNum
-      : item.completedMissionNum
+    ? item.totalMissionNum
+    : item.completedMissionNum
     }/${item.totalMissionNum}`
 
   return (
