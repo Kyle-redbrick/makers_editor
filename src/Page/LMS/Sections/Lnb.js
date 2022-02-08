@@ -188,6 +188,7 @@ const CertWrap = styled.div`
 `
 
 const CertContainer = styled.div`
+  position: relative;
   width: 270px;
   height: 68px;
   margin-top: 14px;
@@ -200,7 +201,7 @@ const CertContainer = styled.div`
   }
 `
 const CertIcon = styled.img`
-  position: relative;
+  position: relative; 
   left: 18px;
   top: 50%;
   -webkit-transform: translateY(-50%);

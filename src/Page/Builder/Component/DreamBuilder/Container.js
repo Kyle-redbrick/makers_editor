@@ -206,11 +206,11 @@ class Container extends Component {
           sdg={this.state.sdg}
           certificate={this.state.certificate}
           onClickCancel={() => {
-            if (this.props.isReplaying) {
-              window.close();
-            } else {
-              this.createDeveloping(window.close);
-            }
+            // if (this.props.isReplaying) {
+            //   window.close();
+            // } else {
+            //   this.createDeveloping(window.close);
+            // }
           }}
           onClickConfirm={() => {
             // if (this.props.isReplaying) {
@@ -222,7 +222,7 @@ class Container extends Component {
             // } else {
             //   this.createDeveloping(this.linkToDeveloping);
             // }
-            this.props.history.replace(`/lms`);
+            window.close();
 
           }}
         />,
