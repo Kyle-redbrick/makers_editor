@@ -112,12 +112,14 @@ const ProgressBar = styled.div``;
 const ProgressText = styled.div`
   font-size: 16px;
   line-height: 1;
+  white-space: nowrap;
   letter-spacing: -0.1px;
   color: rgba(255, 255, 255, 0.5);
 `;
 
 const LectureDate = styled.div`
   width: 276px;
+  padding-left: 30px;
   font-size: 16px;
   line-height: 1.69;
   color: #fff;
@@ -186,10 +188,9 @@ const Project = ({ project, ...props }) => {
 
   const { intl } = props;
 
-  const progressText = `${
-      project.completedMissionNum > project.totalMissionNum
-        ? project.totalMissionNum
-        : project.completedMissionNum
+  const progressText = `${project.completedMissionNum > project.totalMissionNum
+    ? project.totalMissionNum
+    : project.completedMissionNum
     }/${project.totalMissionNum}`
 
   return (
@@ -223,7 +224,7 @@ const Project = ({ project, ...props }) => {
         <Label><FormattedMessage id="ID_LMS_QUEST_STUDY_TIME" /> </Label>
         {project.myProject
           && project.myProject.studiedMinutes
-          ? project.myProject.studiedMinutes + intl.formatMessage({id: "ID_LMS_QUEST_STUDY_TIME_MIN"})
+          ? project.myProject.studiedMinutes + intl.formatMessage({ id: "ID_LMS_QUEST_STUDY_TIME_MIN" })
           : "-"}
       </LectureDate>
 
@@ -231,16 +232,16 @@ const Project = ({ project, ...props }) => {
         {project.sampleGameUrl && (
           <JoystickButton type="button" onClick={handleClickGame}>
             <IconJoystick alt="조이스틱 아이콘" src={IMAGE.ICON_JOYSTICK} />
-            <JoystickText><FormattedMessage id="ID_COURSE_DETAIL_PLAY_GAME"/></JoystickText>
+            <JoystickText><FormattedMessage id="ID_COURSE_DETAIL_PLAY_GAME" /></JoystickText>
           </JoystickButton>
         )}
         {project.completed ? (
-          <LearnAgain completed id={project.id} lmsButton/>
+          <LearnAgain completed id={project.id} lmsButton />
         ) : (
           project.completedMissionNum === 0 ? (
-            <LearnNow id={project.id} lmsButton/>
+            <LearnNow id={project.id} lmsButton />
           ) : (
-            <LearnContinue id={project.id} lmsButton/>
+            <LearnContinue id={project.id} lmsButton />
           )
         )}
       </ButtonWrap>
