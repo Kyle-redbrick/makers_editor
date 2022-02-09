@@ -30,7 +30,7 @@ import { IntlProvider, addLocaleData } from "react-intl";
 
 addLocaleData([...en, ...ko, ...zh, ...ja]);
 
-const defaultLang = localStorage.getItem("lang");
+// const defaultLang = localStorage.getItem("lang");
 
 class PopUpContainer extends Component {
   componentDidMount() {
@@ -106,7 +106,7 @@ export const showPopUp = (content, options = {} ,isBackTrans) => {
   if (!popup) {
     popup = document.createElement("div");
     popup.setAttribute("id", "popup");
-    popup.classList.add(defaultLang);
+    popup.classList.add(localStorage.getItem("lang"));
     root.appendChild(popup);
     window.onhashchange = function() {
       showPopUp();
@@ -136,7 +136,7 @@ export const showPopUp = (content, options = {} ,isBackTrans) => {
     setTimeout(() => {
       document.body.classList.add("body-unsrollable");
       ReactDOM.render(
-        <IntlProvider locale={defaultLang} messages={locale[defaultLang]}>
+        <IntlProvider locale={localStorage.getItem("lang")} messages={locale[localStorage.getItem("lang")]}>
           <Provider store={store}>
             <PopUpContainer
               dismiss={dismiss}
