@@ -29,8 +29,8 @@
   }
 
   .popup_subtitle {
-    margin-top: 0;
-    margin-bottom: 26px;
+    margin: 0 auto 26px;
+    width: 336px;
     text-align: center;
     font-size: 14px;
     font-weight: 400;
@@ -75,12 +75,14 @@
 
   .questClear_popup_details_category {
     font-weight: bold;
+    text-align: center;
     text-transform: uppercase;
     color: #4C4C4C;
-    width: 64px;
+    width: 25%;
   }
 
   .questClear_popup_details_info {
     color: #4D4D4D;
+    width: 75%;
   }
 }

@@ -1165,7 +1165,7 @@ const en = {
   ID_DREAM_BUILDER_COURSE_CLEAR_CANCEL_BUTTON: "Cancel",
   ID_DREAM_BUILDER_COURSE_CLEAR_SUBMIT_BUTTON: "Submit",
   ID_DREAM_BUILDER_QUEST_CLEAR: "QUEST CLEAR",
-  ID_DREAM_BUILDER_QUEST_CLEAR_SUBTITLE: `Congratulation! You completed all the missions.\nLool what you've learned today!`,
+  ID_DREAM_BUILDER_QUEST_CLEAR_SUBTITLE: `Congratulation! You completed all the missions.\nLook what you've learned today!`,
   ID_DREAM_BUILDER_QUEST_CLEAR_CANCEL_BUTTON: "Stay",
   ID_DREAM_BUILDER_QUEST_CLEAR_CONFIRM_BUTTON: "Next",
   ID_DREAM_BUILDER_TUTORIAL_RESET: "처음부터 다시보기",
