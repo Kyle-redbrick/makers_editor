@@ -628,11 +628,11 @@ export default async function(state, gameMeta, parserErrorHandler) {
             type="text"
             class="InputBox--input"
             name="InputBox--input"
-            placeholder="입력하세요"
+            placeholder="Please Enter Value"
             onkeydown="onInputKeyDown();"
           />
-          <button class="InputBoxBtn InputBoxbtn--${screenMode} InputBoxBtn--cancel" onclick="onclickInputCancel();" >취소</button>
-          <button class="InputBoxBtn InputBoxbtn--${screenMode} InputBoxBtn--confirm" onclick="onclickInputConfirm();">확인</button>
+          <button class="InputBoxBtn InputBoxbtn--${screenMode} InputBoxBtn--cancel" onclick="onclickInputCancel();" >Cancel</button>
+          <button class="InputBoxBtn InputBoxbtn--${screenMode} InputBoxBtn--confirm" onclick="onclickInputConfirm();">Confirm</button>
         </div>
     </div>
     ${loadingScreenElement}
