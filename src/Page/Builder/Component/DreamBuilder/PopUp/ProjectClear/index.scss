@@ -75,12 +75,14 @@
 
   .questClear_popup_details_category {
     font-weight: bold;
+    text-align: center;
     text-transform: uppercase;
     color: #4C4C4C;
-    width: 64px;
+    width: 25%;
   }
 
   .questClear_popup_details_info {
     color: #4D4D4D;
+    width: 75%;
   }
 }
