@@ -795,36 +795,6 @@ const Dashboard = ({ ...props }) => {
             </WidgetBody>
           </Widget>
         </Col>
-        <Col col={3}>
-          <StyledLink
-            to={{ pathname: recommendedProject.pathname }}
-            target="_blank"
-          >
-            <Widget recommend height={props.isMobile ? "auto" : 157}>
-              <RecommendImage image={recommendedProject.thumbnail && recommendedProject.thumbnail.toDreamclassS3URL()} />
-              <RecommendBody>
-                <WidgetTitle><FormattedMessage id="ID_DREAM_LMS_TODAY_GOAL_RECOMMEND_QUEST_TITLE" /></WidgetTitle>
-                <WidgetBody>
-                  <RecommendSubtitle><FormattedMessage id="ID_DREAM_LMS_TODAY_GOAL_RECOMMEND_QUEST_SUBTITLE" /></RecommendSubtitle>
-                  <RecommendTitle>{recommendedProject.title}</RecommendTitle>
-                  <RecommendDesc>
-                    <RecommendIcon
-                      type={
-                        recommendedProject.lecture &&
-                        recommendedProject.lecture.course &&
-                        recommendedProject.lecture.course.type
-                      }
-                    />
-                    <RecommendDescText>
-                      {recommendedProject.lecture && recommendedProject.lecture.title}
-                    </RecommendDescText>
-                  </RecommendDesc>
-                </WidgetBody>
-                <RecommendArrowIcon src={IMAGE.LMS_RECOMMEND_ARROW} />
-              </RecommendBody>
-            </Widget>
-          </StyledLink>
-        </Col>
         <Col>
           <Widget graph height={props.isMobile ? "auto" : 460}>
             <GraphProgressWrap>
