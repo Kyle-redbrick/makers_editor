@@ -13,10 +13,11 @@ function View(props) {
   } = props;
   return (
     <div className="builder--home__newProjectPopup">
+      {console.log(props)}
       <div className="builder--popup--title">{intl.formatMessage({ id: "ID_BUILDER_NEW_PROJECT_TITLE" })}</div>
       {gameDimension === "2D" && (
         <div className="newGamePopup__row row--format">
-          <div className={intl.defaultLocale=="en"? "newGamePopup__row--title_en":"newGamePopup__row--title"}>{intl.formatMessage({ id: "ID_BUILDER_NEW_PROJECT_CHOOSE_LANG" })}</div>
+          <div className={intl.locale=="en"? "newGamePopup__row--title_en":"newGamePopup__row--title"}>{intl.formatMessage({ id: "ID_BUILDER_NEW_PROJECT_CHOOSE_LANG" })}</div>
           <div className="format__buttons">
             <button
               className={`button__${editorFormat === "text" && "active"}`}
@@ -36,7 +37,7 @@ function View(props) {
       )}
 
       <div className="newGamePopup__row row--name">
-        <div className={intl.defaultLocale=="en"? "newGamePopup__row--title_en":"newGamePopup__row--title"}>{intl.formatMessage({ id: "ID_BUILDER_NEW_PROJECT_PROJECT_NAME" })}</div>
+        <div className={intl.locale=="en"? "newGamePopup__row--title_en":"newGamePopup__row--title"}>{intl.formatMessage({ id: "ID_BUILDER_NEW_PROJECT_PROJECT_NAME" })}</div>
         <input type="text" onChange={onChangeProjectName} value={projectName} />
       </div>
       <div
