@@ -104,19 +104,6 @@ export default function View(props) {
             {title}
 
           </p>
-          <ul className="CourseTabList">
-            {COURSES.map((course) => {
-              return (
-                <li
-                  className={selectedTab === course.id ? "active" : ""}
-                  key={course.id}
-                  onClick={() => handleSelectedTab(course.id)}
-                >
-                  {course.title}
-                </li>
-              )
-            })}
-          </ul>
           <div className="GameMore__Game__Wrapper">
             {games.map((game) => {
               return <GameBox item={game} key={game.pId} />

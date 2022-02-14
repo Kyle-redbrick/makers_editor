@@ -99,10 +99,6 @@ function View(props) {
 
               {isShareBoxOpen && 
                 <div className="shareDetailBox">
-                  <div onClick={() => handleShareKakao(project.pId)} className="QRPopupSNSItem">
-                    <img src={shareKakaoImg} alt="share kakao" />
-                    <span><FormattedMessage id="ID_WIZAPPDETAIL_SHARE_KAKAO" /></span>
-                  </div>
                   <div onClick={() => handleShareFB(project.pId)} className="QRPopupSNSItem">
                     <img src={shareFbImg} alt="share fb" />
                     <span><FormattedMessage id="ID_WIZAPPDETAIL_SHARE_FACEBOOK" /></span>
@@ -150,11 +146,6 @@ function View(props) {
                         alt={userinfo.name}
                       />
                     )}
-                  </p>
-                  <p className="user__subscribe">
-                    <FormattedMessage id="ID_WIZAPPDETAIL_FOLLOWER" />{" "}
-                    {subscribeCount}
-                    <FormattedMessage id="ID_WIZAPPDETAIL_FOLLOWER_COUNT" />
                   </p>
                 </div>
               </Link>

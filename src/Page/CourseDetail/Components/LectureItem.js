@@ -135,7 +135,7 @@ const Desc = styled.p`
 `;
 
 const Image = styled.div`
-  width: 370px;
+  width: 36%;
   background-image: url(${(props) => props.image});
   background-size: cover;
   background-repeat: no-repeat;
@@ -171,6 +171,7 @@ const PlayButton = styled.button`
   height: 34px;
   border-radius: 10px;
   border: solid 1px #ff6f44;
+  white-space: pre-wrap;
   background-color: transparent;
   font-size: 14px;
   font-weight: bold;

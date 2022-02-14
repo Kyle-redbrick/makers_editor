@@ -1250,7 +1250,7 @@ const ja = {
   ID_LMS_QUEST_STUDY_TIME_MIN: "分",
   ID_COURSE_DETAIL_QUEST: "クエスト",
   ID_COURSE_DETAIL_KEY_COMMAND: "コアコマンド",
-  ID_COURSE_DETAIL_PLAY_GAME: "ゲームをプレイする",
+  ID_COURSE_DETAIL_PLAY_GAME: "ゲームを\nプレイする",
   ID_COURSE_DETAIL_PLAY: "つづく",
   ID_COURSE_DETAIL_ALERT_POPUP_TITLE: "앗! 모바일에서는 진행할 수 없어요.",
   ID_COURSE_DETAIL_ALERT_POPUP_SUBTITLE: "탭 또는 PC에서 학습을 진행해 주세요.",
