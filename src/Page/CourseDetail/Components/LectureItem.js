@@ -135,7 +135,7 @@ const Desc = styled.p`
 `;
 
 const Image = styled.div`
-  width: 36%;
+  width: 370px;
   background-image: url(${(props) => props.image});
   background-size: cover;
   background-repeat: no-repeat;
