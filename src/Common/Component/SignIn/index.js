@@ -95,7 +95,8 @@ class SignIn extends Component {
     return (
       <div className="signin">
         <div className="signin_title">
-          <img className="signin_logo" src={logoImg} alt="logo" />
+          {/* <img className="signin_logo" src={logoImg} alt="logo" /> */}
+          <p>Astro Coding Go!</p>
           {formatMessage({ id: "ID_SIGNIN" })}
         </div>
         <div className="signin_input_wrapper">

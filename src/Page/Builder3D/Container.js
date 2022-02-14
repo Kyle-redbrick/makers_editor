@@ -89,7 +89,7 @@ class Container extends Component {
     // });
   }
   setBrowserTitle = title => {
-    document.title = `wizclass`;
+    document.title = `Astro Coding Go!`;
     if (title) document.title += ` - ${title}`;
   };
   replaceToBuilderMain(shouldAlert = false) {
