@@ -1,5 +1,5 @@
 import React, { memo, useCallback, useEffect, useState } from "react";
-import { FormattedMessage } from "react-intl";
+import { FormattedMessage, injectIntl} from "react-intl";
 import { useLocation } from "react-router";
 import QueryString from "query-string"
 import styled from "@emotion/styled";
@@ -91,7 +91,7 @@ const RecommendedTitle = styled.div`
 const Results = memo(({ children, courses, items, ...props }) => {
   const location = useLocation();
   const { courseType } = QueryString.parse(location.search);
-
+  const {intl} = props;
   const [selectedCategoryId, setSelectedCategoryId] = useState("all");
 
   useEffect(() => {
@@ -128,7 +128,7 @@ const Results = memo(({ children, courses, items, ...props }) => {
   const COURSES = [
     {
       id: "all",
-      title: "전체",
+      title: intl.formatMessage({id: "ID_GAME_LIST_TAB_ALL"}),
     },
   ];
   courses.forEach((course) => {
@@ -197,4 +197,4 @@ const Results = memo(({ children, courses, items, ...props }) => {
   );
 });
 
-export default Results;
+export default injectIntl(Results);
