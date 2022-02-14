@@ -47,6 +47,7 @@ function View(props) {
 
   return (
     <div id="wizappDetail">
+      <div className="wizAppDetail_wrapper">
       <div className="header__close header__close--pc" onClick={handleClose}>
         <img src={closeImg} alt="close"/>
       </div>
@@ -173,22 +174,7 @@ function View(props) {
             )}
           </div>
         </div>
-        <div className="wizappDetail__bottom" style={{display: "none"}}>
-          <p className="wizappDetail__bottom--comment-count">
-            <FormattedMessage id="ID_WIZAPPDETAIL_COMMENT" />
-          </p>
-          <div className="wizappDetail__bottom--wrapper">
-            <div className="wizappDetail__bottom--comment" ref={commentRef}>
-              <Comment
-                parentType="published"
-                parentId={project.pId}
-                allCommentCount={allCommentCount}
-                isMobile={isMobile}
-                handleProjectCommentCount={handleProjectCommentCount}
-              />
-            </div>
-          </div>
-        </div>
+      </div>
       </div>
     </div>
   );
