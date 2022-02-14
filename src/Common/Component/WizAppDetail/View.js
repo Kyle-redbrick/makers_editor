@@ -16,7 +16,6 @@ import officialIcon from "../../../Image/certification-mark.svg";
 
 import shareCopyImg from "../../../Image/dreamclass/share_icon_copy.png";
 import shareFbImg from "../../../Image/dreamclass/share_icon_fb.png";
-import shareKakaoImg from "../../../Image/dreamclass/share_icon_kakao.png";
 
 function View(props) {
   const {
@@ -40,7 +39,6 @@ function View(props) {
     isMobile,
     handleProjectCommentCount,
     allCommentCount,
-    handleShareKakao,
     handleShareFB,
     handleCopyUrl
   } = props;
