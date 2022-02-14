@@ -103,15 +103,22 @@
     }
   }
 
+  strong {
+    display: flex;
+    align-items: center;
+  }
+
   .inline_icon {
-    height: 24px;
-    vertical-align: bottom;
+    height: 35px;
+    margin: 0 5px;
+    vertical-align: middle;
   }
   .inline_oobc {
     .oobceditor_block {
-      --oobceditorBlockHeight: 30px;
+      --oobceditorBlockHeight: 40px;
       display: inline-flex;
-      vertical-align: top;
+      vertical-align: middle;
+      // vertical-align: top;
       margin: 0;
       font-weight: bold;
       pointer-events: none;
