@@ -26,7 +26,6 @@ function View(props) {
           { count: props.total }
         )}
       </p>
-      {props.type !== "search" && <Tabs {...props} />}
       {props.total > 0
         ? <GameList {...props} />
         : props.type === "search" && <SearchPlaceHolder {...props} />

@@ -171,6 +171,7 @@ const PlayButton = styled.button`
   height: 34px;
   border-radius: 10px;
   border: solid 1px #ff6f44;
+  white-space: pre-wrap;
   background-color: transparent;
   font-size: 14px;
   font-weight: bold;

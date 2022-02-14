@@ -16,7 +16,6 @@ import officialIcon from "../../../Image/certification-mark.svg";
 
 import shareCopyImg from "../../../Image/dreamclass/share_icon_copy.png";
 import shareFbImg from "../../../Image/dreamclass/share_icon_fb.png";
-import shareKakaoImg from "../../../Image/dreamclass/share_icon_kakao.png";
 
 function View(props) {
   const {
@@ -40,7 +39,6 @@ function View(props) {
     isMobile,
     handleProjectCommentCount,
     allCommentCount,
-    handleShareKakao,
     handleShareFB,
     handleCopyUrl
   } = props;
@@ -99,10 +97,6 @@ function View(props) {
 
               {isShareBoxOpen && 
                 <div className="shareDetailBox">
-                  <div onClick={() => handleShareKakao(project.pId)} className="QRPopupSNSItem">
-                    <img src={shareKakaoImg} alt="share kakao" />
-                    <span><FormattedMessage id="ID_WIZAPPDETAIL_SHARE_KAKAO" /></span>
-                  </div>
                   <div onClick={() => handleShareFB(project.pId)} className="QRPopupSNSItem">
                     <img src={shareFbImg} alt="share fb" />
                     <span><FormattedMessage id="ID_WIZAPPDETAIL_SHARE_FACEBOOK" /></span>
@@ -150,11 +144,6 @@ function View(props) {
                         alt={userinfo.name}
                       />
                     )}
-                  </p>
-                  <p className="user__subscribe">
-                    <FormattedMessage id="ID_WIZAPPDETAIL_FOLLOWER" />{" "}
-                    {subscribeCount}
-                    <FormattedMessage id="ID_WIZAPPDETAIL_FOLLOWER_COUNT" />
                   </p>
                 </div>
               </Link>

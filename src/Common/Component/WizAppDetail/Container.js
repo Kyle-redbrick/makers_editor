@@ -303,20 +303,6 @@ class Container extends Component {
     this.setState({ isShareBoxOpen : !this.state.isShareBoxOpen });
   }
 
-  handleShareKakao = (pId) => {
-    window.Kakao.Link.sendCustom({
-      templateId: 30669,
-      templateArgs: { path: `detail/${pId}` },
-      fail: function(error) {
-        console.log(error);
-        alert("Error while sharing.");
-      },
-      callback: () => {
-        request.checkShareGame({type: "kakao"});
-      }
-    });
-  };
-
   handleShareFB = (pId) => {
     const url = URL.WIZ_APP + pId;
     window.FB.ui(
@@ -483,7 +469,6 @@ class Container extends Component {
       handleFold,
       handleProjectCommentCount,
       handleRandomGame,
-      handleShareKakao,
       handleShareFB,
       handleCopyUrl
     } = this;
@@ -516,7 +501,6 @@ class Container extends Component {
         allCommentCount={allCommentCount}
         handleRandomGame={handleRandomGame}
         handleReport={handleReport}
-        handleShareKakao={handleShareKakao}
         handleShareFB={handleShareFB}
         handleCopyUrl={handleCopyUrl}
       />
