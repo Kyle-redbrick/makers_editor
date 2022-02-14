@@ -35,13 +35,17 @@ addLocaleData([...en, ...ko, ...zh, ...ja]);
 class PopUpContainer extends Component {
   componentDidMount() {
 
-    console.log("slhjflkasjdlkfj lkasdjfklsdf ",this.props)
     setTimeout(() => {
       const overlay = document.getElementById("popup_overlay");
       if (overlay) overlay.classList.remove("popup_overlay-invisible");
       const contents = document.getElementById("popup_contents");
       if (contents) contents.classList.remove("popup_contents-larged");
     }, 10);
+    window.onpopstate = e => {
+      //dismiss popup
+      ReactDOM.render(null, document.getElementById("popup"));
+      document.body.classList.toggle("body-unsrollable");
+   }
   }
 
   render() {
