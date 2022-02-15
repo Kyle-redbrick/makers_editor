@@ -161,6 +161,7 @@ const LearnNowPopup = ({ item, history }) => {
 
   const goToCourseDetail = useCallback(
     () => {
+      
       history.push(`/course/${item.id}`)
       Popup.hidePopUp();
     },

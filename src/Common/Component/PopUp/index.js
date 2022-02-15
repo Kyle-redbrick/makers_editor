@@ -44,7 +44,7 @@ class PopUpContainer extends Component {
     window.onpopstate = e => {
       //dismiss popup
       ReactDOM.render(null, document.getElementById("popup"));
-      document.body.classList.toggle("body-unsrollable");
+      // document.body.classList.toggle("body-unsrollable");
    }
   }
 
@@ -170,6 +170,7 @@ export const hidePopUp = () => {
   if (popup) {
     ReactDOM.render(null, popup);
   }
+
   document.body.classList.remove("body-unsrollable");
 };
 

@@ -654,7 +654,7 @@ const ja = {
   ID_GAME_PLAYER_COPYRIGHT: `Copyright © 2019 WizSchool Inc. All rights reserved`,
   ID_EVENT_MAIN_POPUP_BTN1: "오늘 그만보기",
   ID_EVENT_MAIN_POPUP_BTN2: "닫기",
-  ID_HELP_RE: "도움말 다시보기",
+  ID_HELP_RE: "ヘルプ再確認",
   ID_HOME_BANNER01_TITLE: "Advent of the Blaze and Ice Wizard",
   ID_HOME_BANNER01_SUBTITLE: "In Search of Sealed Darkness",
   ID_HOME_BANNER02_TITLE: "Advent of the Battle Robot",
