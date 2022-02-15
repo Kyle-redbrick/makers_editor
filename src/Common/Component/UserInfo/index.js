@@ -6,12 +6,10 @@ import { connect } from "react-redux";
 import * as request from "../../../Common/Util/HTTPRequest";
 import * as action from "../../Store/Reducer/UserInfo";
 import * as OcpToken from "../../Util/OcpToken";
-// import { showBingoPopup } from "../../../Common/Component/PopUp/BingoPopup";
 
 class UserInfoContainer extends React.Component {
   constructor(props) {
     super(props);
-    // console.log("UserInfoContainer constructor", this.props);
     this.state = { mounted: false, wizliveURL: URL.WIZLIVE };
     this.showAlert = false;
     this.shouldLogin =
@@ -82,21 +80,6 @@ class UserInfoContainer extends React.Component {
   //       }
   //     })
   //     .catch(e => console.error(e));
-  // };
-
-  // showUnreadPopups = () => {
-  //   if (this.unreadBingos && this.unreadBingos.length > 0) {
-  //     const unread = this.unreadBingos.shift();
-  //     const { email } = this.props.userinfo;
-  //     showBingoPopup(email, unread.bingoType, {
-  //       // confirmAction: () => {
-  //       //   this.showUnreadPopups();
-  //       // },
-  //       cancelAction: () => {
-  //         this.showUnreadPopups();
-  //       }
-  //     });
-  //   }
   // };
 
   componentWillUnmount() {

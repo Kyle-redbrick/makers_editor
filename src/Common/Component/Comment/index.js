@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import * as request from "../../Util/HTTPRequest";
 // import { showReport } from "../../Util/AlertManager";
 import View from "./View";
-// import { showBingoPopup } from "../../Component/PopUp/BingoPopup";
 import "./index.scss";
 import { spamType } from "../../Util/Constant";
 import checkBlockedUser from "../../Util/CheckBlockedUser";

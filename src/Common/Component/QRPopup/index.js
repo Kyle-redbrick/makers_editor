@@ -9,7 +9,6 @@ import PhoneDropDown from "./PhoneDropDown";
 import closeImg from "../../../Image/builder/x-copy-3.svg";
 import closeImg_darkmode from "../../../Image/builder/x-copy-3_darkmode.svg";
 import * as TrackingUtil from "../../Util/TrackingUtil";
-// import { showBingoPopup } from "../PopUp/BingoPopup";
 import shareCopyImg from "../../../Image/share_icon_copy.png";
 import shareFbImg from "../../../Image/share_icon_fb.png";
 import shareKakaoImg from "../../../Image/share_icon_kakao.png";
@@ -106,22 +105,6 @@ class QRPopup extends Component {
         console.error("Error:", error);
       });
   };
-
-  // checkBingo = () => {
-  //   const email = this.props.email;
-  //   if (email) {
-  //     checkShareBingo({ email })
-  //       .then(res => res.json())
-  //       .then(json => {
-  //         if (json.bingoType) {
-  //           showBingoPopup(email, json.bingoType);
-  //         }
-  //       })
-  //       .catch(e => {
-  //         console.error(e);
-  //       });
-  //   }
-  // };
 
   shareKakao = () => {
     const { pId } = this.props.project;

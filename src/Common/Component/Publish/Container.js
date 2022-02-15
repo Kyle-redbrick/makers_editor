@@ -14,7 +14,6 @@ import PopUp, { showPopUp } from "../PopUp";
 import View from "./View";
 import "./index.scss";
 
-// import { showBingoPopup } from "../PopUp/BingoPopup";
 class Container extends Component {
   constructor(props) {
     super(props);
@@ -257,9 +256,6 @@ class Container extends Component {
               }
             );
           }
-          // if (json.bingoType) {
-          //   showBingoPopup(email, json.bingoType);
-          // }
         });
     } catch (e) {
       console.error(e);

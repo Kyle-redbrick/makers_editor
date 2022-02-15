@@ -43,7 +43,6 @@ const getNavigatorLanguage = () => {
 const defaultLang = getNavigatorLanguage();
 
 //initialize GA
-// ReactGA.initialize("UA-132407065-3");
 ReactGA.initialize("UA-168395916-1");
 
 ReactDOM.render(

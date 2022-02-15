@@ -10,7 +10,6 @@ import store from "../../Store";
 // import { getColorTheme } from "../../utils/colorThemeUtil";
 import SignUp from "../../../../Common/Component/SignUp";
 // import eventImg from "../../../../Image/event5_popup.png";
-// import { showBingoPopup } from "../../../../Common/Component/PopUp/BingoPopup";
 import * as TrackingUtil from "../../../../Common/Util/TrackingUtil";
 import * as OcpToken from "../../../../Common/Util/OcpToken";
 
@@ -209,40 +208,6 @@ class Container extends Component {
   //     });
   //     this.props.updateUserInfo();
   //   };
-  // };
-
-  // printCallback = () => {
-  //   request.updateMyOcpPrint(
-  //     this.props.userinfo.email
-  //       ? { email: this.props.userinfo.email, grade: this.grade }
-  //       : { guestId: this.guest && this.guest.id, grade: this.grade }
-  //   );
-  //   setTimeout(() => {
-  //     if (this.props.userinfo.email) {
-  //       if (this.bingoType) {
-  //         showBingoPopup(this.props.userinfo.email, this.bingoType);
-  //       }
-  //     } else {
-  //       // showPopUp(
-  //       //   <Popup.TwoButton
-  //       //     titleId="ID_CERT_POPUP_TITLE"
-  //       //     cancelButtonNameId="ID_CERT_POPUP_CANCEL"
-  //       //     confirmButtonNameId="ID_CERT_POPUP_SIGNUP"
-  //       //     confirmAction={this.handleSignup}
-  //       //     content={
-  //       //       <div>
-  //       //         <img
-  //       //           style={{ width: "100%", marginTop: "30px" }}
-  //       //           src={eventImg}
-  //       //           alt="event"
-  //       //         />
-  //       //       </div>
-  //       //     }
-  //       //   />,
-  //       //   { store, darkmode: getColorTheme() === "darkMode" }
-  //       // );
-  //     }
-  //   }, 1000);
   // };
 
   handleSignup = () => {

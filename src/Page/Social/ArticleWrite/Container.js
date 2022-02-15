@@ -6,7 +6,6 @@ import * as request from "../../../Common/Util/HTTPRequest";
 import PopUp, { showPopUp } from "../../../Common/Component/PopUp";
 import View from "./View";
 import { spamType } from "../../../Common/Util/Constant";
-// import { showBingoPopup } from "../../../Common/Component/PopUp/BingoPopup";
 // import * as TrackingUtil from "../../../Common/Util/TrackingUtil";
 
 class Container extends Component {
@@ -97,17 +96,6 @@ class Container extends Component {
               })
               .then(res => res.json())
               .then(json => {
-                // if (json.bingoType) {
-                //   showBingoPopup(this.props.userinfo.email, json.bingoType, {
-                //     cancelAction: () => {
-                //       window.scrollTo(0, 0);
-                //       this.props.history.replace(`/social`);
-                //     },
-                //     confirmAction: () => {
-                //       this.props.history.replace(`/event/4`);
-                //     }
-                //   });
-                // } else {
                 if (json.success) {
                   window.scrollTo(0, 0);
                   this.props.history.replace(`/social`);

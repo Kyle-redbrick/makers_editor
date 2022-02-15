@@ -182,15 +182,12 @@ const App = () => {
           {/* codingparty */}
           {/* <Route exact path="/codingparty" component={OCP} />
         <Route exact path="/codingparty/:grade" component={OCPSub} /> */}
-          {/* wizlive */}
-          <Route exact path="/wizlive" component={RedirectToWizLive} />
           {/* event */}
           <Route exact path="/event" component={Event} />
           <Route exact path="/event/:id" component={EventDetail} />
           {/* etc */}
           <Route path="/support/:page" component={Support} />
           <Route exact path="/learn/:grade" component={OCPSub} />
-          <Route exact path="/wizlive" component={RedirectToWizLive} />
           <Route
             exact
             path="/ssafy"
@@ -300,12 +297,3 @@ const HandleQueryString = withRouter(
     }
   }
 );
-
-class RedirectToWizLive extends Component {
-  componentDidMount() {
-    window.location.replace("https://wizlive.com");
-  }
-  render() {
-    return <div />;
-  }
-}
