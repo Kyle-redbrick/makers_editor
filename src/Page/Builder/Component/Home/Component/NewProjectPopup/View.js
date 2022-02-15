@@ -13,7 +13,6 @@ function View(props) {
   } = props;
   return (
     <div className="builder--home__newProjectPopup">
-      {console.log(props)}
       <div className="builder--popup--title">{intl.formatMessage({ id: "ID_BUILDER_NEW_PROJECT_TITLE" })}</div>
       {gameDimension === "2D" && (
         <div className="newGamePopup__row row--format">

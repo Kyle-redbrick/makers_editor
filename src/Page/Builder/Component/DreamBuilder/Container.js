@@ -194,8 +194,6 @@ class Container extends Component {
         this.setState({ stem: json.stem });
         this.setState({ sdg: json.sdg });
         this.setState({ certficate: json.certficate });
-        console.log(11111, json);
-        console.log(11111, "after setState", this.state);
       });
 
     setTimeout(() => {

@@ -678,21 +678,14 @@ const Dashboard = ({ ...props }) => {
   const [todayCompletedDreamPoint, setTodayCompletedDreamPoint] = useState(0);
 
   useEffect(() => {
-    console.log("useEffect")
-
     init();
   }, []);
 
   const init = async () => {
     const dashboard = await getDashboard({ email: props.email });
-    console.log("dashboard", dashboard)
     const myCourses = await getMyCourses({ userId: props.userId })
-    console.log("myCourses", myCourses)
     const courseProgress = getMyCourseProgress(myCourses);
     const recommendProject = await findRecommendProject(myCourses);
-    console.log("recommendProject", recommendProject)
-
-
 
     // setCardsCount(dashboard.cardsCount);
     setCourseProgress(courseProgress.reduce((total, progress) => total += progress));
@@ -811,7 +804,6 @@ const Dashboard = ({ ...props }) => {
             <CircularWrap>
               {coursesForProgress.map((course) => (
                 <CircularItem key={course.id}>
-                  {console.log(course)}
                   <CircularProgressBarComponent
                     value={course.progress}
                     color={renderTypeColor(course.type)}

@@ -264,7 +264,6 @@ class Condition {
     const checker = checkers[this.type]
     if(checker) {
       this.isClear = checker(state, this);
-      // console.log("checked", this);
       return this.isClear;
     } else {
       console.warn("invalid condition type");

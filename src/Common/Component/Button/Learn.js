@@ -76,9 +76,6 @@ const getRedirectURLOf = myDreamProject => {
 
 export const Learn = ({ id: projectId, isShowVideo,videoURL, lectureId, title, fixed, ...props }) => {
 
-  console.log("item!!!!!~!~!~!",props ,isShowVideo ,videoURL)
-  console.log(props)
-
   const handleClick = useCallback(
     () => {
 
@@ -160,19 +157,13 @@ export const Learn = ({ id: projectId, isShowVideo,videoURL, lectureId, title, f
 };
 
 export const LearnAgain = ({ ...props }) => {
-  console.log("props!!!!!!!!",props)
-
   return <Learn title={<FormattedMessage id="ID_LEAEN_BUTTON_LEARN_AGAIN" />} {...props} />
 };
 
 export const LearnNow = ({ ...props }) => {
-  console.log("props!!!!!!!!",props)
-
   return <Learn title={<FormattedMessage id="ID_LEAEN_BUTTON_LEARN_NOW" />} {...props} />
 };
 
 export const LearnContinue = ({ ...props }) => {
-  console.log("props!!!!!!!!",props)
-
   return <Learn title={<FormattedMessage id="ID_LEAEN_BUTTON_LEARN_CONTINUE" />} {...props} />
 };

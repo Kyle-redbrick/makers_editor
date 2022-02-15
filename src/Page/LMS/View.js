@@ -17,9 +17,6 @@ import "./index.scss";
 
 const View = (props) => {
 
-  console.log("view",props)
-
-
   const [scrollFixed, setScrollFixed] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 1169);
   const [isLmsMobileMenuOn, setIsLmsMobileMenuOn] = useState(false);
@@ -77,7 +74,6 @@ const View = (props) => {
           coursesProgress={props.coursesProgress}
           updateCourses={props.updateCourses}
         />
-        {console.log("props.path",props.path)}
         {props.path === PAGE.COURSE && <CourseById courseId={props.courseId} {...props} />}
         {props.path === PAGE.DASHBOARD && <Dashboard isMobile={isMobile}/>}
         {props.path === PAGE.INVENTORY && <Inventory />}
