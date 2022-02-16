@@ -492,8 +492,8 @@ class ApiLibrary {
     name: "ID_LOOKS",
     api: [{
       name: "say(message,sec)",
-      snippet: "say(\"Hello, WizLab\",1)",
-      selection: "Hello, WizLab",
+      snippet: "say(\"Hello\",1)",
+      selection: "Hello",
       "requiredParamCount": 1,
       tip: {
         description: {
@@ -2546,7 +2546,7 @@ class ApiLibrary {
       chatbotDescription: "onListening(function(msg))는 모바일 기기를 통해 음성을 입력받았을 때 {} 괄호 안에 입력된 코드를 실행하는 API야. startListening과 함께 사용하지."
     }, {
       name: "speak(msg)",
-      snippet: "speak(\"Hello, WizLab\")",
+      snippet: "speak(\"Hello\")",
       tip: {
         description: {
           ko: "음성을 출력한다."
