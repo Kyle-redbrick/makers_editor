@@ -29,106 +29,48 @@ class Footer extends Component {
 
     this.agreements = [
       {
-        id: "agreed_terms",
+        id: "Terms",
         title: this.props.intl.formatMessage({
           id: "ID_FOOTER_TERMS"
         }),
         text: termDoc
       },
       {
-        id: "agreed_privacy",
+        id: "Privacy",
         title: this.props.intl.formatMessage({
           id: "ID_FOOTER_PRIVACY"
         }),
         text: privacyDoc
       },
     ]
-
-    this.state = {
-      agreement: null
-    }
   }
 
   onClickShowAgreement = id => {
     const agreement = this.agreements.find(agreement => agreement.id === id);
-    console.log(111, agreement);
-    const contents = document.getElementById("popup_contents");
-    const scrollable = document.getElementById("popup_scrollable");
-    const dismissButton = document.getElementById("popup_dismissbtn");
-    if (contents) contents.scrollTo(0, 0);
-    if (scrollable) scrollable.scrollTo(0, 0);
     showPopUp(
       <PopUp.Agreement
         title={agreement.title}
         content={agreement.text}
       />
-      // <div className="agreememt">
-      //   <div className="agreement_title">
-      //     {agreement.title}
-      //   </div>
-      //   <div className="agreement_text">
-      //     <Markdown source={agreement.text} />
-      //   </div>
-      // </div>
     );
-    // const contents = document.getElementById("popup_contents");
-    // const scrollable = document.getElementById("popup_scrollable");
-    // const dismissButton = document.getElementById("popup_dismissbtn");
-    // if (contents) contents.scrollTo(0, 0);
-    // if (scrollable) scrollable.scrollTo(0, 0);
-    // // if (dismissButton) dismissButton.hidden = true;
-    // this.setState({ agreement });
   }
 
   render() {
-    const { agreement } = this.state;
     const {
       agreements,
       onClickShowAgreement
     } = this;
     return (
-      // return agreement ? (
-      //   showPopUp(
-      //     <div className="agreememt">
-      //       <div className="agreement_title">
-      //         {agreement.title}
-      //       </div>
-      //       <div className="agreement_text">
-      //         <Markdown source={agreement.text} />
-      //       </div>
-      //     </div>
-      //   )
-      // ) : (
       <div className="Footer">
         <div className="Footer--Inner">
-          <div className="Agreement"
-            onClick={() => onClickShowAgreement("agreed_terms")}>
-            <div className='Terms'>
-              <FormattedMessage id="ID_FOOTER_TERMS" />
+          {agreements.map((agreement, index) => (
+            <div className="Agreement"
+              onClick={() => onClickShowAgreement(agreement.id)}>
+              <div className={agreement.id}>
+                {agreement.title}
+              </div>
             </div>
-          </div>
-          {/* <p className="Terms">
-            <a
-              href="https://enabling.dreamclass.org/static/pc/accessTerms.html?langCd=ko&tenantPath"
-              className="Link"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FormattedMessage id="ID_FOOTER_TERMS" />
-            </a>
-          </p> */}
-          <div className="Agreement">
-            <p className="Privacy">
-              <a
-                href="https://enabling.dreamclass.org/static/pc/privacyPolicy.html?langCd=ko&tenantPath"
-                className="Link"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FormattedMessage id="ID_FOOTER_PRIVACY" />
-              </a>
-            </p>
-          </div>
+          ))}
           <div className="Info--Service-time">
             {this.props.intl.formatMessage({ id: "ID_DREAM_FOOTER_SERVICE_TIME" })}
           </div>
