@@ -7,6 +7,7 @@ import OneButton from "./OneButton";
 import TwoButton from "./TwoButton";
 import OneInput from "./OneInput";
 import TwoInput from "./TwoInput";
+import Agreement from "./Agreement"
 import dismissImg from "../../../Image/popup_dismiss.svg";
 
 // python Page
@@ -44,7 +45,7 @@ class PopUpContainer extends Component {
     window.onpopstate = e => {
       //dismiss popup
       ReactDOM.render(null, document.getElementById("popup"));
-   }
+    }
   }
 
   render() {
@@ -62,9 +63,8 @@ class PopUpContainer extends Component {
     } = this.props;
     return (
       <div
-        className={`popup_container ${
-          darkmode ? "popup_container-darkmode" : ""
-        } ${pythonPopup ? "popup_container-python" : ""}`}
+        className={`popup_container ${darkmode ? "popup_container-darkmode" : ""
+          } ${pythonPopup ? "popup_container-python" : ""}`}
       >
         <div
           id="popup_overlay"
@@ -76,11 +76,9 @@ class PopUpContainer extends Component {
         <div id="popup_scrollable" className="popup_scrollable">
           <div
             id="popup_contents"
-            className={` ${isBackTrans? "popup_contents_opacity": "popup_contents"} popup_contents-larged ${
-              defaultPadding ? "popup_contents-defaultPadding" : ""
-            } ${scrollable ? "popup_contents-scrollable" : ""} ${
-              overflow ? "popup_contents-overflow-show" : ""
-            } ${mobileFullscreen ? "popup_contents-mobileFullscreen" : ""}`}
+            className={` ${isBackTrans ? "popup_contents_opacity" : "popup_contents"} popup_contents-larged ${defaultPadding ? "popup_contents-defaultPadding" : ""
+              } ${scrollable ? "popup_contents-scrollable" : ""} ${overflow ? "popup_contents-overflow-show" : ""
+              } ${mobileFullscreen ? "popup_contents-mobileFullscreen" : ""}`}
           >
             {dismissButton && (
               <img
@@ -103,7 +101,7 @@ class PopUpContainer extends Component {
   }
 }
 
-export const showPopUp = (content, options = {} ,isBackTrans) => {
+export const showPopUp = (content, options = {}, isBackTrans) => {
   const root = document.getElementById("root");
   let popup = document.getElementById("popup");
   if (!popup) {
@@ -111,7 +109,7 @@ export const showPopUp = (content, options = {} ,isBackTrans) => {
     popup.setAttribute("id", "popup");
     popup.classList.add(localStorage.getItem("lang"));
     root.appendChild(popup);
-    window.onhashchange = function() {
+    window.onhashchange = function () {
       showPopUp();
     };
   }
@@ -174,6 +172,7 @@ export const hidePopUp = () => {
 };
 
 export default {
+  Agreement,
   OneButton,
   TwoButton,
   OneInput,
