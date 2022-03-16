@@ -29,6 +29,8 @@ export const jsScript = [
   { subTitle: "코드 입력", title: "코드를 입력해 볼까요?", imageURL: wjT04 },
   { subTitle: "편리 기능", title: "코딩을 좀 더 편하게", imageURL: wjT05 }
 ];
+
+//TO DO: 번역 끝나면 추가
 // export const jsScript_en = [
 //   { subTitle: "Guide Tab", title: "Click here for help!", imageURL: wjT01}, 
 //   { subTitle: "Mission List", title: "Would you like to see your mission progress?", imageURL: wjT02},
