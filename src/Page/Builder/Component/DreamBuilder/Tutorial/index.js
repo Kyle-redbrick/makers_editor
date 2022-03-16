@@ -15,7 +15,6 @@ class Tutorial extends Component {
 
   get script() {
     const lang = localStorage.getItem("lang");
-    console.log(1111, lang)
     if (this.props.editorMode === "block") {
       if (lang == "ja") {
         return oobcScript_ja;
