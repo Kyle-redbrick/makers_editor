@@ -30,21 +30,8 @@ export const jsScript = [
   { subTitle: "편리 기능", title: "코딩을 좀 더 편하게", imageURL: wjT05 }
 ];
 
-//TO DO: 번역 끝나면 추가
-// export const jsScript_en = [
-//   { subTitle: "Guide Tab", title: "Click here for help!", imageURL: wjT01}, 
-//   { subTitle: "Mission List", title: "Would you like to see your mission progress?", imageURL: wjT02},
-//   { subTitle: "Sprite / Sound", title: "What's a sprite?", imageURL: wjT03}, 
-//   { subTitle: "Enter Code", title: "Enter a code.", imageURL: wjT04}, 
-//   { subTitle: "Convenient Functions", title: "Code Easily", imageURL: wjT05}
-// ];
-// export const jsScript_ja = [
-//   { subTitle: "가이드탭", title: "도움이 필요하다면 여기서!", imageURL: wjT01}, 
-//   { subTitle: "미션 리스트", title: "미션 진행 상황을 보고 싶으신가요?", imageURL: wjT02},
-//   { subTitle: "스프라이트 / 사운드", title: "스프라이트가 뭐예요?", imageURL: wjT03}, 
-//   { subTitle: "코드 입력", title: "코드를 입력해 볼까요?", imageURL: wjT04}, 
-//   { subTitle: "편리 기능", title: "코딩을 좀 더 편하게", imageURL: wjT05}
-// ];
+//TO DO: js 번역 끝나면 추가
+
 
 export const oobcScript = [
   { subTitle: "가이드탭", title: "도움이 필요하다면 여기서!", imageURL: woT01 },
