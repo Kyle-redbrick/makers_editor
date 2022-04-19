@@ -5,7 +5,6 @@ import styled from "@emotion/styled";
 import { showPopUp } from "../../../Common/Component/PopUp"
 import CertificateForm from "../PopUp/CertificateForm";
 
-
 import { COLOR, PAGE, renderCurrentPage } from "./../Constants";
 import { IMAGE } from "./../Constants/Images";
 
@@ -290,24 +289,13 @@ const Lnb = ({ path, fixed, isMobile, isLmsMobileMenuOn, onClickLmsMobileMenu, c
   return (
     <Self {...props}>
       <LnbWrap isMobile={isMobile} fixed={fixed} isLmsMobileMenuOn={isLmsMobileMenuOn}>
-        <Title><FormattedMessage id="ID_HEADER_LMS" /></Title>
-        <Group>
-          <LnbLinkComponent
-            active={renderCurrentPage(path) === PAGE.DASHBOARD}
-            icon={renderCurrentPage(path) === PAGE.DASHBOARD ? IMAGE.LNB_DASHBOARD_OFF : IMAGE.LNB_DASHBOARD_ON}
-            link="/lms"
-            title={<FormattedMessage id="ID_LMS_DASHBOARD" />}
-            isMobile={isMobile}
-            isLmsMobileMenuOn={isLmsMobileMenuOn}
-            onClickLmsMobileMenu={onClickLmsMobileMenu}
-          />
-        </Group>
+        <Title><FormattedMessage id="ID_LMS_DASHBOARD" /></Title>
         <Br />
         <Group height={isMobile ? "auto" : 234}>
           <LnbLinkComponent
-            active={renderCurrentPage(path) === PAGE.COURSE && id === "1"}
+            active={renderCurrentPage(path) === PAGE.MISSION}
             icon={renderCurrentPage(path) === PAGE.COURSE && id === "1" ? IMAGE.LNB_PUZZLE_ON : IMAGE.LNB_PUZZLE_OFF}
-            link="/lms/course/1"
+            link="/lms/mission"
             title={<FormattedMessage id="ID_LMS_COURSE_1" />}
             isMobile={isMobile}
             isLmsMobileMenuOn={isLmsMobileMenuOn}
@@ -322,60 +310,7 @@ const Lnb = ({ path, fixed, isMobile, isLmsMobileMenuOn, onClickLmsMobileMenu, c
             isLmsMobileMenuOn={isLmsMobileMenuOn}
             onClickLmsMobileMenu={onClickLmsMobileMenu}
           />
-          <LnbLinkComponent
-            active={renderCurrentPage(path) === PAGE.COURSE && id === "5"}
-            icon={renderCurrentPage(path) === PAGE.COURSE && id === "5" ? IMAGE.LNB_PUZZLE_ON : IMAGE.LNB_PUZZLE_OFF}
-            link="/lms/course/5"
-            title={<FormattedMessage id="ID_LMS_COURSE_3" />}
-            isMobile={isMobile}
-            isLmsMobileMenuOn={isLmsMobileMenuOn}
-            onClickLmsMobileMenu={onClickLmsMobileMenu}
-          />
-
-          <LnbLinkComponent
-            active={renderCurrentPage(path) === PAGE.COURSE && id === "6"}
-            icon={renderCurrentPage(path) === PAGE.COURSE && id === "6" ? IMAGE.LNB_JS_ON : IMAGE.LNB_JS_OFF}
-            link="/lms/course/6"
-            title={<FormattedMessage id="ID_LMS_COURSE_4" />}
-            isMobile={isMobile}
-            isLmsMobileMenuOn={isLmsMobileMenuOn}
-            onClickLmsMobileMenu={onClickLmsMobileMenu}
-          />
-
-          <LnbLinkComponent
-            active={renderCurrentPage(path) === PAGE.COURSE && id === "7"}
-            icon={renderCurrentPage(path) === PAGE.COURSE && id === "7" ? IMAGE.LNB_JS_ON : IMAGE.LNB_JS_OFF}
-            link="/lms/course/7"
-            title={<FormattedMessage id="ID_LMS_COURSE_5" />}
-            isMobile={isMobile}
-            isLmsMobileMenuOn={isLmsMobileMenuOn}
-            onClickLmsMobileMenu={onClickLmsMobileMenu}
-          />
-
-
         </Group>
-        <Br />
-        <Group>
-          {/* <LnbLinkComponent
-            active={renderCurrentPage(path) === PAGE.INVENTORY}
-            icon={renderCurrentPage(path) === PAGE.INVENTORY ? IMAGE.LNB_INVENTORY_OFF : IMAGE.LNB_INVENTORY_ON}
-            link="/lms/inventory"
-            title="나의 인벤토리"
-            isMobile={isMobile}
-            isLmsMobileMenuOn={isLmsMobileMenuOn}
-            onClickLmsMobileMenu={onClickLmsMobileMenu}
-          /> */}
-          <LnbLinkComponent
-            active={renderCurrentPage(path) === PAGE.QNA}
-            icon={renderCurrentPage(path) === PAGE.QNA ? IMAGE.LNB_QNA_OFF : IMAGE.LNB_QNA_ON}
-            link="/lms/questions"
-            title={<FormattedMessage id="ID_LMS_QUESTION" />}
-            isMobile={isMobile}
-            isLmsMobileMenuOn={isLmsMobileMenuOn}
-            onClickLmsMobileMenu={onClickLmsMobileMenu}
-          />
-        </Group>
-        
       </LnbWrap>
       
       <CertWrap isMobile={isMobile} fixed={fixed} isLmsMobileMenuOn={isLmsMobileMenuOn}>

@@ -234,7 +234,7 @@ const App = () => {
           <Route
             exact
             path="/lms"
-            render={() => <LMS path={PAGE.DASHBOARD} />}
+            render={() => <LMS path={PAGE.MISSION} />}
           />
           <Route
             exact

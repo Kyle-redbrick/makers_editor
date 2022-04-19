@@ -433,7 +433,6 @@ class Header extends Component {
                         className={`header_link`}
                         onClick={() => link && window.scrollTo(0, 0)}
                       >
-                        {console.log(link)}
                         {intl.formatMessage({
                           id: `ID_HEADER_LINK_${link.toUpperCase()}`
                         })}

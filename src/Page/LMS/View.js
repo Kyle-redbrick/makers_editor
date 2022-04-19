@@ -6,12 +6,8 @@ import { PAGE } from "./Constants";
 
 import Lnb from "./Sections/Lnb";
 import CourseById from "./Sections/Course";
-import Dashboard from "./Sections/Dashboard";
 import Inventory from "./Sections/Inventory";
-import Questions from "./Sections/Questions";
-import QuestionNew from "./Sections/QuestionNew";
-import QuestionById from "./Sections/QuestionById";
-import QuestionUpdate from "./Sections/QuestionUpdate"
+
 
 import "./index.scss";
 
@@ -74,13 +70,8 @@ const View = (props) => {
           coursesProgress={props.coursesProgress}
           updateCourses={props.updateCourses}
         />
-        {props.path === PAGE.COURSE && <CourseById courseId={props.courseId} {...props} />}
-        {props.path === PAGE.DASHBOARD && <Dashboard isMobile={isMobile}/>}
+        {props.path === PAGE.MISSION && <CourseById courseId={props.courseId} {...props} />}
         {props.path === PAGE.INVENTORY && <Inventory />}
-        {props.path === PAGE.QNA && <Questions />}
-        {props.path === PAGE.QNA_BY_ID && <QuestionById />}
-        {props.path === PAGE.QNA_NEW && <QuestionNew />}
-        {props.path === PAGE.QNA_UPDATE && <QuestionUpdate item={props.item} />}
       </Self>
     </Layout>
   );

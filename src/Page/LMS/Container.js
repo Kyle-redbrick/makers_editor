@@ -9,6 +9,8 @@ import { Course, RecommendedProject, TodayQuest } from "../../models";
 class Container extends Component {
   constructor(props) {
     super(props);
+
+    console.log(props)
     this.state = {
       coursesProgress: [],
     };
