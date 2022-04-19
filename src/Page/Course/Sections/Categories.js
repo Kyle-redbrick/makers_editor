@@ -26,7 +26,7 @@ const CategoriesRow = styled.div`
 
   @media screen and (max-width: 1169px) {
     width: 88.33vw;
-    flex-wrap: wrap;
+    flex-wrap: wrap; 
     margin: 20px auto 10px;
   }
 `;
