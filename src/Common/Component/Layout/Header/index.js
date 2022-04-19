@@ -189,14 +189,14 @@ class Header extends Component {
       "builder",
       // "tutorial",
       "game",
-      "social",
-      "ranking",
+      // "social",
+      // "ranking",
       "event",
       // "codingparty",
       // "challenge",
       // "trial",
-      "myapk",
-      "news"
+      // "myapk",
+      // "news"
     ];
     if (userinfo.organization) {
       if (userinfo.organization.toLowerCase() === "ssafy") {
@@ -426,12 +426,14 @@ class Header extends Component {
                       );
                     }
                     return (
+                      
                       <Link
                         key={index}
                         to={`/${link}`}
                         className={`header_link`}
                         onClick={() => link && window.scrollTo(0, 0)}
                       >
+                        {console.log(link)}
                         {intl.formatMessage({
                           id: `ID_HEADER_LINK_${link.toUpperCase()}`
                         })}

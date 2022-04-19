@@ -203,7 +203,7 @@ class Parser {
       ) {
         node.callee.name = `${WizSpritePrefix}.${node.callee.name}`;
       }
-      node.callee.name = `await ${node.callee.name}`;
+      node.callee.name = `${node.callee.name}`;
     }
     if (node.callee.type === "MemberExpression") {
       this.consume(node.callee);
@@ -223,7 +223,7 @@ class Parser {
         ) {
           object.name = `${WizSpritePrefix}.${object.name}`;
         }
-        object.name = `await ${object.name}`;
+        object.name = `${object.name}`;
       }
     }
   }
@@ -239,7 +239,7 @@ class Parser {
     this.consume(node.right);
   }
   FunctionExpression(node) {
-    node.async = true;
+    node.async = false;
     this.consume(node.body);
   }
   ArrowFunctionExpression(node) {

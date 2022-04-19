@@ -55,6 +55,7 @@ export default async function(state, gameMeta, parserErrorHandler) {
             parsedCode = Parser.parse(code);
             break;
           case EDITORMODE.JAVASCRIPT:
+            parsedCode = Parser.parse(code);
           default:
             parsedCode = Parser.parse(code);
             break;
