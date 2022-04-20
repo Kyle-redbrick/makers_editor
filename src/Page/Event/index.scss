@@ -270,7 +270,7 @@
     background-color: transparent;
     font-size: 16px;
     font-weight: 400;
-    flex: 0 0 70%;
+    flex: 0 0 68%;
     display: block;
     padding-right: 10px;
     color: #fff;
@@ -279,6 +279,8 @@
       outline: none;
       background-color: transparent;
     }
+
+    
 
     &::placeholder {
       color: #585858;
