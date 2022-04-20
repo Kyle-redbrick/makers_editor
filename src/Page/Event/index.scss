@@ -270,17 +270,20 @@
     background-color: transparent;
     font-size: 16px;
     font-weight: 400;
-    flex: 0 0 70%;
+    flex: 0 0 68%;
     display: block;
     padding-right: 10px;
     color: #fff;
 
     &:focus, &:active {
       outline: none;
+      background-color: transparent;
     }
 
+    
+
     &::placeholder {
-      color: #8e8e8e !important;
+      color: #585858;
     }
   }
 
@@ -297,6 +300,69 @@
     color: #fff;
     background-color: transparent;
     box-sizing: border-box;
+  }
+  
+  .account__content-input--password {
+    border-radius: 8px;
+    border: 0.8px solid #585858;
+    box-sizing: border-box;
+    background-color: transparent !important;
+    width: 100%;
+    height: 45px;
+    padding: 0 15px;
+
+    &:focus, &:active {
+      border-color: #fff;
+      color: #fff;
+    }
+  }
+
+  .account__password-change {
+    position: relative;
+    flex: 0 0 70%;
+    margin-left: auto;
+
+    .account__password-show {
+      position: absolute;
+      top: 13px;
+      right: 15px;
+      background-color: transparent;
+      cursor: pointer;
+      border: 0;
+
+      img {
+        display: block;
+      }
+    }
+  }
+
+  .account__password-changed-btn-box {
+    margin: 12px 0 0px;
+    text-align: right;
+    display: block;
+    padding-bottom: 34px;
+  }
+
+  .account__password-changed-btn {
+    display: block;
+    width: 100%;
+    margin-left: auto;
+    max-width: 210px;
+    padding : 13px;
+    text-align: center;
+    color: #8e8e8e;
+    font-size: 16px;
+    line-height: 23px;
+    font-weight: 500;
+    background-color: #585858;
+    border: 0;
+    border-radius: 10px;
+
+    &.active {
+      background-color:#FF6F44;
+      color: #fff;
+      cursor: pointer;
+    }
   }
 }
 
