@@ -178,7 +178,6 @@ const ProjectComponent = memo(({ course, lectures = [], title }) => {
         {/* <Star grade={grade} />
         {title} */}
 
-        {"asdfasdfsfdasdf"}
       </ProjectGrade>
 
       <ProjectCardsWrap>
