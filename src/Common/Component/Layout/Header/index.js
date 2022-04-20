@@ -291,7 +291,7 @@ class Header extends Component {
                 </ul>
               </div> */}
               <div className="lms">
-                <Link to="/lms" onClick={checkLogin} >
+                <Link to="/lms/mission" onClick={checkLogin} >
                   {intl.formatMessage({ id: "ID_HEADER_LMS" })}
                 </Link>
               </div>
@@ -440,7 +440,7 @@ class Header extends Component {
                     );
                   })}
               </div>
-              <Link to="/lms" onClick={checkLogin} className="header_lms_btn">
+              <Link to="/lms/mission" onClick={checkLogin} className="header_lms_btn">
                 {intl.formatMessage({ id: "ID_HEADER_LMS" })}
               </Link>
               {

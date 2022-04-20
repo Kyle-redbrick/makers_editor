@@ -17,12 +17,13 @@ class Container extends Component {
   }
 
   componentDidMount() {
-    this.getData()
+    console.log(111111)
+    //this.getData()
   }
 
   getData = async () => {
-    const myCourses = await getMyCourses({ userId: this.props.userId })
-    this.setState({ coursesProgress : myCourses.map((course) => new Course(course))})
+    // const myCourses = await getMyCourses({ userId: this.props.userId })
+    // this.setState({ coursesProgress : myCourses.map((course) => new Course(course))})
   }
 
   render() {

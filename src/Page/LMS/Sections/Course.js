@@ -1,53 +1,11 @@
 import React, { memo, useEffect, useState, useCallback } from "react";
 import { connect } from "react-redux";
 import styled from "@emotion/styled";
-
-// import Button from "../Components/Button";
 import Title from "../Components/Title";
-
-// import { COLOR } from "./../Constants";
-
 import { IMAGE } from "./../Constants/Images";
-
-import { getMyCourseSummary } from "../api";
-import { Course, Lecture/*, Project*/ } from "../../../models";
-
+import { getLmsCourses } from "../api";
 import LectureComponent from "./../Components/Lecture";
 
-const PROJECT_LEVEL_ELEMENTARY = "basic";
-// const PROJECT_LEVEL_BASIC = "basic";
-// const PROJECT_LEVEL_ADVANCED = "advenced";
-// const PROJECT_LEVEL_ADVANCED_JS = "advenced";
-// const PROJECT_LEVEL_MASTERTY = "masterty";
-
-
-const PROJECT_LEVELS = [
-  {
-    grade: 1,
-    level: PROJECT_LEVEL_ELEMENTARY,
-    title: "초보자 프로젝트",
-  },
-  // {
-  //   grade: 2,
-  //   level: PROJECT_LEVEL_BASIC,
-  //   title: "숙련자 프로젝트",
-  // },
-  // {
-  //   grade: 3,
-  //   level: PROJECT_LEVEL_ADVANCED,
-  //   title: "전문가 프로젝트",
-  // },
-];
-
-const initLevels = () => {
-  const _levels = new Map();
-  _levels.set(PROJECT_LEVEL_ELEMENTARY, []);
-  // _levels.set(PROJECT_LEVEL_BASIC, []);
-  // _levels.set(PROJECT_LEVEL_ADVANCED, []);
-  // _levels.set(PROJECT_LEVEL_ADVANCED_JS, []);
-  // _levels.set(PROJECT_LEVEL_MASTERTY, []);
-  return _levels;
-};
 
 const Self = styled.div`
   flex: 1;
@@ -155,16 +113,6 @@ const CourseInfo = styled.div`
   padding-bottom: 19.5px;
 `;
 
-// const CourseInfoTitle = styled.div`
-//   font-size: 16px;
-//   line-height: 1.56;
-//   color: #fff;
-
-//   @media screen and (max-width: 1169px){
-//     margin-bottom: 10px;
-//   }
-// `;
-
 const CourseInfoDesc = styled.div`
   font-size: 16px;
   line-height: 1.56;
@@ -223,12 +171,14 @@ const ProjectCardsWrap = styled.div`
   grid-gap: 20px;
 `;
 
-const ProjectComponent = memo(({ grade, lectures = [], title }) => {
+const ProjectComponent = memo(({ course, lectures = [], title }) => {
   return (
     <ProjectWrap>
       <ProjectGrade>
         {/* <Star grade={grade} />
         {title} */}
+
+        {"asdfasdfsfdasdf"}
       </ProjectGrade>
 
       <ProjectCardsWrap>
@@ -241,9 +191,8 @@ const ProjectComponent = memo(({ grade, lectures = [], title }) => {
 });
 
 const CoursePage = ({ courseId, email, ...props }) => {
-  const [course, setCourse] = useState({});
-  // const [lectures, setLectures] = useState([]);
-  const [levels, setLevels] = useState(initLevels());
+  const [courses, setCourses] = useState([]);
+  const [progress, setProgress] = useState(0);
 
   useEffect(
     () => {
@@ -253,18 +202,11 @@ const CoursePage = ({ courseId, email, ...props }) => {
   );
 
   const init = async () => {
-    const _levels = initLevels();
-    const course = await getMyCourseSummary({ courseId:100, email });
+    const courses = await getLmsCourses();    
+    console.log("course",courses)
 
-    course.lectures.forEach((lecture) => {
-      const _lectures = _levels.get(lecture.level);
-      _lectures.push(new Lecture(lecture));
-      _levels.set(lecture.level, _lectures);
-    });
-
-    setLevels(_levels);
-    // setLectures(_lectures);
-    setCourse(new Course(course));
+    setProgress(courses.net_progress);
+    setCourses(courses.list);
   };
 
   const onWindowFocus = useCallback(init, []);
@@ -277,36 +219,29 @@ const CoursePage = ({ courseId, email, ...props }) => {
 
   return (
     <Self {...props}>
+
       <Title styled={{ paddingTop: '4px' }}>
-        <TitleIcon type={course.type} />
-        <TitleText>{course.title}</TitleText>
+        <TitleText>{"Mission Progress"}</TitleText>
         <TitleProgressWrap>
           <TitleProgressPercent>
-            {course.progress}%
+            {progress}%
           </TitleProgressPercent>
           <TitleProgressBackground>
             <TitleProgress>
-              <TitleProgressBar value={course.progress} />
+              <TitleProgressBar value={progress} />
             </TitleProgress>
           </TitleProgressBackground>
         </TitleProgressWrap>
       </Title>
 
-      <CourseInfo>
-        {/* <CourseInfoTitle>블럭코딩을 활용한 앱 크리에이터 주니어 과정</CourseInfoTitle> */}
-        <CourseInfoDesc>
-          {course.introduction}
-        </CourseInfoDesc>
-      </CourseInfo>
-
-      {PROJECT_LEVELS.map((PROJECT_LEVEL) => (
+      {courses.map((course,index) => (
         <ProjectComponent
-          key={PROJECT_LEVEL.grade}
-          grade={PROJECT_LEVEL.grade}
-          lectures={levels.get(PROJECT_LEVEL.level)}
-          title={PROJECT_LEVEL.title}
+          key={index}
+          course={course}
         />
       ))}
+
+
     </Self>
   );
 };
