@@ -4,20 +4,13 @@ import styled from "@emotion/styled";
 import { Global, css } from "@emotion/react";
 import Layout from "../../Common/Component/Layout";
 import * as Popup from "../../Common/Component/PopUp";
-
 import IntroPopup from "./Components/IntroPopup";
-import Banners from "./Sections/Banners";
-import Categories from "./Sections/Categories";
-import Contents from "./Sections/Contents";
-import SubBanner from "./Sections/SubBanner";
-
+import MyProjectBanner from "./Sections/MyProjectBanner";
+import AllProjectList from "./Sections/AllProjectList";
 import arrowPrev from "../../Image/course/arrow-prev.svg";
 import arrowNext from "../../Image/course/arrow-next.svg";
-
-import { getBanners, getCourses, getLectures, getPopularLectures } from "./api";
-
+//import { getCoursesV1 } from "../../Common/Util/HTTPRequest";
 import "./index.scss";
-import { Banner, Course, Lecture } from "../../models";
 
 const GlobalStyle = css`
   *:focus {
@@ -34,23 +27,6 @@ const GlobalStyle = css`
 
   .slick-slide {
     position: relative;
-
-    &:not(.slick-active) {
-      &:before {
-        content: "";
-        position: absolute;
-        left: 15px;
-        top: 0;
-        background-color: rgba(0, 0, 0, 0.75);
-        width: calc(100% - 30px);
-        height: 100%;
-        border-radius: 16px;
-        z-index: 10;
-        @media screen and (max-width: 1169px) {
-          background-color: transparent;
-        }
-      }
-    }
   }
 
   .slick-contents {
@@ -63,15 +39,14 @@ const GlobalStyle = css`
     font-size: 0;
     border: none;
     padding: 0;
-    width: 52px;
-    height: 52px;
+    width: 68px;
+    height: 68px;
     background-color: transparent;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
     position: absolute;
     top: 50%;
-    margin-top: -26px;
     z-index: 100;
     cursor: pointer;
 
@@ -81,8 +56,8 @@ const GlobalStyle = css`
     
     &.slick-prev,
     &.slick-next {
-      width: 52px;
-      height: 52px;
+      width: 68px;
+      height: 68px;
     }
 
     &.slick-prev {
@@ -163,90 +138,20 @@ const Self = styled.div`
   overflow: hidden;
 `;
 
-const Br = styled.div`
-  margin: 39.5px auto 19.5px;
-  width: 100%;
-  max-width: 1170px;
-  height: 1px;
-  background-color: rgba(255, 255, 255, 0.2);
-
-  @media screen and (max-width: 1169px) {
-    width: 88.33%;
-    margin-top: 29.5px;
-  }
-`;
 
 const View = (props) => {
   let history = useHistory();
-
-  const [courses, setCourses] = useState(new Map());
-  const [lectures, setLectures] = useState([]);
-  const [mainBanners, setMainBanners] = useState([]);
-  const [subBanners, setSubBanners] = useState([]);
-  const [popularLectures, setPopularLectures] = useState([]);
+  const [courses, setCourses] = useState([]);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 1169);
 
   useEffect(() => {
-    getBanners().then((_banners) => {
-      const banners = _banners.map(_banner => new Banner(_banner));
-      setMainBanners(banners.filter(banner => banner.type === "MAIN"));
-      setSubBanners(banners.filter(banner => banner.type === "sub"));
-    });
-
-    getPopularLectures().then((lectures) => {
-      setPopularLectures(lectures.map((l) => new Lecture(l)));
-    });
-
     init();
-    // getCoursesDetail()
-    //   .then((courses) => {
-    //     const _courses = new Map();
-    //     const _lectures = [];
-    //     const _projects = [];
-
-    //     courses.forEach((_course) => {
-    //       const course = new Course(_course);
-
-    //       _course.lectures.forEach((_lecture) => {
-    //         const lecture = new Lecture(_lecture, _course.id);
-    //         _lectures.push(lecture);
-
-    //         _lecture.projects.forEach((_project) => {
-    //           const project = new Project(_project, _lecture.id, _course.id);
-    //           _projects.push(project);
-    //         });
-    //       });
-
-    //       _courses.set(_course.id, course);
-    //     });
-
-    //     setCourses(_courses);
-    //     setLectures(_lectures);
-    //     setProjects(_projects);
-    //   })
-    //   .catch((e) => {
-    //     console.error(e);
-    //   });
-
-    //showIntroPopup();
+    showIntroPopup();
   }, []);
 
   const init = async () => {
-    const _coursesResult = await getCourses();
-    const _courses = new Map();
-    _coursesResult.forEach((_course) => {
-      const course = new Course(_course);
-      _courses.set(_course.id, course);
-    });
-    setCourses(_courses);
-
-    const _lecturesResult = await getLectures({ keyword: props.keyword });
-    const _lectures = [];
-    _lecturesResult.rows.forEach((_lecture) => {
-      const lecture = new Lecture(_lecture);
-      _lectures.push(lecture);
-    });
-    setLectures(_lectures);
+    // const coursesResult  = await getCoursesV1()
+    // setCourses(coursesResult.lectures);
   };
 
   const showIntroPopup = useCallback(
@@ -254,7 +159,7 @@ const View = (props) => {
       const didIntroPopup = localStorage.getItem("didIntroPopup");
 
       if (!didIntroPopup) {
-        Popup.showPopUp(<IntroPopup history={history} />, {
+        Popup.showPopUp(<IntroPopup history={history} iconUpdateCallback={props.updateIconCallbak}/>, {
           dismissButton: false,
           defaultPadding: false,
           darkmode: true,
@@ -275,25 +180,21 @@ const View = (props) => {
       window.removeEventListener('resize', resize)
     }
   })
-  const courseCategories = [];
-  courses.forEach((value) => {
-    courseCategories.push(value);
-  });
+  
+  const onWindowFocus = useCallback(init, []);
+  useEffect(() => {
+    window.addEventListener("focus", onWindowFocus);
+    return () => {
+      window.removeEventListener("focus", onWindowFocus);
+    }
+  }, [onWindowFocus]);
 
   return (
     <Layout isHome={true}>
       <Global styles={GlobalStyle} />
       <Self>
-        <Banners items={mainBanners} isMobile={isMobile}/>
-        {/* <SubBanner items={subBanners} /> */}
- 
-        <Br />
-
-        <Contents items={popularLectures} />
-
-        <Br />
-
-        <Categories courses={courseCategories} items={lectures} />
+        <MyProjectBanner courses={courses}/>
+        <AllProjectList courses={courses}/>
       </Self>
     </Layout>
   );
