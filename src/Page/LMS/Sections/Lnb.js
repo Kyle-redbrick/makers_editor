@@ -4,10 +4,12 @@ import { FormattedMessage } from "react-intl";
 import styled from "@emotion/styled";
 import { showPopUp } from "../../../Common/Component/PopUp"
 import CertificateForm from "../PopUp/CertificateForm";
-
-
-import { COLOR, PAGE, renderCurrentPage } from "./../Constants";
 import { IMAGE } from "./../Constants/Images";
+import { COLOR, PAGE, renderCurrentPage } from "./../Constants";
+import iconMissionOn from "../../../Image/lms/icon_mission progress_inactivate.svg";
+import iconMissionOff from "../../../Image/lms/icon_mission_activate.svg";
+import iconAttOff from "../../../Image/lms/icon_attendance_inactivate.svg";
+import iconAttOn from "../../../Image/lms/icon_attendance_activate.svg";
 
 
 const Self = styled.div`
@@ -55,7 +57,7 @@ const Item = styled.div`
   border-radius: 10px;
 
   ${(props) => props.active && `
-    background-color: ${COLOR.ORANGE};
+    color: ${COLOR.ORANGE};
   `}
 
   @media screen and (max-width: 1169px) {
@@ -266,14 +268,14 @@ const LnbLinkComponent = memo(({ active, icon, link, title, isMobile, isLmsMobil
   );
 });
 
-const Lnb = ({ path, fixed, isMobile, isLmsMobileMenuOn, onClickLmsMobileMenu, coursesProgress, updateCourses, ...props }) => {
+const Lnb = ({ path, fixed, isMobile, isLmsMobileMenuOn, onClickLmsMobileMenu, ...props }) => {
   let { id } = useParams();
 
   const onclickCertBtn = (course) => {
     showPopUp(
       <CertificateForm
       course={course}
-      updateCourses={updateCourses}
+      //updateCourses={updateCourses}
         // sdg={formData.sdg}
         // certificate={formData.certificate}
         // onClickSubmit={() => {
@@ -290,95 +292,33 @@ const Lnb = ({ path, fixed, isMobile, isLmsMobileMenuOn, onClickLmsMobileMenu, c
   return (
     <Self {...props}>
       <LnbWrap isMobile={isMobile} fixed={fixed} isLmsMobileMenuOn={isLmsMobileMenuOn}>
-        <Title><FormattedMessage id="ID_HEADER_LMS" /></Title>
-        <Group>
-          <LnbLinkComponent
-            active={renderCurrentPage(path) === PAGE.DASHBOARD}
-            icon={renderCurrentPage(path) === PAGE.DASHBOARD ? IMAGE.LNB_DASHBOARD_OFF : IMAGE.LNB_DASHBOARD_ON}
-            link="/lms"
-            title={<FormattedMessage id="ID_LMS_DASHBOARD" />}
-            isMobile={isMobile}
-            isLmsMobileMenuOn={isLmsMobileMenuOn}
-            onClickLmsMobileMenu={onClickLmsMobileMenu}
-          />
-        </Group>
+        <Title><FormattedMessage id="ID_LMS_DASHBOARD" /></Title>
         <Br />
         <Group height={isMobile ? "auto" : 234}>
           <LnbLinkComponent
-            active={renderCurrentPage(path) === PAGE.COURSE && id === "1"}
-            icon={renderCurrentPage(path) === PAGE.COURSE && id === "1" ? IMAGE.LNB_PUZZLE_ON : IMAGE.LNB_PUZZLE_OFF}
-            link="/lms/course/1"
-            title={<FormattedMessage id="ID_LMS_COURSE_1" />}
+            active={renderCurrentPage(path) === PAGE.MISSION}
+            icon={renderCurrentPage(path) === PAGE.COURSE ? iconMissionOn : iconMissionOff}
+            link="/lms/mission"
+            //title={<FormattedMessage id="ID_LMS_COURSE_1" />}
+            title={"Mission Progress"}
             isMobile={isMobile}
             isLmsMobileMenuOn={isLmsMobileMenuOn}
             onClickLmsMobileMenu={onClickLmsMobileMenu}
           />
           <LnbLinkComponent
             active={renderCurrentPage(path) === PAGE.COURSE && id === "4"}
-            icon={renderCurrentPage(path) === PAGE.COURSE && id === "4" ? IMAGE.LNB_PUZZLE_ON : IMAGE.LNB_PUZZLE_OFF}
+            icon={renderCurrentPage(path) === PAGE.COURSE && id === "4" ? iconAttOn : iconAttOff}
             link="/lms/course/4"
-            title={<FormattedMessage id="ID_LMS_COURSE_2" />}
-            isMobile={isMobile}
-            isLmsMobileMenuOn={isLmsMobileMenuOn}
-            onClickLmsMobileMenu={onClickLmsMobileMenu}
-          />
-          <LnbLinkComponent
-            active={renderCurrentPage(path) === PAGE.COURSE && id === "5"}
-            icon={renderCurrentPage(path) === PAGE.COURSE && id === "5" ? IMAGE.LNB_PUZZLE_ON : IMAGE.LNB_PUZZLE_OFF}
-            link="/lms/course/5"
-            title={<FormattedMessage id="ID_LMS_COURSE_3" />}
-            isMobile={isMobile}
-            isLmsMobileMenuOn={isLmsMobileMenuOn}
-            onClickLmsMobileMenu={onClickLmsMobileMenu}
-          />
-
-          <LnbLinkComponent
-            active={renderCurrentPage(path) === PAGE.COURSE && id === "6"}
-            icon={renderCurrentPage(path) === PAGE.COURSE && id === "6" ? IMAGE.LNB_JS_ON : IMAGE.LNB_JS_OFF}
-            link="/lms/course/6"
-            title={<FormattedMessage id="ID_LMS_COURSE_4" />}
-            isMobile={isMobile}
-            isLmsMobileMenuOn={isLmsMobileMenuOn}
-            onClickLmsMobileMenu={onClickLmsMobileMenu}
-          />
-
-          <LnbLinkComponent
-            active={renderCurrentPage(path) === PAGE.COURSE && id === "7"}
-            icon={renderCurrentPage(path) === PAGE.COURSE && id === "7" ? IMAGE.LNB_JS_ON : IMAGE.LNB_JS_OFF}
-            link="/lms/course/7"
-            title={<FormattedMessage id="ID_LMS_COURSE_5" />}
-            isMobile={isMobile}
-            isLmsMobileMenuOn={isLmsMobileMenuOn}
-            onClickLmsMobileMenu={onClickLmsMobileMenu}
-          />
-
-
-        </Group>
-        <Br />
-        <Group>
-          {/* <LnbLinkComponent
-            active={renderCurrentPage(path) === PAGE.INVENTORY}
-            icon={renderCurrentPage(path) === PAGE.INVENTORY ? IMAGE.LNB_INVENTORY_OFF : IMAGE.LNB_INVENTORY_ON}
-            link="/lms/inventory"
-            title="나의 인벤토리"
-            isMobile={isMobile}
-            isLmsMobileMenuOn={isLmsMobileMenuOn}
-            onClickLmsMobileMenu={onClickLmsMobileMenu}
-          /> */}
-          <LnbLinkComponent
-            active={renderCurrentPage(path) === PAGE.QNA}
-            icon={renderCurrentPage(path) === PAGE.QNA ? IMAGE.LNB_QNA_OFF : IMAGE.LNB_QNA_ON}
-            link="/lms/questions"
-            title={<FormattedMessage id="ID_LMS_QUESTION" />}
+            //title={<FormattedMessage id="ID_LMS_COURSE_2" />}
+            title={"Attendance"}
             isMobile={isMobile}
             isLmsMobileMenuOn={isLmsMobileMenuOn}
             onClickLmsMobileMenu={onClickLmsMobileMenu}
           />
         </Group>
-        
       </LnbWrap>
       
-      <CertWrap isMobile={isMobile} fixed={fixed} isLmsMobileMenuOn={isLmsMobileMenuOn}>
+      {/* <CertWrap isMobile={isMobile} fixed={fixed} isLmsMobileMenuOn={isLmsMobileMenuOn}>
           {
             coursesProgress.map(
               (course) => { 
@@ -393,7 +333,7 @@ const Lnb = ({ path, fixed, isMobile, isLmsMobileMenuOn, onClickLmsMobileMenu, c
             )
           }
 
-       </CertWrap>
+       </CertWrap> */}
     </Self>
   );
 };

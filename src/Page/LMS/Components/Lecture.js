@@ -165,7 +165,7 @@ const Projects = styled.div`
   }
 `;
 
-const Lecture = memo(({ lecture, ...props }) => {
+const Lecture = memo(({ course, ...props }) => {
   const [show, setShow] = useState(false);
 
   const handleClickToggle = useCallback(
@@ -178,21 +178,21 @@ const Lecture = memo(({ lecture, ...props }) => {
   return (
     <Self {...props}>
       <Header>
-        <Thumbnail image={lecture.hThumbnailUrl} />
+        <Thumbnail image={course.course.hThumbnailUrl} />
         <TitleWrap>
-          <Title>{lecture.title}</Title>
+          <Title>{course.course.title}</Title>
           <ProgressWrap>
             <Progress>
               {/* <ProgressBar value={(project.currentStep / project.totalStep) * 100} /> */}
-              <ProgressBar value={lecture.progress} />
+              <ProgressBar value={course.progress} />
             </Progress>
             {/* <ProgressText>{((project.currentStep / project.totalStep) * 100).toFixed(1)}%</ProgressText> */}
-            <ProgressText>{lecture.progress}%</ProgressText>
+            <ProgressText>{course.progress}%</ProgressText>
           </ProgressWrap>
         </TitleWrap>
 
         <ButtonWrap>
-          <LinkButton to={`/course/${lecture.id}`}>
+          <LinkButton to={`/course/${course.id}`}>
             <FormattedMessage id="ID_LMS_GO" />
           </LinkButton>
 
@@ -204,7 +204,7 @@ const Lecture = memo(({ lecture, ...props }) => {
 
       {show && (
         <Projects>
-          {lecture.projects.map((project, index) => (
+          {course.projects.map((project, index) => (
             <ProjectComponent key={index} project={project} />
           ))}
         </Projects>

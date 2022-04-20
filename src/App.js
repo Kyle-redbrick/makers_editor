@@ -233,8 +233,8 @@ const App = () => {
           <Route exact path="/news/detail/:id" component={NewsDetail} />
           <Route
             exact
-            path="/lms"
-            render={() => <LMS path={PAGE.DASHBOARD} />}
+            path="/lms/mission"
+            render={() => <LMS path={PAGE.MISSION} />}
           />
           <Route
             exact
