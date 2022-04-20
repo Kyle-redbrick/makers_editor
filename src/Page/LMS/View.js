@@ -1,14 +1,10 @@
 import React, { useState, useEffect, useCallback } from "react";
 import styled from "@emotion/styled";
 import Layout from "../../Common/Component/Layout";
-
 import { PAGE } from "./Constants";
-
 import Lnb from "./Sections/Lnb";
 import CourseById from "./Sections/Course";
 import Inventory from "./Sections/Inventory";
-
-
 import "./index.scss";
 
 const View = (props) => {
@@ -67,10 +63,10 @@ const View = (props) => {
           isMobile={isMobile}
           isLmsMobileMenuOn={isLmsMobileMenuOn}
           onClickLmsMobileMenu={onClickLmsMobileMenu}
-          coursesProgress={props.coursesProgress}
-          updateCourses={props.updateCourses}
+         // coursesProgress={props.coursesProgress}
+         // updateCourses={props.updateCourses}
         />
-        {props.path === PAGE.MISSION && <CourseById courseId={props.courseId} {...props} />}
+        {props.path === PAGE.MISSION && <CourseById {...props} />}
         {props.path === PAGE.INVENTORY && <Inventory />}
       </Self>
     </Layout>

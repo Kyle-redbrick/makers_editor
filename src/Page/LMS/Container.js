@@ -1,34 +1,11 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import View from "./View";
-import { getMyCourses } from "./api";
 import { Course, RecommendedProject, TodayQuest } from "../../models";
 
+function Container(props) {
 
-
-class Container extends Component {
-  constructor(props) {
-    super(props);
-
-    console.log(props)
-    this.state = {
-      coursesProgress: [],
-    };
-  }
-
-  componentDidMount() {
-    console.log(111111)
-    //this.getData()
-  }
-
-  getData = async () => {
-    // const myCourses = await getMyCourses({ userId: this.props.userId })
-    // this.setState({ coursesProgress : myCourses.map((course) => new Course(course))})
-  }
-
-  render() {
-    return <View courseId={this.props.match && this.props.match.params.id} coursesProgress={this.state.coursesProgress} updateCourses={this.getData} {...this.props} />;
-  }
+  return <View {...props} />;
 }
 
 export default connect(
