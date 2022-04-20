@@ -10,41 +10,36 @@ export default function View(props) {
 
   return (
     <Layout>
-      <div className="Page--Event">
-        <div className="Event_Inner">
-          <div className="Event_Title">
-            <FormattedMessage id="ID_EVENT_TITLE" />
+      <div className="account">
+        <h3 className="account__title">계정 설정</h3>
+        
+        <div className="account__tab-box">
+          <ul className="account__tab-list">
+            <li className="account__tab-item">
+              {/* TODO 탭 변경 시 클래스 on 추가하여 활성화 */}
+              <a className="account__tab-link on">계정 관리</a>
+            </li>
+            <li className="account__tab-item">
+              <a className="account__tab-link">비밀번호 변경</a>
+            </li>
+          </ul>
+
+          <div className="account__content-wrap">
+            <div className="account__content-item">
+              <span className="account__content-category">이름</span>
+              <input type="text" className="account__content-input" placeholder="이름을 입력하세요." />
+              <button type="button" className="account__edit-btn">수정</button>
+            </div>
+            
+            <div className="account__content-item">
+              <span className="account__content-category">닉네임</span>
+              <input type="text" className="account__content-input" placeholder="닉네임을 입력하세요." />
+              <button type="button" className="account__edit-btn">수정</button>
+            </div>
           </div>
-          <section className="Event_ItemSec">
-          <div className="Event_ItemSec-item">
-            {events.map((event, index) => (
-              <EventItem event={event} key={index} />
-            ))}
-            {events.length === 0 && (
-              <p className="noEventText"><FormattedMessage id="ID_EMPTY_EVENT" /></p>
-            )}
-          </div>
-          </section>
         </div>
       </div>
     </Layout>
   );
 }
 
-const EventItem = props => {
-  const { event } = props;
-  return (
-    <Link className="EventItem" to={`/event/${event.id}`}>
-      <div className="EventItem_Img_Wrapper">
-        <img src={event.thumbnail.toDreamclassS3URL()} alt="img" />
-      </div>
-      <div className="EventItem_Wrap">
-        <div className="EventItem_Wrap-title">{event.title}</div>
-        <div className="EventItem_Wrap_DateWrap">
-          {`${moment(event.startAt).format("YYYY.MM.DD")} ~ ${moment(event.endAt).format("MM.DD")}`}
-        </div>
-      </div>
-      <div className="EventItem_Wrap-category">{event.category}</div>
-    </Link>
-  );
-};
