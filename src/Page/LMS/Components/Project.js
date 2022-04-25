@@ -188,21 +188,22 @@ const Project = ({ project, ...props }) => {
 
   const { intl } = props;
 
-  const progressText = `${project.completedMissionNum > project.totalMissionNum
-    ? project.totalMissionNum
-    : project.completedMissionNum
-    }/${project.totalMissionNum}`
+  const progressText = `${project.steps.completed > project.steps.net
+    ? project.steps.net
+    : project.steps.completed
+    }/${project.steps.net}`
 
   return (
     <Self {...props}>
-      <Level><FormattedMessage id="ID_LMS_QUEST" /> {project.number}</Level>
+      {console.log("project",project)}
+      <Level>{project.label}</Level>
       <TitleWrap>
         <Title>{project.title}</Title>
         <ProgressWrap>
-          <Progress value={project.progress}>
+          <Progress value={project.steps.completed / project.steps.net * 100}>
             <ProgressBar />
           </Progress>
-          {project.progress >= 100 ? (
+          {project.steps.net / project.steps.completed >= 1 ? (
             <ProgressText>
               <FormattedMessage id="ID_LMS_QUEST_ALL_CLEAR" />
             </ProgressText>
@@ -216,17 +217,18 @@ const Project = ({ project, ...props }) => {
 
       <LectureDate>
         <Label><FormattedMessage id="ID_LMS_QUEST_DATE" /> </Label>
-        {project.myProject
-          && project.myProject.lastStudiedAt
-          ? moment(project.myProject.lastStudiedAt).format("YYYY.MM.DD")
+        {project.unlocked
+          ? project.lastStudyDate
           : "-"}
         <br />
         <Label><FormattedMessage id="ID_LMS_QUEST_STUDY_TIME" /> </Label>
-        {project.myProject
-          && project.myProject.studiedMinutes
-          ? project.myProject.studiedMinutes + intl.formatMessage({ id: "ID_LMS_QUEST_STUDY_TIME_MIN" })
+        {project.unlocked
+          ? project.totalStudyMinute + intl.formatMessage({ id: "ID_LMS_QUEST_STUDY_TIME_MIN" })
           : "-"}
       </LectureDate>
+
+      <img src={IMAGE.GAME_BUTTON_IMG}/>
+
 
       <ButtonWrap>
         {project.sampleGameUrl && (
@@ -235,10 +237,10 @@ const Project = ({ project, ...props }) => {
             <JoystickText><FormattedMessage id="ID_COURSE_DETAIL_PLAY_GAME" /></JoystickText>
           </JoystickButton>
         )}
-        {project.completed ? (
+        {project.steps.completed >= project.steps.net ? (
           <LearnAgain completed id={project.id} lmsButton />
         ) : (
-          project.completedMissionNum === 0 ? (
+          project.steps.completed === 0 ? (
             <LearnNow id={project.id} lmsButton />
           ) : (
             <LearnContinue id={project.id} lmsButton />

@@ -96,7 +96,7 @@ const CoursePage = ({ email, ...props }) => {
 
   const init = async () => {
     const courses = await getLmsCourses();    
-    console.log("course",courses)
+    console.log("course!!!!!!",courses)
 
     setProgress(courses.net_progress);
     setCourses(courses.list);
