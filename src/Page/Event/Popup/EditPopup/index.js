@@ -24,22 +24,28 @@ const EditName = () => {
         </button>
       </div>
 
-      <div className="edit-popup__body">
-        <div className="edit-popup__content">
-          <div className="edit-popup__list">
-            <span className="edit-popup__category">이름</span>
-            <input type="text" placeholder="이름을 입력하세요." className="edit-popup__input" />
-          </div>
-          <div className="edit-popup__list">
-            <span className="edit-popup__category">성</span>
-            <input type="text" placeholder="성을 입력하세요." className="edit-popup__input" />
+        <div className="edit-popup__body">
+          <div className="edit-popup__content">
+            <div className="edit-popup__list">
+              <span className="edit-popup__category">이름</span>
+              <div className="edit-popup__right">
+                <input type="text" placeholder="이름을 입력하세요." className="edit-popup__input" />
+                <p className="edit-popup__input-help">닉네임을 올바르게 입력해주세요.</p>
+              </div>
+            </div>
+            <div className="edit-popup__list">
+              <span className="edit-popup__category">성</span>
+              <div className="edit-popup__right">
+                <input type="text" placeholder="성을 입력하세요." className="edit-popup__input" />
+                <p className="edit-popup__input-help">닉네임을 올바르게 입력해주세요.</p>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div className="edit-popup__footer">
-        <button className="edit-popup__submit-btn" type="submit">적용</button>
-      </div>
+        <div className="edit-popup__footer">
+          <button className="edit-popup__submit-btn" type="submit">적용</button>
+        </div>
     </div>
   )
 }
@@ -56,18 +62,21 @@ const EditNickname = () => {
         </button>
       </div>
 
-      <div className="edit-popup__body">
-        <div className="edit-popup__content">
-          <div className="edit-popup__list">
-            <span className="edit-popup__category">닉네임</span>
-            <input type="text" placeholder="닉네임을 입력하세요." className="edit-popup__input" />
+        <div className="edit-popup__body">
+          <div className="edit-popup__content">
+            <div className="edit-popup__list">
+              <span className="edit-popup__category">닉네임</span>
+              <div className="edit-popup__right">
+                <input type="text" placeholder="닉네임을 입력하세요." className="edit-popup__input" />
+                <p className="edit-popup__input-help">닉네임을 올바르게 입력해주세요.</p>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div className="edit-popup__footer">
-        <button className="edit-popup__submit-btn" type="submit">적용</button>
-      </div>
+        <div className="edit-popup__footer">
+          <button className="edit-popup__submit-btn" type="submit">적용</button>
+        </div>
     </div>
   )
 }

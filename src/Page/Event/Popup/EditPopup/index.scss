@@ -55,7 +55,7 @@
 
 .edit-popup__list {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   margin-bottom: 16px;
 
   &:last-child {
@@ -70,6 +70,11 @@
   line-height: 26px;
   font-weight: 500;
   color: #8e8e8e;
+  margin-top: 10px;
+}
+
+.edit-popup__right {
+  flex: 0 0 70%;
 }
 
 .edit-popup__input {
@@ -78,7 +83,9 @@
   border: 1px solid #585858;
   padding: 14px 16px 13px;
   background-color: transparent;
-  flex: 0 0 70%;
+  width: 100%;
+  margin-bottom: 12px;
+  color: #fff;
 
   &:focus, &:active {
     border-color: #fff;
@@ -99,4 +106,17 @@
   border: 0;
   border-radius: 10px;
   cursor: pointer;
+}
+
+.edit-popup__input-help {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 13px;
+  font-weight: 400;
+  color: #999;
+  line-height: 13px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
