@@ -18,7 +18,7 @@ const Self = styled.div`
   align-items: center;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 
-  &:first-child {
+  &:first-of-type {
     border-top: none;
   }
 
@@ -171,10 +171,14 @@ const ButtonWrap = styled.div`
   }
 `;
 
+const GameBtn = styled.img`
+  margin-right: 10px;
+`;
+
 const Project = ({ project, ...props }) => {
   const handleClickGame = useCallback(
     () => {
-      Popup.showPopUp(<GamePopup url={project.sampleGameUrl} />, {
+      Popup.showPopUp(<GamePopup url={project.resources.sampleGameURL} />, {
         dismissButton: false,
         dismissOverlay: true,
         defaultPadding: false,
@@ -227,7 +231,7 @@ const Project = ({ project, ...props }) => {
           : "-"}
       </LectureDate>
 
-      <img src={IMAGE.GAME_BUTTON_IMG}/>
+      <GameBtn src={IMAGE.GAME_BUTTON_IMG}  onClick={handleClickGame}/>
 
 
       <ButtonWrap>

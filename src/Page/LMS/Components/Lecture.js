@@ -1,7 +1,7 @@
 import React, { memo, useCallback, useState } from "react";
 import { FormattedMessage } from "react-intl";
 import styled from "@emotion/styled";
-
+import { URL } from "../../../Common/Util/Constant";
 import Button, { LinkButton as OrigLinkButton } from "./Button";
 import ProjectComponent from "./Project";
 
@@ -178,21 +178,19 @@ const Lecture = memo(({ course, ...props }) => {
   return (
     <Self {...props}>
       <Header>
-        <Thumbnail image={course.course.hThumbnailUrl} />
+        <Thumbnail image={URL.S3_DREAMCLASS + course.course.posterURL} />
         <TitleWrap>
           <Title>{course.course.title}</Title>
           <ProgressWrap>
             <Progress>
-              {/* <ProgressBar value={(project.currentStep / project.totalStep) * 100} /> */}
-              <ProgressBar value={course.progress} />
+              <ProgressBar value={course.course.progress.complete / course.course.progress.net * 100} />
             </Progress>
-            {/* <ProgressText>{((project.currentStep / project.totalStep) * 100).toFixed(1)}%</ProgressText> */}
-            <ProgressText>{course.progress}%</ProgressText>
+            <ProgressText>{course.course.progress.complete / course.course.progress.net * 100}%</ProgressText>
           </ProgressWrap>
         </TitleWrap>
 
         <ButtonWrap>
-          <LinkButton to={`/course/${course.id}`}>
+          <LinkButton to={`/course/${course.course.id}`}>
             <FormattedMessage id="ID_LMS_GO" />
           </LinkButton>
 

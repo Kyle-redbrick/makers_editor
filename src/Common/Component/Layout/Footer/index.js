@@ -64,7 +64,7 @@ class Footer extends Component {
       <div className="Footer">
         <div className="Footer--Inner">
           {agreements.map((agreement, index) => (
-            <div className="Agreement"
+            <div className="Agreement" key={index}
               onClick={() => onClickShowAgreement(agreement.id)}>
               <div className={agreement.id}>
                 {agreement.title}
