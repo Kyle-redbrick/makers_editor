@@ -190,7 +190,8 @@ const Lecture = memo(({ course, ...props }) => {
         </TitleWrap>
 
         <ButtonWrap>
-          <LinkButton to={`/course/${course.course.id}`}>
+          {console.log(course)}
+          <LinkButton to={`/course/${course.course.lectureId}`}>
             <FormattedMessage id="ID_LMS_GO" />
           </LinkButton>
 
