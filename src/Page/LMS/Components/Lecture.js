@@ -1,7 +1,7 @@
 import React, { memo, useCallback, useState } from "react";
 import { FormattedMessage } from "react-intl";
 import styled from "@emotion/styled";
-
+import { URL } from "../../../Common/Util/Constant";
 import Button, { LinkButton as OrigLinkButton } from "./Button";
 import ProjectComponent from "./Project";
 
@@ -165,7 +165,7 @@ const Projects = styled.div`
   }
 `;
 
-const Lecture = memo(({ lecture, ...props }) => {
+const Lecture = memo(({ course, ...props }) => {
   const [show, setShow] = useState(false);
 
   const handleClickToggle = useCallback(
@@ -178,21 +178,20 @@ const Lecture = memo(({ lecture, ...props }) => {
   return (
     <Self {...props}>
       <Header>
-        <Thumbnail image={lecture.hThumbnailUrl} />
+        <Thumbnail image={URL.S3_DREAMCLASS + course.course.posterURL} />
         <TitleWrap>
-          <Title>{lecture.title}</Title>
+          <Title>{course.course.title}</Title>
           <ProgressWrap>
             <Progress>
-              {/* <ProgressBar value={(project.currentStep / project.totalStep) * 100} /> */}
-              <ProgressBar value={lecture.progress} />
+              <ProgressBar value={course.course.progress.complete / course.course.progress.net * 100} />
             </Progress>
-            {/* <ProgressText>{((project.currentStep / project.totalStep) * 100).toFixed(1)}%</ProgressText> */}
-            <ProgressText>{lecture.progress}%</ProgressText>
+            <ProgressText>{course.course.progress.complete / course.course.progress.net * 100}%</ProgressText>
           </ProgressWrap>
         </TitleWrap>
 
         <ButtonWrap>
-          <LinkButton to={`/course/${lecture.id}`}>
+          {console.log(course)}
+          <LinkButton to={`/course/${course.course.lectureId}`}>
             <FormattedMessage id="ID_LMS_GO" />
           </LinkButton>
 
@@ -204,7 +203,7 @@ const Lecture = memo(({ lecture, ...props }) => {
 
       {show && (
         <Projects>
-          {lecture.projects.map((project, index) => (
+          {course.projects.map((project, index) => (
             <ProjectComponent key={index} project={project} />
           ))}
         </Projects>

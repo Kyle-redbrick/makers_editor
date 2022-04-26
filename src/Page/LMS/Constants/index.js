@@ -5,7 +5,8 @@ export const PAGE = {
   QNA: 'QNA',
   QNA_BY_ID: 'QNA_BY_ID',
   QNA_NEW: 'QNA_NEW',
-  QNA_UPDATE: "QNA_UPDATE"
+  QNA_UPDATE: "QNA_UPDATE",
+  MISSION: "MISSION"
 }
 
 export const renderCurrentPage = (page) => {

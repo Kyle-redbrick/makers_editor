@@ -58,6 +58,9 @@ import lmsRecommendArrow from "../../../Image/dreamclass/lms-recommend-quest-arr
 
 import mobileQuestionFilter from "../../../Image/dreamclass/dream_question_filter_icon.svg";
 
+import gameBtnImg from "../../../Image/lms/game_btn_img.svg";
+
+
 export const IMAGE = {
   ARROW_UP: arrowUp,
   ARROW_DOWN: arrowDown,
@@ -121,7 +124,9 @@ export const IMAGE = {
   LNB_PYTHON_OFF: lnbPythonOff,
 
   LMS_RECOMMEND_ARROW: lmsRecommendArrow,
-  MOBILE_QUESTION_FILTER: mobileQuestionFilter
+  MOBILE_QUESTION_FILTER: mobileQuestionFilter,
+
+  GAME_BUTTON_IMG: gameBtnImg
 } 
 
 export const renderCircularIcon = (type) => {

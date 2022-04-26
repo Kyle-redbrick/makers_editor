@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { FormattedMessage } from "react-intl";
 import EyesOffIcon from "../../Image/icon-eyes-off.svg";
 import EyesOnIcon from "../../Image/icon-eyes-on.svg";
+import EditPopup from "./Popup/EditPopup";
 import "./index.scss";
 
 export default function View(props) {
@@ -12,6 +13,7 @@ export default function View(props) {
 
   return (
     <Layout>
+      <EditPopup />
       <div className="account">
         <h3 className="account__title">계정 설정</h3>
         
