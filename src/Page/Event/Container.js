@@ -3,22 +3,14 @@ import { connect } from "react-redux";
 import * as request from "../../Common/Util/HTTPRequest";
 import View from "./View";
 
-class Container extends Component {
-  constructor(props) {
-    super(props);
+function Container(props) {
 
-  }
-
-
-  render() {
-    return (
-      <View/>
-    );
-  }
+  return (
+    <View/>
+  );
 }
-export default connect(
-  state => ({
-    email: state.userinfo.email
-  }),
-  {}
-)(Container);
+export default Container
+// export default connect(
+//   state => ({
+//     email: state.userinfo.email
+//   }), {})(Container);
