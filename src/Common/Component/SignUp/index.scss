@@ -1,5 +1,5 @@
 .signup {
-  width: 490px;
+  width: 440px;
   text-align: center;
   .signup__padding {
     padding: 0 36px;
@@ -8,24 +8,23 @@
     text-align: left;
     font-size: 24px;
     margin-bottom: 18px;
+    font-weight: 700;
+    line-height: 26px;
+    color: #fff;
   }
 
   .signup_input_wrapper {
     display: flex;
-    margin-top: 20px;
+    margin-top: 16px;
   }
-  .signup_input_wrapper:nth-child(2),
-  .signup_input_wrapper:nth-child(4),
-  .signup_input_wrapper:nth-child(7),
-  .signup_input_wrapper:nth-child(9) {
-    margin-top: 40px;
-  }
+  
   .signup_input_title {
     display: flex;
     margin: auto;
     margin-left: 0;
-    font-size: 18px;
-    font-weight: bold;
+    font-size: 16px;
+    font-weight: 500;
+    color: #8e8e8e;
   }
   .signup_input_title_dot {
     margin-top: 0;
@@ -46,9 +45,14 @@
   }
 
   .popup_input {
-    width: 274px;
+    width: 100%;
     height: initial;
+    border-radius: 8px;
+    background-color: #1c1c1c;
+    border-color: #5b5b5b;
+    padding: 14px 9px;
   }
+
   .popup_input-phone {
     margin-left: 0;
     width: 150px;

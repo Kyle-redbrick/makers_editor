@@ -569,85 +569,141 @@ class SignUp extends Component {
     ) : (
       <div className="signup">
         <form autoComplete="off">
-          <div className="signup_title signup__padding">
-            {formatMessage({ id: "ID_SIGNUP_TITLE" })}
+          <div className="signup_title">
+            {/* {formatMessage({ id: "ID_SIGNUP_TITLE" })} */}
+            계정 생성하기
           </div>
 
           {/* ===== 이메일 =================================== */}
-          <div className="signup_input_wrapper signup__padding">
+          <div className="signup_input_wrapper">
             <div className="signup_input_title">
-              {formatMessage({ id: "ID_SIGNUP_EMAIL" })}
+              {/* {formatMessage({ id: "ID_SIGNUP_EMAIL" })} */}
+              이메일
               <span className="signup_input_title_dot">*</span>
             </div>
-            <input
-              className={`popup_input ${warning_email !== "" ? "popup_input-warning" : ""
-                }`}
-              id="email"
-              placeholder={formatMessage({ id: "ID_SIGNUP_EMAIL_PLACEHOLDER" })}
-              value={email}
-              onChange={onChangeInput}
-              type="text"
-              autoComplete="off"
-            />
+            <div className="signup__input__right">
+              <input
+                className={`popup_input ${warning_email !== "" ? "popup_input-warning" : ""
+                  }`}
+                id="email"
+                placeholder="이메일을 입력해주세요"
+                value={email}
+                onChange={onChangeInput}
+                type="text"
+                autoComplete="off"
+              />
+              <div className="popup_warning">{warning_email}</div>
+            </div>
           </div>
-          <div className="popup_warning">{warning_email}</div>
+
+          {/* ===== 이름 ===================================== */}
+          <div className="signup_input_wrapper">
+            <div className="signup_input_title">
+              이름
+              <span className="signup_input_title_dot">*</span>
+            </div>
+            <div className="signup__input__right">
+              <input
+                className={`popup_input ${warning_name !== "" ? "popup_input-warning" : ""
+                  }`}
+                id="name"
+                placeholder="이름을 입력해주세요"
+                value={name}
+                onChange={onChangeInput}
+                type="text"
+                autoComplete="off"
+              />
+              <div className="popup_warning">{warning_name}</div>
+            </div>
+          </div>
+
+          {/* ===== 성 =================================== */}
+          <div className="signup_input_wrapper">
+            <div className="signup_input_title">
+              성
+              <span className="signup_input_title_dot">*</span>
+            </div>
+            <div className="signup__input__right">
+              <input
+                className={`popup_input ${warning_name !== "" ? "popup_input-warning" : ""
+                  }`}
+                id="name"
+                placeholder="성을 입력해주세요"
+                value={name}
+                onChange={onChangeInput}
+                type="text"
+                autoComplete="off"
+              />
+              <div className="popup_warning">{warning_name}</div>
+            </div>
+          </div>
+
+          {/* ===== 닉네임 =================================== */}
+          <div className="signup_input_wrapper">
+            <div className="signup_input_title">
+              닉네임
+              <span className="signup_input_title_dot">*</span>
+            </div>
+            <div className="signup__input__right">
+              <input
+                className={`popup_input ${warning_name !== "" ? "popup_input-warning" : ""
+                  }`}
+                id="name"
+                placeholder="닉네임을 입력해주세요"
+                value={name}
+                onChange={onChangeInput}
+                type="text"
+                autoComplete="off"
+              />
+              <div className="popup_warning">{warning_name}</div>
+            </div>
+          </div>
 
           {/* ===== 비밀번호 =================================== */}
-          <div className="signup_input_wrapper signup__padding">
+          <div className="signup_input_wrapper">
             <div className="signup_input_title">
-              {formatMessage({ id: "ID_SIGNUP_PW" })}
+              {/* {formatMessage({ id: "ID_SIGNUP_PW" })} */}
+              비밀번호
               <span className="signup_input_title_dot">*</span>
             </div>
-            <input
-              className={`popup_input ${warning_password !== "" ? "popup_input-warning" : ""
-                }`}
-              id="password"
-              type="password"
-              placeholder={formatMessage({ id: "ID_SIGNUP_PW_PLACEHOLDER" })}
-              value={password}
-              onChange={onChangeInput}
-              autoComplete="off"
-            />
+            <div className="signup__input__right">
+              <input
+                className={`popup_input ${warning_password !== "" ? "popup_input-warning" : ""
+                  }`}
+                id="password"
+                type="password"
+                placeholder="비밀번호를 입력해주세요"
+                value={password}
+                onChange={onChangeInput}
+                autoComplete="off"
+              />
+              <div className="popup_warning">{warning_name}</div>
+            </div>
           </div>
-          <div className="signup_input_wrapper signup__padding">
+
+          {/* ===== 비밀번호 확인 ================================ */}
+          {/* <div className="signup_input_wrapper">
             <div className="signup_input_title">
               {formatMessage({ id: "ID_SIGNUP_PW_RE" })}
               <span className="signup_input_title_dot">*</span>
             </div>
-            <input
-              className={`popup_input ${warning_password !== "" ? "popup_input-warning" : ""
-                }`}
-              id="password_re"
-              type="password"
-              placeholder={formatMessage({ id: "ID_SIGNUP_PW_RE_PLACEHOLDER" })}
-              value={password_re}
-              onChange={onChangeInput}
-              autoComplete="off"
-            />
-          </div>
-          <div className="popup_warning">{warning_password}</div>
-
-          {/* ===== 이름 =================================== */}
-          <div className="signup_input_wrapper signup__padding">
-            <div className="signup_input_title">
-              {formatMessage({ id: "ID_SIGNUP_NAME" })}
-              <span className="signup_input_title_dot">*</span>
+            <div className="signup__input__right">
+              <input
+                className={`popup_input ${warning_password !== "" ? "popup_input-warning" : ""
+                  }`}
+                id="password_re"
+                type="password"
+                placeholder={formatMessage({ id: "ID_SIGNUP_PW_RE_PLACEHOLDER" })}
+                value={password_re}
+                onChange={onChangeInput}
+                autoComplete="off"
+              />
+              <div className="popup_warning">{warning_password}</div>
             </div>
-            <input
-              className={`popup_input ${warning_name !== "" ? "popup_input-warning" : ""
-                }`}
-              id="name"
-              placeholder={formatMessage({ id: "ID_SIGNUP_NAME_PLACEHOLDER" })}
-              value={name}
-              onChange={onChangeInput}
-              type="text"
-              autoComplete="off"
-            />
-          </div>
-          <div className="popup_warning">{warning_name}</div>
+          </div> */}
 
           {/* ===== 전화번호 =================================== */}
-          <div className="signup_input_wrapper signup__padding">
+         {/*  <div className="signup_input_wrapper">
             <div className="signup_input_title">
               {formatMessage({ id: "ID_SIGNUP_PHONE" })}
               <span className="signup_input_title_dot">*</span>
@@ -689,8 +745,8 @@ class SignUp extends Component {
                 )}
               </div>
             </div>
-          </div>
-          <div className="signup_input_wrapper signup__padding">
+          </div> */}
+         {/*  <div className="signup_input_wrapper signup__padding">
             <div
               className={`signup_phone ${warning_phone !== "" ? "signup_phone-warning" : ""
                 }`}
@@ -719,8 +775,8 @@ class SignUp extends Component {
                 </button>
               )}
             </div>
-          </div>
-          <div className="popup_warning">{warning_phone}</div>
+          </div> */}
+          {/* <div className="popup_warning">{warning_phone}</div> */}
 
           {/* ===== 추천인코드 =================================== */}
           {/* <div className="signup_input_wrapper signup__padding">
@@ -759,10 +815,10 @@ class SignUp extends Component {
               )}
             </div> */}
           {/* </div> */}
-          <div className="popup_warning">{warning_recommendCode}</div>
+          {/* <div className="popup_warning">{warning_recommendCode}</div> */}
 
           {/* ===== 이용약관 =================================== */}
-          <div className="signup_agreements signup__padding">
+          {/* <div className="signup_agreements signup__padding">
             {agreements.map((agreement, index) => (
               <div key={index} className="signup_agreement">
                 <div
@@ -798,16 +854,16 @@ class SignUp extends Component {
                 />
               </div>
             ))}
-          </div>
-          <div className="popup_warning popup_warning-agreement signup__padding">
+          </div> */}
+          {/* <div className="popup_warning popup_warning-agreement signup__padding">
             {warning_agreement}
-          </div>
+          </div> */}
 
-          <div className="signup_msg">
+          {/* <div className="signup_msg">
             {formatMessage({ id: "ID_SIGNUP_DESC" })}
-          </div>
+          </div> */}
 
-          <div
+          {/* <div
             className={`signup_recaptch ${this.state.warning_recaptchaToken ? "signup_recaptch-warning" : ""
               }`}
           >
@@ -821,7 +877,7 @@ class SignUp extends Component {
               verifyCallback={this.verifyCallback}
               hl={this.locale}
             />
-          </div>
+          </div> */}
 
           <button
             className="popup_button popup_button-singup"
@@ -829,14 +885,14 @@ class SignUp extends Component {
           >
             {formatMessage({ id: "ID_SIGNUP_SIGNUP" })}
           </button>
-          <div className="signup_link_wrapper signup__padding">
+          {/* <div className="signup_link_wrapper signup__padding">
             <div className="signup_link_desc">
               {formatMessage({ id: "ID_SIGNUP_SIGNIN_DESC" })}
             </div>
             <div className="signup_link" onClick={onClickSignIn}>
               {formatMessage({ id: "ID_SIGNUP_SIGNIN" })}
             </div>
-          </div>
+          </div> */}
         </form>
       </div>
     );

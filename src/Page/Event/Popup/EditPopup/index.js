@@ -6,7 +6,7 @@ function EditPopup () {
   return (
     <div className="edit-popup">
       <form action="">
-        {false ? <EditName /> : <EditNickname /> }
+        {true ? <EditName /> : <EditNickname /> }
       </form>
     </div>
   )
