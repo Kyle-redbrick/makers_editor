@@ -245,10 +245,10 @@
   }
 
   .account__content-item {
-    // border-bottom: 1px solid #383838;
+    border-bottom: 1px solid #383838;
     width: 100%;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     padding: 28px 0;
 
     &:last-child {
@@ -263,6 +263,15 @@
     font-size: 16px;
     line-height: 23px;
     font-weight: 500;
+    margin-top: 13px;
+  }
+
+  .account__content-category--account {
+    margin-top: 0;
+  }
+
+  .account__content-item--account {
+    align-items: center;
   }
 
   .account__content-input {
@@ -364,6 +373,15 @@
       cursor: pointer;
     }
   }
+}
+
+.account__help-text {
+  font-size: 13px;
+  color: #999;
+  font-weight: 400;
+  line-height: 13px;
+  display: block;
+  margin-top: 10px;
 }
 
 
