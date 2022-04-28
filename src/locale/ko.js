@@ -1298,6 +1298,11 @@ const ko = {
   ID_CERT_ADVANCED_BLOCK_DESC:"is awarded with this certificate for successfully fulfilling requirements of Advanced Block Coding, a software education course offered by iGroup, and completing 4 projects utilizing Pysical Engine,  Variable,  Conditional Statement, Clone, and Loop.",
   ID_CERT_ADVANCED_JS_DESC:"is awarded with this certificate for successfully fulfilling requirements of Advanced JavaScript, a software education course offered by iGroup, and completing 8 projects utilizing Event, Sequence, Physical Engine, Random Number,  Varibale, Conditional Statement, and Operator.",
   ID_CERT_MASTERY_JS_DESC:"is awarded with this certificate for successfully fulfilling requirements of JavaScript Mastery, a software education course offered by iGroup, and completing 4 projects utilizing Random Number, Variable, Conditional Statement, Operator, List, Index,  Loop, and Function.",
+
+  ID_SIGNUP_CREATE_TITLE : "계정 생성하기",
+  ID_SIGNUP_NAME : "이름",
+  ID_SIGNUP_FIRST_NAME : "성",
+  ID_SIGNUP_FIRST_NAME_PLACEHOLDER: "성을 입력해주세요",
   
 };
 export default ko;
