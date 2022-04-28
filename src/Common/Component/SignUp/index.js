@@ -879,12 +879,20 @@ class SignUp extends Component {
             />
           </div> */}
 
-          <button
-            className="popup_button popup_button-singup"
-            onClick={onClickSignUp}
-          >
-            {formatMessage({ id: "ID_SIGNUP_SIGNUP" })}
-          </button>
+          <div className="popup__btn-box">
+            {/* TODO 취소 버튼 */}
+            <button type="button" className="popup_button popup-button--close">취소</button>
+
+            {/* TODO 가입 버튼 / 조건 충족 시 클래스 active 추가하여 활성화합니다. */}
+            <button
+              className="popup_button popup_button-singup popup_button-singup--use-active"
+              onClick={onClickSignUp}
+            >
+              {/* {formatMessage({ id: "ID_SIGNUP_SIGNUP" })} */}
+              가입
+            </button>
+          </div>
+
           {/* <div className="signup_link_wrapper signup__padding">
             <div className="signup_link_desc">
               {formatMessage({ id: "ID_SIGNUP_SIGNIN_DESC" })}

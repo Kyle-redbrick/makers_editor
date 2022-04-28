@@ -1,5 +1,5 @@
 .signup {
-  width: 440px;
+  width: 380px;
   text-align: center;
   .signup__padding {
     padding: 0 36px;
@@ -7,7 +7,7 @@
   .signup_title {
     text-align: left;
     font-size: 24px;
-    margin-bottom: 18px;
+    margin-bottom: 40px;
     font-weight: 700;
     line-height: 26px;
     color: #fff;
@@ -16,11 +16,13 @@
   .signup_input_wrapper {
     display: flex;
     margin-top: 16px;
+    justify-content: space-between;
+    align-items: flex-start;
   }
   
   .signup_input_title {
     display: flex;
-    margin: auto;
+    margin: 12px 0 0;
     margin-left: 0;
     font-size: 16px;
     font-weight: 500;
@@ -45,12 +47,20 @@
   }
 
   .popup_input {
-    width: 100%;
+    width: 274px;
     height: initial;
     border-radius: 8px;
     background-color: #1c1c1c;
     border-color: #5b5b5b;
-    padding: 14px 9px;
+    padding: 14px 16px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    color: #fff;
+
+    &:focus, &:active {
+      border-color: #fff;
+    }
   }
 
   .popup_input-phone {
@@ -101,8 +111,7 @@
     margin-top: 0px;
     margin-left: auto;
     padding-top: 6px;
-    width: 304px;
-    height: 0;
+    width: 100%;
   }
   .popup_warning-agreement {
     margin-left: 0;
@@ -273,6 +282,41 @@
   }
   .PhoneDD__item:hover {
     background-color: #13141d;
+  }
+
+  .popup-button--close {
+    margin: 12px 0 0;
+    background-color: #383838;
+  }
+  
+  .popup__btn-box {
+    display: flex;
+    align-items: center;
+    margin: 46px -5px 0;
+  
+    button { 
+      margin: 0 5px;
+    }
+  }
+
+  .popup_button-singup--use-active {
+    background-color: #383838;
+    color: #8e8e8e;
+
+    &.active {
+      background-color: #FF6F44;
+      color: #fff;
+    }
+  }
+
+  .popup_contents {
+    padding: 30px;
+  }
+
+  .popup_dismissbtn {
+    width: 16px;
+    top: 34px;
+    right: 34px;
   }
 }
 
