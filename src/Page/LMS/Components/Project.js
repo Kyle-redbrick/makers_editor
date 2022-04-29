@@ -12,11 +12,12 @@ import { IMAGE } from "../Constants/Images";
 import GamePopup from "../../CourseDetail/Components/GamePopup";
 
 const Self = styled.div`
-  padding: 18px 20px 14px 0;
+  padding: 18px 20px 14px 18px;
   min-height: 86px;
   display: flex;
   align-items: center;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
+  width:100%;
 
   &:first-of-type {
     border-top: none;
