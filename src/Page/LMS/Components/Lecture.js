@@ -145,7 +145,6 @@ const Projects = styled.div`
   position: relative;
   background-color: #242424;
   border-radius: 0 0 16px 16px;
-  padding-left: 20px;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   animation: showProjectList 0.5s ease forwards;
 

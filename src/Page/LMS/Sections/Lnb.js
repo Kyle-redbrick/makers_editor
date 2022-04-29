@@ -13,8 +13,7 @@ import iconAttOn from "../../../Image/lms/icon_attendance_activate.svg";
 
 
 const Self = styled.div`
-  width: 270px;
-  margin-right: 30px;
+  flex: 0 0 23%;
 
   @media screen and (max-width: 1169px) {
     width: 100%;

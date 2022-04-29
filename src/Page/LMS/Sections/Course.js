@@ -8,13 +8,15 @@ import LectureComponent from "./../Components/Lecture";
 
 
 const Self = styled.div`
-  flex: 1;
   padding-bottom: 100px;
+  padding-left:30px;
+  flex:0 0 77%;
 
   @media screen and (max-width: 1169px){
     width: 88.33vw;
     margin: 0 auto;
     padding-bottom: 50px;
+    padding-left:0px;
   }
 `;
 
