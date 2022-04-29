@@ -6,7 +6,7 @@
   justify-content: flex-start;
 
   .header {
-    z-index: 6;
+    z-index: 26;
   }
   .footer {
     z-index: 10;
@@ -48,6 +48,7 @@
   }
 
   .layout_contents {
+    margin-top: 80px;
     z-index: 6;
     flex: 1 0 auto;
   }

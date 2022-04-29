@@ -1568,3 +1568,4 @@ export const createDreamReport = params => {
 export const addCertificateInfo = formData => {
   return fetchRequest(URL.API_SERVER + `myDreamProject/certificate`, "POST", formData);
 }
+

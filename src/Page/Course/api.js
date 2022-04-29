@@ -43,3 +43,10 @@ export const updateProfile = ({ icon }) => {
     res => res.json()
   );
 };
+
+
+export const getLearn = formData => {
+  return fetchRequest(URL.API_SERVER + `learn/box`, "GET", formData).then(
+    res => res.json()
+  );
+}

@@ -9,7 +9,7 @@ import MyProjectBanner from "./Sections/MyProjectBanner";
 import AllProjectList from "./Sections/AllProjectList";
 import arrowPrev from "../../Image/course/arrow-prev.svg";
 import arrowNext from "../../Image/course/arrow-next.svg";
-//import { getCoursesV1 } from "../../Common/Util/HTTPRequest";
+import { getLearn } from "../Course/api";
 import "./index.scss";
 
 const GlobalStyle = css`
@@ -150,8 +150,9 @@ const View = (props) => {
   }, []);
 
   const init = async () => {
-    // const coursesResult  = await getCoursesV1()
-    // setCourses(coursesResult.lectures);
+    const coursesResult  = await getLearn()
+    console.log(coursesResult.body)
+    setCourses(coursesResult.body);
   };
 
   const showIntroPopup = useCallback(
@@ -193,8 +194,8 @@ const View = (props) => {
     <Layout isHome={true}>
       <Global styles={GlobalStyle} />
       <Self>
-        <MyProjectBanner courses={courses}/>
-        <AllProjectList courses={courses}/>
+        {/* <MyProjectBanner courses={courses}/> */}
+        {/* <AllProjectList courses={courses}/> */}
       </Self>
     </Layout>
   );
