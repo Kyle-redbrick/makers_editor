@@ -194,8 +194,8 @@ const View = (props) => {
     <Layout isHome={true}>
       <Global styles={GlobalStyle} />
       <Self>
-        {/* <MyProjectBanner courses={courses}/> */}
-        {/* <AllProjectList courses={courses}/> */}
+        <MyProjectBanner courses={courses}/>
+        <AllProjectList courses={courses}/>
       </Self>
     </Layout>
   );
