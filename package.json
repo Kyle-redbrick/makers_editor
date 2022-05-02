@@ -38,7 +38,7 @@
     "react": "^16.9.0",
     "react-animations": "^1.0.0",
     "react-app-polyfill": "^1.0.3",
-    "react-calendar": "^2.19.1",
+    "react-calendar": "^3.7.0",
     "react-circular-progressbar": "^2.0.3",
     "react-codemirror2": "^7.2.1",
     "react-color": "^2.14.1",
@@ -94,8 +94,7 @@
     "postbuild": "rm -rf ./build_release && mv build ./build_release/ && uglifyjs --compress --mangle --output ./build_release/game/constant.js -- ./build_release/game/constant.js && uglifyjs --compress --mangle --output ./build_release/game/game.js -- ./build_release/game/game.js && uglifyjs --compress --mangle --output ./build_release/game/gameScene.js -- ./build_release/game/gameScene.js && uglifyjs --compress --mangle --output ./build_release/game/keyboard.js -- ./build_release/game/keyboard.js && uglifyjs --compress --mangle --output ./build_release/game/wizSprite.js -- ./build_release/game/wizSprite.js && cat ./build_release/game/constant.js >> ./build_release/game/wiz_lib.js && cat ./build_release/game/game.js >> ./build_release/game/wiz_lib.js && cat ./build_release/game/gameScene.js >> ./build_release/game/wiz_lib.js && cat ./build_release/game/keyboard.js >> ./build_release/game/wiz_lib.js && cat ./build_release/game/wizSprite.js >> ./build_release/game/wiz_lib.js && terser --compress --mangle --output ./build_release/babylon/babylonConstant.js -- ./build_release/babylon/babylonConstant.js && terser --compress --mangle --output ./build_release/babylon/babylonApis.js -- ./build_release/babylon/babylonApis.js && terser --compress --mangle --output ./build_release/babylon/babylonGame.js -- ./build_release/babylon/babylonGame.js && terser --compress --mangle --output ./build_release/babylon/babylonScene.js -- ./build_release/babylon/babylonScene.js && terser --compress --mangle --output ./build_release/babylon/babylonGameObject.js -- ./build_release/Babylon/babylonGameObject.js && terser --compress --mangle --output ./build_release/babylon/babylonSound.js -- ./build_release/babylon/babylonSound.js && cat ./build_release/babylon/babylonConstant.js >> ./build_release/babylon/wiz_lib_3d.js && cat ./build_release/babylon/babylonApis.js >> ./build_release/babylon/wiz_lib_3d.js && cat ./build_release/babylon/babylonGame.js >> ./build_release/babylon/wiz_lib_3d.js && cat ./build_release/babylon/babylonScene.js >> ./build_release/babylon/wiz_lib_3d.js && cat ./build_release/babylon/babylonGameObject.js >> ./build_release/babylon/wiz_lib_3d.js && cat ./build_release/babylon/babylonSound.js >> ./build_release/babylon/wiz_lib_3d.js",
     "invalidateJa": "aws cloudfront create-invalidation --distribution E314WSM6HH6UHL --paths \"/*\"",
     "invalidateEn": "aws cloudfront create-invalidation --distribution E3HDRMMWFNXQ2I --paths \"/*\"",
-
-    "upload":"yarn && yarn build && yarn deployJa && yarn deployEn && yarn invalidateJa && yarn invalidateEn"
+    "upload": "yarn && yarn build && yarn deployJa && yarn deployEn && yarn invalidateJa && yarn invalidateEn"
   },
   "eslintConfig": {
     "extends": [

@@ -4,7 +4,7 @@ import Layout from "../../Common/Component/Layout";
 import { PAGE } from "./Constants";
 import Lnb from "./Sections/Lnb";
 import CourseById from "./Sections/Course";
-import Inventory from "./Sections/Inventory";
+import Attendance from "./Sections/Attendance";
 import "./index.scss";
 
 const View = (props) => {
@@ -67,7 +67,7 @@ const View = (props) => {
          // updateCourses={props.updateCourses}
         />
         {props.path === PAGE.MISSION && <CourseById {...props} />}
-        {props.path === PAGE.INVENTORY && <Inventory />}
+        {props.path === PAGE.ATTENDANCE && <Attendance />}
       </Self>
     </Layout>
   );

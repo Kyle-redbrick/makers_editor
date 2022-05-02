@@ -6,8 +6,8 @@ import { showPopUp } from "../../../Common/Component/PopUp"
 import CertificateForm from "../PopUp/CertificateForm";
 import { IMAGE } from "./../Constants/Images";
 import { COLOR, PAGE, renderCurrentPage } from "./../Constants";
-import iconMissionOn from "../../../Image/lms/icon_mission progress_inactivate.svg";
-import iconMissionOff from "../../../Image/lms/icon_mission_activate.svg";
+import iconMissionOff from "../../../Image/lms/icon_mission progress_inactivate.svg";
+import iconMissionOn from "../../../Image/lms/icon_mission_activate.svg";
 import iconAttOff from "../../../Image/lms/icon_attendance_inactivate.svg";
 import iconAttOn from "../../../Image/lms/icon_attendance_activate.svg";
 
@@ -296,19 +296,17 @@ const Lnb = ({ path, fixed, isMobile, isLmsMobileMenuOn, onClickLmsMobileMenu, .
         <Group height={isMobile ? "auto" : 234}>
           <LnbLinkComponent
             active={renderCurrentPage(path) === PAGE.MISSION}
-            icon={renderCurrentPage(path) === PAGE.COURSE ? iconMissionOn : iconMissionOff}
+            icon={renderCurrentPage(path) === PAGE.MISSION ? iconMissionOn : iconMissionOff}
             link="/lms/mission"
-            //title={<FormattedMessage id="ID_LMS_COURSE_1" />}
             title={"Mission Progress"}
             isMobile={isMobile}
             isLmsMobileMenuOn={isLmsMobileMenuOn}
             onClickLmsMobileMenu={onClickLmsMobileMenu}
           />
           <LnbLinkComponent
-            active={renderCurrentPage(path) === PAGE.COURSE && id === "4"}
-            icon={renderCurrentPage(path) === PAGE.COURSE && id === "4" ? iconAttOn : iconAttOff}
-            link="/lms/course/4"
-            //title={<FormattedMessage id="ID_LMS_COURSE_2" />}
+            active={renderCurrentPage(path) === PAGE.ATTENDANCE}
+            icon={renderCurrentPage(path) === PAGE.ATTENDANCE ? iconAttOn : iconAttOff}
+            link="/lms/attendance"
             title={"Attendance"}
             isMobile={isMobile}
             isLmsMobileMenuOn={isLmsMobileMenuOn}

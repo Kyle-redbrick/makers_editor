@@ -238,13 +238,8 @@ const App = () => {
           />
           <Route
             exact
-            path="/lms/course/:id"
-            render={props => <LMS path={PAGE.COURSE} {...props} />}
-          />
-          <Route
-            exact
-            path="/lms/inventory"
-            render={() => <LMS path={PAGE.INVENTORY} />}
+            path="/lms/attendance"
+            render={() => <LMS path={PAGE.ATTENDANCE}/>}
           />
           <Route
             exact
