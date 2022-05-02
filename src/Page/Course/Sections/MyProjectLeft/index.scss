@@ -1,0 +1,118 @@
+.LeftSlide {
+  width: 100%;
+  position: relative;
+}
+
+.page-title {
+  font-size: 30px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 30px;
+  letter-spacing: -0.01em;
+  display: block;
+  margin-bottom: 62px;
+  text-align: center;
+  width: 100%;
+}
+
+.content-slide__course-number {
+  font-size: 16px;
+  line-height: 16px;
+  color: #ff6f44;
+  line-height: 16px;
+  letter-spacing: -0.01em;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.content-slide__course-title {
+  font-size: 22px;
+  line-height: 22px;
+  font-weight: 700;
+  color: #fff;
+  display: block;
+  margin-bottom: 22px;
+}
+
+.content-slide__thumbnail-wrap {
+  border: 0.8px solid #3c3c3c;
+  border-radius: 16px;
+  box-sizing: border-box;
+  width: 100%;
+  height: 194px;
+  overflow: hidden;
+  margin-bottom: 14px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.content-slide__explan {
+  font-size: 16px;
+  line-height: 24px;
+  color: #fff;
+  font-weight: 400;
+  display: block;
+  margin-bottom: 22px;
+
+  max-height: 71px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+
+}
+
+.content-slide__experience-btn {
+  border-radius: 8px;
+  width: 100%;
+  display: block;
+  background-color: #ff6f44;
+  text-align: center;
+  color: #fff;
+  padding: 17px;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  line-height: 18px;
+  border: 0;
+}
+
+.swiper-button-prev, .swiper-button-next {
+  width: 74px;
+  height: 74px;
+  top: 51%;
+  background-color: transparent;
+  border: 0;
+
+  &::after {
+    width: 100%;
+    height: 100%;
+    content: "";
+    display: block;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+.swiper-button-prev {
+  left: -35px;
+
+  &::after {
+    background-image: url(../../../../Image/btn_left-slide-arrow.svg);
+  }
+}
+
+.swiper-button-next {
+  right: -34px;
+
+  &::after {
+    background-image: url(../../../../Image/btn_right-slide-arrow.svg);
+  }
+}
