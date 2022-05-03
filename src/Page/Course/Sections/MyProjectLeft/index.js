@@ -25,7 +25,7 @@ const BeforeLogin = () => {
 
   const [swiper, setSwiper] = React.useState(null);
 
-  const nexTo = () => {
+  const nextTo = () => {
     swiper.slideNext();
   };
 
@@ -68,7 +68,7 @@ const BeforeLogin = () => {
           </Swiper>
         </div>
 
-        <button type="button" className="swiper-button-next" onClick={nexTo} />
+        <button type="button" className="swiper-button-next" onClick={nextTo} />
         <button type="button" className="swiper-button-prev" onClick={prevTo} />
       </div>
     </>
@@ -82,7 +82,7 @@ const AfterLogin = () => {
 
   const [swiper, setSwiper] = React.useState(null);
 
-  const nexTo = () => {
+  const nextTo = () => {
     swiper.slideNext();
   };
 
@@ -123,7 +123,7 @@ const AfterLogin = () => {
         </Swiper>
       </div>
 
-      <button type="button" className="swiper-button-next" onClick={nexTo} />
+      <button type="button" className="swiper-button-next" onClick={nextTo} />
       <button type="button" className="swiper-button-prev" onClick={prevTo} />
     </div>
    </>
