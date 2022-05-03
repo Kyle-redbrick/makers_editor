@@ -23,16 +23,6 @@ const MyProjectBanner = (props) => {
   const [tag, setTag] = useState("");
   const [isShown, setIsShown] = useState({isShow:false,index:0,lock:false});
 
-
-  // useEffect(() => {
-  //   if(props.courses[currentSlideNum-1]){
-  //     setProjects(props.courses[currentSlideNum-1].projects)
-  //     setTitle(props.courses[currentSlideNum-1].title)
-  //     setTag(props.courses[currentSlideNum-1].tag)
-  //     setProjectCount(props.courses[currentSlideNum-1].project_count)
-  //   }
-  // }, [currentSlideNum,props.courses]); 
-
   const sliderSettings = {
     slidesToShow: 1,
     slidesToScroll: 1,
