@@ -107,7 +107,6 @@ const AfterLogin = () => {
             clickable: true,
             type : "fraction"
           }}
-          onSlideChange
           onSwiper={(s) => {
             setSwiper(s);
           }}
