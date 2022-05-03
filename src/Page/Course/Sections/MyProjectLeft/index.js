@@ -45,7 +45,7 @@ const BeforeLogin = () => {
               clickable: true, 
               type : "fraction"
             }}
-            onSlideChange={() => console.log('slide change')}
+            onSlideChange
             onSwiper={(s) => {
               setSwiper(s);
             }}
@@ -107,7 +107,7 @@ const AfterLogin = () => {
             clickable: true,
             type : "fraction"
           }}
-          onSlideChange={() => console.log('slide change')}
+          onSlideChange
           onSwiper={(s) => {
             setSwiper(s);
           }}
