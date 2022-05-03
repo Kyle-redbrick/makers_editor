@@ -1,0 +1,45 @@
+.right-banner {
+  flex: 0 0 70%;
+}
+
+.course-content__list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0 -11px;
+}
+
+.course-content__wrap {
+  padding-left: 80px;
+}
+
+.course-content__item {
+  padding: 0 11px;
+}
+
+.course-content__outline {
+  border-radius: 16px;
+  background-color: #383838;
+  position: relative;
+  overflow: hidden;
+}
+
+.course-content__thumbnail {
+  height: 117px;
+  width: 100%;
+}
+
+.course-content__label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  font-size: 14px;
+  line-height: 14px;
+  color: #fff;
+  padding: 10px 12px;
+  z-index: 10;
+}
+
