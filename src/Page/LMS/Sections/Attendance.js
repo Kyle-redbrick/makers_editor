@@ -2,9 +2,13 @@ import React, { useEffect, useState } from "react";
 import styled from "@emotion/styled";
 import Calendar from 'react-calendar';
 import { COLOR } from "../Constants";
+import nextArrow from "../../../Image/btn_right_arrow.svg"
+import prevArrow from "../../../Image/btn_left_arrow.svg"
+
 import "./Calendar.scss";
 
 const Self = styled.div`
+  margin-left:20px;
   flex: 1;
   padding-bottom: 100px;
 `;
@@ -28,7 +32,16 @@ const Attendance = ({ ...props }) => {
 
   return (
     <Self {...props}>
-      <Calendar  value={[value,new Date().setDate(2)]} showWeekNumbers={false} />
+      <Calendar  
+        calendarType={"US"}
+        prevLabel={<img src={prevArrow}/>}
+        nextLabel={<img src={nextArrow} />}
+        value={[value,new Date().setDate(2)]} defaultView={"month"}
+        prev2Label={""}
+        next2Label={""}
+        showNeighboringMonth={false}
+        showFixedNumberOfWeeks={false}
+        />
     </Self>
   );
 };
