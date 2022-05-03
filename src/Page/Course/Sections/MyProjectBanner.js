@@ -10,10 +10,10 @@ import { URL } from "../../../Common/Util/Constant";
 import * as LearnButtons from "../../../Common/Component/Button/Learn";
 import GamePopup from "../../CourseDetail/Components/GamePopup";
 import * as Popup from "../../../Common/Component/PopUp";
+import MyProjectLeft from "./MyProjectLeft";
+import MyProjectRight from "./MyProjectRight";
 
-
-
-
+import "./MyProjectBanner.scss";
 
 const MyProjectBanner = (props) => {
   const [currentSlideNum, setCurrentSlideNum] = useState(1);
@@ -22,16 +22,6 @@ const MyProjectBanner = (props) => {
   const [title, setTitle] = useState("");
   const [tag, setTag] = useState("");
   const [isShown, setIsShown] = useState({isShow:false,index:0,lock:false});
-
-
-  useEffect(() => {
-    if(props.courses[currentSlideNum-1]){
-      setProjects(props.courses[currentSlideNum-1].projects)
-      setTitle(props.courses[currentSlideNum-1].title)
-      setTag(props.courses[currentSlideNum-1].tag)
-      setProjectCount(props.courses[currentSlideNum-1].project_count)
-    }
-  }, [currentSlideNum,props.courses]); 
 
   const sliderSettings = {
     slidesToShow: 1,
@@ -62,8 +52,9 @@ const MyProjectBanner = (props) => {
   );
 
   return (
-    <div>
-
+    <div className="project-banner">
+      <MyProjectLeft />
+      {/* <MyProjectRight /> */}
     </div>
   )
 }
