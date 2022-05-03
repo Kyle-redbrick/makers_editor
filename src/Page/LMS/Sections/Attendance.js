@@ -8,7 +8,7 @@ import prevArrow from "../../../Image/btn_left_arrow.svg"
 import "./Calendar.scss";
 
 const Self = styled.div`
-  margin-left:20px;
+  padding-left:30px;
   flex: 1;
   padding-bottom: 100px;
 `;
