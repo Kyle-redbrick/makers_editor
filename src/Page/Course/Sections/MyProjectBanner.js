@@ -53,8 +53,22 @@ const MyProjectBanner = (props) => {
 
   return (
     <div className="project-banner">
-      <MyProjectLeft />
-      {/* <MyProjectRight /> */}
+      {/* TODO 로그인 전 페이지 타이틀 */}
+      <h3 className="page-title">원하는 코스를 무료로 체험해보세요</h3>
+
+      {/* TODO 로그인 후 페이지 타이틀 */}
+      {/* <div className="left-slide__title-box">
+        <h3 className="page-title--child">OOBC - Elementary</h3>
+        <div className="left-slide__child-title-box">
+          <span className="left-slide__child-title-left">Learns for students new to coding. Learn to code by creating simple games with block coding.</span>
+          <span className="left-slide__child-title-right"><b>3</b> / 15 Missions assigned</span>
+        </div>
+      </div> */}
+
+      <div className="project-banner-wrap">
+        <MyProjectLeft />
+        <MyProjectRight />
+      </div>
     </div>
   )
 }
