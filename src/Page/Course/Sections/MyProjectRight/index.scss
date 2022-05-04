@@ -13,6 +13,9 @@
 
 .course-content__wrap {
   padding-left: 80px;
+  height: 490px;
+  overflow: hidden;
+  overflow-y: scroll;
 }
 
 .course-content__item {
