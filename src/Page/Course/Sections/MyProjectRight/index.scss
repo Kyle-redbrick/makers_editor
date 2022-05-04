@@ -17,6 +17,14 @@
 
 .course-content__item {
   padding: 0 11px;
+  width: 30.36%;
+  margin-bottom: 26px;
+
+  &:hover {
+    .course-content__hover {
+      display: block;
+    }
+  }
 }
 
 .course-content__outline {
@@ -29,6 +37,12 @@
 .course-content__thumbnail {
   height: 117px;
   width: 100%;
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
 }
 
 .course-content__label {
@@ -41,5 +55,85 @@
   color: #fff;
   padding: 10px 12px;
   z-index: 10;
+  background-color: #383838;
+  border-radius: 16px 0 16px 0;
+}
+
+.course-content__info {
+  padding: 10px 14px 15px;
+}
+
+.course-content__title {
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 22px;
+  display: block;
+  margin-bottom: 18px;
+  height: 44px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.course-content__more-btn {
+  font-size: 13px;
+  color: #8e8e8e;
+  line-height: 13px;
+  font-weight: 500;
+}
+
+.course-content__hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #383838;
+  padding: 14px;
+  z-index: 15;
+  display: none;
+}
+
+.course-content__hover-label {
+  font-size: 14px;
+  line-height: 14px;
+  color: #8e8e8e;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.course-content__hover-title {
+  font-size: 15px;
+  line-height: 22px;
+  color: #fff;
+  font-weight: 700;
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 44px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  margin-bottom: 8px;
+}
+
+.course-content__hover-content {
+  font-size: 14px;
+  color: #fff;
+  line-height: 20px;
+  font-weight: 400;
+  display: block;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 80px;
 }
 
