@@ -22,7 +22,6 @@ const MyProjectBanner = (props) => {
   const [title, setTitle] = useState("");
   const [tag, setTag] = useState("");
   const [isShown, setIsShown] = useState({isShow:false,index:0,lock:false});
-
   const sliderSettings = {
     slidesToShow: 1,
     slidesToScroll: 1,
