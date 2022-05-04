@@ -10,10 +10,10 @@ import { URL } from "../../../Common/Util/Constant";
 import * as LearnButtons from "../../../Common/Component/Button/Learn";
 import GamePopup from "../../CourseDetail/Components/GamePopup";
 import * as Popup from "../../../Common/Component/PopUp";
+import MyProjectLeft from "./MyProjectLeft";
+import MyProjectRight from "./MyProjectRight";
 
-
-
-
+import "./MyProjectBanner.scss";
 
 const MyProjectBanner = (props) => {
   const [currentSlideNum, setCurrentSlideNum] = useState(1);
@@ -22,17 +22,6 @@ const MyProjectBanner = (props) => {
   const [title, setTitle] = useState("");
   const [tag, setTag] = useState("");
   const [isShown, setIsShown] = useState({isShow:false,index:0,lock:false});
-
-
-  // useEffect(() => {
-  //   if(props.courses[currentSlideNum-1]){
-  //     setProjects(props.courses[currentSlideNum-1].projects)
-  //     setTitle(props.courses[currentSlideNum-1].title)
-  //     setTag(props.courses[currentSlideNum-1].tag)
-  //     setProjectCount(props.courses[currentSlideNum-1].project_count)
-  //   }
-  // }, [currentSlideNum,props.courses]); 
-
   const sliderSettings = {
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -62,8 +51,23 @@ const MyProjectBanner = (props) => {
   );
 
   return (
-    <div>
+    <div className="project-banner">
+      {/* TODO 로그인 전 페이지 타이틀 */}
+      <h3 className="page-title">원하는 코스를 무료로 체험해보세요</h3>
 
+      {/* TODO 로그인 후 페이지 타이틀 */}
+      {/* <div className="left-slide__title-box">
+        <h3 className="page-title--child">OOBC - Elementary</h3>
+        <div className="left-slide__child-title-box">
+          <span className="left-slide__child-title-left">Learns for students new to coding. Learn to code by creating simple games with block coding.</span>
+          <span className="left-slide__child-title-right"><b>3</b> / 15 Missions assigned</span>
+        </div>
+      </div> */}
+
+      <div className="project-banner-wrap">
+        <MyProjectLeft />
+        <MyProjectRight />
+      </div>
     </div>
   )
 }
