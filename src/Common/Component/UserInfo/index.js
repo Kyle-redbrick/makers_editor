@@ -175,7 +175,7 @@ class UserInfoContainer extends React.Component {
         window.location.reload();
       } else {
         if (isNeedUpdate) {
-          // this.checkUnreadBingoEvents();
+         // this.checkUnreadBingoEvents();
         }
       }
     }

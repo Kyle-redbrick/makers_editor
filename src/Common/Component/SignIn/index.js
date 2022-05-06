@@ -10,6 +10,7 @@ import ForgotPw from "../ForgotPw";
 import ForgotEmail from "../ForgotEmail";
 import logoImg from "../../../Image/wizlab_logo.svg";
 import * as TrackingUtil from "../../Util/TrackingUtil";
+import IconGoogle from "../../../Image/icon-google.svg";
 import "./index.scss";
 
 class SignIn extends Component {
@@ -96,7 +97,6 @@ class SignIn extends Component {
       <div className="signin">
         <div className="signin_title">
           {/* <img className="signin_logo" src={logoImg} alt="logo" /> */}
-          <p>Astro Coding Go!</p>
           {formatMessage({ id: "ID_SIGNIN" })}
         </div>
         <div className="signin_input_wrapper">
@@ -136,32 +136,24 @@ class SignIn extends Component {
             }}
           />
         </div>
-        <div className="signin_link_wrapper">
-          <div className="signin_link_desc">
-            {formatMessage({ id: "ID_SIGNIN_FORGOTPW_DESC" })}
-          </div>
-          <div className="signin_link" onClick={onClickForgotPw}>
-            {formatMessage({ id: "ID_SIGNIN_FORGOTPW" })}
-          </div>
-        </div>
-        <div className="signin_link_wrapper">
-          <div className="signin_link_desc">
-            {formatMessage({ id: "ID_SIGNIN_FORGOT_EMAIL_DESC" })}
-          </div>
+        <button className="popup_button" onClick={onClickSignIn}>
+          {formatMessage({ id: "ID_SIGNIN_CONFIRM" })}
+        </button>
+        <div className="siginin__link-box">
           <div className="signin_link" onClick={onClickForgotEmail}>
             {formatMessage({ id: "ID_SIGNIN_FORGOT_EMAIL" })}
           </div>
-        </div>
-        <div className="signin_link_wrapper">
-          <div className="signin_link_desc">
-            {formatMessage({ id: "ID_SIGNIN_SIGNUP_DESC" })}
-          </div>
+          <div className="signin_link" onClick={onClickForgotPw}>
+            {formatMessage({ id: "ID_SIGNIN_FORGOTPW" })}
+          </div> 
           <div className="signin_link" onClick={onClickSignUp}>
             {formatMessage({ id: "ID_SIGNIN_SIGNUP" })}
           </div>
         </div>
-        <button className="popup_button" onClick={onClickSignIn}>
-          {formatMessage({ id: "ID_SIGNIN_CONFIRM" })}
+
+        <button type="button" className="sign-in__width-google-btn">
+          <img alt="아이콘 구글" src={IconGoogle} />
+          Sign in width Google
         </button>
         <div className="popup_warning">{warning}</div>
       </div>
