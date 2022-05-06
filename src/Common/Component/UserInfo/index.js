@@ -168,26 +168,26 @@ class UserInfoContainer extends React.Component {
     const isNeedUpdate = this.windowFocused === false;
     this.windowFocused = true;
     const token = localStorage.getItem("wizToken");
-    if (token) {
-      const json = this.parseJwt(token);
-      const tokenEmail = json.email;
-      if (tokenEmail !== this.props.userinfo.email) {
-        window.location.reload();
-      } else {
-        if (isNeedUpdate) {
-          // this.checkUnreadBingoEvents();
-        }
-      }
-    }
-    if (!token && Object.keys(this.props.userinfo).length > 0) {
-      this.props.updateUserInfo();
-    }
+    // if (token) {
+    //   const json = this.parseJwt(token);
+    //   const tokenEmail = json.email;
+    //   if (tokenEmail !== this.props.userinfo.email) {
+    //     window.location.reload();
+    //   } else {
+    //     if (isNeedUpdate) {
+    //       // this.checkUnreadBingoEvents();
+    //     }
+    //   }
+    // }
+    // if (!token && Object.keys(this.props.userinfo).length > 0) {
+    //   this.props.updateUserInfo();
+    // }
   };
 
   parseJwt(token) {
-    var base64Url = token.split(".")[1];
-    var base64 = base64Url.replace(/-/g, "+").replace(/_/g, "/");
-    return JSON.parse(window.atob(base64));
+    // var base64Url = token.split(".")[1];
+    // var base64 = base64Url.replace(/-/g, "+").replace(/_/g, "/");
+    // return JSON.parse(window.atob(base64));
   }
 
   handleLoginTokenFromQuery() {
