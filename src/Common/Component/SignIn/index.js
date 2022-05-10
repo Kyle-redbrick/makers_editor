@@ -54,8 +54,11 @@ class SignIn extends Component {
             // );
             TrackingUtil.sendGTMEvent("Login_Success");
 
-            localStorage.setItem("wizToken", json.token);
-            this.props.updateUserInfo(json.user);
+            localStorage.setItem("wizToken", json.body.token);
+            this.props.updateUserInfo(json.body.user);
+
+            console.log(111111111,json.body.user)
+
             this.props.dismiss();
             // window.location.reload();
           }

@@ -53,7 +53,7 @@ export const userEmailById = param => {
   return fetchRequest(URL.API_SERVER + `user/email/${param.id}`, "GET");
 };
 export const login = param => {
-  return fetchRequest(URL.API_SERVER + "user/login", "POST", param);
+  return fetchRequest(URL.API_SERVER + "account/login", "POST", param);
 };
 export const loginByToken = param => {
   return fetchRequest(URL.API_SERVER + "user/loginByToken", "POST", param);
@@ -1569,3 +1569,7 @@ export const addCertificateInfo = formData => {
   return fetchRequest(URL.API_SERVER + `myDreamProject/certificate`, "POST", formData);
 }
 
+
+export const accountActivateCheckout = authorityKey => {
+  return fetchRequest(URL.API_SERVER + `/account/activate/checkout/${authorityKey}`, "GET");
+}

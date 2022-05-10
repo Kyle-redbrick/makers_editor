@@ -150,9 +150,9 @@ const View = (props) => {
   }, []);
 
   const init = async () => {
-    // const coursesResult  = await getLearn()
-    // console.log(coursesResult.body)
-    // setCourses(coursesResult.body);
+    const coursesResult  = await getLearn()
+    console.log(coursesResult.body)
+    setCourses(coursesResult.body);
   };
 
   const showIntroPopup = useCallback(
