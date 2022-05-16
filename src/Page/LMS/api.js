@@ -115,12 +115,3 @@ export const getRecommendProject = (id) => {
   )
   .then(res => res.json())
 };
-
-
-export const getLmsCourses = (id) => {
-  return fetchRequest(
-    `${URL.API_SERVER}/lms/dashboard `,
-    "GET"
-  )
-  .then(res => res.json())
-};

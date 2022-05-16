@@ -9,7 +9,7 @@ import MyProjectBanner from "./Sections/MyProjectBanner";
 import AllProjectList from "./Sections/AllProjectList";
 import arrowPrev from "../../Image/course/arrow-prev.svg";
 import arrowNext from "../../Image/course/arrow-next.svg";
-import { getLearn } from "../Course/api";
+import { getLearn } from "../../Common/Util/HTTPRequest";
 import "./index.scss";
 
 const GlobalStyle = css`
@@ -141,7 +141,10 @@ const Self = styled.div`
 
 const View = (props) => {
   let history = useHistory();
-  const [courses, setCourses] = useState([]);
+  const [curriculum, setCurriculum] = useState([]);
+  const [session, setSession] = useState({});
+
+
   const [isMobile, setIsMobile] = useState(window.innerWidth < 1169);
 
   useEffect(() => {
@@ -150,9 +153,10 @@ const View = (props) => {
   }, []);
 
   const init = async () => {
-    const coursesResult  = await getLearn()
-    console.log(coursesResult.body)
-    setCourses(coursesResult.body);
+    const learnsResult  = await getLearn()
+    setCurriculum(learnsResult.body.curriculum);
+    setSession(learnsResult.body.session);
+    console.log("learnsResult body!!!!!!!!!!!!!!",learnsResult.body)
   };
 
   const showIntroPopup = useCallback(
@@ -193,10 +197,13 @@ const View = (props) => {
   return (
     <Layout isHome={true}>
       <Global styles={GlobalStyle} />
-      <Self>
-        <MyProjectBanner courses={courses}/>
-        <AllProjectList courses={courses}/>
-      </Self>
+      {
+        curriculum.length > 0 && session &&
+          <Self>
+          <MyProjectBanner curriculum={curriculum} session={session} />
+          <AllProjectList curriculum={curriculum} session={session} />
+        </Self>
+      }
     </Layout>
   );
 };

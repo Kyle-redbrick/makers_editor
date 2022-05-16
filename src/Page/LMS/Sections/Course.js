@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import styled from "@emotion/styled";
 import Title from "../Components/Title";
 import { IMAGE } from "./../Constants/Images";
-import { getLmsCourses } from "../api";
+import { getLearn } from "../../../Common/Util/HTTPRequest";
 import LectureComponent from "./../Components/Lecture";
 
 
@@ -97,7 +97,7 @@ const CoursePage = ({ email, ...props }) => {
   );
 
   const init = async () => {
-    const courses = await getLmsCourses();    
+    const courses = await getLearn();    
     console.log("course!!!!!!",courses)
 
     setProgress(courses.net_progress);

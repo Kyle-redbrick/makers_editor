@@ -8,7 +8,7 @@ import "swiper/components/pagination/pagination.min.css";
 import Thumbnail from "../../../../../Image/course_thumbnail.png";
 import "../index.scss";
 
-function BeforeLogin () {
+function AfterLogin (props) {
   SwiperCore.use([Pagination]);
 
   const [swiper, setSwiper] = React.useState(null);
@@ -24,6 +24,7 @@ function BeforeLogin () {
   return (
     <div className="content-slide content-slide--user">
       <div className="content-slide__slide content-slide__slide--user">
+        {console.log(1111123123123)}
         <Swiper
           spaceBetween={15}
           slidesPerView={1}
@@ -36,11 +37,16 @@ function BeforeLogin () {
           }}
         >
           <SwiperSlide>
-            <div className="content-slide__thumbnail-wrap content-slide__thumbnail-wrap--user">
-              {/* TODO 썸네일 */}
-              <img alt="강의 썸네일" src={Thumbnail} />
-              <span className="content-slide__course-length">Course 1</span>
-            </div>
+            {
+              console.log(111111122222,props)
+              // props.curriculum.map((item,index) => {
+              //   <div className="content-slide__thumbnail-wrap content-slide__thumbnail-wrap--user">
+              //   {/* TODO 썸네일 */}
+              //   <img alt="강의 썸네일" src={Thumbnail} />
+              //   <span className="content-slide__course-length">Course 1</span>
+              // </div>
+              // })
+            }
           </SwiperSlide>
           <SwiperSlide>slide2</SwiperSlide>
         </Swiper>
@@ -52,4 +58,4 @@ function BeforeLogin () {
   )
 }
 
-export default BeforeLogin;
+export default AfterLogin;

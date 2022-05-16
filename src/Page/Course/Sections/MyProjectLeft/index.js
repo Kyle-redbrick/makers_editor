@@ -3,10 +3,10 @@ import BeforeLogin from "./BeforeLogin";
 import AfterLogin from "./AfterLogin";
 import "./index.scss";
 
-function MyProjectLeft () {
+function MyProjectLeft (props) {
   return (
     <div className="left-slide">
-      { true ? <BeforeLogin /> : <AfterLogin /> } 
+      { props.session.isLogin ? <AfterLogin {...props}/> : <BeforeLogin {...props}/> } 
     </div>
   )
 }
