@@ -2,7 +2,7 @@ import React from "react";
 import SampleThumbnail from "../../../../Image/course_thumbnail.png";
 import "./index.scss";
 
-function AllCourse () {
+function AllCourse(props) {
   return (
     <div className="all-course__wrap">
       <h3 className="all-course__title">

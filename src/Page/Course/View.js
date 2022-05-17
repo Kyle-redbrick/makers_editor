@@ -202,7 +202,7 @@ const View = (props) => {
         curriculum.length > 0 && session &&
           <Self>
           <MyProjectBanner curriculum={curriculum} session={session} slideIndex={slideIndex} setSlideIndex={setSlideIndex}/>
-          <AllProjectList curriculum={curriculum} session={session} />
+          { session.isLogin && <AllProjectList curriculum={curriculum} session={session} slideIndex={slideIndex}/>}
         </Self>
       }
     </Layout>

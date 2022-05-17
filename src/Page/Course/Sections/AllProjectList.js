@@ -10,7 +10,7 @@ import "./AllProjectList.scss";
 const AllProjectList = (props) => {
   return (
     <div className="all-course">
-      <AllCourse />
+      <AllCourse {...props}/>
     </div>
   )
 }
