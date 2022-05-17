@@ -7,7 +7,7 @@ function MyProjectRight () {
   return (
     <div className="right-banner">
       <div className="course-content__wrap">
-        { false ? <BeforeList /> : <AfterList /> }
+        { true ? <BeforeList /> : <AfterList /> }
       </div>
     </div>
   )

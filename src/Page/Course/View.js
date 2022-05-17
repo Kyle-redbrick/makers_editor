@@ -141,6 +141,7 @@ const Self = styled.div`
 
 const View = (props) => {
   let history = useHistory();
+  const [slideIndex, setSlideIndex] = useState(0);
   const [curriculum, setCurriculum] = useState([]);
   const [session, setSession] = useState({});
 
@@ -200,7 +201,7 @@ const View = (props) => {
       {
         curriculum.length > 0 && session &&
           <Self>
-          <MyProjectBanner curriculum={curriculum} session={session} />
+          <MyProjectBanner curriculum={curriculum} session={session} slideIndex={slideIndex} setSlideIndex={setSlideIndex}/>
           <AllProjectList curriculum={curriculum} session={session} />
         </Self>
       }
