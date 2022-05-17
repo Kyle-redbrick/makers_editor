@@ -7,6 +7,7 @@ import "swiper/components/navigation/navigation.min.css";
 import "swiper/components/pagination/pagination.min.css";
 import "../index.scss";
 import { URL } from "../../../../../Common/Util/Constant"
+import "./index.scss";
 
 function AfterLogin (props) {
   SwiperCore.use([Pagination]);
@@ -37,7 +38,8 @@ function AfterLogin (props) {
         {
           props.curriculum.map( (item,index) => 
             <SwiperSlide key={index}>
-              <div className="content-slide__thumbnail-wrap content-slide__thumbnail-wrap--user">
+              {/* TODO 잠겨있는 강의일 경우 클래스 lock 추가 */}
+              <div className="content-slide__thumbnail-wrap content-slide__thumbnail-wrap--user lock">
                 <img alt="강의 썸네일" src={URL.S3_DREAMCLASS + item.course.posterURL} />
                 <span className="content-slide__course-length">{item.course.label}</span>
               </div>
@@ -47,8 +49,8 @@ function AfterLogin (props) {
         </Swiper>
       </div>
 
-      <button type="button" className="swiper-button-next" onClick={nextTo} />
-      <button type="button" className="swiper-button-prev" onClick={prevTo} />
+      <button type="button" className="swiper-button-next swiper-button-next--after-next" onClick={nextTo} />
+      <button type="button" className="swiper-button-prev swiper-button-next--after-prev" onClick={prevTo} />
     </div>
   )
 }
