@@ -59,7 +59,7 @@ const AfterList = (props) => {
     <ul className="course-content__list">
       {
         props.projects.map((item,index)=> 
-          <li key={index} className="course-content__item">
+          <li key={index} className={`course-content__item ${item.unlocked && "lock"}`}>
             <div className="course-content__outline">
               <div className="course-content__thumbnail">
                 <img alt="차시 썸네일" src={URL.S3_DREAMCLASS + item.resources.thumbnailURL} />
@@ -79,24 +79,34 @@ const AfterList = (props) => {
                         <div className="course-content__progress-bar-thumb">
                           <div className="course-content__progress-bar-track" style={{width:"50%"}}></div>
                         </div>
-                        <span className="course-content__progress-length"><b>5</b>/8 Step</span>
+                        <span className="course-content__progress-length"><b>{item.progress.completed}</b>/{item.progress.net} Step</span>
                       </div>
-
                     </>
                   }
-
-
-
-
-
-
-                  
                 </div>
+
+
+                <div className="course-content__detail-content">
+                  <h3 className="course-content__detail-title">차시명이 한줄일 경우 이렇게 나와야 합니다. 여기는 최대 두줄입니다.</h3>
+                  <p className="course-content__detail-explan">해당 차시에 대한 세부 설명이 들어가는 곳입니다. 여기는 최대 세줄까지 가능합니다.</p>
+
+                  {/* TODO 버튼 종류 1 : 미션을 진행하지 않은 상태일 경우 */}
+                  <button type="button" className="course-content__learn-btn course-content__learn-btn--now">Learn Now</button>
+                  {/* TODO 버튼 종류 2 : 미션을 진행했으나 완료하지 않은 상태일 경우 */}
+                  {/* <button type="button" className="course-content__learn-btn course-content__learn-btn--ing">Continue</button> */}
+                  {/* TODO 버튼 종류 3 : 미션을 완료한 상태일 경우 */}
+                  {/* <button type="button" className="course-content__learn-btn course-content__learn-btn--clear">Learn Again</button> */}
+
+                  <a href="" rel="noopener noreferrer" className="course-content__game-preview">Game Preview</a>
+                </div>
+
+
               </div>
             </div>
           </li>
         )
       }
+      
     </ul>
   )
 }
