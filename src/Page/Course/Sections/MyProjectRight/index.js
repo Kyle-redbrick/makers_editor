@@ -22,6 +22,7 @@ export default MyProjectRight;
 const BeforeList = () => {
   return (
     <ul className="course-content__list course-content__list--register">
+      {/* TODO 잠금 강의일 시 클래스 lock 추가 */}
       <li className="course-content__item">
         <div className="course-content__outline">
           <div className="course-content__thumbnail">
