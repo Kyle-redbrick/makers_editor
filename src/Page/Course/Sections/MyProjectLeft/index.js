@@ -6,7 +6,7 @@ import "./index.scss";
 function MyProjectLeft (props) {
   return (
     <div className="left-slide">
-      { false ? <AfterLogin {...props}/> : <BeforeLogin {...props}/> } 
+      { true ? <AfterLogin {...props}/> : <BeforeLogin {...props}/> } 
     </div>
   )
 }
