@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import Thumbnail from "../../../../Image/course_thumbnail.png";
 import ClearIcon from "../../../../Image/icon-clear.svg";
 import "./index.scss";
@@ -51,15 +51,31 @@ const BeforeList = () => {
     </ul>
   )
 }
-/* // 로그인 전 차시 리스트 */
 
 /* TODO 로그인 후 차시 리스트 */
 const AfterList = (props) => {
+  const [items, setItems] = useState([]);
+
+  useEffect(() => {
+    props.projects.map((item,index) => {
+      item.isClickd = false
+    })
+    setItems([...props.projects])
+  }, [props]);
+
+  const onClickItem = (i) => {
+    console.log(i)
+    items.map((item,index) => {
+      i == index ? item.isClickd = !item.isClickd : item.isClickd = false
+    })
+    setItems([...items])
+  }
+
   return (
     <ul className="course-content__list">
       {
-        props.projects.map((item,index)=> 
-          <li key={index} className={`course-content__item ${item.unlocked && "lock"}`}>
+        items.map((item,index)=> 
+          <li key={index} className={`course-content__item ${!item.unlocked && "lock"}`} onClick={()=> onClickItem(index)}>
             <div className="course-content__outline">
               <div className="course-content__thumbnail">
                 <img alt="차시 썸네일" src={URL.S3_DREAMCLASS + item.resources.thumbnailURL} />
@@ -85,8 +101,9 @@ const AfterList = (props) => {
                   }
                 </div>
 
-
-                <div className="course-content__detail-content">
+                {
+                  item.isClickd &&
+                  <div className="course-content__detail-content">
                   <h3 className="course-content__detail-title">차시명이 한줄일 경우 이렇게 나와야 합니다. 여기는 최대 두줄입니다.</h3>
                   <p className="course-content__detail-explan">해당 차시에 대한 세부 설명이 들어가는 곳입니다. 여기는 최대 세줄까지 가능합니다.</p>
 
@@ -98,15 +115,13 @@ const AfterList = (props) => {
                   {/* <button type="button" className="course-content__learn-btn course-content__learn-btn--clear">Learn Again</button> */}
 
                   <a href="" rel="noopener noreferrer" className="course-content__game-preview">Game Preview</a>
-                </div>
-
-
+                  </div>
+                }
               </div>
             </div>
           </li>
         )
       }
-      
     </ul>
   )
 }

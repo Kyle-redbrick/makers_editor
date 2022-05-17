@@ -24,7 +24,6 @@ function AfterLogin (props) {
   return (
     <div className="content-slide content-slide--user">
       <div className="content-slide__slide content-slide__slide--user">
-        {console.log(1111123123123,props.curriculum)}
         <Swiper
           spaceBetween={15}
           slidesPerView="auto"
@@ -33,13 +32,14 @@ function AfterLogin (props) {
             type : "fraction"
           }}
           onSwiper={(s) => { setSwiper(s) }}
-          onSlideChange={(e) => props.setSlideIndex(e.activeIndex)}
+          onSlideChange={(e) => 
+            {console.log("aaaa")
+            props.setSlideIndex(e.activeIndex)}}
         >
         {
           props.curriculum.map( (item,index) => 
             <SwiperSlide key={index}>
-              {/* TODO 잠겨있는 강의일 경우 클래스 lock 추가 */}
-              <div className="content-slide__thumbnail-wrap content-slide__thumbnail-wrap--user lock">
+              <div className={`content-slide__thumbnail-wrap content-slide__thumbnail-wrap--user ${!item.course.unlocked && "lock" }`}>
                 <img alt="강의 썸네일" src={URL.S3_DREAMCLASS + item.course.posterURL} />
                 <span className="content-slide__course-length">{item.course.label}</span>
               </div>
