@@ -299,13 +299,20 @@
 }
 
 .course-content__game-preview {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width:100%;
   text-align: center;
   font-size: 14px;
   line-height: 14px;
   color: #c4c1c1;
   font-weight: 400;
   text-decoration: none;
+  background-color: transparent;
+  border: 0;
+  margin-top: 12px;
+
 }
 
 .course-btn-prev {

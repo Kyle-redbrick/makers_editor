@@ -10,7 +10,7 @@ import { isMobileOnly } from "react-device-detect";
 import { FormattedMessage } from "react-intl";
 
 const Self = styled.button`
-  width: 150px;
+  width: 100%;
   height: 40px;
   border-radius: 10px;
   border: none;
