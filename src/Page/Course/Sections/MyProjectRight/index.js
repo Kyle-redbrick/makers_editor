@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useState } from "react";
 import Thumbnail from "../../../../Image/course_thumbnail.png";
 import ClearIcon from "../../../../Image/icon-clear.svg";
+import PrevIcon from "../../../../Image/icn_arrow_left.svg"
 import "./index.scss";
 import { URL } from "../../../../Common/Util/Constant"
 
@@ -45,6 +46,10 @@ const BeforeList = () => {
             <p className="course-content__hover-content">
               차시 세부 설명 최대 4 줄. 차시 세부 설명 최대 4 줄. 차시 세부 설명 최대 4 줄. 차시 세부 설명 최대 4 줄. 
             </p>
+            <button className="course-btn-prev">
+              <img alt="이전으로 아이콘" src={PrevIcon} />
+              이전으로
+            </button>
           </div>
         </div>
       </li>
