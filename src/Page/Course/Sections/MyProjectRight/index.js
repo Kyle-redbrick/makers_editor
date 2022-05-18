@@ -9,14 +9,12 @@ import { URL } from "../../../../Common/Util/Constant"
 function MyProjectRight (props) {
   return (
     <div className="right-banner">
-      {console.log(6666666,props.projects)}
       <div className="course-content__wrap">
         { props.session.isLogin ? <AfterList {...props} /> : <BeforeList {...props} /> }
       </div>
     </div>
   )
 }
-
 export default MyProjectRight;
 
 const BeforeList = (props) => {
@@ -42,7 +40,6 @@ const BeforeList = (props) => {
   )
 }
 
-/* TODO 로그인 후 차시 리스트 */
 const AfterList = (props) => {
   const [items, setItems] = useState([]);
 
@@ -54,7 +51,6 @@ const AfterList = (props) => {
   }, [props]);
 
   const onClickItem = (i) => {
-    console.log(i)
     items.map((item,index) => {
       i == index ? item.isClickd = !item.isClickd : item.isClickd = false
     })

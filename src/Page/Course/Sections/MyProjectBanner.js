@@ -8,7 +8,6 @@ const MyProjectBanner = (props) => {
 
   return (
     <div className="project-banner">
-      {console.log("adfasdfasdf",props.curriculum[props.slideIndex].course.progress.completed)}
       { 
         props.session.isLogin ? <div className="left-slide__title-box">
         <h3 className="page-title--child">{props.curriculum[props.slideIndex].course.title}</h3>

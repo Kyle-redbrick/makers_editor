@@ -39,9 +39,7 @@ function BeforeLogin (props) {
         >
           {
             props.curriculum.map( (item,index) => 
-            
               <SwiperSlide key={index}>
-                {console.log(item)}
                 <span className="content-slide__course-number">{item.course.label}</span>
                 <h3 className="content-slide__course-title">{item.course.title}</h3>
                 <div className="content-slide__thumbnail-wrap">

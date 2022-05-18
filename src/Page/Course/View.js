@@ -138,7 +138,6 @@ const Self = styled.div`
   overflow: hidden;
 `;
 
-
 const View = (props) => {
   let history = useHistory();
   const [slideIndex, setSlideIndex] = useState(0);
@@ -157,7 +156,6 @@ const View = (props) => {
     const learnsResult  = await getLearn()
     setCurriculum(learnsResult.body.curriculum);
     setSession(learnsResult.body.session);
-    console.log("learnsResult body!!!!!!!!!!!!!!",learnsResult.body)
   };
 
   const showIntroPopup = useCallback(

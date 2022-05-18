@@ -297,7 +297,6 @@ class Header extends Component {
               </div>
               {/* <DropDown type="lang" /> */}
 
-              {console.log(3333333,userinfo.name)}
               {userinfo.name ? (
                 <Fragment>
                   <div className="header_menus-noti">
