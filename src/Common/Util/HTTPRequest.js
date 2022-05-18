@@ -15,7 +15,7 @@ export const fetchRequest = (url, method, param) => {
     headers["Authorization"] = localStorage.getItem("wizToken");
   }
 
-  headers["locale"] = localStorage.getItem("wizLang");
+  headers["locale"] = localStorage.getItem("lang");
   headers["domain"] = localStorage.getItem(window.location.hostname);
 
   const requestInfo = {

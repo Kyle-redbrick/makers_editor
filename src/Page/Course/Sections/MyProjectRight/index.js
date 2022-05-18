@@ -90,8 +90,8 @@ const AfterList = (props) => {
                 {
                   item.isClickd &&
                   <div className="course-content__detail-content">
-                  <h3 className="course-content__detail-title">차시명이 한줄일 경우 이렇게 나와야 합니다. 여기는 최대 두줄입니다.</h3>
-                  <p className="course-content__detail-explan">해당 차시에 대한 세부 설명이 들어가는 곳입니다. 여기는 최대 세줄까지 가능합니다.</p>
+                  <h3 className="course-content__detail-title">{item.title}</h3>
+                  <p className="course-content__detail-explan">{item.intro}</p>
 
                   {/* TODO 버튼 종류 1 : 미션을 진행하지 않은 상태일 경우 */}
                   <button type="button" className="course-content__learn-btn course-content__learn-btn--now">Learn Now</button>

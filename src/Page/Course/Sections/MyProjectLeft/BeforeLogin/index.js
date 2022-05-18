@@ -46,7 +46,7 @@ function BeforeLogin (props) {
                   <img alt="강의 썸네일" src={URL.S3_DREAMCLASS + item.course.posterURL} />
                 </div>
                 <p className="content-slide__explan">
-                  Learns for students new to coding. Learn to code by creating simple games with block coding. 최대 3줄 까지.
+                  {item.course.intro}
                 </p>
                 <button type="button" className="content-slide__experience-btn">Experience</button>
               </SwiperSlide>            

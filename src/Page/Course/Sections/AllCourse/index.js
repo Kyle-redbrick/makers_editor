@@ -7,7 +7,6 @@ function AllCourse(props) {
   return (
     
     <div className="all-course__wrap">
-      {console.log(121212,props.curriculum)}
       <h3 className="all-course__title">
         All Course
         <span className="all-course__project-list-length">{props.curriculum.length}</span>
