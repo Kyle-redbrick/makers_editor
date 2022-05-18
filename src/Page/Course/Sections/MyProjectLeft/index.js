@@ -6,7 +6,7 @@ import "./index.scss";
 function MyProjectLeft (props) {
   return (
     <div className="left-slide">
-      { true ? <AfterLogin {...props}/> : <BeforeLogin {...props}/> } 
+      { props.session.isLogin ? <AfterLogin {...props}/> : <BeforeLogin {...props}/> } 
     </div>
   )
 }

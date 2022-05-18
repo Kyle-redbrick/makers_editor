@@ -32,9 +32,7 @@ function AfterLogin (props) {
             type : "fraction"
           }}
           onSwiper={(s) => { setSwiper(s) }}
-          onSlideChange={(e) => 
-            {console.log("aaaa")
-            props.setSlideIndex(e.activeIndex)}}
+          onSlideChange={(e) => {props.setSlideIndex(e.activeIndex)}}
         >
         {
           props.curriculum.map( (item,index) => 
