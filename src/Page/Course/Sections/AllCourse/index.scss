@@ -33,6 +33,7 @@
   width: 23%;
 
   &.lock {
+    pointer-events: none;
     .all-course__project-thumbnail {
       &::after {
         content: '';

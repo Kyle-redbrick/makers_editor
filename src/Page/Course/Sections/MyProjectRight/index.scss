@@ -41,6 +41,7 @@
   }
 
   &.lock {
+    pointer-events: none;
     .course-content__outline {
       &::after {
         content: '';

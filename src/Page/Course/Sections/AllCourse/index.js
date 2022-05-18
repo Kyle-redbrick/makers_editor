@@ -10,7 +10,6 @@ function AllCourse(props) {
       {console.log(121212,props.curriculum)}
       <h3 className="all-course__title">
         All Course
-        {/* TODO all project list 갯수 */}
         <span className="all-course__project-list-length">{props.curriculum.length}</span>
       </h3>
 
@@ -26,10 +25,12 @@ function AllCourse(props) {
                   </div>
                   <h3 className="all-course__project-title">{item.course.title}</h3>
                   <div className="all-course__project-info">
-                    {/* TODO 강의 진행상황 라벨 - 완료 시 라벨 / 진행중 라벨 */}
-                    <span className="all-course__project-progress-label all-course__project-progress-label--ing">Clear</span>
-                    {/* <span className="all-course__project-progress-label all-course__project-progress-label--learning">Learning</span> */}
-                    <span className="all-course__project-progress-length">총 4차시</span>
+                    {
+                      props.curriculum[index].course.progress.completed >= props.curriculum[index].course.progress.net ? 
+                      <span className="all-course__project-progress-label all-course__project-progress-label--ing">Clear</span> : 
+                      <span className="all-course__project-progress-label all-course__project-progress-label--learning">Learning</span> 
+                    }
+                    <span className="all-course__project-progress-length">총 {props.curriculum[index].projects.length}차시</span>
                   </div>
                 </div>
               </li>
