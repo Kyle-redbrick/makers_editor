@@ -60,6 +60,7 @@
   border: 0.8px solid #3c3c3c;
   border-radius: 16px;
   overflow: hidden;
+  cursor: pointer;
 
   img {
     width: 100%;
@@ -96,6 +97,7 @@
   -webkit-line-clamp: 2;
   overflow: hidden;
   text-overflow: ellipsis; 
+  cursor:pointer ;
 }
 
 .all-course__project-info {
