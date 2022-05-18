@@ -13,9 +13,27 @@
 
 .course-content__wrap {
   padding-left: 80px;
-  height: 490px;
-  overflow: hidden;
+  height: 460px;
+  position: relative;
+  overflow: overlay;
+  overflow-x: hidden;
+  z-index: 10;
   overflow-y: auto;
+
+  &::-webkit-scrollbar  {
+    width: 7px;
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 100px;
+    background-color: #515151;
+    border: 0;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
 }
 
 .course-content__item {
@@ -288,4 +306,22 @@
   color: #c4c1c1;
   font-weight: 400;
   text-decoration: none;
+}
+
+.course-btn-prev {
+  background-color: transparent;
+  border: 0;
+  position: absolute;
+  bottom: 15px;
+  left: 12px;
+  font-size: 13px;
+  line-height: 13px;
+  font-weight: 400;
+  color: #8E8E8E;
+  display: flex;
+  align-items: center;
+
+  img {
+    margin-right: 4px;
+  }
 }
