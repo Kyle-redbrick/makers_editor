@@ -200,7 +200,6 @@ const Project = ({ project, ...props }) => {
 
   return (
     <Self {...props}>
-      {console.log("project11231312312312313",project.progress.net)}
       <Level>{project.label}</Level>
       <TitleWrap>
         <Title>{project.title}</Title>
@@ -208,7 +207,7 @@ const Project = ({ project, ...props }) => {
           <Progress value={project.progress.completed / project.progress.net * 100}>
             <ProgressBar />
           </Progress>
-          {project.progress.net / project.progress.completed >= 1 ? (
+          {project.progress.net / project.progress.completed <= 1 ? (
             <ProgressText>
               <FormattedMessage id="ID_LMS_QUEST_ALL_CLEAR" />
             </ProgressText>
@@ -228,7 +227,7 @@ const Project = ({ project, ...props }) => {
         <br />
         <Label><FormattedMessage id="ID_LMS_QUEST_STUDY_TIME" /> </Label>
         {project.unlocked
-          ? project.totalStudyMinute + intl.formatMessage({ id: "ID_LMS_QUEST_STUDY_TIME_MIN" })
+          ? project.user.studyMinute + intl.formatMessage({ id: "ID_LMS_QUEST_STUDY_TIME_MIN" })
           : "-"}
       </LectureDate>
 

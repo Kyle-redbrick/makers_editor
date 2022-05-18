@@ -98,7 +98,6 @@ const CoursePage = ({ email, ...props }) => {
 
   const init = async () => {
     const courses = await getLearn();    
-    console.log("course!!!!!!",courses.body)
 
     setProgress((courses.body.netProgress.completed / courses.body.netProgress.net) * 100);
     setCourses(courses.body.curriculum);

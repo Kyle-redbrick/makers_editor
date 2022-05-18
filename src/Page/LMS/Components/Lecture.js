@@ -176,7 +176,6 @@ const Lecture = memo(({ course, ...props }) => {
 
   return (
     <Self>
-      {console.log("course.1112",course.course.progress)}
       <Header>
         <Thumbnail image={URL.S3_DREAMCLASS + course.course.posterURL} />
         <TitleWrap>
@@ -190,7 +189,6 @@ const Lecture = memo(({ course, ...props }) => {
         </TitleWrap>
 
         <ButtonWrap>
-          {console.log(course)}
           <LinkButton to={`/course/${course.course.lectureId}`}>
             <FormattedMessage id="ID_LMS_GO" />
           </LinkButton>
