@@ -193,22 +193,22 @@ const Project = ({ project, ...props }) => {
 
   const { intl } = props;
 
-  const progressText = `${project.steps.completed > project.steps.net
-    ? project.steps.net
-    : project.steps.completed
-    }/${project.steps.net}`
+  const progressText = `${project.progress.completed > project.progress.net
+    ? project.progress.net
+    : project.progress.completed
+    }/${project.progress.net}`
 
   return (
     <Self {...props}>
-      {console.log("project",project)}
+      {console.log("project11231312312312313",project.progress.net)}
       <Level>{project.label}</Level>
       <TitleWrap>
         <Title>{project.title}</Title>
         <ProgressWrap>
-          <Progress value={project.steps.completed / project.steps.net * 100}>
+          <Progress value={project.progress.completed / project.progress.net * 100}>
             <ProgressBar />
           </Progress>
-          {project.steps.net / project.steps.completed >= 1 ? (
+          {project.progress.net / project.progress.completed >= 1 ? (
             <ProgressText>
               <FormattedMessage id="ID_LMS_QUEST_ALL_CLEAR" />
             </ProgressText>
@@ -242,10 +242,10 @@ const Project = ({ project, ...props }) => {
             <JoystickText><FormattedMessage id="ID_COURSE_DETAIL_PLAY_GAME" /></JoystickText>
           </JoystickButton>
         )}
-        {project.steps.completed >= project.steps.net ? (
+        {project.progress.completed >= project.progress.net ? (
           <LearnAgain completed id={project.id} lmsButton />
         ) : (
-          project.steps.completed === 0 ? (
+          project.progress.completed === 0 ? (
             <LearnNow id={project.id} lmsButton />
           ) : (
             <LearnContinue id={project.id} lmsButton />

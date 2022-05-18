@@ -98,10 +98,10 @@ const CoursePage = ({ email, ...props }) => {
 
   const init = async () => {
     const courses = await getLearn();    
-    console.log("course!!!!!!",courses)
+    console.log("course!!!!!!",courses.body)
 
-    setProgress(courses.net_progress);
-    setCourses(courses.list);
+    setProgress((courses.body.netProgress.completed / courses.body.netProgress.net) * 100);
+    setCourses(courses.body.curriculum);
   };
 
   const onWindowFocus = useCallback(init, []);

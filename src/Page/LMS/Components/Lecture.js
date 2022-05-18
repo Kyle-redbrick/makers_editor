@@ -175,16 +175,17 @@ const Lecture = memo(({ course, ...props }) => {
   );
 
   return (
-    <Self {...props}>
+    <Self>
+      {console.log("course.1112",course.course.progress)}
       <Header>
         <Thumbnail image={URL.S3_DREAMCLASS + course.course.posterURL} />
         <TitleWrap>
           <Title>{course.course.title}</Title>
           <ProgressWrap>
             <Progress>
-              <ProgressBar value={course.course.progress.complete / course.course.progress.net * 100} />
+              <ProgressBar value={course.course.progress.completed / course.course.progress.net * 100} />
             </Progress>
-            <ProgressText>{course.course.progress.complete / course.course.progress.net * 100}%</ProgressText>
+            <ProgressText>{course.course.progress.completed / course.course.progress.net * 100}%</ProgressText>
           </ProgressWrap>
         </TitleWrap>
 
