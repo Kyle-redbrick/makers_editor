@@ -7,6 +7,7 @@ import ProjectComponent from "./Project";
 
 import { COLOR } from "../Constants";
 import { IMAGE } from "../Constants/Images";
+import ThumbnailLock from "../../../Image/my-lecture-lock.svg";
 
 const Self = styled.div`
   border-radius: 16px;
@@ -34,6 +35,23 @@ const Thumbnail = styled.div`
   background-image: url(${(props) => props.image});
   border-radius: 8px;
   margin-right: 20px;
+  position:relative;
+
+  &.lock {
+    &::before {
+      content:'';
+      display:block;
+      top:0;
+      width:100%;
+      bottom:0;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-image:url(${ThumbnailLock});
+      z-index:10;
+      height:100%;
+    }
+  } 
 
   @media screen and (max-width: 1169px){
     width: 100%;
@@ -41,7 +59,7 @@ const Thumbnail = styled.div`
     margin-right: 0;
     border-radius: 16px 16px 0 0;
   }
-`;
+`; 
 
 const TitleWrap = styled.div`
   flex: 1;
@@ -177,7 +195,7 @@ const Lecture = memo(({ course, ...props }) => {
   return (
     <Self>
       <Header>
-        <Thumbnail image={URL.S3_DREAMCLASS + course.course.posterURL} />
+        <Thumbnail className="lock" image={URL.S3_DREAMCLASS + course.course.posterURL} />
         <TitleWrap>
           <Title>{course.course.title}</Title>
           <ProgressWrap>
