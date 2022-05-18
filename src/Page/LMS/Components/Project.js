@@ -179,7 +179,7 @@ const GameBtn = styled.img`
 const Project = ({ project, ...props }) => {
   const handleClickGame = useCallback(
     () => {
-      Popup.showPopUp(<GamePopup url={project.resources.sampleGameURL} />, {
+      Popup.showPopUp(<GamePopup url={project.resources.gameURL} />, {
         dismissButton: false,
         dismissOverlay: true,
         defaultPadding: false,
@@ -242,12 +242,12 @@ const Project = ({ project, ...props }) => {
           </JoystickButton>
         )}
         {project.progress.completed >= project.progress.net ? (
-          <LearnAgain completed id={project.id} lmsButton />
+          <LearnAgain completed id={project.id} />
         ) : (
           project.progress.completed === 0 ? (
-            <LearnNow id={project.id} lmsButton />
+            <LearnNow id={project.id} />
           ) : (
-            <LearnContinue id={project.id} lmsButton />
+            <LearnContinue id={project.id} />
           )
         )}
       </ButtonWrap>

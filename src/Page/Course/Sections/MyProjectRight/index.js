@@ -4,6 +4,10 @@ import ClearIcon from "../../../../Image/icon-clear.svg";
 import PrevIcon from "../../../../Image/icn_arrow_left.svg"
 import "./index.scss";
 import { URL } from "../../../../Common/Util/Constant"
+import * as Popup from "../../../../Common/Component/PopUp";
+import GamePopup from "../../../CourseDetail/Components/GamePopup";
+import * as LearnButtons from "../../../../Common/Component/Button/Learn";
+
 
 
 function MyProjectRight (props) {
@@ -57,6 +61,22 @@ const AfterList = (props) => {
     setItems([...items])
   }
 
+  const handleClickGame = useCallback(
+    (item) => {
+      console.log(item)
+      Popup.showPopUp(<GamePopup url={item.resources.gameURL} />, {
+        dismissButton: false,
+        dismissOverlay: true,
+        defaultPadding: false,
+        darkmode: true,
+        mobileFullscreen: true,
+        overflow: true,
+      });
+    },
+    [GamePopup, Popup.showPopUp]
+  );
+
+
   return (
     <ul className="course-content__list">
       {
@@ -79,7 +99,7 @@ const AfterList = (props) => {
                     <>
                       <div className="course-content__progress-bar">
                         <div className="course-content__progress-bar-thumb">
-                          <div className="course-content__progress-bar-track" style={{width:"50%"}}></div>
+                          <div className="course-content__progress-bar-track" style={{width:item.progress.completed / item.progress.net * 100}}></div>
                         </div>
                         <span className="course-content__progress-length"><b>{item.progress.completed}</b>/{item.progress.net} Step</span>
                       </div>
@@ -94,13 +114,34 @@ const AfterList = (props) => {
                   <p className="course-content__detail-explan">{item.intro}</p>
 
                   {/* TODO 버튼 종류 1 : 미션을 진행하지 않은 상태일 경우 */}
-                  <button type="button" className="course-content__learn-btn course-content__learn-btn--now">Learn Now</button>
+                  {/* <button type="button" className="course-content__learn-btn course-content__learn-btn--now">Learn Now</button> */}
                   {/* TODO 버튼 종류 2 : 미션을 진행했으나 완료하지 않은 상태일 경우 */}
                   {/* <button type="button" className="course-content__learn-btn course-content__learn-btn--ing">Continue</button> */}
                   {/* TODO 버튼 종류 3 : 미션을 완료한 상태일 경우 */}
                   {/* <button type="button" className="course-content__learn-btn course-content__learn-btn--clear">Learn Again</button> */}
+                  {/* <a href="" rel="noopener noreferrer" className="course-content__game-preview">Game Preview</a> */}
+                  
+                  {/* <a href="" rel="noopener noreferrer" className="course-content__game-preview">Game Preview</a> */}
 
-                  <a href="" rel="noopener noreferrer" className="course-content__game-preview">Game Preview</a>
+                  {
+                    item.progress.completed >= item.progress.net ? (
+                      <LearnButtons.LearnAgain completed id={item.id} />
+                      ) : (
+                        item.progress.completed === 0 ? (
+                          <LearnButtons.LearnNow id={item.id} />
+                        ) : (
+                          <LearnButtons.LearnContinue id={item.id} />
+                        )
+                      )
+                  }
+
+
+
+
+
+
+
+                  <button className="course-content__game-preview" onClick={()=> handleClickGame(item)}>Game Preview</button>
                   </div>
                 }
               </div>
