@@ -303,6 +303,7 @@ const Lnb = ({ path, fixed, isMobile, isLmsMobileMenuOn, onClickLmsMobileMenu, .
             isLmsMobileMenuOn={isLmsMobileMenuOn}
             onClickLmsMobileMenu={onClickLmsMobileMenu}
           />
+          
           <LnbLinkComponent
             active={renderCurrentPage(path) === PAGE.ATTENDANCE}
             icon={renderCurrentPage(path) === PAGE.ATTENDANCE ? iconAttOn : iconAttOff}

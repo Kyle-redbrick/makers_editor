@@ -11,8 +11,10 @@ import { IMAGE } from "../Constants/Images";
 
 import GamePopup from "../../CourseDetail/Components/GamePopup";
 
+import ImgBtnLock from "../../../Image/my-lecture-btn-lock.svg";
+
 const Self = styled.div`
-  padding: 18px 20px 14px 18px;
+  padding: 18px 16px 14px 18px;
   min-height: 86px;
   display: flex;
   align-items: center;
@@ -30,9 +32,31 @@ const Self = styled.div`
   }
 `;
 
-const LearnAgain = styled(LearnButtons.LearnAgain)``;
-const LearnContinue = styled(LearnButtons.LearnContinue)``;
-const LearnNow = styled(LearnButtons.LearnNow)``;
+const LearnAgain = styled(LearnButtons.LearnAgain)`
+
+`;
+const LearnContinue = styled(LearnButtons.LearnContinue)`
+
+`;
+const LearnNow = styled(LearnButtons.LearnNow)`
+  &.lock {
+    &::before {
+      content: '';
+      display:block;
+      background-repeat:no-repeat;
+      background-size:cover;
+      background-position:center;
+      background-image:url(${ImgBtnLock});
+      position:absolute;
+      top:0;
+      width:100%;
+      height:100%;
+      bottom:0;
+      z-index:10;
+      left:0;
+    }
+  }
+`;
 
 const Level = styled.div`
   font-size: 13px;
@@ -164,6 +188,7 @@ const JoystickText = styled.span`
 const ButtonWrap = styled.div`
   display: flex;
   align-items: center;
+  position:relative;
 
   @media screen and (max-width: 1169px) {
     width: 100%;
@@ -245,7 +270,7 @@ const Project = ({ project, ...props }) => {
           <LearnAgain completed id={project.id} />
         ) : (
           project.progress.completed === 0 ? (
-            <LearnNow id={project.id} />
+            <LearnNow className="lock" id={project.id} />
           ) : (
             <LearnContinue id={project.id} />
           )
