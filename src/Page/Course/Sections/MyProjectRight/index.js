@@ -19,63 +19,25 @@ function MyProjectRight (props) {
 
 export default MyProjectRight;
 
-/* TODO 로그인 전 차시 리스트 */
 const BeforeList = (props) => {
   return (
     <ul className="course-content__list course-content__list--register">
-<<<<<<< HEAD
       {
         props.projects.map((item,index) => 
           <li key={index} className="course-content__item">
             <div className="course-content__outline">
               <div className="course-content__thumbnail">
-                {/* TODO 과정 내 차시 썸네일 */}
                 <img alt="차시 썸네일" src={Thumbnail} />
-                {/* TODO 과정 내 차시 횟수 */}
                 <span className="course-content__label">{item.label}</span>
               </div>
               <div className="course-content__info">
-                {/* TODO 차시명 */}
                 <h3 className="course-content__title">{item.title}</h3>
-                {/* TODO 더보기 / 호버 시 더보기 내용 나오는 효과 */}
                 <p className="course-content__more-btn">+ 더보기</p>
               </div>
             </div>
           </li>
         )
       }
-=======
-      {/* TODO 잠금 강의일 시 클래스 lock 추가 */}
-      <li className="course-content__item">
-        <div className="course-content__outline">
-          <div className="course-content__thumbnail">
-            {/* TODO 과정 내 차시 썸네일 */}
-            <img alt="차시 썸네일" src={Thumbnail} />
-            {/* TODO 과정 내 차시 횟수 */}
-            <span className="course-content__label">Mission 1</span>
-          </div>
-          <div className="course-content__info">
-            {/* TODO 차시명 */}
-            <h3 className="course-content__title">차시명이 들어가는 곳 최대 두줄까지</h3>
-            {/* TODO 더보기 / 호버 시 더보기 내용 나오는 효과 */}
-            <p className="course-content__more-btn">+ 더보기</p>
-          </div>
-
-          {/* hover 시 나타나는 div */}
-          <div className="course-content__hover">
-            <span className="course-content__hover-label">Mission 2</span>
-            <h3 className="course-content__hover-title">차시명이 들어가는 곳 최대 두줄까지</h3>
-            <p className="course-content__hover-content">
-              차시 세부 설명 최대 4 줄. 차시 세부 설명 최대 4 줄. 차시 세부 설명 최대 4 줄. 차시 세부 설명 최대 4 줄. 
-            </p>
-            <button className="course-btn-prev">
-              <img alt="이전으로 아이콘" src={PrevIcon} />
-              이전으로
-            </button>
-          </div>
-        </div>
-      </li>
->>>>>>> de0530dfaf6e170cd31cc6c8212cd09217bf259a
     </ul>
   )
 }
