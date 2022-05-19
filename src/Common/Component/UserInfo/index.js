@@ -43,30 +43,6 @@ class UserInfoContainer extends React.Component {
         this.setState({ mounted: true });
       }
     }
-
-    //check bingo event
-    this.updateLastLoggedInTime();
-  };
-
-  componentDidUpdate(prevProps) {
-    if (!prevProps.userinfo.email && this.props.userinfo.email) {
-      this.updateLastLoggedInTime();
-    }
-  }
-
-  updateLastLoggedInTime = () => {
-    if (this.props.userinfo.email) {
-      request
-        .updateLastLoggedInTime({ email: this.props.userinfo.email })
-        .then(res => res.json())
-        .then(json => {
-          if (json.success) {
-            //for bingo
-            // this.checkUnreadBingoEvents();
-          }
-        })
-        .catch(e => console.error(e));
-    }
   };
 
   // checkUnreadBingoEvents = () => {

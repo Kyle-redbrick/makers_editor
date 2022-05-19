@@ -86,13 +86,6 @@ export const updateBuilderUsageTime = param => {
     "PUT"
   );
 };
-export const updateLastLoggedInTime = param => {
-  return fetchRequest(
-    URL.API_SERVER + "user/updateLastLoggedInTime",
-    "POST",
-    param
-  );
-};
 export const getUserApkTicket = param => {
   return fetchRequest(URL.API_SERVER + `user/apkticket/${param.id}`, "GET");
 };
