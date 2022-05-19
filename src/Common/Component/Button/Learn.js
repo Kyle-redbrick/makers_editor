@@ -8,6 +8,8 @@ import AlertPopup from "../../../Page/CourseDetail/Components/AlertPopup";
 import LoginAlertPopup from "../PopUp/LoginAlertPopup";
 import { isMobileOnly } from "react-device-detect";
 import { FormattedMessage } from "react-intl";
+import ImgBtnLock from "../../../Image/my-lecture-btn-lock.svg";
+
 
 const Self = styled.button`
   width: 150px;
@@ -21,7 +23,36 @@ const Self = styled.button`
   color: #fff;
   background-color: ${(props) => (props.completed ? "#5b5b5b" : "#ff6f44")};
   font-family: "Noto Sans KR", sans-serif;
+
   cursor: pointer;
+
+
+  ${(props) => props.learnWidth &&
+    `
+    width:100%;
+    height:46px;
+    `
+  }
+
+  ${(props) => props.lock &&
+    `
+    &::after {
+      content: '';
+      display:block;
+      background-repeat:no-repeat;
+      background-size:cover;
+      background-position:center;
+      background-image:url(${ImgBtnLock});
+      position:absolute;
+      width:100%;
+      height:100%;
+      top:0;
+      bottom:0;
+      z-index:10;
+      left:0;
+    }
+    `
+  }
 
   &:focus {
     outline: none;

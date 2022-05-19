@@ -124,12 +124,12 @@ const AfterList = (props) => {
 
                   {
                     item.progress.completed >= item.progress.net ? (
-                      <LearnButtons.LearnAgain className="course-content__learn-btn" completed id={item.id} />
+                      <LearnButtons.LearnAgain learnWidth={true}  completed id={item.id} />
                       ) : (
                         item.progress.completed === 0 ? (
-                          <LearnButtons.LearnNow className="course-content__learn-btn" id={item.id} />
+                          <LearnButtons.LearnNow learnWidth={true} id={item.id} />
                         ) : (
-                          <LearnButtons.LearnContinue className="course-content__learn-btn"  id={item.id} />
+                          <LearnButtons.LearnContinue learnWidth={true} id={item.id} />
                         )
                       )
                   }
