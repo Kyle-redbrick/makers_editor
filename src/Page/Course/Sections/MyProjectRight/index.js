@@ -6,8 +6,8 @@ import { URL } from "../../../../Common/Util/Constant"
 import * as Popup from "../../../../Common/Component/PopUp";
 import GamePopup from "../../../CourseDetail/Components/GamePopup";
 import * as LearnButtons from "../../../../Common/Component/Button/Learn";
-import IconPreview from "../../../../Image/icon-game-preview.svg";
 import "./index.scss";
+
 
 function MyProjectRight (props) {
   return (
@@ -140,10 +140,7 @@ const AfterList = (props) => {
 
 
 
-                  <button className="course-content__game-preview" onClick={()=> handleClickGame(item)}>
-                    Game Preview
-                    <img alt="게임 프리뷰 아이콘" src={IconPreview} />
-                  </button>
+                  <button className="course-content__game-preview" onClick={()=> handleClickGame(item)}>Game Preview</button>
                   </div>
                 }
               </div>

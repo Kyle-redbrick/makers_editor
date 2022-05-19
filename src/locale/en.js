@@ -1306,5 +1306,16 @@ const en = {
   ID_SIGNUP_FIRST_NAME : "성",
   ID_SIGNUP_FIRST_NAME_PLACEHOLDER: "성을 입력해주세요",
 
+  ID_INTRO_ABOUT_ASTRO_CODING_GO_TITLE : "About Astro Coding Go!",
+  ID_INTRO_SECOND_SECTION_TITLE : "A coding class\nwidth next-level missions",
+  ID_INTRO_SECOND_SECTION_INFO_TITLE_1 : "6 to 12",
+  ID_INTRO_SECOND_SECTION_INFO_TITLE_2 : "36 missions",
+  ID_INTRO_SECOND_SECTION_INFO_TITLE_3 : "100 hours",
+
+  ID_INTRO_SECOND_SECTION_INFO_TITLE_1_EXPLAN : "A coding class\nfor students aged 6 to 12",
+  ID_INTRO_SECOND_SECTION_INFO_TITLE_2_EXPLAN : "36 STEM convergence missions\nmeeting the CSTA standard",
+  ID_INTRO_SECOND_SECTION_INFO_TITLE_3_EXPLAN : "A 100=hour PBL curriculum\nto develop pracrical skills",
+
+
 };
 export default en;
