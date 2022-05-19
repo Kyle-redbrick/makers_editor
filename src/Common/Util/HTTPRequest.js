@@ -1579,3 +1579,9 @@ export const getLearn = formData => {
     res => res.json()
   );
 }
+
+export const getLearnCourses = formData => {
+  return fetchRequest(URL.API_SERVER + `learn/courses`, "GET", formData).then(
+    res => res.json()
+  );
+}
