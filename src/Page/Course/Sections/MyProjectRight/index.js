@@ -21,11 +21,31 @@ function MyProjectRight (props) {
 export default MyProjectRight;
 
 const BeforeList = (props) => {
+
+  const [items, setItems] = useState([]);
+
+  useEffect(() => {
+    props.projects.map((item,index) => {
+      item.isClickd = false
+    })
+    setItems([...props.projects])
+  }, [props]);
+
+  const onClickItem = (i) => {
+    console.log(i)
+    items.map((item,index) => {
+      i == index ? item.isClickd = !item.isClickd : item.isClickd = false
+    })
+    setItems([...items])
+  }
+
+
+
   return (
     <ul className="course-content__list course-content__list--register">
       {
-        props.projects.map((item,index) => 
-          <li key={index} className="course-content__item">
+        items.map((item,index) => 
+          <li key={index} className="course-content__item" onClick={()=> onClickItem(index)}>
             <div className="course-content__outline">
               <div className="course-content__thumbnail">
                 <img alt="차시 썸네일" src={Thumbnail} />
@@ -35,6 +55,22 @@ const BeforeList = (props) => {
                 <h3 className="course-content__title">{item.title}</h3>
                 <p className="course-content__more-btn">+ 더보기</p>
               </div>
+              {console.log(item)}
+              {
+                item.isClickd &&
+                <div className="course-content__detail-content">
+                  <span className="course-content__hover-label">{item.label}</span>
+                  <h3 className="course-content__hover-title">{item.title}</h3>
+                  <p className="course-content__hover-content">
+                  {item.intro} 
+                  </p>
+                  <button className="course-btn-prev">
+                    <img alt="이전으로 아이콘" src={PrevIcon} />
+                    이전으로
+                  </button>
+                </div>
+              }
+              
             </div>
           </li>
         )
@@ -111,17 +147,6 @@ const AfterList = (props) => {
                   <div className="course-content__detail-content">
                   <h3 className="course-content__detail-title">{item.title}</h3>
                   <p className="course-content__detail-explan">{item.intro}</p>
-
-                  {/* TODO 버튼 종류 1 : 미션을 진행하지 않은 상태일 경우 */}
-                  {/* <button type="button" className="course-content__learn-btn course-content__learn-btn--now">Learn Now</button> */}
-                  {/* TODO 버튼 종류 2 : 미션을 진행했으나 완료하지 않은 상태일 경우 */}
-                  {/* <button type="button" className="course-content__learn-btn course-content__learn-btn--ing">Continue</button> */}
-                  {/* TODO 버튼 종류 3 : 미션을 완료한 상태일 경우 */}
-                  {/* <button type="button" className="course-content__learn-btn course-content__learn-btn--clear">Learn Again</button> */}
-                  {/* <a href="" rel="noopener noreferrer" className="course-content__game-preview">Game Preview</a> */}
-                  
-                  {/* <a href="" rel="noopener noreferrer" className="course-content__game-preview">Game Preview</a> */}
-
                   {
                     item.progress.completed >= item.progress.net ? (
                       <LearnButtons.LearnAgain learnWidth={true}  completed id={item.id} />
@@ -133,13 +158,6 @@ const AfterList = (props) => {
                         )
                       )
                   }
-
-
-
-
-
-
-
                   <button className="course-content__game-preview" onClick={()=> handleClickGame(item)}>Game Preview</button>
                   </div>
                 }

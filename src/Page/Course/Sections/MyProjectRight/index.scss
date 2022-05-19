@@ -41,12 +41,6 @@
   width: 28%;
   margin-bottom: 26px;
 
-  &:hover {
-    .course-content__hover {
-      display: block;
-    }
-  }
-
   &.progress {
     .course-content__outline {
       box-shadow: 0 0 0 3px #ffc52f;
@@ -136,17 +130,17 @@
   font-weight: 500;
 }
 
-.course-content__hover {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #383838;
-  padding: 14px;
-  z-index: 15;
-  display: none;
-}
+// .course-content__hover {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   right: 0;
+//   bottom: 0;
+//   background-color: #383838;
+//   padding: 14px;
+//   z-index: 15;
+//   display: none;
+// }
 
 .course-content__hover-label {
   font-size: 14px;
