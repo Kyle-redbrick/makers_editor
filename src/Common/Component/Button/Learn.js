@@ -36,6 +36,7 @@ const Self = styled.button`
 
   ${(props) => props.lock &&
     `
+    pointer-events: none;
     &::after {
       content: '';
       display:block;

@@ -242,12 +242,12 @@ const Project = ({ project, ...props }) => {
           </JoystickButton>
         )}
         {project.progress.completed >= project.progress.net ? (
-          <LearnAgain completed id={project.id} />
+          <LearnAgain completed lock={!project.unlocked} id={project.id} />
         ) : (
           project.progress.completed === 0 ? (
-            <LearnNow lock={true} id={project.id} />
+            <LearnNow lock={!project.unlocked} id={project.id} />
           ) : (
-            <LearnContinue id={project.id} />
+            <LearnContinue lock={!project.unlocked} id={project.id} />
           )
         )}
       </ButtonWrap>
