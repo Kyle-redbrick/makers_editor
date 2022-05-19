@@ -19,5 +19,6 @@
 .content-slide--user {
   .swiper-button-next--after-next, .swiper-button-next--after-prev {
     top: 47%;
+    z-index: 11;
   }
 }

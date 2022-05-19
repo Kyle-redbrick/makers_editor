@@ -8,10 +8,7 @@ import * as Popup from "../../../Common/Component/PopUp";
 import Button from "./Button";
 import { COLOR } from "../Constants";
 import { IMAGE } from "../Constants/Images";
-
 import GamePopup from "../../CourseDetail/Components/GamePopup";
-
-import ImgBtnLock from "../../../Image/my-lecture-btn-lock.svg";
 
 const Self = styled.div`
   padding: 18px 16px 14px 18px;
@@ -32,31 +29,9 @@ const Self = styled.div`
   }
 `;
 
-const LearnAgain = styled(LearnButtons.LearnAgain)`
-
-`;
-const LearnContinue = styled(LearnButtons.LearnContinue)`
-
-`;
-const LearnNow = styled(LearnButtons.LearnNow)`
-  &.lock {
-    &::before {
-      content: '';
-      display:block;
-      background-repeat:no-repeat;
-      background-size:cover;
-      background-position:center;
-      background-image:url(${ImgBtnLock});
-      position:absolute;
-      top:0;
-      width:100%;
-      height:100%;
-      bottom:0;
-      z-index:10;
-      left:0;
-    }
-  }
-`;
+const LearnAgain = styled(LearnButtons.LearnAgain)``;
+const LearnContinue = styled(LearnButtons.LearnContinue)``;
+const LearnNow = styled(LearnButtons.LearnNow)``;
 
 const Level = styled.div`
   font-size: 13px;
@@ -270,7 +245,7 @@ const Project = ({ project, ...props }) => {
           <LearnAgain completed id={project.id} />
         ) : (
           project.progress.completed === 0 ? (
-            <LearnNow className="lock" id={project.id} />
+            <LearnNow lock={true} id={project.id} />
           ) : (
             <LearnContinue id={project.id} />
           )
