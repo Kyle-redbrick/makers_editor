@@ -29,9 +29,9 @@ class Container extends Component {
     this.load();
   }
   load() {
-    const { id: myDreamLectureProjectId } = this.props.match.params;
+    const { id: myDreamLectureProjectId ,email} = this.props.match.params;
     request
-      .getMyDreamProject(myDreamLectureProjectId)
+      .getMyDreamProject(myDreamLectureProjectId + "/" + email)
       .then(res => res.json())
       .then(myDreamProject => {
         if (!myDreamProject) {
@@ -40,10 +40,10 @@ class Container extends Component {
         }
 
         // temp: 테스트 계정의 프로젝트는 유저 인증 생략하기
-        if (myDreamProject.email !== "test@wizschool.io" && myDreamProject.email !== this.props.email) {
-          window.alert("invalid user");
-          return;
-        }
+        // if (myDreamProject.email !== "test@wizschool.io" && myDreamProject.email !== this.props.email) {
+        //   window.alert("invalid user");
+        //   return;
+        // }
         // if(myDreamProject.email !== this.props.email) {
         //   window.alert("invalid user");
         //   return;

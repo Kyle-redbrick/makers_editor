@@ -95,7 +95,8 @@ const App = () => {
               "/recordPlayer/:reservationId",
               "/ocp2/block/:grade/:step",
               "/ocp2/js/:type/:grade/:step",
-              "/dreamclass/:id"
+              "/dreamclass/:id",
+              "/dreamclass/:id/:email"
             ]}
             render={() => <HandleQueryString Component={Builder} />}
           />

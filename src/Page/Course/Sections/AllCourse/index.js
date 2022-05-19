@@ -47,7 +47,7 @@ function AllCourse(props) {
                   <div className="all-course__project-info">
 
                     {
-                      !item.unlocked && 
+                      item.unlocked && 
                       <>
                       {
                         item.progressStatus == "Clear" ? 

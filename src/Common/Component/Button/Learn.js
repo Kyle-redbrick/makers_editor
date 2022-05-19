@@ -93,12 +93,13 @@ const Self = styled.button`
 `;
 
 const getRedirectURLOf = myDreamProject => {
+  console.log(1212,myDreamProject)
   try {
     const { type } = myDreamProject.project.lecture.course;
     if (type === "python") {
       return `/pythonPage/${myDreamProject.id}`;
     } else {
-      return `/dreamclass/${myDreamProject.id}`;
+      return `/dreamclass/${myDreamProject.id + "/" + myDreamProject.email}`;
     }
   } catch (err) {
     console.error(err);
@@ -169,12 +170,12 @@ export const Learn = ({ id: projectId, isShowVideo,videoURL, lectureId, title, f
         //   window.open(redirectURL, "_blank");
         // }
       }
-      else {
-        Popup.showPopUp(<LoginAlertPopup />, {
-          defaultPadding: false,
-          dismissButton: false,
-        });
-      }
+      // else {
+      //   Popup.showPopUp(<LoginAlertPopup />, {
+      //     defaultPadding: false,
+      //     dismissButton: false,
+      //   });
+      // }
     })
     .catch(err => {
       console.error(err);

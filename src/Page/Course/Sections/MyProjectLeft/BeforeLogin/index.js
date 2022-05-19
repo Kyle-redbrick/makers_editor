@@ -8,6 +8,9 @@ import "swiper/components/navigation/navigation.min.css";
 import "swiper/components/pagination/pagination.min.css";
 import Thumbnail from "../../../../../Image/course_thumbnail.png";
 import "../index.scss";
+import { IEView } from "react-device-detect";
+import * as LearnButtons from "../../../../../Common/Component/Button/Learn";
+
 
 function BeforeLogin (props) {
   SwiperCore.use([Pagination]);
@@ -21,6 +24,11 @@ function BeforeLogin (props) {
   const prevTo = () => {
     swiper.slidePrev();
   };
+
+  const linkToLearn = (id)=> {
+    console.log(id)
+    window.open(`/dreamclass/${id}/37da860b-2eca-4ea6-8c36-d6b5dd700437`);
+  }
 
   return (
     <div className="content-slide">
@@ -37,6 +45,7 @@ function BeforeLogin (props) {
           }}
           onSlideChange={(e) => {props.setSlideIndex(e.activeIndex)}}
         >
+          {console.log(props.curriculum)}
           {
             props.curriculum.map( (item,index) => 
               <SwiperSlide key={index}>
@@ -48,7 +57,13 @@ function BeforeLogin (props) {
                 <p className="content-slide__explan">
                   {item.course.intro}
                 </p>
-                <button type="button" className="content-slide__experience-btn">Experience</button>
+                {console.log(item.course.freeProjectId)}
+                {
+                  item.course.freeProjectId &&
+                  // <button type="button" className="content-slide__experience-btn" onClick={()=>{linkToLearn(item.course.freeProjectId)}}>Experience</button>
+                  <LearnButtons.LearnContinue learnWidth={true} id={item.course.freeProjectId} />
+
+                }
               </SwiperSlide>            
             )
           }
