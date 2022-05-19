@@ -1304,6 +1304,16 @@ const ja = {
   ID_CERT_ADVANCED_BLOCK_DESC:"あなたは iGroup主催のソフトウェアの教育課程であるブロックコーディングアドバンスを修了するためのすべての要求事項を満たし、イベント、座標、物理、変数, 条件文,繰り返し文,複製を活用して4個のプロジェクトを自ら完成したため、この修了証を授与いたします。",
   ID_CERT_ADVANCED_JS_DESC:"あなたは iGroup主催のソフトウェアの教育課程であるJSアドバンスを修了するためのすべての要求事項を満たし、イベント、座標、物理、乱数, 変数, 条件文,繰り返し文,複製,演算子を活用して8個のプロジェクトを自ら完成したため、この修了証を授与いたします。",
   ID_CERT_MASTERY_JS_DESC:"あなたは iGroup主催のソフトウェアの教育課程であるJSマスターを修了するためのすべての要求事項を満たし、イベント、座標、物理、乱数, 変数, 条件文,繰り返し文,複製,演算子,配列、関数を活用して4個のプロジェクトを自ら完成したため、この修了証を授与いたします。",
+
+  ID_INTRO_ABOUT_ASTRO_CODING_GO_TITLE : "About Astro Coding Go!",
+  ID_INTRO_SECOND_SECTION_TITLE : "A coding class\nwidth next-level missions",
+  ID_INTRO_SECOND_SECTION_INFO_TITLE_1 : "6 to 12",
+  ID_INTRO_SECOND_SECTION_INFO_TITLE_2 : "36 missions",
+  ID_INTRO_SECOND_SECTION_INFO_TITLE_3 : "100 hours",
+
+  ID_INTRO_SECOND_SECTION_INFO_TITLE_1_EXPLAN : "A coding class\nfor students aged 6 to 12",
+  ID_INTRO_SECOND_SECTION_INFO_TITLE_2_EXPLAN : "36 STEM convergence missions\nmeeting the CSTA standard",
+  ID_INTRO_SECOND_SECTION_INFO_TITLE_3_EXPLAN : "A 100=hour PBL curriculum\nto develop pracrical skills",
   
 };
 export default ja;

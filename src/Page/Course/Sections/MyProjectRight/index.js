@@ -6,8 +6,8 @@ import { URL } from "../../../../Common/Util/Constant"
 import * as Popup from "../../../../Common/Component/PopUp";
 import GamePopup from "../../../CourseDetail/Components/GamePopup";
 import * as LearnButtons from "../../../../Common/Component/Button/Learn";
-import IconPreview from "../../../../Image/icon-game-preview.svg";
 import "./index.scss";
+
 
 function MyProjectRight (props) {
   return (
@@ -124,12 +124,12 @@ const AfterList = (props) => {
 
                   {
                     item.progress.completed >= item.progress.net ? (
-                      <LearnButtons.LearnAgain completed id={item.id} />
+                      <LearnButtons.LearnAgain className="course-content__learn-btn" completed id={item.id} />
                       ) : (
                         item.progress.completed === 0 ? (
-                          <LearnButtons.LearnNow id={item.id} />
+                          <LearnButtons.LearnNow className="course-content__learn-btn" id={item.id} />
                         ) : (
-                          <LearnButtons.LearnContinue id={item.id} />
+                          <LearnButtons.LearnContinue className="course-content__learn-btn"  id={item.id} />
                         )
                       )
                   }
@@ -140,10 +140,7 @@ const AfterList = (props) => {
 
 
 
-                  <button className="course-content__game-preview" onClick={()=> handleClickGame(item)}>
-                    Game Preview
-                    <img alt="게임 프리뷰 아이콘" src={IconPreview} />
-                  </button>
+                  <button className="course-content__game-preview" onClick={()=> handleClickGame(item)}>Game Preview</button>
                   </div>
                 }
               </div>

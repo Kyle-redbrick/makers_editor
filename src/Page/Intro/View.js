@@ -7,6 +7,11 @@ import JavaSIcon from "../../Image/intro-javascript-icon.png";
 import AstroBoyImg from "../../Image/img_AstroBoy.png";
 import AstroKittyImg from "../../Image/img_AstroKitty.png";
 import SuzuImg from "../../Image/img_Suzu.png";
+import ImgSecondVisual from "../../Image/second-visual-img.png";
+import IconKids from "../../Image/ic-kids.svg";
+import IconMission from "../../Image/ic-mission.svg";
+import IconClock from "../../Image/ic-clock.svg";
+import ThirdSection from "./ThirdSection";
 import "./index.scss";
 
 function View(props) {
@@ -18,187 +23,67 @@ function View(props) {
           <div className="intro-banner" />
         </div>
 
-        <div className="first_section">
-          <div className="first_section first_section--intro">
-            <div className="first_section__header">
-              <FormattedMessage id="ID_INTRO_ABOUT_ASTROBOY_GO_TITLE" />
-            </div>
-            <div className="first_section__body">
-              <FormattedMessage id="ID_INTRO_ABOUT_ASTROBOY_GO" />
-            </div>
-          </div>
-
-
-          <div className="first_section first_section--character">
-            <div className="first_section__header character--header">
-              <FormattedMessage id="ID_INTRO_CHARACTER_TITLE" />
+        <div className="first-section"> 
+          <div className="first-section first-section--intro">
+            <div className="first-section__header">
+              <FormattedMessage id="ID_INTRO_ABOUT_ASTRO_CODING_GO_TITLE" />
             </div>
 
-            <div className="character_cards">
-
-              <div className="character_card">
-                <img src={AstroBoyImg} alt="astroboy_image" />
-                <div className="character_card__contents">
-                  <div className="character_card__name">
-                    <FormattedMessage id="ID_INTRO_CHARACTER_ASTROBOY_TITLE" />
-                  </div>
-                  <div className="character_card__details">
-                    <FormattedMessage id="ID_INTRO_CHARACTER_ASTROBOY" />
-                  </div>
-                </div>
+            <div className="first-section__video-wrap">
+              {/* TODO video  */}
+              <div className="first-section__video">
+                {/* TODO video play button */}
+                <button type="button" className="first-section__play-btn" />
               </div>
-
-              <div className="character_card">
-                <img src={AstroKittyImg} alt="astroboy_image" />
-                <div className="character_card__contents">
-                  <div className="character_card__name">
-                    <FormattedMessage id="ID_INTRO_CHARACTER_ASTROKITTY_TITLE" />
-                  </div>
-                  <div className="character_card__details">
-                    <FormattedMessage id="ID_INTRO_CHARACTER_ASTROKITTY" />
-                  </div>
-                </div>
-              </div>
-
-              <div className="character_card">
-                <img src={SuzuImg} alt="astroboy_image" />
-                <div className="character_card__contents">
-                  <div className="character_card__name">
-                    <FormattedMessage id="ID_INTRO_CHARACTER_SUZU_TITLE" />
-                  </div>
-                  <div className="character_card__details">
-                    <FormattedMessage id="ID_INTRO_CHARACTER_SUZU" />
-                  </div>
-                </div>
-              </div>
-
             </div>
           </div>
         </div>
 
-        <div className="second_section">
-
-          <div className="second_section--astrocoding">
-            {/* video */}
-            <div className="astrocoding_intro__content">
-              <div className="second_section__title">
-                <FormattedMessage id="ID_INTRO_ASTRO_CODING_TITLE" />
-              </div>
-              <div className="second_section__detail">
-                <FormattedMessage id="ID_INTRO_ASTRO_CODING_DETAIL" />
-              </div>
-            </div>
-          </div>
-
-          <div className="second_section--blockcoding">
-            <div className="second_section__title">
-              <FormattedMessage id="ID_INTRO_ASTRO_BLOCK_TITLE" />
-            </div>
-            {/* video */}
-            <div className="astro_coding__contents">
-
-              <div className="astro_coding__content">
-                <div className="astro_coding__header">
-                  <img src={BlockIcon} alt="blockcoding-icon" />
-                  <FormattedMessage id="ID_INTRO_CODING_ELEMENTARY" />
-                </div>
-
-                <div className="astro_coding__detailWrapper">
-                  <div className="astro_coding__detail">
-                    <FormattedMessage id="ID_INTRO_BLOCKCODING_ELEMENTARY" />
-                  </div>
-                  <div className="astro_coding__detailWrapper_right">
-                    <Link to="/lms/course/1" className="astro_coding__button">
-                      <FormattedMessage id="ID_INTRO_CODING_LEARN" />
-                    </Link>
-                  </div>
-                </div>
+        <div className="second-section">
+          <div className="second-section__inner">
+              <div className="second-section__header">
+                <FormattedMessage id="ID_INTRO_SECOND_SECTION_TITLE" />
               </div>
 
-              <div className="astro_coding__content">
-                <div className="astro_coding__header">
-                  <img src={BlockIcon} alt="blockcoding-icon" />
-                  <FormattedMessage id="ID_INTRO_CODING_BASIC" />
-                </div>
+              <img className="second-section__visual-img" alt="비주얼 이미지" src={ImgSecondVisual} />
 
-                <div className="astro_coding__detailWrapper">
-                  <div className="astro_coding__detail">
-                    <FormattedMessage id="ID_INTRO_BLOCKCODING_BASIC" />
-                  </div>
-                  <div className="astro_coding__detailWrapper_right">
-                    <Link to="/lms/course/4" className="astro_coding__button">
-                      <FormattedMessage id="ID_INTRO_CODING_LEARN" />
-                    </Link>
-                  </div>
-                </div>
+              <div className="second-section__mission">
+                <ul className="second-section__mission-info-list">
+                  <li className="second-section__mission-list-item">
+                    <img alt="6 to 12 아이콘" src={IconKids} /> 
+                    <span className="second-section__mission-title">
+                      <FormattedMessage id="ID_INTRO_SECOND_SECTION_INFO_TITLE_1" />
+                    </span>
+                    <span className="second-section__mission-explain">
+                      <FormattedMessage id="ID_INTRO_SECOND_SECTION_INFO_TITLE_1_EXPLAN" />
+                    </span>
+                  </li>
+
+                  <li className="second-section__mission-list-item">
+                    <img alt="36 mission 아이콘" src={IconMission} /> 
+                    <span className="second-section__mission-title">
+                      <FormattedMessage id="ID_INTRO_SECOND_SECTION_INFO_TITLE_2" />
+                    </span>
+                    <span className="second-section__mission-explain">
+                      <FormattedMessage id="ID_INTRO_SECOND_SECTION_INFO_TITLE_2_EXPLAN" />
+                    </span>
+                  </li>
+
+                  <li className="second-section__mission-list-item">
+                    <img alt="100 hours 아이콘" src={IconClock} /> 
+                    <span className="second-section__mission-title">
+                      <FormattedMessage id="ID_INTRO_SECOND_SECTION_INFO_TITLE_3" />
+                    </span>
+                    <span className="second-section__mission-explain">
+                      <FormattedMessage id="ID_INTRO_SECOND_SECTION_INFO_TITLE_3_EXPLAN" />
+                    </span>
+                  </li>
+                </ul>
               </div>
-
-              <div className="astro_coding__content">
-                <div className="astro_coding__header">
-                  <img src={BlockIcon} alt="blockcoding-icon" />
-                  <FormattedMessage id="ID_INTRO_CODING_ADVANCED" />
-                </div>
-
-                <div className="astro_coding__detailWrapper">
-                  <div className="astro_coding__detail">
-                    <FormattedMessage id="ID_INTRO_BLOCKCODING_ADVANCED" />
-                  </div>
-                  <div className="astro_coding__detailWrapper_right">
-                    <Link to="/lms/course/5" className="astro_coding__button">
-                      <FormattedMessage id="ID_INTRO_CODING_LEARN" />
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="second_section--javascript-coding">
-            <div className="second_section__title">
-              <FormattedMessage id="ID_INTRO_ASTRO_JAVASCRIPT_TITLE" />
-            </div>
-            {/* video */}
-            <div className="astro_coding__contents">
-
-              <div className="astro_coding__content">
-                <div className="astro_coding__header">
-                  <img src={JavaSIcon} alt="blockcoding-icon" />
-                  <FormattedMessage id="ID_INTRO_CODING_ADVANCED" />
-                </div>
-
-                <div className="astro_coding__detailWrapper">
-                  <div className="astro_coding__detail">
-                    <FormattedMessage id="ID_INTRO_JAVASCRIPT_ADVANCED" />
-                  </div>
-                  <div className="astro_coding__detailWrapper_right">
-                    <Link to="/lms/course/6" className="astro_coding__button">
-                      <FormattedMessage id="ID_INTRO_CODING_LEARN" />
-                    </Link>
-                  </div>
-                </div>
-              </div>
-
-              <div className="astro_coding__content">
-
-                <div className="astro_coding__header">
-                  <img src={JavaSIcon} alt="blockcoding-icon" />
-                  <FormattedMessage id="ID_INTRO_CODING_MASTERY" />
-                </div>
-
-                <div className="astro_coding__detailWrapper">
-                  <div className="astro_coding__detail">
-                    <FormattedMessage id="ID_INTRO_JAVASCRIPT_MASTERY" />
-                  </div>
-                  <div className="astro_coding__detailWrapper_right">
-                    <Link to="/lms/course/7" className="astro_coding__button">
-                      <FormattedMessage id="ID_INTRO_CODING_LEARN" />
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
+
+        <ThirdSection />
       </div>
     </Layout>
   );

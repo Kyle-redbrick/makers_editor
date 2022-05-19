@@ -270,7 +270,7 @@ const Project = ({ project, ...props }) => {
           <LearnAgain completed id={project.id} />
         ) : (
           project.progress.completed === 0 ? (
-            <LearnNow className="lock" id={project.id} />
+            <LearnNow  id={project.id} />
           ) : (
             <LearnContinue id={project.id} />
           )
