@@ -27,6 +27,8 @@ function ThirdSection () {
       <Swiper 
         direction={"vertical"}
         slidesPerView={1}
+        allowTouchMove={false}
+        loop={true}
         pagination={{
             el : ".swiper-pagination--custom",
             clickable: true,
