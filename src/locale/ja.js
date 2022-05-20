@@ -1314,6 +1314,8 @@ const ja = {
   ID_INTRO_SECOND_SECTION_INFO_TITLE_1_EXPLAN : "A coding class\nfor students aged 6 to 12",
   ID_INTRO_SECOND_SECTION_INFO_TITLE_2_EXPLAN : "36 STEM convergence missions\nmeeting the CSTA standard",
   ID_INTRO_SECOND_SECTION_INFO_TITLE_3_EXPLAN : "A 100=hour PBL curriculum\nto develop pracrical skills",
+
+  ID_INTRO_THIRD_SECTION_TITLE : "Here's how\nthe curriculum works"
   
 };
 export default ja;
