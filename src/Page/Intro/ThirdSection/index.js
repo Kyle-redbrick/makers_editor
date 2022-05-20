@@ -14,12 +14,6 @@ function ThirdSection () {
   SwiperCore.use([Pagination]);
   
   const array = ["<p class='third-section__slide-bullet'> Learn through 36 Mission</p>", "<p className='third-section__slide-bullet'> Build your own games</p>", "<p className='third-section__slide-bullet'>Share with your classmates</p>"]; 
-  /* const pagination = {
-    clickable: true,
-    renderBullet: function (index, className) {
-      return `<span class="${className}"><span class="third-section__bullet-number">${index + 1}</span>${array[index]}</span>`
-    },  
-  }; */
 
   return (
     <div className="third-section">
