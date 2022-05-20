@@ -32,7 +32,6 @@ const BeforeList = (props) => {
   }, [props]);
 
   const onClickItem = (i) => {
-    console.log(i)
     items.map((item,index) => {
       i == index ? item.isClickd = !item.isClickd : item.isClickd = false
     })
@@ -55,7 +54,6 @@ const BeforeList = (props) => {
                 <h3 className="course-content__title">{item.title}</h3>
                 <p className="course-content__more-btn">+ 더보기</p>
               </div>
-              {console.log(item)}
               {
                 item.isClickd &&
                 <div className="course-content__detail-content">
@@ -98,7 +96,6 @@ const AfterList = (props) => {
 
   const handleClickGame = useCallback(
     (item) => {
-      console.log(item)
       Popup.showPopUp(<GamePopup url={item.resources.gameURL} />, {
         dismissButton: false,
         dismissOverlay: true,

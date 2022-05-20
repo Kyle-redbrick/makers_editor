@@ -45,7 +45,6 @@ function BeforeLogin (props) {
           }}
           onSlideChange={(e) => {props.setSlideIndex(e.activeIndex)}}
         >
-          {console.log(props.curriculum)}
           {
             props.curriculum.map( (item,index) => 
               <SwiperSlide key={index}>
@@ -57,7 +56,6 @@ function BeforeLogin (props) {
                 <p className="content-slide__explan">
                   {item.course.intro}
                 </p>
-                {console.log(item.course.freeProjectId)}
                 {
                   item.course.freeProjectId &&
                   // <button type="button" className="content-slide__experience-btn" onClick={()=>{linkToLearn(item.course.freeProjectId)}}>Experience</button>

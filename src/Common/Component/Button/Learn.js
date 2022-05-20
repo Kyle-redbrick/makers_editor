@@ -93,7 +93,6 @@ const Self = styled.button`
 `;
 
 const getRedirectURLOf = myDreamProject => {
-  console.log(1212,myDreamProject)
   try {
     const { type } = myDreamProject.project.lecture.course;
     if (type === "python") {

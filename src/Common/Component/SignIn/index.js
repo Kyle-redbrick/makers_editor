@@ -11,7 +11,11 @@ import ForgotEmail from "../ForgotEmail";
 import logoImg from "../../../Image/wizlab_logo.svg";
 import * as TrackingUtil from "../../Util/TrackingUtil";
 import IconGoogle from "../../../Image/icon-google.svg";
+import { GoogleLogin } from 'react-google-login';
+
 import "./index.scss";
+const CLIENT_ID = '451745919454-6cdslbhef5t0v7d4mse9sq99g2ai8dne.apps.googleusercontent.com';
+
 
 class SignIn extends Component {
   constructor(props) {
@@ -85,6 +89,14 @@ class SignIn extends Component {
     });
   };
 
+
+  responseGoogle = (response) => {
+    
+    console.log(response);
+    // request.loginByGoogle().then((rep)=> rep.json()).
+    // then((json)=> console.log(json))
+  }
+
   render() {
     const { formatMessage } = this.props.intl;
     const { email, password, warning } = this.state;
@@ -149,15 +161,31 @@ class SignIn extends Component {
           <div className="signin_link" onClick={onClickForgotPw}>
             {formatMessage({ id: "ID_SIGNIN_FORGOTPW" })}
           </div> 
-          <div className="signin_link" onClick={onClickSignUp}>
+          {/* <div className="signin_link" onClick={onClickSignUp}>
             {formatMessage({ id: "ID_SIGNIN_SIGNUP" })}
-          </div>
+          </div> */}
         </div>
-
+{/* 
         <button type="button" className="sign-in__width-google-btn">
           <img alt="아이콘 구글" src={IconGoogle} />
           Sign in width Google
-        </button>
+        </button> */}
+
+
+        {console.log(CLIENT_ID)}
+      <GoogleLogin
+          clientId={CLIENT_ID}
+          buttonText="Login"
+          onSuccess={this.responseGoogle}
+          onFailure={this.responseGoogle}
+          cookiePolicy={'single_host_origin'}
+        />,
+
+
+
+
+
+
         <div className="popup_warning">{warning}</div>
       </div>
     );
