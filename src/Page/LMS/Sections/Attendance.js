@@ -21,7 +21,6 @@ const Self = styled.div`
 
 const Attendance = ({ ...props }) => {
   const [value, onChange] = useState(new Date());
-  console.log(value.getDate() + 1)
   const test = "Tue May 04 2022 09:16:24 GMT+0900 (Korean Standard Time"
 
   moment.locale("en-US");
