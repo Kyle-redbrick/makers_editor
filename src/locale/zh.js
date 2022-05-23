@@ -1314,6 +1314,12 @@ const zh = {
   ID_INTRO_SECOND_SECTION_INFO_TITLE_2_EXPLAN : "36 STEM convergence missions\nmeeting the CSTA standard",
   ID_INTRO_SECOND_SECTION_INFO_TITLE_3_EXPLAN : "A 100=hour PBL curriculum\nto develop pracrical skills",
 
-  ID_INTRO_THIRD_SECTION_TITLE : "Here's how\nthe curriculum works"
+  ID_INTRO_THIRD_SECTION_TITLE : "Here's how\nthe curriculum works",
+
+  ID_INTRO_GAME_VIDEO_SECTION_TITLE : "Your very own game\ncreated with Astro",
+
+  ID_INTRO_GAME_VIDEO_SECTION_CHILD_TITLE : "Astro Coding Go에서 완성한 게임을 먼저 플레이해보세요",
+  ID_INTRO_GAME_VIDEO_LINE_BANNER_TITLE_LEFT : "How to play",
+  ID_INTRO_GAME_VIDEO_LINE_BANNER_TITLE_RIGHT : "공격 버튼을 눌러 플라즈마를 파괴하세요!"
 };
 export default zh;

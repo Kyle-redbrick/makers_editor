@@ -1,0 +1,61 @@
+.game-video {
+  padding: 124px 0 66px;
+}
+
+.game-video__title {
+  display:block;
+  font-size:40px;
+  font-weight:800;
+  color:#fff;
+  line-height:56px;
+  text-align: center;
+  margin-bottom:16px;
+  white-space: pre-wrap;
+}
+
+.game-video__child-title {
+  font-size:20px;
+  color:#aeaeae;
+  line-height: 36px;
+  font-weight:500;
+  display:block;
+  text-align:center;
+}
+
+.game-video__outline {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 16px solid linear-gradient();
+
+}
+
+.game-video__how-to-play {
+  border-radius: 100px;
+  box-shadow: 0 0  8px rgba(0,0,0,0.12);
+  background-color: rgba(0,0,0,0.55);
+  margin: 0 20px;
+  position: absolute;
+  top:20px;
+  width:100%;
+  padding: 16px  22px;
+  display:flex;
+  align-items: center;
+}
+
+.game-video__how-to-play-left {
+  font-size:13px;
+  line-height:15px;
+  color:#aeaeae;
+  font-weight:700;
+  display: block;
+  margin-right:14px;
+}
+
+.game-video__how-to-play-right {
+  font-size:16px;
+  color:#fff;
+  font-weight:500;
+  line-height:18px;
+  display:block;
+}
