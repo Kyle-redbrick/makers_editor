@@ -329,7 +329,7 @@ class Header extends Component {
                       id: `ID_HEADER_LOGIN`
                     })}
                   </div>
-                  <div
+                  {/* <div
                     className="header_menu"
                     id="header_menu_signUp"
                     onClick={onClickSignUp}
@@ -337,7 +337,7 @@ class Header extends Component {
                     {intl.formatMessage({
                       id: `ID_HEADER_SIGNUP`
                     })}
-                  </div>
+                  </div> */}
                 </Fragment>
               )}
             </div>
