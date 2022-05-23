@@ -1316,8 +1316,16 @@ const zh = {
 
   ID_INTRO_THIRD_SECTION_TITLE : "Here's how\nthe curriculum works",
 
+
+  ID_INTRO_GAME_VIDEO_SECTION_TITLE : "Your very own game\ncreated with Astro",
+
+  ID_INTRO_GAME_VIDEO_SECTION_CHILD_TITLE : "Astro Coding Go에서 완성한 게임을 먼저 플레이해보세요",
+  ID_INTRO_GAME_VIDEO_LINE_BANNER_TITLE_LEFT : "How to play",
+  ID_INTRO_GAME_VIDEO_LINE_BANNER_TITLE_RIGHT : "공격 버튼을 눌러 플라즈마를 파괴하세요!",
+
   ID_INTRO_LINE_BANNER_TITLE : "수업 내용을 미리 체험해보세요!",
   ID_INTRO_LINE_BANNER_CHILD_TITLE : "Fun and learning all at once",
   ID_INTRO_LINE_BANNER_GO_TO_FREE_COURSE_LINK : "Go to Free Trial Course"
+
 };
 export default zh;
