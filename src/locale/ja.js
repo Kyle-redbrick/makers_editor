@@ -1315,7 +1315,11 @@ const ja = {
   ID_INTRO_SECOND_SECTION_INFO_TITLE_2_EXPLAN : "36 STEM convergence missions\nmeeting the CSTA standard",
   ID_INTRO_SECOND_SECTION_INFO_TITLE_3_EXPLAN : "A 100=hour PBL curriculum\nto develop pracrical skills",
 
-  ID_INTRO_THIRD_SECTION_TITLE : "Here's how\nthe curriculum works"
+  ID_INTRO_THIRD_SECTION_TITLE : "Here's how\nthe curriculum works",
+
+  ID_INTRO_LINE_BANNER_TITLE : "수업 내용을 미리 체험해보세요!",
+  ID_INTRO_LINE_BANNER_CHILD_TITLE : "Fun and learning all at once",
+  ID_INTRO_LINE_BANNER_GO_TO_FREE_COURSE_LINK : "Go to Free Trial Course"
   
 };
 export default ja;

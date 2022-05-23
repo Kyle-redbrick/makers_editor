@@ -12,6 +12,7 @@ import IconKids from "../../Image/ic-kids.svg";
 import IconMission from "../../Image/ic-mission.svg";
 import IconClock from "../../Image/ic-clock.svg";
 import ThirdSection from "./ThirdSection";
+import LineBanner from "./LineBanner";
 import "./index.scss";
 
 function View(props) {
@@ -83,7 +84,11 @@ function View(props) {
           </div>
         </div>
 
+        {/* Vertical slide 배너 영역 */}
         <ThirdSection />
+
+        {/* 띠배너 영역 */}
+        <LineBanner />
       </div>
     </Layout>
   );
