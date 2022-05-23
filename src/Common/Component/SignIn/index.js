@@ -14,8 +14,7 @@ import IconGoogle from "../../../Image/icon-google.svg";
 import { GoogleLogin } from 'react-google-login';
 
 import "./index.scss";
-const CLIENT_ID = '451745919454-6cdslbhef5t0v7d4mse9sq99g2ai8dne.apps.googleusercontent.com';
-
+const CLIENT_ID = '451745919454-7ga3u82oe852pukhe4esubr6crb67rmq.apps.googleusercontent.com';
 
 class SignIn extends Component {
   constructor(props) {
@@ -62,9 +61,8 @@ class SignIn extends Component {
             this.props.updateUserInfo(json.body.user);
 
             console.log(111111111,json.body.user)
-
+            window.location.reload()
             this.props.dismiss();
-            // window.location.reload();
           }
         });
     });

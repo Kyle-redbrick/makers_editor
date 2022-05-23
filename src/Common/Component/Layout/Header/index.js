@@ -44,6 +44,7 @@ class Header extends Component {
   componentDidUpdate = prevProps => {
     if (prevProps.userinfo.email !== this.props.userinfo.email) {
       this.getBadgeCount();
+      window.location.reload()
     }
   };
 

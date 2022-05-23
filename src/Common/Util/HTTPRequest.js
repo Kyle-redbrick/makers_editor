@@ -1580,9 +1580,9 @@ export const getLearnCourses = formData => {
 }
 
 export const inviteSignup = (params, authorityKey)=> {
-  return fetchRequest(URL.API_SERVER + `/account/register/${authorityKey.authorityKey}`, "POST", params);
+  return fetchRequest(URL.API_SERVER + `account/register/${authorityKey.authorityKey}`, "POST", params);
 }
 
 export const loginByGoogle = (params)=> {
-  return fetchRequest(URL.API_SERVER + `/account/loginByGoogle`, "POST", params);
+  return fetchRequest(URL.API_SERVER + `account/loginByGoogle`, "POST",  params);
 }

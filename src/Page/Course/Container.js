@@ -18,8 +18,9 @@ class Container extends Component {
 
     if(activateToken){
       accountActivateCheckout(activateToken).then(res => res.json()).then(data => {
+        console.log(data)
         if (data.success) {
-          showPopUp(<SignUp activateToken ={activateToken} />, {
+          showPopUp(<SignUp activateToken={activateToken}  userEmail={data.body.payload.userEmail}/>, {
             darkmode: true,
             scrollable: true,
             mobileFullscreen: true

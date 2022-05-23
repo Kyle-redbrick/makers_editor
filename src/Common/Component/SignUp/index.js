@@ -7,7 +7,8 @@ import { loadReCaptcha } from "react-recaptcha-google";
 import { ReCaptcha } from "react-recaptcha-google";
 
 import sha256 from "../../Util/SHA256";
-import {inviteSignup} from "../../Util/HTTPRequest";
+import * as request from "../../../Common/Util/HTTPRequest";
+
 import * as TrackingUtil from "../../Util/TrackingUtil";
 import { DEFAULT_PROFILE_IMAGES } from "../../Util/Constant";
 import * as userInfoActions from "../../Store/Reducer/UserInfo";
@@ -33,105 +34,107 @@ class SignUp extends Component {
     super(props);
 
     this.state = {
+      email:"",
+      name:"",
+      fristName:"",
+      nickName:"",
+      password:"",
+
       warning_email: "",
-      warning_password: "",
       warning_name: "",
-      warning_phone: "",
-      warning_agreement: "",
-      warning_recommendCode: "",
-      warning_recaptchaToken: false,
+      warning_first: "",
+      warning_nickName: "",
+      warning_password: ""
     };
   }
 
   componentDidMount = () => {
-
+    this.setState({email:this.props.userEmail})
   };
 
   checkEmailFormat = () => {
     const regex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return regex.test(this.state.email);
   };
-  checkPasswordFormat = () => {
-    return this.state.password.length >= 6;
-  };
-  checkPasswordIdentical = () => {
-    return this.state.password === this.state.password_re;
-  };
-  checkNameFormat = () => {
+    checkNameFormat = () => {
     return this.state.name.length >= 2;
   };
-  checkPhoneFormat = () => {
-    return this.state.phone.length >= 8;
+  checkFirstNameFormat = () => {
+    return this.state.name.length >= 2;
   };
-  checkSmsCodeFormat = () => {
-    return this.state.smsCode.length >= 5;
+  checkNickNameFormat = () => {
+    return this.state.name.length >= 2;
+  };
+  checkPasswordFormat = () => {
+    return this.state.password.length >= 6;
   };
 
   onChangeInput = e => {
     const { formatMessage } = this.props.intl;
     const { id, value } = e.target;
-    console.log(value)
-    // this.setState({ [id]: value }, () => {
-    //   switch (id) {
-    //     case "email":
-    //       if (this.checkEmailFormat() || value === "") {
-    //         this.setState({ warning_email: "" });
-    //       } else {
-    //         this.setState({
-    //           warning_email: formatMessage({
-    //             id: "ID_SIGNUP_WARNING_EMAIL_FORMAT"
-    //           })
-    //         });
-    //       }
-    //       break;
-    //     case "name":
-    //       if (this.checkNameFormat() || value === "") {
-    //         this.setState({ warning_name: "" });
-    //       } else {
-    //         this.setState({
-    //           warning_name: formatMessage({
-    //             id: "ID_SIGNUP_WARNING_NAME_FORMAT"
-    //           })
-    //         });
-    //       }
-    //       break;
-    //     case "password":
-    //       if (this.checkPasswordFormat()) {
-    //         if (
-    //           this.checkPasswordIdentical() ||
-    //           this.state.password_re === ""
-    //         ) {
-    //           this.setState({ warning_password: "" });
-    //         } else {
-    //           this.setState({
-    //             warning_password: formatMessage({
-    //               id: "ID_SIGNUP_WARNING_PW_RE"
-    //             })
-    //           });
-    //         }
-    //       } else if (value === "") {
-    //         this.setState({ warning_password: "" });
-    //       } else {
-    //         this.setState({
-    //           warning_password: formatMessage({
-    //             id: "ID_SIGNUP_WARNING_PW_FORMAT"
-    //           })
-    //         });
-    //       }
-    //       break;
-    //     case "firstName":
-    //       this.setState({ warning_phone: "" });
-    //       break;
-    //     case "nikName":
-    //       this.setState({
-    //         warning_recommendCode: "",
-    //         recommendCodeConfirmed: false
-    //       });
-    //       break;
-    //     default:
-    //       break;
-    //   }
-    // });
+    console.log(id)
+    this.setState({ [id]: value }, () => {
+      console.log(id)
+      switch (id) {
+        case "email":
+          if (this.checkEmailFormat() || value === "") {
+            this.setState({ warning_email: "" ,email: value});
+          } else {
+            this.setState({
+              warning_email: formatMessage({
+                id: "ID_SIGNUP_WARNING_EMAIL_FORMAT"
+              })
+            });
+          }
+          break;
+        case "name":
+          if (this.checkNameFormat() || value === "") {
+            this.setState({ warning_name: "" ,name: value});
+          } else {
+            this.setState({
+              warning_name: formatMessage({
+                id: "ID_SIGNUP_WARNING_NAME_FORMAT"
+              })
+            });
+          }
+          break;
+        case "fristName":
+          if (this.checkNameFormat() || value === "") {
+            this.setState({ warning_fristName: "" ,fristName: value});
+          } else {
+            this.setState({
+              warning_fristName: formatMessage({
+                id: "ID_SIGNUP_WARNING_NAME_FORMAT"
+              })
+            });
+          }
+          break;
+        case "nickName":
+          if (this.checkNickNameFormat() || value === "") {
+            this.setState({ warning_nickName: "" ,nickName: value});
+          } else {
+            this.setState({
+              warning_nickName: formatMessage({
+                id: "ID_SIGNUP_WARNING_NAME_FORMAT"
+              })
+            });
+          }
+          break;
+        case "password":
+          if (this.checkPasswordFormat()) {
+            this.setState({ warning_password: "" ,password: value});
+          } else {
+            this.setState({
+              warning_password: formatMessage({
+                id: "ID_SIGNUP_WARNING_PW_FORMAT"
+              })
+            });
+          }
+          break;
+        default:
+          break;
+      }
+    });
   };
 
   // onClickSignUp = e => {
@@ -297,39 +300,58 @@ class SignUp extends Component {
 
 
   onClickSignUp = e => {
-    inviteSignup({
-      "name": "tutorName", "nickName": "Nick Name",
-      "phone": "010-0000-0000",
-      "password": "123121213131"
-    },{"authorityKey":this.props.activateToken}).
+
+    const params = {
+      email:this.state.email,
+      name:this.state.name,
+      fristName:this.state.fristName,
+      nickName:this.state.nickName,
+      password: sha256(this.state.password),
+    }
+
+    console.log(params)
+
+    request.inviteSignup({...params},{"authorityKey":this.props.activateToken}).
     then(res => res.json()).
-    then(res => console.log(res))
+    then(res => {
+      if(res.success) {
+        request.loginByToken({token:res.body.token})
+        .then(res => res.json)
+        .then(json => {
+          localStorage.setItem("wizToken",  json.token);
+          this.props.updateUserInfo(json.user);
+        })
+      }
+    })
   }
 
-  setRecaptchaRef = recaptcha => {
-    this.recaptcha = recaptcha;
-  };
+  // setRecaptchaRef = recaptcha => {
+  //   this.recaptcha = recaptcha;
+  // };
 
-  onLoadRecaptcha = () => {
-    if (this.recaptcha) {
-      this.recaptcha.reset();
-    }
-  };
+  // onLoadRecaptcha = () => {
+  //   if (this.recaptcha) {
+  //     this.recaptcha.reset();
+  //   }
+  // };
 
   render() {
     const { formatMessage } = this.props.intl;
     const {
       email,
-      password,
-      password_re,
       name,
-      phone,
+      fristName,
+      nickName,
+      password,
+      
       warning_email,
-      warning_password,
       warning_name,
-      warning_phone,
-      warning_agreement,
-      agreement,
+      warning_fristName,
+      warning_nickName,
+      warning_password,
+
+      agreement
+
     } = this.state;
     const {
       onChangeInput,
@@ -410,16 +432,16 @@ class SignUp extends Component {
             </div>
             <div className="signup__input__right">
               <input
-                className={`popup_input ${warning_name !== "" ? "popup_input-warning" : ""
+                className={`popup_input ${warning_fristName !== "" ? "popup_input-warning" : ""
                   }`}
-                id="firstName"
+                id="fristName"
                 placeholder={formatMessage({ id: "ID_SIGNUP_FIRST_NAME_PLACEHOLDER" })}
-                value={name}
+                value={fristName}
                 onChange={onChangeInput}
                 type="text"
                 autoComplete="off"
               />
-              <div className="popup_warning">{warning_name}</div>
+              <div className="popup_warning">{warning_fristName}</div>
             </div>
           </div>
 
@@ -432,16 +454,16 @@ class SignUp extends Component {
             </div>
             <div className="signup__input__right">
               <input
-                className={`popup_input ${warning_name !== "" ? "popup_input-warning" : ""
+                className={`popup_input ${warning_nickName !== "" ? "popup_input-warning" : ""
                   }`}
-                id="nikName"
+                id="nickName"
                 placeholder={formatMessage({ id: "ID_SIGNUP_NAME_PLACEHOLDER" })}
-                value={name}
+                value={nickName}
                 onChange={onChangeInput}
                 type="text"
                 autoComplete="off"
               />
-              <div className="popup_warning">{warning_name}</div>
+              <div className="popup_warning">{warning_nickName}</div>
             </div>
           </div>
 
@@ -462,7 +484,7 @@ class SignUp extends Component {
                 onChange={onChangeInput}
                 autoComplete="off"
               />
-              <div className="popup_warning">{warning_name}</div>
+              <div className="popup_warning">{warning_password}</div>
             </div>
           </div>
 
