@@ -1,16 +1,21 @@
 import React, { useEffect, useState } from "react";
+import { connect } from "react-redux";
 import styled from "@emotion/styled";
 import moment from "moment";
 import "moment/locale/ko";
 import "moment/locale/en-gb";
 import "moment/locale/ja";
+import { injectIntl } from "react-intl";
 import { Calendar, momentLocalizer } from "react-big-calendar";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import { COLOR } from "../Constants";
 import nextArrow from "../../../Image/btn_right_arrow.svg"
 import prevArrow from "../../../Image/btn_left_arrow.svg"
+import * as request from "../../../Common/Util/HTTPRequest";
 
 import "./Calendar.scss";
+import { RequestFileError } from "babylonjs";
+// import { request } from "https";
 
 const Self = styled.div`
   padding-left:30px;
@@ -22,6 +27,16 @@ const Self = styled.div`
 const Attendance = ({ ...props }) => {
   const [value, onChange] = useState(new Date());
   const test = "Tue May 04 2022 09:16:24 GMT+0900 (Korean Standard Time"
+  const userId = props.userinfo.id;
+
+  useEffect(() => {
+    console.log(2222, props.userinfo)
+    request.getAttendance(userId)
+      .then(res => res.json())
+      .then(json => {
+        console.log(333, json);
+      })
+  }, []);
 
   moment.locale("en-US");
   const localizer = momentLocalizer(moment);
@@ -74,4 +89,8 @@ const Toolbar = ({ date, onNavigate }) => {
   );
 }
 
-export default Attendance;
+export default connect(
+  state => ({
+    userinfo: state.userinfo
+  })
+)(injectIntl(Attendance));

@@ -1567,6 +1567,10 @@ export const accountActivateCheckout = authorityKey => {
   return fetchRequest(URL.API_SERVER + `/account/activate/checkout/${authorityKey}`, "GET");
 }
 
+export const getAttendance = (userId) => {
+  return fetchRequest(URL.API_SERVER + `/account/attendance/${userId}`, "GET");
+}
+
 export const getLearn = formData => {
   return fetchRequest(URL.API_SERVER + `learn/box`, "GET", formData).then(
     res => res.json()
