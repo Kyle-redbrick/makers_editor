@@ -4,6 +4,8 @@ import styled from "@emotion/styled";
 import { URL } from "../../../Common/Util/Constant";
 import Button, { LinkButton as OrigLinkButton } from "./Button";
 import ProjectComponent from "./Project";
+import { showPopUp } from "../../../Common/Component/PopUp"
+import CertificateForm from "../PopUp/CertificateForm";
 
 import { COLOR } from "../Constants";
 import { IMAGE } from "../Constants/Images";
@@ -182,6 +184,22 @@ const Projects = styled.div`
   }
 `;
 
+const CertButton = styled.button`
+  height:40px;
+  padding-right: 14px;
+  padding-left: 14px;
+  font-size: 16px;
+  color:#FFA944;
+  background-color: #383838;
+  border: 1px solid #FFA944;
+  border-radius:10px;
+
+  @media screen and (max-width: 1169px){
+    width: calc(80vw);
+    margin-left: 0;
+  }
+`;
+
 const Lecture = memo(({ course, ...props }) => {
   const [show, setShow] = useState(false);
 
@@ -191,6 +209,24 @@ const Lecture = memo(({ course, ...props }) => {
     },
     [show]
   );
+
+  const onclickCertBtn = (course) => {
+    showPopUp(
+      <CertificateForm
+        course={course}
+      //updateCourses={updateCourses}
+        // sdg={formData.sdg}
+        // certificate={formData.certificate}
+        // onClickSubmit={() => {
+        //   this.alertCertificate(formData);
+        // }}
+      />,
+      {
+        dismissButton: false,
+        defaultPadding: false
+      }
+    )
+  }
 
   return (
     <Self>
@@ -207,6 +243,14 @@ const Lecture = memo(({ course, ...props }) => {
         </TitleWrap>
 
         <ButtonWrap>
+          {
+            course.course.certificate &&
+            <CertButton onClick={()=> onclickCertBtn(course.course)}>Get certification</CertButton>
+          }
+        </ButtonWrap>
+
+        <ButtonWrap>
+
           <LinkButton to={`/course/${course.course.lectureId}`}>
             <FormattedMessage id="ID_LMS_GO" />
           </LinkButton>

@@ -36,7 +36,7 @@ function CertificateForm(props) {
         course={props.course}
         name={nameInput.current.value}
         class={classInput.current.value}
-        updateCourses={props.updateCourses}
+        // updateCourses={props.updateCourses}
       />, {
       dismissButton: true,
       defaultPadding: false
