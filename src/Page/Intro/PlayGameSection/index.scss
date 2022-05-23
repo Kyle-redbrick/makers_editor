@@ -24,10 +24,17 @@
 
 .game-video__outline {
   position: relative;
+  background:linear-gradient(to right, #43F1CE, #2F69FF) ;
+  max-width: 970px;
+  margin:60px auto 0;
   border-radius: 16px;
-  overflow: hidden;
-  border: 16px solid linear-gradient();
+  padding: 14px; 
 
+  iframe {
+    border-radius:16px;
+    display: block;
+    height:546px;
+  }
 }
 
 .game-video__how-to-play {
@@ -36,8 +43,8 @@
   background-color: rgba(0,0,0,0.55);
   margin: 0 20px;
   position: absolute;
-  top:20px;
-  width:100%;
+  top:34px;
+  width:93%;
   padding: 16px  22px;
   display:flex;
   align-items: center;
