@@ -14,6 +14,7 @@ import IconClock from "../../Image/ic-clock.svg";
 import ThirdSection from "./ThirdSection";
 /* import LineBanner from "./LineBanner"; */
 import PlayGameSection from "./PlayGameSection";
+import LineBanner from "./LineBanner";
 import "./index.scss";
 
 function View(props) {
@@ -93,6 +94,7 @@ function View(props) {
 
         {/* 게임 영상 재생 영역 */}
         <PlayGameSection />
+        <LineBanner />
       </div>
     </Layout>
   );
