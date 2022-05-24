@@ -87,13 +87,13 @@ class Header extends Component {
 
   checkLogin = (e) => {
     const isLoggedIn = localStorage.getItem("wizToken");
-    if(!isLoggedIn) {
+    if (!isLoggedIn) {
       e.preventDefault();
       showPopUp(<LoginAlertPopup />, {
         defaultPadding: false,
         dismissButton: false,
       });
-  
+
     }
   }
 
@@ -187,9 +187,7 @@ class Header extends Component {
     } = this;
     let links = [
       "intro",
-      "builder",
       // "tutorial",
-      "game",
       // "social",
       // "ranking",
       "event",
@@ -199,6 +197,9 @@ class Header extends Component {
       // "myapk",
       // "news"
     ];
+    if (userinfo.id) {
+      links.push("game", "builder");
+    }
     if (userinfo.organization) {
       if (userinfo.organization.toLowerCase() === "ssafy") {
         links.push("ssafy");
@@ -428,7 +429,7 @@ class Header extends Component {
                       );
                     }
                     return (
-                      
+
                       <Link
                         key={index}
                         to={`/${link}`}
