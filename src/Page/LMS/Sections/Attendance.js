@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, Children } from "react";
 import { connect } from "react-redux";
 import styled from "@emotion/styled";
 import moment from "moment";
@@ -32,7 +32,6 @@ const Attendance = ({ ...props }) => {
   const [attendanceData, setAttendanceData] = useState([]);
 
   useEffect(() => {
-    console.log(2222, props.userinfo)
     request.getAttendance(userId)
       .then(res => res.json())
       .then(json => {
@@ -41,19 +40,26 @@ const Attendance = ({ ...props }) => {
       })
   }, []);
 
-  console.log(444, attendanceData);
-
-  const eventStyle = () => {
-
-  }
 
   moment.locale("en-US");
   const localizer = momentLocalizer(moment);
   localizer.formats.dateFormat = 'D';
   const events = [];
 
+  const eventStyle = () => {
+    var style = {
+      backgroundImage: attendImg,
+      backgroundColor: "red",
+      height: "100%"
+    };
+    return {
+      style: style
+    }
+  }
 
 
+
+  const CURRENT_DATE = moment().toDate();
 
   return (
     <Self {...props}>
@@ -72,8 +78,10 @@ const Attendance = ({ ...props }) => {
           startAccessor="start"
           endAccessor="end"
           style={{ minHeight: 711 }}
+          eventPropGetter={eventStyle}
           components={{
-            toolbar: Toolbar
+            toolbar: Toolbar,
+
           }}
         />
       </div>
