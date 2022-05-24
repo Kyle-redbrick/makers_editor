@@ -16,8 +16,6 @@ import PlayGameSection from "./PlayGameSection";
 import LineBanner from "./LineBanner";
 import TextImg from "../../Image/fade-in-text.png";
 import TextImg2 from "../../Image/fade-in-text-2.png";
-import 'animate.css';
-
 import "./index.scss";
 
 function View(props) {
@@ -101,8 +99,7 @@ function View(props) {
 
         {/* 텍스트 이미지 애니메이션 효과 */}
         <div className="intro-page__fade-in-text">
-          {/* animate__animated animate__fadeInUp */}
-          <img  alt=""  data-aos="fade-up" data-aos-duration="1000"  className=" intro-page__fade-in-img" src={TextImg} />
+          <img  alt="why use astro coding go?"  data-aos="fade-up" data-aos-duration="700"  className="intro-page__fade-in-img" src={TextImg} />
         </div>
       </div>
     </Layout>
