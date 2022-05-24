@@ -14,13 +14,16 @@ footer {
   //   color: inherit;
 }
 
+html {
+  overflow-x: hidden;
+  overflow: overlay;
+}
+
 html,
 body {
   width: 100vw;
   height: 100vh;
   position: relative;
-  overflow: overlay;
-  overflow-x: hidden;
   z-index: 10;
 
   &::-webkit-scrollbar {

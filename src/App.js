@@ -1,4 +1,4 @@
-import React, { lazy, Suspense, Component, Fragment } from "react";
+import React, { lazy, Suspense, Component, Fragment, useEffect } from "react";
 import {
   withRouter,
   BrowserRouter as Router,
@@ -13,6 +13,8 @@ import { PAGE } from "./Page/LMS/Constants";
 import Home from "./Page/Course";
 import WizAppDetail from "./Common/Component/WizAppDetail";
 import { SubscribeManager } from "./Common/Util/Subscribe";
+import AOS from "aos";
+import "aos/dist/aos.css"; 
 
 // python test
 const PythonPage = lazy(() => import("./Page/Python"));
@@ -66,6 +68,11 @@ const SplashView = () => {
 };
 
 const App = () => {
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
+
   const lang = localStorage.getItem("lang");
   return (
     <Router>

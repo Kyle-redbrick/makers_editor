@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, createElement as $  }  from "react";
 import { Link } from "react-router-dom";
 import Layout from "../../Common/Component/Layout";
 import { FormattedMessage } from "react-intl";
@@ -14,10 +14,14 @@ import IconClock from "../../Image/ic-clock.svg";
 import ThirdSection from "./ThirdSection";
 import PlayGameSection from "./PlayGameSection";
 import LineBanner from "./LineBanner";
+import TextImg from "../../Image/fade-in-text.png";
+import TextImg2 from "../../Image/fade-in-text-2.png";
+import 'animate.css';
+
 import "./index.scss";
 
 function View(props) {
-
+  
   return (
     <Layout>
       <div className="Page--Intro">
@@ -38,50 +42,51 @@ function View(props) {
                 <button type="button" className="first-section__play-btn" />
               </div>
             </div>
+
           </div>
         </div>
 
         <div className="second-section">
           <div className="second-section__inner">
-              <div className="second-section__header">
-                <FormattedMessage id="ID_INTRO_SECOND_SECTION_TITLE" />
-              </div>
+            <div className="second-section__header">
+              <FormattedMessage id="ID_INTRO_SECOND_SECTION_TITLE" />
+            </div>
 
-              <img className="second-section__visual-img" alt="비주얼 이미지" src={ImgSecondVisual} />
+            <img className="second-section__visual-img" alt="비주얼 이미지" src={ImgSecondVisual} />
 
-              <div className="second-section__mission">
-                <ul className="second-section__mission-info-list">
-                  <li className="second-section__mission-list-item">
-                    <img alt="6 to 12 아이콘" src={IconKids} /> 
-                    <span className="second-section__mission-title">
-                      <FormattedMessage id="ID_INTRO_SECOND_SECTION_INFO_TITLE_1" />
-                    </span>
-                    <span className="second-section__mission-explain">
-                      <FormattedMessage id="ID_INTRO_SECOND_SECTION_INFO_TITLE_1_EXPLAN" />
-                    </span>
-                  </li>
+            <div className="second-section__mission">
+              <ul className="second-section__mission-info-list">
+                <li className="second-section__mission-list-item">
+                  <img alt="6 to 12 아이콘" src={IconKids} /> 
+                  <span className="second-section__mission-title">
+                    <FormattedMessage id="ID_INTRO_SECOND_SECTION_INFO_TITLE_1" />
+                  </span>
+                  <span className="second-section__mission-explain">
+                    <FormattedMessage id="ID_INTRO_SECOND_SECTION_INFO_TITLE_1_EXPLAN" />
+                  </span>
+                </li>
 
-                  <li className="second-section__mission-list-item">
-                    <img alt="36 mission 아이콘" src={IconMission} /> 
-                    <span className="second-section__mission-title">
-                      <FormattedMessage id="ID_INTRO_SECOND_SECTION_INFO_TITLE_2" />
-                    </span>
-                    <span className="second-section__mission-explain">
-                      <FormattedMessage id="ID_INTRO_SECOND_SECTION_INFO_TITLE_2_EXPLAN" />
-                    </span>
-                  </li>
+                <li className="second-section__mission-list-item">
+                  <img alt="36 mission 아이콘" src={IconMission} /> 
+                  <span className="second-section__mission-title">
+                    <FormattedMessage id="ID_INTRO_SECOND_SECTION_INFO_TITLE_2" />
+                  </span>
+                  <span className="second-section__mission-explain">
+                    <FormattedMessage id="ID_INTRO_SECOND_SECTION_INFO_TITLE_2_EXPLAN" />
+                  </span>
+                </li>
 
-                  <li className="second-section__mission-list-item">
-                    <img alt="100 hours 아이콘" src={IconClock} /> 
-                    <span className="second-section__mission-title">
-                      <FormattedMessage id="ID_INTRO_SECOND_SECTION_INFO_TITLE_3" />
-                    </span>
-                    <span className="second-section__mission-explain">
-                      <FormattedMessage id="ID_INTRO_SECOND_SECTION_INFO_TITLE_3_EXPLAN" />
-                    </span>
-                  </li>
-                </ul>
-              </div>
+                <li className="second-section__mission-list-item">
+                  <img alt="100 hours 아이콘" src={IconClock} /> 
+                  <span className="second-section__mission-title">
+                    <FormattedMessage id="ID_INTRO_SECOND_SECTION_INFO_TITLE_3" />
+                  </span>
+                  <span className="second-section__mission-explain">
+                    <FormattedMessage id="ID_INTRO_SECOND_SECTION_INFO_TITLE_3_EXPLAN" />
+                  </span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
 
@@ -93,7 +98,12 @@ function View(props) {
 
         {/* 게임 영상 재생 영역 */}
         <PlayGameSection />
-        
+
+        {/* 텍스트 이미지 애니메이션 효과 */}
+        <div className="intro-page__fade-in-text">
+          {/* animate__animated animate__fadeInUp */}
+          <img  alt=""  data-aos="fade-up" data-aos-duration="1000"  className=" intro-page__fade-in-img" src={TextImg} />
+        </div>
       </div>
     </Layout>
   );
