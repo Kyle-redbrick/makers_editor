@@ -187,8 +187,7 @@ class Header extends Component {
     } = this;
     let links = [
       "about",
-      "builder",
-      // "tutorial",
+      "learn",
       "game",
       // "social",
       // "ranking",
