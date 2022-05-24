@@ -198,7 +198,7 @@ class Header extends Component {
       // "news"
     ];
     if (userinfo.id) {
-      links.push("game", "builder");
+      links.push("builder", "game");
     }
     if (userinfo.organization) {
       if (userinfo.organization.toLowerCase() === "ssafy") {
