@@ -1,6 +1,7 @@
 const ko = {
   ID_TITLE: "위즈랩",
   ID_HEADER_LANG: "한국어",
+  ID_HEADER_LINK_ABOUT: "About",
   ID_HEADER_LINK_INTRO: "Intro",
   ID_HEADER_LINK_BUILDER: "Build",
   ID_HEADER_LINK_TUTORIAL: "Learn",

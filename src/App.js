@@ -20,7 +20,8 @@ const PythonPage = lazy(() => import("./Page/Python"));
 const Builder = lazy(() => import("./Page/Builder"));
 const Builder3D = lazy(() => import("./Page/Builder3D"));
 const Tutorial = lazy(() => import("./Page/Tutorial"));
-const Intro = lazy(() => import("./Page/Intro"));
+const Home = lazy(() => import("./Page/Intro"));
+const About = lazy(() => import("./Page/About"));
 const Game = lazy(() => import("./Page/Game"));
 // const GameMore = lazy(() => import("./Page/GameViewMore"));
 const EditorRecommand = lazy(() => import("./Page/EditorRecommand"));
@@ -79,7 +80,7 @@ const App = () => {
           <Route
             exact
             path="/"
-            render={() => <HandleQueryString Component={Intro} />}
+            render={() => <HandleQueryString Component={Home} />}
           />
 
           <Route exact path="/tutorial" component={Tutorial} />
@@ -123,11 +124,11 @@ const App = () => {
             render={() => <HandleQueryString Component={EditorRecommand} />}
           />
           {/* About */}
-          {/* <Route
+          <Route
             exact
-            path="/intro"
-            render={() => <HandleQueryString Component={Intro} />}
-          /> */}
+            path="/about"
+            render={() => <HandleQueryString Component={About} />}
+          />
           {/* intro
           <Route
             exact

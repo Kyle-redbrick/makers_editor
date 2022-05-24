@@ -1,6 +1,7 @@
 const zh = {
   ID_TITLE: "WizLab",
   ID_HEADER_LANG: "中文（简体）",
+  ID_HEADER_LINK_ABOUT: "About",
   ID_HEADER_LINK_INTRO: "Intro",
   ID_HEADER_LINK_BUILDER: "Build",
   ID_HEADER_LINK_TUTORIAL: "Learn",
