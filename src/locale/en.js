@@ -1328,7 +1328,11 @@ const en = {
   ID_INTRO_GAME_VIDEO_LINE_BANNER_TITLE_RIGHT: "공격 버튼을 눌러 플라즈마를 파괴하세요!",
   ID_INTRO_LINE_BANNER_TITLE: "수업 내용을 미리 체험해보세요!",
   ID_INTRO_LINE_BANNER_CHILD_TITLE: "Fun and learning all at once",
-  ID_INTRO_LINE_BANNER_GO_TO_FREE_COURSE_LINK: "Go to Free Trial Course"
+  ID_INTRO_LINE_BANNER_GO_TO_FREE_COURSE_LINK: "Go to Free Trial Course",
+
+  ID_INTRO_INTRODUCE_AREA_CONTENT_TITLE : "Systematic LMS",
+  ID_INTRO_INTRODUCE_AREA_CONTENT_TITLE_2 : "Project-Based Practical Classes",
+  ID_INTRO_INTRODUCE_AREA_CONTENT_TITLE_3 : "The Patented OOBC Technology",
 
 
 };
