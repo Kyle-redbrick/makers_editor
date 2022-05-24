@@ -1586,3 +1586,11 @@ export const inviteSignup = (params, authorityKey)=> {
 export const loginByGoogle = (params)=> {
   return fetchRequest(URL.API_SERVER + `account/loginByGoogle`, "POST",  params);
 }
+
+export const modifyPassword = (params)=> {
+  return fetchRequest(URL.API_SERVER + `account/modify/password`, "POST",  params);
+}
+
+export const modifyName = (params)=> {
+  return fetchRequest(URL.API_SERVER + `account/modify/name`, "POST",  params);
+}

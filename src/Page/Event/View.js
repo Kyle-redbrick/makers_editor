@@ -6,6 +6,12 @@ import { FormattedMessage } from "react-intl";
 import EyesOffIcon from "../../Image/icon-eyes-off.svg";
 import EyesOnIcon from "../../Image/icon-eyes-on.svg";
 import EditPopup from "./Popup/EditPopup";
+
+import PopUp, { showPopUp } from "../../Common/Component/PopUp";
+import Request  from "../../Common/Util/HTTPRequest";
+
+
+
 import "./index.scss";
 
 export default function View(props) {
@@ -19,6 +25,29 @@ export default function View(props) {
         break
       case "changePwd":
         setSelectView("changePwd")
+        break
+    }
+  }
+
+  const changeUserInfo = (id)=> {
+    switch(id) {
+      case "account":
+
+
+        showPopUp(
+          <EditPopup
+            title={ "err"}
+          />,
+          {
+            darkmode: true,
+            dismissButton: false,
+            dismissOverlay: true,
+          }
+        );
+
+        break
+      case "changePwd":
+
         break
     }
   }
@@ -53,18 +82,31 @@ export default function View(props) {
 
 const ChangeName = (props) => {
 
+
+  const onClickBtn = (id)=>{
+    console.log(id)
+    switch(id) {
+      case "name":
+
+        break
+      case "nickName":
+
+        break
+    }
+  }
+
   return (
     <>
       <div className="account__content-item account__content-item--account">
         <span className="account__content-category account__content-category--account">이름</span>
         <input type="text" className="account__content-input" autoComplete="off" placeholder="이름을 입력하세요." />
-        <button type="button" className="account__edit-btn">수정</button>
+        <button type="button" className="account__edit-btn" onClick={()=> onClickBtn("name")}>수정</button>
       </div>
 
       <div className="account__content-item account__content-item--account">
         <span className="account__content-category account__content-category--account">닉네임</span>
         <input type="text" className="account__content-input" autoComplete="off" placeholder="닉네임을 입력하세요." />
-        <button type="button" className="account__edit-btn">수정</button>
+        <button type="button" className="account__edit-btn" onClick={()=> onClickBtn("nickName")}>수정</button>
       </div>
     </>
   )
