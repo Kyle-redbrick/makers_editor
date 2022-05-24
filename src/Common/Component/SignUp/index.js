@@ -44,7 +44,9 @@ class SignUp extends Component {
       warning_name: "",
       warning_first: "",
       warning_nickName: "",
-      warning_password: ""
+      warning_password: "",
+
+      errInfo: ""
     };
   }
 
@@ -318,11 +320,23 @@ class SignUp extends Component {
         request.loginByToken({token:res.body.token})
         .then(res => res.json)
         .then(json => {
-          localStorage.setItem("wizToken",  json.token);
-          this.props.updateUserInfo(json.user);
+          if(json.token){
+            localStorage.setItem("wizToken",  json.token);
+            this.props.updateUserInfo(json.user);
+            this.props.dismiss()
+          }else {
+            this.setState({errInfo : json})
+          }
+          
         })
+      }else {
+        this.setState({errInfo : res.reason})
       }
     })
+  }
+
+  onClickDismiss = ()=> {
+    this.props.dismiss()
   }
 
   // setRecaptchaRef = recaptcha => {
@@ -357,7 +371,9 @@ class SignUp extends Component {
       onChangeInput,
       onClickAgree,
       onClickSignUp,
-      onClickSignIn
+      onClickSignIn,
+
+      onClickDismiss,
     } = this;
 
     return agreement ? (
@@ -398,6 +414,8 @@ class SignUp extends Component {
                 onChange={onChangeInput}
                 type="text"
                 autoComplete="off"
+
+                disabled
               />
               <div className="popup_warning">{warning_email}</div>
             </div>
@@ -488,9 +506,11 @@ class SignUp extends Component {
             </div>
           </div>
 
+          <div className="popup_warning">{this.state.errInfo}</div>
+
           <div className="popup__btn-box">
             {/* TODO 취소 버튼 */}
-            <button type="button" className="popup_button popup-button--close">
+            <button type="button" className="popup_button popup-button--close" onClick={onClickDismiss}>
               {formatMessage({ id: "ID_COMMENT_CANCEL_BUTTON" })}
             </button>
 
