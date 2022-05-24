@@ -215,7 +215,7 @@ class Header extends Component {
           <section className="header_pc">
             <div className="header_logo">
               <Link
-                to="/"
+                to="/intro"
                 onClick={() => {
                   window.scrollTo(0, 0);
                 }}
