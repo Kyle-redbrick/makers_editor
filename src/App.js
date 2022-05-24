@@ -10,17 +10,17 @@ import { ToastContainer } from "react-toastify";
 
 import { PAGE } from "./Page/LMS/Constants";
 
-import Home from "./Page/Course";
+import Learn from "./Page/Course";
+import Intro from "./Page/Intro";
 import WizAppDetail from "./Common/Component/WizAppDetail";
 import { SubscribeManager } from "./Common/Util/Subscribe";
 
 // python test
 const PythonPage = lazy(() => import("./Page/Python"));
-
 const Builder = lazy(() => import("./Page/Builder"));
 const Builder3D = lazy(() => import("./Page/Builder3D"));
 const Tutorial = lazy(() => import("./Page/Tutorial"));
-const Intro = lazy(() => import("./Page/Intro"));
+const About = lazy(() => import("./Page/About"));
 const Game = lazy(() => import("./Page/Game"));
 // const GameMore = lazy(() => import("./Page/GameViewMore"));
 const EditorRecommand = lazy(() => import("./Page/EditorRecommand"));
@@ -66,16 +66,26 @@ const SplashView = () => {
 };
 
 const App = () => {
+  const token = localStorage.getItem("wizToken");
   const lang = localStorage.getItem("lang");
   return (
     <Router>
       <Suspense fallback={<SplashView />}>
         <div className={`${lang}`} style={{ backgroundColor: "#282c36" }}>
-          <Route
-            exact
-            path="/"
-            render={() => <HandleQueryString Component={Home} />}
-          />
+          {token ?
+            <Route
+              exact
+              path="/"
+              render={() => <HandleQueryString Component={Learn} />}
+            />
+            :
+            <Route
+              exact
+              path="/"
+              render={() => <HandleQueryString Component={Intro} />}
+            />
+          }
+
           <Route exact path="/tutorial" component={Tutorial} />
           <Route
             exact
@@ -116,11 +126,23 @@ const App = () => {
             path="/editorRecommend"
             render={() => <HandleQueryString Component={EditorRecommand} />}
           />
+          {/* About */}
+          <Route
+            exact
+            path="/about"
+            render={() => <HandleQueryString Component={About} />}
+          />
           {/* intro */}
           <Route
             exact
             path="/intro"
             render={() => <HandleQueryString Component={Intro} />}
+          />
+          {/* Learn */}
+          <Route
+            exact
+            path="/learn"
+            render={() => <HandleQueryString Component={Learn} />}
           />
           {/* game */}
           <Route
@@ -204,11 +226,11 @@ const App = () => {
             render={() => <HandleQueryString Component={OCP} />}
           />
           {/* codingparty season 2  */}
-          <Route
+          {/* <Route
             exact
             path="/codingparty"
             render={() => <HandleQueryString Component={Home} />}
-          />
+          /> */}
           <Route
             exact
             path="/codingparty/:gameKey"
@@ -240,7 +262,7 @@ const App = () => {
           <Route
             exact
             path="/lms/attendance"
-            render={() => <LMS path={PAGE.ATTENDANCE}/>}
+            render={() => <LMS path={PAGE.ATTENDANCE} />}
           />
           <Route
             exact
