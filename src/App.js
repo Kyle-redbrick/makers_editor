@@ -10,7 +10,7 @@ import { ToastContainer } from "react-toastify";
 
 import { PAGE } from "./Page/LMS/Constants";
 
-import Home from "./Page/Course";
+import Learn from "./Page/Course";
 import WizAppDetail from "./Common/Component/WizAppDetail";
 import { SubscribeManager } from "./Common/Util/Subscribe";
 
@@ -71,11 +71,17 @@ const App = () => {
     <Router>
       <Suspense fallback={<SplashView />}>
         <div className={`${lang}`} style={{ backgroundColor: "#282c36" }}>
-          <Route
+          {/* <Route
             exact
             path="/"
             render={() => <HandleQueryString Component={Home} />}
+          /> */}
+          <Route
+            exact
+            path="/"
+            render={() => <HandleQueryString Component={Intro} />}
           />
+
           <Route exact path="/tutorial" component={Tutorial} />
           <Route
             exact
@@ -116,11 +122,23 @@ const App = () => {
             path="/editorRecommend"
             render={() => <HandleQueryString Component={EditorRecommand} />}
           />
-          {/* intro */}
+          {/* About */}
+          {/* <Route
+            exact
+            path="/intro"
+            render={() => <HandleQueryString Component={Intro} />}
+          /> */}
+          {/* intro
           <Route
             exact
             path="/intro"
             render={() => <HandleQueryString Component={Intro} />}
+          /> */}
+          {/* Learn */}
+          <Route
+            exact
+            path="/learn"
+            render={() => <HandleQueryString Component={Game} />}
           />
           {/* game */}
           <Route
@@ -240,7 +258,7 @@ const App = () => {
           <Route
             exact
             path="/lms/attendance"
-            render={() => <LMS path={PAGE.ATTENDANCE}/>}
+            render={() => <LMS path={PAGE.ATTENDANCE} />}
           />
           <Route
             exact
