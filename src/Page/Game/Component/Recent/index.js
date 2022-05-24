@@ -17,12 +17,14 @@ const GameBox = (props) => {
         {game.project && <img className="typeIcon" src={badgeIcon(game.project.type, true)} alt="badgeIcon" />}
       </div>
       <div className="GameBox__recent__info">
-        <div className="GameBox__recent__info__top">
+        <div className="GameBox__recent__info__content-container">
+          <img className="GameBox__recent__info__user-icon" src={game.user.icon} alt="userIcon" />
+          <div className="GameBox__recent__info__content">
           <p className="GameBox__recent__info__title">{game.name}</p>
           <p className="GameBox__recent__info__maker">
-            <img className="Game__User__Icon" src={game.user.icon} alt="userIcon" />
             {game.user.name}
           </p>
+          </div>
         </div>
       </div>
     </Link>
