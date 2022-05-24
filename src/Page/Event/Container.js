@@ -6,11 +6,10 @@ import View from "./View";
 function Container(props) {
 
   return (
-    <View/>
+    <View {...props}/>
   );
 }
-export default Container
-// export default connect(
-//   state => ({
-//     email: state.userinfo.email
-//   }), {})(Container);
+export default connect(
+  state => ({
+    userinfo: state.userinfo
+  }), {})(Container);

@@ -29,35 +29,12 @@ export default function View(props) {
     }
   }
 
-  const changeUserInfo = (id)=> {
-    switch(id) {
-      case "account":
-
-
-        showPopUp(
-          <EditPopup
-            title={ "err"}
-          />,
-          {
-            darkmode: true,
-            dismissButton: false,
-            dismissOverlay: true,
-          }
-        );
-
-        break
-      case "changePwd":
-
-        break
-    }
-  }
 
   return (
     <Layout>
       {/* <EditPopup /> */}
       <div className="account">
         <h3 className="account__title">계정 설정</h3>
-        
         <div className="account__tab-box">
           <ul className="account__tab-list">
             <li className="account__tab-item" onClick={()=>onClickBtn("account")}>
@@ -71,7 +48,7 @@ export default function View(props) {
 
           <div className="account__content-wrap">
             <form action="">
-              {selectView == "account" ? <ChangeName onClickBtn={onClickBtn}/> : <ChangePassword onClickBtn={onClickBtn}/>}
+              {selectView == "account" ? <ChangeName {...props} onClickBtn={onClickBtn}/> : <ChangePassword {...props} onClickBtn={onClickBtn}/>}
             </form>
           </div>
         </div>
@@ -85,27 +62,29 @@ const ChangeName = (props) => {
 
   const onClickBtn = (id)=>{
     console.log(id)
-    switch(id) {
-      case "name":
-
-        break
-      case "nickName":
-
-        break
-    }
+    showPopUp(
+      <EditPopup
+        id={id}
+      />,
+      {
+        darkmode: true,
+        dismissButton: false,
+        dismissOverlay: true,
+      }
+    );
   }
 
   return (
     <>
       <div className="account__content-item account__content-item--account">
         <span className="account__content-category account__content-category--account">이름</span>
-        <input type="text" className="account__content-input" autoComplete="off" placeholder="이름을 입력하세요." />
+        <input type="text" className="account__content-input" autoComplete="off" placeholder="이름을 입력하세요." value={props.userinfo.name} disabled />
         <button type="button" className="account__edit-btn" onClick={()=> onClickBtn("name")}>수정</button>
       </div>
 
       <div className="account__content-item account__content-item--account">
         <span className="account__content-category account__content-category--account">닉네임</span>
-        <input type="text" className="account__content-input" autoComplete="off" placeholder="닉네임을 입력하세요." />
+        <input type="text" className="account__content-input" autoComplete="off" placeholder="닉네임을 입력하세요." value={props.userinfo.nickName} disabled />
         <button type="button" className="account__edit-btn" onClick={()=> onClickBtn("nickName")}>수정</button>
       </div>
     </>

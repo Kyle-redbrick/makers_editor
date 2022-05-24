@@ -2,12 +2,10 @@ import React from "react";
 import CloseIcon from "../../../../Image/icon-close.svg"
 import "./index.scss";
 
-function EditPopup () {
+function EditPopup (props) {
   return (
     <div className="edit-popup">
-      <form action="">
-        {true ? <EditName /> : <EditNickname /> }
-      </form>
+        {props.id == "name" ? <EditName /> : <EditNickname /> }
     </div>
   )
 }
