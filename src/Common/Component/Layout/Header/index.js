@@ -188,7 +188,6 @@ class Header extends Component {
     let links = [
       "about",
       "learn",
-      "game",
       // "social",
       // "ranking",
       "event",
@@ -198,6 +197,9 @@ class Header extends Component {
       // "myapk",
       // "news"
     ];
+    if (userinfo.id) {
+      links.push("builder", "game");
+    }
     if (userinfo.organization) {
       if (userinfo.organization.toLowerCase() === "ssafy") {
         links.push("ssafy");
@@ -427,7 +429,6 @@ class Header extends Component {
                       );
                     }
                     return (
-
                       <Link
                         key={index}
                         to={`/${link}`}
