@@ -87,13 +87,13 @@ class Header extends Component {
 
   checkLogin = (e) => {
     const isLoggedIn = localStorage.getItem("wizToken");
-    if(!isLoggedIn) {
+    if (!isLoggedIn) {
       e.preventDefault();
       showPopUp(<LoginAlertPopup />, {
         defaultPadding: false,
         dismissButton: false,
       });
-  
+
     }
   }
 
@@ -186,10 +186,8 @@ class Header extends Component {
       handleOnKeyUp
     } = this;
     let links = [
-      "intro",
-      "builder",
-      // "tutorial",
-      "game",
+      "about",
+      "learn",
       // "social",
       // "ranking",
       "event",
@@ -199,6 +197,9 @@ class Header extends Component {
       // "myapk",
       // "news"
     ];
+    if (userinfo.id) {
+      links.push("builder", "game");
+    }
     if (userinfo.organization) {
       if (userinfo.organization.toLowerCase() === "ssafy") {
         links.push("ssafy");
@@ -216,7 +217,7 @@ class Header extends Component {
           <section className="header_pc">
             <div className="header_logo">
               <Link
-                to="/"
+                to="/intro"
                 onClick={() => {
                   window.scrollTo(0, 0);
                 }}
@@ -428,7 +429,6 @@ class Header extends Component {
                       );
                     }
                     return (
-                      
                       <Link
                         key={index}
                         to={`/${link}`}

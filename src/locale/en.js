@@ -1,8 +1,10 @@
 const en = {
   ID_TITLE: "WizLab",
   ID_HEADER_LANG: "English",
+  ID_HEADER_LINK_ABOUT: "About",
   ID_HEADER_LINK_INTRO: "Intro",
   ID_HEADER_LINK_BUILDER: "Build",
+  ID_HEADER_LINK_LEARN: "Learn",
   ID_HEADER_LINK_TUTORIAL: "Learn",
   ID_HEADER_LINK_GAME: "Play",
   ID_HEADER_LINK_SOCIAL: "Social",
@@ -1301,32 +1303,32 @@ const en = {
   ID_CERT_ADVANCED_JS_DESC: "is awarded with this certificate for successfully fulfilling requirements of Advanced JavaScript, a software education course offered by iGroup, and completing 8 projects utilizing Event, Sequence, Physical Engine, Random Number,  Varibale, Conditional Statement, and Operator.",
   ID_CERT_MASTERY_JS_DESC: "is awarded with this certificate for successfully fulfilling requirements of JavaScript Mastery, a software education course offered by iGroup, and completing 4 projects utilizing Random Number, Variable, Conditional Statement, Operator, List, Index,  Loop, and Function.",
 
-  ID_SIGNUP_CREATE_TITLE : "계정 생성하기",
-  ID_SIGNUP_NAME : "이름",
-  ID_SIGNUP_FIRST_NAME : "성",
+  ID_SIGNUP_CREATE_TITLE: "계정 생성하기",
+  ID_SIGNUP_NAME: "이름",
+  ID_SIGNUP_FIRST_NAME: "성",
   ID_SIGNUP_FIRST_NAME_PLACEHOLDER: "성을 입력해주세요",
 
-  ID_INTRO_ABOUT_ASTRO_CODING_GO_TITLE : "About Astro Coding Go!",
-  ID_INTRO_SECOND_SECTION_TITLE : "A coding class\nwidth next-level missions",
-  ID_INTRO_SECOND_SECTION_INFO_TITLE_1 : "6 to 12",
-  ID_INTRO_SECOND_SECTION_INFO_TITLE_2 : "36 missions",
-  ID_INTRO_SECOND_SECTION_INFO_TITLE_3 : "100 hours",
+  ID_INTRO_ABOUT_ASTRO_CODING_GO_TITLE: "About Astro Coding Go!",
+  ID_INTRO_SECOND_SECTION_TITLE: "A coding class\nwidth next-level missions",
+  ID_INTRO_SECOND_SECTION_INFO_TITLE_1: "6 to 12",
+  ID_INTRO_SECOND_SECTION_INFO_TITLE_2: "36 missions",
+  ID_INTRO_SECOND_SECTION_INFO_TITLE_3: "100 hours",
 
-  ID_INTRO_SECOND_SECTION_INFO_TITLE_1_EXPLAN : "A coding class\nfor students aged 6 to 12",
-  ID_INTRO_SECOND_SECTION_INFO_TITLE_2_EXPLAN : "36 STEM convergence missions\nmeeting the CSTA standard",
-  ID_INTRO_SECOND_SECTION_INFO_TITLE_3_EXPLAN : "A 100=hour PBL curriculum\nto develop pracrical skills",
+  ID_INTRO_SECOND_SECTION_INFO_TITLE_1_EXPLAN: "A coding class\nfor students aged 6 to 12",
+  ID_INTRO_SECOND_SECTION_INFO_TITLE_2_EXPLAN: "36 STEM convergence missions\nmeeting the CSTA standard",
+  ID_INTRO_SECOND_SECTION_INFO_TITLE_3_EXPLAN: "A 100=hour PBL curriculum\nto develop pracrical skills",
 
-  ID_INTRO_THIRD_SECTION_TITLE : "Here's how\nthe curriculum works",
+  ID_INTRO_THIRD_SECTION_TITLE: "Here's how\nthe curriculum works",
 
-  ID_INTRO_GAME_VIDEO_SECTION_TITLE : "Your very own game\ncreated with Astro",
+  ID_INTRO_GAME_VIDEO_SECTION_TITLE: "Your very own game\ncreated with Astro",
 
-  ID_INTRO_GAME_VIDEO_SECTION_CHILD_TITLE : "Astro Coding Go에서 완성한 게임을 먼저 플레이해보세요",
+  ID_INTRO_GAME_VIDEO_SECTION_CHILD_TITLE: "Astro Coding Go에서 완성한 게임을 먼저 플레이해보세요",
 
-  ID_INTRO_GAME_VIDEO_LINE_BANNER_TITLE_LEFT : "How to play",
-  ID_INTRO_GAME_VIDEO_LINE_BANNER_TITLE_RIGHT : "공격 버튼을 눌러 플라즈마를 파괴하세요!",
-  ID_INTRO_LINE_BANNER_TITLE : "수업 내용을 미리 체험해보세요!",
-  ID_INTRO_LINE_BANNER_CHILD_TITLE : "Fun and learning all at once",
-  ID_INTRO_LINE_BANNER_GO_TO_FREE_COURSE_LINK : "Go to Free Trial Course"
+  ID_INTRO_GAME_VIDEO_LINE_BANNER_TITLE_LEFT: "How to play",
+  ID_INTRO_GAME_VIDEO_LINE_BANNER_TITLE_RIGHT: "공격 버튼을 눌러 플라즈마를 파괴하세요!",
+  ID_INTRO_LINE_BANNER_TITLE: "수업 내용을 미리 체험해보세요!",
+  ID_INTRO_LINE_BANNER_CHILD_TITLE: "Fun and learning all at once",
+  ID_INTRO_LINE_BANNER_GO_TO_FREE_COURSE_LINK: "Go to Free Trial Course"
 
 
 };
