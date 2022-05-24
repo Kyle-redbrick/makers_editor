@@ -204,6 +204,8 @@
 .course-content__progress-bar {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  width: 170px;
 }
 
 .course-content__progress-bar-thumb {
@@ -226,7 +228,6 @@
 }
 
 .course-content__progress-length {
-  padding-left: 22px;
   font-size: 13px;
   line-height: 13px;
   font-weight:500;
