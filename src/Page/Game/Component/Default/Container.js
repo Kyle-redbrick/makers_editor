@@ -3,6 +3,7 @@ import { withRouter } from "react-router-dom";
 import QueryString from "query-string";
 import * as request from "../../../../Common/Util/HTTPRequest";
 import View from "./View";
+import { ConsoleView } from "react-device-detect";
 
 class Container extends Component {
   constructor(props) {
@@ -30,6 +31,7 @@ class Container extends Component {
 
   componentDidMount() {
     this.scrollToTop();
+    // this.getRecentProjects();
     this.initAndLoad();
     window.addEventListener("scroll", this.onWindowScroll);
   }
@@ -41,6 +43,19 @@ class Container extends Component {
       this.loadMore();
     })
   }
+
+  // getRecentProjects() {
+  //   request
+  //     .getRecentlyPlayed()
+  //     .then(res => res.json())
+  //     .then(json => {
+  //       this.setState({
+  //         recentGames: json.body.list
+  //       })
+  //       console.log(122221, json);
+  //     })
+  // }
+
   loadMore(count = 12) {
     if (this.isLoading) {
       return;
@@ -115,16 +130,6 @@ class Container extends Component {
     }
   }
 
-  // onClickTab = tab => {
-  //   const query = { ...this.query };
-  //   if (tab === "all") {
-  //     delete query.tab;
-  //   } else {
-  //     query.tab = tab
-  //   }
-  //   this.props.history.replace("?" + QueryString.stringify(query));
-  // }
-
   onWindowScroll = e => {
     if (window.scrollY + window.innerHeight > document.body.offsetHeight * 0.66) {
       if (this.state.total > this.state.games.length) {
@@ -139,9 +144,8 @@ class Container extends Component {
   render() {
     return (
       <View
-        // type={this.type}
-        // tab={this.tab}
         total={this.state.total}
+        // recentGames={this.state.recentGames}
         allGames={this.state.allGames}
         games={this.state.games}
         placeholderGames={this.state.placeholderGames}

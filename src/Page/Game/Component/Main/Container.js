@@ -7,15 +7,21 @@ class Container extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      editorsProjects:[],
-      monthlyProjects:[],
-      weeklyProjects:[],
-      newProjects:[]
+      allProjects: [],
+      editorsProjects: [],
+      monthlyProjects: [],
+      weeklyProjects: [],
+      newProjects: []
     };
     this.limit = 20;
   }
 
   async componentDidMount() {
+    const allProjects = await request.getAllProjects().then(res => res.json());
+
+    console.log(111, allProjects.body.list);
+    this.setState({ allProjects: allProjects.body.list })
+
     const editorsProjects = await this.getProjects("recommend");
     const monthlyProjects = await this.getProjects("monthly");
     const weeklyProjects = await this.getProjects("weekly");
@@ -30,13 +36,13 @@ class Container extends Component {
   }
 
   getProjects = async type => {
-    try{
+    try {
       let res, json;
-      switch(type){
+      switch (type) {
         case "recommend":
           res = await request.getProjectsByType({ type: type, limit: this.limit, offset: 0 })
           json = await res.json();
-          json = json.map(item=>item.project);
+          json = json.map(item => item.project);
           break;
         case "news":
           res = await request.getProjectsByType({ type: type, limit: this.limit, offset: 0 })
@@ -64,7 +70,7 @@ class Container extends Component {
           break;
       }
       return json;
-    }catch(e){
+    } catch (e) {
       console.error(e);
       return [];
     }
@@ -73,6 +79,7 @@ class Container extends Component {
   render() {
     return (
       <View
+        allProjects={this.state.allProjects}
         editorsProjects={this.state.editorsProjects}
         monthlyProjects={this.state.monthlyProjects}
         weeklyProjects={this.state.weeklyProjects}

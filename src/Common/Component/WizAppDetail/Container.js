@@ -12,6 +12,7 @@ import PopUp, { showPopUp } from "../../../Common/Component/PopUp";
 import SignIn from "../../../Common/Component/SignIn";
 import DreamReport from "../DreamReport";
 import "./index.scss";
+import { requirePropFactory } from "@material-ui/core";
 
 class Container extends Component {
   constructor(props) {
@@ -36,6 +37,7 @@ class Container extends Component {
       this.handleClose();
       return;
     }
+    this.play();
     this.setProject();
     window.addEventListener("resize", this.handleRandomProjectCount);
     //뒷 페이지 스크롤 막기
@@ -53,6 +55,19 @@ class Container extends Component {
       this.setProject();
     }
   }
+  play = () =>  {
+    const params = {
+      pId: this.props.pId
+    }
+    request
+      .playProject(params)
+      .then(res => res.json())
+      .then(json => {
+        console.log(888, json);
+      })
+  }
+
+
   setProject = pId => {
     const email = this.props.userinfo.email;
     pId = pId ? pId : this.props.pId;

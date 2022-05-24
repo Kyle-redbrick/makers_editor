@@ -19,49 +19,50 @@ const TAB = {
 function View(props) {
   return (
     <div className={`GameList GameList-${props.type}`}>
-      {props.type !== "search" && <BackButton />}
+      {/* {props.type !== "search" && <BackButton />} */}
       <p className="GameMore__Title">
         {props.intl.formatMessage(
-          { id: "ID_GAME_LIST_TITLE_" + props.type.toUpperCase() },
+          { id: "ID_GAME_LIST_TITLE_ALL" },
           { count: props.total }
         )}
       </p>
       {props.total > 0
-        ? <GameList {...props} />
-        : props.type === "search" && <SearchPlaceHolder {...props} />
+        && <GameList {...props} />
       }
+      {/* //   : props.type === "search" && <SearchPlaceHolder {...props} />
+      // } */}
     </div>
   );
 }
 export default injectIntl(View);
 
-const BackButton = props => {
-  return (
-    <div className="backBtn">
-      <Link to="/game">
-        <img src={backIcon} alt="back icon"/>
-      </Link>
-    </div>
-  );
-}
+// const BackButton = props => {
+//   return (
+//     <div className="backBtn">
+//       <Link to="/game">
+//         <img src={backIcon} alt="back icon" />
+//       </Link>
+//     </div>
+//   );
+// }
 
-const Tabs = props => {
-  return (
-    <ul className="CourseTabList">
-      {Object.keys(TAB).map(key => (
-        <li
-          key={TAB[key]}
-          className={TAB[key] === props.tab ? "active" : ""}
-          onClick={() => {
-            props.onClickTab(TAB[key]);
-          }}
-        >
-          {props.intl.formatMessage({ id: "ID_GAME_LIST_TAB_" + key })}
-        </li>
-      ))}
-    </ul>
-  );
-}
+// const Tabs = props => {
+//   return (
+//     <ul className="CourseTabList">
+//       {Object.keys(TAB).map(key => (
+//         <li
+//           key={TAB[key]}
+//           className={TAB[key] === props.tab ? "active" : ""}
+//           onClick={() => {
+//             props.onClickTab(TAB[key]);
+//           }}
+//         >
+//           {props.intl.formatMessage({ id: "ID_GAME_LIST_TAB_" + key })}
+//         </li>
+//       ))}
+//     </ul>
+//   );
+// }
 
 const SearchPlaceHolder = props => {
   return (
@@ -83,9 +84,10 @@ const SearchPlaceHolder = props => {
 }
 
 const GameList = props => {
+  console.log(1111, props.allGames[0])
   return (
     <div className="GameMore__Game__Wrapper">
-      {props.games.map(game => <GameBox key={game.pId} game={game} />)}
+      {props.allGames[0].map(game => <GameBox key={game.pId} game={game} />)}
     </div>
   );
 }
@@ -100,11 +102,11 @@ const GameBox = (props) => {
       </div>
       <div className="Game__Info">
         <div className="Game__Info__Top">
-        <p className="Game__Box__Title">{game.name}</p>
-        <p className="Game__Box__Maker">
-          <img className="Game__User__Icon" src={game.user.icon} alt="userIcon" />
-          {game.user.name}
-        </p>
+          <p className="Game__Box__Title">{game.name}</p>
+          <p className="Game__Box__Maker">
+            <img className="Game__User__Icon" src={game.user.icon} alt="userIcon" />
+            {game.user.name}
+          </p>
         </div>
         <div className="Game__Etc">
           <span className="like">{game.likeCount || 0}</span>
@@ -117,7 +119,7 @@ const GameBox = (props) => {
 };
 
 const badgeIcon = (type, shadow) => {
-  switch(type) {
+  switch (type) {
     case "js":
       return shadow ? badgeJsShadow : badgeJs;
     case "wizlabOOBC":
