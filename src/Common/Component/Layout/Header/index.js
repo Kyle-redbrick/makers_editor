@@ -87,13 +87,13 @@ class Header extends Component {
 
   checkLogin = (e) => {
     const isLoggedIn = localStorage.getItem("wizToken");
-    if (!isLoggedIn) {
+    if(!isLoggedIn) {
       e.preventDefault();
       showPopUp(<LoginAlertPopup />, {
         defaultPadding: false,
         dismissButton: false,
       });
-
+  
     }
   }
 
@@ -429,7 +429,6 @@ class Header extends Component {
                       );
                     }
                     return (
-
                       <Link
                         key={index}
                         to={`/${link}`}
