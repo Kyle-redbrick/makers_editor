@@ -1,4 +1,4 @@
-import React, { useEffect, createElement as $  }  from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import Layout from "../../Common/Component/Layout";
 import { FormattedMessage } from "react-intl";
