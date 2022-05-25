@@ -36,7 +36,6 @@ const Attendance = ({ ...props }) => {
       .then(res => res.json())
       .then(json => {
         setAttendanceData(json.body);
-        console.log(333, json);
       })
   }, []);
 
@@ -48,18 +47,16 @@ const Attendance = ({ ...props }) => {
 
   const eventStyle = () => {
     var style = {
-      backgroundImage: attendImg,
-      backgroundColor: "red",
+      position: "absolute",
+      top: "0",
+      paddingTop: "10px",
+      width: "116px",
       height: "100%"
     };
     return {
       style: style
     }
   }
-
-
-
-  const CURRENT_DATE = moment().toDate();
 
   return (
     <Self {...props}>
