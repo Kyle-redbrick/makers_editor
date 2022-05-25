@@ -7,10 +7,10 @@ class Container extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      editorsProjects: [],
-      monthlyProjects: [],
-      weeklyProjects: [],
-      newProjects: []
+      editorsProjects:[],
+      monthlyProjects:[],
+      weeklyProjects:[],
+      newProjects:[]
     };
     this.limit = 20;
   }
@@ -64,7 +64,7 @@ class Container extends Component {
           break;
       }
       return json;
-    } catch(e){
+    }catch(e){
       console.error(e);
       return [];
     }

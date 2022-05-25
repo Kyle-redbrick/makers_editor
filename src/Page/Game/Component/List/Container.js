@@ -36,7 +36,7 @@ class Container extends Component {
     window.removeEventListener("scroll", this.onWindowScroll);
   }
   initAndLoad() {
-    this.setState({ total: 0, games: [], allGames: [] }, () => {
+    this.setState({ total: 0, games: [] }, () => {
       this.loadMore();
     })
   }
@@ -73,7 +73,7 @@ class Container extends Component {
         this.isLoading = false;
         this.onWindowScroll();
       });
-}
+  }
   loadPlaceholderGames() {
     request
       .getProjectsByType({ type: "recommend", limit: 12, offset: 0 })
@@ -103,7 +103,7 @@ class Container extends Component {
 
   onClickTab = tab => {
     const query = { ...this.query };
-    if (tab === "all") {
+    if(tab === "all") {
       delete query.tab;
     } else {
       query.tab = tab

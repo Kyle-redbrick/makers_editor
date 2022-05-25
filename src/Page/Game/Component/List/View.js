@@ -39,7 +39,7 @@ const BackButton = props => {
   return (
     <div className="backBtn">
       <Link to="/game">
-        <img src={backIcon} alt="back icon" />
+        <img src={backIcon} alt="back icon"/>
       </Link>
     </div>
   );
@@ -100,11 +100,11 @@ const GameBox = (props) => {
       </div>
       <div className="Game__Info">
         <div className="Game__Info__Top">
-          <p className="Game__Box__Title">{game.name}</p>
-          <p className="Game__Box__Maker">
-            <img className="Game__User__Icon" src={game.user.icon} alt="userIcon" />
-            {game.user.name}
-          </p>
+        <p className="Game__Box__Title">{game.name}</p>
+        <p className="Game__Box__Maker">
+          <img className="Game__User__Icon" src={game.user.icon} alt="userIcon" />
+          {game.user.name}
+        </p>
         </div>
         <div className="Game__Etc">
           <span className="like">{game.likeCount || 0}</span>
