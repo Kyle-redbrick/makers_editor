@@ -17,6 +17,7 @@ import LineBanner from "./LineBanner";
 import TextImg from "../../Image/fade-in-text.png";
 import TextImg2 from "../../Image/fade-in-text-2.png";
 import IntroduceSection from "./IntroduceSection";
+import ViewMore from "./ViewMore";
 import "./index.scss";
 
 function View(props) {
@@ -103,12 +104,17 @@ function View(props) {
           <img  alt="why use astro coding go?"  data-aos="fade-up" data-aos-duration="700"  className="intro-page__fade-in-img" src={TextImg} />
         </div>
         
+        {/* introduce 영역 */}
         <IntroduceSection />
+        {/* //introduce 영역 */}
 
         {/* 텍스트 이미지 애니메이션 효과 */}
         <div className="intro-page__fade-in-text">
           <img  alt="A self-Learning Platform For Instructors"  data-aos="fade-up" data-aos-duration="700"  className="intro-page__fade-in-img" src={TextImg2} />
         </div>
+
+        {/* view more section */}
+        <ViewMore />
       </div>
     </Layout>
   );
