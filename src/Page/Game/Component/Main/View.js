@@ -101,42 +101,18 @@ function View(props) {
 
   return (
     <div className="GameMain">
+      {/* 에디터 추천 게임 */}
       <div className="GamesSection">
-        <div className="GamesTitle"><FormattedMessage id="ID_GAME_NEWS_GAME_TITLE" /></div>
-        <Link to="/game/news" className="GameAllButton"><FormattedMessage id="ID_GAME_VIEW_ALL" /></Link>
-        <Slider {...newProjectsSetting}>
-          {newProjects.map((item, i) => {
-            return <GameItem key={item.pId} type="Large" {...item} />;
+        <div className="GamesTitle"><FormattedMessage id="ID_GAME_EDITOR_TITLE" /></div>
+        <Slider {...editorsProjectsSettings}>
+          {editorsProjects.map((item, i) => {
+            return <EditorsGameItem key={item.pId} {...item} />;
           })}
         </Slider>
       </div>
-
-      {/* 전체 게임 */}
-      <div className="GamesSection">
-        <div className="GamesTitle"><FormattedMessage id="ID_GAME_NEWS_GAME_TITLE" /></div>
-        <Link to="/game/news" className="GameAllButton"><FormattedMessage id="ID_GAME_VIEW_ALL" /></Link>
-        
-        
-        {/* <Slider {...newProjectsSetting}>
-          {newProjects.map((item, i) => {
-            return <GameItem key={item.pId} type="Large" {...item} />;
-          })}
-        </Slider> */}
-      </div>
-
-
-      {/* <div className="GamesSection">
-        <div className="GamesTitle"><FormattedMessage id="ID_GAME_NEWS_GAME_TITLE" /></div>
-        <Link to="/game/news" className="GameAllButton"><FormattedMessage id="ID_GAME_VIEW_ALL" /></Link>
-        <Slider {...newProjectsSetting}>
-          {newProjects.map((item, i) => {
-            return <GameItem key={item.pId} type="Large" {...item} />;
-          })}
-        </Slider>
-      </div> */}
 
       {/* 월간 인기 게임 */}
-      {/* <div className="GamesSection">
+      <div className="GamesSection">
         <div className="GamesTitle"><FormattedMessage id="ID_GAME_MONTLY_LIKE_TITLE" /></div>
         <Link to="/game/monthly" className="GameAllButton"><FormattedMessage id="ID_GAME_VIEW_ALL" /></Link>
         <Slider {...monthlyProjectsSettings}>
@@ -144,10 +120,10 @@ function View(props) {
             return <GameItem key={item.pId} type="Medium" index={i} {...item} />;
           })}
         </Slider>
-      </div> */}
+      </div>
 
       {/* 주간 인기 게임 */}
-      {/* <div className="GamesSection">
+      <div className="GamesSection">
         <div className="GamesTitle"><FormattedMessage id="ID_GAME_WEEKLY_LIKE_TITLE" /></div>
         <Link to="/game/weekly" className="GameAllButton"><FormattedMessage id="ID_GAME_VIEW_ALL" /></Link>
         <Slider {...weeklyProjectsSettings}>
@@ -155,10 +131,10 @@ function View(props) {
             return <GameItem key={item.pId} type="Small" index={i} {...item} />;
           })}
         </Slider>
-      </div> */}
+      </div>
 
       {/* 최신 게임 */}
-      {/* <div className="GamesSection">
+      <div className="GamesSection">
         <div className="GamesTitle"><FormattedMessage id="ID_GAME_NEWS_GAME_TITLE" /></div>
         <Link to="/game/news" className="GameAllButton"><FormattedMessage id="ID_GAME_VIEW_ALL" /></Link>
         <Slider {...newProjectsSetting}>
@@ -166,7 +142,7 @@ function View(props) {
             return <GameItem key={item.pId} type="Large" {...item} />;
           })}
         </Slider>
-      </div> */}
+      </div>
     </div>
   );
 }

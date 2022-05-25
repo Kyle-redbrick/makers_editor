@@ -9,7 +9,6 @@ class Container extends Component {
     super(props);
     this.state = {
       total: 0,
-      allGames: [],
       games: [],
       placeholderGames: []
     };
@@ -41,93 +40,80 @@ class Container extends Component {
       this.loadMore();
     })
   }
-  loadMore(count = 12) {
-    if (this.isLoading) {
+  loadMore(count = 10) {
+    if(this.isLoading) {
       return;
     }
     this.isLoading = true;
 
     const options = {
-      // order: {
-      //   weekly: "weeklyViewCount",
-      //   monthly: "monthlyViewCount"
-      // }[this.type],
-      // projectType: this.tab === "all" ? null : this.tab,
-      // keyword: this.keyword,
+      order: {
+        weekly: "weeklyViewCount",
+        monthly: "monthlyViewCount"
+      }[this.type],
+      projectType: this.tab === "all" ? null : this.tab,
+      keyword: this.keyword,
       offset: this.state.games.length,
       limit: count
     }
     const queryString = QueryString.stringify(options);
     request
-      .getAllProjects(queryString)
+      .getPublishedList(queryString)
       .then(res => res.json())
       .then(json => {
-        console.log(121, json)
         this.setState(prev => ({
-          total: json.body.records,
-          allGames: [...prev.allGames, json.body.list]
-        }))
-      }).finally(() => {
-        // this.isLoading = false;
-        this.onWindowScroll();
+          total: json.count,
+          games: [].concat(prev.games, json.rows)
+        }));
+        if(this.type === "search" && json.count <= 0) {
+          this.loadPlaceholderGames();
+        }
       })
-    // request
-    //   .getPublishedList(queryString)
-    //   .then(res => res.json())
-    //   .then(json => {
-    //     this.setState(prev => ({
-    //       total: json.count,
-    //       games: [].concat(prev.games, json.rows)
-    //     }));
-    //     if(this.type === "search" && json.count <= 0) {
-    //       this.loadPlaceholderGames();
-    //     }
-    //   })
-    //   .finally(() => {
-    //     this.isLoading = false;
-    //     this.onWindowScroll();
-    //   });
+      .finally(() => {
+        this.isLoading = false;
+        this.onWindowScroll();
+      });
+}
+  loadPlaceholderGames() {
+    request
+      .getProjectsByType({ type: "recommend", limit: 12, offset: 0 })
+      .then(res => res.json())
+      .then(recommends => {
+        this.setState({
+          placeholderGames: recommends.map(recommend => recommend.project)
+        });
+      });
   }
-  // loadPlaceholderGames() {
-  //   request
-  //     .getProjectsByType({ type: "recommend", limit: 12, offset: 0 })
-  //     .then(res => res.json())
-  //     .then(recommends => {
-  //       this.setState({
-  //         placeholderGames: recommends.map(recommend => recommend.project)
-  //       });
-  //     });
-  // }
 
   componentDidUpdate(prevProps) {
     const prevType = prevProps.match.params.type;
-    if (prevType !== this.type) {
+    if(prevType !== this.type) {
       this.initAndLoad();
     }
     const prevQuery = QueryString.parse(prevProps.location.search);
     const prevTab = prevQuery.tab || "all";
-    if (prevTab !== this.tab) {
+    if(prevTab !== this.tab) {
       this.initAndLoad();
     }
     const prevKeyword = prevQuery.keyword;
-    if (prevKeyword !== this.keyword && this.keyword) {
+    if(prevKeyword !== this.keyword && this.keyword) {
       this.initAndLoad();
     }
   }
 
-  // onClickTab = tab => {
-  //   const query = { ...this.query };
-  //   if (tab === "all") {
-  //     delete query.tab;
-  //   } else {
-  //     query.tab = tab
-  //   }
-  //   this.props.history.replace("?" + QueryString.stringify(query));
-  // }
+  onClickTab = tab => {
+    const query = { ...this.query };
+    if (tab === "all") {
+      delete query.tab;
+    } else {
+      query.tab = tab
+    }
+    this.props.history.replace("?" + QueryString.stringify(query));
+  }
 
   onWindowScroll = e => {
-    if (window.scrollY + window.innerHeight > document.body.offsetHeight * 0.66) {
-      if (this.state.total > this.state.games.length) {
+    if(window.scrollY + window.innerHeight > document.body.offsetHeight * 0.66) {
+      if(this.state.total > this.state.games.length) {
         this.loadMore();
       }
     }
@@ -139,10 +125,9 @@ class Container extends Component {
   render() {
     return (
       <View
-        // type={this.type}
-        // tab={this.tab}
+        type={this.type}
+        tab={this.tab}
         total={this.state.total}
-        allGames={this.state.allGames}
         games={this.state.games}
         placeholderGames={this.state.placeholderGames}
         onClickTab={this.onClickTab}

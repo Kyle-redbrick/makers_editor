@@ -12,7 +12,6 @@ import PopUp, { showPopUp } from "../../../Common/Component/PopUp";
 import SignIn from "../../../Common/Component/SignIn";
 import DreamReport from "../DreamReport";
 import "./index.scss";
-import { requirePropFactory } from "@material-ui/core";
 
 class Container extends Component {
   constructor(props) {
@@ -66,7 +65,6 @@ class Container extends Component {
         console.log(888, json);
       })
   }
-
 
   setProject = pId => {
     const email = this.props.userinfo.email;
