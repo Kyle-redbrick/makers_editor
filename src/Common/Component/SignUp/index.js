@@ -139,168 +139,6 @@ class SignUp extends Component {
     });
   };
 
-  // onClickSignUp = e => {
-  //   e.preventDefault();
-  //   const { formatMessage } = this.props.intl;
-  //   const {
-  //     email,
-  //     password,
-  //     password_re,
-  //     name,
-  //     countryCode,
-  //     phone,
-  //     smsSent,
-  //     smsConfirmed,
-  //     agreed_terms,
-  //     agreed_privacy,
-  //     agreed_advertisement,
-  //     recaptchaToken
-  //   } = this.state;
-  //   if (email === "") {
-  //     this.setState({
-  //       warning_email: formatMessage({ id: "ID_SIGNUP_WARNING_EMAIL_EMPTY" })
-  //     });
-  //     return;
-  //   }
-  //   if (password === "") {
-  //     this.setState({
-  //       warning_password: formatMessage({ id: "ID_SIGNUP_WARNING_PW_EMPTY" })
-  //     });
-  //     return;
-  //   }
-  //   if (password_re === "") {
-  //     this.setState({
-  //       warning_password: formatMessage({
-  //         id: "ID_SIGNUP_WARNING_PW_RE_EMPTY"
-  //       })
-  //     });
-  //     return;
-  //   }
-  //   if (name === "") {
-  //     this.setState({
-  //       warning_name: formatMessage({ id: "ID_SIGNUP_WARNING_NAME_EMPTY" })
-  //     });
-  //     return;
-  //   }
-  //   if (!smsSent) {
-  //     this.setState({
-  //       warning_phone: formatMessage({ id: "ID_SIGNUP_WARNING_PHONE_EMPTY" })
-  //     });
-  //     return;
-  //   }
-  //   if (!smsConfirmed) {
-  //     this.setState({
-  //       warning_phone: formatMessage({ id: "ID_SIGNUP_WARNING_SMSCODE_EMPTY" })
-  //     });
-  //     return;
-  //   }
-  //   if (!agreed_terms || !agreed_privacy) {
-  //     this.setState({
-  //       warning_agreement: formatMessage({ id: "ID_SIGNUP_WARNING_AGREEMENT" })
-  //     });
-  //     return;
-  //   }
-  //   if (!recaptchaToken) {
-  //     this.setState({
-  //       warning_recaptchaToken: true
-  //     });
-  //     return;
-  //   }
-
-  //   if (
-  //     this.checkEmailFormat() &&
-  //     this.checkPasswordFormat() &&
-  //     this.checkPasswordIdentical() &&
-  //     this.checkNameFormat() &&
-  //     this.checkPhoneFormat() &&
-  //     this.checkSmsCodeFormat()
-  //   ) {
-  //     let params = {
-  //       email,
-  //       password: sha256(password),
-  //       phone,
-  //       name,
-  //       countryCode,
-  //       icon:
-  //         DEFAULT_PROFILE_IMAGES[
-  //         Math.floor(
-  //           Math.random() * Math.floor(DEFAULT_PROFILE_IMAGES.length)
-  //         )
-  //         ],
-  //       isMarketingAgreement: agreed_advertisement,
-  //       recaptchaToken
-  //     };
-  //     if (this.state.recommendCodeConfirmed) {
-  //       params.recommendCode = this.state.recommendCode;
-  //     }
-  //     request
-  //       .signup(params)
-  //       .then(res => res.json())
-  //       .then(json => {
-  //         if (json.status === 409) {
-  //           this.setState({
-  //             warning_email: formatMessage({
-  //               id: "ID_SIGNUP_WARNING_EMAIL_USED"
-  //             })
-  //           });
-  //         } else if (json.status === 401) {
-  //           this.setState({
-  //             warning_recaptchaToken: true
-  //           });
-  //         } else if (json.status === 406) {
-  //           this.setState({
-  //             warning_name: formatMessage({
-  //               id: "ID_MYPAGE_NAME_USERNAME_OFFICIAL_WARNING"
-  //             })
-  //           });
-  //         } else if (json.user) {
-  //           // TrackingUtil.sendGAEvent(
-  //           //   { category: "Signup", action: "Signup_Success" },
-  //           //   email
-  //           // );
-  //           // TrackingUtil.kakaoPixelEvent("signup");
-  //           TrackingUtil.kakaoPixelPageView("completeRegistration");
-  //           TrackingUtil.sendGTMEvent("Signup_Success");
-
-  //           /*
-  //           author : john@wizscool.io
-  //           date : 2020.07.01
-  //           */
-  //           /* test Case1 */
-  //           // let bizSpring = document.createElement("script");
-  //           // bizSpring._TRK_PI = "RGR";
-  //           // bizSpring._TRK_SX = "";
-  //           // bizSpring._TRK_AG = "";
-
-  //           /* test Case2 */
-  //           // window.setBizSpring();
-
-  //           request
-  //             .login({ email, password: sha256(password) })
-  //             .then(res => res.json())
-  //             .then(json => {
-  //               // TrackingUtil.sendGAEvent(
-  //               //   { category: "Login", action: "Login_Success" },
-  //               //   email
-  //               // );
-  //               TrackingUtil.sendGTMEvent("Login_Success");
-  //               localStorage.setItem("wizToken", json.token);
-  //               this.props.updateUserInfo(json.user);
-  //             });
-
-  //           showPopUp(
-  //             <PopUp.OneButton
-  //               title={formatMessage({ id: "ID_SIGNUP_SIGNED_TITLE" })}
-  //               buttonName={formatMessage({ id: "ID_SIGNUP_SIGNED_CONFIRM" })}
-  //             />,
-  //             { darkmode: !this.props.isBuilder }
-  //           );
-  //         }
-  //       });
-  //   }
-  // };
-
-
   onClickSignUp = e => {
 
     const params = {
@@ -322,6 +160,10 @@ class SignUp extends Component {
         .then(json => {
           if(json.token){
             localStorage.setItem("wizToken",  json.token);
+
+            const url = window.location.href 
+            const newUrl = url.split("?").pop()
+            window.location.href = url.replace("/?" + newUrl,"")
             this.props.updateUserInfo(json.user);
             this.props.dismiss()
           }else {
@@ -338,16 +180,6 @@ class SignUp extends Component {
   onClickDismiss = ()=> {
     this.props.dismiss()
   }
-
-  // setRecaptchaRef = recaptcha => {
-  //   this.recaptcha = recaptcha;
-  // };
-
-  // onLoadRecaptcha = () => {
-  //   if (this.recaptcha) {
-  //     this.recaptcha.reset();
-  //   }
-  // };
 
   render() {
     const { formatMessage } = this.props.intl;
