@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect}  from "react";
 import { Link } from "react-router-dom";
 import Layout from "../../Common/Component/Layout";
 import { FormattedMessage } from "react-intl";
@@ -16,6 +16,7 @@ import PlayGameSection from "./PlayGameSection";
 import LineBanner from "./LineBanner";
 import TextImg from "../../Image/fade-in-text.png";
 import TextImg2 from "../../Image/fade-in-text-2.png";
+import IntroduceSection from "./IntroduceSection";
 import "./index.scss";
 
 function View(props) {
@@ -100,6 +101,13 @@ function View(props) {
         {/* 텍스트 이미지 애니메이션 효과 */}
         <div className="intro-page__fade-in-text">
           <img  alt="why use astro coding go?"  data-aos="fade-up" data-aos-duration="700"  className="intro-page__fade-in-img" src={TextImg} />
+        </div>
+        
+        <IntroduceSection />
+
+        {/* 텍스트 이미지 애니메이션 효과 */}
+        <div className="intro-page__fade-in-text">
+          <img  alt="A self-Learning Platform For Instructors"  data-aos="fade-up" data-aos-duration="700"  className="intro-page__fade-in-img" src={TextImg2} />
         </div>
       </div>
     </Layout>
