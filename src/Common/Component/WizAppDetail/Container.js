@@ -61,9 +61,6 @@ class Container extends Component {
     request
       .playProject(params)
       .then(res => res.json())
-      .then(json => {
-        console.log(888, json);
-      })
   }
 
   setProject = pId => {
