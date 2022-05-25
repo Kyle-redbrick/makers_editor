@@ -3,7 +3,6 @@ import { injectIntl } from "react-intl";
 import { Link } from "react-router-dom";
 import "./index.scss";
 
-// import backIcon from "../../../../Image/dreamclass/icon-32-back.svg";
 import badgeJs from "../../../../Image/dreamclass/badge-js@2x.png";
 import badgePuzzle from "../../../../Image/dreamclass/badge-oobc@2x.png";
 import badgeJsShadow from "../../../../Image/dreamclass/badge-js-shadow@2x.png";
@@ -14,14 +13,6 @@ import placeholderIcon from "../../../../Image/dreamclass/picture-no-search-resu
 function View(props) {
   return (
     <div className="GameList-default">
-      {/* <div className="GameList-default__recent-games">
-        <p className="Play__Title Play__Title-allGames">
-          {props.intl.formatMessage(
-            { id: "ID_GAME_LIST_TITLE_RECENT" }
-          )}
-          <RecentGameList {...props} />
-        </p>
-      </div> */}
       <div className="GameList-default__all-games">
         <p className="Play__Title Play__Title-allGames">
           {props.intl.formatMessage(
@@ -36,33 +27,6 @@ function View(props) {
   );
 }
 export default injectIntl(View);
-
-// const SearchPlaceHolder = props => {
-//   return (
-//     <>
-//       <div className="GameList__SearchPlaceholder">
-//         <img className="GameList__SearchPlaceholder_Icon" src={placeholderIcon} alt="search_placeholder" />
-//         <div className="GameList__SearchPlaceholder_Message">
-//           {props.intl.formatMessage({ id: "ID_GAME_LIST_PLACEHOLDER" })}
-//         </div>
-//       </div>
-//       <div className="GameList__SearchPlaceholderGames">
-//         <p className="GameList__SearchPlaceholderGames_Title">
-//           {props.intl.formatMessage({ id: "ID_GAME_LIST_TITLE_RECOMMENDED" })}
-//         </p>
-//         <GameList games={props.placeholderGames} />
-//       </div>
-//     </>
-//   );
-// }
-
-const RecentGameList = props => {
-  return (
-    <div className="Play__Game__Wrapper">
-      {props.recentGames.map(game => <GameBox key={game.pId} game={game} />)}
-    </div>
-  )
-}
 
 const AllGamesList = props => {
   return (

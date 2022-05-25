@@ -31,7 +31,6 @@ class Container extends Component {
 
   componentDidMount() {
     this.scrollToTop();
-    // this.getRecentProjects();
     this.initAndLoad();
     window.addEventListener("scroll", this.onWindowScroll);
   }
@@ -44,32 +43,14 @@ class Container extends Component {
     })
   }
 
-  // getRecentProjects() {
-  //   request
-  //     .getRecentlyPlayed()
-  //     .then(res => res.json())
-  //     .then(json => {
-  //       this.setState({
-  //         recentGames: json.body.list
-  //       })
-  //       console.log(122221, json);
-  //     })
-  // }
-
-  loadMore(count = 12) {
-    if (this.isLoading) {
-      return;
-    }
-    this.isLoading = true;
+  loadMore(count = 8) {
+    // if (this.isLoading) {
+    //   return;
+    // }
+    // this.isLoading = true;
 
     const options = {
-      // order: {
-      //   weekly: "weeklyViewCount",
-      //   monthly: "monthlyViewCount"
-      // }[this.type],
-      // projectType: this.tab === "all" ? null : this.tab,
-      // keyword: this.keyword,
-      offset: this.state.games.length,
+      offset: this.state.allGames.length,
       limit: count
     }
     const queryString = QueryString.stringify(options);
@@ -78,6 +59,7 @@ class Container extends Component {
       .then(res => res.json())
       .then(json => {
         console.log(121, json)
+
         this.setState(prev => ({
           total: json.body.records,
           allGames: [...prev.allGames, json.body.list]
@@ -114,25 +96,25 @@ class Container extends Component {
   //     });
   // }
 
-  componentDidUpdate(prevProps) {
-    const prevType = prevProps.match.params.type;
-    if (prevType !== this.type) {
-      this.initAndLoad();
-    }
-    const prevQuery = QueryString.parse(prevProps.location.search);
-    const prevTab = prevQuery.tab || "all";
-    if (prevTab !== this.tab) {
-      this.initAndLoad();
-    }
-    const prevKeyword = prevQuery.keyword;
-    if (prevKeyword !== this.keyword && this.keyword) {
-      this.initAndLoad();
-    }
-  }
+  // componentDidUpdate(prevProps) {
+  //   const prevType = prevProps.match.params.type;
+  //   if (prevType !== this.type) {
+  //     this.initAndLoad();
+  //   }
+  //   const prevQuery = QueryString.parse(prevProps.location.search);
+  //   const prevTab = prevQuery.tab || "all";
+  //   if (prevTab !== this.tab) {
+  //     this.initAndLoad();
+  //   }
+  //   const prevKeyword = prevQuery.keyword;
+  //   if (prevKeyword !== this.keyword && this.keyword) {
+  //     this.initAndLoad();
+  //   }
+  // }
 
   onWindowScroll = e => {
     if (window.scrollY + window.innerHeight > document.body.offsetHeight * 0.66) {
-      if (this.state.total > this.state.games.length) {
+      if (this.state.total > this.state.allGames[0].length) {
         this.loadMore();
       }
     }
@@ -145,7 +127,6 @@ class Container extends Component {
     return (
       <View
         total={this.state.total}
-        // recentGames={this.state.recentGames}
         allGames={this.state.allGames}
         games={this.state.games}
         placeholderGames={this.state.placeholderGames}
