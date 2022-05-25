@@ -69,7 +69,6 @@ const ChangeName = (props) => {
       {
         darkmode: true,
         dismissButton: true,
-        dismissOverlay: true,
       }
     );
   }

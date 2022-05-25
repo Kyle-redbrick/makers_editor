@@ -1592,5 +1592,5 @@ export const modifyPassword = (params)=> {
 }
 
 export const modifyName = (params)=> {
-  return fetchRequest(URL.API_SERVER + `account/modify/name`, "POST",  params);
+  return fetchRequest(URL.API_SERVER + `account/modify/names`, "POST",  params);
 }
