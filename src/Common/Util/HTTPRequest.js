@@ -1596,5 +1596,5 @@ export const inviteSignup = (params, authorityKey)=> {
 }
 
 export const loginByGoogle = (params)=> {
-  return fetchRequest(URL.API_SERVER + `account/loginByGoogle`, "POST", params);
+  return fetchRequest(URL.API_SERVER + `account/loginByGoogle`, "POST",  params);
 }

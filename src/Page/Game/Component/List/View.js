@@ -30,7 +30,7 @@ function View(props) {
         ? <GameList {...props} />
         : props.type === "search" && <SearchPlaceHolder {...props} />
       }
-        </div>
+    </div>
   );
 }
 export default injectIntl(View);
