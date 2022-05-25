@@ -4,7 +4,7 @@ import "./index.scss";
 
 function EditPopup (props) {
   return (
-    <div className="edit-popup">
+    <div>
         {props.id == "name" ? <EditName /> : <EditNickname /> }
     </div>
   )
@@ -17,9 +17,6 @@ const EditName = () => {
         <h3 className="edit-popup__title">
           이름 수정
         </h3>
-        <button type="button" className="edit-popup__close">
-          <img alt="닫기 버튼" src={CloseIcon} />
-        </button>
       </div>
 
         <div className="edit-popup__body">
@@ -55,9 +52,6 @@ const EditNickname = () => {
         <h3 className="edit-popup__title">
           닉네임 수정
         </h3>
-        <button type="button" className="edit-popup__close">
-          <img alt="닫기 버튼" src={CloseIcon} />
-        </button>
       </div>
 
         <div className="edit-popup__body">
