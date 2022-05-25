@@ -31,7 +31,17 @@ export default injectIntl(View);
 const AllGamesList = props => {
   return (
     <div className="Play__Game__Wrapper">
-      {props.allGames[0].map(game => <GameBox key={game.pId} game={game} />)}
+      {props.allGames.map(game => <GameBox key={game.pId} game={game} />)}
+      {props.showMore && (
+        <div className="Play__Game__show-more-btn__wrapper">
+          <button
+            className="Play__Game__show-more-btn"
+            onClick={props.onClickMore}
+          >
+            + Show More
+          </button>
+        </div>
+      )}
     </div>
   );
 }

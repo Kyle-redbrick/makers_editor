@@ -56,11 +56,30 @@
 
   .Play__Game__Wrapper {
     display: flex;
-    // justify-content: space-between;
     flex-wrap: wrap;
 
     > .Game__Box__Default:nth-child(4n + 1) {
       margin-left: 0;
+    }
+
+    .Play__Game__show-more-btn__wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      margin-bottom: 40px;
+
+      .Play__Game__show-more-btn {
+        color: #ff6f44;
+        border: 1px solid #ff6f44;
+        background-color: transparent;
+        line-height: 22px;
+        font-size: 20px;
+        box-sizing: border-box;
+        border-radius: 30px;
+        cursor: pointer;
+        padding: 8px 37px 10px;
+      }
     }
   }
 
@@ -250,13 +269,10 @@
     }
 
     .Play__Game__Wrapper {
-      margin-top: 10px;
-      margin-bottom: 50px;
-    }
-
-    .Play__Game__Wrapper {
       display: flex;
       flex-wrap: wrap;
+      margin-top: 10px;
+      margin-bottom: 50px;
 
       .Game__Box__Default {
         width: 42.77vw;
