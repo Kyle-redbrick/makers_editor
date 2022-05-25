@@ -7,7 +7,7 @@ import badgeJs from "../../../../Image/dreamclass/badge-js@2x.png";
 import badgePuzzle from "../../../../Image/dreamclass/badge-oobc@2x.png";
 import badgeJsShadow from "../../../../Image/dreamclass/badge-js-shadow@2x.png";
 import badgePuzzleShadow from "../../../../Image/dreamclass/badge-oobc-shadow@2x.png";
-import placeholderIcon from "../../../../Image/dreamclass/picture-no-search-results.svg";
+import plusIcon from "../../../../Image/ic_plus-showmore.svg";
 
 
 function View(props) {
@@ -38,7 +38,8 @@ const AllGamesList = props => {
             className="Play__Game__show-more-btn"
             onClick={props.onClickMore}
           >
-            + Show More
+            <img src={plusIcon} alt="" />
+            Show More
           </button>
         </div>
       )}
