@@ -49,7 +49,7 @@ const FormFirst = () => {
 
         <div className="contact__form-content">
           <span className="contact__form-input-title">Any other note?</span>
-          <textarea col="0"  className="contact__form-textarea" />
+          <textarea className="contact__form-textarea" />
         </div>
       </div>
 
