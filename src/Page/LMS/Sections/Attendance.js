@@ -84,7 +84,7 @@ const Attendance = ({ ...props }) => {
           style={{ minHeight: 711 }}
           eventPropGetter={eventStyle}
           components={{
-            toolbar: Toolbar,
+            toolbar: Toolbar
           }}
         />
       </div>
