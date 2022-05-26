@@ -15,7 +15,6 @@ import "./index.scss";
 
 const DDItem = ({ user, text, url, onClick }) => {
   if (user) {
-    console.log(111, user);
     return (
       <div className="DDItem-user">
         <div className={`DDItem-user-icon-wrapper${user.userType === "T" ? "--tutor" : ""}`}>
