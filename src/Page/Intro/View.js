@@ -18,6 +18,9 @@ import TextImg from "../../Image/fade-in-text.png";
 import TextImg2 from "../../Image/fade-in-text-2.png";
 import IntroduceSection from "./IntroduceSection";
 import ViewMore from "./ViewMore";
+/* import IntroduceSection from "./IntroduceSection"; */
+import ScrollAction from "./ScrollAction";
+
 import "./index.scss";
 
 function View(props) {
@@ -115,6 +118,10 @@ function View(props) {
 
         {/* view more section */}
         <ViewMore />
+
+        {/* 스크롤 애니메이션 */}
+        <ScrollAction />
+
       </div>
     </Layout>
   );

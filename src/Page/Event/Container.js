@@ -1,14 +1,17 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import * as action from "../../Common/Store/Reducer/UserInfo";
 import View from "./View";
 
 function Container(props) {
 
   return (
-    <View {...props}/>
+    <View {...props} />
   );
 }
 export default connect(
-  state => ({
+  state => ({ 
     userinfo: state.userinfo
-  }), {})(Container);
+  }, 
+  { updateUserInfo: action.updateUserInfo}),
+  {})(Container);

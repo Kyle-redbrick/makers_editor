@@ -178,12 +178,6 @@ class SignIn extends Component {
           onFailure={this.responseGoogle}
           cookiePolicy={'single_host_origin'}
         />,
-
-
-
-
-
-
         <div className="popup_warning">{warning}</div>
       </div>
     );

@@ -1,15 +1,12 @@
-import React from "react";
+import React, { useState } from 'react';
 import CloseIcon from "../../../../Image/icon-close.svg"
 import "./index.scss";
 import * as request from "../../../../Common/Util/HTTPRequest";
 
 
 const names = {"section": "name" ,"newValue": "asdfsadf"}
-//const passwords = {"currentPasswd": "96cae35ce8a9b0244178bf28e4966c2ce1b8385723a96a6b838858cdd6ca0a1e" ,"newPasswd": "96cae35ce8a9b0244178bf28e4966c2ce1b8385723a96a6b838858cdd6ca0a1a"}
 
 function EditPopup (props) {
-
-  // passwords.currentPasswd = this.
   return (
     <div>
         {props.id == "name" ? <EditName {...props} /> : <EditNickname {...props}  /> }
@@ -17,43 +14,17 @@ function EditPopup (props) {
   )
 }
 
-
-
-const onChangeValue = (e) => {
-  const { id, value } = e.target;
-
-  names.newValue = value
-
-  console.log(names)
-
-
-  // switch (id) {
-  //   case 'name':
-  //     console.log(value);
-  //     break;
-  //   case 'nickName':
-  //     console.log(value);
-  //     break
-  // }
-}
-
-const onClickSubmit =  async (id) => {
-  switch (id) {
-    case 'name':
-      names.section = "name"
-      const nameData = await request.modifyName({...names})
-      console.log(nameData);
-      break;
-    case 'nickName':
-      names.section = "nickname"
-      console.log(names)
-      const nickNameData = await request.modifyName({...names})
-      console.log(nickNameData);
-      break
-  }
-}
-
 const EditName = () => {
+  const [name, setName] = useState("");
+
+  const onClickSubmit =  async () => {
+    //const nameData = await request.modifyName({...names})
+  }
+  const onChangeValue = (e) => {
+    const { id, value } = e.target;
+    names.newValue = value
+  }
+
   return (
     <div className="edit-popup__inner">
       <div className="edit-popup__head">
@@ -82,13 +53,26 @@ const EditName = () => {
         </div>
 
         <div className="edit-popup__footer">
-          <button className="edit-popup__submit-btn" type="submit" onClick={()=>onClickSubmit("name")}>적용</button>
+          <button className="edit-popup__submit-btn" type="submit" onClick={()=>onClickSubmit}>적용</button>
         </div>
     </div>
   )
 }
 
 const EditNickname = () => {
+  const [nickName, setNickName] = useState("");
+
+
+  const onClickSubmit =  async () => {
+
+    //const nickNameData = await request.modifyName({...names})
+
+  }
+  const onChangeValue = (e) => {
+    const { id, value } = e.target;
+    names.newValue = value
+  }
+
   return (
     <div className="edit-popup__inner">
       <div className="edit-popup__head">
@@ -110,7 +94,7 @@ const EditNickname = () => {
         </div>
 
         <div className="edit-popup__footer">
-          <button className="edit-popup__submit-btn" type="submit" onClick={()=>onClickSubmit("nickName")}>적용</button>
+          <button className="edit-popup__submit-btn" type="submit" onClick={onClickSubmit}>적용</button>
         </div>
     </div>
   )
