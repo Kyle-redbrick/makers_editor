@@ -40,6 +40,24 @@
     box-shadow: 0 20px 50px 0 rgba(0, 0, 0, 0.5);
     background-color: #1c1c1c;
     animation: openAnimation 0.3s ease-in-out forwards;
+
+      .DDItem-user-icon-wrapper--tutor {
+        border: 2px solid #00C47A;
+        border-radius: 50%
+      }
+    
+      .DDItem-user-icon {
+        padding: 4px;
+        width: 60px;
+        height: 60px;
+      }
+
+      .DDItem-user-tutor-label {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 54px;
+      }
   }
 }
 

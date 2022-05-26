@@ -9,16 +9,21 @@ import UserIconWrapper from "../../UserIconWrapper";
 // Images
 import mypageIcon from "../../../../Image/dreamclass/header-bar-24-account-settings.svg";
 import signOutIcon from "../../../../Image/dreamclass/header-bar-24-sign-out.svg";
+import tutorLabel from "../../../../Image/dreamclass/user-tutor-label.png";
 
 import "./index.scss";
 
 const DDItem = ({ user, text, url, onClick }) => {
   if (user) {
-    console.log(111, user);
     return (
       <div className="DDItem-user">
-        <div className="DDItem-user-icon">
-          <UserIconWrapper iconSrc={user.icon} />
+        <div className={`DDItem-user-icon-wrapper${user.userType === "T" ? "--tutor" : ""}`}>
+          <div className="DDItem-user-icon">
+            <UserIconWrapper
+              iconSrc={user.icon}
+            />
+          </div>
+          <img className="DDItem-user-tutor-label" src={tutorLabel} alt="" />
         </div>
         <div className="DDItem-user-info">
           <div className="DDItem-user-name">
