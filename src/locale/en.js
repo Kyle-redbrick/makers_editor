@@ -1301,23 +1301,24 @@ const en = {
   ID_CERT_ADVANCED_JS_DESC: "is awarded with this certificate for successfully fulfilling requirements of Advanced JavaScript, a software education course offered by iGroup, and completing 8 projects utilizing Event, Sequence, Physical Engine, Random Number,  Varibale, Conditional Statement, and Operator.",
   ID_CERT_MASTERY_JS_DESC: "is awarded with this certificate for successfully fulfilling requirements of JavaScript Mastery, a software education course offered by iGroup, and completing 4 projects utilizing Random Number, Variable, Conditional Statement, Operator, List, Index,  Loop, and Function.",
 
-  ID_SIGNUP_CREATE_TITLE : "계정 생성하기",
-  ID_SIGNUP_NAME : "이름",
-  ID_SIGNUP_FIRST_NAME : "성",
+  ID_SIGNUP_CREATE_TITLE: "계정 생성하기",
+  ID_SIGNUP_NAME: "이름",
+  ID_SIGNUP_FIRST_NAME: "성",
   ID_SIGNUP_FIRST_NAME_PLACEHOLDER: "성을 입력해주세요",
 
-  ID_INTRO_ABOUT_ASTRO_CODING_GO_TITLE : "About Astro Coding Go!",
-  ID_INTRO_SECOND_SECTION_TITLE : "A coding class\nwidth next-level missions",
-  ID_INTRO_SECOND_SECTION_INFO_TITLE_1 : "6 to 12",
-  ID_INTRO_SECOND_SECTION_INFO_TITLE_2 : "36 missions",
-  ID_INTRO_SECOND_SECTION_INFO_TITLE_3 : "100 hours",
+  ID_INTRO_ABOUT_ASTRO_CODING_GO_TITLE: "About Astro Coding Go!",
+  ID_INTRO_SECOND_SECTION_TITLE: "A coding class\nwidth next-level missions",
+  ID_INTRO_SECOND_SECTION_INFO_TITLE_1: "6 to 12",
+  ID_INTRO_SECOND_SECTION_INFO_TITLE_2: "36 missions",
+  ID_INTRO_SECOND_SECTION_INFO_TITLE_3: "100 hours",
 
-  ID_INTRO_SECOND_SECTION_INFO_TITLE_1_EXPLAN : "A coding class\nfor students aged 6 to 12",
-  ID_INTRO_SECOND_SECTION_INFO_TITLE_2_EXPLAN : "36 STEM convergence missions\nmeeting the CSTA standard",
-  ID_INTRO_SECOND_SECTION_INFO_TITLE_3_EXPLAN : "A 100=hour PBL curriculum\nto develop pracrical skills",
+  ID_INTRO_SECOND_SECTION_INFO_TITLE_1_EXPLAN: "A coding class\nfor students aged 6 to 12",
+  ID_INTRO_SECOND_SECTION_INFO_TITLE_2_EXPLAN: "36 STEM convergence missions\nmeeting the CSTA standard",
+  ID_INTRO_SECOND_SECTION_INFO_TITLE_3_EXPLAN: "A 100=hour PBL curriculum\nto develop pracrical skills",
 
-  ID_INTRO_THIRD_SECTION_TITLE : "Here's how\nthe curriculum works"
+  ID_INTRO_THIRD_SECTION_TITLE: "Here's how\nthe curriculum works",
 
-
+  ID_COMMON_MONTH: "",
+  ID_COMMON_YEAR: ""
 };
 export default en;

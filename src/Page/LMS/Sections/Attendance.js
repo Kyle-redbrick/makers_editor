@@ -5,7 +5,7 @@ import moment from "moment";
 import "moment/locale/ko";
 import "moment/locale/en-gb";
 import "moment/locale/ja";
-import { injectIntl } from "react-intl";
+import { injectIntl, useIntl } from "react-intl";
 import { Calendar, momentLocalizer } from "react-big-calendar";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import attendImg from "../../../Image/img-attendance-stamp.png";
@@ -24,10 +24,10 @@ const Self = styled.div`
 
 
 const Attendance = ({ ...props }) => {
-  const [value, onChange] = useState(new Date());
-  const test = "Tue May 04 2022 09:16:24 GMT+0900 (Korean Standard Time"
+  const locale = localStorage.getItem("lang");
   const userId = props.userinfo.id;
   const [attendanceData, setAttendanceData] = useState([]);
+  let calendar_lang = "";
 
   useEffect(() => {
     request.getAttendance(userId)
@@ -37,12 +37,22 @@ const Attendance = ({ ...props }) => {
       })
   }, []);
 
+  console.log(111, locale);
+  switch (locale) {
+    case "en":
+      calendar_lang = "en-US";
+      break;
+    case "ja":
+      calendar_lang = "ja-JP";
+      break;
+    case "ko":
+      calendar_lang = "ko-KR";
+  }
 
-  moment.locale("en-US");
+  moment.locale(calendar_lang);
   const localizer = momentLocalizer(moment);
   localizer.formats.dateFormat = 'D';
   const events = [];
-
   const eventStyle = () => {
     var style = {
       position: "absolute",
@@ -76,7 +86,6 @@ const Attendance = ({ ...props }) => {
           eventPropGetter={eventStyle}
           components={{
             toolbar: Toolbar,
-
           }}
         />
       </div>
@@ -84,12 +93,20 @@ const Attendance = ({ ...props }) => {
   );
 };
 
-
 const Toolbar = ({ date, onNavigate }) => {
   const locale = localStorage.getItem("lang");
-  const month = "월";
-  const year = '년';
-  const en_month = date.toLocaleString('en-US', { month: 'long' });
+  let calendar_lang = "";
+  switch (locale) {
+    case "en":
+      calendar_lang = "en-US";
+      break;
+    case "ja":
+      calendar_lang = "ja-JP";
+      break;
+    case "ko":
+      calendar_lang = "ko-KR";
+  }
+  const month = date.toLocaleString(calendar_lang, { month: 'long' });
   const navigate = (action) => {
     onNavigate(action);
   };
@@ -100,9 +117,9 @@ const Toolbar = ({ date, onNavigate }) => {
         <img src={prevArrow} alt="prev" onClick={navigate.bind(null, 'PREV')} />
         <span className="rbc-toolbar-label">
           {locale !== "en" ?
-            `${date.getFullYear()} ${month} ${date.getMonth() + 1} ${year}`
+            `${date.getFullYear()} ${month}`
             :
-            `${en_month} ${date.getFullYear()}`
+            `${month} ${date.getFullYear()}`
           }
         </span>
         <img src={nextArrow} alt="next" onClick={navigate.bind(null, 'NEXT')} />
