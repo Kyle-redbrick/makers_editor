@@ -8,7 +8,9 @@ import EyesOnIcon from "../../Image/icon-eyes-on.svg";
 import EditPopup from "./Popup/EditPopup";
 
 import PopUp, { showPopUp } from "../../Common/Component/PopUp";
-import Request  from "../../Common/Util/HTTPRequest";
+import * as Request  from "../../Common/Util/HTTPRequest";
+import sha256 from "../../Common/Util/SHA256";
+
 
 
 
@@ -91,6 +93,10 @@ const ChangePassword = (props) => {
 
   const [isShows,setIsShows] = useState([false,false,false])
 
+  let pwd = ""
+  let newPwd = ""
+  let checkNewPwd = "" 
+
   const onClickBtn = (index) => {
     const newArr = isShows.forEach((item, i) => {
       i === index && (isShows[i] = !item)
@@ -100,13 +106,39 @@ const ChangePassword = (props) => {
 
   const onChangeValue = (e) => {
     const { id, value } = e.target;  
-  
     console.log(id,value)
+
+    switch(id) {
+      case "pwd":
+        pwd = value
+        break
+      case "newPwd":
+        newPwd = value
+        break
+      case "checkNewPwd":
+        checkNewPwd = value
+        break
+    }
   }
 
 
   const onClickSubmit =  async (id) => {
-    console.log(11111)
+    if(newPwd.length > 5 && newPwd.length < 20 && newPwd === checkNewPwd){
+      const res = await Request.modifyPassword({"currentPasswd":sha256(pwd),"newPasswd":sha256(newPwd)})
+      console.log(res)
+
+      showPopUp(
+        <PopUp.OneButton
+          title={ res.success ? "success" : "err"}
+          buttonName={"submit"}
+        />,
+        {
+          darkmode: true,
+          dismissButton: false,
+        }
+      );
+
+    }
   }
 
   
@@ -141,7 +173,7 @@ const ChangePassword = (props) => {
       <div className="account__content-item">
         <span className="account__content-category">새 비밀번호 확인</span>
         <div className="account__password-change">
-          <input id="CheckNewPwd" type={isShows[2] ? "text" : "password"} autoComplete="off" className="account__content-input account__content-input--password" placeholder="새 비밀번호를 입력해주세요." onChange={onChangeValue}/>
+          <input id="checkNewPwd" type={isShows[2] ? "text" : "password"} autoComplete="off" className="account__content-input account__content-input--password" placeholder="새 비밀번호를 입력해주세요." onChange={onChangeValue}/>
           <button className="account__password-show" type="button"  onClick={()=>onClickBtn(2)} >
             <img src={isShows[2] ? EyesOnIcon : EyesOffIcon} alt="비밀번호 보기 아이콘" /> 
           </button>
@@ -155,7 +187,7 @@ const ChangePassword = (props) => {
     </div>
     <div className="account__password-changed-btn-box">
       {/* TODO : 활성화 시 클래스 active 추가 */}
-      <button type="button" className="account__password-changed-btn" onClick={onClickSubmit}>비밀번호 변경</button>
+      <button type="button" className="account__password-changed-btn active" onClick={onClickSubmit}>비밀번호 변경</button>
     </div>
   </>
   )

@@ -3,9 +3,6 @@ import CloseIcon from "../../../../Image/icon-close.svg"
 import "./index.scss";
 import * as request from "../../../../Common/Util/HTTPRequest";
 
-
-const names = {"section": "name" ,"newValue": "asdfsadf"}
-
 function EditPopup (props) {
 
   return (
@@ -22,8 +19,6 @@ const EditName = (props) => {
   let nameData = undefined
   
   const onClickSubmit =  async () => {
-
-    console.log(1111)
 
     if(name.length > 0 && name.length < 31) {
       nameData = await request.modifyName({"section":"name","familyname":firstName,"givenname":name})
@@ -46,11 +41,9 @@ const EditName = (props) => {
     switch(id) {
       case "name":
         name = value
-        console.log(id,value)
         break
       case "firstName":
         firstName = value
-        console.log(id,value)
         break
     }
   }

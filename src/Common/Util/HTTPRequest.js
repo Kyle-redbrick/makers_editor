@@ -1588,7 +1588,9 @@ export const loginByGoogle = (params)=> {
 }
 
 export const modifyPassword = (params)=> {
-  return fetchRequest(URL.API_SERVER + `account/modify/password`, "POST",  params);
+  return fetchRequest(URL.API_SERVER + `account/modify/password`, "POST",  params).then(
+    res => res.json()
+  );
 }
 
 export const modifyName =  (params)=> {
