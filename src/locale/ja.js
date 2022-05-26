@@ -1352,6 +1352,9 @@ const ja = {
   ID_INTRO_VIEW_MORE_RIGHT_TITLE : "Start your free trial\ncourse right now!",
   ID_ATTENDANCE_TITLE: "出席状況",
   ID_COMMON_MONTH: "月",
-  ID_COMMON_YEAR: "年"
+  ID_COMMON_YEAR: "年",
+
+  ID_ABOUT_INTRO_TITLE : "Exciting Coding Lessons with Go Astro Go!",
+  ID_ABOUT_INTRO_CHILD_TITLE : "Astro sets out to solve problems happening\nall over the world together with SUZU and Astro Kitty"
 };
 export default ja;

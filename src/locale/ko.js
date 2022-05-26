@@ -1350,6 +1350,9 @@ const ko = {
   
   ID_ATTENDANCE_TITLE: "출석현황",
   ID_COMMON_MONTH: "월",
-  ID_COMMON_YEAR: "년"
+  ID_COMMON_YEAR: "년",
+
+  ID_ABOUT_INTRO_TITLE : "Exciting Coding Lessons with Go Astro Go!",
+  ID_ABOUT_INTRO_CHILD_TITLE : "Astro sets out to solve problems happening\nall over the world together with SUZU and Astro Kitty"
 };
 export default ko;
