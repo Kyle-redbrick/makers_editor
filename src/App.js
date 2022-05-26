@@ -69,7 +69,9 @@ const SplashView = () => {
 
 const App = () => {
   useEffect(() => {
-    AOS.init();
+    AOS.init({
+      mirror: true,
+    });
     AOS.refresh();
   }, []);
 
