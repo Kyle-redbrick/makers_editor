@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState ,useEffect } from 'react';
 import CloseIcon from "../../../../Image/icon-close.svg"
 import "./index.scss";
 import * as request from "../../../../Common/Util/HTTPRequest";
@@ -7,6 +7,7 @@ import * as request from "../../../../Common/Util/HTTPRequest";
 const names = {"section": "name" ,"newValue": "asdfsadf"}
 
 function EditPopup (props) {
+
   return (
     <div>
         {props.id == "name" ? <EditName {...props} /> : <EditNickname {...props}  /> }
@@ -14,15 +15,44 @@ function EditPopup (props) {
   )
 }
 
-const EditName = () => {
-  const [name, setName] = useState("");
-
+const EditName = (props) => {
+  const [warnText, setWarnText] = useState({"warnName":"","warnRes":""});
+  let name = ""
+  let firstName = ""
+  let nameData = undefined
+  
   const onClickSubmit =  async () => {
-    //const nameData = await request.modifyName({...names})
+
+    console.log(1111)
+
+    if(name.length > 0 && name.length < 31) {
+      nameData = await request.modifyName({"section":"name","familyname":firstName,"givenname":name})
+      console.log(nameData)
+      if(nameData.success){
+        props.updateUserInfo({"fullname":{"family":firstName,"given":name},"name":nameData.body.newValue});
+        props.dismiss()
+      }else {
+        setWarnText({"warnName":"name.length > 0 && name.length < 31"})
+      }
+    }else {
+      if(nameData){
+        setWarnText({"warnRes":nameData.reason})
+      }
+    }
   }
   const onChangeValue = (e) => {
     const { id, value } = e.target;
-    names.newValue = value
+    console.log(id,value)
+    switch(id) {
+      case "name":
+        name = value
+        console.log(id,value)
+        break
+      case "firstName":
+        firstName = value
+        console.log(id,value)
+        break
+    }
   }
 
   return (
@@ -39,38 +69,56 @@ const EditName = () => {
               <span className="edit-popup__category">이름</span>
               <div className="edit-popup__right">
                 <input id="name" type="text" placeholder="이름을 입력하세요." className="edit-popup__input" onChange={onChangeValue}/>
-                <p className="edit-popup__input-help">닉네임을 올바르게 입력해주세요.</p>
+                <p className="edit-popup__input-help">{warnText.warnName}</p>
               </div>
             </div>
             <div className="edit-popup__list">
               <span className="edit-popup__category">성</span>
               <div className="edit-popup__right">
-                <input id="nickName" type="text" placeholder="성을 입력하세요." className="edit-popup__input"  onChange={onChangeValue}/>
-                <p className="edit-popup__input-help">닉네임을 올바르게 입력해주세요.</p>
+                <input id="firstName" type="text" placeholder="성을 입력하세요." className="edit-popup__input"  onChange={onChangeValue}/>
               </div>
             </div>
           </div>
         </div>
 
+        <p className="edit-popup__input-help">{warnText.warnFristName}</p>
         <div className="edit-popup__footer">
-          <button className="edit-popup__submit-btn" type="submit" onClick={()=>onClickSubmit}>적용</button>
+          <button className="edit-popup__submit-btn" type="submit" onClick={onClickSubmit}>적용</button>
         </div>
     </div>
   )
 }
 
-const EditNickname = () => {
-  const [nickName, setNickName] = useState("");
+const EditNickname = (props) => {
 
+  const [warnText, setWarnText] = useState({"warnName":"","warnRes":""});
+  let nickName = ""
+  let nickNameData = undefined
 
   const onClickSubmit =  async () => {
 
-    //const nickNameData = await request.modifyName({...names})
+    if(nickName.length > 0 && nickName.length < 31) {
+
+      nickNameData = await request.modifyName({	"section": "nickname" ,"nickname":nickName,})
+      console.log(nickNameData)
+      if (nickNameData.success) {
+        props.updateUserInfo({nickName: nickName});
+        setWarnText({"warnName":"","warnRes":""})
+        props.dismiss()
+      }else {
+        setWarnText({"warnRes":"err"})
+      }
+    }else {
+      if(nickNameData){
+        setWarnText({"warnRes":nickNameData.reason})
+      }
+    }
 
   }
   const onChangeValue = (e) => {
-    const { id, value } = e.target;
-    names.newValue = value
+    const { value } = e.target;
+    nickName = value
+    console.log(nickName.length,nickName)
   }
 
   return (
@@ -86,12 +134,14 @@ const EditNickname = () => {
             <div className="edit-popup__list">
               <span className="edit-popup__category">닉네임</span>
               <div className="edit-popup__right">
-                <input type="text" placeholder="닉네임을 입력하세요." className="edit-popup__input" />
-                <p className="edit-popup__input-help">닉네임을 올바르게 입력해주세요.</p>
+                <input type="text" placeholder="닉네임을 입력하세요." className="edit-popup__input" onChange={onChangeValue}/>
+                <p className="edit-popup__input-help">{warnText.warnName}</p>
               </div>
             </div>
           </div>
         </div>
+
+        <p className="edit-popup__input-help">{warnText.warnRes}</p>
 
         <div className="edit-popup__footer">
           <button className="edit-popup__submit-btn" type="submit" onClick={onClickSubmit}>적용</button>

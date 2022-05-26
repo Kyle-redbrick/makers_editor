@@ -168,7 +168,7 @@ const en = {
   ID_GAME_MONTLY_LIKE_TITLE: "Monthly Popular Games",
   ID_GAME_RECOMMEND_TITLE: "위즈랩 추천 게임",
   ID_GAME_SEARCH_RECOMMEND_TITLE: "추천 게임",
-  ID_GAME_NEWS_GAME_TITLE: "Recent Games",
+  ID_GAME_NEWS_GAME_TITLE: "Recently Played",
   ID_GAME_MORE_GAME_TITLE: "이런 게임은 어때요?",
   ID_GAME_VIEW_MORE: "더보기",
   ID_GAME_VIEW_ALL: "See all",
@@ -1017,6 +1017,8 @@ const en = {
   ID_RANKING_NUMBER_CREATE: "개",
   ID_RANKING_NUMBER_POP: "개",
   ID_RANKING_NUMBER_VIEW: "회",
+  ID_GAME_LIST_TITLE_ALL: "All Games",
+  ID_GAME_LIST_TITLE_RECENT: "Recently played",
   ID_GAME_LIST_TITLE_NEWS: "Recent Games",
   ID_GAME_LIST_TITLE_WEEKLY: "Weekly Popular Games",
   ID_GAME_LIST_TITLE_MONTHLY: "Monthly Popular Games",
@@ -1339,8 +1341,15 @@ const en = {
   ID_INTRO_INTRODUCE_AREA_CONTENT_CHILD_TITLE_3 : "The OOBC block language used in Astro Coding Go! uses a sentence structure that is different\nfrom the existing block code language, helping the transition to text coding such as JS.\n* OOBC : object-oriented block coding",
 
   ID_INTRO_CONTACT_TITLE : "Contact US",
-  ID_INTRO_CONTACT_CHILD_TITLE : "Submit the contact form to receive\na free account and try the premium content\nof Astro Coding Go for free."
+  ID_INTRO_CONTACT_CHILD_TITLE : "Submit the contact form to receive\na free account and try the premium content\nof Astro Coding Go for free.",
 
 
+  ID_INTRO_VIEW_MORE_NOTICE_TITLE : "Teach coding on a fun and exciting way!",
+  ID_INTRO_VIEW_MORE_LEFT_TITLE : "Want to know more\nabout the Curriculum?",
+  ID_INTRO_VIEW_MORE_RIGHT_TITLE : "Start your free trial\ncourse right now!",
+  
+  ID_ATTENDANCE_TITLE: "Attendance",
+  ID_COMMON_MONTH: "",
+  ID_COMMON_YEAR: ""
 };
 export default en;
