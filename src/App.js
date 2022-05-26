@@ -15,7 +15,7 @@ import Intro from "./Page/Intro";
 import WizAppDetail from "./Common/Component/WizAppDetail";
 import { SubscribeManager } from "./Common/Util/Subscribe";
 import AOS from "aos";
-import "aos/dist/aos.css"; 
+import "aos/dist/aos.css";
 
 // python test
 const PythonPage = lazy(() => import("./Page/Python"));
@@ -214,6 +214,9 @@ const App = () => {
           {/* codingparty */}
           {/* <Route exact path="/codingparty" component={OCP} />
         <Route exact path="/codingparty/:grade" component={OCPSub} /> */}
+          {/* account setting */}
+          <Route exact path="/settings" component={Event} />
+
           {/* event */}
           <Route exact path="/event" component={Event} />
           <Route exact path="/event/:id" component={EventDetail} />

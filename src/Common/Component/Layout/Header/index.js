@@ -190,7 +190,7 @@ class Header extends Component {
       "learn",
       // "social",
       // "ranking",
-      "event",
+      // "event",
       // "codingparty",
       // "challenge",
       // "trial",
