@@ -14,6 +14,7 @@ import "./index.scss";
 
 const DDItem = ({ user, text, url, onClick }) => {
   if (user) {
+    console.log(111, user);
     return (
       <div className="DDItem-user">
         <div className="DDItem-user-icon">
@@ -32,14 +33,13 @@ const DDItem = ({ user, text, url, onClick }) => {
       <Link to={url} style={{ textDecoration: "none" }}>
         <div className="DDItem DDItem-mypage" onClick={onClick}>
           <div className="DDItem__text">{text}</div>
-          <img src={mypageIcon} alt="" />
         </div>
       </Link>
     );
   }
   return (
     <div className="DDItem" onClick={onClick}>
-      <div className="DDItem__text">{text}</div>
+      <div className="DDIten__text DDItem__text--logout">{text}</div>
       <img src={signOutIcon} alt="" />
     </div>
   );
@@ -88,8 +88,12 @@ class DropDown extends Component {
             <div className="DD__list">
               <DDItem user={user} />
               <DDItem
-                text={<FormattedMessage id="ID_USERDD_MYPAGE" />}
+                text={<FormattedMessage id="ID_USERDD_MYGAME" />}
                 url="/mypage"
+              />
+              <DDItem
+                text={<FormattedMessage id="ID_USERDD_SETTING" />}
+                url="/settings"
               />
               <DDItem
                 text={<FormattedMessage id="ID_USERDD_LOGOUT" />}
