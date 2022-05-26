@@ -91,6 +91,9 @@ const ChangeName = (props) => {
 
 const ChangePassword = (props) => {
 
+  const [warnText, setWarnText] = useState({"warnNewPwd":"","warnCheckPwd":""});
+
+
   const [isShows,setIsShows] = useState([false,false,false])
 
   let pwd = ""
@@ -123,22 +126,30 @@ const ChangePassword = (props) => {
 
 
   const onClickSubmit =  async (id) => {
-    if(newPwd.length > 5 && newPwd.length < 20 && newPwd === checkNewPwd){
+    let res = undefined
+    let info = ""
+    if(newPwd.length > 5 && newPwd === checkNewPwd){
       const res = await Request.modifyPassword({"currentPasswd":sha256(pwd),"newPasswd":sha256(newPwd)})
       console.log(res)
-
-      showPopUp(
-        <PopUp.OneButton
-          title={ res.success ? "success" : "err"}
-          buttonName={"submit"}
-        />,
-        {
-          darkmode: true,
-          dismissButton: false,
-        }
-      );
-
+      info = "success"
+    }else if(newPwd.length < 5) {
+      info = "newPwd.length < 5"
+      setWarnText({"warnNewPwd":"newPwd.length < 5"})
+    }else if(newPwd !== checkNewPwd) {
+      info = "newPwd !== checkNewPwd"
+      setWarnText({"warnCheckPwd":"newPwd !== checkNewPwd"})
     }
+
+    showPopUp(
+      <PopUp.OneButton
+        title={ info }
+        buttonName={"Submit"}
+      />,
+      {
+        darkmode: true,
+        dismissButton: false,
+      }
+    );
   }
 
   
@@ -148,38 +159,38 @@ const ChangePassword = (props) => {
       <div className="account__content-item">
         <span className="account__content-category">현재 비밀번호</span>
         <div className="account__password-change">
-          <input id="pwd" type={isShows[0] ? "text" : "password"} autoComplete="off" className="account__content-input account__content-input--password" placeholder="현재 비밀번호를 입력해주세요." onChange={onChangeValue}/>
+          <input id="pwd" type={isShows[0] ? "text" : "password"} autoComplete="off" className="account__content-input account__content-input--password" placeholder="현재 비밀번호를 입력해주세요." onChange={onChangeValue} maxlength="20"/>
           <button className="account__password-show" type="button" onClick={()=>onClickBtn(0)} >
             <img src={isShows[0] ? EyesOnIcon : EyesOffIcon} alt="비밀번호 안보기 아이콘" /> 
           </button>
           {/* TODO 입력 도움말 */}
-          <p className="account__help-text">최소 8글자 이상</p>
+          <p className="account__help-text"></p>
         </div>
       </div>
       {/* TODO : 새 비밀번호 input */}
       <div className="account__content-item">
         <span className="account__content-category" >새 비밀번호</span>
         <div className="account__password-change">
-          <input id="newPwd" type={isShows[1] ? "text" : "password"} autoComplete="off" className="account__content-input account__content-input--password" placeholder="새 비밀번호를 입력해주세요." onChange={onChangeValue}/>
+          <input id="newPwd" type={isShows[1] ? "text" : "password"} autoComplete="off" className="account__content-input account__content-input--password" placeholder="새 비밀번호를 입력해주세요." onChange={onChangeValue} maxlength="20"/>
           <button className="account__password-show" type="button"  onClick={()=>onClickBtn(1)}>
             <img src={isShows[1] ? EyesOnIcon : EyesOffIcon} alt="비밀번호 보기 아이콘" /> 
           </button>
           
           {/* TODO 입력 도움말 */}
-          <p className="account__help-text">최소 8글자 이상</p>
+          <p className="account__help-text">{warnText.warnNewPwd}</p>
         </div>
       </div>
       {/* TODO : 새 비밀번호 확인 input */}
       <div className="account__content-item">
         <span className="account__content-category">새 비밀번호 확인</span>
         <div className="account__password-change">
-          <input id="checkNewPwd" type={isShows[2] ? "text" : "password"} autoComplete="off" className="account__content-input account__content-input--password" placeholder="새 비밀번호를 입력해주세요." onChange={onChangeValue}/>
+          <input id="checkNewPwd" type={isShows[2] ? "text" : "password"} autoComplete="off" className="account__content-input account__content-input--password" placeholder="새 비밀번호를 입력해주세요." onChange={onChangeValue} maxlength="20"/>
           <button className="account__password-show" type="button"  onClick={()=>onClickBtn(2)} >
             <img src={isShows[2] ? EyesOnIcon : EyesOffIcon} alt="비밀번호 보기 아이콘" /> 
           </button>
 
           {/* TODO 입력 도움말 */}
-          <p className="account__help-text">최소 8글자 이상</p>
+          <p className="account__help-text">{warnText.warnCheckPwd}</p>
         </div>
       </div>
       {/* // TODO 비밀번호 변경 UI */}
