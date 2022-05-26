@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import moment from "moment";
 import Layout from "../../Common/Component/Layout";
 import { Link } from "react-router-dom";
@@ -48,7 +48,7 @@ export default function View(props) {
 
           <div className="account__content-wrap">
             <form action="">
-              {selectView == "account" ? <ChangeName {...props} onClickBtn={onClickBtn}/> : <ChangePassword {...props} onClickBtn={onClickBtn}/>}
+              {selectView == "account" ? <ChangeName {...props} /> : <ChangePassword {...props}/>}
             </form>
           </div>
         </div>
@@ -59,11 +59,10 @@ export default function View(props) {
 
 const ChangeName = (props) => {
 
-
   const onClickBtn = (id)=>{
     console.log(id)
     showPopUp(
-      <EditPopup id={id}/>,
+      <EditPopup id={id} {...props} dismiss={PopUp.hidePopUp}/>,
       {
         darkmode: true,
         dismissButton: true,

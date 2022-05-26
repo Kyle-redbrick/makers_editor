@@ -1019,6 +1019,8 @@ const ja = {
   ID_RANKING_NUMBER_CREATE: "개",
   ID_RANKING_NUMBER_POP: "개",
   ID_RANKING_NUMBER_VIEW: "회",
+  ID_GAME_LIST_TITLE_ALL: "All Games",
+  ID_GAME_LIST_TITLE_RECENT: "Recently played",
   ID_GAME_LIST_TITLE_NEWS: "最新ゲーム",
   ID_GAME_LIST_TITLE_WEEKLY: "週間人気ゲーム",
   ID_GAME_LIST_TITLE_MONTHLY: "月間人気ゲーム",
@@ -1318,8 +1320,6 @@ const ja = {
   ID_INTRO_SECOND_SECTION_INFO_TITLE_3_EXPLAN : "A 100=hour PBL curriculum\nto develop pracrical skills",
 
   ID_INTRO_THIRD_SECTION_TITLE : "Here's how\nthe curriculum works",
-
-
   ID_INTRO_GAME_VIDEO_SECTION_TITLE : "Your very own game\ncreated with Astro",
 
   ID_INTRO_GAME_VIDEO_SECTION_CHILD_TITLE : "Astro Coding Go에서 완성한 게임을 먼저 플레이해보세요",
@@ -1341,5 +1341,8 @@ const ja = {
   ID_INTRO_VIEW_MORE_NOTICE_TITLE : "Teach coding on a fun and exciting way!",
   ID_INTRO_VIEW_MORE_LEFT_TITLE : "Want to know more\nabout the Curriculum?",
   ID_INTRO_VIEW_MORE_RIGHT_TITLE : "Start your free trial\ncourse right now!",
+  ID_ATTENDANCE_TITLE: "出席状況",
+  ID_COMMON_MONTH: "月",
+  ID_COMMON_YEAR: "年"
 };
 export default ja;

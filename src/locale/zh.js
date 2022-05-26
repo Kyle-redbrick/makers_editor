@@ -1017,6 +1017,8 @@ const zh = {
   ID_RANKING_NUMBER_CREATE: "개",
   ID_RANKING_NUMBER_POP: "개",
   ID_RANKING_NUMBER_VIEW: "회",
+  ID_GAME_LIST_TITLE_ALL: "All Games",
+  ID_GAME_LIST_TITLE_RECENT: "Recently played",
   ID_GAME_LIST_TITLE_NEWS: "최신 게임",
   ID_GAME_LIST_TITLE_WEEKLY: "주간 인기 게임",
   ID_GAME_LIST_TITLE_MONTHLY: "월간 인기 게임",
@@ -1340,5 +1342,8 @@ const zh = {
   ID_INTRO_VIEW_MORE_LEFT_TITLE : "Want to know more\nabout the Curriculum?",
   ID_INTRO_VIEW_MORE_RIGHT_TITLE : "Start your free trial\ncourse right now!",
 
+  ID_ATTENDANCE_TITLE: "출석현황",
+  ID_COMMON_MONTH: "月",
+  ID_COMMON_YEAR: "年"
 };
 export default zh;

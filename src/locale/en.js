@@ -168,7 +168,7 @@ const en = {
   ID_GAME_MONTLY_LIKE_TITLE: "Monthly Popular Games",
   ID_GAME_RECOMMEND_TITLE: "위즈랩 추천 게임",
   ID_GAME_SEARCH_RECOMMEND_TITLE: "추천 게임",
-  ID_GAME_NEWS_GAME_TITLE: "Recent Games",
+  ID_GAME_NEWS_GAME_TITLE: "Recently Played",
   ID_GAME_MORE_GAME_TITLE: "이런 게임은 어때요?",
   ID_GAME_VIEW_MORE: "더보기",
   ID_GAME_VIEW_ALL: "See all",
@@ -1017,6 +1017,8 @@ const en = {
   ID_RANKING_NUMBER_CREATE: "개",
   ID_RANKING_NUMBER_POP: "개",
   ID_RANKING_NUMBER_VIEW: "회",
+  ID_GAME_LIST_TITLE_ALL: "All Games",
+  ID_GAME_LIST_TITLE_RECENT: "Recently played",
   ID_GAME_LIST_TITLE_NEWS: "Recent Games",
   ID_GAME_LIST_TITLE_WEEKLY: "Weekly Popular Games",
   ID_GAME_LIST_TITLE_MONTHLY: "Monthly Popular Games",
@@ -1342,6 +1344,8 @@ const en = {
   ID_INTRO_VIEW_MORE_LEFT_TITLE : "Want to know more\nabout the Curriculum?",
   ID_INTRO_VIEW_MORE_RIGHT_TITLE : "Start your free trial\ncourse right now!",
   
-
+  ID_ATTENDANCE_TITLE: "Attendance",
+  ID_COMMON_MONTH: "",
+  ID_COMMON_YEAR: ""
 };
 export default en;
