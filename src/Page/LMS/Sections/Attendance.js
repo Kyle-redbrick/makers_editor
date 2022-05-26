@@ -1,11 +1,11 @@
-import React, { useEffect, useState, Children } from "react";
+import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import styled from "@emotion/styled";
 import moment from "moment";
 import "moment/locale/ko";
 import "moment/locale/en-gb";
 import "moment/locale/ja";
-import { injectIntl, useIntl } from "react-intl";
+import { injectIntl } from "react-intl";
 import { Calendar, momentLocalizer } from "react-big-calendar";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import attendImg from "../../../Image/img-attendance-stamp.png";
@@ -67,7 +67,7 @@ const Attendance = ({ ...props }) => {
 
   return (
     <Self {...props}>
-      <div className="attendance__title">Attendance</div>
+      <div className="attendance__title">Attendance  </div>
       <div className="attendance__calendar-container">
         {attendanceData && attendanceData.forEach((data) => {
           events.push({
