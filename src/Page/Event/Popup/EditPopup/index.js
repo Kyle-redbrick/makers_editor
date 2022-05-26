@@ -8,8 +8,6 @@ const names = {"section": "name" ,"newValue": "asdfsadf"}
 //const passwords = {"currentPasswd": "96cae35ce8a9b0244178bf28e4966c2ce1b8385723a96a6b838858cdd6ca0a1e" ,"newPasswd": "96cae35ce8a9b0244178bf28e4966c2ce1b8385723a96a6b838858cdd6ca0a1a"}
 
 function EditPopup (props) {
-
-  // passwords.currentPasswd = this.
   return (
     <div>
         {props.id == "name" ? <EditName {...props} /> : <EditNickname {...props}  /> }
