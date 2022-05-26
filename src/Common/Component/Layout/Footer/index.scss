@@ -10,8 +10,13 @@
     max-width: 1169px;
     height: 80px;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    justify-content: center;
     color: #808080;
+  }
+  .Footer--Inner__term-row, .Footer--Inner__info-row {
+    display: flex;
+    flex-direction: row;
   }
   .Logo {
     position: absolute;
