@@ -1576,7 +1576,11 @@ export const addCertificateInfo = formData => {
 
 
 export const accountActivateCheckout = authorityKey => {
-  return fetchRequest(URL.API_SERVER + `/account/activate/checkout/${authorityKey}`, "GET");
+  return fetchRequest(URL.API_SERVER + `account/activate/checkout/${authorityKey}`, "GET");
+}
+
+export const getAttendance = (userId) => {
+  return fetchRequest(URL.API_SERVER + `account/attendance/${userId}`, "GET");
 }
 
 export const getLearn = formData => {
