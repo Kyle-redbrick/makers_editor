@@ -18,6 +18,7 @@ import TextImg from "../../Image/fade-in-text.png";
 import TextImg2 from "../../Image/fade-in-text-2.png";
 /* import IntroduceSection from "./IntroduceSection"; */
 import Contact from "./Contact";
+import ScrollAction from "./ScrollAction";
 import "./index.scss";
 
 function View(props) {
@@ -113,6 +114,9 @@ function View(props) {
 
         {/* Contact Us */}
         <Contact />
+
+        {/* 스크롤 애니메이션 */}
+        <ScrollAction />
       </div>
     </Layout>
   );
