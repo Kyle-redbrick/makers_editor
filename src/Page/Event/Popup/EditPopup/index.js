@@ -7,8 +7,6 @@ import * as request from "../../../../Common/Util/HTTPRequest";
 const names = {"section": "name" ,"newValue": "asdfsadf"}
 
 function EditPopup (props) {
-
-  // passwords.currentPasswd = this.
   return (
     <div>
         {props.id == "name" ? <EditName {...props} /> : <EditNickname {...props}  /> }
