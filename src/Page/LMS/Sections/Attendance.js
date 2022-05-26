@@ -37,7 +37,6 @@ const Attendance = ({ ...props }) => {
       })
   }, []);
 
-  console.log(111, locale);
   switch (locale) {
     case "en":
       calendar_lang = "en-US";
@@ -110,7 +109,6 @@ const Toolbar = ({ date, onNavigate }) => {
   const navigate = (action) => {
     onNavigate(action);
   };
-
   return (
     <div className="rbc-toolbar">
       <span className="rbc-btn-group">
