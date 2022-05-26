@@ -1334,7 +1334,12 @@ const zh = {
   ID_INTRO_INTRODUCE_AREA_CONTENT_TITLE_3 : "The Patented OOBC Technology",
   ID_INTRO_INTRODUCE_AREA_CONTENT_CHILD_TITLE_1 : "Teach students easily by assigning missions for them to try.\nManage multiple classes at once while keeping track of the progress of each student\nEven instructors who aren't expert coders can teach classes with ease.",
   ID_INTRO_INTRODUCE_AREA_CONTENT_CHILD_TITLE_2 : "Apply CS concepts such as variables and functions to each mission and learn practical cases\nrather than stopping at theoretical learning. And with the additional builder feature, students can\napply the skills they learned and create their very own games themselves.",
-  ID_INTRO_INTRODUCE_AREA_CONTENT_CHILD_TITLE_3 : "The OOBC block language used in Astro Coding Go! uses a sentence structure that is different\nfrom the existing block code language, helping the transition to text coding such as JS.\n* OOBC : object-oriented block coding"
+  ID_INTRO_INTRODUCE_AREA_CONTENT_CHILD_TITLE_3 : "The OOBC block language used in Astro Coding Go! uses a sentence structure that is different\nfrom the existing block code language, helping the transition to text coding such as JS.\n* OOBC : object-oriented block coding",
 
+  ID_INTRO_SCROLL_AREA_LEFT_TITLE : "Self Managing Education",
+  ID_INTRO_SCROLL_AREA_LEFT_CHILD_TITLE : "A self-managing education method provides tips and\nanswers within each mission, ultimately minimizing the\ninstructions that are required for instructors.",
+  
+  ID_INTRO_SCROLL_AREA_LEFT_TITLE_2 : "Study Assistant Tools",
+  ID_INTRO_SCROLL_AREA_LEFT_CHILD_TITLE_2 : "The assistant provides tools to help students solve\ndifficult problems on their own such as code sorting,\nAPI dictionary, and a question and answer board while\nthey write their own code."
 };
 export default zh;
