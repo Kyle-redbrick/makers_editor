@@ -87,6 +87,7 @@
 
 .contact__form-content {
   margin-bottom: 22px;
+  position: relative;
 
   &:last-child {
     margin-bottom: 0;
@@ -160,7 +161,7 @@
   margin-top:28px;
 }
 
-.contact__from-next {
+.contact__from-next, .contact__from-send-btn {
   width: 100%;
   max-width:225px;
   margin: 0 auto;
@@ -181,3 +182,124 @@
     color: #fff;
   }
 } 
+
+.contact__form-flex-box {
+  display:flex;
+  align-items: center;
+
+  .contact__form-content--name {
+    padding:0 10px;
+    margin: 0;
+    flex:1;
+  }
+}
+
+.contact__form-flex-box--name {
+  margin: 0 -10px 22px;
+}
+
+.contact__form-select-title {
+  border: 1.2px solid #5b5b5b;
+  border-radius:6px;
+  background-color: #2f2f30;
+  padding: 0px 16px;
+  height:47px;
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  cursor:pointer;
+
+  &.on {
+    img {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.contact__from-select-input {
+  display:flex;
+  align-items:center;
+  margin:0 -3px;
+  position:relative;
+
+  .contact__form-select {
+    padding:0 3px;
+  }
+
+  > input {
+    margin: 0 3px;
+  }
+}
+
+.contact__form-select-dropdown {
+  position: absolute;
+  z-index: 10;
+  /* top:50px; */
+  height:188px;
+  overflow-y:auto;
+  width:100%;
+  border-radius: 6px;
+  display:none;
+}
+
+.contact__form-select-dropdown-list {
+  list-style:none;
+  margin:0;
+  padding:0;
+  background-color:#454548;
+  border-radius: 6px;
+}
+
+.contact__form-select-dropdown-item {
+  padding:13px 16px;
+  font-size: 16px;
+  color:#fff;
+  line-height: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    background-color:#545458;
+  }
+}
+
+.contact__form-select-dropdown--country {
+  height:141px;
+}
+
+.contact__call-country-number {
+  color:#aeaeae;
+  margin-left:8px;
+}
+
+.contact__form-bottom--flex {
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .contact__from-send-btn {
+    margin:0;
+  }
+}
+
+.contact__form-back {
+  background-color: transparent;
+  border: 0;
+  font-size: 20px;
+  color:#aeaeae;
+  line-height:24px;
+  font-weight:600;
+  display:flex;
+  align-items: center;
+  cursor: pointer;
+
+  img {
+    margin-right: 8px;
+  }
+}
