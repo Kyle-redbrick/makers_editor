@@ -7,7 +7,8 @@ import { loadReCaptcha } from "react-recaptcha-google";
 import { ReCaptcha } from "react-recaptcha-google";
 
 import sha256 from "../../Util/SHA256";
-import {inviteSignup} from "../../Util/HTTPRequest";
+import * as request from "../../../Common/Util/HTTPRequest";
+
 import * as TrackingUtil from "../../Util/TrackingUtil";
 import { DEFAULT_PROFILE_IMAGES } from "../../Util/Constant";
 import * as userInfoActions from "../../Store/Reducer/UserInfo";
@@ -33,309 +34,178 @@ class SignUp extends Component {
     super(props);
 
     this.state = {
+      email:"",
+      name:"",
+      fristName:"",
+      nickName:"",
+      password:"",
+
       warning_email: "",
-      warning_password: "",
       warning_name: "",
-      warning_phone: "",
-      warning_agreement: "",
-      warning_recommendCode: "",
-      warning_recaptchaToken: false,
+      warning_first: "",
+      warning_nickName: "",
+      warning_password: "",
+
+      errInfo: ""
     };
   }
 
   componentDidMount = () => {
-
+    this.setState({email:this.props.userEmail})
   };
 
   checkEmailFormat = () => {
     const regex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return regex.test(this.state.email);
   };
-  checkPasswordFormat = () => {
-    return this.state.password.length >= 6;
-  };
-  checkPasswordIdentical = () => {
-    return this.state.password === this.state.password_re;
-  };
-  checkNameFormat = () => {
+    checkNameFormat = () => {
     return this.state.name.length >= 2;
   };
-  checkPhoneFormat = () => {
-    return this.state.phone.length >= 8;
+  checkFirstNameFormat = () => {
+    return this.state.name.length >= 2;
   };
-  checkSmsCodeFormat = () => {
-    return this.state.smsCode.length >= 5;
+  checkNickNameFormat = () => {
+    return this.state.name.length >= 2;
+  };
+  checkPasswordFormat = () => {
+    return this.state.password.length >= 6;
   };
 
   onChangeInput = e => {
     const { formatMessage } = this.props.intl;
     const { id, value } = e.target;
-    console.log(value)
-    // this.setState({ [id]: value }, () => {
-    //   switch (id) {
-    //     case "email":
-    //       if (this.checkEmailFormat() || value === "") {
-    //         this.setState({ warning_email: "" });
-    //       } else {
-    //         this.setState({
-    //           warning_email: formatMessage({
-    //             id: "ID_SIGNUP_WARNING_EMAIL_FORMAT"
-    //           })
-    //         });
-    //       }
-    //       break;
-    //     case "name":
-    //       if (this.checkNameFormat() || value === "") {
-    //         this.setState({ warning_name: "" });
-    //       } else {
-    //         this.setState({
-    //           warning_name: formatMessage({
-    //             id: "ID_SIGNUP_WARNING_NAME_FORMAT"
-    //           })
-    //         });
-    //       }
-    //       break;
-    //     case "password":
-    //       if (this.checkPasswordFormat()) {
-    //         if (
-    //           this.checkPasswordIdentical() ||
-    //           this.state.password_re === ""
-    //         ) {
-    //           this.setState({ warning_password: "" });
-    //         } else {
-    //           this.setState({
-    //             warning_password: formatMessage({
-    //               id: "ID_SIGNUP_WARNING_PW_RE"
-    //             })
-    //           });
-    //         }
-    //       } else if (value === "") {
-    //         this.setState({ warning_password: "" });
-    //       } else {
-    //         this.setState({
-    //           warning_password: formatMessage({
-    //             id: "ID_SIGNUP_WARNING_PW_FORMAT"
-    //           })
-    //         });
-    //       }
-    //       break;
-    //     case "firstName":
-    //       this.setState({ warning_phone: "" });
-    //       break;
-    //     case "nikName":
-    //       this.setState({
-    //         warning_recommendCode: "",
-    //         recommendCodeConfirmed: false
-    //       });
-    //       break;
-    //     default:
-    //       break;
-    //   }
-    // });
+    console.log(id)
+    this.setState({ [id]: value }, () => {
+      console.log(id)
+      switch (id) {
+        case "email":
+          if (this.checkEmailFormat() || value === "") {
+            this.setState({ warning_email: "" ,email: value});
+          } else {
+            this.setState({
+              warning_email: formatMessage({
+                id: "ID_SIGNUP_WARNING_EMAIL_FORMAT"
+              })
+            });
+          }
+          break;
+        case "name":
+          if (this.checkNameFormat() || value === "") {
+            this.setState({ warning_name: "" ,name: value});
+          } else {
+            this.setState({
+              warning_name: formatMessage({
+                id: "ID_SIGNUP_WARNING_NAME_FORMAT"
+              })
+            });
+          }
+          break;
+        case "fristName":
+          if (this.checkNameFormat() || value === "") {
+            this.setState({ warning_fristName: "" ,fristName: value});
+          } else {
+            this.setState({
+              warning_fristName: formatMessage({
+                id: "ID_SIGNUP_WARNING_NAME_FORMAT"
+              })
+            });
+          }
+          break;
+        case "nickName":
+          if (this.checkNickNameFormat() || value === "") {
+            this.setState({ warning_nickName: "" ,nickName: value});
+          } else {
+            this.setState({
+              warning_nickName: formatMessage({
+                id: "ID_SIGNUP_WARNING_NAME_FORMAT"
+              })
+            });
+          }
+          break;
+        case "password":
+          if (this.checkPasswordFormat()) {
+            this.setState({ warning_password: "" ,password: value});
+          } else {
+            this.setState({
+              warning_password: formatMessage({
+                id: "ID_SIGNUP_WARNING_PW_FORMAT"
+              })
+            });
+          }
+          break;
+        default:
+          break;
+      }
+    });
   };
-
-  // onClickSignUp = e => {
-  //   e.preventDefault();
-  //   const { formatMessage } = this.props.intl;
-  //   const {
-  //     email,
-  //     password,
-  //     password_re,
-  //     name,
-  //     countryCode,
-  //     phone,
-  //     smsSent,
-  //     smsConfirmed,
-  //     agreed_terms,
-  //     agreed_privacy,
-  //     agreed_advertisement,
-  //     recaptchaToken
-  //   } = this.state;
-  //   if (email === "") {
-  //     this.setState({
-  //       warning_email: formatMessage({ id: "ID_SIGNUP_WARNING_EMAIL_EMPTY" })
-  //     });
-  //     return;
-  //   }
-  //   if (password === "") {
-  //     this.setState({
-  //       warning_password: formatMessage({ id: "ID_SIGNUP_WARNING_PW_EMPTY" })
-  //     });
-  //     return;
-  //   }
-  //   if (password_re === "") {
-  //     this.setState({
-  //       warning_password: formatMessage({
-  //         id: "ID_SIGNUP_WARNING_PW_RE_EMPTY"
-  //       })
-  //     });
-  //     return;
-  //   }
-  //   if (name === "") {
-  //     this.setState({
-  //       warning_name: formatMessage({ id: "ID_SIGNUP_WARNING_NAME_EMPTY" })
-  //     });
-  //     return;
-  //   }
-  //   if (!smsSent) {
-  //     this.setState({
-  //       warning_phone: formatMessage({ id: "ID_SIGNUP_WARNING_PHONE_EMPTY" })
-  //     });
-  //     return;
-  //   }
-  //   if (!smsConfirmed) {
-  //     this.setState({
-  //       warning_phone: formatMessage({ id: "ID_SIGNUP_WARNING_SMSCODE_EMPTY" })
-  //     });
-  //     return;
-  //   }
-  //   if (!agreed_terms || !agreed_privacy) {
-  //     this.setState({
-  //       warning_agreement: formatMessage({ id: "ID_SIGNUP_WARNING_AGREEMENT" })
-  //     });
-  //     return;
-  //   }
-  //   if (!recaptchaToken) {
-  //     this.setState({
-  //       warning_recaptchaToken: true
-  //     });
-  //     return;
-  //   }
-
-  //   if (
-  //     this.checkEmailFormat() &&
-  //     this.checkPasswordFormat() &&
-  //     this.checkPasswordIdentical() &&
-  //     this.checkNameFormat() &&
-  //     this.checkPhoneFormat() &&
-  //     this.checkSmsCodeFormat()
-  //   ) {
-  //     let params = {
-  //       email,
-  //       password: sha256(password),
-  //       phone,
-  //       name,
-  //       countryCode,
-  //       icon:
-  //         DEFAULT_PROFILE_IMAGES[
-  //         Math.floor(
-  //           Math.random() * Math.floor(DEFAULT_PROFILE_IMAGES.length)
-  //         )
-  //         ],
-  //       isMarketingAgreement: agreed_advertisement,
-  //       recaptchaToken
-  //     };
-  //     if (this.state.recommendCodeConfirmed) {
-  //       params.recommendCode = this.state.recommendCode;
-  //     }
-  //     request
-  //       .signup(params)
-  //       .then(res => res.json())
-  //       .then(json => {
-  //         if (json.status === 409) {
-  //           this.setState({
-  //             warning_email: formatMessage({
-  //               id: "ID_SIGNUP_WARNING_EMAIL_USED"
-  //             })
-  //           });
-  //         } else if (json.status === 401) {
-  //           this.setState({
-  //             warning_recaptchaToken: true
-  //           });
-  //         } else if (json.status === 406) {
-  //           this.setState({
-  //             warning_name: formatMessage({
-  //               id: "ID_MYPAGE_NAME_USERNAME_OFFICIAL_WARNING"
-  //             })
-  //           });
-  //         } else if (json.user) {
-  //           // TrackingUtil.sendGAEvent(
-  //           //   { category: "Signup", action: "Signup_Success" },
-  //           //   email
-  //           // );
-  //           // TrackingUtil.kakaoPixelEvent("signup");
-  //           TrackingUtil.kakaoPixelPageView("completeRegistration");
-  //           TrackingUtil.sendGTMEvent("Signup_Success");
-
-  //           /*
-  //           author : john@wizscool.io
-  //           date : 2020.07.01
-  //           */
-  //           /* test Case1 */
-  //           // let bizSpring = document.createElement("script");
-  //           // bizSpring._TRK_PI = "RGR";
-  //           // bizSpring._TRK_SX = "";
-  //           // bizSpring._TRK_AG = "";
-
-  //           /* test Case2 */
-  //           // window.setBizSpring();
-
-  //           request
-  //             .login({ email, password: sha256(password) })
-  //             .then(res => res.json())
-  //             .then(json => {
-  //               // TrackingUtil.sendGAEvent(
-  //               //   { category: "Login", action: "Login_Success" },
-  //               //   email
-  //               // );
-  //               TrackingUtil.sendGTMEvent("Login_Success");
-  //               localStorage.setItem("wizToken", json.token);
-  //               this.props.updateUserInfo(json.user);
-  //             });
-
-  //           showPopUp(
-  //             <PopUp.OneButton
-  //               title={formatMessage({ id: "ID_SIGNUP_SIGNED_TITLE" })}
-  //               buttonName={formatMessage({ id: "ID_SIGNUP_SIGNED_CONFIRM" })}
-  //             />,
-  //             { darkmode: !this.props.isBuilder }
-  //           );
-  //         }
-  //       });
-  //   }
-  // };
-
 
   onClickSignUp = e => {
-    inviteSignup({
-      "name": "tutorName", "nickName": "Nick Name",
-      "phone": "010-0000-0000",
-      "password": "123121213131"
-    },{"authorityKey":this.props.activateToken}).
+
+    const params = {
+      email:this.state.email,
+      name:this.state.name,
+      fristName:this.state.fristName,
+      nickName:this.state.nickName,
+      password: sha256(this.state.password),
+    }
+
+    console.log(params)
+
+    request.inviteSignup({...params},{"authorityKey":this.props.activateToken}).
     then(res => res.json()).
-    then(res => console.log(res))
+    then(res => {
+      if(res.success) {
+        request.loginByToken({token:res.body.token})
+        .then(res => res.json)
+        .then(json => {
+          if(json.token){
+            localStorage.setItem("wizToken",  json.token);
+
+            const url = window.location.href 
+            const newUrl = url.split("?").pop()
+            window.location.href = url.replace("/?" + newUrl,"")
+            this.props.updateUserInfo(json.user);
+            this.props.dismiss()
+          }else {
+            this.setState({errInfo : json})
+          }
+          
+        })
+      }else {
+        this.setState({errInfo : res.reason})
+      }
+    })
   }
 
-  setRecaptchaRef = recaptcha => {
-    this.recaptcha = recaptcha;
-  };
-
-  onLoadRecaptcha = () => {
-    if (this.recaptcha) {
-      this.recaptcha.reset();
-    }
-  };
+  onClickDismiss = ()=> {
+    this.props.dismiss()
+  }
 
   render() {
     const { formatMessage } = this.props.intl;
     const {
       email,
-      password,
-      password_re,
       name,
-      phone,
+      fristName,
+      nickName,
+      password,
+      
       warning_email,
-      warning_password,
       warning_name,
-      warning_phone,
-      warning_agreement,
-      agreement,
+      warning_fristName,
+      warning_nickName,
+      warning_password,
+
+      agreement
+
     } = this.state;
     const {
       onChangeInput,
       onClickAgree,
       onClickSignUp,
-      onClickSignIn
+      onClickSignIn,
+
+      onClickDismiss,
     } = this;
 
     return agreement ? (
@@ -376,6 +246,8 @@ class SignUp extends Component {
                 onChange={onChangeInput}
                 type="text"
                 autoComplete="off"
+
+                disabled
               />
               <div className="popup_warning">{warning_email}</div>
             </div>
@@ -410,16 +282,16 @@ class SignUp extends Component {
             </div>
             <div className="signup__input__right">
               <input
-                className={`popup_input ${warning_name !== "" ? "popup_input-warning" : ""
+                className={`popup_input ${warning_fristName !== "" ? "popup_input-warning" : ""
                   }`}
-                id="firstName"
+                id="fristName"
                 placeholder={formatMessage({ id: "ID_SIGNUP_FIRST_NAME_PLACEHOLDER" })}
-                value={name}
+                value={fristName}
                 onChange={onChangeInput}
                 type="text"
                 autoComplete="off"
               />
-              <div className="popup_warning">{warning_name}</div>
+              <div className="popup_warning">{warning_fristName}</div>
             </div>
           </div>
 
@@ -432,16 +304,16 @@ class SignUp extends Component {
             </div>
             <div className="signup__input__right">
               <input
-                className={`popup_input ${warning_name !== "" ? "popup_input-warning" : ""
+                className={`popup_input ${warning_nickName !== "" ? "popup_input-warning" : ""
                   }`}
-                id="nikName"
+                id="nickName"
                 placeholder={formatMessage({ id: "ID_SIGNUP_NAME_PLACEHOLDER" })}
-                value={name}
+                value={nickName}
                 onChange={onChangeInput}
                 type="text"
                 autoComplete="off"
               />
-              <div className="popup_warning">{warning_name}</div>
+              <div className="popup_warning">{warning_nickName}</div>
             </div>
           </div>
 
@@ -462,13 +334,15 @@ class SignUp extends Component {
                 onChange={onChangeInput}
                 autoComplete="off"
               />
-              <div className="popup_warning">{warning_name}</div>
+              <div className="popup_warning">{warning_password}</div>
             </div>
           </div>
 
+          <div className="popup_warning">{this.state.errInfo}</div>
+
           <div className="popup__btn-box">
             {/* TODO 취소 버튼 */}
-            <button type="button" className="popup_button popup-button--close">
+            <button type="button" className="popup_button popup-button--close" onClick={onClickDismiss}>
               {formatMessage({ id: "ID_COMMENT_CANCEL_BUTTON" })}
             </button>
 

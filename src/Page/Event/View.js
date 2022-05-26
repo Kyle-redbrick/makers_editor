@@ -6,6 +6,12 @@ import { FormattedMessage } from "react-intl";
 import EyesOffIcon from "../../Image/icon-eyes-off.svg";
 import EyesOnIcon from "../../Image/icon-eyes-on.svg";
 import EditPopup from "./Popup/EditPopup";
+
+import PopUp, { showPopUp } from "../../Common/Component/PopUp";
+import Request  from "../../Common/Util/HTTPRequest";
+
+
+
 import "./index.scss";
 
 export default function View(props) {
@@ -23,12 +29,12 @@ export default function View(props) {
     }
   }
 
+
   return (
     <Layout>
       {/* <EditPopup /> */}
       <div className="account">
         <h3 className="account__title">계정 설정</h3>
-        
         <div className="account__tab-box">
           <ul className="account__tab-list">
             <li className="account__tab-item" onClick={()=>onClickBtn("account")}>
@@ -42,7 +48,7 @@ export default function View(props) {
 
           <div className="account__content-wrap">
             <form action="">
-              {selectView == "account" ? <ChangeName onClickBtn={onClickBtn}/> : <ChangePassword onClickBtn={onClickBtn}/>}
+              {selectView == "account" ? <ChangeName {...props} onClickBtn={onClickBtn}/> : <ChangePassword {...props} onClickBtn={onClickBtn}/>}
             </form>
           </div>
         </div>
@@ -53,18 +59,30 @@ export default function View(props) {
 
 const ChangeName = (props) => {
 
+
+  const onClickBtn = (id)=>{
+    console.log(id)
+    showPopUp(
+      <EditPopup id={id}/>,
+      {
+        darkmode: true,
+        dismissButton: true,
+      }
+    );
+  }
+
   return (
     <>
       <div className="account__content-item account__content-item--account">
         <span className="account__content-category account__content-category--account">이름</span>
-        <input type="text" className="account__content-input" autoComplete="off" placeholder="이름을 입력하세요." />
-        <button type="button" className="account__edit-btn">수정</button>
+        <input type="text" className="account__content-input" autoComplete="off" placeholder="이름을 입력하세요." value={props.userinfo.name} disabled />
+        <button type="button" className="account__edit-btn" onClick={()=> onClickBtn("name")}>수정</button>
       </div>
 
       <div className="account__content-item account__content-item--account">
         <span className="account__content-category account__content-category--account">닉네임</span>
-        <input type="text" className="account__content-input" autoComplete="off" placeholder="닉네임을 입력하세요." />
-        <button type="button" className="account__edit-btn">수정</button>
+        <input type="text" className="account__content-input" autoComplete="off" placeholder="닉네임을 입력하세요." value={props.userinfo.nickName} disabled />
+        <button type="button" className="account__edit-btn" onClick={()=> onClickBtn("nickName")}>수정</button>
       </div>
     </>
   )
@@ -81,6 +99,17 @@ const ChangePassword = (props) => {
     setIsShows(Object.assign(Array.from(isShows), newArr));
   }
 
+  const onChangeValue = (e) => {
+    const { id, value } = e.target;  
+  
+    console.log(id,value)
+  }
+
+
+  const onClickSubmit =  async (id) => {
+    console.log(11111)
+  }
+
   
   return (
     <>
@@ -88,7 +117,7 @@ const ChangePassword = (props) => {
       <div className="account__content-item">
         <span className="account__content-category">현재 비밀번호</span>
         <div className="account__password-change">
-          <input type={isShows[0] ? "text" : "password"} autoComplete="off" className="account__content-input account__content-input--password" placeholder="현재 비밀번호를 입력해주세요." />
+          <input id="pwd" type={isShows[0] ? "text" : "password"} autoComplete="off" className="account__content-input account__content-input--password" placeholder="현재 비밀번호를 입력해주세요." onChange={onChangeValue}/>
           <button className="account__password-show" type="button" onClick={()=>onClickBtn(0)} >
             <img src={isShows[0] ? EyesOnIcon : EyesOffIcon} alt="비밀번호 안보기 아이콘" /> 
           </button>
@@ -100,7 +129,7 @@ const ChangePassword = (props) => {
       <div className="account__content-item">
         <span className="account__content-category" >새 비밀번호</span>
         <div className="account__password-change">
-          <input type={isShows[1] ? "text" : "password"} autoComplete="off" className="account__content-input account__content-input--password" placeholder="새 비밀번호를 입력해주세요." />
+          <input id="newPwd" type={isShows[1] ? "text" : "password"} autoComplete="off" className="account__content-input account__content-input--password" placeholder="새 비밀번호를 입력해주세요." onChange={onChangeValue}/>
           <button className="account__password-show" type="button"  onClick={()=>onClickBtn(1)}>
             <img src={isShows[1] ? EyesOnIcon : EyesOffIcon} alt="비밀번호 보기 아이콘" /> 
           </button>
@@ -113,7 +142,7 @@ const ChangePassword = (props) => {
       <div className="account__content-item">
         <span className="account__content-category">새 비밀번호 확인</span>
         <div className="account__password-change">
-          <input type={isShows[2] ? "text" : "password"} autoComplete="off" className="account__content-input account__content-input--password" placeholder="새 비밀번호를 입력해주세요." />
+          <input id="CheckNewPwd" type={isShows[2] ? "text" : "password"} autoComplete="off" className="account__content-input account__content-input--password" placeholder="새 비밀번호를 입력해주세요." onChange={onChangeValue}/>
           <button className="account__password-show" type="button"  onClick={()=>onClickBtn(2)} >
             <img src={isShows[2] ? EyesOnIcon : EyesOffIcon} alt="비밀번호 보기 아이콘" /> 
           </button>
@@ -127,7 +156,7 @@ const ChangePassword = (props) => {
     </div>
     <div className="account__password-changed-btn-box">
       {/* TODO : 활성화 시 클래스 active 추가 */}
-      <button type="submit" className="account__password-changed-btn">비밀번호 변경</button>
+      <button type="button" className="account__password-changed-btn" onClick={onClickSubmit}>비밀번호 변경</button>
     </div>
   </>
   )

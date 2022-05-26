@@ -1,8 +1,10 @@
 const ko = {
   ID_TITLE: "위즈랩",
   ID_HEADER_LANG: "한국어",
+  ID_HEADER_LINK_ABOUT: "About",
   ID_HEADER_LINK_INTRO: "Intro",
   ID_HEADER_LINK_BUILDER: "Build",
+  ID_HEADER_LINK_LEARN: "Learn",
   ID_HEADER_LINK_TUTORIAL: "Learn",
   ID_HEADER_LINK_GAME: "Play",
   ID_HEADER_LINK_SOCIAL: "Social",
@@ -1315,9 +1317,24 @@ const ko = {
   ID_INTRO_SECOND_SECTION_INFO_TITLE_3_EXPLAN : "A 100=hour PBL curriculum\nto develop pracrical skills",
   
   ID_INTRO_THIRD_SECTION_TITLE : "Here's how\nthe curriculum works",
+  ID_INTRO_GAME_VIDEO_SECTION_TITLE : "Your very own game\ncreated with Astro",
 
+  ID_INTRO_GAME_VIDEO_SECTION_CHILD_TITLE : "Astro Coding Go에서 완성한 게임을 먼저 플레이해보세요",
+  ID_INTRO_GAME_VIDEO_LINE_BANNER_TITLE_LEFT : "How to play",
+  ID_INTRO_GAME_VIDEO_LINE_BANNER_TITLE_RIGHT : "공격 버튼을 눌러 플라즈마를 파괴하세요!",
+
+  ID_INTRO_LINE_BANNER_TITLE : "수업 내용을 미리 체험해보세요!",
+  ID_INTRO_LINE_BANNER_CHILD_TITLE : "Fun and learning all at once",
+  ID_INTRO_LINE_BANNER_GO_TO_FREE_COURSE_LINK : "Go to Free Trial Course",
+
+  ID_INTRO_INTRODUCE_AREA_CONTENT_TITLE : "Systematic LMS",
+  ID_INTRO_INTRODUCE_AREA_CONTENT_TITLE_2 : "Project-Based Practical Classes",
+  ID_INTRO_INTRODUCE_AREA_CONTENT_TITLE_3 : "The Patented OOBC Technology",
+  ID_INTRO_INTRODUCE_AREA_CONTENT_CHILD_TITLE_1 : "Teach students easily by assigning missions for them to try.\nManage multiple classes at once while keeping track of the progress of each student\nEven instructors who aren't expert coders can teach classes with ease.",
+  ID_INTRO_INTRODUCE_AREA_CONTENT_CHILD_TITLE_2 : "Apply CS concepts such as variables and functions to each mission and learn practical cases\nrather than stopping at theoretical learning. And with the additional builder feature, students can\napply the skills they learned and create their very own games themselves.",
+  ID_INTRO_INTRODUCE_AREA_CONTENT_CHILD_TITLE_3 : "The OOBC block language used in Astro Coding Go! uses a sentence structure that is different\nfrom the existing block code language, helping the transition to text coding such as JS.\n* OOBC : object-oriented block coding"
+  
   ID_ATTENDANCE_TITLE: "출석현황",
-
   ID_COMMON_MONTH: "월",
   ID_COMMON_YEAR: "년"
 };
