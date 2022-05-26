@@ -8,15 +8,13 @@ import "moment/locale/ja";
 import { injectIntl } from "react-intl";
 import { Calendar, momentLocalizer } from "react-big-calendar";
 import "react-big-calendar/lib/css/react-big-calendar.css";
-import { COLOR } from "../Constants";
 import attendImg from "../../../Image/img-attendance-stamp.png";
 import nextArrow from "../../../Image/btn_right_arrow.svg"
 import prevArrow from "../../../Image/btn_left_arrow.svg"
 import * as request from "../../../Common/Util/HTTPRequest";
 
 import "./Calendar.scss";
-import { RequestFileError } from "babylonjs";
-// import { request } from "https";
+
 
 const Self = styled.div`
   padding-left:30px;
