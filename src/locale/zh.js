@@ -1337,8 +1337,8 @@ const zh = {
   ID_INTRO_INTRODUCE_AREA_CONTENT_CHILD_TITLE_3 : "The OOBC block language used in Astro Coding Go! uses a sentence structure that is different\nfrom the existing block code language, helping the transition to text coding such as JS.\n* OOBC : object-oriented block coding",
 
   ID_INTRO_VIEW_MORE_NOTICE_TITLE : "Teach coding on a fun and exciting way!",
-  ID_INTRO_VIEW_MORE_LEFT_TITLE : "Do you want to know\nthe curriculum?",
-  ID_INTRO_VIEW_MORE_RIGHT_TITLE : "Do you want to try\nour free trial course?",
+  ID_INTRO_VIEW_MORE_LEFT_TITLE : "Want to know more\nabout the Curriculum?",
+  ID_INTRO_VIEW_MORE_RIGHT_TITLE : "Start your free trial\ncourse right now!",
 
 };
 export default zh;
