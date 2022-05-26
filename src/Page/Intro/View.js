@@ -19,6 +19,7 @@ import TextImg2 from "../../Image/fade-in-text-2.png";
 import IntroduceSection from "./IntroduceSection";
 import ViewMore from "./ViewMore";
 /* import IntroduceSection from "./IntroduceSection"; */
+import Contact from "./Contact";
 import ScrollAction from "./ScrollAction";
 
 import "./index.scss";
@@ -116,6 +117,8 @@ function View(props) {
           <img  alt="A self-Learning Platform For Instructors"  data-aos="fade-up" data-aos-duration="700"  className="intro-page__fade-in-img" src={TextImg2} />
         </div>
 
+        {/* Contact Us */}
+        <Contact />
         {/* view more section */}
         <ViewMore />
 
