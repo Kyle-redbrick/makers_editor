@@ -97,7 +97,7 @@ function View(props) {
         {/* Vertical slide 배너 영역 */}
         <ThirdSection />
 
-        {/* 띠배너 영역 */}
+        {/* 띠배너 영역 */} 
         <LineBanner />
 
         {/* 게임 영상 재생 영역 */}
