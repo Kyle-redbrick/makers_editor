@@ -10,8 +10,6 @@ function Container(props) {
   );
 }
 export default connect(
-  state => ({ 
-    userinfo: state.userinfo
-  }, 
-  { updateUserInfo: action.updateUserInfo}),
-  {})(Container);
+  state => ({ userinfo: state.userinfo }),
+  { updateUserInfo: action.updateUserInfo})
+  (Container);

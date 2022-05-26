@@ -1017,6 +1017,8 @@ const zh = {
   ID_RANKING_NUMBER_CREATE: "개",
   ID_RANKING_NUMBER_POP: "개",
   ID_RANKING_NUMBER_VIEW: "회",
+  ID_GAME_LIST_TITLE_ALL: "All Games",
+  ID_GAME_LIST_TITLE_RECENT: "Recently played",
   ID_GAME_LIST_TITLE_NEWS: "최신 게임",
   ID_GAME_LIST_TITLE_WEEKLY: "주간 인기 게임",
   ID_GAME_LIST_TITLE_MONTHLY: "월간 인기 게임",
@@ -1340,6 +1342,17 @@ const zh = {
   ID_INTRO_SCROLL_AREA_LEFT_CHILD_TITLE : "A self-managing education method provides tips and\nanswers within each mission, ultimately minimizing the\ninstructions that are required for instructors.",
   
   ID_INTRO_SCROLL_AREA_LEFT_TITLE_2 : "Study Assistant Tools",
-  ID_INTRO_SCROLL_AREA_LEFT_CHILD_TITLE_2 : "The assistant provides tools to help students solve\ndifficult problems on their own such as code sorting,\nAPI dictionary, and a question and answer board while\nthey write their own code."
+  ID_INTRO_SCROLL_AREA_LEFT_CHILD_TITLE_2 : "The assistant provides tools to help students solve\ndifficult problems on their own such as code sorting,\nAPI dictionary, and a question and answer board while\nthey write their own code.",
+  ID_INTRO_CONTACT_TITLE : "Contact US",
+  ID_INTRO_CONTACT_CHILD_TITLE : "Submit the contact form to receive\na free account and try the premium content\nof Astro Coding Go for free.",
+
+
+  ID_INTRO_VIEW_MORE_NOTICE_TITLE : "Teach coding on a fun and exciting way!",
+  ID_INTRO_VIEW_MORE_LEFT_TITLE : "Want to know more\nabout the Curriculum?",
+  ID_INTRO_VIEW_MORE_RIGHT_TITLE : "Start your free trial\ncourse right now!",
+
+  ID_ATTENDANCE_TITLE: "출석현황",
+  ID_COMMON_MONTH: "月",
+  ID_COMMON_YEAR: "年"
 };
 export default zh;
