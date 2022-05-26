@@ -9,19 +9,31 @@ import UserIconWrapper from "../../UserIconWrapper";
 // Images
 import mypageIcon from "../../../../Image/dreamclass/header-bar-24-account-settings.svg";
 import signOutIcon from "../../../../Image/dreamclass/header-bar-24-sign-out.svg";
+import tutorLabel from "../../../../Image/dreamclass/user-tutor-label.png";
 
 import "./index.scss";
 
 const DDItem = ({ user, text, url, onClick }) => {
   if (user) {
+    console.log(111, user);
     return (
       <div className="DDItem-user">
-        <div className="DDItem-user-icon">
-          <UserIconWrapper iconSrc={user.icon} />
+        <div className={`DDItem-user-icon-wrapper${user.userType === "T" ? "--tutor" : ""}`}>
+          <div className="DDItem-user-icon">
+            <UserIconWrapper
+              iconSrc={user.icon}
+            />
+          </div>
+          {user.userType === "T" &&
+            <img className="DDItem-user-tutor-label" src={tutorLabel} alt="" />
+          }
         </div>
         <div className="DDItem-user-info">
           <div className="DDItem-user-name">
             {user.name}
+          </div>
+          <div className="DDItem-district-name">
+            {user.districtName}
           </div>
         </div>
       </div>
@@ -32,14 +44,13 @@ const DDItem = ({ user, text, url, onClick }) => {
       <Link to={url} style={{ textDecoration: "none" }}>
         <div className="DDItem DDItem-mypage" onClick={onClick}>
           <div className="DDItem__text">{text}</div>
-          <img src={mypageIcon} alt="" />
         </div>
       </Link>
     );
   }
   return (
     <div className="DDItem" onClick={onClick}>
-      <div className="DDItem__text">{text}</div>
+      <div className="DDIten__text DDItem__text--logout">{text}</div>
       <img src={signOutIcon} alt="" />
     </div>
   );
@@ -88,8 +99,12 @@ class DropDown extends Component {
             <div className="DD__list">
               <DDItem user={user} />
               <DDItem
-                text={<FormattedMessage id="ID_USERDD_MYPAGE" />}
+                text={<FormattedMessage id="ID_USERDD_MYGAME" />}
                 url="/mypage"
+              />
+              <DDItem
+                text={<FormattedMessage id="ID_USERDD_SETTING" />}
+                url="/settings"
               />
               <DDItem
                 text={<FormattedMessage id="ID_USERDD_LOGOUT" />}

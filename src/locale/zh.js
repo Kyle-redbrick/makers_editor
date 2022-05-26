@@ -427,6 +427,7 @@ const zh = {
   ID_FONT_SUNFLOWER: "向日葵字体 ",
   ID_FONT_YEONSUNG: "节奏毛笔字体 ",
   ID_USERDD_MYPAGE: "我的页面",
+  ID_USERDD_MYGAME: "마이 게임",
   ID_USERDD_MYAPK: "My APK",
   ID_USERDD_SETTING: "设置",
   ID_USERDD_LOGOUT: "退出",

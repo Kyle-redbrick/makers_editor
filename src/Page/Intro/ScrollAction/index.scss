@@ -15,7 +15,7 @@
 
 .scroll-action__left {
   position:sticky;
-  top:115px;
+  top:280px;
   margin-top: 115px;
 
   img {
@@ -58,5 +58,13 @@
     &:last-child {
       margin-bottom: 0;
     }
+  }
+}
+
+[data-aos="fade-up"] {
+  opacity: 1;
+  transition-property: opacity;
+  &.aos-animate {
+    opacity: 0;
   }
 }

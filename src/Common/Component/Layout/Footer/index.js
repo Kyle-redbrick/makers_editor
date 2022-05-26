@@ -77,6 +77,9 @@ class Footer extends Component {
           <div className="Info--Copy">
             <FormattedMessage id="ID_HOME_COPY_INFO" />
           </div>
+          <div className="Info-email">
+            Email: acg@mangosteems.com
+          </div>
           <img className="Logo" src={logo_gray} alt="logo" />
         </div>
       </div>
