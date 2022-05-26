@@ -1316,6 +1316,8 @@ const ko = {
   
   ID_INTRO_THIRD_SECTION_TITLE : "Here's how\nthe curriculum works",
 
+  ID_ATTENDANCE_TITLE: "출석현황",
+
   ID_COMMON_MONTH: "월",
   ID_COMMON_YEAR: "년"
 };
