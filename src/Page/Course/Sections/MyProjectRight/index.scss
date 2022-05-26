@@ -39,7 +39,12 @@
 .course-content__item {
   padding: 0 11px;
   width: 28%;
-  margin-bottom: 26px;
+  margin-top: 26px;
+
+  &:first-child, &:nth-child(2), &:nth-child(3) {
+    margin-top: 0;
+  }
+
 
   &.progress {
     .course-content__outline {
