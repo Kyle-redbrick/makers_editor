@@ -1017,6 +1017,8 @@ const ko = {
   ID_RANKING_NUMBER_CREATE: "개",
   ID_RANKING_NUMBER_POP: "개",
   ID_RANKING_NUMBER_VIEW: "회",
+  ID_GAME_LIST_TITLE_ALL: "All Games",
+  ID_GAME_LIST_TITLE_RECENT: "Recently played",
   ID_GAME_LIST_TITLE_NEWS: "최신 게임",
   ID_GAME_LIST_TITLE_WEEKLY: "주간 인기 게임",
   ID_GAME_LIST_TITLE_MONTHLY: "월간 인기 게임",
@@ -1317,8 +1319,6 @@ const ko = {
   ID_INTRO_SECOND_SECTION_INFO_TITLE_3_EXPLAN : "A 100=hour PBL curriculum\nto develop pracrical skills",
   
   ID_INTRO_THIRD_SECTION_TITLE : "Here's how\nthe curriculum works",
-
-
   ID_INTRO_GAME_VIDEO_SECTION_TITLE : "Your very own game\ncreated with Astro",
 
   ID_INTRO_GAME_VIDEO_SECTION_CHILD_TITLE : "Astro Coding Go에서 완성한 게임을 먼저 플레이해보세요",
@@ -1334,7 +1334,22 @@ const ko = {
   ID_INTRO_INTRODUCE_AREA_CONTENT_TITLE_3 : "The Patented OOBC Technology",
   ID_INTRO_INTRODUCE_AREA_CONTENT_CHILD_TITLE_1 : "Teach students easily by assigning missions for them to try.\nManage multiple classes at once while keeping track of the progress of each student\nEven instructors who aren't expert coders can teach classes with ease.",
   ID_INTRO_INTRODUCE_AREA_CONTENT_CHILD_TITLE_2 : "Apply CS concepts such as variables and functions to each mission and learn practical cases\nrather than stopping at theoretical learning. And with the additional builder feature, students can\napply the skills they learned and create their very own games themselves.",
-  ID_INTRO_INTRODUCE_AREA_CONTENT_CHILD_TITLE_3 : "The OOBC block language used in Astro Coding Go! uses a sentence structure that is different\nfrom the existing block code language, helping the transition to text coding such as JS.\n* OOBC : object-oriented block coding"
+  ID_INTRO_INTRODUCE_AREA_CONTENT_CHILD_TITLE_3 : "The OOBC block language used in Astro Coding Go! uses a sentence structure that is different\nfrom the existing block code language, helping the transition to text coding such as JS.\n* OOBC : object-oriented block coding",
 
+  ID_INTRO_SCROLL_AREA_LEFT_TITLE : "Self Managing Education",
+  ID_INTRO_SCROLL_AREA_LEFT_CHILD_TITLE : "A self-managing education method provides tips and\nanswers within each mission, ultimately minimizing the\ninstructions that are required for instructors.",
+  
+  ID_INTRO_SCROLL_AREA_LEFT_TITLE_2 : "Study Assistant Tools",
+  ID_INTRO_SCROLL_AREA_LEFT_CHILD_TITLE_2 : "The assistant provides tools to help students solve\ndifficult problems on their own such as code sorting,\nAPI dictionary, and a question and answer board while\nthey write their own code.",
+  ID_INTRO_CONTACT_TITLE : "Contact US",
+  ID_INTRO_CONTACT_CHILD_TITLE : "Submit the contact form to receive\na free account and try the premium content\nof Astro Coding Go for free.",
+
+  ID_INTRO_VIEW_MORE_NOTICE_TITLE : "Teach coding on a fun and exciting way!",
+  ID_INTRO_VIEW_MORE_LEFT_TITLE : "Want to know more\nabout the Curriculum?",
+  ID_INTRO_VIEW_MORE_RIGHT_TITLE : "Start your free trial\ncourse right now!",
+  
+  ID_ATTENDANCE_TITLE: "출석현황",
+  ID_COMMON_MONTH: "월",
+  ID_COMMON_YEAR: "년"
 };
 export default ko;

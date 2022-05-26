@@ -1298,6 +1298,18 @@ export const getWeeklyProjectsByType = param => {
 };
 
 //play page
+export const playProject = params => {
+  return fetchRequest(URL.API_SERVER + "play/game/tag", "POST", params);
+}
+
+export const getAllProjects = queryString => {
+  return fetchRequest(URL.API_SERVER + `play/game/list/all?${queryString}`, "GET");
+}
+
+export const getRecentlyPlayed = () => {
+  return fetchRequest(URL.API_SERVER + "play/game/list/recently", "GET");
+}
+
 export const getProjectsByType = param => {
   return fetchRequest(URL.API_SERVER + `projects/bytype`, "POST", param);
 };
@@ -1564,7 +1576,11 @@ export const addCertificateInfo = formData => {
 
 
 export const accountActivateCheckout = authorityKey => {
-  return fetchRequest(URL.API_SERVER + `/account/activate/checkout/${authorityKey}`, "GET");
+  return fetchRequest(URL.API_SERVER + `account/activate/checkout/${authorityKey}`, "GET");
+}
+
+export const getAttendance = (userId) => {
+  return fetchRequest(URL.API_SERVER + `account/attendance/${userId}`, "GET");
 }
 
 export const getLearn = formData => {
