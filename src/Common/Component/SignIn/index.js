@@ -44,12 +44,8 @@ class SignIn extends Component {
         .then(res => res.json())
         .then(json => {
           console.log(json)
-          if (!json.success) {
-            this.setState({
-              warning: formatMessage({ id: "ID_SIGNIN_CHECK_EMAILPW" })
-            });
-          } else {
-            // TrackingUtil.sendGAEvent(
+          if (json.success) {
+                        // TrackingUtil.sendGAEvent(
             //   {
             //     category: "Login",
             //     action: "Login_Success"
@@ -61,9 +57,12 @@ class SignIn extends Component {
             localStorage.setItem("wizToken", json.body.token);
             this.props.updateUserInfo(json.body.user);
 
-            console.log(111111111,json.body.user)
             window.location.reload()
             this.props.dismiss();
+          } else {
+            this.setState({
+              warning: formatMessage({ id: "ID_SIGNIN_CHECK_EMAILPW" })
+            });
           }
         });
     });
