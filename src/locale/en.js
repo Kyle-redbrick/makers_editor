@@ -69,13 +69,13 @@ const en = {
   ID_SIGNUP_SIGNIN: "Sign in",
   ID_SIGNUP_SIGNIN_DESC: "Already a Redbrcik member?",
   ID_SIGNUP_AGREE: "Agree",
-  ID_SIGNUP_EMAIL: "e-mail",
+  ID_SIGNUP_EMAIL: "e-mail *",
   ID_SIGNUP_EMAIL_PLACEHOLDER: "Please enter your email",
-  ID_SIGNUP_PW: "Password",
+  ID_SIGNUP_PW: "Password *",
   ID_SIGNUP_PW_PLACEHOLDER: "Please enter a password",
   ID_SIGNUP_PW_RE: "Confirm",
   ID_SIGNUP_PW_RE_PLACEHOLDER: "Please enter your password again",
-  ID_SIGNUP_NAME: "Given Name",
+  ID_SIGNUP_NAME: "Given Name *",
   ID_SIGNUP_NAME_PLACEHOLDER: "Please enter your nickname",
   ID_SIGNUP_PHONE: "Mobile",
   ID_SIGNUP_PHONE_PLACEHOLDER: "Phone number",
@@ -1307,8 +1307,8 @@ const en = {
   ID_CERT_MASTERY_JS_DESC: "is awarded with this certificate for successfully fulfilling requirements of JavaScript Mastery, a software education course offered by iGroup, and completing 4 projects utilizing Random Number, Variable, Conditional Statement, Operator, List, Index,  Loop, and Function.",
 
   ID_SIGNUP_CREATE_TITLE: "Sign Up",
-  ID_SIGNUP_FIRST_NAME: "Family Name",
-  ID_SIGNUP_NICKNAME:"Nickname",
+  ID_SIGNUP_FIRST_NAME: "Family Name *",
+  ID_SIGNUP_NICKNAME:"Nickname *",
   ID_SIGNUP_FIRST_NAME_PLACEHOLDER: "Enter your last name",
   
 

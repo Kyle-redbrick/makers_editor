@@ -70,13 +70,13 @@ const ja = {
   ID_SIGNUP_SIGNIN: "ログイン",
   ID_SIGNUP_SIGNIN_DESC: "すでにアカウントをお持ちですか？",
   ID_SIGNUP_AGREE: "同意",
-  ID_SIGNUP_EMAIL: "メール",
+  ID_SIGNUP_EMAIL: "メール *",
   ID_SIGNUP_EMAIL_PLACEHOLDER: "メールアドレスをご入力ください。",
-  ID_SIGNUP_PW: "パスワード",
+  ID_SIGNUP_PW: "パスワード *",
   ID_SIGNUP_PW_PLACEHOLDER: "パスワードをご入力ください。",
   ID_SIGNUP_PW_RE: "確認する",
   ID_SIGNUP_PW_RE_PLACEHOLDER: "パスワードをご入力ください。",
-  ID_SIGNUP_NAME: "ニックネーム",
+  ID_SIGNUP_NAME: "ニックネーム *",
   ID_SIGNUP_NAME_PLACEHOLDER: "ニックネームをご入力ください。",
   ID_SIGNUP_PHONE: "モバイル",
   ID_SIGNUP_PHONE_PLACEHOLDER: "電話番号",
@@ -1305,8 +1305,8 @@ const ja = {
 
 
   ID_SIGNUP_CREATE_TITLE : "アカウントを作成",
-  ID_SIGNUP_FIRST_NAME : "名字",
-  ID_SIGNUP_NICKNAME:"ニックネーム",
+  ID_SIGNUP_FIRST_NAME : "名字 *",
+  ID_SIGNUP_NICKNAME:"ニックネーム *",
   ID_SIGNUP_FIRST_NAME_PLACEHOLDER: "성을 입력해주세요",
 
 
