@@ -171,13 +171,13 @@ class SignIn extends Component {
 
 
         {console.log(CLIENT_ID)}
-      <GoogleLogin
+      {/* <GoogleLogin
           clientId={CLIENT_ID}
           buttonText="Login"
           onSuccess={this.responseGoogle}
           onFailure={this.responseGoogle}
           cookiePolicy={'single_host_origin'}
-        />,
+        /> */}
         <div className="popup_warning">{warning}</div>
       </div>
     );
