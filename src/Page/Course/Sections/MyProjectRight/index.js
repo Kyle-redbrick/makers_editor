@@ -148,22 +148,6 @@ const AfterList = (props) => {
                     <div className="course-content__empty">
                     </div>
                   }
-                  {/* {
-                    item.unlocked ?
-                      <>
-                        <img alt="수강 완료한 강의 아이콘" src={ClearIcon} />
-                        <span className="course-content__clear-text">All step clear</span>
-                      </> :
-                      <>
-                        <div className="course-content__progress-bar">
-                          <div className="course-content__progress-bar-thumb">
-                            <div className="course-content__progress-bar-track" style={{ width: item.progress.completed / item.progress.net * 100 }}></div>
-                          </div>
-                          <span className="course-content__progress-length"><b>{item.progress.completed}</b>/{item.progress.net} Step</span>
-                        </div>
-                      </>
-                      
-                  } */}
                 </div>
 
                 {
