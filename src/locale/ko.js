@@ -1378,7 +1378,8 @@ const ko = {
   ID_ABOUT_INTRO_TITLE : "Exciting Coding Lessons with Go Astro Go!",
   ID_ABOUT_INTRO_CHILD_TITLE : "Astro sets out to solve problems happening\nall over the world together with SUZU and Astro Kitty",
   ID_COMMON_EDIT: "수정",
-  ID_COMMON_APPLY: "적용"
-
+  ID_COMMON_APPLY: "적용",
+  ID_COMMON_VIEW_MORE: "+ 더보기",
+  ID_COMMON_GO_BACK: "이전으로"
 };
 export default ko;

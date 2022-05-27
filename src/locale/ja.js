@@ -1386,7 +1386,8 @@ const ja = {
   ID_ABOUT_INTRO_TITLE : "Exciting Coding Lessons with Go Astro Go!",
   ID_ABOUT_INTRO_CHILD_TITLE : "Astro sets out to solve problems happening\nall over the world together with SUZU and Astro Kitty",
   ID_COMMON_EDIT: "修正",
-  ID_COMMON_APPLY: "確認"
-
+  ID_COMMON_APPLY: "確認",
+  ID_COMMON_VIEW_MORE: "+ もっと見る",
+  ID_COMMON_GO_BACK: "以前"
 };
 export default ja;
