@@ -1307,7 +1307,7 @@ const ja = {
   ID_SIGNUP_CREATE_TITLE : "アカウントを作成",
   ID_SIGNUP_FIRST_NAME : "名字 *",
   ID_SIGNUP_NICKNAME:"ニックネーム *",
-  ID_SIGNUP_FIRST_NAME_PLACEHOLDER: "성을 입력해주세요",
+  ID_SIGNUP_FIRST_NAME_PLACEHOLDER: "名字を入力してください。",
 
 
 
