@@ -96,8 +96,6 @@ class UserInfoContainer extends React.Component {
         const response = await request.loginByToken(params);
         const json = await response.json();
 
-        console.log(55555,json)
-
         if (json.user) {
           let user = json.user;
           user.payment = json.payment;
