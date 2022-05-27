@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import moment from "moment";
 import Layout from "../../Common/Component/Layout";
 import { Link } from "react-router-dom";
-import { FormattedMessage, useIntl } from "react-intl";
+import { FormattedMessage, injectIntl } from "react-intl";
 import EyesOffIcon from "../../Image/icon-eyes-off.svg";
 import EyesOnIcon from "../../Image/icon-eyes-on.svg";
 import EditPopup from "./Popup/EditPopup";
@@ -16,7 +16,8 @@ import sha256 from "../../Common/Util/SHA256";
 
 import "./index.scss";
 
-export default function View(props) {
+
+function View(props) {
 
   const [selectView, setSelectView] = useState("account")
 
@@ -82,10 +83,12 @@ const ChangeName = (props) => {
     <>
       <div className="account__content-item account__content-item--account">
         <span className="account__content-category account__content-category--account">
-          <FormattedMessage id="ID_ACCOUNT_SETTING_TAB_01_NAME" />
+          <FormattedMessage id="ID_ACCOUNT_SETTING_TAB_01_FULLNAME" />
         </span>
         <input type="text" className="account__content-input" autoComplete="off" placeholder="이름을 입력하세요." value={props.userinfo.name} disabled />
-        <button type="button" className="account__edit-btn" onClick={() => onClickBtn("name")}>수정</button>
+        <button type="button" className="account__edit-btn" onClick={() => onClickBtn("name")}>
+          <FormattedMessage id="ID_COMMON_EDIT" />
+        </button>
       </div>
 
       <div className="account__content-item account__content-item--account">
@@ -93,14 +96,16 @@ const ChangeName = (props) => {
           <FormattedMessage id="ID_ACCOUNT_SETTING_TAB_01_NICKNAME" />
         </span>
         <input type="text" className="account__content-input" autoComplete="off" placeholder="닉네임을 입력하세요." value={props.userinfo.nickName} disabled />
-        <button type="button" className="account__edit-btn" onClick={() => onClickBtn("nickName")}>수정</button>
+        <button type="button" className="account__edit-btn" onClick={() => onClickBtn("nickName")}>
+          <FormattedMessage id="ID_COMMON_EDIT" />
+        </button>
       </div>
     </>
   )
 }
 
 const ChangePassword = (props) => {
-
+  const intl = props;
   const [warnText, setWarnText] = useState({ "warnNewPwd": "", "warnCheckPwd": "" });
 
 
@@ -136,7 +141,6 @@ const ChangePassword = (props) => {
 
 
   const onClickSubmit = async (id) => {
-    const intl = useIntl();
     let res = undefined
     let info = ""
     if (newPwd.length > 5 && newPwd === checkNewPwd) {
@@ -163,7 +167,6 @@ const ChangePassword = (props) => {
     );
   }
 
-
   return (
     <>
       <div className="account__content-list">
@@ -172,7 +175,17 @@ const ChangePassword = (props) => {
             <FormattedMessage id="ID_ACCOUNT_SETTING_TAB_02_CURRENT_PWD" />
           </span>
           <div className="account__password-change">
-            <input id="pwd" type={isShows[0] ? "text" : "password"} autoComplete="off" className="account__content-input account__content-input--password" placeholder={intl.formatMessage({ id: "ID_ACCOUNT_SETTING_TAB_02_ENTER_CURRENT_PWD" })} onChange={onChangeValue} maxlength="20" />
+            <FormattedMessage id="ID_ACCOUNT_SETTING_TAB_02_ENTER_CURRENT_PWD">
+              {placeholder =>
+                <input id="pwd" type={isShows[0] ? "text" : "password"}
+                  autoComplete="off"
+                  className="account__content-input account__content-input--password"
+                  placeholder={placeholder}
+                  onChange={onChangeValue}
+                  maxlength="20"
+                />
+              }
+            </FormattedMessage>
             <button className="account__password-show" type="button" onClick={() => onClickBtn(0)} >
               <img src={isShows[0] ? EyesOnIcon : EyesOffIcon} alt="비밀번호 안보기 아이콘" />
             </button>
@@ -186,7 +199,17 @@ const ChangePassword = (props) => {
             <FormattedMessage id="ID_ACCOUNT_SETTING_TAB_02_NEW_PWD" />
           </span>
           <div className="account__password-change">
-            <input id="newPwd" type={isShows[1] ? "text" : "password"} autoComplete="off" className="account__content-input account__content-input--password" placeholder="새 비밀번호를 입력해주세요." onChange={onChangeValue} maxlength="20" />
+            <FormattedMessage id="ID_ACCOUNT_SETTING_TAB_02_ENTER_NEW_PWD">
+              {placeholder =>
+                <input id="newPwd" type={isShows[1] ? "text" : "password"}
+                  autoComplete="off"
+                  className="account__content-input account__content-input--password"
+                  placeholder={placeholder}
+                  onChange={onChangeValue}
+                  maxlength="20"
+                />
+              }
+            </FormattedMessage>
             <button className="account__password-show" type="button" onClick={() => onClickBtn(1)}>
               <img src={isShows[1] ? EyesOnIcon : EyesOffIcon} alt="비밀번호 보기 아이콘" />
             </button>
@@ -201,7 +224,17 @@ const ChangePassword = (props) => {
             <FormattedMessage id="ID_ACCOUNT_SETTING_TAB_02_NEW_PWD_CHECK" />
           </span>
           <div className="account__password-change">
-            <input id="checkNewPwd" type={isShows[2] ? "text" : "password"} autoComplete="off" className="account__content-input account__content-input--password" placeholder="새 비밀번호를 입력해주세요." onChange={onChangeValue} maxlength="20" />
+            <FormattedMessage id="ID_ACCOUNT_SETTING_TAB_02_ENTER_NEW_PWD">
+              {placeholder =>
+                <input id="checkNewPwd" type={isShows[2] ? "text" : "password"}
+                  autoComplete="off"
+                  className="account__content-input account__content-input--password"
+                  placeholder={placeholder}
+                  onChange={onChangeValue}
+                  maxlength="20"
+                />
+              }
+            </FormattedMessage>
             <button className="account__password-show" type="button" onClick={() => onClickBtn(2)} >
               <img src={isShows[2] ? EyesOnIcon : EyesOffIcon} alt="비밀번호 보기 아이콘" />
             </button>
@@ -222,3 +255,6 @@ const ChangePassword = (props) => {
     </>
   )
 }
+
+
+export default injectIntl(View);
