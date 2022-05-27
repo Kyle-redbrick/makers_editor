@@ -146,10 +146,10 @@ const AfterList = (props) => {
                   <p className="course-content__detail-explan">{item.intro}</p>
                   {
                     item.progress.completed >= item.progress.net ? (
-                      <LearnButtons.LearnAgain learnWidth={true}  completed id={item.id} />
+                      <LearnButtons.LearnAgain learnWidth={true} completed id={item.id}/>
                       ) : (
                         item.progress.completed === 0 ? (
-                          <LearnButtons.LearnNow learnWidth={true} id={item.id} />
+                          <LearnButtons.LearnNow learnWidth={true} id={item.id} isShowVideo={true}  videoURL={URL.S3_DREAMCLASS + item.resources.videoURL}/>
                         ) : (
                           <LearnButtons.LearnContinue learnWidth={true} id={item.id} />
                         )

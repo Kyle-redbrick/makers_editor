@@ -4,6 +4,9 @@ import moment from "moment";
 import styled from "@emotion/styled";
 import * as LearnButtons from "../../../Common/Component/Button/Learn";
 import * as Popup from "../../../Common/Component/PopUp";
+import { URL } from "../../../Common/Util/Constant"
+
+
 
 import Button from "./Button";
 import { COLOR } from "../Constants";
@@ -245,7 +248,7 @@ const Project = ({ project, ...props }) => {
           <LearnAgain completed lock={!project.unlocked} id={project.id} />
         ) : (
           project.progress.completed === 0 ? (
-            <LearnNow lock={!project.unlocked} id={project.id} />
+            <LearnNow lock={!project.unlocked} id={project.id} isShowVideo={true}  videoURL={URL.S3_DREAMCLASS + project.resources.videoURL} />
           ) : (
             <LearnContinue lock={!project.unlocked} id={project.id} />
           )
