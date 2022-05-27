@@ -21,6 +21,9 @@ import ViewMore from "./ViewMore";
 /* import IntroduceSection from "./IntroduceSection"; */
 import Contact from "./Contact";
 import ScrollAction from "./ScrollAction";
+import VideoThumbnail from "../../Image/intro-play-video-thumbnail.png";
+import TopScrollIcon from "../../Image/top-scroll-arrow.svg";
+import IconMessage from "../../Image/icon-message.svg"; 
 
 import "./index.scss";
 
@@ -29,6 +32,17 @@ function View(props) {
   return (
     <Layout>
       <div className="Page--Intro">
+        {/* TODO 탑 스크롤 버튼 / 클릭 시 최상단으로 이동 */}
+        <button type="button" className="intro__top-scroll">
+          <img alt="탑 스크롤 아이콘" src={TopScrollIcon} />
+        </button>
+
+        {/* TODO Contact Us 버튼/ 클릭 시 contact us 영역으로 이동 */}
+        <button type="button" className="intro__contact-btn">
+          <img alt="메시지 아이콘" src={IconMessage} />
+          <FormattedMessage id="ID_INTRO_CONTACT_US" />
+        </button>
+
         <div className="intro__section-banner">
           <div className="intro-banner" />
         </div>
@@ -42,6 +56,7 @@ function View(props) {
             <div className="first-section__video-wrap">
               {/* TODO video  */}
               <div className="first-section__video">
+                <img alt="비디오 임시 썸네일" src={VideoThumbnail} /> {/* video 임시 썸네일 */}
                 {/* TODO video play button */}
                 <button type="button" className="first-section__play-btn" />
               </div>
