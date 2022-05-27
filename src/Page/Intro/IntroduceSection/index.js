@@ -29,7 +29,7 @@ function IntroduceSection (){
 
       <div className="introduce-area__content-box">
         <h3 className="introduce-area__content-title"><FormattedMessage id="ID_INTRO_INTRODUCE_AREA_CONTENT_TITLE_4" /></h3>
-        <p className="introduce-area__content-child-title"><FormattedMessage id="ID_INTRO_INTRODUCE_AREA_CONTENT_CHILD_TITLE_3" /></p>
+        <p className="introduce-area__content-child-title"><FormattedMessage id="ID_INTRO_INTRODUCE_AREA_CONTENT_CHILD_TITLE_4" /></p>
         <img alt="과정소개4" src={IntroduceImg4 } />
       </div> 
     </div>

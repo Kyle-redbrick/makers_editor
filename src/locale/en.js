@@ -1334,13 +1334,15 @@ const en = {
   ID_INTRO_LINE_BANNER_CHILD_TITLE: "Fun and learning all at once",
   ID_INTRO_LINE_BANNER_GO_TO_FREE_COURSE_LINK: "Go to Free Trial Course",
 
-  ID_INTRO_INTRODUCE_AREA_CONTENT_TITLE: "Systematic LMS",
-  ID_INTRO_INTRODUCE_AREA_CONTENT_TITLE_2: "Project-Based Practical Classes",
-  ID_INTRO_INTRODUCE_AREA_CONTENT_TITLE_3: "The Patented OOBC Technology",
+  ID_INTRO_INTRODUCE_AREA_CONTENT_TITLE: "Unique Builder",
+  ID_INTRO_INTRODUCE_AREA_CONTENT_TITLE_2: "Systematic LMS",
+  ID_INTRO_INTRODUCE_AREA_CONTENT_TITLE_3: "Project-Based Practical Classes",
+  ID_INTRO_INTRODUCE_AREA_CONTENT_TITLE_4: "The Patented OOBC Technology",
 
-  ID_INTRO_INTRODUCE_AREA_CONTENT_CHILD_TITLE_1: "Teach students easily by assigning missions for them to try.\nManage multiple classes at once while keeping track of the progress of each student\nEven instructors who aren't expert coders can teach classes with ease.",
-  ID_INTRO_INTRODUCE_AREA_CONTENT_CHILD_TITLE_2: "Apply CS concepts such as variables and functions to each mission and learn practical cases\nrather than stopping at theoretical learning. And with the additional builder feature, students can\napply the skills they learned and create their very own games themselves.",
-  ID_INTRO_INTRODUCE_AREA_CONTENT_CHILD_TITLE_3: "The OOBC block language used in Astro Coding Go! uses a sentence structure that is different\nfrom the existing block code language, helping the transition to text coding such as JS.\n* OOBC : object-oriented block coding",
+  ID_INTRO_INTRODUCE_AREA_CONTENT_CHILD_TITLE_1: "ACG’s unique builder allows you to create your own games with Team Astro characters.\nStudents can utilize what they learned from the missions to select\nthe characters and items they want and code.",
+  ID_INTRO_INTRODUCE_AREA_CONTENT_CHILD_TITLE_2: "Teach students easily by assigning missions for them to try.\nManage multiple classes at once while keeping track of the progress of each student.\nEven instructors who aren't expert coders can teach classes with ease.",
+  ID_INTRO_INTRODUCE_AREA_CONTENT_CHILD_TITLE_3: "Apply CS concepts such as variables and functions to each mission and learn practical cases\nrather than stopping at theoretical learning. And with the additional builder feature, students can\napply the skills they learned and create their very own games themselves.",
+  ID_INTRO_INTRODUCE_AREA_CONTENT_CHILD_TITLE_4: "The OOBC block language used in Astro Coding Go! uses a sentence structure that is different\nfrom the existing block code language, helping the transition to text coding such as JS.\n* OOBC : object-oriented block coding",
 
   ID_INTRO_SCROLL_AREA_LEFT_TITLE: "Self Managing Education",
   ID_INTRO_SCROLL_AREA_LEFT_CHILD_TITLE: "A self-managing education method provides tips and\nanswers within each mission, ultimately minimizing the\ninstructions that are required for instructors.",

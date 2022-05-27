@@ -43,22 +43,13 @@ class SignIn extends Component {
         .login(params)
         .then(res => res.json())
         .then(json => {
-          console.log(json)
           if (json.success) {
-                        // TrackingUtil.sendGAEvent(
-            //   {
-            //     category: "Login",
-            //     action: "Login_Success"
-            //   },
-            //   this.props.email
-            // );
             TrackingUtil.sendGTMEvent("Login_Success");
 
             localStorage.setItem("wizToken", json.body.token);
             this.props.updateUserInfo(json.body.user);
 
-            window.location.reload()
-            this.props.dismiss();
+            window.location = "/learn";
           } else {
             this.setState({
               warning: formatMessage({ id: "ID_SIGNIN_CHECK_EMAILPW" })
@@ -89,8 +80,6 @@ class SignIn extends Component {
 
 
   responseGoogle = (response) => {
-    
-    console.log(response);
     // request.loginByGoogle().then((rep)=> rep.json()).
     // then((json)=> console.log(json))
   }
@@ -117,9 +106,8 @@ class SignIn extends Component {
             {formatMessage({ id: "ID_SIGNIN_EMAIL" })}
           </div>
           <input
-            className={`popup_input ${
-              warning !== "" ? "popup_input-warning" : ""
-            }`}
+            className={`popup_input ${warning !== "" ? "popup_input-warning" : ""
+              }`}
             id="email"
             placeholder={formatMessage({ id: "ID_SIGNIN_EMAIL_PLACEHOLDER" })}
             value={email}
@@ -136,9 +124,8 @@ class SignIn extends Component {
             {formatMessage({ id: "ID_SIGNIN_PW" })}
           </div>
           <input
-            className={`popup_input ${
-              warning !== "" ? "popup_input-warning" : ""
-            }`}
+            className={`popup_input ${warning !== "" ? "popup_input-warning" : ""
+              }`}
             id="password"
             type="password"
             placeholder={formatMessage({ id: "ID_SIGNIN_PW_PLACEHOLDER" })}
@@ -158,20 +145,18 @@ class SignIn extends Component {
           </div>
           <div className="signin_link" onClick={onClickForgotPw}>
             {formatMessage({ id: "ID_SIGNIN_FORGOTPW" })}
-          </div> 
+          </div>
           {/* <div className="signin_link" onClick={onClickSignUp}>
             {formatMessage({ id: "ID_SIGNIN_SIGNUP" })}
           </div> */}
         </div>
-{/* 
+        {/* 
         <button type="button" className="sign-in__width-google-btn">
           <img alt="아이콘 구글" src={IconGoogle} />
           Sign in width Google
         </button> */}
 
-
-        {console.log(CLIENT_ID)}
-      {/* <GoogleLogin
+        {/* <GoogleLogin
           clientId={CLIENT_ID}
           buttonText="Login"
           onSuccess={this.responseGoogle}
