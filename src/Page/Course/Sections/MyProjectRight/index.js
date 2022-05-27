@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useState } from "react";
 import Thumbnail from "../../../../Image/course_thumbnail.png";
+import {injectIntl, FormattedMessage} from "react-intl";
 import ClearIcon from "../../../../Image/icon-clear.svg";
 import PrevIcon from "../../../../Image/icn_arrow_left.svg"
 import { URL } from "../../../../Common/Util/Constant"
@@ -18,7 +19,7 @@ function MyProjectRight (props) {
     </div>
   )
 }
-export default MyProjectRight;
+export default injectIntl(MyProjectRight);
 
 const BeforeList = (props) => {
 
@@ -52,7 +53,9 @@ const BeforeList = (props) => {
               </div>
               <div className="course-content__info">
                 <h3 className="course-content__title">{item.title}</h3>
-                <p className="course-content__more-btn">+ 더보기</p>
+                <p className="course-content__more-btn">
+                  <FormattedMessage id="ID_COMMON_VIEW_MORE" />
+                </p>
               </div>
               {
                 item.isClickd &&
@@ -64,7 +67,7 @@ const BeforeList = (props) => {
                   </p>
                   <button className="course-btn-prev">
                     <img alt="이전으로 아이콘" src={PrevIcon} />
-                    이전으로
+                    <FormattedMessage id="ID_COMMON_GO_BACK" />
                   </button>
                 </div>
               }

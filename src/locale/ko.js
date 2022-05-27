@@ -542,6 +542,7 @@ const ko = {
   ID_QNA_TITLE: "Q&A",
   ID_DRAWING_EDITOR_TITLE: "그림판",
   ID_TEXT_BOX_TITLE: "텍스트상자",
+  ID_LEARN_TITLE_NONLOGIN: "원하는 코스를 무료로 체험해보세요",
   ID_LEARN_TITLE: "위즈랩 튜토리얼 - 방탈출 게임 만들기",
   ID_LEARN_TITLE_DESC: `초보 위즈랩 회원을 위한 튜토리얼 입니다.\n위즈랩으로 방 탈출 게임을 만들어보며  위즈랩 사용법을 익혀보세요.`,
   ID_POPUP_MOBILE_WAITING_TITLE: "Mobile Play",
@@ -1377,7 +1378,8 @@ const ko = {
   ID_ABOUT_INTRO_TITLE : "Exciting Coding Lessons with Go Astro Go!",
   ID_ABOUT_INTRO_CHILD_TITLE : "Astro sets out to solve problems happening\nall over the world together with SUZU and Astro Kitty",
   ID_COMMON_EDIT: "수정",
-  ID_COMMON_APPLY: "적용"
-
+  ID_COMMON_APPLY: "적용",
+  ID_COMMON_VIEW_MORE: "+ 더보기",
+  ID_COMMON_GO_BACK: "이전으로"
 };
 export default ko;

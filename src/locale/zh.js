@@ -542,6 +542,7 @@ const zh = {
   ID_QNA_TITLE: "Q&A",
   ID_DRAWING_EDITOR_TITLE: "绘画板",
   ID_TEXT_BOX_TITLE: "文本框",
+  ID_LEARN_TITLE_NONLOGIN: "원하는 코스를 무료로 체험해 보세요",
   ID_LEARN_TITLE: "WizLab教程第一阶段 - 制作密室逃脱游戏",
   ID_LEARN_TITLE_DESC: `这是针对初级会员的教程。\n 用WizLab制作密室逃脱游戏，熟悉一下WizLab的使用方法。\n 所需时间 - 约10~20分钟 `,
   ID_POPUP_MOBILE_WAITING_TITLE: "Mobile Play",
@@ -1378,7 +1379,8 @@ const zh = {
   ID_ABOUT_INTRO_TITLE : "Exciting Coding Lessons with Go Astro Go!",
   ID_ABOUT_INTRO_CHILD_TITLE : "Astro sets out to solve problems happening\nall over the world together with SUZU and Astro Kitty",
   ID_COMMON_EDIT: "Edit",
-  ID_COMMON_APPLY: "Apply"
-
+  ID_COMMON_APPLY: "Apply",
+  ID_COMMON_VIEW_MORE: "+ View More",
+  ID_COMMON_GO_BACK: "Go Back"
 };
 export default zh;

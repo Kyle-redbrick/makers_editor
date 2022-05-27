@@ -76,7 +76,7 @@ const ja = {
   ID_SIGNUP_PW_PLACEHOLDER: "パスワードをご入力ください。",
   ID_SIGNUP_PW_RE: "確認する",
   ID_SIGNUP_PW_RE_PLACEHOLDER: "パスワードをご入力ください。",
-  ID_SIGNUP_NAME: "ニックネーム *",
+  ID_SIGNUP_NAME: "名前 *",
   ID_SIGNUP_NAME_PLACEHOLDER: "ニックネームをご入力ください。",
   ID_SIGNUP_PHONE: "モバイル",
   ID_SIGNUP_PHONE_PLACEHOLDER: "電話番号",
@@ -544,6 +544,7 @@ const ja = {
   ID_QNA_TITLE: "Q&A",
   ID_DRAWING_EDITOR_TITLE: "ペイント",
   ID_TEXT_BOX_TITLE: "テキストボックス",
+  ID_LEARN_TITLE_NONLOGIN: "お好みの無料コースをお試しください",
   ID_LEARN_TITLE: "WizLab Tutorial Step 1 - Build a room escape game",
   ID_LEARN_TITLE_DESC: `This is a tutorial for novice Wiz members.\nYou can learn how to use WizLab by building a room escape game with WizLab. Time: about 10 ~ 20 minutes`,
   ID_POPUP_MOBILE_WAITING_TITLE: "Mobile Play",
@@ -1363,7 +1364,7 @@ const ja = {
   ID_ACCOUNT_SETTING_TITLE: "アカウント設定",
   ID_ACCOUNT_SETTING_TAB_01: "アカウント管理",
   ID_ACCOUNT_SETTING_TAB_02: "パスワード変更",
-  ID_ACCOUNT_SETTING_TAB_01_NAME: "氏名",
+  ID_ACCOUNT_SETTING_TAB_01_FULLNAME: "氏名",
   ID_ACCOUNT_SETTING_TAB_01_NICKNAME: "ニックネーム",
   ID_ACCOUNT_SETTING_TAB_02_CURRENT_PWD: "現在のパスワード",
   ID_ACCOUNT_SETTING_TAB_02_NEW_PWD: "新しいパスワード",
@@ -1385,7 +1386,8 @@ const ja = {
   ID_ABOUT_INTRO_TITLE : "Exciting Coding Lessons with Go Astro Go!",
   ID_ABOUT_INTRO_CHILD_TITLE : "Astro sets out to solve problems happening\nall over the world together with SUZU and Astro Kitty",
   ID_COMMON_EDIT: "修正",
-  ID_COMMON_APPLY: "確認"
-
+  ID_COMMON_APPLY: "確認",
+  ID_COMMON_VIEW_MORE: "+ もっと見る",
+  ID_COMMON_GO_BACK: "以前"
 };
 export default ja;
