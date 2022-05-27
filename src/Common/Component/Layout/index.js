@@ -15,7 +15,6 @@ const Layout = props => {
 
   const urlParams = new URLSearchParams(window.location.search);
   const activateToken = urlParams.get('activateToken');
-  console.log("activateToken",activateToken)
 
   if(activateToken){
     accountActivateCheckout(activateToken).then(res => res.json()).then(data => {
