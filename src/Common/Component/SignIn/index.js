@@ -45,13 +45,6 @@ class SignIn extends Component {
         .then(json => {
           console.log(json)
           if (json.success) {
-            // TrackingUtil.sendGAEvent(
-            //   {
-            //     category: "Login",
-            //     action: "Login_Success"
-            //   },
-            //   this.props.email
-            // );
             TrackingUtil.sendGTMEvent("Login_Success");
 
             localStorage.setItem("wizToken", json.body.token);
