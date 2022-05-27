@@ -117,14 +117,15 @@ function View(props) {
           <img  alt="A self-Learning Platform For Instructors"  data-aos="fade-up" data-aos-duration="700"  className="intro-page__fade-in-img" src={TextImg2} />
         </div>
 
-        {/* Contact Us */}
-        <Contact />
-        {/* view more section */}
-        <ViewMore />
-
         {/* 스크롤 애니메이션 */}
         <ScrollAction />
 
+         {/* view more section */}
+         <ViewMore />
+
+        {/* Contact Us */}
+        <Contact />
+       
       </div>
     </Layout>
   );
