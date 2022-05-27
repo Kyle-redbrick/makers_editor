@@ -1304,6 +1304,13 @@ const ja = {
   ID_DATE_FORMAT_MIN: "minutes ago",
 
 
+  ID_SIGNUP_CREATE_TITLE : "アカウントを作成",
+  ID_SIGNUP_FIRST_NAME : "名字",
+  ID_SIGNUP_NICKNAME:"ニックネーム",
+  ID_SIGNUP_FIRST_NAME_PLACEHOLDER: "성을 입력해주세요",
+
+
+
   ID_CERT_ELEMENTARY_BLOCK_DESC:"あなたは iGroup主催のソフトウェアの教育課程であるブロックコーディングエレメンタリーを修了するためのすべての要求事項を満たし、イベント、座標、物理を活用して5個のプロジェクトを自ら完成したため、この修了証を授与いたします。",
   ID_CERT_BASIC_BLOCK_DESC:"あなたは iGroup主催のソフトウェアの教育課程であるブロックコーディングベーシックを修了するためのすべての要求事項を満たし、イベント、座標、物理、変数, 条件文を活用して15個のプロジェクトを自ら完成したため、この修了証を授与いたします。",
   ID_CERT_ADVANCED_BLOCK_DESC:"あなたは iGroup主催のソフトウェアの教育課程であるブロックコーディングアドバンスを修了するためのすべての要求事項を満たし、イベント、座標、物理、変数, 条件文,繰り返し文,複製を活用して4個のプロジェクトを自ら完成したため、この修了証を授与いたします。",

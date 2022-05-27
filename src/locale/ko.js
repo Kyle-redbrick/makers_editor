@@ -75,7 +75,7 @@ const ko = {
   ID_SIGNUP_PW_PLACEHOLDER: "비밀번호를 입력해주세요",
   ID_SIGNUP_PW_RE: "비밀번호 확인",
   ID_SIGNUP_PW_RE_PLACEHOLDER: "비밀번호를 한번 더 입력해주세요",
-  ID_SIGNUP_NAME: "닉네임",
+  ID_SIGNUP_NAME: "이름",
   ID_SIGNUP_NAME_PLACEHOLDER: "닉네임을 입력해주세요",
   ID_SIGNUP_PHONE: "모바일",
   ID_SIGNUP_PHONE_PLACEHOLDER: "- 없이 전화번호 입력",
@@ -1305,8 +1305,8 @@ const ko = {
   ID_CERT_MASTERY_JS_DESC:"is awarded with this certificate for successfully fulfilling requirements of JavaScript Mastery, a software education course offered by iGroup, and completing 4 projects utilizing Random Number, Variable, Conditional Statement, Operator, List, Index,  Loop, and Function.",
 
   ID_SIGNUP_CREATE_TITLE : "계정 생성하기",
-  ID_SIGNUP_NAME : "이름",
   ID_SIGNUP_FIRST_NAME : "성",
+  ID_SIGNUP_NICKNAME:"Nickname",
   ID_SIGNUP_FIRST_NAME_PLACEHOLDER: "성을 입력해주세요",
 
   ID_INTRO_ABOUT_ASTRO_CODING_GO_TITLE : "About Astro Coding Go!",

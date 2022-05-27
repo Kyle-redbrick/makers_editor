@@ -75,7 +75,7 @@ const en = {
   ID_SIGNUP_PW_PLACEHOLDER: "Please enter a password",
   ID_SIGNUP_PW_RE: "Confirm",
   ID_SIGNUP_PW_RE_PLACEHOLDER: "Please enter your password again",
-  ID_SIGNUP_NAME: "Nickname",
+  ID_SIGNUP_NAME: "Given Name",
   ID_SIGNUP_NAME_PLACEHOLDER: "Please enter your nickname",
   ID_SIGNUP_PHONE: "Mobile",
   ID_SIGNUP_PHONE_PLACEHOLDER: "Phone number",
@@ -590,7 +590,7 @@ const en = {
   ID_MYPAGE_NAME_USERNAME_WARNING: "닉네임 변경은 마지막 변경일을 기준으로 15일 이후에 가능합니다.",
   ID_MYPAGE_NAME_USERNAME_OFFICIAL_WARNING: "운영진을 사칭할 수 있는 닉네임은 사용할 수 없습니다.",
   ID_MYPAGE_NAME_USERICON: "Profile Image",
-  ID_MYPAGE_NAME_USEREMAIL: "E-mail",
+  ID_MYPAGE_NAME_USEREMA성IL: "E-mail",
   ID_MYPAGE_NAME_USERPHONE: "전화번호",
   ID_MYPAGE_NAME_USERSTATUSMSG: "Brief introduction",
   ID_MYPAGE_NAME_USERORGANIZATION: "Affiliation",
@@ -1306,10 +1306,11 @@ const en = {
   ID_CERT_ADVANCED_JS_DESC: "is awarded with this certificate for successfully fulfilling requirements of Advanced JavaScript, a software education course offered by iGroup, and completing 8 projects utilizing Event, Sequence, Physical Engine, Random Number,  Varibale, Conditional Statement, and Operator.",
   ID_CERT_MASTERY_JS_DESC: "is awarded with this certificate for successfully fulfilling requirements of JavaScript Mastery, a software education course offered by iGroup, and completing 4 projects utilizing Random Number, Variable, Conditional Statement, Operator, List, Index,  Loop, and Function.",
 
-  ID_SIGNUP_CREATE_TITLE: "계정 생성하기",
-  ID_SIGNUP_NAME: "이름",
-  ID_SIGNUP_FIRST_NAME: "성",
-  ID_SIGNUP_FIRST_NAME_PLACEHOLDER: "성을 입력해주세요",
+  ID_SIGNUP_CREATE_TITLE: "Sign Up",
+  ID_SIGNUP_FIRST_NAME: "Family Name",
+  ID_SIGNUP_NICKNAME:"Nickname",
+  ID_SIGNUP_FIRST_NAME_PLACEHOLDER: "Enter your last name",
+  
 
   ID_INTRO_ABOUT_ASTRO_CODING_GO_TITLE: "About Astro Coding Go!",
   ID_INTRO_SECOND_SECTION_TITLE: "A coding class\nwidth next-level missions",
