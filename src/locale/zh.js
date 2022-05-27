@@ -943,7 +943,7 @@ const zh = {
   ID_QNA_REFRESH: "새로고침",
   ID_QNA_ALERT_CONFIRM: "확인",
   ID_QNA_ALERT_CANCEL: "취소",
-  ID_HEADER_LMS: "我的学习",
+  ID_HEADER_LMS: "Dashboard",
   CONDITION_IS_PLAYING: "게임이 실행 중인지",
   CONDITION_DID_PLAY_ONCE: "최소 한 번 게임 실행하기",
   CONDITION_DID_GAME_EVENT_OCCUR: "게임에서 액션 수행하기",
@@ -1352,8 +1352,29 @@ const zh = {
   ID_INTRO_VIEW_MORE_LEFT_TITLE : "Want to know more\nabout the Curriculum?",
   ID_INTRO_VIEW_MORE_RIGHT_TITLE : "Start your free trial\ncourse right now!",
 
+  // 계정 설정
+  ID_ACCOUNT_SETTING_TITLE: "Account Settings",
+  ID_ACCOUNT_SETTING_TAB_01: "Manage Account",
+  ID_ACCOUNT_SETTING_TAB_02: "Change Password",
+  ID_ACCOUNT_SETTING_TAB_01_FULLNAME: "Name",
+  ID_ACCOUNT_SETTING_TAB_01_NICKNAME: "Nickname",
+  ID_ACCOUNT_SETTING_TAB_02_CURRENT_PWD: "Current Password",
+  ID_ACCOUNT_SETTING_TAB_02_NEW_PWD: "New Password",
+  ID_ACCOUNT_SETTING_TAB_02_NEW_PWD_CHECK: "Confirm Password",
+  ID_ACCOUNT_SETTING_TAB_02_ENTER_CURRENT_PWD: "Enter your current password.",
+  ID_ACCOUNT_SETTING_TAB_02_ENTER_NEW_PWD: "Enter your new password.",
+  ID_ACCOUNT_EDIT_NAME_POPUP_TITLE: "Edit Name",
+  ID_ACCOUNT_EDIT_NAME_POPUP_GIVEN_NAME: "Given Name",
+  ID_ACCOUNT_EDIT_NAME_POPUP_FAMILY_NAME: "Family Name",
+  ID_ACCOUNT_EDIT_NAME_POPUP_ENTER_GIVEN_NAME: "Enter your first name.",
+  ID_ACCOUNT_EDIT_NAME_POPUP_ENTER_FAMILY_NAME: "Enter your last name.",
+  ID_ACCOUNT_EDIT_NICKNAME_POPUP_TITLE: "Edit Nickname",
+  ID_ACCOUNT_EDIT_NICKNAME_POPUP_ENTER_NICKNAME: "Enter your nickname.",
+  
   ID_ATTENDANCE_TITLE: "출석현황",
   ID_COMMON_MONTH: "月",
-  ID_COMMON_YEAR: "年"
+  ID_COMMON_YEAR: "年",
+  ID_COMMON_EDIT: "Edit",
+  ID_COMMON_APPLY: "Apply"
 };
 export default zh;

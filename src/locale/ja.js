@@ -945,7 +945,7 @@ const ja = {
   ID_QNA_REFRESH: "リロード",
   ID_QNA_ALERT_CONFIRM: "確認",
   ID_QNA_ALERT_CANCEL: "取り消し",
-  ID_HEADER_LMS: "マイ学習",
+  ID_HEADER_LMS: "Dashboard",
   CONDITION_IS_PLAYING: "게임이 실행 중인지",
   CONDITION_DID_PLAY_ONCE: "최소 한 번 게임 실행하기",
   CONDITION_DID_GAME_EVENT_OCCUR: "게임에서 액션 수행하기",
@@ -1351,8 +1351,30 @@ const ja = {
   ID_INTRO_VIEW_MORE_NOTICE_TITLE : "Teach coding on a fun and exciting way!",
   ID_INTRO_VIEW_MORE_LEFT_TITLE : "Want to know more\nabout the Curriculum?",
   ID_INTRO_VIEW_MORE_RIGHT_TITLE : "Start your free trial\ncourse right now!",
+  
+  // 계정 설정
+  ID_ACCOUNT_SETTING_TITLE: "アカウント設定",
+  ID_ACCOUNT_SETTING_TAB_01: "アカウント管理",
+  ID_ACCOUNT_SETTING_TAB_02: "パスワード変更",
+  ID_ACCOUNT_SETTING_TAB_01_NAME: "氏名",
+  ID_ACCOUNT_SETTING_TAB_01_NICKNAME: "ニックネーム",
+  ID_ACCOUNT_SETTING_TAB_02_CURRENT_PWD: "現在のパスワード",
+  ID_ACCOUNT_SETTING_TAB_02_NEW_PWD: "新しいパスワード",
+  ID_ACCOUNT_SETTING_TAB_02_NEW_PWD_CHECK: "新しいパスワードの確認",
+  ID_ACCOUNT_SETTING_TAB_02_ENTER_CURRENT_PWD: "現在のパスワードを入力してください。",
+  ID_ACCOUNT_SETTING_TAB_02_ENTER_NEW_PWD: "新しいパスワードを入力してください。",
+  ID_ACCOUNT_EDIT_NAME_POPUP_TITLE: "氏名の修正",
+  ID_ACCOUNT_EDIT_NAME_POPUP_GIVEN_NAME: "名前",
+  ID_ACCOUNT_EDIT_NAME_POPUP_FAMILY_NAME: "名字",
+  ID_ACCOUNT_EDIT_NAME_POPUP_ENTER_GIVEN_NAME: "名前を入力してください。",
+  ID_ACCOUNT_EDIT_NAME_POPUP_ENTER_FAMILY_NAME: "名字を入力してください。",
+  ID_ACCOUNT_EDIT_NICKNAME_POPUP_TITLE: "ニックネームを編集",
+  ID_ACCOUNT_EDIT_NICKNAME_POPUP_ENTER_NICKNAME: "ニックネームを入力してください。",
+
   ID_ATTENDANCE_TITLE: "出席状況",
   ID_COMMON_MONTH: "月",
-  ID_COMMON_YEAR: "年"
+  ID_COMMON_YEAR: "年",
+  ID_COMMON_EDIT: "修正",
+  ID_COMMON_APPLY: "確認"
 };
 export default ja;
