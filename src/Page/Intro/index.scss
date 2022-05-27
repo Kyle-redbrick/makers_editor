@@ -177,7 +177,7 @@
   z-index: 100;
   right: 30px;
   border: 0;
-  bottom: 100px;
+  bottom: 26px;
   cursor: pointer;
 }
 
@@ -199,6 +199,7 @@
   border: 0;
   z-index: 100;
   cursor: pointer;
+  display: none;
 
   img {
     width: 24px;

@@ -24,36 +24,39 @@ function ThirdSection () {
         <div className="swiper-pagination--custom"></div>
       </div>
       
-      <Swiper 
-        direction={"vertical"}
-        slidesPerView={1}
-        allowTouchMove={false}
-        loop={true}
-        pagination={{
-            el : ".swiper-pagination--custom",
-            clickable: true,
-            renderBullet: function(index, className) {
-              return `<span class="${className}"><span class="third-section__bullet-number">${index + 1}</span>${array[index]}</span>`
+      <div className="third-section__vertical-slide-wrap">
+        <Swiper 
+          direction={"vertical"}
+          slidesPerView={1}
+          allowTouchMove={false}
+          loop={true}
+          pagination={{
+              el : ".swiper-pagination--custom",
+              clickable: true,
+              renderBullet: function(index, className) {
+                return `<span class="${className}"><span class="third-section__bullet-number">${index + 1}</span>${array[index]}</span>`
+              }
             }
           }
-        }
-        modules={[Pagination]}
-        className="third-section__vertical-slide"
-        >
+          modules={[Pagination]}
+          className="third-section__vertical-slide"
+          >
 
-        <SwiperSlide>
-          {/* TODO 비디오 삽입 영역 */}
-          <img src={VerticalImg} alt="" />
-        </SwiperSlide>
-        <SwiperSlide>
-          {/* TODO 비디오 삽입 영역 */}
-          <img src={VerticalImg2} alt="" />
-        </SwiperSlide>
-        <SwiperSlide>
-          {/* TODO 비디오 삽입 영역 */}
-          <img src={VerticalImg3} alt="" />
-        </SwiperSlide>
-      </Swiper>
+          <SwiperSlide>
+            {/* TODO 비디오 삽입 영역 */}
+            {/* <img src={VerticalImg} alt="" /> */}
+          </SwiperSlide>
+          <SwiperSlide>
+            {/* TODO 비디오 삽입 영역 */}
+            {/* <img src={VerticalImg2} alt="" /> */}
+          </SwiperSlide>
+          <SwiperSlide>
+            {/* TODO 비디오 삽입 영역 */}
+            {/* <img src={VerticalImg3} alt="" /> */}
+          </SwiperSlide>
+        </Swiper>
+      </div>
+      
     </div>
   )
 }
