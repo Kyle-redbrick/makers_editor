@@ -943,7 +943,7 @@ const zh = {
   ID_QNA_REFRESH: "새로고침",
   ID_QNA_ALERT_CONFIRM: "확인",
   ID_QNA_ALERT_CANCEL: "취소",
-  ID_HEADER_LMS: "我的学习",
+  ID_HEADER_LMS: "Dashboard",
   CONDITION_IS_PLAYING: "게임이 실행 중인지",
   CONDITION_DID_PLAY_ONCE: "최소 한 번 게임 실행하기",
   CONDITION_DID_GAME_EVENT_OCCUR: "게임에서 액션 수행하기",
