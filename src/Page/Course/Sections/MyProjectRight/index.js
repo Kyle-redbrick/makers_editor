@@ -47,7 +47,7 @@ const BeforeList = (props) => {
           <li key={index} className="course-content__item" onClick={()=> onClickItem(index)}>
             <div className="course-content__outline">
               <div className="course-content__thumbnail">
-                <img alt="차시 썸네일" src={Thumbnail} />
+                <img alt="차시 썸네일" src={URL.S3_DREAMCLASS + item.resources.thumbnailURL} />
                 <span className="course-content__label">{item.label}</span>
               </div>
               <div className="course-content__info">
