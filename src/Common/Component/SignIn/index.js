@@ -43,7 +43,6 @@ class SignIn extends Component {
         .login(params)
         .then(res => res.json())
         .then(json => {
-          console.log(json)
           if (json.success) {
             TrackingUtil.sendGTMEvent("Login_Success");
 
@@ -81,8 +80,6 @@ class SignIn extends Component {
 
 
   responseGoogle = (response) => {
-
-    console.log(response);
     // request.loginByGoogle().then((rep)=> rep.json()).
     // then((json)=> console.log(json))
   }
@@ -159,8 +156,6 @@ class SignIn extends Component {
           Sign in width Google
         </button> */}
 
-
-        {console.log(CLIENT_ID)}
         {/* <GoogleLogin
           clientId={CLIENT_ID}
           buttonText="Login"
