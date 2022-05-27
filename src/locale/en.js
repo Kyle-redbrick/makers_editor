@@ -542,6 +542,7 @@ const en = {
   ID_QNA_TITLE: "Q&A",
   ID_DRAWING_EDITOR_TITLE: "Paintbrush",
   ID_TEXT_BOX_TITLE: "Textbox",
+  ID_LEARN_TITLE_NONLOGIN: "Try the course of your choice for free",
   ID_LEARN_TITLE: "WizLab Tutorial Step 1 - Build a room escape game",
   ID_LEARN_TITLE_DESC: `This is a tutorial for novice Wiz members.\nYou can learn how to use WizLab by building a room escape game with WizLab. Time: about 10 ~ 20 minutes`,
   ID_POPUP_MOBILE_WAITING_TITLE: "Mobile Play",
