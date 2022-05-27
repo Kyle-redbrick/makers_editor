@@ -1,5 +1,6 @@
 import React from "react";
 import { FormattedMessage } from "react-intl";
+import ImgPlayVideoThumb from "../../../Image/intro-second-play-video-thumbnail.png";
 import "./index.scss";
 
 function PlayGameSection () {
@@ -12,7 +13,7 @@ function PlayGameSection () {
 
       <div className="game-video__outline">
         {/* TODO 게임 영상 영역 */}
-        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/JWTHsxn3B2M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <img alt="게임 임시 썸네일" src={ImgPlayVideoThumb} /> 
 
         {/* 상단 how to play 영역 */}
         <div className="game-video__how-to-play">
