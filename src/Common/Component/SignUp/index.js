@@ -235,7 +235,6 @@ class SignUp extends Component {
           <div className="signup_input_wrapper">
             <div className="signup_input_title">
               {formatMessage({ id: "ID_SIGNUP_EMAIL" })}
-              {/* <span className="signup_input_title_dot">*</span> */}
             </div>
             <div className="signup__input__right">
               <input
@@ -258,7 +257,6 @@ class SignUp extends Component {
           <div className="signup_input_wrapper">
             <div className="signup_input_title">
               {formatMessage({ id: "ID_SIGNUP_NAME" })}
-              {/* <span className="signup_input_title_dot">*</span> */}
             </div>
             <div className="signup__input__right">
               <input
@@ -279,7 +277,6 @@ class SignUp extends Component {
           <div className="signup_input_wrapper">
             <div className="signup_input_title">
               {formatMessage({ id: "ID_SIGNUP_FIRST_NAME" })}
-              {/* <span className="signup_input_title_dot">*</span> */}
             </div>
             <div className="signup__input__right">
               <input
@@ -300,7 +297,6 @@ class SignUp extends Component {
           <div className="signup_input_wrapper">
             <div className="signup_input_title">
               {formatMessage({ id: "ID_SIGNUP_NICKNAME" })}
-              {/* <span className="signup_input_title_dot">*</span> */}
             </div>
             <div className="signup__input__right">
               <input
@@ -321,7 +317,6 @@ class SignUp extends Component {
           <div className="signup_input_wrapper">
             <div className="signup_input_title">
               {formatMessage({ id: "ID_SIGNUP_PW" })}
-              {/* <span className="signup_input_title_dot">*</span> */}
             </div>
             <div className="signup__input__right">
               <input
