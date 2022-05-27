@@ -7,6 +7,14 @@ import JavaSIcon from "../../Image/intro-javascript-icon.png";
 import AstroBoyImg from "../../Image/img_AstroBoy.png";
 import AstroKittyImg from "../../Image/img_AstroKitty.png";
 import SuzuImg from "../../Image/img_Suzu.png";
+import ContactUS from "../Intro/Contact";
+import VerticalSlide from "../Intro/ThirdSection";
+import ImgBoy from "../../Image/img_astro_boy_character.png";
+import ImgSuzu from "../../Image/img_suzu_character.png";
+import ImgKitty from "../../Image/img_astro_kitty_character.png";
+import ImgBannerBoy from "../../Image/banner-astro-boy.png";
+import ImgBannerSuzu from "../../Image/banner-suzu.png";
+import ImgBannerKitty from "../../Image/banner-kitty.png";
 import "./index.scss";
 
 function View(props) {
@@ -21,10 +29,25 @@ function View(props) {
         <div className="first_section">
           <div className="first_section first_section--about">
             <div className="first_section__header">
-              <FormattedMessage id="ID_INTRO_ABOUT_ASTROBOY_GO_TITLE" />
+              <FormattedMessage id="ID_ABOUT_INTRO_TITLE" />
             </div>
             <div className="first_section__body">
-              <FormattedMessage id="ID_INTRO_ABOUT_ASTROBOY_GO" />
+              <FormattedMessage id="ID_ABOUT_INTRO_CHILD_TITLE" />
+            </div>
+
+            <div className="first-section__character-list">
+              {/* TODO 클릭하여 활성화 할때마다 클래스 active 추가 */}
+              <img alt="astro boy" className="first-section__character-border active" src={ImgBoy} />
+              <img alt="suzu" className="first-section__character-border" src={ImgSuzu} />
+              <img alt="astro kitty" className="first-section__character-border" src={ImgKitty} />
+            </div>
+
+            {/* TODO 두 영역이 연결되어 위에서 누르는 캐릭터들의 배너가 나와야함. */}
+
+            <div className="first-section__character-intro-banner-list">
+              <img alt="astro boy detail" src={ImgBannerBoy} />
+             {/*  <img alt="suzu detail" src={ImgBannerSuzu} />
+              <img alt="kitty detail" src={ImgBannerKitty} /> */}
             </div>
           </div>
 
@@ -73,6 +96,8 @@ function View(props) {
               </div>
 
             </div>
+
+            <VerticalSlide />
           </div>
         </div>
 
@@ -199,6 +224,8 @@ function View(props) {
             </div>
           </div>
         </div>
+
+        <ContactUS />
       </div>
     </Layout>
   );

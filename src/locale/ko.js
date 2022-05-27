@@ -1373,7 +1373,11 @@ const ko = {
   // 공통
   ID_COMMON_MONTH: "월",
   ID_COMMON_YEAR: "년",
+
+  ID_ABOUT_INTRO_TITLE : "Exciting Coding Lessons with Go Astro Go!",
+  ID_ABOUT_INTRO_CHILD_TITLE : "Astro sets out to solve problems happening\nall over the world together with SUZU and Astro Kitty",
   ID_COMMON_EDIT: "수정",
   ID_COMMON_APPLY: "적용"
+
 };
 export default ko;

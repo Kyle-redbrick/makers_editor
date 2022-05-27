@@ -1378,7 +1378,11 @@ const en = {
   ID_ATTENDANCE_TITLE: "Attendance",
   ID_COMMON_MONTH: "",
   ID_COMMON_YEAR: "",
+
+  ID_ABOUT_INTRO_TITLE : "Exciting Coding Lessons with Go Astro Go!",
+  ID_ABOUT_INTRO_CHILD_TITLE : "Astro sets out to solve problems happening\nall over the world together with SUZU and Astro Kitty",
   ID_COMMON_EDIT: "Edit",
   ID_COMMON_APPLY: "Apply"
+
 };
 export default en;
