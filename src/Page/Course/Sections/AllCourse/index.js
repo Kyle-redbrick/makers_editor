@@ -15,7 +15,6 @@ function AllCourse(props) {
 
   const getCourses = async ()=> {
     const data = await getLearnCourses()
-    console.log(data.body)
     setCourses(data.body)
   }
 
