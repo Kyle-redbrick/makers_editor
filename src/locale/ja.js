@@ -76,7 +76,7 @@ const ja = {
   ID_SIGNUP_PW_PLACEHOLDER: "パスワードをご入力ください。",
   ID_SIGNUP_PW_RE: "確認する",
   ID_SIGNUP_PW_RE_PLACEHOLDER: "パスワードをご入力ください。",
-  ID_SIGNUP_NAME: "ニックネーム *",
+  ID_SIGNUP_NAME: "名前 *",
   ID_SIGNUP_NAME_PLACEHOLDER: "ニックネームをご入力ください。",
   ID_SIGNUP_PHONE: "モバイル",
   ID_SIGNUP_PHONE_PLACEHOLDER: "電話番号",
@@ -544,6 +544,7 @@ const ja = {
   ID_QNA_TITLE: "Q&A",
   ID_DRAWING_EDITOR_TITLE: "ペイント",
   ID_TEXT_BOX_TITLE: "テキストボックス",
+  ID_LEARN_TITLE_NONLOGIN: "お好みの無料コースをお試しください",
   ID_LEARN_TITLE: "WizLab Tutorial Step 1 - Build a room escape game",
   ID_LEARN_TITLE_DESC: `This is a tutorial for novice Wiz members.\nYou can learn how to use WizLab by building a room escape game with WizLab. Time: about 10 ~ 20 minutes`,
   ID_POPUP_MOBILE_WAITING_TITLE: "Mobile Play",
@@ -1307,7 +1308,7 @@ const ja = {
   ID_SIGNUP_CREATE_TITLE : "アカウントを作成",
   ID_SIGNUP_FIRST_NAME : "名字 *",
   ID_SIGNUP_NICKNAME:"ニックネーム *",
-  ID_SIGNUP_FIRST_NAME_PLACEHOLDER: "성을 입력해주세요",
+  ID_SIGNUP_FIRST_NAME_PLACEHOLDER: "名字を入力してください。",
 
 
 
@@ -1363,7 +1364,7 @@ const ja = {
   ID_ACCOUNT_SETTING_TITLE: "アカウント設定",
   ID_ACCOUNT_SETTING_TAB_01: "アカウント管理",
   ID_ACCOUNT_SETTING_TAB_02: "パスワード変更",
-  ID_ACCOUNT_SETTING_TAB_01_NAME: "氏名",
+  ID_ACCOUNT_SETTING_TAB_01_FULLNAME: "氏名",
   ID_ACCOUNT_SETTING_TAB_01_NICKNAME: "ニックネーム",
   ID_ACCOUNT_SETTING_TAB_02_CURRENT_PWD: "現在のパスワード",
   ID_ACCOUNT_SETTING_TAB_02_NEW_PWD: "新しいパスワード",
@@ -1398,5 +1399,7 @@ const ja = {
   ID_INTRO_SCROLL_ACTION_IMG_CHILD_TITLE_4 : "Find the commands\nyou need by function.",
 
 
+  ID_COMMON_VIEW_MORE: "+ もっと見る",
+  ID_COMMON_GO_BACK: "以前"
 };
 export default ja;

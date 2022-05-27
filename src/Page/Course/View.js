@@ -149,7 +149,7 @@ const View = (props) => {
 
   useEffect(() => {
     init();
-    showIntroPopup();
+    //showIntroPopup();
   }, []);
 
   const init = async () => {

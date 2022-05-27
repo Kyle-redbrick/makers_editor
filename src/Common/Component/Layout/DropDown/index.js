@@ -78,7 +78,7 @@ class DropDown extends Component {
     localStorage.removeItem("wizToken");
     this.props.updateUserInfo();
     this.props.history.push({
-      pathname: "/"
+      pathname: "/intro"
     });
   };
 
