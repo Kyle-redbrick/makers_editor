@@ -1351,6 +1351,19 @@ const ja = {
   ID_INTRO_VIEW_MORE_NOTICE_TITLE : "Teach coding on a fun and exciting way!",
   ID_INTRO_VIEW_MORE_LEFT_TITLE : "Want to know more\nabout the Curriculum?",
   ID_INTRO_VIEW_MORE_RIGHT_TITLE : "Start your free trial\ncourse right now!",
+  
+  // 계정 설정
+  ID_ACCOUNT_SETTING_TITLE: "계정 설정",
+  ID_ACCOUNT_SETTING_TAB_01: "계정 관리",
+  ID_ACCOUNT_SETTING_TAB_02: "비밀번호 변경",
+  ID_ACCOUNT_SETTING_TAB_01_NAME: "이름",
+  ID_ACCOUNT_SETTING_TAB_01_NICKNAME: "닉네임",
+  ID_ACCOUNT_SETTING_TAB_02_CURRENT_PWD: "현재 비밀번호",
+  ID_ACCOUNT_SETTING_TAB_02_NEW_PWD: "새 비밀번호",
+  ID_ACCOUNT_SETTING_TAB_02_NEW_PWD_CHECK: "새 비밀번호 확인",
+  ID_ACCOUNT_SETTING_TAB_02_ENTER_CURRENT_PWD: "현재 비밀번호를 입력해주세요.",
+  ID_ACCOUNT_SETTING_TAB_02_ENTER_NEW_PWD: "새 비밀번호를 입력해주세요.",
+  
   ID_ATTENDANCE_TITLE: "出席状況",
   ID_COMMON_MONTH: "月",
   ID_COMMON_YEAR: "年"

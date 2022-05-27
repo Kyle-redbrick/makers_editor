@@ -1349,6 +1349,18 @@ const ko = {
   ID_INTRO_VIEW_MORE_LEFT_TITLE : "Want to know more\nabout the Curriculum?",
   ID_INTRO_VIEW_MORE_RIGHT_TITLE : "Start your free trial\ncourse right now!",
   
+    // 계정 설정
+  ID_ACCOUNT_SETTING_TITLE: "계정 설정",
+  ID_ACCOUNT_SETTING_TAB_01: "계정 관리",
+  ID_ACCOUNT_SETTING_TAB_02: "비밀번호 변경",
+  ID_ACCOUNT_SETTING_TAB_01_NAME: "이름",
+  ID_ACCOUNT_SETTING_TAB_01_NICKNAME: "닉네임",
+  ID_ACCOUNT_SETTING_TAB_02_CURRENT_PWD: "현재 비밀번호",
+  ID_ACCOUNT_SETTING_TAB_02_NEW_PWD: "새 비밀번호",
+  ID_ACCOUNT_SETTING_TAB_02_NEW_PWD_CHECK: "새 비밀번호 확인",
+  ID_ACCOUNT_SETTING_TAB_02_ENTER_CURRENT_PWD: "현재 비밀번호를 입력해주세요.",
+  ID_ACCOUNT_SETTING_TAB_02_ENTER_NEW_PWD: "새 비밀번호를 입력해주세요.",
+
   ID_ATTENDANCE_TITLE: "출석현황",
   ID_COMMON_MONTH: "월",
   ID_COMMON_YEAR: "년"
