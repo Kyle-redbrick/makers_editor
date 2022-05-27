@@ -69,7 +69,6 @@ function View(props) {
 const ChangeName = (props) => {
 
   const onClickBtn = (id) => {
-    console.log(id)
     showPopUp(
       <EditPopup id={id} {...props} dismiss={PopUp.hidePopUp} />,
       {
@@ -124,7 +123,6 @@ const ChangePassword = (props) => {
 
   const onChangeValue = (e) => {
     const { id, value } = e.target;
-    console.log(id, value)
 
     switch (id) {
       case "pwd":
@@ -145,7 +143,6 @@ const ChangePassword = (props) => {
     let info = ""
     if (newPwd.length > 5 && newPwd === checkNewPwd) {
       const res = await Request.modifyPassword({ "currentPasswd": sha256(pwd), "newPasswd": sha256(newPwd) })
-      console.log(res)
       info = "success"
     } else if (newPwd.length < 5) {
       info = "newPwd.length < 5"

@@ -23,7 +23,6 @@ const EditName = (props) => {
 
     if (name.length > 0 && name.length < 31) {
       nameData = await request.modifyName({ "section": "name", "familyname": firstName, "givenname": name })
-      console.log(nameData)
       if (nameData.success) {
         props.updateUserInfo({ "fullname": { "family": firstName, "given": name }, "name": nameData.body.newValue });
         props.dismiss()
@@ -38,7 +37,6 @@ const EditName = (props) => {
   }
   const onChangeValue = (e) => {
     const { id, value } = e.target;
-    console.log(id, value)
     switch (id) {
       case "name":
         name = value
@@ -108,7 +106,6 @@ const EditNickname = (props) => {
     if (nickName.length > 0 && nickName.length < 31) {
 
       nickNameData = await request.modifyName({ "section": "nickname", "nickname": nickName, })
-      console.log(nickNameData)
       if (nickNameData.success) {
         props.updateUserInfo({ nickName: nickName });
         setWarnText({ "warnName": "", "warnRes": "" })
@@ -126,7 +123,6 @@ const EditNickname = (props) => {
   const onChangeValue = (e) => {
     const { value } = e.target;
     nickName = value
-    console.log(nickName.length, nickName)
   }
 
   return (
