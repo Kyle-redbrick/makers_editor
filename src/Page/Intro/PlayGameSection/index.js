@@ -21,7 +21,7 @@ function PlayGameSection () {
             <FormattedMessage id="ID_INTRO_GAME_VIDEO_LINE_BANNER_TITLE_LEFT" />
           </span>
           <span className="game-video__how-to-play-right">
-            <FormattedMessage id="ID_INTRO_GAME_VIDEO_LINE_BANNER_TITLE_RIGHT" />
+            <FormattedMessage id="ID_INTRO_PLAY_WAY" />
           </span>
         </div>
       </div>

@@ -1327,7 +1327,6 @@ const zh = {
 
   ID_INTRO_GAME_VIDEO_SECTION_CHILD_TITLE: "The LMS (Learning Management System) manages\nvarious classes and can be applied flexibly in various institutions.",
   ID_INTRO_GAME_VIDEO_LINE_BANNER_TITLE_LEFT: "How to play",
-  ID_INTRO_GAME_VIDEO_LINE_BANNER_TITLE_RIGHT: "공격 버튼을 눌러 플라즈마를 파괴하세요!",
 
   ID_INTRO_LINE_BANNER_TITLE: "Try our free courses first!",
   ID_INTRO_LINE_BANNER_CHILD_TITLE: "Fun and learning all at once",
@@ -1394,6 +1393,8 @@ const zh = {
 
 
   ID_COMMON_VIEW_MORE: "+ View More",
-  ID_COMMON_GO_BACK: "Go Back"
+  ID_COMMON_GO_BACK: "Go Back",
+
+  ID_INTRO_PLAY_WAY : "Press button to destroy plasma!"
 };
 export default zh;
