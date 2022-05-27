@@ -429,8 +429,9 @@ const ja = {
   ID_FONT_SUNFLOWER: "Sunflower",
   ID_FONT_YEONSUNG: "Yeon Sung",
   ID_USERDD_MYPAGE: "マイページ",
+  ID_USERDD_MYGAME: "私のゲーム",
   ID_USERDD_MYAPK: "My APK",
-  ID_USERDD_SETTING: "Settings",
+  ID_USERDD_SETTING: "アカウント設定",
   ID_USERDD_LOGOUT: "アトムコーディングGo!から出る",
   ID_USERDD_LOGIN: "ログイン",
   ID_SETTING_ALERT_TITLE_SUCC: "成功",
@@ -944,7 +945,7 @@ const ja = {
   ID_QNA_REFRESH: "リロード",
   ID_QNA_ALERT_CONFIRM: "確認",
   ID_QNA_ALERT_CANCEL: "取り消し",
-  ID_HEADER_LMS: "マイ学習",
+  ID_HEADER_LMS: "Dashboard",
   CONDITION_IS_PLAYING: "게임이 실행 중인지",
   CONDITION_DID_PLAY_ONCE: "최소 한 번 게임 실행하기",
   CONDITION_DID_GAME_EVENT_OCCUR: "게임에서 액션 수행하기",
@@ -1303,6 +1304,13 @@ const ja = {
   ID_DATE_FORMAT_MIN: "minutes ago",
 
 
+  ID_SIGNUP_CREATE_TITLE : "アカウントを作成",
+  ID_SIGNUP_FIRST_NAME : "名字",
+  ID_SIGNUP_NICKNAME:"ニックネーム",
+  ID_SIGNUP_FIRST_NAME_PLACEHOLDER: "성을 입력해주세요",
+
+
+
   ID_CERT_ELEMENTARY_BLOCK_DESC:"あなたは iGroup主催のソフトウェアの教育課程であるブロックコーディングエレメンタリーを修了するためのすべての要求事項を満たし、イベント、座標、物理を活用して5個のプロジェクトを自ら完成したため、この修了証を授与いたします。",
   ID_CERT_BASIC_BLOCK_DESC:"あなたは iGroup主催のソフトウェアの教育課程であるブロックコーディングベーシックを修了するためのすべての要求事項を満たし、イベント、座標、物理、変数, 条件文を活用して15個のプロジェクトを自ら完成したため、この修了証を授与いたします。",
   ID_CERT_ADVANCED_BLOCK_DESC:"あなたは iGroup主催のソフトウェアの教育課程であるブロックコーディングアドバンスを修了するためのすべての要求事項を満たし、イベント、座標、物理、変数, 条件文,繰り返し文,複製を活用して4個のプロジェクトを自ら完成したため、この修了証を授与いたします。",
@@ -1350,11 +1358,34 @@ const ja = {
   ID_INTRO_VIEW_MORE_NOTICE_TITLE : "Teach coding on a fun and exciting way!",
   ID_INTRO_VIEW_MORE_LEFT_TITLE : "Want to know more\nabout the Curriculum?",
   ID_INTRO_VIEW_MORE_RIGHT_TITLE : "Start your free trial\ncourse right now!",
+  
+  // 계정 설정
+  ID_ACCOUNT_SETTING_TITLE: "アカウント設定",
+  ID_ACCOUNT_SETTING_TAB_01: "アカウント管理",
+  ID_ACCOUNT_SETTING_TAB_02: "パスワード変更",
+  ID_ACCOUNT_SETTING_TAB_01_NAME: "氏名",
+  ID_ACCOUNT_SETTING_TAB_01_NICKNAME: "ニックネーム",
+  ID_ACCOUNT_SETTING_TAB_02_CURRENT_PWD: "現在のパスワード",
+  ID_ACCOUNT_SETTING_TAB_02_NEW_PWD: "新しいパスワード",
+  ID_ACCOUNT_SETTING_TAB_02_NEW_PWD_CHECK: "新しいパスワードの確認",
+  ID_ACCOUNT_SETTING_TAB_02_ENTER_CURRENT_PWD: "現在のパスワードを入力してください。",
+  ID_ACCOUNT_SETTING_TAB_02_ENTER_NEW_PWD: "新しいパスワードを入力してください。",
+  ID_ACCOUNT_EDIT_NAME_POPUP_TITLE: "氏名の修正",
+  ID_ACCOUNT_EDIT_NAME_POPUP_GIVEN_NAME: "名前",
+  ID_ACCOUNT_EDIT_NAME_POPUP_FAMILY_NAME: "名字",
+  ID_ACCOUNT_EDIT_NAME_POPUP_ENTER_GIVEN_NAME: "名前を入力してください。",
+  ID_ACCOUNT_EDIT_NAME_POPUP_ENTER_FAMILY_NAME: "名字を入力してください。",
+  ID_ACCOUNT_EDIT_NICKNAME_POPUP_TITLE: "ニックネームを編集",
+  ID_ACCOUNT_EDIT_NICKNAME_POPUP_ENTER_NICKNAME: "ニックネームを入力してください。",
+
   ID_ATTENDANCE_TITLE: "出席状況",
   ID_COMMON_MONTH: "月",
   ID_COMMON_YEAR: "年",
 
   ID_ABOUT_INTRO_TITLE : "Exciting Coding Lessons with Go Astro Go!",
-  ID_ABOUT_INTRO_CHILD_TITLE : "Astro sets out to solve problems happening\nall over the world together with SUZU and Astro Kitty"
+  ID_ABOUT_INTRO_CHILD_TITLE : "Astro sets out to solve problems happening\nall over the world together with SUZU and Astro Kitty",
+  ID_COMMON_EDIT: "修正",
+  ID_COMMON_APPLY: "確認"
+
 };
 export default ja;

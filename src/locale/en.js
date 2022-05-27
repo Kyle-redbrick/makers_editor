@@ -75,7 +75,7 @@ const en = {
   ID_SIGNUP_PW_PLACEHOLDER: "Please enter a password",
   ID_SIGNUP_PW_RE: "Confirm",
   ID_SIGNUP_PW_RE_PLACEHOLDER: "Please enter your password again",
-  ID_SIGNUP_NAME: "Nickname",
+  ID_SIGNUP_NAME: "Given Name",
   ID_SIGNUP_NAME_PLACEHOLDER: "Please enter your nickname",
   ID_SIGNUP_PHONE: "Mobile",
   ID_SIGNUP_PHONE_PLACEHOLDER: "Phone number",
@@ -427,8 +427,9 @@ const en = {
   ID_FONT_SUNFLOWER: "Sunflower",
   ID_FONT_YEONSUNG: "Yeon Sung",
   ID_USERDD_MYPAGE: "My Page",
+  ID_USERDD_MYGAME: "My Game",
   ID_USERDD_MYAPK: "My APK",
-  ID_USERDD_SETTING: "Settings",
+  ID_USERDD_SETTING: "Account Settings",
   ID_USERDD_LOGOUT: "Leave Astro Coding Go!",
   ID_USERDD_LOGIN: "Sign in",
   ID_SETTING_ALERT_TITLE_SUCC: "Success",
@@ -589,7 +590,7 @@ const en = {
   ID_MYPAGE_NAME_USERNAME_WARNING: "닉네임 변경은 마지막 변경일을 기준으로 15일 이후에 가능합니다.",
   ID_MYPAGE_NAME_USERNAME_OFFICIAL_WARNING: "운영진을 사칭할 수 있는 닉네임은 사용할 수 없습니다.",
   ID_MYPAGE_NAME_USERICON: "Profile Image",
-  ID_MYPAGE_NAME_USEREMAIL: "E-mail",
+  ID_MYPAGE_NAME_USEREMA성IL: "E-mail",
   ID_MYPAGE_NAME_USERPHONE: "전화번호",
   ID_MYPAGE_NAME_USERSTATUSMSG: "Brief introduction",
   ID_MYPAGE_NAME_USERORGANIZATION: "Affiliation",
@@ -942,7 +943,7 @@ const en = {
   ID_QNA_REFRESH: "Refresh",
   ID_QNA_ALERT_CONFIRM: "Confirm",
   ID_QNA_ALERT_CANCEL: "Cancel",
-  ID_HEADER_LMS: "My learning",
+  ID_HEADER_LMS: "Dashboard",
   CONDITION_IS_PLAYING: "게임이 실행 중인지",
   CONDITION_DID_PLAY_ONCE: "최소 한 번 게임 실행하기",
   CONDITION_DID_GAME_EVENT_OCCUR: "게임에서 액션 수행하기",
@@ -1305,10 +1306,11 @@ const en = {
   ID_CERT_ADVANCED_JS_DESC: "is awarded with this certificate for successfully fulfilling requirements of Advanced JavaScript, a software education course offered by iGroup, and completing 8 projects utilizing Event, Sequence, Physical Engine, Random Number,  Varibale, Conditional Statement, and Operator.",
   ID_CERT_MASTERY_JS_DESC: "is awarded with this certificate for successfully fulfilling requirements of JavaScript Mastery, a software education course offered by iGroup, and completing 4 projects utilizing Random Number, Variable, Conditional Statement, Operator, List, Index,  Loop, and Function.",
 
-  ID_SIGNUP_CREATE_TITLE: "계정 생성하기",
-  ID_SIGNUP_NAME: "이름",
-  ID_SIGNUP_FIRST_NAME: "성",
-  ID_SIGNUP_FIRST_NAME_PLACEHOLDER: "성을 입력해주세요",
+  ID_SIGNUP_CREATE_TITLE: "Sign Up",
+  ID_SIGNUP_FIRST_NAME: "Family Name",
+  ID_SIGNUP_NICKNAME:"Nickname",
+  ID_SIGNUP_FIRST_NAME_PLACEHOLDER: "Enter your last name",
+  
 
   ID_INTRO_ABOUT_ASTRO_CODING_GO_TITLE: "About Astro Coding Go!",
   ID_INTRO_SECOND_SECTION_TITLE: "A coding class\nwidth next-level missions",
@@ -1332,33 +1334,55 @@ const en = {
   ID_INTRO_LINE_BANNER_CHILD_TITLE: "Fun and learning all at once",
   ID_INTRO_LINE_BANNER_GO_TO_FREE_COURSE_LINK: "Go to Free Trial Course",
 
-  ID_INTRO_INTRODUCE_AREA_CONTENT_TITLE : "Systematic LMS",
-  ID_INTRO_INTRODUCE_AREA_CONTENT_TITLE_2 : "Project-Based Practical Classes",
-  ID_INTRO_INTRODUCE_AREA_CONTENT_TITLE_3 : "The Patented OOBC Technology",
+  ID_INTRO_INTRODUCE_AREA_CONTENT_TITLE: "Systematic LMS",
+  ID_INTRO_INTRODUCE_AREA_CONTENT_TITLE_2: "Project-Based Practical Classes",
+  ID_INTRO_INTRODUCE_AREA_CONTENT_TITLE_3: "The Patented OOBC Technology",
 
-  ID_INTRO_INTRODUCE_AREA_CONTENT_CHILD_TITLE_1 : "Teach students easily by assigning missions for them to try.\nManage multiple classes at once while keeping track of the progress of each student\nEven instructors who aren't expert coders can teach classes with ease.",
-  ID_INTRO_INTRODUCE_AREA_CONTENT_CHILD_TITLE_2 : "Apply CS concepts such as variables and functions to each mission and learn practical cases\nrather than stopping at theoretical learning. And with the additional builder feature, students can\napply the skills they learned and create their very own games themselves.",
-  ID_INTRO_INTRODUCE_AREA_CONTENT_CHILD_TITLE_3 : "The OOBC block language used in Astro Coding Go! uses a sentence structure that is different\nfrom the existing block code language, helping the transition to text coding such as JS.\n* OOBC : object-oriented block coding",
+  ID_INTRO_INTRODUCE_AREA_CONTENT_CHILD_TITLE_1: "Teach students easily by assigning missions for them to try.\nManage multiple classes at once while keeping track of the progress of each student\nEven instructors who aren't expert coders can teach classes with ease.",
+  ID_INTRO_INTRODUCE_AREA_CONTENT_CHILD_TITLE_2: "Apply CS concepts such as variables and functions to each mission and learn practical cases\nrather than stopping at theoretical learning. And with the additional builder feature, students can\napply the skills they learned and create their very own games themselves.",
+  ID_INTRO_INTRODUCE_AREA_CONTENT_CHILD_TITLE_3: "The OOBC block language used in Astro Coding Go! uses a sentence structure that is different\nfrom the existing block code language, helping the transition to text coding such as JS.\n* OOBC : object-oriented block coding",
 
-  ID_INTRO_SCROLL_AREA_LEFT_TITLE : "Self Managing Education",
-  ID_INTRO_SCROLL_AREA_LEFT_CHILD_TITLE : "A self-managing education method provides tips and\nanswers within each mission, ultimately minimizing the\ninstructions that are required for instructors.",
-  
-  ID_INTRO_SCROLL_AREA_LEFT_TITLE_2 : "Study Assistant Tools",
-  ID_INTRO_SCROLL_AREA_LEFT_CHILD_TITLE_2 : "The assistant provides tools to help students solve\ndifficult problems on their own such as code sorting,\nAPI dictionary, and a question and answer board while\nthey write their own code.",
+  ID_INTRO_SCROLL_AREA_LEFT_TITLE: "Self Managing Education",
+  ID_INTRO_SCROLL_AREA_LEFT_CHILD_TITLE: "A self-managing education method provides tips and\nanswers within each mission, ultimately minimizing the\ninstructions that are required for instructors.",
 
-  ID_INTRO_CONTACT_TITLE : "Contact US",
-  ID_INTRO_CONTACT_CHILD_TITLE : "Submit the contact form to receive\na free account and try the premium content\nof Astro Coding Go for free.",
+  ID_INTRO_SCROLL_AREA_LEFT_TITLE_2: "Study Assistant Tools",
+  ID_INTRO_SCROLL_AREA_LEFT_CHILD_TITLE_2: "The assistant provides tools to help students solve\ndifficult problems on their own such as code sorting,\nAPI dictionary, and a question and answer board while\nthey write their own code.",
+
+  ID_INTRO_CONTACT_TITLE: "Contact US",
+  ID_INTRO_CONTACT_CHILD_TITLE: "Submit the contact form to receive\na free account and try the premium content\nof Astro Coding Go for free.",
 
 
-  ID_INTRO_VIEW_MORE_NOTICE_TITLE : "Teach coding on a fun and exciting way!",
-  ID_INTRO_VIEW_MORE_LEFT_TITLE : "Want to know more\nabout the Curriculum?",
-  ID_INTRO_VIEW_MORE_RIGHT_TITLE : "Start your free trial\ncourse right now!",
-  
+  ID_INTRO_VIEW_MORE_NOTICE_TITLE: "Teach coding on a fun and exciting way!",
+  ID_INTRO_VIEW_MORE_LEFT_TITLE: "Want to know more\nabout the Curriculum?",
+  ID_INTRO_VIEW_MORE_RIGHT_TITLE: "Start your free trial\ncourse right now!",
+
+  // 계정 설정
+  ID_ACCOUNT_SETTING_TITLE: "Account Settings",
+  ID_ACCOUNT_SETTING_TAB_01: "Manage Account",
+  ID_ACCOUNT_SETTING_TAB_02: "Change Password",
+  ID_ACCOUNT_SETTING_TAB_01_FULLNAME: "Name",
+  ID_ACCOUNT_SETTING_TAB_01_NICKNAME: "Nickname",
+  ID_ACCOUNT_SETTING_TAB_02_CURRENT_PWD: "Current Password",
+  ID_ACCOUNT_SETTING_TAB_02_NEW_PWD: "New Password",
+  ID_ACCOUNT_SETTING_TAB_02_NEW_PWD_CHECK: "Confirm Password",
+  ID_ACCOUNT_SETTING_TAB_02_ENTER_CURRENT_PWD: "Enter your current password.",
+  ID_ACCOUNT_SETTING_TAB_02_ENTER_NEW_PWD: "Enter your new password.",
+  ID_ACCOUNT_EDIT_NAME_POPUP_TITLE: "Edit Name",
+  ID_ACCOUNT_EDIT_NAME_POPUP_GIVEN_NAME: "Given Name",
+  ID_ACCOUNT_EDIT_NAME_POPUP_FAMILY_NAME: "Family Name",
+  ID_ACCOUNT_EDIT_NAME_POPUP_ENTER_GIVEN_NAME: "Enter your first name.",
+  ID_ACCOUNT_EDIT_NAME_POPUP_ENTER_FAMILY_NAME: "Enter your last name.",
+  ID_ACCOUNT_EDIT_NICKNAME_POPUP_TITLE: "Edit Nickname",
+  ID_ACCOUNT_EDIT_NICKNAME_POPUP_ENTER_NICKNAME: "Enter your nickname.",
+
   ID_ATTENDANCE_TITLE: "Attendance",
   ID_COMMON_MONTH: "",
   ID_COMMON_YEAR: "",
 
   ID_ABOUT_INTRO_TITLE : "Exciting Coding Lessons with Go Astro Go!",
-  ID_ABOUT_INTRO_CHILD_TITLE : "Astro sets out to solve problems happening\nall over the world together with SUZU and Astro Kitty"
+  ID_ABOUT_INTRO_CHILD_TITLE : "Astro sets out to solve problems happening\nall over the world together with SUZU and Astro Kitty",
+  ID_COMMON_EDIT: "Edit",
+  ID_COMMON_APPLY: "Apply"
+
 };
 export default en;

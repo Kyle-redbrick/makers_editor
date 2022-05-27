@@ -63,21 +63,28 @@ class Footer extends Component {
     return (
       <div className="Footer">
         <div className="Footer--Inner">
-          {agreements.map((agreement, index) => (
-            <div className="Agreement" key={index}
-              onClick={() => onClickShowAgreement(agreement.id)}>
-              <div className={agreement.id}>
-                {agreement.title}
+          <div className="Footer--Inner__term-row">
+            {agreements.map((agreement, index) => (
+              <div className="Agreement" key={index}
+                onClick={() => onClickShowAgreement(agreement.id)}>
+                <div className={agreement.id}>
+                  {agreement.title}
+                </div>
               </div>
+            ))}
+          </div>
+          <div className="Footer--Inner__info-row">
+            <div className="Info--Service-time">
+              {this.props.intl.formatMessage({ id: "ID_DREAM_FOOTER_SERVICE_TIME" })}
             </div>
-          ))}
-          <div className="Info--Service-time">
-            {this.props.intl.formatMessage({ id: "ID_DREAM_FOOTER_SERVICE_TIME" })}
+            <div className="Info--Copy">
+              <FormattedMessage id="ID_HOME_COPY_INFO" />
+            </div>
+            <div className="Info-email">
+              Email: acg@mangosteems.com
+            </div>
+            <img className="Logo" src={logo_gray} alt="logo" />
           </div>
-          <div className="Info--Copy">
-            <FormattedMessage id="ID_HOME_COPY_INFO" />
-          </div>
-          <img className="Logo" src={logo_gray} alt="logo" />
         </div>
       </div>
     );

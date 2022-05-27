@@ -238,7 +238,7 @@ const Lecture = memo(({ course, ...props }) => {
             <Progress>
               <ProgressBar value={course.course.progress.completed / course.course.progress.net * 100} />
             </Progress>
-            <ProgressText>{course.course.progress.completed / course.course.progress.net * 100}%</ProgressText>
+            <ProgressText>{parseInt(course.course.progress.completed / course.course.progress.net * 100)}%</ProgressText>
           </ProgressWrap>
         </TitleWrap>
 

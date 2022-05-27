@@ -47,7 +47,7 @@ const BeforeList = (props) => {
           <li key={index} className="course-content__item" onClick={()=> onClickItem(index)}>
             <div className="course-content__outline">
               <div className="course-content__thumbnail">
-                <img alt="차시 썸네일" src={Thumbnail} />
+                <img alt="차시 썸네일" src={URL.S3_DREAMCLASS + item.resources.thumbnailURL} />
                 <span className="course-content__label">{item.label}</span>
               </div>
               <div className="course-content__info">
@@ -146,10 +146,10 @@ const AfterList = (props) => {
                   <p className="course-content__detail-explan">{item.intro}</p>
                   {
                     item.progress.completed >= item.progress.net ? (
-                      <LearnButtons.LearnAgain learnWidth={true}  completed id={item.id} />
+                      <LearnButtons.LearnAgain learnWidth={true} completed id={item.id}/>
                       ) : (
                         item.progress.completed === 0 ? (
-                          <LearnButtons.LearnNow learnWidth={true} id={item.id} />
+                          <LearnButtons.LearnNow learnWidth={true} id={item.id} isShowVideo={true}  videoURL={URL.S3_DREAMCLASS + item.resources.videoURL}/>
                         ) : (
                           <LearnButtons.LearnContinue learnWidth={true} id={item.id} />
                         )

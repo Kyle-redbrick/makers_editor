@@ -156,14 +156,15 @@ class SignUp extends Component {
     then(res => {
       if(res.success) {
         request.loginByToken({token:res.body.token})
-        .then(res => res.json)
+        .then(res => res.json())
         .then(json => {
+          console.log(json)
           if(json.token){
             localStorage.setItem("wizToken",  json.token);
 
-            const url = window.location.href 
-            const newUrl = url.split("?").pop()
-            window.location.href = url.replace("/?" + newUrl,"")
+            // const url = window.location.href 
+            // const newUrl = url.split("?").pop()
+            // window.location.href = url.replace("/?" + newUrl,"")
             this.props.updateUserInfo(json.user);
             this.props.dismiss()
           }else {
@@ -298,8 +299,7 @@ class SignUp extends Component {
           {/* ===== 닉네임 =================================== */}
           <div className="signup_input_wrapper">
             <div className="signup_input_title">
-              닉네임
-              {/* {formatMessage({ id: "ID_SIGNUP_NAME" })} */}
+              {formatMessage({ id: "ID_SIGNUP_NICKNAME" })}
               <span className="signup_input_title_dot">*</span>
             </div>
             <div className="signup__input__right">
