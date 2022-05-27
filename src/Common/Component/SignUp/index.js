@@ -235,7 +235,6 @@ class SignUp extends Component {
           <div className="signup_input_wrapper">
             <div className="signup_input_title">
               {formatMessage({ id: "ID_SIGNUP_EMAIL" })}
-              <span className="signup_input_title_dot">*</span>
             </div>
             <div className="signup__input__right">
               <input
@@ -250,7 +249,7 @@ class SignUp extends Component {
 
                 disabled
               />
-              <div className="popup_warning">{warning_email}</div>
+              {warning_email && <div className="popup_warning">{warning_email}</div>}
             </div>
           </div>
 
@@ -258,7 +257,6 @@ class SignUp extends Component {
           <div className="signup_input_wrapper">
             <div className="signup_input_title">
               {formatMessage({ id: "ID_SIGNUP_NAME" })}
-              <span className="signup_input_title_dot">*</span>
             </div>
             <div className="signup__input__right">
               <input
@@ -271,7 +269,7 @@ class SignUp extends Component {
                 type="text"
                 autoComplete="off"
               />
-              <div className="popup_warning">{warning_name}</div>
+              {warning_name && <div className="popup_warning">{warning_name}</div>}
             </div>
           </div>
 
@@ -279,7 +277,6 @@ class SignUp extends Component {
           <div className="signup_input_wrapper">
             <div className="signup_input_title">
               {formatMessage({ id: "ID_SIGNUP_FIRST_NAME" })}
-              <span className="signup_input_title_dot">*</span>
             </div>
             <div className="signup__input__right">
               <input
@@ -292,7 +289,7 @@ class SignUp extends Component {
                 type="text"
                 autoComplete="off"
               />
-              <div className="popup_warning">{warning_fristName}</div>
+              {warning_fristName && <div className="popup_warning">{warning_fristName}</div>}
             </div>
           </div>
 
@@ -300,7 +297,6 @@ class SignUp extends Component {
           <div className="signup_input_wrapper">
             <div className="signup_input_title">
               {formatMessage({ id: "ID_SIGNUP_NICKNAME" })}
-              <span className="signup_input_title_dot">*</span>
             </div>
             <div className="signup__input__right">
               <input
@@ -313,7 +309,7 @@ class SignUp extends Component {
                 type="text"
                 autoComplete="off"
               />
-              <div className="popup_warning">{warning_nickName}</div>
+              {warning_nickName && <div className="popup_warning">{warning_nickName}</div>}
             </div>
           </div>
 
@@ -321,7 +317,6 @@ class SignUp extends Component {
           <div className="signup_input_wrapper">
             <div className="signup_input_title">
               {formatMessage({ id: "ID_SIGNUP_PW" })}
-              <span className="signup_input_title_dot">*</span>
             </div>
             <div className="signup__input__right">
               <input
@@ -334,7 +329,7 @@ class SignUp extends Component {
                 onChange={onChangeInput}
                 autoComplete="off"
               />
-              <div className="popup_warning">{warning_password}</div>
+              {warning_password && <div className="popup_warning">{warning_password}</div>}
             </div>
           </div>
 
