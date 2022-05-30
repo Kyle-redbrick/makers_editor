@@ -23,7 +23,7 @@ import ScrollAction from "./ScrollAction";
 import VideoThumbnail from "../../Image/intro-play-video-thumbnail.png";
 import TopScrollIcon from "../../Image/top-scroll-arrow.svg";
 import IconMessage from "../../Image/icon-message.svg"; 
-import ContactComplete from "./ContactComplete";
+
 import "./index.scss";
 
 function View(props) {
@@ -135,10 +135,7 @@ function View(props) {
          <ViewMore />
 
         {/* Contact Us */}
-        {/* TODO Contact 폼에서 제출 완료하면 팝업으로 ContactComplete 가 호출되면 됩니다. */}
         <Contact />
-
-        <ContactComplete />
        
       </div>
     </Layout>

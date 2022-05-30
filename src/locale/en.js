@@ -1403,10 +1403,6 @@ const en = {
   ID_COMMON_TOTAL: "Total",
   ID_COMMON_MISSION: " Missions",
 
-  ID_INTRO_PLAY_WAY: "Press button to destroy plasma!",
-
-  ID_INTRO_CONTACT_COMPLETE_TITLE : "컨택 폼 제출 완료",
-  ID_INTRO_CONTACT_COMPLETE_CHILD_TITLE : "컨택 주셔서 감사합니다.\n담당자 확인 후 연락드리겠습니다.",
-  ID_INTRO_CONTACT_COMPLETE_OK_BUTTON : "확인"
+  ID_INTRO_PLAY_WAY: "Press button to destroy plasma!"
 };
 export default en;
