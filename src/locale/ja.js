@@ -1041,6 +1041,7 @@ const ja = {
   ID_LEAEN_BUTTON_LEARN_AGAIN: "再学習する",
   ID_LEAEN_BUTTON_LEARN_NOW: "今すぐ学習する",
   ID_LEAEN_BUTTON_LEARN_CONTINUE: "つづく",
+  ID_LEAEN_BUTTON_LEARN_EXPERIENCE: "Experience",
   ID_GAMEPOPUP_SEARCH_INFO: "게임 이름이나 크리에이터 이름을 검색해보세요",
   ID_GAMEPOPUP_SEARCH_INFO2: "검색어를 입력해주세요",
   ID_GAMEPOPUP_SEARCH_INFO_ERROR: "검색어에 해당하는 게임을 찾지 못했어요",
