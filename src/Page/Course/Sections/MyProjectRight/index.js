@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from "react";
 import Thumbnail from "../../../../Image/course_thumbnail.png";
-import { injectIntl, FormattedMessage } from "react-intl";
+import {injectIntl, FormattedMessage} from "react-intl";
 import ClearIcon from "../../../../Image/icon-clear.svg";
 import PrevIcon from "../../../../Image/icn_arrow_left.svg"
 import { URL } from "../../../../Common/Util/Constant"
@@ -10,11 +10,11 @@ import * as LearnButtons from "../../../../Common/Component/Button/Learn";
 import "./index.scss";
 
 
-function MyProjectRight(props) {
+function MyProjectRight (props) {
   return (
     <div className="right-banner">
       <div className="course-content__wrap">
-        {props.session.isLogin ? <AfterList {...props} /> : <BeforeList {...props} />}
+        { props.session.isLogin ? <AfterList {...props} /> : <BeforeList {...props} /> }
       </div>
     </div>
   )
@@ -26,14 +26,14 @@ const BeforeList = (props) => {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    props.projects.map((item, index) => {
+    props.projects.map((item,index) => {
       item.isClickd = false
     })
     setItems([...props.projects])
   }, [props]);
 
   const onClickItem = (i) => {
-    items.map((item, index) => {
+    items.map((item,index) => {
       i == index ? item.isClickd = !item.isClickd : item.isClickd = false
     })
     setItems([...items])
@@ -44,7 +44,7 @@ const BeforeList = (props) => {
   return (
     <ul className="course-content__list course-content__list--register">
       {
-        items.map((item, index) =>
+        items.map((item,index) =>
           <li key={index} className="course-content__item" onClick={() => onClickItem(index)}>
             <div className="course-content__outline">
               <div className="course-content__thumbnail">
@@ -71,7 +71,6 @@ const BeforeList = (props) => {
                   </button>
                 </div>
               }
-
             </div>
           </li>
         )
@@ -84,15 +83,14 @@ const AfterList = (props) => {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    console.log(111, props.projects);
-    props.projects.map((item, index) => {
+    props.projects.map((item,index) => {
       item.isClickd = false
     })
     setItems([...props.projects])
   }, [props]);
 
   const onClickItem = (i) => {
-    items.map((item, index) => {
+    items.map((item,index) => {
       i == index ? item.isClickd = !item.isClickd : item.isClickd = false
     })
     setItems([...items])
@@ -126,7 +124,7 @@ const AfterList = (props) => {
               <div className="course-content__info">
                 <h3 className="course-content__title">{item.title}</h3>
                 <div className="course-content__clear-label">
-                  {item.unlocked ?
+                  {item.unlocked &&
                     <>
                     {
                       item.progress.completed / item.progress.net === 1 ?
@@ -141,15 +139,10 @@ const AfterList = (props) => {
                           </div>
                           <span className="course-content__progress-length"><b>{item.progress.completed}</b>/{item.progress.net} Step</span>
                         </div>
-
                     }
                     </>
-                    :
-                    <div className="course-content__empty">
-                    </div>
                   }
                 </div>
-
                 {
                   item.isClickd &&
                   <div className="course-content__detail-content">
