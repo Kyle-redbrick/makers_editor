@@ -6,10 +6,14 @@ import Button, { LinkButton as OrigLinkButton } from "./Button";
 import ProjectComponent from "./Project";
 import { showPopUp } from "../../../Common/Component/PopUp"
 import CertificateForm from "../PopUp/CertificateForm";
+import Print from "../../../Common/Component/OCPCertification";
+
 
 import { COLOR } from "../Constants";
 import { IMAGE } from "../Constants/Images";
 import ThumbnailLock from "../../../Image/my-lecture-lock.svg";
+import * as request from "../../../Common/Util/HTTPRequest";
+
 
 const Self = styled.div`
   border-radius: 16px;
@@ -210,22 +214,33 @@ const Lecture = memo(({ course, ...props }) => {
     [show]
   );
 
-  const onclickCertBtn = (course) => {
-    showPopUp(
-      <CertificateForm
-        course={course}
-      //updateCourses={updateCourses}
-        // sdg={formData.sdg}
-        // certificate={formData.certificate}
-        // onClickSubmit={() => {
-        //   this.alertCertificate(formData);
-        // }}
-      />,
-      {
-        dismissButton: false,
+  const onclickCertBtn = async (course) => {
+
+    console.log(course)
+
+    const certData = await request.getCertificateInfo(course.id)
+    console.log(certData)
+
+    if(certData) {
+      showPopUp(
+        <Print
+          course={course}
+          name={certData.userName}
+          class={certData.userClass}
+          // updateCourses={props.userClass}
+        />, {
+        dismissButton: true,
         defaultPadding: false
-      }
-    )
+      },{isBackTrans:true});
+    }else {
+      showPopUp(
+        <CertificateForm course={course}/>,
+        {
+          dismissButton: false,
+          defaultPadding: false
+        }
+      )
+    }
   }
 
   return (

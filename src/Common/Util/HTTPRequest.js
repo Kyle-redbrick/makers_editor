@@ -1570,8 +1570,16 @@ export const createDreamReport = params => {
   return fetchRequest(URL.API_SERVER + "dreamReport", "POST", params);
 }
 
+export const getCertificateInfo = courseId => {
+  return fetchRequest(URL.API_SERVER + `course/certificate/${courseId}`, "GET").then(
+    res => res.json()
+  );
+}
+
 export const addCertificateInfo = formData => {
-  return fetchRequest(URL.API_SERVER + `myDreamProject/certificate`, "POST", formData);
+  return fetchRequest(URL.API_SERVER + `course/certificate`, "POST", formData).then(
+    res => res.json()
+  );
 }
 
 
