@@ -1178,7 +1178,7 @@ const ja = {
   ID_DREAM_BUILDER_QUEST_CLEAR_SUBTITLE: `おめでとうございます！全てのミッションに成功しました。\nアイデアを追加して、あなただけの素敵なゲームをつくってみましょう！`,
   ID_DREAM_BUILDER_QUEST_CLEAR_CANCEL_BUTTON: "Stay",
   ID_DREAM_BUILDER_QUEST_CLEAR_CONFIRM_BUTTON: "Next",
-  ID_DREAM_BUILDER_TUTORIAL_RESET: "처음부터 다시보기",
+  ID_DREAM_BUILDER_TUTORIAL_RESET: "最初からやり直す",
   ID_DREAM_BUILDER_TUTORIAL_START: "Start",
   ID_DREAM_BUILDER_TUTORIAL_NEXT: "Next",
   ID_DREAM_BUILDER_WIZMATEMANAGER_CODE_ALERT: "코드를 다시 확인해 볼래?",
@@ -1306,60 +1306,60 @@ const ja = {
   ID_DATE_FORMAT_MIN: "minutes ago",
 
 
-  ID_SIGNUP_CREATE_TITLE : "アカウントを作成",
-  ID_SIGNUP_FIRST_NAME : "名字 *",
-  ID_SIGNUP_NICKNAME:"ニックネーム *",
+  ID_SIGNUP_CREATE_TITLE: "アカウントを作成",
+  ID_SIGNUP_FIRST_NAME: "名字 *",
+  ID_SIGNUP_NICKNAME: "ニックネーム *",
   ID_SIGNUP_FIRST_NAME_PLACEHOLDER: "名字を入力してください。",
 
 
 
-  ID_CERT_ELEMENTARY_BLOCK_DESC:"あなたは iGroup主催のソフトウェアの教育課程であるブロックコーディングエレメンタリーを修了するためのすべての要求事項を満たし、イベント、座標、物理を活用して5個のプロジェクトを自ら完成したため、この修了証を授与いたします。",
-  ID_CERT_BASIC_BLOCK_DESC:"あなたは iGroup主催のソフトウェアの教育課程であるブロックコーディングベーシックを修了するためのすべての要求事項を満たし、イベント、座標、物理、変数, 条件文を活用して15個のプロジェクトを自ら完成したため、この修了証を授与いたします。",
-  ID_CERT_ADVANCED_BLOCK_DESC:"あなたは iGroup主催のソフトウェアの教育課程であるブロックコーディングアドバンスを修了するためのすべての要求事項を満たし、イベント、座標、物理、変数, 条件文,繰り返し文,複製を活用して4個のプロジェクトを自ら完成したため、この修了証を授与いたします。",
-  ID_CERT_ADVANCED_JS_DESC:"あなたは iGroup主催のソフトウェアの教育課程であるJSアドバンスを修了するためのすべての要求事項を満たし、イベント、座標、物理、乱数, 変数, 条件文,繰り返し文,複製,演算子を活用して8個のプロジェクトを自ら完成したため、この修了証を授与いたします。",
-  ID_CERT_MASTERY_JS_DESC:"あなたは iGroup主催のソフトウェアの教育課程であるJSマスターを修了するためのすべての要求事項を満たし、イベント、座標、物理、乱数, 変数, 条件文,繰り返し文,複製,演算子,配列、関数を活用して4個のプロジェクトを自ら完成したため、この修了証を授与いたします。",
+  ID_CERT_ELEMENTARY_BLOCK_DESC: "あなたは iGroup主催のソフトウェアの教育課程であるブロックコーディングエレメンタリーを修了するためのすべての要求事項を満たし、イベント、座標、物理を活用して5個のプロジェクトを自ら完成したため、この修了証を授与いたします。",
+  ID_CERT_BASIC_BLOCK_DESC: "あなたは iGroup主催のソフトウェアの教育課程であるブロックコーディングベーシックを修了するためのすべての要求事項を満たし、イベント、座標、物理、変数, 条件文を活用して15個のプロジェクトを自ら完成したため、この修了証を授与いたします。",
+  ID_CERT_ADVANCED_BLOCK_DESC: "あなたは iGroup主催のソフトウェアの教育課程であるブロックコーディングアドバンスを修了するためのすべての要求事項を満たし、イベント、座標、物理、変数, 条件文,繰り返し文,複製を活用して4個のプロジェクトを自ら完成したため、この修了証を授与いたします。",
+  ID_CERT_ADVANCED_JS_DESC: "あなたは iGroup主催のソフトウェアの教育課程であるJSアドバンスを修了するためのすべての要求事項を満たし、イベント、座標、物理、乱数, 変数, 条件文,繰り返し文,複製,演算子を活用して8個のプロジェクトを自ら完成したため、この修了証を授与いたします。",
+  ID_CERT_MASTERY_JS_DESC: "あなたは iGroup主催のソフトウェアの教育課程であるJSマスターを修了するためのすべての要求事項を満たし、イベント、座標、物理、乱数, 変数, 条件文,繰り返し文,複製,演算子,配列、関数を活用して4個のプロジェクトを自ら完成したため、この修了証を授与いたします。",
 
-  ID_INTRO_ABOUT_ASTRO_CODING_GO_TITLE : "About Astro Coding Go!",
-  ID_INTRO_SECOND_SECTION_TITLE : "A coding class\nwith next-level missions",
-  ID_INTRO_SECOND_SECTION_INFO_TITLE_1 : "6 to 12",
-  ID_INTRO_SECOND_SECTION_INFO_TITLE_2 : "36 missions",
-  ID_INTRO_SECOND_SECTION_INFO_TITLE_3 : "100 hours",
+  ID_INTRO_ABOUT_ASTRO_CODING_GO_TITLE: "About Astro Coding Go!",
+  ID_INTRO_SECOND_SECTION_TITLE: "A coding class\nwith next-level missions",
+  ID_INTRO_SECOND_SECTION_INFO_TITLE_1: "6 to 12",
+  ID_INTRO_SECOND_SECTION_INFO_TITLE_2: "36 missions",
+  ID_INTRO_SECOND_SECTION_INFO_TITLE_3: "100 hours",
 
-  ID_INTRO_SECOND_SECTION_INFO_TITLE_1_EXPLAN : "A coding class\nfor students aged 6 to 12",
-  ID_INTRO_SECOND_SECTION_INFO_TITLE_2_EXPLAN : "36 STEM convergence missions\nmeeting the CSTA standard",
-  ID_INTRO_SECOND_SECTION_INFO_TITLE_3_EXPLAN : "A 100=hour PBL curriculum\nto develop pracrical skills",
+  ID_INTRO_SECOND_SECTION_INFO_TITLE_1_EXPLAN: "A coding class\nfor students aged 6 to 12",
+  ID_INTRO_SECOND_SECTION_INFO_TITLE_2_EXPLAN: "36 STEM convergence missions\nmeeting the CSTA standard",
+  ID_INTRO_SECOND_SECTION_INFO_TITLE_3_EXPLAN: "A 100=hour PBL curriculum\nto develop pracrical skills",
 
-  ID_INTRO_THIRD_SECTION_TITLE : "Here's how\nthe curriculum works",
-  ID_INTRO_GAME_VIDEO_SECTION_TITLE : "Your very own game\ncreated with Astro",
+  ID_INTRO_THIRD_SECTION_TITLE: "Here's how\nthe curriculum works",
+  ID_INTRO_GAME_VIDEO_SECTION_TITLE: "Your very own game\ncreated with Astro",
 
-  ID_INTRO_GAME_VIDEO_SECTION_CHILD_TITLE : "The LMS (Learning Management System) manages\nvarious classes and can be applied flexibly in various institutions.",
-  ID_INTRO_GAME_VIDEO_LINE_BANNER_TITLE_LEFT : "How to play",
+  ID_INTRO_GAME_VIDEO_SECTION_CHILD_TITLE: "The LMS (Learning Management System) manages\nvarious classes and can be applied flexibly in various institutions.",
+  ID_INTRO_GAME_VIDEO_LINE_BANNER_TITLE_LEFT: "How to play",
 
-  ID_INTRO_LINE_BANNER_TITLE : "Try our free courses first!",
-  ID_INTRO_LINE_BANNER_CHILD_TITLE : "Fun and learning all at once",
-  ID_INTRO_LINE_BANNER_GO_TO_FREE_COURSE_LINK : "Go to Free Trial Course",
+  ID_INTRO_LINE_BANNER_TITLE: "Try our free courses first!",
+  ID_INTRO_LINE_BANNER_CHILD_TITLE: "Fun and learning all at once",
+  ID_INTRO_LINE_BANNER_GO_TO_FREE_COURSE_LINK: "Go to Free Trial Course",
 
-  ID_INTRO_INTRODUCE_AREA_CONTENT_TITLE : "Systematic LMS",
-  ID_INTRO_INTRODUCE_AREA_CONTENT_TITLE_2 : "Project-Based Practical Classes",
-  ID_INTRO_INTRODUCE_AREA_CONTENT_TITLE_3 : "The Patented OOBC Technology",
+  ID_INTRO_INTRODUCE_AREA_CONTENT_TITLE: "Systematic LMS",
+  ID_INTRO_INTRODUCE_AREA_CONTENT_TITLE_2: "Project-Based Practical Classes",
+  ID_INTRO_INTRODUCE_AREA_CONTENT_TITLE_3: "The Patented OOBC Technology",
 
-  ID_INTRO_INTRODUCE_AREA_CONTENT_CHILD_TITLE_1 : "Teach students easily by assigning missions for them to try.\nManage multiple classes at once while keeping track of the progress of each student\nEven instructors who aren't expert coders can teach classes with ease.",
-  ID_INTRO_INTRODUCE_AREA_CONTENT_CHILD_TITLE_2 : "Apply CS concepts such as variables and functions to each mission and learn practical cases\nrather than stopping at theoretical learning. And with the additional builder feature, students can\napply the skills they learned and create their very own games themselves.",
-  ID_INTRO_INTRODUCE_AREA_CONTENT_CHILD_TITLE_3 : "The OOBC block language used in Astro Coding Go! uses a sentence structure that is different\nfrom the existing block code language, helping the transition to text coding such as JS.\n* OOBC : object-oriented block coding",
-  
-  ID_INTRO_SCROLL_AREA_LEFT_TITLE : "Self Managing Education",
-  ID_INTRO_SCROLL_AREA_LEFT_CHILD_TITLE : "A self-managing education method provides tips and\nanswers within each mission, ultimately minimizing the\ninstructions that are required for instructors.",
-  
-  ID_INTRO_SCROLL_AREA_LEFT_TITLE_2 : "Study Assistant Tools",
-  ID_INTRO_SCROLL_AREA_LEFT_CHILD_TITLE_2 : "The assistant provides tools to help students solve\ndifficult problems on their own such as code sorting,\nAPI dictionary, and a question and answer board while\nthey write their own code.",
+  ID_INTRO_INTRODUCE_AREA_CONTENT_CHILD_TITLE_1: "Teach students easily by assigning missions for them to try.\nManage multiple classes at once while keeping track of the progress of each student\nEven instructors who aren't expert coders can teach classes with ease.",
+  ID_INTRO_INTRODUCE_AREA_CONTENT_CHILD_TITLE_2: "Apply CS concepts such as variables and functions to each mission and learn practical cases\nrather than stopping at theoretical learning. And with the additional builder feature, students can\napply the skills they learned and create their very own games themselves.",
+  ID_INTRO_INTRODUCE_AREA_CONTENT_CHILD_TITLE_3: "The OOBC block language used in Astro Coding Go! uses a sentence structure that is different\nfrom the existing block code language, helping the transition to text coding such as JS.\n* OOBC : object-oriented block coding",
 
-  ID_INTRO_CONTACT_TITLE : "Contact US",
-  ID_INTRO_CONTACT_CHILD_TITLE : "Submit the contact form to receive\na free account and try the premium content\nof Astro Coding Go for free.",
-  
-  ID_INTRO_VIEW_MORE_NOTICE_TITLE : "Teach coding on a fun and exciting way!",
-  ID_INTRO_VIEW_MORE_LEFT_TITLE : "Want to know more\nabout the Curriculum?",
-  ID_INTRO_VIEW_MORE_RIGHT_TITLE : "Start your free trial\ncourse right now!",
-  
+  ID_INTRO_SCROLL_AREA_LEFT_TITLE: "Self Managing Education",
+  ID_INTRO_SCROLL_AREA_LEFT_CHILD_TITLE: "A self-managing education method provides tips and\nanswers within each mission, ultimately minimizing the\ninstructions that are required for instructors.",
+
+  ID_INTRO_SCROLL_AREA_LEFT_TITLE_2: "Study Assistant Tools",
+  ID_INTRO_SCROLL_AREA_LEFT_CHILD_TITLE_2: "The assistant provides tools to help students solve\ndifficult problems on their own such as code sorting,\nAPI dictionary, and a question and answer board while\nthey write their own code.",
+
+  ID_INTRO_CONTACT_TITLE: "Contact US",
+  ID_INTRO_CONTACT_CHILD_TITLE: "Submit the contact form to receive\na free account and try the premium content\nof Astro Coding Go for free.",
+
+  ID_INTRO_VIEW_MORE_NOTICE_TITLE: "Teach coding on a fun and exciting way!",
+  ID_INTRO_VIEW_MORE_LEFT_TITLE: "Want to know more\nabout the Curriculum?",
+  ID_INTRO_VIEW_MORE_RIGHT_TITLE: "Start your free trial\ncourse right now!",
+
   // 계정 설정
   ID_ACCOUNT_SETTING_TITLE: "アカウント設定",
   ID_ACCOUNT_SETTING_TAB_01: "アカウント管理",
@@ -1383,20 +1383,20 @@ const ja = {
   ID_COMMON_MONTH: "月",
   ID_COMMON_YEAR: "年",
 
-  ID_ABOUT_INTRO_TITLE : "Exciting Coding Lessons with Go Astro Go!",
-  ID_ABOUT_INTRO_CHILD_TITLE : "Astro sets out to solve problems happening\nall over the world together with SUZU and Astro Kitty",
+  ID_ABOUT_INTRO_TITLE: "Exciting Coding Lessons with Go Astro Go!",
+  ID_ABOUT_INTRO_CHILD_TITLE: "Astro sets out to solve problems happening\nall over the world together with SUZU and Astro Kitty",
   ID_COMMON_EDIT: "修正",
   ID_COMMON_APPLY: "確認",
 
-  ID_INTRO_CONTACT_US : "Contact Us",
-  ID_INTRO_SCROLL_ACTION_IMG_TITLE_1 : "Self Check",
-  ID_INTRO_SCROLL_ACTION_IMG_CHILD_TITLE_1 : "Student can view what they learned\nfrom each mission on their own",
-  ID_INTRO_SCROLL_ACTION_IMG_TITLE_2 : "Dashboard",
-  ID_INTRO_SCROLL_ACTION_IMG_CHILD_TITLE_2 : "The dashboard feature helps students\nassess their own learning progress",
-  ID_INTRO_SCROLL_ACTION_IMG_TITLE_3 : "Code sorting feature",
-  ID_INTRO_SCROLL_ACTION_IMG_CHILD_TITLE_3 : "Arrange a written code\naccording to JS grammar.",
-  ID_INTRO_SCROLL_ACTION_IMG_TITLE_4 : "API dictionary",
-  ID_INTRO_SCROLL_ACTION_IMG_CHILD_TITLE_4 : "Find the commands\nyou need by function.",
+  ID_INTRO_CONTACT_US: "Contact Us",
+  ID_INTRO_SCROLL_ACTION_IMG_TITLE_1: "Self Check",
+  ID_INTRO_SCROLL_ACTION_IMG_CHILD_TITLE_1: "Student can view what they learned\nfrom each mission on their own",
+  ID_INTRO_SCROLL_ACTION_IMG_TITLE_2: "Dashboard",
+  ID_INTRO_SCROLL_ACTION_IMG_CHILD_TITLE_2: "The dashboard feature helps students\nassess their own learning progress",
+  ID_INTRO_SCROLL_ACTION_IMG_TITLE_3: "Code sorting feature",
+  ID_INTRO_SCROLL_ACTION_IMG_CHILD_TITLE_3: "Arrange a written code\naccording to JS grammar.",
+  ID_INTRO_SCROLL_ACTION_IMG_TITLE_4: "API dictionary",
+  ID_INTRO_SCROLL_ACTION_IMG_CHILD_TITLE_4: "Find the commands\nyou need by function.",
 
 
   ID_COMMON_VIEW_MORE: "+ もっと見る",
