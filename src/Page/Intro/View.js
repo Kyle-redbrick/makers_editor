@@ -11,7 +11,6 @@ import ImgSecondVisual from "../../Image/second-visual-img.png";
 import IconKids from "../../Image/ic-kids.svg";
 import IconMission from "../../Image/ic-mission.svg";
 import IconClock from "../../Image/ic-clock.svg";
-import ThirdSection from "./ThirdSection";
 import PlayGameSection from "./PlayGameSection";
 import LineBanner from "./LineBanner";
 import TextImg from "../../Image/fade-in-text.png";
@@ -108,9 +107,6 @@ function View(props) {
             </div>
           </div>
         </div>
-
-        {/* Vertical slide 배너 영역 */}
-        <ThirdSection />
 
         {/* 띠배너 영역 */} 
         <LineBanner />

@@ -2,10 +2,10 @@ import React, { useRef, useState } from "react";
 import {Swiper, SwiperSlide} from 'swiper/react';
 import { FormattedMessage } from "react-intl";
 import SwiperCore, { Pagination } from "swiper/core";
-import VerticalImg from "../../../Image/wizlive_banner01.png";
-import VerticalImg2 from "../../../Image/wizlive_banner02.png";
-import VerticalImg3 from "../../../Image/wizlive_banner03.png";
-import 'swiper/swiper.scss'; 
+import ImgVertical1 from "../../../Image/img-vertical-1.PNG";
+import ImgVertical2 from "../../../Image/img-vertical-2.PNG";
+import ImgVertical3 from "../../../Image/img-vertical-3.PNG";
+import "swiper/swiper.scss"; 
 import "swiper/components/pagination/pagination.min.css";
 
 import "./index.scss";
@@ -44,15 +44,15 @@ function ThirdSection () {
 
           <SwiperSlide>
             {/* TODO 비디오 삽입 영역 */}
-            {/* <img src={VerticalImg} alt="" /> */}
+            <img src={ImgVertical1} alt="Learn through 36 Mission" />
           </SwiperSlide>
           <SwiperSlide>
             {/* TODO 비디오 삽입 영역 */}
-            {/* <img src={VerticalImg2} alt="" /> */}
+            <img src={ImgVertical2} alt="Build your own games" />
           </SwiperSlide>
           <SwiperSlide>
             {/* TODO 비디오 삽입 영역 */}
-            {/* <img src={VerticalImg3} alt="" /> */}
+            <img src={ImgVertical3} alt="Share with your classmates" />
           </SwiperSlide>
         </Swiper>
       </div>
