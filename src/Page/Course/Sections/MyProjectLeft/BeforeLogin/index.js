@@ -12,7 +12,7 @@ import { IEView } from "react-device-detect";
 import * as LearnButtons from "../../../../../Common/Component/Button/Learn";
 
 
-function BeforeLogin (props) {
+function BeforeLogin(props) {
   SwiperCore.use([Pagination]);
 
   const [swiper, setSwiper] = React.useState(null);
@@ -25,28 +25,27 @@ function BeforeLogin (props) {
     swiper.slidePrev();
   };
 
-  const linkToLearn = (id)=> {
-    console.log(id)
+  const linkToLearn = (id) => {
     window.open(`/dreamclass/${id}/37da860b-2eca-4ea6-8c36-d6b5dd700437`);
   }
 
   return (
     <div className="content-slide">
       <div className="content-slide__slide">
-        <Swiper 
+        <Swiper
           spaceBetween={15}
           slidesPerView="auto"
-          pagination={{ 
-            clickable: true, 
-            type : "fraction"
+          pagination={{
+            clickable: true,
+            type: "fraction"
           }}
           onSwiper={(s) => {
             setSwiper(s);
           }}
-          onSlideChange={(e) => {props.setSlideIndex(e.activeIndex)}}
+          onSlideChange={(e) => { props.setSlideIndex(e.activeIndex) }}
         >
           {
-            props.curriculum.map( (item,index) => 
+            props.curriculum.map((item, index) =>
               <SwiperSlide key={index}>
                 <span className="content-slide__course-number">{item.course.label}</span>
                 <h3 className="content-slide__course-title">{item.course.title}</h3>
@@ -59,10 +58,10 @@ function BeforeLogin (props) {
                 {
                   item.course.freeProjectId &&
                   // <button type="button" className="content-slide__experience-btn" onClick={()=>{linkToLearn(item.course.freeProjectId)}}>Experience</button>
-                  <LearnButtons.LearnContinue learnWidth={true} id={item.course.freeProjectId} />
+                  <LearnButtons.LearnExperience learnWidth={true} id={item.course.freeProjectId} />
 
                 }
-              </SwiperSlide>            
+              </SwiperSlide>
             )
           }
         </Swiper>

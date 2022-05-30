@@ -2,30 +2,30 @@ import SampleThumbnail from "../../../../Image/course_thumbnail.png";
 import { URL } from "../../../../Common/Util/Constant"
 import "./index.scss";
 import React, { useCallback, useEffect, useState } from "react";
-import {getLearnCourses} from "../../../../Common/Util/HTTPRequest"
+import { getLearnCourses } from "../../../../Common/Util/HTTPRequest";
+import { FormattedMessage, injectIntl } from "react-intl";
 
 
 function AllCourse(props) {
 
-  const [courses , setCourses] = useState([])
+  const [courses, setCourses] = useState([])
 
   useEffect(() => {
     getCourses()
   }, []);
 
-  const getCourses = async ()=> {
+  const getCourses = async () => {
     const data = await getLearnCourses()
     setCourses(data.body)
   }
 
-  const linkToLearn = (courseId)=> {
-    console.log(courseId)
-    window.open(`/course/${courseId}`,"_self");
+  const linkToLearn = (courseId) => {
+    window.open(`/course/${courseId}`, "_self");
   }
 
 
   return (
-    
+
     <div className="all-course__wrap">
       <h3 className="all-course__title">
         All Course
@@ -34,9 +34,9 @@ function AllCourse(props) {
 
       <div className="all-course__project">
         <ul className="all-course__project-list">
-        {
-          courses.map((item,index)=> 
-              <li key={index} className={`all-course__project-item ${!item.unlocked && "lock"}`} onClick={()=> linkToLearn(item.lectureId)}>
+          {
+            courses.map((item, index) =>
+              <li key={index} className={`all-course__project-item ${!item.unlocked && "lock"}`} onClick={() => linkToLearn(item.lectureId)}>
                 <div className="all-course__project-inner">
                   <div className="all-course__project-thumbnail">
                     <img alt="코스 강의 썸네일" src={URL.S3_DREAMCLASS + item.posterUrl} />
@@ -46,14 +46,16 @@ function AllCourse(props) {
                   <div className="all-course__project-info">
 
                     {
-                      item.unlocked && 
+                      item.unlocked &&
                       <>
-                      {
-                        item.progressStatus == "Clear" ? 
-                        <span className="all-course__project-progress-label all-course__project-progress-label--ing">Clear</span> : 
-                        <span className="all-course__project-progress-label all-course__project-progress-label--learning">Learning</span> 
-                      }
-                      <span className="all-course__project-progress-length">총 {item.projects}차시</span>
+                        {
+                          item.progressStatus == "Clear" ?
+                            <span className="all-course__project-progress-label all-course__project-progress-label--ing">Clear</span> :
+                            <span className="all-course__project-progress-label all-course__project-progress-label--learning">Learning</span>
+                        }
+                        <span className="all-course__project-progress-length">
+                          <FormattedMessage id="ID_COMMON_TOTAL" /> {item.projects} <FormattedMessage id="ID_COMMON_MISSION" />
+                        </span>
                       </>
                     }
                   </div>
@@ -61,10 +63,10 @@ function AllCourse(props) {
               </li>
             )
           }
-          </ul>
+        </ul>
       </div>
     </div>
   )
 }
 
-export default AllCourse;
+export default injectIntl(AllCourse);

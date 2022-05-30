@@ -199,3 +199,7 @@ export const LearnNow = ({ ...props }) => {
 export const LearnContinue = ({ ...props }) => {
   return <Learn title={<FormattedMessage id="ID_LEAEN_BUTTON_LEARN_CONTINUE" />} {...props} />
 };
+
+export const LearnExperience = ({ ...props }) => {
+  return <Learn title={<FormattedMessage id="ID_LEAEN_BUTTON_LEARN_EXPERIENCE" />} {...props} />
+};

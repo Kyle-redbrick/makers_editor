@@ -1039,6 +1039,7 @@ const en = {
   ID_LEAEN_BUTTON_LEARN_AGAIN: "Learn again",
   ID_LEAEN_BUTTON_LEARN_NOW: "Learn Now",
   ID_LEAEN_BUTTON_LEARN_CONTINUE: "Continue",
+  ID_LEAEN_BUTTON_LEARN_EXPERIENCE: "Experience",
   ID_GAMEPOPUP_SEARCH_INFO: "게임 이름이나 크리에이터 이름을 검색해보세요",
   ID_GAMEPOPUP_SEARCH_INFO2: "검색어를 입력해주세요",
   ID_GAMEPOPUP_SEARCH_INFO_ERROR: "검색어에 해당하는 게임을 찾지 못했어요",
@@ -1309,9 +1310,9 @@ const en = {
 
   ID_SIGNUP_CREATE_TITLE: "Sign Up",
   ID_SIGNUP_FIRST_NAME: "Family Name *",
-  ID_SIGNUP_NICKNAME:"Nickname *",
+  ID_SIGNUP_NICKNAME: "Nickname *",
   ID_SIGNUP_FIRST_NAME_PLACEHOLDER: "Enter your last name",
-  
+
 
   ID_INTRO_ABOUT_ASTRO_CODING_GO_TITLE: "About Astro Coding Go!",
   ID_INTRO_SECOND_SECTION_TITLE: "A coding class\nwith next-level missions",
@@ -1381,25 +1382,27 @@ const en = {
   ID_COMMON_MONTH: "",
   ID_COMMON_YEAR: "",
 
-  ID_ABOUT_INTRO_TITLE : "Exciting Coding Lessons with Go Astro Go!",
-  ID_ABOUT_INTRO_CHILD_TITLE : "Astro sets out to solve problems happening\nall over the world together with SUZU and Astro Kitty",
+  ID_ABOUT_INTRO_TITLE: "Exciting Coding Lessons with Go Astro Go!",
+  ID_ABOUT_INTRO_CHILD_TITLE: "Astro sets out to solve problems happening\nall over the world together with SUZU and Astro Kitty",
   ID_COMMON_EDIT: "Edit",
   ID_COMMON_APPLY: "Apply",
 
-  ID_INTRO_CONTACT_US : "Contact Us",
+  ID_INTRO_CONTACT_US: "Contact Us",
 
-  ID_INTRO_SCROLL_ACTION_IMG_TITLE_1 : "Self Check",
-  ID_INTRO_SCROLL_ACTION_IMG_CHILD_TITLE_1 : "Student can view what they learned\nfrom each mission on their own",
-  ID_INTRO_SCROLL_ACTION_IMG_TITLE_2 : "Dashboard",
-  ID_INTRO_SCROLL_ACTION_IMG_CHILD_TITLE_2 : "The dashboard feature helps students\nassess their own learning progress",
-  ID_INTRO_SCROLL_ACTION_IMG_TITLE_3 : "Code sorting feature",
-  ID_INTRO_SCROLL_ACTION_IMG_CHILD_TITLE_3 : "Arrange a written code\naccording to JS grammar.",
-  ID_INTRO_SCROLL_ACTION_IMG_TITLE_4 : "API dictionary",
-  ID_INTRO_SCROLL_ACTION_IMG_CHILD_TITLE_4 : "Find the commands\nyou need by function.",
+  ID_INTRO_SCROLL_ACTION_IMG_TITLE_1: "Self Check",
+  ID_INTRO_SCROLL_ACTION_IMG_CHILD_TITLE_1: "Student can view what they learned\nfrom each mission on their own",
+  ID_INTRO_SCROLL_ACTION_IMG_TITLE_2: "Dashboard",
+  ID_INTRO_SCROLL_ACTION_IMG_CHILD_TITLE_2: "The dashboard feature helps students\nassess their own learning progress",
+  ID_INTRO_SCROLL_ACTION_IMG_TITLE_3: "Code sorting feature",
+  ID_INTRO_SCROLL_ACTION_IMG_CHILD_TITLE_3: "Arrange a written code\naccording to JS grammar.",
+  ID_INTRO_SCROLL_ACTION_IMG_TITLE_4: "API dictionary",
+  ID_INTRO_SCROLL_ACTION_IMG_CHILD_TITLE_4: "Find the commands\nyou need by function.",
 
   ID_COMMON_VIEW_MORE: "+ View More",
   ID_COMMON_GO_BACK: "Go Back",
+  ID_COMMON_TOTAL: "Total",
+  ID_COMMON_MISSION: " Missions",
 
-  ID_INTRO_PLAY_WAY : "Press button to destroy plasma!"
+  ID_INTRO_PLAY_WAY: "Press button to destroy plasma!"
 };
 export default en;

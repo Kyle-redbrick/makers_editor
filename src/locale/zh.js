@@ -1039,6 +1039,7 @@ const zh = {
   ID_LEAEN_BUTTON_LEARN_AGAIN: "重新学习",
   ID_LEAEN_BUTTON_LEARN_NOW: "进入学习",
   ID_LEAEN_BUTTON_LEARN_CONTINUE: "继续学习",
+  ID_LEAEN_BUTTON_LEARN_EXPERIENCE: "Experience",
   ID_GAMEPOPUP_SEARCH_INFO: "게임 이름이나 크리에이터 이름을 검색해보세요",
   ID_GAMEPOPUP_SEARCH_INFO2: "검색어를 입력해주세요",
   ID_GAMEPOPUP_SEARCH_INFO_ERROR: "검색어에 해당하는 게임을 찾지 못했어요",
@@ -1394,6 +1395,8 @@ const zh = {
 
   ID_COMMON_VIEW_MORE: "+ View More",
   ID_COMMON_GO_BACK: "Go Back",
+  ID_COMMON_TOTAL: "총",
+  ID_COMMON_MISSION: "차시",
 
   ID_INTRO_PLAY_WAY : "Press button to destroy plasma!"
 };
