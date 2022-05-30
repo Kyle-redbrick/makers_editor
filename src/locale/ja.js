@@ -1401,6 +1401,8 @@ const ja = {
 
   ID_COMMON_VIEW_MORE: "+ もっと見る",
   ID_COMMON_GO_BACK: "以前",
+  ID_COMMON_TOTAL: "총",
+  ID_COMMON_MISSION: "차시",
   ID_INTRO_PLAY_WAY : "Press button to destroy plasma!"
 };
 export default ja;

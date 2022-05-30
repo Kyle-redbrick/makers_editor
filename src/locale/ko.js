@@ -1394,6 +1394,8 @@ const ko = {
 
   ID_COMMON_VIEW_MORE: "+ 더보기",
   ID_COMMON_GO_BACK: "이전으로",
+  ID_COMMON_TOTAL: "총",
+  ID_COMMON_MISSION: "차시",
 
   ID_INTRO_PLAY_WAY : "Press button to destroy plasma!"
 };
