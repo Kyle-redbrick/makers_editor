@@ -44,8 +44,8 @@ const BeforeList = (props) => {
   return (
     <ul className="course-content__list course-content__list--register">
       {
-        items.map((item,index) => 
-          <li key={index} className="course-content__item" onClick={()=> onClickItem(index)}>
+        items.map((item,index) =>
+          <li key={index} className="course-content__item" onClick={() => onClickItem(index)}>
             <div className="course-content__outline">
               <div className="course-content__thumbnail">
                 <img alt="차시 썸네일" src={URL.S3_DREAMCLASS + item.resources.thumbnailURL} />
@@ -63,7 +63,7 @@ const BeforeList = (props) => {
                   <span className="course-content__hover-label">{item.label}</span>
                   <h3 className="course-content__hover-title">{item.title}</h3>
                   <p className="course-content__hover-content">
-                  {item.intro} 
+                    {item.intro}
                   </p>
                   <button className="course-btn-prev">
                     <img alt="이전으로 아이콘" src={PrevIcon} />
@@ -71,7 +71,6 @@ const BeforeList = (props) => {
                   </button>
                 </div>
               }
-              
             </div>
           </li>
         )
@@ -115,8 +114,8 @@ const AfterList = (props) => {
   return (
     <ul className="course-content__list">
       {
-        items.map((item,index)=> 
-          <li key={index} className={`course-content__item ${!item.unlocked && "lock"}`} onClick={()=> onClickItem(index)}>
+        items.map((item, index) =>
+          <li key={index} className={`course-content__item ${!item.unlocked && "lock"}`} onClick={() => onClickItem(index)}>
             <div className="course-content__outline">
               <div className="course-content__thumbnail">
                 <img alt="차시 썸네일" src={URL.S3_DREAMCLASS + item.resources.thumbnailURL} />
@@ -125,40 +124,42 @@ const AfterList = (props) => {
               <div className="course-content__info">
                 <h3 className="course-content__title">{item.title}</h3>
                 <div className="course-content__clear-label">
-                  {
-                    !item.unlocked ? 
+                  {item.unlocked &&
                     <>
-                      <img alt="수강 완료한 강의 아이콘" src={ClearIcon} />
-                      <span className="course-content__clear-text">All step clear</span>
-                    </> : 
-                    <>
-                      <div className="course-content__progress-bar">
-                        <div className="course-content__progress-bar-thumb">
-                          <div className="course-content__progress-bar-track" style={{width:item.progress.completed / item.progress.net * 100}}></div>
+                    {
+                      item.progress.completed / item.progress.net === 1 ?
+                        <>
+                          <img alt="수강 완료한 강의 아이콘" src={ClearIcon} />
+                          <span className="course-content__clear-text">All step clear</span>
+                        </>
+                        :
+                        <div className="course-content__progress-bar">
+                          <div className="course-content__progress-bar-thumb">
+                            <div className="course-content__progress-bar-track" style={{ width: item.progress.completed / item.progress.net * 100 }}></div>
+                          </div>
+                          <span className="course-content__progress-length"><b>{item.progress.completed}</b>/{item.progress.net} Step</span>
                         </div>
-                        <span className="course-content__progress-length"><b>{item.progress.completed}</b>/{item.progress.net} Step</span>
-                      </div>
+                    }
                     </>
                   }
                 </div>
-
                 {
                   item.isClickd &&
                   <div className="course-content__detail-content">
-                  <h3 className="course-content__detail-title">{item.title}</h3>
-                  <p className="course-content__detail-explan">{item.intro}</p>
-                  {
-                    item.progress.completed >= item.progress.net ? (
-                      <LearnButtons.LearnAgain learnWidth={true} completed id={item.id}/>
+                    <h3 className="course-content__detail-title">{item.title}</h3>
+                    <p className="course-content__detail-explan">{item.intro}</p>
+                    {
+                      item.progress.completed >= item.progress.net ? (
+                        <LearnButtons.LearnAgain learnWidth={true} completed id={item.id} />
                       ) : (
                         item.progress.completed === 0 ? (
-                          <LearnButtons.LearnNow learnWidth={true} id={item.id} isShowVideo={true}  videoURL={URL.S3_DREAMCLASS + item.resources.videoURL}/>
+                          <LearnButtons.LearnNow learnWidth={true} id={item.id} isShowVideo={true} videoURL={URL.S3_DREAMCLASS + item.resources.videoURL} />
                         ) : (
                           <LearnButtons.LearnContinue learnWidth={true} id={item.id} />
                         )
                       )
-                  }
-                  <button className="course-content__game-preview" onClick={()=> handleClickGame(item)}>Game Preview</button>
+                    }
+                    <button className="course-content__game-preview" onClick={() => handleClickGame(item)}>Game Preview</button>
                   </div>
                 }
               </div>
