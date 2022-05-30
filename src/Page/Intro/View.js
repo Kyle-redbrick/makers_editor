@@ -23,6 +23,7 @@ import ScrollAction from "./ScrollAction";
 import VideoThumbnail from "../../Image/intro-play-video-thumbnail.png";
 import TopScrollIcon from "../../Image/top-scroll-arrow.svg";
 import IconMessage from "../../Image/icon-message.svg"; 
+import EasySection from "./EasyInstruction";
 
 import "./index.scss";
 
@@ -113,6 +114,8 @@ function View(props) {
 
         {/* 게임 영상 재생 영역 */}
         <PlayGameSection />
+
+        <EasySection />
 
         {/* 텍스트 이미지 애니메이션 효과 */}
         <div className="intro-page__fade-in-text">
