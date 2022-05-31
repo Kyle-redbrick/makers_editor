@@ -197,38 +197,38 @@ class Container extends Component {
       });
 
     setTimeout(() => {
-      showPopUp(
-        <ProjectClearPopUp
-          it={this.state.it}
-          stem={this.state.stem}
-          sdg={this.state.sdg}
-          certificate={this.state.certificate}
-          onClickCancel={() => {
-            // if (this.props.isReplaying) {
-            //   window.close();
-            // } else {
-            //   this.createDeveloping(window.close);
-            // }
-          }}
-          onClickConfirm={() => {
-            // if (this.props.isReplaying) {
-            //   if (this.props.myProject.developing.isDeleted) {
-            //     this.createDeveloping(this.linkToDeveloping);
-            //   } else {
-            //     this.linkToDeveloping(this.props.myProject.developing);
-            //   }
-            // } else {
-            //   this.createDeveloping(this.linkToDeveloping);
-            // }
-            window.close();
+      // showPopUp(
+      //   <ProjectClearPopUp
+      //     it={this.state.it}
+      //     stem={this.state.stem}
+      //     sdg={this.state.sdg}
+      //     certificate={this.state.certificate}
+      //     onClickCancel={() => {
+      //       // if (this.props.isReplaying) {
+      //       //   window.close();
+      //       // } else {
+      //       //   this.createDeveloping(window.close);
+      //       // }
+      //     }}
+      //     onClickConfirm={() => {
+      //       // if (this.props.isReplaying) {
+      //       //   if (this.props.myProject.developing.isDeleted) {
+      //       //     this.createDeveloping(this.linkToDeveloping);
+      //       //   } else {
+      //       //     this.linkToDeveloping(this.props.myProject.developing);
+      //       //   }
+      //       // } else {
+      //       //   this.createDeveloping(this.linkToDeveloping);
+      //       // }
+      //       window.close();
 
-          }}
-        />,
-        {
-          dismissButton: false,
-          defaultPadding: false
-        }
-      );
+      //     }}
+      //   />,
+      //   {
+      //     dismissButton: false,
+      //     defaultPadding: false
+      //   }
+      // );
     }, 1000);
   }
 
