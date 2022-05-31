@@ -1403,6 +1403,12 @@ const ja = {
   ID_COMMON_GO_BACK: "以前",
   ID_COMMON_TOTAL: "총",
   ID_COMMON_MISSION: "차시",
-  ID_INTRO_PLAY_WAY : "Press button to destroy plasma!"
+  ID_INTRO_PLAY_WAY : "Press button to destroy plasma!",
+
+  ID_INTRO_EASY_SECTION_TITLE : "Instructor LMS Feature\nfor Easy Instruction and Guidance",
+  ID_INTRO_EASY_SECTION_CHILD_TITLE : "The LMS (Learning Management System) manages\nvarious classes and can be applied flexibly in various institutions.",
+  ID_INTRO_EASY_ITEM_TITLE_1 : "Create classes\nand manage students",
+  ID_INTRO_EASY_ITEM_TITLE_2 : "Assign missions to students\nto try for each class",
+  ID_INTRO_EASY_ITEM_TITLE_3 : "Monitor the attendance\nand mission progress of students"
 };
 export default ja;
