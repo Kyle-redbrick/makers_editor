@@ -27,7 +27,7 @@
 
 
   .first_section {
-    width: var(--first-section-width);
+    width: 100%;
     margin: 0 auto;
     
     .first_section__header {
@@ -257,6 +257,7 @@
 .first-section__character-intro-banner-list {
   width:100%;
   max-width:1170px;
+  margin: auto;
 
   img {
     width:100%;
