@@ -74,9 +74,7 @@ class SignUp extends Component {
   onChangeInput = e => {
     const { formatMessage } = this.props.intl;
     const { id, value } = e.target;
-    console.log(id)
     this.setState({ [id]: value }, () => {
-      console.log(id)
       switch (id) {
         case "email":
           if (this.checkEmailFormat() || value === "") {
@@ -149,8 +147,6 @@ class SignUp extends Component {
       password: sha256(this.state.password),
     }
 
-    console.log(params)
-
     request.inviteSignup({...params},{"authorityKey":this.props.activateToken}).
     then(res => res.json()).
     then(res => {
@@ -158,7 +154,6 @@ class SignUp extends Component {
         request.loginByToken({token:res.body.token})
         .then(res => res.json())
         .then(json => {
-          console.log(json)
           if(json.token){
             localStorage.setItem("wizToken",  json.token);
 

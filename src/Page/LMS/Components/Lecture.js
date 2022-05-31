@@ -215,11 +215,7 @@ const Lecture = memo(({ course, ...props }) => {
   );
 
   const onclickCertBtn = async (course) => {
-
-    console.log(course)
-
     const certData = await request.getCertificateInfo(course.id)
-    console.log(certData)
 
     if(certData) {
       showPopUp(
