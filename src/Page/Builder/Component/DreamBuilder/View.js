@@ -16,7 +16,8 @@ import "./index.scss";
 function View(props) {
   return (
     <div className="Page--BUILDER dream">
-      {props.isTutorialShow && <Tutorial hiddenTutorial={props.hiddenTutorial} />}
+      {/* {console.log(11111,props)} */}
+      {props.isTutorialShow && props.editorMode !== "javascript-wiz" &&  <Tutorial hiddenTutorial={props.hiddenTutorial} />}
       {/* astro boy temp code */}
       {props.isAstroBoyProject && 
         <VideoPopup 
