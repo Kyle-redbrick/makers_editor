@@ -8,7 +8,7 @@ import ImgHorizontal3 from "../../../Image/img-horizontal-3.png";
 import ImgHorizontal4 from "../../../Image/img-horizontal-4.png";
 import ImgHorizontal5 from "../../../Image/img-horizontal-5.png";
 import "swiper/swiper.scss"; 
-import "swiper/components/navigation/navigation.min.css";
+import "swiper/components/navigation/navigation.min.css"; 
 import "./index.scss";
  
 function HorizontalSlide () {
