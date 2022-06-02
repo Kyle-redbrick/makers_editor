@@ -289,7 +289,6 @@ const Lnb = ({ path, fixed, isMobile, isLmsMobileMenuOn, onClickLmsMobileMenu, .
     )
   }
 
-  console.log(1111, props.userinfo);
   return (
     <Self {...props}>
       <LnbWrap isMobile={isMobile} fixed={fixed} isLmsMobileMenuOn={isLmsMobileMenuOn}>
