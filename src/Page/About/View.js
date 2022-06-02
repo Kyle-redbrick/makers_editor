@@ -15,6 +15,7 @@ import ImgKitty from "../../Image/img_astro_kitty_character.png";
 import ImgBannerBoy from "../../Image/banner-astro-boy.png";
 import ImgBannerSuzu from "../../Image/banner-suzu.png";
 import ImgBannerKitty from "../../Image/banner-kitty.png";
+import Curriculum from "./Curriculum";
 import "./index.scss";
 
 function View(props) {
@@ -94,8 +95,9 @@ function View(props) {
                   </div>
                 </div>
               </div>
-
             </div>
+
+            <Curriculum />
 
             <VerticalSlide />
           </div>
