@@ -1425,5 +1425,11 @@ const en = {
   ID_ABOUT_HORIZONTAL_SLIDE_ITEM_CHILD_TITLE_4 : "Use JavaScript to implement events and create an escape room.",
   ID_ABOUT_HORIZONTAL_SLIDE_ITEM_TITLE_5 : "Island of Peril",
   ID_ABOUT_HORIZONTAL_SLIDE_ITEM_CHILD_TITLE_5 : "Learn about functions and clean the polluted ocean with Astro.",
+  ID_ABOUT_STRUCTURE_TITLE : "Curriculum Structure",
+  ID_ABOUT_DOWNLOAD_CURRICULUM : "Download Curriculum in PDF",
+  ID_ABOUT_STRUCTURE_BLOCK_CODING : "Block Coding",
+  ID_ABOUT_STRUCTURE_JAVASCRIPT : "JavaScript",
+  ID_ABOUT_MORE_TRIAL_TEXT : "Go to Free Trial"
+
 };
 export default en;

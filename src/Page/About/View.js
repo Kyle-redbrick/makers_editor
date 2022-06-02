@@ -16,6 +16,7 @@ import ImgBannerBoy from "../../Image/banner-astro-boy.png";
 import ImgBannerSuzu from "../../Image/banner-suzu.png";
 import ImgBannerKitty from "../../Image/banner-kitty.png";
 import HorizontalSlide from "./HorizontalSlide";
+import Structure from "./Structure";
 import "./index.scss";
 
 function View(props) {
@@ -57,12 +58,14 @@ function View(props) {
               <img alt="kitty detail" src={ImgBannerKitty} /> */}
             </div>
           </div>
-
-          <HorizontalSlide />
-
-          {/* vertical slide area */}
-          <VerticalSlide />
         </div>
+        
+        <HorizontalSlide />
+
+        {/* vertical slide area */}
+        <VerticalSlide />
+
+        <Structure />
 
         <div className="second_section">
 
