@@ -1406,6 +1406,17 @@ const ko = {
   ID_INTRO_EASY_SECTION_CHILD_TITLE : "The LMS (Learning Management System) manages\nvarious classes and can be applied flexibly in various institutions.",
   ID_INTRO_EASY_ITEM_TITLE_1 : "Create classes\nand manage students",
   ID_INTRO_EASY_ITEM_TITLE_2 : "Assign missions to students\nto try for each class",
-  ID_INTRO_EASY_ITEM_TITLE_3 : "Monitor the attendance\nand mission progress of students"
+  ID_INTRO_EASY_ITEM_TITLE_3 : "Monitor the attendance\nand mission progress of students",
+  ID_ABOUT_HORIZONTAL_SLIDE_TITLE : "Learn coding with exciting adventures!",
+  ID_ABOUT_HORIZONTAL_SLIDE_ITEM_TITLE_1 : "Hungry Robot",
+  ID_ABOUT_HORIZONTAL_SLIDE_ITEM_CHILD_TITLE_1 : "Learn about events and create a simple puzzle game.",
+  ID_ABOUT_HORIZONTAL_SLIDE_ITEM_TITLE_2 : "Game Over",
+  ID_ABOUT_HORIZONTAL_SLIDE_ITEM_CHILD_TITLE_2 : "Learn about the physics engine and create an arcade game.",
+  ID_ABOUT_HORIZONTAL_SLIDE_ITEM_TITLE_3 : "Plasma meltdown",
+  ID_ABOUT_HORIZONTAL_SLIDE_ITEM_CHILD_TITLE_3 : "Learn about loop statements and defeat the giant plasma.",
+  ID_ABOUT_HORIZONTAL_SLIDE_ITEM_TITLE_4 : "Bobo’s secret",
+  ID_ABOUT_HORIZONTAL_SLIDE_ITEM_CHILD_TITLE_4 : "Use JavaScript to implement events and create an escape room.",
+  ID_ABOUT_HORIZONTAL_SLIDE_ITEM_TITLE_5 : "Island of Peril",
+  ID_ABOUT_HORIZONTAL_SLIDE_ITEM_CHILD_TITLE_5 : "Learn about functions and clean the polluted ocean with Astro.",
 };
 export default ko;
