@@ -1418,5 +1418,17 @@ const ja = {
   ID_ABOUT_CURRICULUM_CARD_CONTENT_2 : "Naturak sciences,biology, physicsm\ntechnology, and math! Students can learn various STEM concepts with Astro Boy Go! clips and utilize what they learned in their projects.",
   ID_ABOUT_CURRICULUM_CARD_TITLE_3 : "UN SDGs",
   ID_ABOUT_CURRICULUM_CARD_CONTENT_3 : "Students can learn the core concepts of the UN's 17 Sustainable\nDevelopment Goals through the\nproject and grow up to become\nmature citizens.",
+
+  ID_ABOUT_HORIZONTAL_SLIDE_TITLE : "Learn coding with exciting adventures!",
+  ID_ABOUT_HORIZONTAL_SLIDE_ITEM_TITLE_1 : "Hungry Robot",
+  ID_ABOUT_HORIZONTAL_SLIDE_ITEM_CHILD_TITLE_1 : "Learn about events and create a simple puzzle game.",
+  ID_ABOUT_HORIZONTAL_SLIDE_ITEM_TITLE_2 : "Game Over",
+  ID_ABOUT_HORIZONTAL_SLIDE_ITEM_CHILD_TITLE_2 : "Learn about the physics engine and create an arcade game.",
+  ID_ABOUT_HORIZONTAL_SLIDE_ITEM_TITLE_3 : "Plasma meltdown",
+  ID_ABOUT_HORIZONTAL_SLIDE_ITEM_CHILD_TITLE_3 : "Learn about loop statements and defeat the giant plasma.",
+  ID_ABOUT_HORIZONTAL_SLIDE_ITEM_TITLE_4 : "Bobo’s secret",
+  ID_ABOUT_HORIZONTAL_SLIDE_ITEM_CHILD_TITLE_4 : "Use JavaScript to implement events and create an escape room.",
+  ID_ABOUT_HORIZONTAL_SLIDE_ITEM_TITLE_5 : "Island of Peril",
+  ID_ABOUT_HORIZONTAL_SLIDE_ITEM_CHILD_TITLE_5 : "Learn about functions and clean the polluted ocean with Astro.",
 };
 export default ja;

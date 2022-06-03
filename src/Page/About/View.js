@@ -16,6 +16,7 @@ import ImgBannerBoy from "../../Image/banner-astro-boy.png";
 import ImgBannerSuzu from "../../Image/banner-suzu.png";
 import ImgBannerKitty from "../../Image/banner-kitty.png";
 import Curriculum from "./Curriculum";
+import HorizontalSlide from "./HorizontalSlide";
 import "./index.scss";
 
 function View(props) {
@@ -38,9 +39,15 @@ function View(props) {
 
             <div className="first-section__character-list">
               {/* TODO 클릭하여 활성화 할때마다 클래스 active 추가 */}
-              <img alt="astro boy" className="first-section__character-border active" src={ImgBoy} />
-              <img alt="suzu" className="first-section__character-border" src={ImgSuzu} />
-              <img alt="astro kitty" className="first-section__character-border" src={ImgKitty} />
+              <span className="first-section__character-item active">
+                <img alt="astro boy" src={ImgBoy} />
+              </span>
+              <span className="first-section__character-item">
+                <img alt="suzu"  src={ImgSuzu} />
+              </span>
+              <span className="first-section__character-item">
+                <img alt="astro kitty"  src={ImgKitty} />
+              </span>
             </div>
 
             {/* TODO 두 영역이 연결되어 위에서 누르는 캐릭터들의 배너가 나와야함. */}
@@ -52,6 +59,7 @@ function View(props) {
             </div>
           </div>
 
+          <HorizontalSlide />
 
           <div className="first_section first_section--character">
             <div className="first_section__header character--header">
@@ -101,6 +109,10 @@ function View(props) {
 
             <VerticalSlide />
           </div>
+
+          {/* vertical slide area */}
+          <VerticalSlide />
+
         </div>
 
         <div className="second_section">
