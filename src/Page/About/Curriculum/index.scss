@@ -1,0 +1,60 @@
+.curriculum {
+  padding: 110px 0 130px;
+}
+
+.curriculum__title {
+  display: block;
+  margin: 0 0 60px;
+  text-align: center;
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 56px;
+  color: #fff;
+}
+
+.curriculum__cards {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  margin: 0 -15px;
+}
+
+.curriculum__card-item {
+  margin: 0 15px;
+  border-radius: 20px;
+  background-color: #262628;
+  padding: 57px 40px 38px;
+  width: 100%;
+  max-width: 370px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  > img {
+    display: block;
+    margin: 0 auto 56px;
+  }
+}
+
+.curriculum__card-title {
+  display: block;
+  margin-bottom: 20px;
+  font-size: 28px;
+  line-height: 28px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.curriculum__card-content {
+  display: block;
+  color: #aeaeae;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 26px;
+  white-space: pre-wrap;
+}
+
+.curriculum__card-info--first {
+  margin-bottom: 26px;
+}

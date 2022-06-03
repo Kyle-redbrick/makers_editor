@@ -15,6 +15,7 @@ import ImgKitty from "../../Image/img_astro_kitty_character.png";
 import ImgBannerBoy from "../../Image/banner-astro-boy.png";
 import ImgBannerSuzu from "../../Image/banner-suzu.png";
 import ImgBannerKitty from "../../Image/banner-kitty.png";
+import Curriculum from "./Curriculum";
 import HorizontalSlide from "./HorizontalSlide";
 import "./index.scss";
 
@@ -60,8 +61,58 @@ function View(props) {
 
           <HorizontalSlide />
 
+          <div className="first_section first_section--character">
+            <div className="first_section__header character--header">
+              <FormattedMessage id="ID_INTRO_CHARACTER_TITLE" />
+            </div>
+
+            <div className="character_cards">
+
+              <div className="character_card">
+                <img src={AstroBoyImg} alt="astroboy_image" />
+                <div className="character_card__contents">
+                  <div className="character_card__name">
+                    <FormattedMessage id="ID_INTRO_CHARACTER_ASTROBOY_TITLE" />
+                  </div>
+                  <div className="character_card__details">
+                    <FormattedMessage id="ID_INTRO_CHARACTER_ASTROBOY" />
+                  </div>
+                </div>
+              </div>
+
+              <div className="character_card">
+                <img src={AstroKittyImg} alt="astroboy_image" />
+                <div className="character_card__contents">
+                  <div className="character_card__name">
+                    <FormattedMessage id="ID_INTRO_CHARACTER_ASTROKITTY_TITLE" />
+                  </div>
+                  <div className="character_card__details">
+                    <FormattedMessage id="ID_INTRO_CHARACTER_ASTROKITTY" />
+                  </div>
+                </div>
+              </div>
+
+              <div className="character_card">
+                <img src={SuzuImg} alt="astroboy_image" />
+                <div className="character_card__contents">
+                  <div className="character_card__name">
+                    <FormattedMessage id="ID_INTRO_CHARACTER_SUZU_TITLE" />
+                  </div>
+                  <div className="character_card__details">
+                    <FormattedMessage id="ID_INTRO_CHARACTER_SUZU" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <Curriculum />
+
+            <VerticalSlide />
+          </div>
+
           {/* vertical slide area */}
           <VerticalSlide />
+
         </div>
 
         <div className="second_section">
