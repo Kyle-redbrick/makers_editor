@@ -15,6 +15,7 @@ import ImgKitty from "../../Image/img_astro_kitty_character.png";
 import ImgBannerBoy from "../../Image/banner-astro-boy.png";
 import ImgBannerSuzu from "../../Image/banner-suzu.png";
 import ImgBannerKitty from "../../Image/banner-kitty.png";
+import Curriculum from "./Curriculum";
 import HorizontalSlide from "./HorizontalSlide";
 import Structure from "./Structure";
 import "./index.scss";
@@ -59,15 +60,12 @@ function View(props) {
             </div>
           </div>
         </div>
-
         <HorizontalSlide />
 
         {/* vertical slide area */}
         <VerticalSlide />
 
         <Structure />
-
-        
 
         <ContactUS />
       </div>

@@ -1407,6 +1407,15 @@ const ko = {
   ID_INTRO_EASY_ITEM_TITLE_1 : "Create classes\nand manage students",
   ID_INTRO_EASY_ITEM_TITLE_2 : "Assign missions to students\nto try for each class",
   ID_INTRO_EASY_ITEM_TITLE_3 : "Monitor the attendance\nand mission progress of students",
+
+  ID_ABOUT_CURRICULUM_TITLE : "Premium Quality Curriculum",
+  ID_ABOUT_CURRICULUM_CARD_TITLE_1 : "CSTA Standard",
+  ID_ABOUT_CURRICULUM_CARD_CONTENT_1 : "Student will receive CS education\nthat meets global standards as the\nprogram is designed according to the US CSTA standard.",
+  ID_ABOUT_CURRICULUM_CARD_TITLE_2 : "STEM Convergence",
+  ID_ABOUT_CURRICULUM_CARD_CONTENT_2 : "Naturak sciences,biology, physicsm\ntechnology, and math! Students can learn various STEM concepts with Astro Boy Go! clips and utilize what they learned in their projects.",
+  ID_ABOUT_CURRICULUM_CARD_TITLE_3 : "UN SDGs",
+  ID_ABOUT_CURRICULUM_CARD_CONTENT_3 : "Students can learn the core concepts of the UN's 17 Sustainable\nDevelopment Goals through the\nproject and grow up to become\nmature citizens.",
+
   ID_ABOUT_HORIZONTAL_SLIDE_TITLE : "Learn coding with exciting adventures!",
   ID_ABOUT_HORIZONTAL_SLIDE_ITEM_TITLE_1 : "Hungry Robot",
   ID_ABOUT_HORIZONTAL_SLIDE_ITEM_CHILD_TITLE_1 : "Learn about events and create a simple puzzle game.",
