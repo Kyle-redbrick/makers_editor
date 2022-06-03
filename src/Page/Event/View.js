@@ -179,7 +179,7 @@ const ChangePassword = (props) => {
                   className="account__content-input account__content-input--password"
                   placeholder={placeholder}
                   onChange={onChangeValue}
-                  maxlength="20"
+                  maxlength="20"q
                 />
               }
             </FormattedMessage>

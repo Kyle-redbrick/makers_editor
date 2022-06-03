@@ -1019,8 +1019,6 @@ const ko = {
   ID_RANKING_NUMBER_CREATE: "개",
   ID_RANKING_NUMBER_POP: "개",
   ID_RANKING_NUMBER_VIEW: "회",
-  ID_GAME_LIST_TITLE_ALL: "All Games",
-  ID_GAME_LIST_TITLE_RECENT: "Recently played",
   ID_GAME_LIST_TITLE_NEWS: "최신 게임",
   ID_GAME_LIST_TITLE_WEEKLY: "주간 인기 게임",
   ID_GAME_LIST_TITLE_MONTHLY: "월간 인기 게임",
@@ -1238,6 +1236,8 @@ const ko = {
   ID_DREAM_LMS_TODAY_GOAL_RECOMMEND_QUEST_SUBTITLE: "퀘스트 1",
   ID_DREAM_LMS_TODAY_GOAL_GRAPH: "달성 그래프",
   ID_DREAM_LMS_TODAY_GOAL_PROGRESS_TITLE: "개발자의 길",
+  ID_DASHBOARD_TAB_O1_MISSION_PROGRESS: "Mission Progress",
+  ID_DASHBOARD_TAB_O2_ATTENDANCE: "Mission Progress",
   ID_LMS_DASHBOARD: "대쉬보드",
   ID_LMS_COURSE_1: "도전! 게임 메이커",
   ID_LMS_COURSE_2: "개발본능! 게임 프로듀서",
@@ -1427,5 +1427,7 @@ const ko = {
   ID_ABOUT_HORIZONTAL_SLIDE_ITEM_CHILD_TITLE_4 : "Use JavaScript to implement events and create an escape room.",
   ID_ABOUT_HORIZONTAL_SLIDE_ITEM_TITLE_5 : "Island of Peril",
   ID_ABOUT_HORIZONTAL_SLIDE_ITEM_CHILD_TITLE_5 : "Learn about functions and clean the polluted ocean with Astro.",
+  ID_PLAY_RECENT_GAMES: "Recently Played",
+  ID_PLAY_ALL_GAMES: "All Games"
 };
 export default ko;

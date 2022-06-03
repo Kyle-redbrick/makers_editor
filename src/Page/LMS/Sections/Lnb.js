@@ -294,25 +294,32 @@ const Lnb = ({ path, fixed, isMobile, isLmsMobileMenuOn, onClickLmsMobileMenu, .
         <Title><FormattedMessage id="ID_LMS_DASHBOARD" /></Title>
         <Br />
         <Group height={isMobile ? "auto" : 234}>
-          <LnbLinkComponent
-            active={renderCurrentPage(path) === PAGE.MISSION}
-            icon={renderCurrentPage(path) === PAGE.MISSION ? iconMissionOn : iconMissionOff}
-            link="/lms/mission"
-            title={"Mission Progress"}
-            isMobile={isMobile}
-            isLmsMobileMenuOn={isLmsMobileMenuOn}
-            onClickLmsMobileMenu={onClickLmsMobileMenu}
-          />
-          
-          <LnbLinkComponent
-            active={renderCurrentPage(path) === PAGE.ATTENDANCE}
-            icon={renderCurrentPage(path) === PAGE.ATTENDANCE ? iconAttOn : iconAttOff}
-            link="/lms/attendance"
-            title={"Attendance"}
-            isMobile={isMobile}
-            isLmsMobileMenuOn={isLmsMobileMenuOn}
-            onClickLmsMobileMenu={onClickLmsMobileMenu}
-          />
+          <FormattedMessage id="ID_DASHBOARD_TAB_O1_MISSION_PROGRESS">
+            {title => 
+              <LnbLinkComponent
+                active={renderCurrentPage(path) === PAGE.MISSION}
+                icon={renderCurrentPage(path) === PAGE.MISSION ? iconMissionOn : iconMissionOff}
+                link="/lms/mission"
+                title={title}
+                isMobile={isMobile}
+                isLmsMobileMenuOn={isLmsMobileMenuOn}
+                onClickLmsMobileMenu={onClickLmsMobileMenu}
+              />
+            }
+          </FormattedMessage>
+          <FormattedMessage id="ID_DASHBOARD_TAB_O2_ATTENDANCE">
+            {title =>
+              <LnbLinkComponent
+                active={renderCurrentPage(path) === PAGE.ATTENDANCE}
+                icon={renderCurrentPage(path) === PAGE.ATTENDANCE ? iconAttOn : iconAttOff}
+                link="/lms/attendance"
+                title={title}
+                isMobile={isMobile}
+                isLmsMobileMenuOn={isLmsMobileMenuOn}
+                onClickLmsMobileMenu={onClickLmsMobileMenu}
+              />
+            }
+          </FormattedMessage>
         </Group>
       </LnbWrap>
       
