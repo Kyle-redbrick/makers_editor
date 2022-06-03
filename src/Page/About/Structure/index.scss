@@ -133,12 +133,9 @@
   font-weight: 500;
 }
 
-.structure__slide-box {
-  padding: 9px 10px 10px;
+.structure__slide-flex-box {
   display: flex;
   align-items: center;
-  background-color: #1c1c1c;
-  border-radius: 16px;
 
   > img {
     width: 160px;
@@ -150,6 +147,13 @@
     box-sizing: border-box;
     overflow: hidden;
   }
+}
+
+.structure__slide-box {
+  padding: 9px 10px 10px;
+  background-color: #1c1c1c;
+  border-radius: 16px;
+  position: relative;
 }
 
 .structure__content-title-box {
@@ -177,10 +181,103 @@
   border: 0;
   margin-left: auto;
   cursor: pointer;
+  transition: all 0.2s ease-in-out;
+
+  &.active {
+    transform: rotate(180deg);
+    transition: all 0.2s ease-in-out;
+  }
 
   img {
     width: 44px;
     height: 44px;
     object-fit: cover;
   }
+}
+
+.structure__slide-inner-wrap {
+  position: relative;
+  top: 11px;
+  left: 0;
+  right: 0;
+  background-color: #272727;
+  border-radius: 0 0 16px 16px;
+  transition: all 0.15s ease-out;
+  height: 0;
+  overflow: hidden;
+  margin-left: -10px;
+  margin-right: -10px;
+
+  &.show {
+    height: auto;
+    transition: all 0.25s ease-in;
+  }
+}
+
+.structure__slide-inner-item {
+  border-top: 1px solid  #383838;
+  padding: 20px 30px;
+
+  &:last-child {
+    border-bottom: 1px solid #383838;
+  }
+}
+
+.structure__mission-label {
+  border-radius: 50px;
+  background-color: #3a3b40;
+  display: block;
+  padding: 5px 10px;
+  text-align: center;
+  font-size: 12px;
+  line-height: 12px;
+  font-weight: 700;
+  color: #aeaeae;
+  margin-bottom: 13px;
+  width: fit-content;
+}
+
+.structure__slide-inner-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.structure__mission-name {
+  font-size: 18px;
+  line-height: 18px;
+  color: #fff;
+  font-weight: 700;
+  display: block;
+  margin: 0 0 10px;
+}
+
+.structure__mission-explain {
+  font-size: 14px;
+  line-height: 21px;
+  color: #aeaeae;
+  font-weight: 500;
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.structure__notice-box {
+  display: flex;
+  align-items: center;
+  margin-top: 13px;
+
+  img {
+    width: 15px;
+    height: 15px;
+    object-fit: cover;
+  }
+}
+
+.structure__notice-text {
+  color: #ffa944;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 13px;
+  display: block;
+  margin-left: 5px;
 }
