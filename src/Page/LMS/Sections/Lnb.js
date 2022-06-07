@@ -1,4 +1,5 @@
 import React, { memo } from "react";
+import { connect } from "react-redux";
 import { Link, useParams } from "react-router-dom";
 import { FormattedMessage } from "react-intl";
 import styled from "@emotion/styled";
@@ -108,7 +109,7 @@ const LnbWrap = styled.div`
         pointer-events: none;
       }
     `
-    }
+  }
 
     ${(props) => props.isLmsMobileMenuOn && `
       &::before {
@@ -124,7 +125,7 @@ const LnbWrap = styled.div`
       heigth: 50px;
       transform: translateX(-50%);
     `
-    }
+  }
   }
 
 `
@@ -168,7 +169,7 @@ const CertWrap = styled.div`
         pointer-events: none;
       }
     `
-    }
+  }
 
     ${(props) => props.isLmsMobileMenuOn && `
       &::before {
@@ -184,7 +185,7 @@ const CertWrap = styled.div`
       heigth: 50px;
       transform: translateX(-50%);
     `
-    }
+  }
   }
 `
 
@@ -238,11 +239,11 @@ const CertDesc = styled.div`
 
 const CartButton = ({ course, onclickCertBtn }) => {
   return (
-    <CertContainer onClick={()=> onclickCertBtn(course)}>
-      <CertIcon src={IMAGE.ICON_CERT }/>
+    <CertContainer onClick={() => onclickCertBtn(course)}>
+      <CertIcon src={IMAGE.ICON_CERT} />
       <CertGrade>{course.title}</CertGrade>
       <CertDesc>Get your certificate Now!</CertDesc>
-      <CatIcon  src={course.type=="javascript" ? IMAGE.ICON_CERT_JS : IMAGE.ICON_CERT_BLOCK }/>
+      <CatIcon src={course.type == "javascript" ? IMAGE.ICON_CERT_JS : IMAGE.ICON_CERT_BLOCK} />
     </CertContainer>
   )
 }
@@ -253,11 +254,11 @@ const LnbLinkComponent = memo(({ active, icon, link, title, isMobile, isLmsMobil
     if (!isLmsMobileMenuOn && !active) {
       return <></>;
     }
-  } 
+  }
   return (
     <LnbLink to={link}>
       <Item active={active} onClick={onClickLmsMobileMenu}>
-        <Icon 
+        <Icon
           alt={`${title} 아이콘`}
           src={icon}
         />
@@ -273,13 +274,13 @@ const Lnb = ({ path, fixed, isMobile, isLmsMobileMenuOn, onClickLmsMobileMenu, .
   const onclickCertBtn = (course) => {
     showPopUp(
       <CertificateForm
-      course={course}
+        course={course}
       //updateCourses={updateCourses}
-        // sdg={formData.sdg}
-        // certificate={formData.certificate}
-        // onClickSubmit={() => {
-        //   this.alertCertificate(formData);
-        // }}
+      // sdg={formData.sdg}
+      // certificate={formData.certificate}
+      // onClickSubmit={() => {
+      //   this.alertCertificate(formData);
+      // }}
       />,
       {
         dismissButton: false,
@@ -322,7 +323,7 @@ const Lnb = ({ path, fixed, isMobile, isLmsMobileMenuOn, onClickLmsMobileMenu, .
           </FormattedMessage>
         </Group>
       </LnbWrap>
-      
+
       {/* <CertWrap isMobile={isMobile} fixed={fixed} isLmsMobileMenuOn={isLmsMobileMenuOn}>
           {
             coursesProgress.map(
@@ -343,4 +344,8 @@ const Lnb = ({ path, fixed, isMobile, isLmsMobileMenuOn, onClickLmsMobileMenu, .
   );
 };
 
-export default Lnb;
+export default connect(
+  state => ({
+    userinfo: state.userinfo
+  })
+)(Lnb);

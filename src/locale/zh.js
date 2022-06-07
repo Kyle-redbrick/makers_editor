@@ -1437,7 +1437,29 @@ const zh = {
   ID_ABOUT_HORIZONTAL_SLIDE_ITEM_CHILD_TITLE_4 : "Use JavaScript to implement events and create an escape room.",
   ID_ABOUT_HORIZONTAL_SLIDE_ITEM_TITLE_5 : "Island of Peril",
   ID_ABOUT_HORIZONTAL_SLIDE_ITEM_CHILD_TITLE_5 : "Learn about functions and clean the polluted ocean with Astro.",
+
   ID_PLAY_RECENT_GAMES: "Recently Played",
-  ID_PLAY_ALL_GAMES: "All Games"
+  ID_PLAY_ALL_GAMES: "All Games",
+
+  ID_ABOUT_STRUCTURE_TITLE : "Curriculum Structure",
+  ID_ABOUT_DOWNLOAD_CURRICULUM : "Download Curriculum in PDF",
+  ID_ABOUT_STRUCTURE_BLOCK_CODING : "Block Coding",
+  ID_ABOUT_STRUCTURE_JAVASCRIPT : "JavaScript",
+  ID_ABOUT_MORE_TRIAL_TEXT : "Go to Free Trial",
+
+  ID_ABOUT_INFORMATION_TITLE : "Information",
+  ID_ABOUT_INFORMATION_TECHNICAL : "Technical Specifications",
+  ID_ABOUT_INFORMATION_PROFILE : "Company Profile",
+  ID_ABOUT_INFORMATION_TECHNICAL_INNER : "Hardware : Desktop/laptop/tablet\nResolution : Minimum 1280*800\nOS : Windows 10/MaxOS 10.14 or higher\nBrowser : Chrome 64, FireFox 58, Safari 11.2, Microsoft Edge 17\nInternet connection : Minimum 30Mbps",
+  ID_ABOUT_INFORMATION_PROFILE_INNER : "MANGOSTEEMS PTE.LTD.",
+  ID_ABOUT_INFORMATION_PROFILE_INNER_FOUNDED : "Founded : 2018",
+  ID_ABOUT_INFORMATION_PROFILE_INNER_ADDRESS : "Address : 31 Kaki Bukit Road 3 #06-07 Techlink Singapore (417818)",
+  ID_ABOUT_INFORMATION_PROFILE_INNER_ADDRESS_SECOND_LINE : "www.mangosteems.com",
+  ID_ABOUT_INFORMATION_PROFILE_INNER_CONTACT : "Contact : acg@mangosteems.com",
+  ID_ABOUT_INFORMATION_PROFILE_INNER_PARTNER_TITLE : "Partner Companies",
+  ID_ABOUT_INFORMATION_PROFILE_INNER_PARTNER_IGROUP : "iGroup Asia-Pacific Ltd.",
+  ID_ABOUT_INFORMATION_PROFILE_INNER_PARTNER_ADDRESS : "www.igroupnet.com",
+  ID_ABOUT_INFORMATION_PROFILE_INNER_PARTNER_IDC : "IDC ASIA Co., Ltd. /iGroup Korea",
+  ID_ABOUT_INFORMATION_PROFILE_INNER_PARTNER_IDC_ADDRESS : "www.igroupkorea.kr"
 };
 export default zh;
