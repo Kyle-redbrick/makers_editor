@@ -15,7 +15,7 @@
       width: 100vw;
       height : 100%;
       background: url("../../Image/img-intro-banner-BG.png") no-repeat center/cover;
-      height: 593px;
+      height: 603px;
       text-align: center;
 
       @media only screen and (max-width: 1334px){
@@ -24,10 +24,10 @@
 
       >img {
         height: 100%;
-        max-height: 528px;
+        max-height: 432px;
         object-fit: cover;
         position: absolute;
-        bottom: -96px;
+        bottom: -65px;
         left: 50%;
         transform: translateX(-50%);
       }
@@ -234,6 +234,7 @@
   color: #fff;
   line-height: 56px;
   font-weight: 800;
+  margin-bottom: 14px;
 }
 
 .intro-banner__child-title {
@@ -241,4 +242,5 @@
   color: #fff;
   line-height: 28px;
   font-weight: 500;
+  white-space: pre-wrap;
 }
