@@ -106,7 +106,7 @@ const getRedirectURLOf = myDreamProject => {
   }
 }
 
-export const Learn = ({ id: projectId, isShowVideo, videoURL, lectureId, title, fixed, ...props }) => {
+export const Learn = ({ id: projectId, isShowVideo,videoURL, lectureId, title, fixed, ...props }) => {
 
   const handleClick = useCallback(
     () => {
@@ -134,7 +134,7 @@ export const Learn = ({ id: projectId, isShowVideo, videoURL, lectureId, title, 
       const redirectURL = getRedirectURLOf(myDreamProject);
       if (redirectURL) {
         const didIntroPopup = localStorage.getItem(`didIntroPopup_${myDreamProject.project.lecture.course.type}`);
-
+  
         if (isMobileOnly) {
           return Popup.showPopUp(<AlertPopup />, {
             defaultPadding: false,
