@@ -18,6 +18,7 @@ import ImgBannerKitty from "../../Image/banner-kitty.png";
 import Curriculum from "./Curriculum";
 import HorizontalSlide from "./HorizontalSlide";
 import Structure from "./Structure";
+import Information from "./Information";
 import "./index.scss";
 
 function View(props) {
@@ -66,6 +67,8 @@ function View(props) {
         <VerticalSlide />
 
         <Structure />
+
+        <Information />
 
         <ContactUS />
       </div>
