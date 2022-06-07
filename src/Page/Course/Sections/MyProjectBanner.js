@@ -16,7 +16,7 @@ const MyProjectBanner = (props) => {
             <span className="left-slide__child-title-left">
               {props.curriculum[props.slideIndex].course.intro}
             </span>
-            <span className="left-slide__child-title-right"><b>{props.curriculum[props.slideIndex].course.progress.completed}</b> / {props.curriculum[props.slideIndex].course.progress.net} Missions assigned</span>
+            <span className="left-slide__child-title-right"><b>{props.curriculum[props.slideIndex].course.progress.completed}</b> / {props.curriculum[props.slideIndex].course.progress.net} {props.intl.formatMessage({id: "ID_LEARN_MISSION_ASSIGNED"})}</span>
           </div>
         </div> : <h3 className="page-title">
           <FormattedMessage id="ID_LEARN_TITLE_NONLOGIN" />

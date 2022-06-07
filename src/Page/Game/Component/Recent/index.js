@@ -5,7 +5,7 @@ import badgeJs from "../../../../Image/dreamclass/badge-js@2x.png";
 import badgePuzzle from "../../../../Image/dreamclass/badge-oobc@2x.png";
 import badgeJsShadow from "../../../../Image/dreamclass/badge-js-shadow@2x.png";
 import badgePuzzleShadow from "../../../../Image/dreamclass/badge-oobc-shadow@2x.png";
-import { injectIntl } from "react-intl";
+import { injectIntl, FormattedMessage } from "react-intl";
 import { Link } from "react-router-dom";
 
 const GameBox = (props) => {
@@ -47,7 +47,7 @@ const Recent = () => {
     <div className="GameList__recent-games">
       <div className="GameList__recent-games__section">
         <div className="GameList__recent-games__title">
-          Recently Played
+          <FormattedMessage id="ID_PLAY_RECENT_GAMES" />
         </div>
         <div className="GameList__recent-games__games">
           {recentGames.map(game => 

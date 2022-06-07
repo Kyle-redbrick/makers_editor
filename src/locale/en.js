@@ -427,7 +427,7 @@ const en = {
   ID_FONT_SUNFLOWER: "Sunflower",
   ID_FONT_YEONSUNG: "Yeon Sung",
   ID_USERDD_MYPAGE: "My Page",
-  ID_USERDD_MYGAME: "My Game",
+  ID_USERDD_MYGAME: "My Games",
   ID_USERDD_MYAPK: "My APK",
   ID_USERDD_SETTING: "Account Settings",
   ID_USERDD_LOGOUT: "Leave Astro Coding Go!",
@@ -544,6 +544,12 @@ const en = {
   ID_TEXT_BOX_TITLE: "Textbox",
   ID_LEARN_TITLE_NONLOGIN: "Try the course of your choice for free",
   ID_LEARN_TITLE: "WizLab Tutorial Step 1 - Build a room escape game",
+  ID_LEARN_ALL_COURSES: "All Courses",
+  ID_LEARN_ALL_STEPS_CLEAR: "All steps clear",
+  ID_LEARN_GAME_PREVIEW: "Game Preview",
+  ID_LEARN_MISSION_ASSIGNED: "Missions Assigned",
+  ID_LEARN_LEARNING: "Learning",
+  ID_LEARN_CLEAR: "Clear",
   ID_LEARN_TITLE_DESC: `This is a tutorial for novice Wiz members.\nYou can learn how to use WizLab by building a room escape game with WizLab. Time: about 10 ~ 20 minutes`,
   ID_POPUP_MOBILE_WAITING_TITLE: "Mobile Play",
   ID_POPUP_MOBILE_WAITING_DESC: "Requesting to run on mobile phone",
@@ -1019,8 +1025,6 @@ const en = {
   ID_RANKING_NUMBER_CREATE: "개",
   ID_RANKING_NUMBER_POP: "개",
   ID_RANKING_NUMBER_VIEW: "회",
-  ID_GAME_LIST_TITLE_ALL: "All Games",
-  ID_GAME_LIST_TITLE_RECENT: "Recently played",
   ID_GAME_LIST_TITLE_NEWS: "Recent Games",
   ID_GAME_LIST_TITLE_WEEKLY: "Weekly Popular Games",
   ID_GAME_LIST_TITLE_MONTHLY: "Monthly Popular Games",
@@ -1238,6 +1242,9 @@ const en = {
   ID_DREAM_LMS_TODAY_GOAL_RECOMMEND_QUEST_SUBTITLE: "Quest 1",
   ID_DREAM_LMS_TODAY_GOAL_GRAPH: "Achievement Graph",
   ID_DREAM_LMS_TODAY_GOAL_PROGRESS_TITLE: "Developer's Path",
+  ID_DASHBOARD_TAB_O1_MISSION_PROGRESS: "Mission Progress",
+  ID_DASHBOARD_TAB_O2_ATTENDANCE: "Attendance",
+  ID_DASHBOARD_GET_CERTIFICATION: "Get Certification",
   ID_LMS_DASHBOARD: "Dashboard",
   ID_LMS_COURSE_1: "ELEMENTARY",
   ID_LMS_COURSE_2: "BASIC",
@@ -1252,6 +1259,8 @@ const en = {
   ID_LMS_QUEST_DATE: "Recent activity date",
   ID_LMS_QUEST_STUDY_TIME: "Study time",
   ID_LMS_QUEST_STUDY_TIME_MIN: "min",
+  ID_COURSE_DETAIL_MISSION: "Mission",
+  ID_COURSE_DETAIL_STEP_COMPLETE: "Steps Clear",
   ID_COURSE_DETAIL_QUEST: "Quest",
   ID_COURSE_DETAIL_KEY_COMMAND: "Key Commands",
   ID_COURSE_DETAIL_PLAY_GAME: "Play game",
@@ -1434,6 +1443,9 @@ const en = {
   ID_ABOUT_HORIZONTAL_SLIDE_ITEM_CHILD_TITLE_4 : "Use JavaScript to implement events and create an escape room.",
   ID_ABOUT_HORIZONTAL_SLIDE_ITEM_TITLE_5 : "Island of Peril",
   ID_ABOUT_HORIZONTAL_SLIDE_ITEM_CHILD_TITLE_5 : "Learn about functions and clean the polluted ocean with Astro.",
+  ID_PLAY_RECENT_GAMES: "Recently Played",
+  ID_PLAY_ALL_GAMES: "All Games",
+  
   ID_ABOUT_STRUCTURE_TITLE : "Curriculum Structure",
   ID_ABOUT_DOWNLOAD_CURRICULUM : "Download Curriculum in PDF",
   ID_ABOUT_STRUCTURE_BLOCK_CODING : "Block Coding",
@@ -1454,8 +1466,5 @@ const en = {
   ID_ABOUT_INFORMATION_PROFILE_INNER_PARTNER_ADDRESS : "www.igroupnet.com",
   ID_ABOUT_INFORMATION_PROFILE_INNER_PARTNER_IDC : "IDC ASIA Co., Ltd. /iGroup Korea",
   ID_ABOUT_INFORMATION_PROFILE_INNER_PARTNER_IDC_ADDRESS : "www.igroupkorea.kr"
-
-  
-
 };
 export default en;
