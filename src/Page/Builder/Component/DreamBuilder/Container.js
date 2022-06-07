@@ -55,6 +55,7 @@ class Container extends Component {
           window.alert("wrong template");
           return;
         }
+        console.log(111, myDreamProject);
 
         this.props.setMyDreamProject(myDreamProject);
       });

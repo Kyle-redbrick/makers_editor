@@ -325,7 +325,7 @@ const LectureItem = ({ item, ...props }) => {
     <Self {...props}>
       <Image image={item.thumbnailUrl} />
       <Content>
-        <Level><FormattedMessage id="ID_COURSE_DETAIL_QUEST" /> {item.number}</Level>
+        <Level><FormattedMessage id="ID_COURSE_DETAIL_MISSION" /> {item.number}</Level>
         <Title>{item.title}</Title>
         <Desc>{item.introduction}</Desc>
         <Tags>
@@ -340,11 +340,11 @@ const LectureItem = ({ item, ...props }) => {
             <ProgressBar />
           </Progress>
           {item.progress === 100 && (
-            <ProgressText><FormattedMessage id="ID_LMS_QUEST_ALL_CLEAR" /></ProgressText>
+            <ProgressText><FormattedMessage id="ID_LEARN_ALL_STEPS_CLEAR" /></ProgressText>
           )}
           {item.progress >= 0 && item.progress !== 100 && (
             <ProgressText>
-              {progressText} <FormattedMessage id="ID_LMS_QUEST_CLEAR" />
+              {progressText} <FormattedMessage id="ID_COURSE_DETAIL_STEP_COMPLETE" />
             </ProgressText>
           )}
         </ProgressWrap>
