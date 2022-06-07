@@ -43,7 +43,7 @@ const Self = styled.button`
       background-repeat:no-repeat;
       background-size:cover;
       background-position:center;
-      :url(${ImgBtnLock});
+      background-image:url(${ImgBtnLock});
       position:absolute;
       width:100%;
       height:100%;
@@ -127,58 +127,58 @@ export const Learn = ({ id: projectId, isShowVideo, videoURL, lectureId, title, 
   );
 
 
-  const onClickSkipBtn = () => {
+  const onClickSkipBtn = ()=>{
     postMyDreamProject({ projectId })
-      .then(res => res.json())
-      .then(myDreamProject => {
-        const redirectURL = getRedirectURLOf(myDreamProject);
-        if (redirectURL) {
-          const didIntroPopup = localStorage.getItem(`didIntroPopup_${myDreamProject.project.lecture.course.type}`);
+    .then(res => res.json())
+    .then(myDreamProject => {
+      const redirectURL = getRedirectURLOf(myDreamProject);
+      if (redirectURL) {
+        const didIntroPopup = localStorage.getItem(`didIntroPopup_${myDreamProject.project.lecture.course.type}`);
 
-          if (isMobileOnly) {
-            return Popup.showPopUp(<AlertPopup />, {
-              defaultPadding: false,
-              dismissButton: false,
-            });
-          }
-
-          if (isShowVideo) {
-            Popup.showPopUp(<IntroPopup redirectURL={redirectURL} url={videoURL} />, {
-              dismissButton: false,
-              defaultPadding: false,
-              darkmode: true,
-              mobileFullscreen: true,
-            });
-          } else {
-            window.open(redirectURL, "_blank");
-          }
-
-
-
-          //window.open(redirectURL, "_blank");
-          // if (!didIntroPopup) {
-          //   Popup.showPopUp(<IntroPopup id={lectureId} url={redirectURL} type={myDreamProject.project.lecture.course.type}/>, {
-          //     dismissButton: false,
-          //     dismissOverlay: true,
-          //     defaultPadding: false,
-          //     darkmode: true,
-          //     mobileFullscreen: true,
-          //     overflow: true,
-          //   });
-          // } else {
-          //   window.open(redirectURL, "_blank");
-          // }
+        if (isMobileOnly) {
+          return Popup.showPopUp(<AlertPopup />, {
+            defaultPadding: false,
+            dismissButton: false,
+          });
         }
-        // else {
-        //   Popup.showPopUp(<LoginAlertPopup />, {
-        //     defaultPadding: false,
+
+        if(isShowVideo){
+          Popup.showPopUp(<IntroPopup redirectURL={redirectURL} url={videoURL} />, {
+            dismissButton: false,
+            defaultPadding: false,
+            darkmode: true,
+            mobileFullscreen: true,
+          });
+        }else{
+          window.open(redirectURL, "_blank");
+        }
+
+
+
+        //window.open(redirectURL, "_blank");
+        // if (!didIntroPopup) {
+        //   Popup.showPopUp(<IntroPopup id={lectureId} url={redirectURL} type={myDreamProject.project.lecture.course.type}/>, {
         //     dismissButton: false,
+        //     dismissOverlay: true,
+        //     defaultPadding: false,
+        //     darkmode: true,
+        //     mobileFullscreen: true,
+        //     overflow: true,
         //   });
+        // } else {
+        //   window.open(redirectURL, "_blank");
         // }
-      })
-      .catch(err => {
-        console.error(err);
-      });
+      }
+      // else {
+      //   Popup.showPopUp(<LoginAlertPopup />, {
+      //     defaultPadding: false,
+      //     dismissButton: false,
+      //   });
+      // }
+    })
+    .catch(err => {
+      console.error(err);
+    });
   }
 
   return (
