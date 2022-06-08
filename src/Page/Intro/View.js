@@ -24,6 +24,7 @@ import VideoThumbnail from "../../Image/intro-play-video-thumbnail.png";
 import TopScrollIcon from "../../Image/top-scroll-arrow.svg";
 import IconMessage from "../../Image/icon-message.svg"; 
 import EasySection from "./EasyInstruction";
+import TopBannerCharacter from "../../Image/img-intro-banner-character.png";
 
 import "./index.scss";
 
@@ -44,7 +45,13 @@ function View(props) {
         </button>
 
         <div className="intro__section-banner">
-          <div className="intro-banner" />
+          <div className="intro-banner">
+            <div className="intro-banner__title-box">
+              <h3 className="intro-banner__title"><FormattedMessage id="ID_INTRO_TOP_BANNER_TITLE" /></h3>
+              <span className="intro-banner__child-title"><FormattedMessage id="ID_INTRO_TOP_BANNER_CHILD_TITLE" /></span>
+            </div>
+            <img alt="캐릭터 이미지" src={TopBannerCharacter} />
+          </div>
         </div>
 
         <div className="first-section"> 

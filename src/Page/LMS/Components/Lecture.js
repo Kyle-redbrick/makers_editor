@@ -256,7 +256,9 @@ const Lecture = memo(({ course, ...props }) => {
         <ButtonWrap>
           {
             course.course.certificate &&
-            <CertButton onClick={()=> onclickCertBtn(course.course)}>Get certification</CertButton>
+            <CertButton onClick={()=> onclickCertBtn(course.course)}>
+              <FormattedMessage id="ID_DASHBOARD_GET_CERTIFICATION" />
+            </CertButton>
           }
         </ButtonWrap>
 

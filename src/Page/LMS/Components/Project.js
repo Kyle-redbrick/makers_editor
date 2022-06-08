@@ -212,11 +212,11 @@ const Project = ({ project, ...props }) => {
           </Progress>
           {project.progress.net / project.progress.completed <= 1 ? (
             <ProgressText>
-              <FormattedMessage id="ID_LMS_QUEST_ALL_CLEAR" />
+              <FormattedMessage id="ID_LEARN_ALL_STEPS_CLEAR" />
             </ProgressText>
           ) : (
             <ProgressText>
-              {progressText} <FormattedMessage id="ID_LMS_QUEST_CLEAR" />
+              {progressText} <FormattedMessage id="ID_COURSE_DETAIL_STEP_COMPLETE" />
             </ProgressText>
           )}
         </ProgressWrap>

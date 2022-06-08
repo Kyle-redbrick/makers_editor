@@ -130,7 +130,9 @@ const AfterList = (props) => {
                       item.progress.completed / item.progress.net === 1 ?
                         <>
                           <img alt="수강 완료한 강의 아이콘" src={ClearIcon} />
-                          <span className="course-content__clear-text">All step clear</span>
+                          <span className="course-content__clear-text">
+                            <FormattedMessage id="ID_LEARN_ALL_STEPS_CLEAR" />
+                          </span>
                         </>
                         :
                         <div className="course-content__progress-bar">
@@ -159,7 +161,9 @@ const AfterList = (props) => {
                         )
                       )
                     }
-                    <button className="course-content__game-preview" onClick={() => handleClickGame(item)}>Game Preview</button>
+                    <button className="course-content__game-preview" onClick={() => handleClickGame(item)}>
+                      <FormattedMessage id="ID_LEARN_GAME_PREVIEW" />
+                    </button>
                   </div>
                 }
               </div>
