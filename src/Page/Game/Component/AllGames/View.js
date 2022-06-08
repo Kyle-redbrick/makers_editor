@@ -16,7 +16,7 @@ function View(props) {
       <div className="GameList-default__all-games">
         <p className="Play__Title Play__Title-allGames">
           {props.intl.formatMessage(
-            { id: "ID_GAME_LIST_TITLE_ALL" }
+            { id: "ID_PLAY_ALL_GAMES" }
           )}
         </p>
         {props.total > 0
