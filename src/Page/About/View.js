@@ -63,6 +63,8 @@ function View(props) {
         </div>
         <HorizontalSlide />
 
+        <Curriculum />
+
         {/* vertical slide area */}
         <VerticalSlide />
 
