@@ -10,7 +10,6 @@ import IconSlideToggle from "../../../Image/icon-slide-toggle.svg";
 import IconLight from "../../../Image/icon-light.svg";
 import { Link } from "react-router-dom";
 import "./index.scss";
-import { Link } from "react-router-dom";
 
 function Structure () {
   return (
