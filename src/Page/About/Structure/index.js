@@ -8,6 +8,7 @@ import ImgSample from "../../../Image/img-about-sample.png";
 import IconPlay from "../../../Image/btn_play.svg";
 import IconSlideToggle from "../../../Image/icon-slide-toggle.svg";
 import IconLight from "../../../Image/icon-light.svg";
+import { Link } from "react-router-dom";
 import "./index.scss";
 import { Link } from "react-router-dom";
 
@@ -293,10 +294,10 @@ const Javascript = () => {
         </h3>
 
         {/* TODO 클릭 시 해당 카테고리의 무료 강의 목록으로 이동 */}
-        <a className="structure__free-link" rel="noopener noreferrer">
+        <Link to="/learn" className="structure__free-link">
           <FormattedMessage id="ID_ABOUT_MORE_TRIAL_TEXT" />
           <img alt="더보기 아이콘" src={IconFreeArrow} />
-        </a>
+        </Link>
       </div>
 
       {/* TODO 비디오 영역 */}
