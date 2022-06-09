@@ -308,19 +308,21 @@ const Lnb = ({ path, fixed, isMobile, isLmsMobileMenuOn, onClickLmsMobileMenu, .
               />
             }
           </FormattedMessage>
-          <FormattedMessage id="ID_DASHBOARD_TAB_O2_ATTENDANCE">
-            {title =>
-              <LnbLinkComponent
-                active={renderCurrentPage(path) === PAGE.ATTENDANCE}
-                icon={renderCurrentPage(path) === PAGE.ATTENDANCE ? iconAttOn : iconAttOff}
-                link="/lms/attendance"
-                title={title}
-                isMobile={isMobile}
-                isLmsMobileMenuOn={isLmsMobileMenuOn}
-                onClickLmsMobileMenu={onClickLmsMobileMenu}
-              />
-            }
-          </FormattedMessage>
+          {props.userinfo.userType === "S" &&
+            <FormattedMessage id="ID_DASHBOARD_TAB_O2_ATTENDANCE">
+              {title =>
+                <LnbLinkComponent
+                  active={renderCurrentPage(path) === PAGE.ATTENDANCE}
+                  icon={renderCurrentPage(path) === PAGE.ATTENDANCE ? iconAttOn : iconAttOff}
+                  link="/lms/attendance"
+                  title={title}
+                  isMobile={isMobile}
+                  isLmsMobileMenuOn={isLmsMobileMenuOn}
+                  onClickLmsMobileMenu={onClickLmsMobileMenu}
+                />
+              }
+            </FormattedMessage>
+          }
         </Group>
       </LnbWrap>
 
