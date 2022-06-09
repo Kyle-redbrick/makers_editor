@@ -34,7 +34,7 @@ function BeforeLogin(props) {
       <div className="content-slide__slide">
         <Swiper
           spaceBetween={15}
-          slidesPerView="auto"
+          slidesPerView={1}
           pagination={{
             clickable: true,
             type: "fraction"
