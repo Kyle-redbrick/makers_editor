@@ -4,7 +4,12 @@ import DownArrowIcon from "../../../Image/ic_dropdown_down.svg";
 import BackIcon from "../../../Image/inc_arrow_left.svg";
 import "./index.scss";
 
-function Contact () {
+const Contact = () => {
+  const tab = [
+    "first",
+    "second"
+  ]
+
   return (
     <div className="contact">
       <div className="contact__inner">
@@ -15,7 +20,7 @@ function Contact () {
 
         <div className="contact__form">
           <div className="contact__from-inner">
-            { false ? <FormFirst /> : <FormSecond /> }
+            {false ? <FormFirst /> : <FormSecond />}
           </div>
         </div>
       </div>
@@ -39,12 +44,12 @@ const FormFirst = () => {
         <div className="contact__form-content">
           {/* TODO 필수 항목인 경우 span 에 클래스 required 추가 */}
           <span className="contact__form-input-title required">Institution Name</span>
-          <input type="text" className="contact__form-input"/>
+          <input type="text" className="contact__form-input" />
         </div>
 
-        <div className="contact__form-content">
+        <div className="-content">
           <span className="contact__form-input-title">How many students will be enrolled in?</span>
-          <input type="text" className="contact__form-input"/>
+          <input type="text" className="contact__form-input" />
         </div>
 
         <div className="contact__form-content">
@@ -74,20 +79,20 @@ const FormSecond = () => {
 
       <div className="contact__form-input-box">
         <div className="contact__form-flex-box contact__form-flex-box--name">
-          <div className="contact__form-content contact__form-content--name"> 
+          <div className="contact__form-content contact__form-content--name">
             {/* TODO 필수 항목인 경우 span 에 클래스 required 추가 */}
             <span className="contact__form-input-title required">First Name</span>
-            <input type="text" className="contact__form-input"/>
+            <input type="text" className="contact__form-input" />
           </div>
 
-          <div className="contact__form-content contact__form-content--name"> 
+          <div className="contact__form-content contact__form-content--name">
             {/* TODO 필수 항목인 경우 span 에 클래스 required 추가 */}
             <span className="contact__form-input-title required">Last Name</span>
-            <input type="text" className="contact__form-input"/>
+            <input type="text" className="contact__form-input" />
           </div>
         </div>
 
-        <div className="contact__form-content"> 
+        <div className="contact__form-content">
           {/* TODO 필수 항목인 경우 span 에 클래스 required 추가 */}
           <span className="contact__form-input-title required">Title</span>
           <div className="contact__form-select">
@@ -107,7 +112,7 @@ const FormSecond = () => {
           </div>
         </div>
 
-        <div className="contact__form-content"> 
+        <div className="contact__form-content">
           {/* TODO 필수 항목인 경우 span 에 클래스 required 추가 */}
           <span className="contact__form-input-title required">Phone Number</span>
 
@@ -129,14 +134,14 @@ const FormSecond = () => {
                 </ul>
               </div>
             </div>
-            <input type="text" className="contact__form-input"/>
+            <input type="text" className="contact__form-input" />
           </div>
         </div>
 
-        <div className="contact__form-content contact__form-content--name"> 
+        <div className="contact__form-content contact__form-content--name">
           {/* TODO 필수 항목인 경우 span 에 클래스 required 추가 */}
           <span className="contact__form-input-title required">Email</span>
-          <input type="text" className="contact__form-input"/>
+          <input type="text" className="contact__form-input" />
         </div>
 
         <div className="contact__form-bottom contact__form-bottom--flex">
