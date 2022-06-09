@@ -15,7 +15,7 @@ let note = "";
 
 const Contact = () => {
   const [viewIndex,setViewIndex] = useState(1)
-
+  
   return (
     <div className="contact">
       <div className="contact__inner">
@@ -82,7 +82,7 @@ const FormFirst = (props) => {
           <input id="institutionName" type="text" className="contact__form-input" onChange={onChange}/>
         </div>
 
-        <div className="contact__form-content">
+        <div className="-contact__form-content">
           <span className="contact__form-input-title">How many students will be enrolled in?</span>
           <input id="enrollStudents" type="text" className="contact__form-input" onChange={onChange}/>
         </div>

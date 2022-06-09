@@ -18,6 +18,16 @@ const ko = {
   ID_HEADER_LINK_SSAFY: "SSAFY",
   ID_HEADER_LINK_JJ: "전주대학교",
   ID_HEADER_LINK_RANKING: "Ranking",
+  // 공통
+  ID_COMMON_MONTH: "월",
+  ID_COMMON_YEAR: "년",
+  ID_COMMON_EDIT: "수정",
+  ID_COMMON_APPLY: "적용",
+  ID_COMMON_VIEW_MORE: "+ 더보기",
+  ID_COMMON_GO_BACK: "이전으로",
+  ID_COMMON_TOTAL: "총",
+  ID_COMMON_MISSION: "차시",
+  ID_COMMON_CONFIRM: "확인",
   ID_TUTORIAL_POPUP_TITLE: "코딩 파티가 무엇인지 알고 싶다면?",
   ID_HOME_MAIN_CREATE: "창작하기",
   ID_HOME_BANNER_DETAIL: "내가 만든 게임,\n모바일에서\n바로 플레이하세요.",
@@ -1325,21 +1335,16 @@ const ko = {
   ID_INTRO_SECOND_SECTION_INFO_TITLE_1 : "6 to 12",
   ID_INTRO_SECOND_SECTION_INFO_TITLE_2 : "36 missions",
   ID_INTRO_SECOND_SECTION_INFO_TITLE_3 : "100 hours",
-
   ID_INTRO_SECOND_SECTION_INFO_TITLE_1_EXPLAN : "A coding class\nfor students aged 6 to 12",
   ID_INTRO_SECOND_SECTION_INFO_TITLE_2_EXPLAN : "36 STEM convergence missions\nmeeting the CSTA standard",
   ID_INTRO_SECOND_SECTION_INFO_TITLE_3_EXPLAN : "A 100=hour PBL curriculum\nto develop pracrical skills",
-  
   ID_INTRO_THIRD_SECTION_TITLE : "Here's how\nthe curriculum works",
   ID_INTRO_GAME_VIDEO_SECTION_TITLE : "Your very own game\ncreated with Astro",
-
   ID_INTRO_GAME_VIDEO_SECTION_CHILD_TITLE : "The LMS (Learning Management System) manages\nvarious classes and can be applied flexibly in various institutions.",
   ID_INTRO_GAME_VIDEO_LINE_BANNER_TITLE_LEFT : "How to play",
-
   ID_INTRO_LINE_BANNER_TITLE : "Try our free courses first!",
   ID_INTRO_LINE_BANNER_CHILD_TITLE : "Fun and learning all at once",
   ID_INTRO_LINE_BANNER_GO_TO_FREE_COURSE_LINK : "Go to Free Trial Course",
-
   ID_INTRO_INTRODUCE_AREA_CONTENT_TITLE : "Systematic LMS",
   ID_INTRO_INTRODUCE_AREA_CONTENT_TITLE_2 : "Project-Based Practical Classes",
   ID_INTRO_INTRODUCE_AREA_CONTENT_TITLE_3 : "The Patented OOBC Technology",
@@ -1349,17 +1354,15 @@ const ko = {
 
   ID_INTRO_SCROLL_AREA_LEFT_TITLE : "Self Managing Education",
   ID_INTRO_SCROLL_AREA_LEFT_CHILD_TITLE : "A self-managing education method provides tips and\nanswers within each mission, ultimately minimizing the\ninstructions that are required for instructors.",
-  
   ID_INTRO_SCROLL_AREA_LEFT_TITLE_2 : "Study Assistant Tools",
   ID_INTRO_SCROLL_AREA_LEFT_CHILD_TITLE_2 : "The assistant provides tools to help students solve\ndifficult problems on their own such as code sorting,\nAPI dictionary, and a question and answer board while\nthey write their own code.",
   ID_INTRO_CONTACT_TITLE : "Contact US",
   ID_INTRO_CONTACT_CHILD_TITLE : "Submit the contact form to receive\na free account and try the premium content\nof Astro Coding Go for free.",
-
   ID_INTRO_VIEW_MORE_NOTICE_TITLE : "Teach coding on a fun and exciting way!",
   ID_INTRO_VIEW_MORE_LEFT_TITLE : "Want to know more\nabout the Curriculum?",
   ID_INTRO_VIEW_MORE_RIGHT_TITLE : "Start your free trial\ncourse right now!",
   
-    // 계정 설정
+  // 계정 설정
   ID_ACCOUNT_SETTING_TITLE: "계정 설정",
   ID_ACCOUNT_SETTING_TAB_01: "계정 관리",
   ID_ACCOUNT_SETTING_TAB_02: "비밀번호 변경",
@@ -1377,20 +1380,14 @@ const ko = {
   ID_ACCOUNT_EDIT_NAME_POPUP_ENTER_FAMILY_NAME: "성을 입력하세요.",
   ID_ACCOUNT_EDIT_NICKNAME_POPUP_TITLE: "닉네임 수정",
   ID_ACCOUNT_EDIT_NICKNAME_POPUP_ENTER_NICKNAME: "닉네임을 입력하세요.",
+  ID_ACCOUNT_SETTING_ALERT_NEW_PWD_NOT_EQUAL: "새 비밀번호와 비밀번호 확인이 일치하지 않습니다. ",
+  ID_ACCOUNT_SETTING_ALERT_NEW_PWD_LENGTH: "비밀번호는 6자리 이상 입력해야 합니다.",
 
   ID_ATTENDANCE_TITLE: "출석현황",
-  
-  // 공통
-  ID_COMMON_MONTH: "월",
-  ID_COMMON_YEAR: "년",
-
-  ID_ABOUT_INTRO_TITLE : "Exciting Coding Lessons with Go Astro Go!",
-  ID_ABOUT_INTRO_CHILD_TITLE : "Astro sets out to solve problems happening\nall over the world together with SUZU and Astro Kitty",
-  ID_COMMON_EDIT: "수정",
-  ID_COMMON_APPLY: "적용",
+  ID_PLAY_RECENT_GAMES: "Recently Played",
+  ID_PLAY_ALL_GAMES: "All Games",
 
   ID_INTRO_CONTACT_US : "Contact Us",
-
   ID_INTRO_SCROLL_ACTION_IMG_TITLE_1 : "Self Check",
   ID_INTRO_SCROLL_ACTION_IMG_CHILD_TITLE_1 : "Student can view what they learned\nfrom each mission on their own",
   ID_INTRO_SCROLL_ACTION_IMG_TITLE_2 : "Dashboard",
@@ -1399,18 +1396,10 @@ const ko = {
   ID_INTRO_SCROLL_ACTION_IMG_CHILD_TITLE_3 : "Arrange a written code\naccording to JS grammar.",
   ID_INTRO_SCROLL_ACTION_IMG_TITLE_4 : "API dictionary",
   ID_INTRO_SCROLL_ACTION_IMG_CHILD_TITLE_4 : "Find the commands\nyou need by function.",
-
-
-  ID_COMMON_VIEW_MORE: "+ 더보기",
-  ID_COMMON_GO_BACK: "이전으로",
-  ID_COMMON_TOTAL: "총",
-  ID_COMMON_MISSION: "차시",
-
   ID_INTRO_PLAY_WAY : "Press button to destroy plasma!",
   ID_INTRO_CONTACT_COMPLETE_TITLE : "컨택 폼 제출 완료",
   ID_INTRO_CONTACT_COMPLETE_CHILD_TITLE : "컨택 주셔서 감사합니다.\n담당자 확인 후 연락드리겠습니다.",
   ID_INTRO_CONTACT_COMPLETE_OK_BUTTON : "확인",
-
   ID_INTRO_EASY_SECTION_TITLE : "Instructor LMS Feature\nfor Easy Instruction and Guidance",
   ID_INTRO_EASY_SECTION_CHILD_TITLE : "The LMS (Learning Management System) manages\nvarious classes and can be applied flexibly in various institutions.",
   ID_INTRO_EASY_ITEM_TITLE_1 : "Create classes\nand manage students",
@@ -1424,7 +1413,6 @@ const ko = {
   ID_ABOUT_CURRICULUM_CARD_CONTENT_2 : "Naturak sciences,biology, physicsm\ntechnology, and math! Students can learn various STEM concepts with Astro Boy Go! clips and utilize what they learned in their projects.",
   ID_ABOUT_CURRICULUM_CARD_TITLE_3 : "UN SDGs",
   ID_ABOUT_CURRICULUM_CARD_CONTENT_3 : "Students can learn the core concepts of the UN's 17 Sustainable\nDevelopment Goals through the\nproject and grow up to become\nmature citizens.",
-
   ID_ABOUT_HORIZONTAL_SLIDE_TITLE : "Learn coding with exciting adventures!",
   ID_ABOUT_HORIZONTAL_SLIDE_ITEM_TITLE_1 : "Hungry Robot",
   ID_ABOUT_HORIZONTAL_SLIDE_ITEM_CHILD_TITLE_1 : "Learn about events and create a simple puzzle game.",
@@ -1436,16 +1424,13 @@ const ko = {
   ID_ABOUT_HORIZONTAL_SLIDE_ITEM_CHILD_TITLE_4 : "Use JavaScript to implement events and create an escape room.",
   ID_ABOUT_HORIZONTAL_SLIDE_ITEM_TITLE_5 : "Island of Peril",
   ID_ABOUT_HORIZONTAL_SLIDE_ITEM_CHILD_TITLE_5 : "Learn about functions and clean the polluted ocean with Astro.",
-
-  ID_PLAY_RECENT_GAMES: "Recently Played",
-  ID_PLAY_ALL_GAMES: "All Games",
-
+  ID_ABOUT_INTRO_TITLE : "Exciting Coding Lessons with Go Astro Go!",
+  ID_ABOUT_INTRO_CHILD_TITLE : "Astro sets out to solve problems happening\nall over the world together with SUZU and Astro Kitty",
   ID_ABOUT_STRUCTURE_TITLE : "Curriculum Structure",
   ID_ABOUT_DOWNLOAD_CURRICULUM : "Download Curriculum in PDF",
   ID_ABOUT_STRUCTURE_BLOCK_CODING : "Block Coding",
   ID_ABOUT_STRUCTURE_JAVASCRIPT : "JavaScript",
   ID_ABOUT_MORE_TRIAL_TEXT : "Go to Free Trial",
-
   ID_ABOUT_INFORMATION_TITLE : "Information",
   ID_ABOUT_INFORMATION_TECHNICAL : "Technical Specifications",
   ID_ABOUT_INFORMATION_PROFILE : "Company Profile",
