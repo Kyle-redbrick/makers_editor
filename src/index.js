@@ -25,10 +25,10 @@ const getNavigatorLanguage = () => {
 
   let lang;
   switch (window.location.hostname) {
-    case "jp.astro-coding-go.com":
+    case "astroboy-dev-jp.wizclass.com":
       lang = "ja"
       break;
-    case "en.astro-coding-go.com":
+    case "astroboy-dev-en.wizclass.com":
       lang = "en"
       break;
     default:
