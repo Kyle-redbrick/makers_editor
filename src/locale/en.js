@@ -26,6 +26,7 @@ const en = {
   ID_COMMON_GO_BACK: "Go Back",
   ID_COMMON_TOTAL: "Total",
   ID_COMMON_MISSION: " Missions",
+  ID_COMMON_CONFIRM: "Confirm",
   ID_TUTORIAL_POPUP_TITLE: "Do you not know what to do?",
   ID_HOME_MAIN_CREATE: "Create",
   ID_HOME_BANNER_DETAIL: "Play the games you made\non your mobile devices\nright away",

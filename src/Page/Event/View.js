@@ -162,7 +162,7 @@ const ChangePassword = (props) => {
     showPopUp(
       <PopUp.OneButton
         title={info}
-        buttonName={"Confirm"}
+        buttonName={props.intl.formatMessage({id: "ID_COMMON_CONFIRM"})}
       />,
       {
         darkmode: true,

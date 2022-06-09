@@ -26,6 +26,7 @@ const zh = {
   ID_COMMON_MISSION: "차시",
   ID_COMMON_EDIT: "Edit",
   ID_COMMON_APPLY: "Apply",
+  ID_COMMON_CONFIRM: "Confirm",
   ID_TUTORIAL_POPUP_TITLE: "不清楚该如何操作？",
   ID_HOME_MAIN_CREATE: "创作",
   ID_HOME_BANNER_DETAIL: "在手机上\n直接可以玩\n我独创的游戏哦。 ",

@@ -27,6 +27,7 @@ const ko = {
   ID_COMMON_GO_BACK: "이전으로",
   ID_COMMON_TOTAL: "총",
   ID_COMMON_MISSION: "차시",
+  ID_COMMON_CONFIRM: "확인",
   ID_TUTORIAL_POPUP_TITLE: "코딩 파티가 무엇인지 알고 싶다면?",
   ID_HOME_MAIN_CREATE: "창작하기",
   ID_HOME_BANNER_DETAIL: "내가 만든 게임,\n모바일에서\n바로 플레이하세요.",
