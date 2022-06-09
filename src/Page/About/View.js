@@ -12,9 +12,9 @@ import VerticalSlide from "../Intro/ThirdSection";
 import ImgBoy from "../../Image/img_astro_boy_character.png";
 import ImgSuzu from "../../Image/img_suzu_character.png";
 import ImgKitty from "../../Image/img_astro_kitty_character.png";
-import ImgBannerBoy from "../../Image/banner-astro-boy.png";
-import ImgBannerSuzu from "../../Image/banner-suzu.png";
-import ImgBannerKitty from "../../Image/banner-kitty.png";
+import ImgBannerBoy from "../../Image/about-boy-bg.png";
+import ImgBannerSuzu from "../../Image/about-suzu-bg.png";
+import ImgBannerKitty from "../../Image/about-kitty-bg.png";
 import Curriculum from "./Curriculum";
 import HorizontalSlide from "./HorizontalSlide";
 import Structure from "./Structure";
@@ -62,9 +62,29 @@ function View(props) {
             {/* TODO 두 영역이 연결되어 위에서 누르는 캐릭터들의 배너가 나와야함. */}
 
             <div className="first-section__character-intro-banner-list">
-              <img alt="astro boy detail" src={ImgBannerBoy} />
-             {/*  <img alt="suzu detail" src={ImgBannerSuzu} />
-              <img alt="kitty detail" src={ImgBannerKitty} /> */}
+              <div className="first-section__character-box">
+                <div className="first-section__character-title-box first-section__character-title-box--boy">
+                  <h3 className="first-section__character-title"><FormattedMessage id="ID_ABOUT_CHARACTER_BOY_TITLE" /></h3>
+                  <span className="first-section__character-child-title"><FormattedMessage id="ID_ABOUT_CHARACTER_BOY_CHILD_TITLE" /></span>
+                </div>
+                <img alt="astro boy detail" src={ImgBannerBoy} />
+              </div>
+
+              {/* <div className="first-section__character-box">
+                <div className="first-section__character-title-box first-section__character-title-box--suzu">
+                  <h3 className="first-section__character-title"><FormattedMessage id="ID_ABOUT_CHARACTER_SUZU_TITLE" /></h3>
+                  <span className="first-section__character-child-title"><FormattedMessage id="ID_ABOUT_CHARACTER_SUZU_CHILD_TITLE" /></span>
+                </div>
+                <img alt="suzu detail" src={ImgBannerSuzu} />
+              </div> */}
+
+              {/* <div className="first-section__character-box">
+                <div className="first-section__character-title-box first-section__character-title-box--kitty">
+                  <h3 className="first-section__character-title"><FormattedMessage id="ID_ABOUT_CHARACTER_KITTY_TITLE" /></h3>
+                  <span className="first-section__character-child-title"><FormattedMessage id="ID_ABOUT_CHARACTER_KITTY_CHILD_TITLE" /></span>
+                </div>
+                <img alt="kitty detail" src={ImgBannerKitty} /> 
+              </div> */}
             </div>
           </div>
         </div>

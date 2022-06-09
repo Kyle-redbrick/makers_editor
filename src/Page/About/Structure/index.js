@@ -14,13 +14,13 @@ function Structure () {
   return (
     <div className="structure">
       <h3 className="structure__title"><FormattedMessage id="ID_ABOUT_STRUCTURE_TITLE" /></h3>
-      {/* TODO 파일 다운 버튼 */}
-      <a className="structure__file-down" rel="noopener noreferrer" >
+      {/* TODO 파일 다운 버튼 / 파일 전달 받을 때까지 주석처리 */}
+      {/* <a className="structure__file-down" rel="noopener noreferrer" >
         <img alt="다운 아이콘" src={IconDown} />
         <span className="structure__down-text">
           <FormattedMessage id="ID_ABOUT_DOWNLOAD_CURRICULUM" />
         </span>
-      </a>
+      </a> */}
 
       <div className="structure__trial-wrap">
         <div className="structure__trial">
