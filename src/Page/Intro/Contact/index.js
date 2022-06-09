@@ -16,7 +16,6 @@ let note = "";
 const Contact = () => {
   const [viewIndex,setViewIndex] = useState(1)
   
-  
   return (
     <div className="contact">
       <div className="contact__inner">
@@ -83,7 +82,7 @@ const FormFirst = (props) => {
           <input id="institutionName" type="text" className="contact__form-input" onChange={onChange}/>
         </div>
 
-        <div className="-content">
+        <div className="-contact__form-content">
           <span className="contact__form-input-title">How many students will be enrolled in?</span>
           <input id="enrollStudents" type="text" className="contact__form-input" onChange={onChange}/>
         </div>
@@ -156,20 +155,20 @@ const FormSecond = (props) => {
 
       <div className="contact__form-input-box">
         <div className="contact__form-flex-box contact__form-flex-box--name">
-          <div className="contact__form-content contact__form-content--name">
+          <div className="contact__form-content contact__form-content--name"> 
             {/* TODO 필수 항목인 경우 span 에 클래스 required 추가 */}
             <span className="contact__form-input-title required">First Name</span>
             <input id="familyName" type="text" className="contact__form-input" onChange={onChange}/>
           </div>
 
-          <div className="contact__form-content contact__form-content--name">
+          <div className="contact__form-content contact__form-content--name"> 
             {/* TODO 필수 항목인 경우 span 에 클래스 required 추가 */}
             <span className="contact__form-input-title required">Last Name</span>
             <input id="givenName" type="text" className="contact__form-input" onChange={onChange}/>
           </div>
         </div>
 
-        <div className="contact__form-content">
+        <div className="contact__form-content"> 
           {/* TODO 필수 항목인 경우 span 에 클래스 required 추가 */}
           <span className="contact__form-input-title required">Title</span>
           <div className="contact__form-select">
@@ -189,7 +188,7 @@ const FormSecond = (props) => {
           </div>
         </div>
 
-        <div className="contact__form-content">
+        <div className="contact__form-content"> 
           {/* TODO 필수 항목인 경우 span 에 클래스 required 추가 */}
           <span className="contact__form-input-title required">Phone Number</span>
 
@@ -215,7 +214,7 @@ const FormSecond = (props) => {
           </div>
         </div>
 
-        <div className="contact__form-content contact__form-content--name">
+        <div className="contact__form-content contact__form-content--name"> 
           {/* TODO 필수 항목인 경우 span 에 클래스 required 추가 */}
           <span className="contact__form-input-title required">Email</span>
           <input id="email" type="text" className="contact__form-input" onChange={onChange}/>
