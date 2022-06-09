@@ -143,7 +143,14 @@ const ChangePassword = (props) => {
     let info = "";
     if (newPwd.length > 5 && newPwd === checkNewPwd) {
       const res = await Request.modifyPassword({ "currentPasswd": sha256(pwd), "newPasswd": sha256(newPwd) })
-      info = "success"
+        .then(res => res.json())
+        .then(json => {
+          if(json.success) {
+            info = "success"
+          } else {
+            info = json.reason;
+          }
+        });
     } else if (newPwd.length < 5) {
       info = props.intl.formatMessage({id: "ID_ACCOUNT_SETTING_ALERT_NEW_PWD_LENGTH"})
       setWarnText({ "warnNewPwd": info })
