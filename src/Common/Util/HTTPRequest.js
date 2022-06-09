@@ -1620,3 +1620,9 @@ export const modifyName =  (params)=> {
     res => res.json()
   );
 }
+
+export const sendContact =  (params)=> {
+  return fetchRequest(URL.API_SERVER + `intro/contact`, "POST",  params).then(
+    res => res.json()
+  );
+}

@@ -19,6 +19,7 @@ import Curriculum from "./Curriculum";
 import HorizontalSlide from "./HorizontalSlide";
 import Structure from "./Structure";
 import Information from "./Information";
+import BannerCharacterImg from "../../Image/img-about-banner-character.png";
 import "./index.scss";
 
 function View(props) {
@@ -27,7 +28,13 @@ function View(props) {
     <Layout>
       <div className="Page--About">
         <div className="about__section-banner">
-          <div className="about-banner" />
+          <div className="about-banner">
+            <div className="about-banner__title-box">
+              <h3 className="about-banner__title"><FormattedMessage id="ID_ABOUT_TOP_BANNER_TITLE" /></h3>
+              <span className="about-banner__child-title"><FormattedMessage id="ID_ABOUT_TOP_BANNER_CHILD_TITLE" /></span>
+            </div>
+            <img alt="캐릭터 이미지" src={BannerCharacterImg} />
+          </div>
         </div>
 
         <div className="first_section">
@@ -62,6 +69,8 @@ function View(props) {
           </div>
         </div>
         <HorizontalSlide />
+
+        <Curriculum />
 
         {/* vertical slide area */}
         <VerticalSlide />
