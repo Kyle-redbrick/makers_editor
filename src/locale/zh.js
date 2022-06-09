@@ -1377,6 +1377,8 @@ const zh = {
   ID_ACCOUNT_EDIT_NAME_POPUP_ENTER_FAMILY_NAME: "Enter your last name.",
   ID_ACCOUNT_EDIT_NICKNAME_POPUP_TITLE: "Edit Nickname",
   ID_ACCOUNT_EDIT_NICKNAME_POPUP_ENTER_NICKNAME: "Enter your nickname.",
+  ID_ACCOUNT_SETTING_ALERT_NEW_PWD_NOT_EQUAL: "The new password is not identical to the confirm password.",
+  ID_ACCOUNT_SETTING_ALERT_NEW_PWD_LENGTH: "The password needs to be longer than 6 letters.",
   
   ID_ATTENDANCE_TITLE: "출석현황",
   ID_PLAY_RECENT_GAMES: "Recently Played",

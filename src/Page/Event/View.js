@@ -139,23 +139,23 @@ const ChangePassword = (props) => {
 
 
   const onClickSubmit = async (id) => {
-    let res = undefined
-    let info = ""
+    let res = undefined;
+    let info = "";
     if (newPwd.length > 5 && newPwd === checkNewPwd) {
       const res = await Request.modifyPassword({ "currentPasswd": sha256(pwd), "newPasswd": sha256(newPwd) })
       info = "success"
     } else if (newPwd.length < 5) {
-      info = "newPwd.length < 5"
-      setWarnText({ "warnNewPwd": "newPwd.length < 5" })
+      info = props.intl.formatMessage({id: "ID_ACCOUNT_SETTING_ALERT_NEW_PWD_LENGTH"})
+      setWarnText({ "warnNewPwd": info })
     } else if (newPwd !== checkNewPwd) {
-      info = "newPwd !== checkNewPwd"
-      setWarnText({ "warnCheckPwd": "newPwd !== checkNewPwd" })
+      info = props.intl.formatMessage({id: "ID_ACCOUNT_SETTING_ALERT_NEW_PWD_NOT_EQUAL"})
+      setWarnText({ "warnCheckPwd": info })
     }
 
     showPopUp(
       <PopUp.OneButton
         title={info}
-        buttonName={"Submit"}
+        buttonName={"Confirm"}
       />,
       {
         darkmode: true,
@@ -179,7 +179,7 @@ const ChangePassword = (props) => {
                   className="account__content-input account__content-input--password"
                   placeholder={placeholder}
                   onChange={onChangeValue}
-                  maxlength="20"
+                  maxLength="20"
                 />
               }
             </FormattedMessage>
@@ -203,7 +203,7 @@ const ChangePassword = (props) => {
                   className="account__content-input account__content-input--password"
                   placeholder={placeholder}
                   onChange={onChangeValue}
-                  maxlength="20"
+                  maxLength="20"
                 />
               }
             </FormattedMessage>
@@ -228,7 +228,7 @@ const ChangePassword = (props) => {
                   className="account__content-input account__content-input--password"
                   placeholder={placeholder}
                   onChange={onChangeValue}
-                  maxlength="20"
+                  maxLength="20"
                 />
               }
             </FormattedMessage>

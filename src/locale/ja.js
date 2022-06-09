@@ -1383,6 +1383,9 @@ const ja = {
   ID_ACCOUNT_EDIT_NAME_POPUP_ENTER_FAMILY_NAME: "名字を入力してください。",
   ID_ACCOUNT_EDIT_NICKNAME_POPUP_TITLE: "ニックネームを編集",
   ID_ACCOUNT_EDIT_NICKNAME_POPUP_ENTER_NICKNAME: "ニックネームを入力してください。",
+  ID_ACCOUNT_SETTING_ALERT_NEW_PWD_NOT_EQUAL: "新しいパスワードとパスワードの確認が一致しません。",
+  ID_ACCOUNT_SETTING_ALERT_NEW_PWD_LENGTH: "パスワードは6桁以上入力する必要があります。",
+
 
   ID_ATTENDANCE_TITLE: "出席状況",
   ID_PLAY_RECENT_GAMES: "最近再生しました",
