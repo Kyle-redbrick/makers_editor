@@ -363,19 +363,6 @@ class Header extends Component {
                 </Link>
               </div>
             </div>
-            <div className={`header_menu_right ${isMobileMenuOn ? "On" : "Off"}`}>
-              {userinfo.name && (
-                <div className={`header_menu_noti ${this.state.isNotiPopupOn ? "On" : "Off"}`}>
-                  <img
-                    className="header_menus-noti"
-                    src={this.state.badge > 0 ? NotiOnIcon : NotiOffIcon}
-                    alt="img"
-                    onClick={this.onClickNotification}
-                  />
-                </div>
-              )}
-              <DropDown type="user" user={this.props.userinfo} />
-            </div>
             {this.state.isNotiPopupOn &&
               (<div className="header_notification">
                 <Notification
