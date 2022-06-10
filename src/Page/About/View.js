@@ -12,20 +12,40 @@ import VerticalSlide from "../Intro/ThirdSection";
 import ImgBoy from "../../Image/img_astro_boy_character.png";
 import ImgSuzu from "../../Image/img_suzu_character.png";
 import ImgKitty from "../../Image/img_astro_kitty_character.png";
-import ImgBannerBoy from "../../Image/about-boy-bg.png";
-import ImgBannerSuzu from "../../Image/about-suzu-bg.png";
-import ImgBannerKitty from "../../Image/about-kitty-bg.png";
+import ImgBannerBoy_en from "../../Image/about-astroboy-en.png";
+import ImgBannerSuzu_en from "../../Image/about-suzu-en.png";
+import ImgBannerKitty_en from "../../Image/about-astrokitty-en.png";
+import ImgBannerBoy_ja from "../../Image/about-astroboy-jp.png";
+import ImgBannerSuzu_ja from "../../Image/about-suzu-jp.png";
+import ImgBannerKitty_ja from "../../Image/about-astrokitty-jp.png";
 import Curriculum from "./Curriculum";
 import HorizontalSlide from "./HorizontalSlide";
 import Structure from "./Structure";
 import Information from "./Information";
 import BannerCharacterImg from "../../Image/img-about-banner-character.png";
 import "./index.scss";
+import{ useEffect, useState } from "react";
 
-function View({
+const View = ({
   isChange,
   onChangeClick
-}) {
+}) => {
+  const [astroBanner, setAstroBanner] = useState(ImgBannerBoy_en);
+  const [suzuBanner, setSuzuBanner] = useState(ImgBannerSuzu_en);
+  const [kittyBanner, setKittyBanner] = useState(ImgBannerKitty_en);
+  let lang;
+
+  useEffect(() => {
+    lang = localStorage.getItem("lang");
+    switch (lang) {
+      case "ja":
+        setAstroBanner(ImgBannerBoy_ja);
+        setSuzuBanner(ImgBannerSuzu_ja);
+        setKittyBanner(ImgBannerKitty_ja);
+        break;
+    }
+  }, [])
+
   return (
     <Layout>
       <div className="Page--About">
@@ -70,9 +90,9 @@ function View({
             </div>
 
             <div className="first-section__character-intro-banner-list">
-              <img alt="astro boy detail" src={ImgBannerBoy} className={`${isChange === 1 ? "on": ""}`} />
-              <img alt="suzu detail" src={ImgBannerSuzu} className={`${isChange === 2 ? "on": ""}`} />
-              <img alt="kitty detail" src={ImgBannerKitty} className={`${isChange === 3 ? "on": ""}`} />
+              <img alt="astro boy detail" src={astroBanner} className={`${isChange === 1 ? "on": ""}`} />
+              <img alt="suzu detail" src={suzuBanner} className={`${isChange === 2 ? "on": ""}`} />
+              <img alt="kitty detail" src={kittyBanner} className={`${isChange === 3 ? "on": ""}`} />
             </div>
           </div>
         </div>
