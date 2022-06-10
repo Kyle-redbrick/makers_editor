@@ -22,8 +22,10 @@ import Information from "./Information";
 import BannerCharacterImg from "../../Image/img-about-banner-character.png";
 import "./index.scss";
 
-function View(props) {
-
+function View({
+  isChange,
+  onChangeClick
+}) {
   return (
     <Layout>
       <div className="Page--About">
@@ -47,44 +49,30 @@ function View(props) {
             </div>
 
             <div className="first-section__character-list">
-              {/* TODO 클릭하여 활성화 할때마다 클래스 active 추가 */}
-              <span className="first-section__character-item active">
+              <span
+                className={`first-section__character-item ${isChange === 1 ? "active": ""}`}
+                onClick={() => onChangeClick(1)}
+              >
                 <img alt="astro boy" src={ImgBoy} />
               </span>
-              <span className="first-section__character-item">
+              <span
+                className={`first-section__character-item ${isChange === 2 ? "active": ""}`}
+                onClick={() => onChangeClick(2)}
+              >
                 <img alt="suzu"  src={ImgSuzu} />
               </span>
-              <span className="first-section__character-item">
+              <span
+                className={`first-section__character-item ${isChange === 3 ? "active": ""}`}
+                onClick={() => onChangeClick(3)}
+              >
                 <img alt="astro kitty"  src={ImgKitty} />
               </span>
             </div>
 
-            {/* TODO 두 영역이 연결되어 위에서 누르는 캐릭터들의 배너가 나와야함. */}
-
             <div className="first-section__character-intro-banner-list">
-              <div className="first-section__character-box">
-                <div className="first-section__character-title-box first-section__character-title-box--boy">
-                  <h3 className="first-section__character-title"><FormattedMessage id="ID_ABOUT_CHARACTER_BOY_TITLE" /></h3>
-                  <span className="first-section__character-child-title"><FormattedMessage id="ID_ABOUT_CHARACTER_BOY_CHILD_TITLE" /></span>
-                </div>
-                <img alt="astro boy detail" src={ImgBannerBoy} />
-              </div>
-
-              {/* <div className="first-section__character-box">
-                <div className="first-section__character-title-box first-section__character-title-box--suzu">
-                  <h3 className="first-section__character-title"><FormattedMessage id="ID_ABOUT_CHARACTER_SUZU_TITLE" /></h3>
-                  <span className="first-section__character-child-title"><FormattedMessage id="ID_ABOUT_CHARACTER_SUZU_CHILD_TITLE" /></span>
-                </div>
-                <img alt="suzu detail" src={ImgBannerSuzu} />
-              </div> */}
-
-              {/* <div className="first-section__character-box">
-                <div className="first-section__character-title-box first-section__character-title-box--kitty">
-                  <h3 className="first-section__character-title"><FormattedMessage id="ID_ABOUT_CHARACTER_KITTY_TITLE" /></h3>
-                  <span className="first-section__character-child-title"><FormattedMessage id="ID_ABOUT_CHARACTER_KITTY_CHILD_TITLE" /></span>
-                </div>
-                <img alt="kitty detail" src={ImgBannerKitty} /> 
-              </div> */}
+              <img alt="astro boy detail" src={ImgBannerBoy} className={`${isChange === 1 ? "on": ""}`} />
+              <img alt="suzu detail" src={ImgBannerSuzu} className={`${isChange === 2 ? "on": ""}`} />
+              <img alt="kitty detail" src={ImgBannerKitty} className={`${isChange === 3 ? "on": ""}`} />
             </div>
           </div>
         </div>

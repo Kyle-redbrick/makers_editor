@@ -273,6 +273,11 @@
 
   img {
     width:100%;
+    display: none;
+
+    &.on {
+      display: block;
+    }
   }
 }
 
