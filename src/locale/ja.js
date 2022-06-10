@@ -23,6 +23,7 @@ const ja = {
   ID_COMMON_EDIT: "修正",
   ID_COMMON_APPLY: "確認",
   ID_COMMON_VIEW_MORE: "+ もっと見る",
+  ID_COMMON_VIEW_MORE_2: "もっと見る",
   ID_COMMON_GO_BACK: "以前",
   ID_COMMON_TOTAL: "合計",
   ID_COMMON_MISSION: "ミッション",
