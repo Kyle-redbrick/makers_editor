@@ -175,9 +175,11 @@
   text-align:center;
   border: 0;
   display: block;
+  pointer-events: none;
   cursor:pointer;
 
   &.active {
+    pointer-events: auto;
     background-color: #1e67fc;
     color: #fff;
   }
