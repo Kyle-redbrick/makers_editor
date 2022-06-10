@@ -216,7 +216,7 @@ const FormSecond = (props) => {
               <img alt="펼쳐보기 아이콘" src={DownArrowIcon} />
             </span>
 
-            <div className={"contact__form-select-dropdown" + (openDropdown ? "-on" : "")} >
+            <div className={"contact__form-select-dropdown" + (openDropdown ? " on" : "")} >
               <ul className="contact__form-select-dropdown-list">
                 {["Teacher", "Administrator (Principal/VP)", "Technology Interator","Other"].map((item)=>(
                   <li key={item} className="contact__form-select-dropdown-item" onClick={()=>onclickDropdown(item)}>{item}</li>
