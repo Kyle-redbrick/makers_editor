@@ -372,7 +372,7 @@ const ko = {
   ID_BUILDER_EDITPOP_CODE_CLOSE: "비공개",
   ID_WIZAPP_CATEGORY_GAME: "게임",
   ID_WIZAPP_CATEGORY_UTIL: "유틸리티",
-  ID_HOME_COPY_INFO: `Copyright @ Tezuka production. All Rights Reserved.`,
+  ID_HOME_COPY_INFO: `© IDC ASIA Co., Ltd. All Rights Reserved.`,
   ID_HOME_FOOTER_01: `사업자등록번호 636-87-01115    |    통신판매업신고번호 제2019-서울강남-00100호    |    서울특별시 강남구 강남대로94길 10 케이스퀘어 701호    |    wizlab@wizschool.io`,
   ID_FOOTER_TERMS: "이용약관",
   ID_FOOTER_PRIVACY: "개인정보 처리방침",
@@ -1337,10 +1337,12 @@ const ko = {
   ID_INTRO_SECOND_SECTION_INFO_TITLE_3 : "100 hours",
   ID_INTRO_SECOND_SECTION_INFO_TITLE_1_EXPLAN : "A coding class\nfor students aged 6 to 12",
   ID_INTRO_SECOND_SECTION_INFO_TITLE_2_EXPLAN : "36 STEM convergence missions\nmeeting the CSTA standard",
-  ID_INTRO_SECOND_SECTION_INFO_TITLE_3_EXPLAN : "A 100=hour PBL curriculum\nto develop pracrical skills",
+  ID_INTRO_SECOND_SECTION_INFO_TITLE_3_EXPLAN : "A 100 hours PBL curriculum\nto develop pracrical skills",
+  
   ID_INTRO_THIRD_SECTION_TITLE : "Here's how\nthe curriculum works",
   ID_INTRO_GAME_VIDEO_SECTION_TITLE : "Your very own game\ncreated with Astro",
-  ID_INTRO_GAME_VIDEO_SECTION_CHILD_TITLE : "The LMS (Learning Management System) manages\nvarious classes and can be applied flexibly in various institutions.",
+
+  ID_INTRO_GAME_VIDEO_SECTION_CHILD_TITLE : "Experience what you can make at Astro Coding Go!",
   ID_INTRO_GAME_VIDEO_LINE_BANNER_TITLE_LEFT : "How to play",
   ID_INTRO_LINE_BANNER_TITLE : "Try our free courses first!",
   ID_INTRO_LINE_BANNER_CHILD_TITLE : "Fun and learning all at once",
