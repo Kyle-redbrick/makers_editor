@@ -110,7 +110,7 @@ const BlockCoding = (props) => {
       </div>
 
       <p className="structure__trial-explain">
-        Efficient coding grammar lessons with the self-developed block coding language OOBC! Students can create results through 24 missions that utilize various concepts from sequence to repetition.
+        <FormattedMessage id="ID_ABOUT_STRUCTURE_BLOCKCODING_EXPLAIN" />
       </p>
 
       {bCurriculum.map((curriculum, index) => 
@@ -193,7 +193,7 @@ const Javascript = (props) => {
       </div>
 
       <p className="structure__trial-explain">
-        Learn text coding for the first time with Astro! The auto-completion feature can help even students who aren’t good at typing to learn the text coding language JavaScript. Try the 12 different missions that utilize advanced concepts such as functions and arrays.
+        <FormattedMessage id="ID_ABOUT_STRUCTURE_JAVASCRIPT_EXPLAIN" />
       </p>
       { jsCurriculum.map((curriculum, index) =>
         <div key={curriculum.course.id} className="structure__slide-box">

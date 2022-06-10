@@ -64,7 +64,6 @@ const FormFirst = (props) => {
 
   const onClickNextBtn = ()=> {
     props.setViewIndex(2)
-    console.log(11111111111)
   }
 
   return (
@@ -78,24 +77,32 @@ const FormFirst = (props) => {
       <div className="contact__form-input-box">
         <div className="contact__form-content">
           {/* TODO 필수 항목인 경우 span 에 클래스 required 추가 */}
-          <span className="contact__form-input-title required">Institution Name</span>
-          <input id="institutionName" type="text" className="contact__form-input" onChange={onChange}/>
-        </div>
-
-        <div className="-contact__form-content">
-          <span className="contact__form-input-title">How many students will be enrolled in?</span>
-          <input id="enrollStudents" type="text" className="contact__form-input" onChange={onChange}/>
+          <span className="contact__form-input-title required">
+            <FormattedMessage id="ID_INTRO_CONTACT_1_INSTITUTION_NAME"/>
+          </span>
+           <input id="institutionName" type="text" className="contact__form-input" onChange={onChange}/>
         </div>
 
         <div className="contact__form-content">
-          <span className="contact__form-input-title">Any other note?</span>
+          <span className="contact__form-input-title">
+            <FormattedMessage id="ID_INTRO_CONTACT_1_STUDENTS_COUNT"/>
+          </span>
+           <input id="enrollStudents" type="text" className="contact__form-input" onChange={onChange}/>
+        </div>
+
+        <div className="contact__form-content">
+          <span className="contact__form-input-title">
+            <FormattedMessage id="ID_INTRO_CONTACT_1_NOTE"/>
+          </span>
           <textarea id="note" className="contact__form-textarea" onChange={onChange}/>
         </div>
       </div>
 
       <div className="contact__form-bottom">
         {/* TODO 활성화 시 클래스 active 추가 */}
-        <button type="button" className={`contact__from-next ${enableBtn ? "active" : ""}`} onClick = {onClickNextBtn}>Next</button>
+        <button type="button" className={`contact__from-next ${enableBtn ? "active" : ""}`} onClick = {onClickNextBtn}>
+          <FormattedMessage id="ID_INTRO_CONTACT_BUTTON_NEXT"/>
+        </button>
       </div>
 
     </>
@@ -157,32 +164,42 @@ const FormSecond = (props) => {
         <div className="contact__form-flex-box contact__form-flex-box--name">
           <div className="contact__form-content contact__form-content--name"> 
             {/* TODO 필수 항목인 경우 span 에 클래스 required 추가 */}
-            <span className="contact__form-input-title required">First Name</span>
+            <span className="contact__form-input-title required">
+              <FormattedMessage id="ID_INTRO_CONTACT_2_FIRST_NAME"/>
+            </span>
             <input id="familyName" type="text" className="contact__form-input" onChange={onChange}/>
           </div>
 
           <div className="contact__form-content contact__form-content--name"> 
             {/* TODO 필수 항목인 경우 span 에 클래스 required 추가 */}
-            <span className="contact__form-input-title required">Last Name</span>
+            <span className="contact__form-input-title required">
+              <FormattedMessage id="ID_INTRO_CONTACT_2_LAST_NAME"/>
+            </span>
             <input id="givenName" type="text" className="contact__form-input" onChange={onChange}/>
           </div>
         </div>
 
         <div className="contact__form-content"> 
           {/* TODO 필수 항목인 경우 span 에 클래스 required 추가 */}
-          <span className="contact__form-input-title required">Title</span>
+          <span className="contact__form-input-title required">
+            <FormattedMessage id="ID_INTRO_CONTACT_2_TITLE"/>
+          </span>
           <div className="contact__form-select">
             {/* TODO 클릭 했을 떄 클래스 on 추가 */}
             <span className="contact__form-select-title">
-              select
+              <FormattedMessage id="ID_INTRO_CONTACT_2_SELECT"/>
               <img alt="펼쳐보기 아이콘" src={DownArrowIcon} />
             </span>
 
             {/* TODO 펼쳤을 때 list / 같은위치인 span 에게 클래스 on 추가 되었을 때 같이 나타나야함 */}
             <div className="contact__form-select-dropdown">
               <ul className="contact__form-select-dropdown-list">
-                <li className="contact__form-select-dropdown-item">Teacher</li>
-                <li className="contact__form-select-dropdown-item">Administrator (Principal/VP)</li>
+                <li className="contact__form-select-dropdown-item">
+                  <FormattedMessage id="ID_INTRO_CONTACT_2_TEACHER"/>
+                </li>
+                <li className="contact__form-select-dropdown-item">
+                  <FormattedMessage id="ID_INTRO_CONTACT_2_ADMINISTRATOR"/>
+                </li>
               </ul>
             </div>
           </div>
@@ -190,12 +207,14 @@ const FormSecond = (props) => {
 
         <div className="contact__form-content"> 
           {/* TODO 필수 항목인 경우 span 에 클래스 required 추가 */}
-          <span className="contact__form-input-title required">Phone Number</span>
+          <span className="contact__form-input-title required">
+            <FormattedMessage id="ID_INTRO_CONTACT_2_PHONE_NUMBER"/>
+          </span>
 
           <div className="contact__from-select-input">
             <div className="contact__form-select">
               <span className="contact__form-select-title">
-                select
+                <FormattedMessage id="ID_INTRO_CONTACT_2_SELECT"/>
                 <img alt="펼쳐보기 아이콘" src={DownArrowIcon} />
               </span>
 
@@ -204,8 +223,12 @@ const FormSecond = (props) => {
                 <ul className="contact__form-select-dropdown-list">
                   <li className="contact__form-select-dropdown-item">
                     🇲🇴 {/* TODO 국가 아이콘 */}
-                    &nbsp; <span className="contact__call-country-name">Japan</span> {/* TODO 국가이름 */}
-                    <span className="contact__call-country-number">+ 81</span> {/* TODO  국가 call number */}
+                    &nbsp; <span className="contact__call-country-name">
+                        <FormattedMessage id="ID_INTRO_CONTACT_2_CALL_COUNTRY_NAME"/>
+                      </span> {/* TODO 국가이름 */}
+                    <span className="contact__call-country-number">
+                      <FormattedMessage id="ID_INTRO_CONTACT_2_CALL_COuNTRY_NUMBER"/>
+                    </span> {/* TODO  국가 call number */}
                   </li>
                 </ul>
               </div>
@@ -216,17 +239,21 @@ const FormSecond = (props) => {
 
         <div className="contact__form-content contact__form-content--name"> 
           {/* TODO 필수 항목인 경우 span 에 클래스 required 추가 */}
-          <span className="contact__form-input-title required">Email</span>
+          <span className="contact__form-input-title required">
+            <FormattedMessage id="ID_INTRO_CONTACT_2_EMAIL"/>
+          </span>
           <input id="email" type="text" className="contact__form-input" onChange={onChange}/>
         </div>
 
         <div className="contact__form-bottom contact__form-bottom--flex">
           <button type="button" className="contact__form-back" onClick={()=>onClickBtns("backBtn")}>
             <img alt="뒤로가기 버튼" src={BackIcon} />
-            back
+            <FormattedMessage id="ID_INTRO_CONTACT_BUTTON_BACK"/>
           </button>
           {/* TODO 활성화 시 클래스 active 추가 */}
-          <button type="button" className="contact__from-send-btn active" onClick={()=>onClickBtns("sendBtn")}>Send Message</button>
+          <button type="button"  className="contact__from-send-btn active" onClick={()=>onClickBtns("sendBtn")}>
+            <FormattedMessage id="ID_INTRO_CONTACT_BUTTON_SEND"/>
+          </button>
         </div>
       </div>
     </>
