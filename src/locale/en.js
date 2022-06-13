@@ -1379,6 +1379,7 @@ const en = {
   ID_INTRO_CONTACT_2_TECHNOLOGY: "Technology Integrator",
   ID_INTRO_CONTACT_2_OTHER: "Other",
   ID_INTRO_CONTACT_2_EMAIL: "Email",
+  ID_INTRO_CONTACT_2_SUCCESS:"SUCCESS",
 
   ID_ABOUT_CHARACTER_BOY_TITLE : "Astro Boy",
   ID_ABOUT_CHARACTER_BOY_CHILD_TITLE : "AI robot built to resemble a young human boy.\nHe embodies helpful and heroic spirit,\nand is always motivated in his rescue mission.",
