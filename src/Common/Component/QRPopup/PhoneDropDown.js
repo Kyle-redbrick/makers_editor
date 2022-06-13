@@ -75,7 +75,6 @@ class PhoneDropDown extends Component {
             <div className={`PhoneDD__arrow PhoneDD__arrow--${listToggle}`} />
           </div>
           <input
-            id="phone"
             className="PhoneDD__input"
             type="text"
             name="phoneNum"
