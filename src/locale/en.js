@@ -1494,7 +1494,7 @@ const en = {
   ID_ABOUT_TOP_BANNER_CHILD_TITLE : "SW Education platform for both students and teacher!",
 
   ID_INTRO_TOP_BANNER_TITLE : "Learn to code with Go Astro Go!",
-  ID_INTRO_TOP_BANNER_CHILD_TITLE : "Astro Coding Go is a coding educatio platform\ncreated based on CSTA standards",
+  ID_INTRO_TOP_BANNER_CHILD_TITLE : "Astro Coding Go is a coding education platform\ncreated based on CSTA standards",
 
   ID_ABOUT_CHARACTER_BOY_TITLE : "Astro Boy",
   ID_ABOUT_CHARACTER_BOY_CHILD_TITLE : "AI robot built to resemble a young human boy.\nHe embodies helpful and heroic spirit,\nand is always motivated in his rescue mission.",
