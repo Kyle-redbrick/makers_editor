@@ -26,19 +26,23 @@
 .guidance__list {
   display:flex;
   align-items:stretch;
-  margin:60px -15px 0;
+  margin:60px 0px 0;
   justify-content: center;
-  width:100%; 
+  width: 100%;
 }
 
 .guidance__item {
-  margin:0 15px;
+  margin-right: 30px;
   border-radius: 20px;
   background-color: #11c0b6;
   padding: 54px 15px;
   text-align: center;
   width:100%;
   max-width:370px;
+
+  &:last-child {
+    margin-right: 0;
+  }
 
   img {
     width: 50px;

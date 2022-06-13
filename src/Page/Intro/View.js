@@ -142,7 +142,7 @@ function View(props) {
         {/* //introduce 영역 */}
 
         {/* 텍스트 이미지 애니메이션 효과 */}
-        <div className="intro-page__fade-in-text">
+        <div className="intro-page__fade-in-text intro-page__fade-in-text--second">
           <img  alt="A self-Learning Platform For Instructors"  data-aos="fade-up" data-aos-duration="700"  className="intro-page__fade-in-img" src={TextImg2} />
         </div>
 

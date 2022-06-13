@@ -68,9 +68,9 @@
   .first-section__video-wrap {
     margin: 60px auto 58px;
     border-radius: 20px;
-    height: 545px;
+    height: 100%;
+    max-height: 545px;
     width:100%;
-    background-color: #515151;
     max-width: 970px;
   }
 
@@ -160,6 +160,13 @@
     img {
       height: 182px;
       display:block;
+    }
+
+    &.intro-page__fade-in-text--second {
+      img {
+        width: 100%;
+        object-fit: contain;
+      }
     }
   }
 }

@@ -93,7 +93,6 @@ class Header extends Component {
         defaultPadding: false,
         dismissButton: false,
       });
-
     }
   }
 
@@ -364,7 +363,8 @@ class Header extends Component {
               </div>
             </div>
             <div className={`header_menu_right ${isMobileMenuOn ? "On" : "Off"}`}>
-              {userinfo.name && (
+              {userinfo.name &&
+              <>
                 <div className={`header_menu_noti ${this.state.isNotiPopupOn ? "On" : "Off"}`}>
                   <img
                     className="header_menus-noti"
@@ -373,8 +373,9 @@ class Header extends Component {
                     onClick={this.onClickNotification}
                   />
                 </div>
-              )}
-              <DropDown type="user" user={this.props.userinfo} />
+                <DropDown type="user" user={this.props.userinfo} />
+              </>
+              }
             </div>
             {this.state.isNotiPopupOn &&
               (<div className="header_notification">
