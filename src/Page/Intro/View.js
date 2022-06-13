@@ -29,6 +29,9 @@ import TopBannerCharacter from "../../Image/img-intro-banner-character.png";
 import "./index.scss";
 
 function View(props) {
+
+  const lang = localStorage.getItem("lang"); 
+  const IntroVideoUrl = lang == "ja" ? "https://s3.ap-northeast-2.amazonaws.com/astroboy-dev.wizclass.com/assets/media/OT_JP.mp4" : "https://s3.ap-northeast-2.amazonaws.com/astroboy-dev.wizclass.com/assets/media/OT_EN.mp4"
   
   return (
     <Layout>
@@ -63,7 +66,12 @@ function View(props) {
             <div className="first-section__video-wrap">
               {/* TODO video  */}
               <div className="first-section__video">
-                <img alt="비디오 임시 썸네일" src={VideoThumbnail} /> {/* video 임시 썸네일 */}
+                <video
+                  src={IntroVideoUrl}
+                  controlsList="nodownload"
+                  disablePictureInPicture
+                  playsInline
+                />
                 {/* TODO video play button */}
                 <button type="button" className="first-section__play-btn" />
               </div>

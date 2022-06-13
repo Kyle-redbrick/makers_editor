@@ -74,6 +74,9 @@ export default Structure;
 const BlockCoding = (props) => {
   const[bCurriculum, setBCurriculum] = useState([]);
 
+  const lang = localStorage.getItem("lang"); 
+  const BlockVideoUrl = lang == "ja" ? "https://s3.ap-northeast-2.amazonaws.com/astroboy-dev.wizclass.com/assets/media/OOBC_JP.mp4" : "https://s3.ap-northeast-2.amazonaws.com/astroboy-dev.wizclass.com/assets/media/OOBC_EN.mp4"
+
   useEffect(() => {
     setBCurriculum(props.curriculum);
   }, [props.curriculum])
@@ -100,8 +103,12 @@ const BlockCoding = (props) => {
 
       {/* TODO 비디오 영역 */}
       <div className="structure__sample-video-wrap">
-        {/* 임시 이미지 */}
-        <img src={ImgSample} alt="임시이미지" />
+        <video
+          src={BlockVideoUrl}
+          controlsList="nodownload"
+          disablePictureInPicture
+          playsInline
+        />
 
         {/* TODO 플레이 버튼 */}
         <button className="structure__video-play" type="button">
@@ -155,6 +162,11 @@ const BlockCoding = (props) => {
 
 //자바스크립트
 const Javascript = (props) => {
+  const lang = localStorage.getItem("lang"); 
+  const JavaVideoUrl = lang == "ja" ? "https://s3.ap-northeast-2.amazonaws.com/astroboy-dev.wizclass.com/assets/media/JS_JP.mp4" : "https://s3.ap-northeast-2.amazonaws.com/astroboy-dev.wizclass.com/assets/media/JS_EN.mp4"
+
+  const [isOpen, setIsOpen] = useState(false);
+
   const [jsCurriculum, setJsCurriculum] = useState([]);
 
   useEffect(() => {
@@ -183,8 +195,12 @@ const Javascript = (props) => {
 
       {/* TODO 비디오 영역 */}
       <div className="structure__sample-video-wrap">
-        {/* 임시 이미지 */}
-        <img src={ImgSample} alt="임시이미지" />
+        <video
+          src={JavaVideoUrl}
+          controlsList="nodownload"
+          disablePictureInPicture
+          playsInline
+        />
 
         {/* TODO 플레이 버튼 */}
         <button className="structure__video-play" type="button">
