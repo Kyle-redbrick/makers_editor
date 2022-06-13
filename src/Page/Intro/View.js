@@ -153,7 +153,7 @@ function View(props) {
          <ViewMore />
 
         {/* Contact Us */}
-        <Contact />
+        <Contact {...props}/>
        
       </div>
     </Layout>

@@ -2,10 +2,10 @@ import React from "react";
 import { withRouter } from "react-router-dom";
 import View from "./View";
 
-const Container = () => {
+const Container = (props) => {
   
   return (
-    <View />
+    <View {...props}/>
   );
 }
 

@@ -25,7 +25,7 @@ class PhoneDropDown extends Component {
         });
       }
     };
-    this.lang = localStorage.getItem("wizLang");
+    this.lang = localStorage.getItem("lang");
     if (["ko", "en", "zh"].indexOf(this.lang) < 0) {
       this.lang = "en";
     }
