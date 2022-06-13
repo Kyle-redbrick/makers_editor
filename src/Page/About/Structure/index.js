@@ -94,26 +94,20 @@ const BlockCoding = (props) => {
           <FormattedMessage id="ID_ABOUT_STRUCTURE_BLOCK_CODING" />
         </h3>
 
-        {/* TODO 클릭 시 해당 카테고리의 무료 강의 목록으로 이동 */}
         <Link to="/learn" className="structure__free-link">
           <FormattedMessage id="ID_ABOUT_MORE_TRIAL_TEXT" />
           <img alt="더보기 아이콘" src={IconFreeArrow} />
         </Link>
       </div>
 
-      {/* TODO 비디오 영역 */}
       <div className="structure__sample-video-wrap">
         <video
+          controls
           src={BlockVideoUrl}
           controlsList="nodownload"
           disablePictureInPicture
           playsInline
         />
-
-        {/* TODO 플레이 버튼 */}
-        <button className="structure__video-play" type="button">
-          <img alt="비디오 재생 버튼" src={IconPlay} />
-        </button>
       </div>
 
       <p className="structure__trial-explain">
@@ -163,10 +157,7 @@ const BlockCoding = (props) => {
 //자바스크립트
 const Javascript = (props) => {
   const lang = localStorage.getItem("lang"); 
-  const JavaVideoUrl = lang == "ja" ? "https://s3.ap-northeast-2.amazonaws.com/astroboy-dev.wizclass.com/assets/media/JS_JP.mp4" : "https://s3.ap-northeast-2.amazonaws.com/astroboy-dev.wizclass.com/assets/media/JS_EN.mp4"
-
-  const [isOpen, setIsOpen] = useState(false);
-
+  const JavaVideoUrl = lang == "ja" ? "https://s3.ap-northeast-2.amazonaws.com/astroboy-dev.wizclass.com/assets/media/JS_JP.mp4#t=0.001" : "https://s3.ap-northeast-2.amazonaws.com/astroboy-dev.wizclass.com/assets/media/JS_EN.mp4#t=0.001"
   const [jsCurriculum, setJsCurriculum] = useState([]);
 
   useEffect(() => {
@@ -186,26 +177,20 @@ const Javascript = (props) => {
           <FormattedMessage id="ID_ABOUT_STRUCTURE_JAVASCRIPT" />
         </h3>
 
-        {/* TODO 클릭 시 해당 카테고리의 무료 강의 목록으로 이동 */}
         <Link to="/learn" className="structure__free-link">
           <FormattedMessage id="ID_ABOUT_MORE_TRIAL_TEXT" />
           <img alt="더보기 아이콘" src={IconFreeArrow} />
         </Link>
       </div>
 
-      {/* TODO 비디오 영역 */}
       <div className="structure__sample-video-wrap">
         <video
+          controls
           src={JavaVideoUrl}
           controlsList="nodownload"
           disablePictureInPicture
           playsInline
         />
-
-        {/* TODO 플레이 버튼 */}
-        <button className="structure__video-play" type="button">
-          <img alt="비디오 재생 버튼" src={IconPlay} />
-        </button>
       </div>
 
       <p className="structure__trial-explain">

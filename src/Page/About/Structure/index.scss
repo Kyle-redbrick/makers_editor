@@ -104,22 +104,6 @@
   }
 }
 
-.structure__video-play {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  cursor: pointer;
-  background-color: transparent;
-  border: 0;
-
-  img {
-    width: 64px;
-    height: 64px;
-    object-fit: cover;
-  }
-}
-
 .structure__trial-explain {
   display: block;
   margin: 20px 0 30px;

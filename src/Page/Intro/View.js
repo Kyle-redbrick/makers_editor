@@ -31,13 +31,15 @@ import "./index.scss";
 function View(props) {
 
   const lang = localStorage.getItem("lang"); 
-  const IntroVideoUrl = lang == "ja" ? "https://s3.ap-northeast-2.amazonaws.com/astroboy-dev.wizclass.com/assets/media/OT_JP.mp4" : "https://s3.ap-northeast-2.amazonaws.com/astroboy-dev.wizclass.com/assets/media/OT_EN.mp4"
+  const IntroVideoUrl = lang == "ja" ? "https://s3.ap-northeast-2.amazonaws.com/astroboy-dev.wizclass.com/assets/media/OT_JP.mp4#t=0.001" : "https://s3.ap-northeast-2.amazonaws.com/astroboy-dev.wizclass.com/assets/media/OT_EN.mp4"
   
+  const onClickScrollTop = () => {
+    window.scrollTo(0, 0);
+  }
   return (
     <Layout>
       <div className="Page--Intro">
-        {/* TODO 탑 스크롤 버튼 / 클릭 시 최상단으로 이동 */}
-        <button type="button" className="intro__top-scroll">
+        <button type="button" className="intro__top-scroll" onClick={onClickScrollTop} >
           <img alt="탑 스크롤 아이콘" src={TopScrollIcon} />
         </button>
 
@@ -64,16 +66,14 @@ function View(props) {
             </div>
 
             <div className="first-section__video-wrap">
-              {/* TODO video  */}
               <div className="first-section__video">
                 <video
+                  controls
                   src={IntroVideoUrl}
                   controlsList="nodownload"
                   disablePictureInPicture
                   playsInline
                 />
-                {/* TODO video play button */}
-                <button type="button" className="first-section__play-btn" />
               </div>
             </div>
 
