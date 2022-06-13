@@ -273,6 +273,11 @@
 
   img {
     width:100%;
+    display: none;
+
+    &.on {
+      display: block;
+    }
   }
 }
 
@@ -297,4 +302,45 @@
   color: #fff;
   line-height: 28px;
   font-weight: 500;
+}
+
+.first-section__character-box {
+  position: relative;
+
+  img {
+    width: 100%;
+  }
+}
+
+.first-section__character-title-box {
+  position: absolute;
+  right: 117px;
+
+  &.first-section__character-title-box--boy {
+    top: 215px;
+  }
+
+  &.first-section__character-title-box--suzu {
+    top: 273px;
+  }
+
+  &.first-section__character-title-box--kitty {
+    top: 185px;
+  }
+}
+
+.first-section__character-title {
+  font-size: 32px;
+  line-height: 32px;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.first-section__character-child-title {
+  font-size: 18px;
+  line-height: 29px;
+  color: #fff;
+  font-weight: 500;
+  white-space: pre-wrap;
 }

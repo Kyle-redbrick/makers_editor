@@ -12,17 +12,39 @@ import VerticalSlide from "../Intro/ThirdSection";
 import ImgBoy from "../../Image/img_astro_boy_character.png";
 import ImgSuzu from "../../Image/img_suzu_character.png";
 import ImgKitty from "../../Image/img_astro_kitty_character.png";
-import ImgBannerBoy from "../../Image/banner-astro-boy.png";
-import ImgBannerSuzu from "../../Image/banner-suzu.png";
-import ImgBannerKitty from "../../Image/banner-kitty.png";
+import ImgBannerBoy_en from "../../Image/about-astroboy-en.png";
+import ImgBannerSuzu_en from "../../Image/about-suzu-en.png";
+import ImgBannerKitty_en from "../../Image/about-astrokitty-en.png";
+import ImgBannerBoy_ja from "../../Image/about-astroboy-jp.png";
+import ImgBannerSuzu_ja from "../../Image/about-suzu-jp.png";
+import ImgBannerKitty_ja from "../../Image/about-astrokitty-jp.png";
 import Curriculum from "./Curriculum";
 import HorizontalSlide from "./HorizontalSlide";
 import Structure from "./Structure";
 import Information from "./Information";
 import BannerCharacterImg from "../../Image/img-about-banner-character.png";
 import "./index.scss";
+import{ useEffect, useState } from "react";
 
-function View(props) {
+const View = ({
+  isChange,
+  onChangeClick
+}) => {
+  const [astroBanner, setAstroBanner] = useState(ImgBannerBoy_en);
+  const [suzuBanner, setSuzuBanner] = useState(ImgBannerSuzu_en);
+  const [kittyBanner, setKittyBanner] = useState(ImgBannerKitty_en);
+  let lang;
+
+  useEffect(() => {
+    lang = localStorage.getItem("lang");
+    switch (lang) {
+      case "ja":
+        setAstroBanner(ImgBannerBoy_ja);
+        setSuzuBanner(ImgBannerSuzu_ja);
+        setKittyBanner(ImgBannerKitty_ja);
+        break;
+    }
+  }, [])
 
   return (
     <Layout>
@@ -47,24 +69,30 @@ function View(props) {
             </div>
 
             <div className="first-section__character-list">
-              {/* TODO 클릭하여 활성화 할때마다 클래스 active 추가 */}
-              <span className="first-section__character-item active">
+              <span
+                className={`first-section__character-item ${isChange === 1 ? "active": ""}`}
+                onClick={() => onChangeClick(1)}
+              >
                 <img alt="astro boy" src={ImgBoy} />
               </span>
-              <span className="first-section__character-item">
+              <span
+                className={`first-section__character-item ${isChange === 2 ? "active": ""}`}
+                onClick={() => onChangeClick(2)}
+              >
                 <img alt="suzu"  src={ImgSuzu} />
               </span>
-              <span className="first-section__character-item">
+              <span
+                className={`first-section__character-item ${isChange === 3 ? "active": ""}`}
+                onClick={() => onChangeClick(3)}
+              >
                 <img alt="astro kitty"  src={ImgKitty} />
               </span>
             </div>
 
-            {/* TODO 두 영역이 연결되어 위에서 누르는 캐릭터들의 배너가 나와야함. */}
-
             <div className="first-section__character-intro-banner-list">
-              <img alt="astro boy detail" src={ImgBannerBoy} />
-             {/*  <img alt="suzu detail" src={ImgBannerSuzu} />
-              <img alt="kitty detail" src={ImgBannerKitty} /> */}
+              <img alt="astro boy detail" src={astroBanner} className={`${isChange === 1 ? "on": ""}`} />
+              <img alt="suzu detail" src={suzuBanner} className={`${isChange === 2 ? "on": ""}`} />
+              <img alt="kitty detail" src={kittyBanner} className={`${isChange === 3 ? "on": ""}`} />
             </div>
           </div>
         </div>

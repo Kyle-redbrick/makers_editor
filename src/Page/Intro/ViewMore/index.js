@@ -19,7 +19,7 @@ function ViewMore () {
             <h3 className="view-more__box-title"><FormattedMessage id="ID_INTRO_VIEW_MORE_LEFT_TITLE" /></h3>
             {/* TODO 클릭 시 About 페이지로 이동  */}
             <Link to="/about" className="view-more__link">
-              <FormattedMessage id="ID_VIEW_MORE" />
+             <FormattedMessage id="ID_COMMON_VIEW_MORE_2"/>
               <img alt="더보기 아이콘" src={MoreIcon} />
             </Link>
           </div>
@@ -32,7 +32,7 @@ function ViewMore () {
             <h3 className="view-more__box-title"><FormattedMessage id="ID_INTRO_VIEW_MORE_RIGHT_TITLE" /></h3>
             {/* TODO 클릭 시 무료체험용 과정 페이지로 이동 */}
             <Link to="/learn" className="view-more__link">
-              <FormattedMessage id="ID_VIEW_MORE" />
+             <FormattedMessage id="ID_COMMON_VIEW_MORE_2"/>
               <img alt="더보기 아이콘" src={MoreIcon} />
             </Link>
           </div>
