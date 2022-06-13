@@ -1,19 +1,19 @@
 import React, { useRef, useState } from "react";
 import {Swiper, SwiperSlide} from 'swiper/react';
-import { FormattedMessage } from "react-intl";
+import { FormattedMessage,injectIntl } from "react-intl";
 import SwiperCore, { Pagination } from "swiper/core";
 import ImgVertical1 from "../../../Image/img-vertical-1.PNG";
 import ImgVertical2 from "../../../Image/img-vertical-2.PNG";
 import ImgVertical3 from "../../../Image/img-vertical-3.PNG";
-import "swiper/swiper.scss"; 
+import "swiper/swiper.scss";
 import "swiper/components/pagination/pagination.min.css";
 
 import "./index.scss";
 
-function ThirdSection () { 
+function ThirdSection (props) {
   SwiperCore.use([Pagination]);
-  
-  const array = ["<p class='third-section__slide-bullet'> Learn through 36 Mission</p>", "<p className='third-section__slide-bullet'> Build your own games</p>", "<p className='third-section__slide-bullet'>Share with your classmates</p>"]; 
+
+  const array = [`<p class='third-section__slide-bullet'>${props.intl.formatMessage({id: "ID_INTRO_THIRD_SECTION_BUTTON_TEXT_1"})}</p>`, `<p className='third-section__slide-bullet'>${props.intl.formatMessage({id: "ID_INTRO_THIRD_SECTION_BUTTON_TEXT_2"})}</p>`, `<p className='third-section__slide-bullet'>${props.intl.formatMessage({id: "ID_INTRO_THIRD_SECTION_BUTTON_TEXT_3"})}</p>`]; 
 
   return (
     <div className="third-section">
@@ -23,9 +23,9 @@ function ThirdSection () {
         </h3>
         <div className="swiper-pagination--custom"></div>
       </div>
-      
+
       <div className="third-section__vertical-slide-wrap">
-        <Swiper 
+        <Swiper
           direction={"vertical"}
           slidesPerView={1}
           allowTouchMove={false}
@@ -56,9 +56,9 @@ function ThirdSection () {
           </SwiperSlide>
         </Swiper>
       </div>
-      
+
     </div>
   )
 }
 
-export default ThirdSection ;
+export default injectIntl(ThirdSection) ;

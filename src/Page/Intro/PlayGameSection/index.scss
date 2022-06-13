@@ -27,10 +27,11 @@
   position: relative;
   background:linear-gradient(to right, #43F1CE, #2F69FF) ;
   max-width: 970px;
-  margin:60px auto 0;
+  margin:40px auto 0;
   border-radius: 20px;
   padding: 14px; 
-  height: 560px;
+  height: 100%;
+  max-height: 560px;
 
   img {
     width: 100%;

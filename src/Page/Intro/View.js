@@ -29,12 +29,17 @@ import TopBannerCharacter from "../../Image/img-intro-banner-character.png";
 import "./index.scss";
 
 function View(props) {
+
+  const lang = localStorage.getItem("lang"); 
+  const IntroVideoUrl = lang == "ja" ? "https://s3.ap-northeast-2.amazonaws.com/astroboy-dev.wizclass.com/assets/media/OT_JP.mp4#t=0.001" : "https://s3.ap-northeast-2.amazonaws.com/astroboy-dev.wizclass.com/assets/media/OT_EN.mp4"
   
+  const onClickScrollTop = () => {
+    window.scrollTo(0, 0);
+  }
   return (
     <Layout>
       <div className="Page--Intro">
-        {/* TODO 탑 스크롤 버튼 / 클릭 시 최상단으로 이동 */}
-        <button type="button" className="intro__top-scroll">
+        <button type="button" className="intro__top-scroll" onClick={onClickScrollTop} >
           <img alt="탑 스크롤 아이콘" src={TopScrollIcon} />
         </button>
 
@@ -61,11 +66,14 @@ function View(props) {
             </div>
 
             <div className="first-section__video-wrap">
-              {/* TODO video  */}
               <div className="first-section__video">
-                <img alt="비디오 임시 썸네일" src={VideoThumbnail} /> {/* video 임시 썸네일 */}
-                {/* TODO video play button */}
-                <button type="button" className="first-section__play-btn" />
+                <video
+                  controls
+                  src={IntroVideoUrl}
+                  controlsList="nodownload"
+                  disablePictureInPicture
+                  playsInline
+                />
               </div>
             </div>
 
@@ -134,7 +142,7 @@ function View(props) {
         {/* //introduce 영역 */}
 
         {/* 텍스트 이미지 애니메이션 효과 */}
-        <div className="intro-page__fade-in-text">
+        <div className="intro-page__fade-in-text intro-page__fade-in-text--second">
           <img  alt="A self-Learning Platform For Instructors"  data-aos="fade-up" data-aos-duration="700"  className="intro-page__fade-in-img" src={TextImg2} />
         </div>
 
@@ -145,7 +153,7 @@ function View(props) {
          <ViewMore />
 
         {/* Contact Us */}
-        <Contact />
+        <Contact {...props}/>
        
       </div>
     </Layout>

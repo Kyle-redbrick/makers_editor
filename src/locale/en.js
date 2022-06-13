@@ -18,6 +18,16 @@ const en = {
   ID_HEADER_LINK_SSAFY: "SSAFY",
   ID_HEADER_LINK_JJ: "전주대학교",
   ID_HEADER_LINK_RANKING: "Ranking",
+  ID_COMMON_MONTH: "",
+  ID_COMMON_YEAR: "",
+  ID_COMMON_EDIT: "Edit",
+  ID_COMMON_APPLY: "Apply",
+  ID_COMMON_VIEW_MORE: "+ View More",
+  ID_COMMON_VIEW_MORE_2: "View More",
+  ID_COMMON_GO_BACK: "Go Back",
+  ID_COMMON_TOTAL: "Total",
+  ID_COMMON_MISSION: " Missions",
+  ID_COMMON_CONFIRM: "Confirm",
   ID_TUTORIAL_POPUP_TITLE: "Do you not know what to do?",
   ID_HOME_MAIN_CREATE: "Create",
   ID_HOME_BANNER_DETAIL: "Play the games you made\non your mobile devices\nright away",
@@ -362,7 +372,7 @@ const en = {
   ID_BUILDER_EDITPOP_CODE_CLOSE: "Private",
   ID_WIZAPP_CATEGORY_GAME: "Game",
   ID_WIZAPP_CATEGORY_UTIL: "Utility",
-  ID_HOME_COPY_INFO: `Copyright @ Tezuka production. All Rights Reserved.`,
+  ID_HOME_COPY_INFO: `© IDC ASIA Co., Ltd. All Rights Reserved.`,
   ID_HOME_FOOTER_01: `Business registration number 636-87-01115    |    Mail-order business registration number 2019-Seoul Gangnam-00100    |    Suite 701, 10, K Square, Gangnam-daero 94-gil, Gangnam-gu, Seoul, Korea    |    wizlab@wizschool.io`,
   ID_FOOTER_TERMS: "Terms of service",
   ID_FOOTER_PRIVACY: "Privacy Policy",
@@ -715,7 +725,10 @@ const en = {
   ID_SIGNIN_FORGOT_EMAIL: "Find Email",
   ID_SIGNIN_FORGOT_EMAIL_DESC: "Forgot email?",
   ID_FIND_EMAIL_TITLE: "Find Email",
-  ID_FIND_EMAIL_DESC: "Enter the phone number you used to sign up.",
+  ID_FIND_EMAIL_DESC: "Ask your administror or send request email via email address below. The request email must include information as following.",
+  ID_FIND_EMAIL_LIST_1: "Your institution",
+  ID_FIND_EMAIL_LIST_2: "Your name",
+  ID_FIND_EMAIL_LIST_3: "Your contact number(unrequired)",
   ID_FIND_EMAIL_PLACEHOLDER: "Enter your current phone number.",
   ID_FIND_EMAIL_WARNING: "Please check your phone number.",
   ID_FIND_EMAIL_SENT_TITLE: "Email adress has been sent to the cell phone number.",
@@ -1078,8 +1091,8 @@ const en = {
   ID_LAYOUT_NOTI_PUBLISHED_REPLY: `{targetUser}님이 {targetProject}앱에 대댓글을 남겼습니다.`,
   ID_LAYOUT_NOTI_ARTICLE_COMMENT: `{targetUser}님이 {targetCommunityArticle}게시글에 댓글을 남겼습니다.`,
   ID_LAYOUT_NOTI_ARTICLE_REPLY: `{targetUser}님이 {targetCommunityArticle}게시글에 대댓글을 남겼습니다.`,
-  ID_LAYOUT_NOTI_LIKE: `{targetUser}님이 {targetProject}앱에 좋아요를 남겼습니다.`,
-  ID_LAYOUT_NOTI_PLAY_COUNT: `{targetProject}앱의 플레이 수가 {message}을 돌파했습니다.`,
+  ID_LAYOUT_NOTI_LIKE: `{targetUser} liked {targetProject}.`,
+  ID_LAYOUT_NOTI_PLAY_COUNT: `{targetProject} has been played {message} times!`,
   ID_LAYOUT_NOTI_SUBSCRIBE: `{targetUser}님이 구독을 시작했습니다.`,
   ID_LAYOUT_NOTI_NEWAPP: `{targetUser}님이 새 앱 {targetProject}을 등록했습니다.`,
   ID_LAYOUT_NOTI_REPLY: `{targetUser}님이 댓글에서 회원님을 태그했습니다.\n"{message}"`,
@@ -1328,45 +1341,65 @@ const en = {
   ID_INTRO_SECOND_SECTION_INFO_TITLE_1: "6 to 12",
   ID_INTRO_SECOND_SECTION_INFO_TITLE_2: "36 missions",
   ID_INTRO_SECOND_SECTION_INFO_TITLE_3: "100 hours",
-
   ID_INTRO_SECOND_SECTION_INFO_TITLE_1_EXPLAN: "A coding class\nfor students aged 6 to 12",
   ID_INTRO_SECOND_SECTION_INFO_TITLE_2_EXPLAN: "36 STEM convergence missions\nmeeting the CSTA standard",
-  ID_INTRO_SECOND_SECTION_INFO_TITLE_3_EXPLAN: "A 100=hour PBL curriculum\nto develop pracrical skills",
+  ID_INTRO_SECOND_SECTION_INFO_TITLE_3_EXPLAN: "A 100 hours PBL curriculum\nto develop pracrical skills",
 
   ID_INTRO_THIRD_SECTION_TITLE: "Here's how\nthe curriculum works",
+  ID_INTRO_THIRD_SECTION_BUTTON_TEXT_1:"Learn through ACG’s 36 Missions",
+  ID_INTRO_THIRD_SECTION_BUTTON_TEXT_2:"Build your own games",
+  ID_INTRO_THIRD_SECTION_BUTTON_TEXT_3:"Share and Play with your classmates",
 
   ID_INTRO_GAME_VIDEO_SECTION_TITLE: "Your very own game\ncreated with Astro",
-
-  ID_INTRO_GAME_VIDEO_SECTION_CHILD_TITLE: "The LMS (Learning Management System) manages\nvarious classes and can be applied flexibly in various institutions.",
-
+  ID_INTRO_GAME_VIDEO_SECTION_CHILD_TITLE: "Experience what you can make at Astro Coding Go!",
   ID_INTRO_GAME_VIDEO_LINE_BANNER_TITLE_LEFT: "How to play",
   ID_INTRO_LINE_BANNER_TITLE: "Try our free courses first!",
   ID_INTRO_LINE_BANNER_CHILD_TITLE: "Fun and learning all at once",
   ID_INTRO_LINE_BANNER_GO_TO_FREE_COURSE_LINK: "Go to Free Trial Course",
-
   ID_INTRO_INTRODUCE_AREA_CONTENT_TITLE: "Unique Builder",
   ID_INTRO_INTRODUCE_AREA_CONTENT_TITLE_2: "Systematic LMS",
   ID_INTRO_INTRODUCE_AREA_CONTENT_TITLE_3: "Project-Based Practical Classes",
   ID_INTRO_INTRODUCE_AREA_CONTENT_TITLE_4: "The Patented OOBC Technology",
-
   ID_INTRO_INTRODUCE_AREA_CONTENT_CHILD_TITLE_1: "ACG’s unique builder allows you to create your own games with Team Astro characters.\nStudents can utilize what they learned from the missions to select\nthe characters and items they want and code.",
   ID_INTRO_INTRODUCE_AREA_CONTENT_CHILD_TITLE_2: "Teach students easily by assigning missions for them to try.\nManage multiple classes at once while keeping track of the progress of each student.\nEven instructors who aren't expert coders can teach classes with ease.",
   ID_INTRO_INTRODUCE_AREA_CONTENT_CHILD_TITLE_3: "Apply CS concepts such as variables and functions to each mission and learn practical cases\nrather than stopping at theoretical learning. And with the additional builder feature, students can\napply the skills they learned and create their very own games themselves.",
   ID_INTRO_INTRODUCE_AREA_CONTENT_CHILD_TITLE_4: "The OOBC block language used in Astro Coding Go! uses a sentence structure that is different\nfrom the existing block code language, helping the transition to text coding such as JS.\n* OOBC : object-oriented block coding",
 
+  ID_INTRO_CONTACT_1_INSTITUTION_NAME: "Institution name",
+  ID_INTRO_CONTACT_1_STUDENTS_COUNT: "How many students will be enrolled in?",
+  ID_INTRO_CONTACT_1_NOTE: "Any other note?",
+
+  ID_INTRO_CONTACT_2_FIRST_NAME: "First Name",
+  ID_INTRO_CONTACT_2_LAST_NAME: "Last Name",
+  ID_INTRO_CONTACT_2_TITLE: "Title",
+  ID_INTRO_CONTACT_2_SELECT: "select",
+  ID_INTRO_CONTACT_2_TEACHER: "Teacher",
+  ID_INTRO_CONTACT_2_ADMINISTRATOR: "Administrator （principal / vp）",
+  ID_INTRO_CONTACT_2_PHONE_NUMBER: "Phone Number",
+  ID_INTRO_CONTACT_2_TECHNOLOGY: "Technology Integrator",
+  ID_INTRO_CONTACT_2_OTHER: "Other",
+  ID_INTRO_CONTACT_2_EMAIL: "Email",
+  ID_INTRO_CONTACT_2_SUCCESS:"SUCCESS",
+
+  ID_ABOUT_CHARACTER_BOY_TITLE : "Astro Boy",
+  ID_ABOUT_CHARACTER_BOY_CHILD_TITLE : "AI robot built to resemble a young human boy.\nHe embodies helpful and heroic spirit,\nand is always motivated in his rescue mission.",
+  ID_ABOUT_CHARACTER_SUZU_TITLE : "SUZU",
+  ID_ABOUT_CHARACTER_SUZU_CHILD_TITLE : "A cute 7 years old human girl and\nthe granddaughter of Professor Elefun.\nShe is extremely intelligent, capapble, and independent.",
+  ID_ABOUT_CHARACTER_KITTY_TITLE : "Astro Kitty",
+  ID_ABOUT_CHARACTER_KITTY_CHILD_TITLE : "AI robot built to resemble a three months old kitten.\nAstro regards Astro Kitty as his mischievous\nbut adorable younger brother.",
+
   ID_INTRO_SCROLL_AREA_LEFT_TITLE: "Self Managing Education",
   ID_INTRO_SCROLL_AREA_LEFT_CHILD_TITLE: "A self-managing education method provides tips and\nanswers within each mission, ultimately minimizing the\ninstructions that are required for instructors.",
-
   ID_INTRO_SCROLL_AREA_LEFT_TITLE_2: "Study Assistant Tools",
   ID_INTRO_SCROLL_AREA_LEFT_CHILD_TITLE_2: "The assistant provides tools to help students solve\ndifficult problems on their own such as code sorting,\nAPI dictionary, and a question and answer board while\nthey write their own code.",
-
   ID_INTRO_CONTACT_TITLE: "Contact US",
   ID_INTRO_CONTACT_CHILD_TITLE: "Submit the contact form to receive\na free account and try the premium content\nof Astro Coding Go for free.",
-
-
   ID_INTRO_VIEW_MORE_NOTICE_TITLE: "Teach coding on a fun and exciting way!",
   ID_INTRO_VIEW_MORE_LEFT_TITLE: "Want to know more\nabout the Curriculum?",
   ID_INTRO_VIEW_MORE_RIGHT_TITLE: "Start your free trial\ncourse right now!",
+  ID_INTRO_CONTACT_BUTTON_BACK: "Back",
+  ID_INTRO_CONTACT_BUTTON_SEND: "Send Message",
+  ID_INTRO_CONTACT_BUTTON_NEXT: "Next",
 
   // 계정 설정
   ID_ACCOUNT_SETTING_TITLE: "Account Settings",
@@ -1386,18 +1419,14 @@ const en = {
   ID_ACCOUNT_EDIT_NAME_POPUP_ENTER_FAMILY_NAME: "Enter your last name.",
   ID_ACCOUNT_EDIT_NICKNAME_POPUP_TITLE: "Edit Nickname",
   ID_ACCOUNT_EDIT_NICKNAME_POPUP_ENTER_NICKNAME: "Enter your nickname.",
+  ID_ACCOUNT_SETTING_ALERT_NEW_PWD_NOT_EQUAL: "The new password is not identical to the confirm password.",
+  ID_ACCOUNT_SETTING_ALERT_NEW_PWD_LENGTH: "The password needs to be longer than 6 letters.",
 
   ID_ATTENDANCE_TITLE: "Attendance",
-  ID_COMMON_MONTH: "",
-  ID_COMMON_YEAR: "",
-
-  ID_ABOUT_INTRO_TITLE: "Exciting Coding Lessons with Go Astro Go!",
-  ID_ABOUT_INTRO_CHILD_TITLE: "Astro sets out to solve problems happening\nall over the world together with SUZU and Astro Kitty",
-  ID_COMMON_EDIT: "Edit",
-  ID_COMMON_APPLY: "Apply",
+  ID_PLAY_RECENT_GAMES: "Recently Played",
+  ID_PLAY_ALL_GAMES: "All Games",
 
   ID_INTRO_CONTACT_US: "Contact Us",
-
   ID_INTRO_SCROLL_ACTION_IMG_TITLE_1: "Self Check",
   ID_INTRO_SCROLL_ACTION_IMG_CHILD_TITLE_1: "Student can view what they learned\nfrom each mission on their own",
   ID_INTRO_SCROLL_ACTION_IMG_TITLE_2: "Dashboard",
@@ -1406,24 +1435,18 @@ const en = {
   ID_INTRO_SCROLL_ACTION_IMG_CHILD_TITLE_3: "Arrange a written code\naccording to JS grammar.",
   ID_INTRO_SCROLL_ACTION_IMG_TITLE_4: "API dictionary",
   ID_INTRO_SCROLL_ACTION_IMG_CHILD_TITLE_4: "Find the commands\nyou need by function.",
-
-  ID_COMMON_VIEW_MORE: "+ View More",
-  ID_COMMON_GO_BACK: "Go Back",
-  ID_COMMON_TOTAL: "Total",
-  ID_COMMON_MISSION: " Missions",
-
   ID_INTRO_PLAY_WAY: "Press button to destroy plasma!",
-
   ID_INTRO_CONTACT_COMPLETE_TITLE : "컨택 폼 제출 완료",
   ID_INTRO_CONTACT_COMPLETE_CHILD_TITLE : "컨택 주셔서 감사합니다.\n담당자 확인 후 연락드리겠습니다.",
   ID_INTRO_CONTACT_COMPLETE_OK_BUTTON : "확인",
-
   ID_INTRO_EASY_SECTION_TITLE : "Instructor LMS Feature\nfor Easy Instruction and Guidance",
   ID_INTRO_EASY_SECTION_CHILD_TITLE : "The LMS (Learning Management System) manages\nvarious classes and can be applied flexibly in various institutions.",
   ID_INTRO_EASY_ITEM_TITLE_1 : "Create classes\nand manage students",
   ID_INTRO_EASY_ITEM_TITLE_2 : "Assign missions to students\nto try for each class",
   ID_INTRO_EASY_ITEM_TITLE_3 : "Monitor the attendance\nand mission progress of students",
 
+  ID_ABOUT_INTRO_TITLE: "Exciting Coding Lessons with Go Astro Go!",
+  ID_ABOUT_INTRO_CHILD_TITLE: "Astro sets out to solve problems happening\nall over the world together with SUZU and Astro Kitty",
   ID_ABOUT_CURRICULUM_TITLE : "Premium Quality Curriculum",
   ID_ABOUT_CURRICULUM_CARD_TITLE_1 : "CSTA Standard",
   ID_ABOUT_CURRICULUM_CARD_CONTENT_1 : "Student will receive CS education\nthat meets global standards as the\nprogram is designed according to the US CSTA standard.",
@@ -1431,7 +1454,6 @@ const en = {
   ID_ABOUT_CURRICULUM_CARD_CONTENT_2 : "Naturak sciences,biology, physicsm\ntechnology, and math! Students can learn various STEM concepts with Astro Boy Go! clips and utilize what they learned in their projects.",
   ID_ABOUT_CURRICULUM_CARD_TITLE_3 : "UN SDGs",
   ID_ABOUT_CURRICULUM_CARD_CONTENT_3 : "Students can learn the core concepts of the UN's 17 Sustainable\nDevelopment Goals through the\nproject and grow up to become\nmature citizens.",
-
   ID_ABOUT_HORIZONTAL_SLIDE_TITLE : "Learn coding with exciting adventures!",
   ID_ABOUT_HORIZONTAL_SLIDE_ITEM_TITLE_1 : "Hungry Robot",
   ID_ABOUT_HORIZONTAL_SLIDE_ITEM_CHILD_TITLE_1 : "Learn about events and create a simple puzzle game.",
@@ -1443,14 +1465,14 @@ const en = {
   ID_ABOUT_HORIZONTAL_SLIDE_ITEM_CHILD_TITLE_4 : "Use JavaScript to implement events and create an escape room.",
   ID_ABOUT_HORIZONTAL_SLIDE_ITEM_TITLE_5 : "Island of Peril",
   ID_ABOUT_HORIZONTAL_SLIDE_ITEM_CHILD_TITLE_5 : "Learn about functions and clean the polluted ocean with Astro.",
-  ID_PLAY_RECENT_GAMES: "Recently Played",
-  ID_PLAY_ALL_GAMES: "All Games",
-  
   ID_ABOUT_STRUCTURE_TITLE : "Curriculum Structure",
   ID_ABOUT_DOWNLOAD_CURRICULUM : "Download Curriculum in PDF",
   ID_ABOUT_STRUCTURE_BLOCK_CODING : "Block Coding",
   ID_ABOUT_STRUCTURE_JAVASCRIPT : "JavaScript",
   ID_ABOUT_MORE_TRIAL_TEXT : "Go to Free Trial",
+
+  ID_ABOUT_STRUCTURE_JAVASCRIPT_EXPLAIN : "Learn text coding for the first time with Astro! The auto-completion feature can help even students who aren’t good at typing to learn the text coding language JavaScript. Try the 12 different missions that utilize advanced concepts such as functions and arrays.",
+  ID_ABOUT_STRUCTURE_BLOCKCODING_EXPLAIN : "Efficient coding grammar lessons with the self-developed block coding language OOBC! Students can create results through 24 missions that utilize various concepts from sequence to repetition.",
 
   ID_ABOUT_INFORMATION_TITLE : "Information",
   ID_ABOUT_INFORMATION_TECHNICAL : "Technical Specifications",
@@ -1472,6 +1494,14 @@ const en = {
   ID_ABOUT_TOP_BANNER_CHILD_TITLE : "SW Education platform for both students and teacher!",
 
   ID_INTRO_TOP_BANNER_TITLE : "Learn to code with Go Astro Go!",
-  ID_INTRO_TOP_BANNER_CHILD_TITLE : "Astro Coding Go is a coding educatio platform\ncreated based on CSTA standards"
+  ID_INTRO_TOP_BANNER_CHILD_TITLE : "Astro Coding Go is a coding educatio platform\ncreated based on CSTA standards",
+
+  ID_ABOUT_CHARACTER_BOY_TITLE : "Astro Boy",
+  ID_ABOUT_CHARACTER_BOY_CHILD_TITLE : "AI robot built to resemble a young human boy.\nHe embodies helpful and heroic spirit,\nand is always motivated in his rescue mission.",
+  ID_ABOUT_CHARACTER_SUZU_TITLE : "SUZU",
+  ID_ABOUT_CHARACTER_SUZU_CHILD_TITLE : "A cute 7 years old human girl and\nthe granddaughter of Professor Elefun.\nShe is extremely intelligent, capapble, and independent.",
+  ID_ABOUT_CHARACTER_KITTY_TITLE : "Astro Kitty",
+  ID_ABOUT_CHARACTER_KITTY_CHILD_TITLE : "AI robot built to resemble a three months old kitten.\nAstro regards Astro Kitty as his mischievous\nbut adorable younger brother."
+
 };
 export default en;
