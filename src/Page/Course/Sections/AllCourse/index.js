@@ -36,7 +36,7 @@ function AllCourse(props) {
         <ul className="all-course__project-list">
           {
             courses.map((item, index) =>
-              <li key={index} className={`all-course__project-item`} onClick={() => linkToLearn(item.lectureId)}>
+              <li key={index} className="all-course__project-item" onClick={() => linkToLearn(item.lectureId)}>
                 <div className="all-course__project-inner">
                   <div className="all-course__project-thumbnail">
                     {/* /* TODO 비로그인 후구 구매 시,  해당 dimmed 노출처리. */ }
