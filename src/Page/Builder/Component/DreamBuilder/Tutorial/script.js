@@ -22,6 +22,18 @@ import wjT03 from "../../../../../Image/dreamclass/builder_tutorial/js-tutorial-
 import wjT04 from "../../../../../Image/dreamclass/builder_tutorial/js-tutorial-04@2x.png";
 import wjT05 from "../../../../../Image/dreamclass/builder_tutorial/js-tutorial-05@2x.png";
 
+import wjT01_en from "../../../../../Image/dreamclass/builder_tutorial/en-js-tutorial-01.png";
+import wjT02_en from "../../../../../Image/dreamclass/builder_tutorial/en-js-tutorial-02.png";
+import wjT03_en from "../../../../../Image/dreamclass/builder_tutorial/en-js-tutorial-03.png";
+import wjT04_en from "../../../../../Image/dreamclass/builder_tutorial/en-js-tutorial-04.png";
+import wjT05_en from "../../../../../Image/dreamclass/builder_tutorial/en-js-tutorial-05.png";
+
+import wjT01_ja from "../../../../../Image/dreamclass/builder_tutorial/ja-js-tutorial-01.png";
+import wjT02_ja from "../../../../../Image/dreamclass/builder_tutorial/ja-js-tutorial-02.png";
+import wjT03_ja from "../../../../../Image/dreamclass/builder_tutorial/ja-js-tutorial-03.png";
+import wjT04_ja from "../../../../../Image/dreamclass/builder_tutorial/ja-js-tutorial-04.png";
+import wjT05_ja from "../../../../../Image/dreamclass/builder_tutorial/ja-js-tutorial-05.png";
+
 export const jsScript = [
   { subTitle: "가이드탭", title: "도움이 필요하다면 여기서!", imageURL: wjT01 },
   { subTitle: "미션 리스트", title: "미션 진행 상황을 보고 싶으신가요?", imageURL: wjT02 },
@@ -30,8 +42,21 @@ export const jsScript = [
   { subTitle: "편리 기능", title: "코딩을 좀 더 편하게", imageURL: wjT05 }
 ];
 
-//TO DO: js 번역 끝나면 추가
+export const jsScript_en = [
+  { subTitle: "Guide Tab", title: "Click here for help!", imageURL: wjT01_en },
+  { subTitle: "Mission List", title: "Would you like to see your mission progress?", imageURL: wjT02_en },
+  { subTitle: "Sprite / Sound", title: "What's a sprite?", imageURL: wjT03_en },
+  { subTitle: "Enter Code", title: "Enter a code.", imageURL: wjT04_en },
+  { subTitle: "Convenient Functions", title: "Code Easily", imageURL: wjT05_en }
+];
 
+export const jsScript_ja = [
+  { subTitle: "ガイドタブ", title: "ヘルプが必要ならここ！", imageURL: wjT01_ja },
+  { subTitle: "ミッションリスト", title: "ミッションの進行状況を見たいですか？", imageURL: wjT02_ja },
+  { subTitle: "スプライト / サウンド", title: "スプライトとは何ですか？", imageURL: wjT03_ja },
+  { subTitle: "コード入力", title: "コードを入力してみましょう。", imageURL: wjT04_ja },
+  { subTitle: "便利機能", title: "コーディングをもっと楽に", imageURL: wjT05_ja }
+];
 
 export const oobcScript = [
   { subTitle: "가이드탭", title: "도움이 필요하다면 여기서!", imageURL: woT01 },
