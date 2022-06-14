@@ -12,16 +12,18 @@ import "./index.scss";
 
 
 function MyProjectRight (props) {
+  console.log(222, props.course);
+  console.log(1111, props.projects);
   return (
     <div className="right-banner">
       {/* TODO 비구매 이용 시, 클래스 non-scroll 추가 */}
       <div className="course-content__wrap">
-        {/* TODO 비구매 이용 시, 해당 레이아웃 추가 */}        
-        <div className="course-content__non-pay-box">
-          <img alt="느낌표 아이콘" src={AlertIcon} />
-          <FormattedMessage id="ID_LEARN_ALERT_TITLE" />
-        </div>
-
+        {!props.course.unlocked &&
+          <div className="course-content__non-pay-box">
+            <img alt="느낌표 아이콘" src={AlertIcon} />
+            <FormattedMessage id="ID_LEARN_ALERT_TITLE" />
+          </div>
+        }
         { props.session.isLogin ? <AfterList {...props} /> : <BeforeList {...props} /> }
       </div>
     </div>
