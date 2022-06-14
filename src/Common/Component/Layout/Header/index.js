@@ -261,20 +261,6 @@ class Header extends Component {
                 })}
             </div>
             <div className="header_menus">
-              <div className="header_menu_icon searchBtn" onClick={handleClickSearchBar}>
-                <img src={searchImg} alt="" />
-              </div>
-              <div className={`header_menu_icon searchBar ${isSearchBarOpen ? "open" : "close"}`}>
-                <input
-                  type="text"
-                  placeholder={intl.formatMessage({ id: "ID_HEADER_SEARCH_PLACEHOLDER" })}
-                  value={searchValue}
-                  onFocus={onFocusSearch}
-                  onChange={(e) => { onChangeSearchValue(e) }}
-                  onKeyUp={handleOnKeyUp}
-                />
-                <img className="openSearchIcon" src={searchImg} alt="" onClick={onSubmitSearchValue} />
-              </div>
               {/* <div className={`header_menu_icon searchResult ${isSearchFocusOn ? "open" : "close"}`}>
                 <p className="quickLink">
                   {intl.formatMessage({ id: "ID_DREAM_HEADER_QUICK_LINK" })}
