@@ -5,6 +5,7 @@ import editIcon from "../../../../Image/dreamclass/review-34-edit.svg"
 import publishedAppIcon from "../../../../Image/dreamclass/my-profile-publishing.svg"
 import followerIcon from "../../../../Image/dreamclass/my-profile-followers.svg"
 import followingIcon from "../../../../Image/dreamclass/my-profile-following.svg"
+import PageBgImg from "../../../../Image/my-page-bg-img.png";
 import { FormattedNumber } from "react-intl";
 
 export default function View(props) {
@@ -24,6 +25,7 @@ export default function View(props) {
 
   return (
     <section className="UserInfoTemplate">
+      <img alt="마이 페이지 배경" src={PageBgImg} />
       <div className="UserInfoTemplate_UserInfo">
         <div className="UserInfoTemplate_UserInfo_ImgWrap">
           <div className="UserInfoTemplate_UserInfo_ImgWrap-icon">
@@ -61,7 +63,7 @@ export default function View(props) {
         </div>
       </div>
 
-      <div className="UserInfoTemplate_Wrap">
+      {/* <div className="UserInfoTemplate_Wrap">
         <ItemWrap
           intl={intl}
           mode="publish"
@@ -70,25 +72,7 @@ export default function View(props) {
           handleSelectTab={handleSelectTab}
           selectedTab={selectedTab}
         />
-        {/* <ItemWrap
-          intl={intl}
-          mode="subscribe"
-          count={user.subscribeCount}
-          image={followerIcon}
-          handleSelectTab={handleSelectTab}
-          selectedTab={selectedTab}
-          style={{display: "none"}}
-        />
-        <ItemWrap
-          intl={intl}
-          mode="interested"
-          count={isMyPage ? subscribeInfo.emails.length : user.interestedCount}
-          image={followingIcon}
-          handleSelectTab={handleSelectTab}
-          selectedTab={selectedTab}
-          style={{display: "none"}}
-        /> */}
-      </div>
+      </div> */}
     </section>
   );
 }
@@ -140,3 +124,22 @@ const ItemWrap = props => {
     </div>
   );
 };
+
+{/* <ItemWrap
+          intl={intl}
+          mode="subscribe"
+          count={user.subscribeCount}
+          image={followerIcon}
+          handleSelectTab={handleSelectTab}
+          selectedTab={selectedTab}
+          style={{display: "none"}}
+        />
+        <ItemWrap
+          intl={intl}
+          mode="interested"
+          count={isMyPage ? subscribeInfo.emails.length : user.interestedCount}
+          image={followingIcon}
+          handleSelectTab={handleSelectTab}
+          selectedTab={selectedTab}
+          style={{display: "none"}}
+        /> */}

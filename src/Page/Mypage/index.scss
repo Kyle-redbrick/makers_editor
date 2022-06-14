@@ -1,14 +1,14 @@
 .Page--Mypage {
-  margin-top: 20px;
   min-width: 100%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  background-color: #000;
 
   .Mypage--Inner {
-    width: 1170px;
+    width: 100%;
   }
 
   .Mypage__Activity {
