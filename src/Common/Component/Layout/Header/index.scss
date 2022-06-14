@@ -398,6 +398,10 @@
       justify-content: space-between;
       &.On {
         display: flex;
+      
+        .header_menu_icon {
+          display: none;
+        }
       }
       &.Off {
         display: none;
