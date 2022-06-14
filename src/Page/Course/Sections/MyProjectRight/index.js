@@ -7,13 +7,21 @@ import { URL } from "../../../../Common/Util/Constant"
 import * as Popup from "../../../../Common/Component/PopUp";
 import GamePopup from "../../../CourseDetail/Components/GamePopup";
 import * as LearnButtons from "../../../../Common/Component/Button/Learn";
+import AlertIcon from "../../../../Image/icn_alert-circle.svg";
 import "./index.scss";
 
 
 function MyProjectRight (props) {
   return (
     <div className="right-banner">
+      {/* TODO 비구매 이용 시, 클래스 non-scroll 추가 */}
       <div className="course-content__wrap">
+        {/* TODO 비구매 이용 시, 해당 레이아웃 추가 */}        
+        <div className="course-content__non-pay-box">
+          <img alt="느낌표 아이콘" src={AlertIcon} />
+          <FormattedMessage id="ID_LEARN_ALERT_TITLE" />
+        </div>
+
         { props.session.isLogin ? <AfterList {...props} /> : <BeforeList {...props} /> }
       </div>
     </div>
