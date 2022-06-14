@@ -12,13 +12,17 @@
 }
 
 .course-content__wrap {
-  padding-left: 80px;
+  margin-left: 80px;
   height: 490px;
   position: relative;
   overflow: overlay;
   overflow-x: hidden;
   z-index: 10;
   overflow-y: auto;
+
+  &.non-scroll {
+    overflow-y: hidden;
+  }
 
   &::-webkit-scrollbar  {
     width: 7px;
@@ -333,5 +337,34 @@
 
   img {
     margin-right: 4px;
+  }
+}
+
+.course-content__non-pay-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #121212;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+
+  img {
+    width: 34px;
+    height: 34px;
+    object-fit: cover;
+  }
+
+  span {
+    display: block;
+    margin-top: 14px;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 500;
+    color: #5b5b5b;
   }
 }

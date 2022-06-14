@@ -1494,7 +1494,11 @@ const zh = {
   ID_ABOUT_CHARACTER_SUZU_TITLE : "SUZU",
   ID_ABOUT_CHARACTER_SUZU_CHILD_TITLE : "A cute 7 years old human girl and\nthe granddaughter of Professor Elefun.\nShe is extremely intelligent, capapble, and independent.",
   ID_ABOUT_CHARACTER_KITTY_TITLE : "Astro Kitty",
-  ID_ABOUT_CHARACTER_KITTY_CHILD_TITLE : "AI robot built to resemble a three months old kitten.\nAstro regards Astro Kitty as his mischievous\nbut adorable younger brother."
+  ID_ABOUT_CHARACTER_KITTY_CHILD_TITLE : "AI robot built to resemble a three months old kitten.\nAstro regards Astro Kitty as his mischievous\nbut adorable younger brother.",
+
+  ID_LEARN_ALERT_TITLE : "학습 가능한 차시가 없습니다",
+  ID_LEARN_NON_LEARNING_TITLE : "학습 권한 없음",
+  ID_LEARN_NON_LEARNING_SECOND_TITLE : "구매 후 이용 가능한 과정입니다"
 
 };
 export default zh;
