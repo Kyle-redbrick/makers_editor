@@ -12,8 +12,6 @@ import "./index.scss";
 
 
 function MyProjectRight (props) {
-  console.log(222, props.course);
-  console.log(1111, props.projects);
   return (
     <div className="right-banner">
       {/* TODO 비구매 이용 시, 클래스 non-scroll 추가 */}
