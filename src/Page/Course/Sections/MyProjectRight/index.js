@@ -16,7 +16,7 @@ function MyProjectRight (props) {
     <div className="right-banner">
       {/* TODO 비구매 이용 시, 클래스 non-scroll 추가 */}
       <div className="course-content__wrap">
-        {!props.course.unlocked &&
+        {!props.course.unlocked && props.session.isLogin &&
           <div className="course-content__non-pay-box">
             <img alt="느낌표 아이콘" src={AlertIcon} />
             <FormattedMessage id="ID_LEARN_ALERT_TITLE" />
@@ -34,7 +34,7 @@ const BeforeList = (props) => {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    props.projects.map((item,index) => {
+    props.projects.map((item, index) => {
       item.isClickd = false
     })
     setItems([...props.projects])
