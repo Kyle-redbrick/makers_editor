@@ -1424,6 +1424,8 @@ const ko = {
   ID_ATTENDANCE_TITLE: "출석현황",
   ID_PLAY_RECENT_GAMES: "Recently Played",
   ID_PLAY_ALL_GAMES: "All Games",
+  ID_PLAY_RECENT_GAMES_NO_RESULT: "There are no recently played games.",
+  ID_PLAY_ALL_GAMES_NO_RESULT: "There are no published games.",
 
   ID_INTRO_CONTACT_US : "Contact Us",
   ID_INTRO_SCROLL_ACTION_IMG_TITLE_1 : "Self Check",

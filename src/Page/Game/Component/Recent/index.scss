@@ -17,7 +17,19 @@
 
   .GameList__recent-games__games {
     display: flex;
+  }
 
+  .GameList__recent-games__no-result {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 276px;
+    width: 100%;
+    span {
+      text-align: center;
+      font-size: 22px;
+      color: rgba(255, 255, 255, 0.5);
+    }
   }
 
   .GameBox__recent {

@@ -1410,6 +1410,8 @@ const ja = {
   ID_ATTENDANCE_TITLE: "出席状況",
   ID_PLAY_RECENT_GAMES: "最近再生しました",
   ID_PLAY_ALL_GAMES: "すべてのゲーム",
+  ID_PLAY_RECENT_GAMES_NO_RESULT: "最近プレイしたゲームはありません。",
+  ID_PLAY_ALL_GAMES_NO_RESULT: "公開されているゲームはありません。",
 
   ID_INTRO_CONTACT_US: "Contact Us",
   ID_INTRO_SCROLL_ACTION_IMG_TITLE_1: "セルフチェック",
