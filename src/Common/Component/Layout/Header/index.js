@@ -8,8 +8,7 @@ import LoginAlertPopup from "../../PopUp/LoginAlertPopup";
 import * as userInfoActions from "../../../Store/Reducer/UserInfo";
 import SignIn from "../../SignIn";
 import SignUp from "../../SignUp";
-// import logoImg from "../../../../Image/dreamclass/logo.png";
-import logoImg from "../../../../Image/dreamclass/astroboy_logo.png"
+import logoImg from "../../../../Image/astro-new-logo.png";
 import searchImg from "../../../../Image/dreamclass/search.svg";
 import NotiOnIcon from "../../../../Image/dreamclass/notification-bell-new-notification.svg";
 import NotiOffIcon from "../../../../Image/dreamclass/notification-bell-normal.svg";
