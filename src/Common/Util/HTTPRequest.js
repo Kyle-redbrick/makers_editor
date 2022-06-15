@@ -1498,6 +1498,13 @@ export const saveMyDreamProject = (id, updateValues) => {
   return fetchRequest(URL.API_SERVER + `myDreamProject/${id}/save`, "PUT", updateValues);
 };
 
+export const saveAstroMission = (id, updateValues) => {
+  return fetchRequest(URL.API_SERVER + `myProject/complete/${id}`, "PUT", updateValues);
+}
+export const getAstroMissionCompleteInfo = id => {
+  return fetchRequest(URL.API_SERVER + `myProject/complete/${id}`, "GET");
+}
+
 export const getMyDreamProjectInfo = id => {
   return fetchRequest(URL.API_SERVER + `myDreamProject/${id}/get`, "GET");
 }
@@ -1603,26 +1610,26 @@ export const getLearnCourses = formData => {
   );
 }
 
-export const inviteSignup = (params, authorityKey)=> {
+export const inviteSignup = (params, authorityKey) => {
   return fetchRequest(URL.API_SERVER + `account/register/${authorityKey.authorityKey}`, "POST", params);
 }
 
-export const loginByGoogle = (params)=> {
-  return fetchRequest(URL.API_SERVER + `account/loginByGoogle`, "POST",  params);
+export const loginByGoogle = (params) => {
+  return fetchRequest(URL.API_SERVER + `account/loginByGoogle`, "POST", params);
 }
 
-export const modifyPassword = (params)=> {
-  return fetchRequest(URL.API_SERVER + `account/modify/password`, "POST",  params);
+export const modifyPassword = (params) => {
+  return fetchRequest(URL.API_SERVER + `account/modify/password`, "POST", params);
 }
 
-export const modifyName =  (params)=> {
-  return fetchRequest(URL.API_SERVER + `account/modify/names`, "POST",  params).then(
+export const modifyName = (params) => {
+  return fetchRequest(URL.API_SERVER + `account/modify/names`, "POST", params).then(
     res => res.json()
   );
 }
 
-export const sendContact =  (params)=> {
-  return fetchRequest(URL.API_SERVER + `intro/contact`, "POST",  params).then(
+export const sendContact = (params) => {
+  return fetchRequest(URL.API_SERVER + `intro/contact`, "POST", params).then(
     res => res.json()
   );
 }

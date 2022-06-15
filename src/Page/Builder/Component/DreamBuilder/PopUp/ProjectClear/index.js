@@ -18,11 +18,11 @@ function ProjectClear(props) {
         </div>
         <div className="questClear_popup_details_row">
           <div className='questClear_popup_details_category'>STEM</div>
-          <div class="questClear_popup_details_info">{props.stem}</div>
+          <div className="questClear_popup_details_info">{props.stem}</div>
         </div>
         <div className="questClear_popup_details_row">
           <div className='questClear_popup_details_category'>SDG</div>
-          <div class="questClear_popup_details_info">{props.sdg}</div>
+          <div className="questClear_popup_details_info">{props.sdg}</div>
         </div>
       </div>
       <div className="popup_buttons">
