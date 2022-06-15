@@ -105,9 +105,10 @@ class Container extends Component {
               <div className="OCPCertificationText_Name">{this.props.name}</div>
               <div className="OCPCertificationText_Class">{this.props.class}</div>
               <div className="OCPCertificationText_School">{this.state.certDesc}</div>
-              <div className="OCPCertificationText_Date">
+            </div>
+
+            <div className="OCPCertificationText_Date">
                 {moment().format('YYYY MM DD')}
-              </div>
             </div>
           </div>
         </div>
