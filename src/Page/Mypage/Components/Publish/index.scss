@@ -117,11 +117,13 @@
       }
 
       .Publish_GridItem_Bottom {
+        position: absolute;
+        left: 15px;
+        right: 15px;
         bottom: 0;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        width: 100%;
         margin-top: 10px;
       }
 
@@ -274,6 +276,26 @@
 
     .noPublish {
       width: 100%;
+    }
+  }
+}
+
+@media (min-width:615px) and (max-width:785px) {
+  .Publish {
+    .Publish_GridContainer {
+      .Publish_GridItem {
+        height: 500px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width:800px) {
+  .Publish {
+    .Publish_GridContainer {
+      .Publish_GridItem {
+        flex: 1 1 50%;
+      }
     }
   }
 }

@@ -165,19 +165,6 @@ const PublishItem = props => {
           {intl.formatMessage({ id: "ID_PUBLISH_ITEM_EDIT" })}
         </div>
       </div>
-      
-      {/* TODO 찜 횟수 / view 횟수 */}
-      <div className="Publish_GridItem--info">
-        <div className="Publish_GridItem--heart">
-          <img alt="하트 아이콘" src={IconHeart} />
-          <span className="Publish_GridItem--number">52</span>
-        </div>
-
-        <div className="Publish_GridItem--view">
-          <img alt="눈 아이콘" src={IconEyes} />
-          <span className="Publish_GridItem--number">2345</span>
-        </div>
-      </div>
     </div>
   );
 };
