@@ -58,17 +58,6 @@ export default function View(props) {
           </div>
         </div>
       </div>
-
-      <div className="UserInfoTemplate_Wrap">
-        <ItemWrap
-          intl={intl}
-          mode="publish"
-          count={user.publishedProjectCount}
-          image={publishedAppIcon}
-          handleSelectTab={handleSelectTab}
-          selectedTab={selectedTab}
-        />
-      </div>
     </section>
   );
 }

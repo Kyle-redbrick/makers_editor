@@ -41,6 +41,7 @@ export default function View(props) {
     <div className="Publish">
       <p className="title">
         <FormattedMessage id="ID_MYPAGE_TABTAPE_PUBLISH" />
+        
         {/* TODO publish length number 들어가야함 */}
         <div className="Publish__list-length">8</div>
       </p>
@@ -139,6 +140,30 @@ const PublishItem = props => {
       {/* TODO user name */}
       <div className="Publish_GridItem--user-name">
         usernane
+      </div>
+
+      <div className="Publish_GridItem_Bottom">
+        <div className="Publish_GridItem_Live_Wrapper">
+          <div
+            className={`Publish_GridItem_Live_Toggle ${isLive ? "On" : "Off"}`}
+            onClick={() => handleProjectLive(published)}
+          >
+            <span/>
+          </div>
+          <p className="Publish_GridItem_Live_Text">
+            {isLive ?
+              intl.formatMessage({ id: "ID_MYPAGE_PROJECT_LIVE" }) :
+              intl.formatMessage({ id: "ID_MYPAGE_PROJECT_NOLIVE" })
+            }
+          </p>
+        </div>
+
+        <div 
+          className="Publish_GridItem_Edit"
+          onClick={() => {onClickPublishedSetting(published);}}
+        >
+          {intl.formatMessage({ id: "ID_PUBLISH_ITEM_EDIT" })}
+        </div>
       </div>
       
       {/* TODO 찜 횟수 / view 횟수 */}

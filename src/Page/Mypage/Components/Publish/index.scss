@@ -122,6 +122,7 @@
         align-items: center;
         justify-content: space-between;
         width: 100%;
+        margin-top: 10px;
       }
 
       .Publish_GridItem_Live_Wrapper {
@@ -233,17 +234,17 @@
 
     .title {
       margin-bottom: 20px;
+      padding: 0 15px;
     }
 
     .Publish_GridContainer {
-      width: 100%;
+      width: auto;
+      margin: 0;
 
       .Publish_GridItem {
         width: calc((100% - 10px) / 2);
         margin-bottom: 30px;
-        margin-left: 10px;
         &--mypage {
-          height: calc((100vw - 42px - 10px) / 2 + 120px);
         }
 
         .Publish_GridItem-title {
