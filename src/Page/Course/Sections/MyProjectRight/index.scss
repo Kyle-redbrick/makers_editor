@@ -77,6 +77,22 @@
       }
     }
   }
+  &.dim {
+    pointer-events: none;
+    .course-content__outline {
+      &::after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background: rgba(0, 0, 0, 0.35);
+        z-index: 20;
+        top: 0;
+        left: 0;
+      }
+    }
+  }
 }
 
 .course-content__outline {

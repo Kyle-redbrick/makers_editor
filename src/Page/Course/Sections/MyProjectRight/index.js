@@ -52,7 +52,7 @@ const BeforeList = (props) => {
   return (
     <ul className="course-content__list course-content__list--register">
       {
-        items.map((item,index) =>
+        items.map((item, index) =>
           <li key={index} className="course-content__item" onClick={() => onClickItem(index)}>
             <div className="course-content__outline">
               <div className="course-content__thumbnail">
@@ -123,7 +123,7 @@ const AfterList = (props) => {
     <ul className="course-content__list">
       {
         items.map((item, index) =>
-          <li key={index} className={`course-content__item ${!item.unlocked && "lock"}`} onClick={() => onClickItem(index)}>
+          <li key={index} className={`course-content__item ${!item.unlocked && item.symbol === "BLOCKED" && "lock"} ${!item.unlocked && item.symbol === "LOCK" && "dim"}`} onClick={() => onClickItem(index)}>
             <div className="course-content__outline">
               <div className="course-content__thumbnail">
                 <img alt="차시 썸네일" src={URL.S3_DREAMCLASS + item.resources.thumbnailURL} />
