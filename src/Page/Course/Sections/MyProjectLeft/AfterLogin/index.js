@@ -38,14 +38,12 @@ function AfterLogin (props) {
           props.curriculum.map( (item,index) => 
             <SwiperSlide key={index}>
               <div className="content-slide__thumbnail-wrap content-slide__thumbnail-wrap--user">
-                {/* TODO 비구매 이용 시, 해당 레이아웃 추가 */}
                 {!item.course.unlocked &&
                   <div className="content-slide__non-pay-dimmed">
                     <FormattedMessage id="ID_LEARN_NON_LEARNING_TITLE" />
                     <FormattedMessage id="ID_LEARN_NON_LEARNING_SECOND_TITLE" />
                   </div>
                 }
-                
                 <img alt="강의 썸네일" src={URL.S3_DREAMCLASS + item.course.posterURL} />
                 <span className="content-slide__course-length">{item.course.label}</span>
               </div>

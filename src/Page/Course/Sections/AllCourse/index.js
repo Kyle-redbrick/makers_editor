@@ -39,7 +39,6 @@ function AllCourse(props) {
               <li key={index} className="all-course__project-item" onClick={() => linkToLearn(item.lectureId)}>
                 <div className="all-course__project-inner">
                   <div className="all-course__project-thumbnail">
-                    {/* /* TODO 비로그인 후구 구매 시,  해당 dimmed 노출처리. */ }
                     {!item.unlocked &&
                       <div className="all-course__non-pay-dimmed">
                         <FormattedMessage id="ID_LEARN_NON_LEARNING_TITLE" />
