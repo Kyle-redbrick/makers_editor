@@ -41,7 +41,8 @@ export default function View(props) {
     <div className="Publish">
       <p className="title">
         <FormattedMessage id="ID_MYPAGE_TABTAPE_PUBLISH" />
-        <div className="UserInfoTemplate_ItemWrap_BottomWrap-num">{num}</div>
+        {/* TODO publish length number 들어가야함 */}
+        <div className="Publish__list-length">8</div>
       </p>
       {publisheds.length > 0 ? (
         <div className="Publish_GridContainer">
