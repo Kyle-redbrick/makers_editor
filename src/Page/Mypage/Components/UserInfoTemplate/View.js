@@ -1,7 +1,7 @@
 import React from "react";
 import UserIconWrapper from "../../../../Common/Component/UserIconWrapper";
 import bitsIcon from "../../../../Image/dreamclass/ranking-icon-36-learning.svg"
-import editIcon from "../../../../Image/dreamclass/review-34-edit.svg"
+import editIcon from "../../../../Image/profile-edit.svg";
 import publishedAppIcon from "../../../../Image/dreamclass/my-profile-publishing.svg"
 import followerIcon from "../../../../Image/dreamclass/my-profile-followers.svg"
 import followingIcon from "../../../../Image/dreamclass/my-profile-following.svg"
@@ -38,10 +38,6 @@ export default function View(props) {
               {user.name}
             </div>
           </div>
-          <div className="UserInfoTemplate_UserInfo_Bits">
-            <img src={bitsIcon} alt=""/>
-            <FormattedNumber value={user.dreamPoint} /> <span className="bits">BITS</span>
-          </div>
           <div className="UserInfoTemplate_UserInfo_etc">
             <div className="UserInfoTemplate_UserInfo_TextWrap-status">
               {user.statusMessage ? user.statusMessage : ""}
@@ -63,7 +59,7 @@ export default function View(props) {
         </div>
       </div>
 
-      {/* <div className="UserInfoTemplate_Wrap">
+      <div className="UserInfoTemplate_Wrap">
         <ItemWrap
           intl={intl}
           mode="publish"
@@ -72,7 +68,7 @@ export default function View(props) {
           handleSelectTab={handleSelectTab}
           selectedTab={selectedTab}
         />
-      </div> */}
+      </div>
     </section>
   );
 }
@@ -124,22 +120,3 @@ const ItemWrap = props => {
     </div>
   );
 };
-
-{/* <ItemWrap
-          intl={intl}
-          mode="subscribe"
-          count={user.subscribeCount}
-          image={followerIcon}
-          handleSelectTab={handleSelectTab}
-          selectedTab={selectedTab}
-          style={{display: "none"}}
-        />
-        <ItemWrap
-          intl={intl}
-          mode="interested"
-          count={isMyPage ? subscribeInfo.emails.length : user.interestedCount}
-          image={followingIcon}
-          handleSelectTab={handleSelectTab}
-          selectedTab={selectedTab}
-          style={{display: "none"}}
-        /> */}

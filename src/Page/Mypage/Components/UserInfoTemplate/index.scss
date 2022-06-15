@@ -21,11 +21,13 @@
   }
 
   .UserInfoTemplate_UserInfo {
-    display: flex;
-    align-items: center;
     color: white;
     position: relative;
-    top: 80px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
     .UserInfoTemplate_UserInfo_setting {
       position: absolute;
@@ -35,11 +37,10 @@
     }
 
     .UserInfoTemplate_UserInfo_ImgWrap {
-      margin-left: 30px;
 
       .UserInfoTemplate_UserInfo_ImgWrap-icon {
-        width: 184px;
-        height: 184px;
+        width: 168px;
+        height: 168px;
       }
       .UserIconWrapper_Icon {
         width: 100%;
@@ -50,34 +51,38 @@
     .UserInfoTemplate_UserInfo_setting_Btn {
       display: inline-flex;
       align-items: center;
-      width: 75px;
-      height: 34px;
+      justify-content: center;
+      padding: 4px 10px;
       text-decoration: none;
-      font-size: 14px;
+      font-size: 16px;
       font-weight: 500;
+      line-height: 20px;
+      color: #fff;
       color: inherit;
-      border-radius: 10px;
-      background-color: rgba(255, 255, 255, 0.3);
+      border-radius: 100px;
+      background-color: #5b5b5b;
       cursor: pointer;
     }
 
     .UserInfoTemplate_UserInfo_TextWrap {
       max-width: 446px;
       min-height: 89px;
-      margin-left: 30px;
+      margin-top: 12px;
   
       .UserInfoTemplate_UserInfo_TextWrap_FirstLine-nik {
-        font-size: 30px;
-        font-weight: bold;
-        margin-bottom: 10px;
+        font-size: 28px;
+        font-weight: 700;
+        margin-bottom: 12px;
+        line-height: 34px;
       }
 
       .UserInfoTemplate_UserInfo_TextWrap-status {
-        margin-bottom: 20px;
-        font-size: 18px;
+        margin-bottom: 22px;
+        font-size: 16px;
         font-weight: 500;
-        line-height: 1.11;
-        color: rgba(255, 255, 255, 0.75);
+        line-height: 20px;
+        display: block;
+        color: #fff;
       }
 
       .UserInfoTemplate_UserInfo_TextWrap_FirstLine-nik,
@@ -174,6 +179,13 @@
     }
   }
 
+}
+
+.UserInfoTemplate_UserInfo_TextWrap_FirstLine-settingBtn {
+  width: 22px;
+  height: 22px;
+  object-fit: cover;
+  margin-right: 6px;
 }
 
 @media screen and (max-width: 1169px) {

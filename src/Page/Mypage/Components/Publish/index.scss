@@ -11,21 +11,19 @@
   }
 
   .Publish_GridContainer {
-    width: 1170px;
+    max-width: 1170px;
     display: flex;
     flex-wrap: wrap;
-
-    > .Publish_GridItem:nth-child(6n+1){
-      margin-left: 0;
-    }
+    margin: 0 -15px;
 
     .Publish_GridItem {
-      width: 170px;
-      margin-left: 30px;
-      margin-bottom: 37px;
+      padding: 0 15px;
+      margin-bottom: 44px;
+      flex:  1 1 25%;
+
       &--mypage {
         position: relative;
-        height: 310px;
+        height: 402px;
       }
 
       .Publish_GridItem-wrap {
@@ -90,13 +88,15 @@
       }
 
       .Publish_GridItem-title {
-        margin-top: 20px;
+        margin-top: 16px;
         font-size: 20px;
         font-weight: 500;
         overflow: hidden;
         white-space: normal; 
-        line-height: 1.3; 
-        max-height: 2.6em; 
+        line-height: 26px; 
+        max-height: 52px; 
+        text-overflow: ellipsis;
+        color: #fff;
         text-align: left; 
         word-wrap: break-word; 
         display: -webkit-box; 
@@ -117,7 +117,6 @@
       }
 
       .Publish_GridItem_Bottom {
-        position: absolute;
         bottom: 0;
         display: flex;
         align-items: center;
@@ -185,6 +184,38 @@
     width: 1170px;
     text-align: left;
   }
+}
+
+.Publish_GridItem--user-name {
+  display: block;
+  margin-top: 8px;
+  font-size: 18px;
+  line-height: 18px;
+  color: #8e8e8e;
+  font-weight: 400;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.Publish_GridItem--info {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+}
+
+.Publish_GridItem--number {
+  font-size: 14px;
+  color: #8e8e8e;
+  line-height: 14px;
+  font-weight: 500;
+  margin-left: 5px;
+}
+
+.Publish_GridItem--heart {
+  margin-right: 14px;
 }
 
 @media screen and (max-width: 1169px) {
