@@ -51,22 +51,24 @@
     transform: translateX(-50%);
   }
   .OCPCertificationText_School {
-    margin-top: 18px;
-    font-family: "Poppins";
-    font-size: 14px;
+    margin-top: 14px;
+    font-family: "Times New Roman";
+    font-size: 13px;
     line-height: 24px;    
     text-align: center;
     color: #484848;
   }
   .OCPCertificationText_Name {
+    margin-top: -10px;
     font-family: "Alex Brush";
-    font-size: 60px;
+    font-size: 54px;
     line-height: 75px;
     text-align: center;
     color: #1D1D1B;
   }
 
   .OCPCertificationText_Class {
+    margin-top: -16px;
     font-family: "CookieRunOTF";
     font-size: 18px;
     line-height: 24px;
@@ -75,11 +77,11 @@
   }
 
   .OCPCertificationText_Date {
-    margin-top: 50px;
-    font-family: "CookieRunOTF";
-    font-size: 20px;
+    margin-left: 230px;
+    margin-top: 440px;
+    font-family: "Times New Roman";
+    font-size: 16px;
     line-height: 27px;
-    text-align: center;
     color: #1D1D1B;
   }
 }
