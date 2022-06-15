@@ -36,14 +36,15 @@ function AllCourse(props) {
         <ul className="all-course__project-list">
           {
             courses.map((item, index) =>
-              <li key={index} className={`all-course__project-item ${!item.unlocked && "lock"}`} onClick={() => linkToLearn(item.lectureId)}>
+              <li key={index} className="all-course__project-item" onClick={() => linkToLearn(item.lectureId)}>
                 <div className="all-course__project-inner">
                   <div className="all-course__project-thumbnail">
-                    {/* /* TODO 비로그인 후구 구매 시,  해당 dimmed 노출처리. */ }
-                    <div className="all-course__non-pay-dimmed">
-                      <FormattedMessage id="ID_LEARN_NON_LEARNING_TITLE" />
-                      <FormattedMessage id="ID_LEARN_NON_LEARNING_SECOND_TITLE" />
-                    </div>
+                    {!item.unlocked &&
+                      <div className="all-course__non-pay-dimmed">
+                        <FormattedMessage id="ID_LEARN_NON_LEARNING_TITLE" />
+                        <FormattedMessage id="ID_LEARN_NON_LEARNING_SECOND_TITLE" />  
+                      </div>
+                    }
                     
                     <img alt="코스 강의 썸네일" src={URL.S3_DREAMCLASS + item.posterUrl} />
                     <span className="all-course__project-label">{item.label}</span>

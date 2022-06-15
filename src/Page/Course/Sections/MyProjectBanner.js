@@ -24,7 +24,10 @@ const MyProjectBanner = (props) => {
       }
       <div className="project-banner-wrap">
         <MyProjectLeft {...props} />
-        <MyProjectRight projects={props.curriculum[props.slideIndex].projects} session={props.session} />
+        <MyProjectRight
+          course={props.curriculum[props.slideIndex].course}
+          projects={props.curriculum[props.slideIndex].projects} session={props.session}
+        />
       </div>
     </div>
   )
