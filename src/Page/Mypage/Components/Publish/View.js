@@ -20,22 +20,6 @@ export default function View(props) {
     onClickPublishedSetting,
     handleProjectLive
   } = props;
-
-  let num;
-
-  switch (mode) {
-    case "publish":
-      num = count + intl.formatMessage({id: "ID_USER_INFO_TEMPLATE_UNIT01"});
-      break;
-    case "subscribe":
-      num = count + intl.formatMessage({id: "ID_USER_INFO_TEMPLATE_UNIT02"});
-      break;
-    case "interested":
-      num = count + intl.formatMessage({id: "ID_USER_INFO_TEMPLATE_UNIT02"});
-      break;
-    default:
-      break;
-  }
   
   return (
     <div className="Publish">
@@ -160,7 +144,7 @@ const PublishItem = props => {
 
         <div 
           className="Publish_GridItem_Edit"
-          onClick={() => {onClickPublishedSetting(published);}}
+          onClick={() => onClickPublishedSetting(published)}
         >
           {intl.formatMessage({ id: "ID_PUBLISH_ITEM_EDIT" })}
         </div>
