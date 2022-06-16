@@ -25,9 +25,7 @@ export default function View(props) {
     <div className="Publish">
       <p className="title">
         <FormattedMessage id="ID_MYPAGE_TABTAPE_PUBLISH" />
-        
-        {/* TODO publish length number 들어가야함 */}
-        <div className="Publish__list-length">8</div>
+        <div className="Publish__list-length">{publisheds.length}</div>
       </p>
       {publisheds.length > 0 ? (
         <div className="Publish_GridContainer">
