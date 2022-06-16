@@ -118,3 +118,25 @@
   }
 }
 
+@media screen and (max-width:768px) {
+  .third-section {
+    flex-wrap: wrap;
+
+    .swiper-pagination-bullet {
+      width: auto;
+    }
+
+    .swiper-wrapper {
+      padding-left: 0;
+      max-width: none;
+    }
+
+    .third-section__vertical-slide-wrap {
+      margin-top: 15px;
+    }
+  }
+
+  .third-section__left {
+    width: 100%;
+  }
+}

@@ -217,3 +217,11 @@
     }
   }
 }
+
+@media screen and (max-width:768px) {
+  .left-slide {
+    width: 100%;
+    flex: initial;
+    margin-bottom: 15px;
+  }
+}

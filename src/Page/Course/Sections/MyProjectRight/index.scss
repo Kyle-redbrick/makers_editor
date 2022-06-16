@@ -384,3 +384,13 @@
     color: #5b5b5b;
   }
 }
+
+@media screen and (max-width:768px) {
+  .right-banner {
+    flex: initial;
+  }
+
+  .course-content__wrap {
+    margin-left: 0;
+  }
+}

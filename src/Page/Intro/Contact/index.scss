@@ -404,3 +404,20 @@
     margin-right: 8px;
   }
 }
+
+@media screen and (max-width:768px) {
+  .contact__inner {
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .contact {
+    height: auto;
+    padding: 15px 0;
+  }
+
+  .contact__info {
+    margin-bottom: 15px;
+  }
+}

@@ -163,3 +163,10 @@
     }
   }
 }
+
+@media screen and (max-width:768px) {
+  .all-course__project-item {
+    flex: auto;
+    width: auto;
+  }
+}

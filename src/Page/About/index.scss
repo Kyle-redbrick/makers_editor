@@ -344,3 +344,13 @@
   font-weight: 500;
   white-space: pre-wrap;
 }
+
+@media screen and (max-width:768px) {
+  .Page--About {
+    .about__section-banner {
+      .about-banner > img {
+        width: 100%;
+      }
+    }
+  }
+}
