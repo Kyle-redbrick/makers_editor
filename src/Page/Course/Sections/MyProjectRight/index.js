@@ -98,7 +98,7 @@ const AfterList = (props) => {
   }, [props]);
 
   const onClickItem = (i) => {
-    items.map((item,index) => {
+    items.map((item, index) => {
       i == index ? item.isClickd = !item.isClickd : item.isClickd = false
     })
     setItems([...items])
@@ -134,22 +134,22 @@ const AfterList = (props) => {
                 <div className="course-content__clear-label">
                   {item.unlocked &&
                     <>
-                    {
-                      item.progress.completed / item.progress.net === 1 ?
-                        <>
-                          <img alt="수강 완료한 강의 아이콘" src={ClearIcon} />
-                          <span className="course-content__clear-text">
-                            <FormattedMessage id="ID_LEARN_ALL_STEPS_CLEAR" />
-                          </span>
-                        </>
-                        :
-                        <div className="course-content__progress-bar">
-                          <div className="course-content__progress-bar-thumb">
-                            <div className="course-content__progress-bar-track" style={{ width: item.progress.completed / item.progress.net * 100 }}></div>
+                      {
+                        item.progress.completed / item.progress.net === 1 ?
+                          <>
+                            <img alt="수강 완료한 강의 아이콘" src={ClearIcon} />
+                            <span className="course-content__clear-text">
+                              <FormattedMessage id="ID_LEARN_ALL_STEPS_CLEAR" />
+                            </span>
+                          </>
+                          :
+                          <div className="course-content__progress-bar">
+                            <div className="course-content__progress-bar-thumb">
+                              <div className="course-content__progress-bar-track" style={{ width: item.progress.completed / item.progress.net * 100 }}></div>
+                            </div>
+                            <span className="course-content__progress-length"><b>{item.progress.completed}</b>/{item.progress.net} Step</span>
                           </div>
-                          <span className="course-content__progress-length"><b>{item.progress.completed}</b>/{item.progress.net} Step</span>
-                        </div>
-                    }
+                      }
                     </>
                   }
                 </div>
