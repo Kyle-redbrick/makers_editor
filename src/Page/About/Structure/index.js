@@ -4,13 +4,13 @@ import IconDown from "../../../Image/icon-file-down.svg";
 import IconFreeArrow from "../../../Image/icon-free-trial.svg";
 import IconBlockCoding from "../../../Image/icon-block-coding.svg";
 import IconJavascript from "../../../Image/icon-javascript.svg";
-import ImgSample from "../../../Image/img-about-sample.png";
 import IconPlay from "../../../Image/btn_play.svg";
 import IconSlideToggle from "../../../Image/icon-slide-toggle.svg";
 import IconLight from "../../../Image/icon-light.svg";
 import * as request from "../../../Common/Util/HTTPRequest";
 import { Link } from "react-router-dom";
 import "./index.scss";
+import { URL } from "../../../Common/Util/Constant";
 
 function Structure () {
   const [curriculum, setCurriculum] = useState([]);
@@ -117,12 +117,10 @@ const BlockCoding = (props) => {
       {bCurriculum.map((curriculum, index) => 
         <div key={curriculum.course.id} className="structure__slide-box">
           <div className="structure__slide-flex-box">
-            {/* TODO 강의 썸네일 */}
-            <img alt="강의 썸네일 임시" src={ImgSample} />
+            <img alt="강의 썸네일 임시" src={URL.S3_DREAMCLASS + curriculum.course.smallPosterURL} />
             <div className="structure__content-title-box">
               <h3 className="structure__content-title">{curriculum.course.title}</h3>
               <span className="structure__mission-length">{curriculum.course.progress.net} <FormattedMessage id="ID_COMMON_MISSION" /></span>
-              {/* TODO 강의 시간 DB에 추가*/}
               <span className="structure__time"> · {curriculum.course.studyEsmtMinute+"min"}</span>
             </div>
 
@@ -199,12 +197,10 @@ const Javascript = (props) => {
       { jsCurriculum.map((curriculum, index) =>
         <div key={curriculum.course.id} className="structure__slide-box">
           <div className="structure__slide-flex-box">
-            {/* TODO 강의 썸네일 */}
-            <img alt="강의 썸네일 임시" src={ImgSample} />
+            <img alt="강의 썸네일 임시" src={URL.S3_DREAMCLASS + curriculum.course.smallPosterURL} />
             <div className="structure__content-title-box">
               <h3 className="structure__content-title">{curriculum.course.title}</h3>
               <span className="structure__mission-length">{curriculum.course.progress.net} <FormattedMessage id="ID_COMMON_MISSION" /></span>
-              {/* TODO 강의 시간 */}
               <span className="structure__time"> · {curriculum.course.studyEsmtMinute+"min"}</span>
             </div>
 

@@ -50,7 +50,7 @@ function BeforeLogin(props) {
                 <span className="content-slide__course-number">{item.course.label}</span>
                 <h3 className="content-slide__course-title">{item.course.title}</h3>
                 <div className="content-slide__thumbnail-wrap">
-                  <img alt="강의 썸네일" src={URL.S3_DREAMCLASS + item.course.posterURL} />
+                  <img alt="강의 썸네일" src={URL.S3_DREAMCLASS + item.course.smallPosterURL} />
                 </div>
                 <p className="content-slide__explan">
                   {item.course.intro}
