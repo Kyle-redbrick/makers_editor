@@ -119,34 +119,39 @@ const PublishItem = props => {
         {published.name}
       </div>
 
-      {/* TODO user name */}
-      <div className="Publish_GridItem--user-name">
-        usernane
-      </div>
-
-      <div className="Publish_GridItem_Bottom">
-        <div className="Publish_GridItem_Live_Wrapper">
-          <div
-            className={`Publish_GridItem_Live_Toggle ${isLive ? "On" : "Off"}`}
-            onClick={() => handleProjectLive(published)}
-          >
-            <span/>
+      {isMyPage && (
+        <div className="Publish_GridItem_Detail">
+          <div className="Publish_GridItem_Wrap">
+            <div className="Publish_GridItem_Wrap-date">
+              {moment(published.createdAt).format("YYYY.MM.DD")}
+            </div>
           </div>
-          <p className="Publish_GridItem_Live_Text">
-            {isLive ?
-              intl.formatMessage({ id: "ID_MYPAGE_PROJECT_LIVE" }) :
-              intl.formatMessage({ id: "ID_MYPAGE_PROJECT_NOLIVE" })
-            }
-          </p>
-        </div>
 
-        <div 
-          className="Publish_GridItem_Edit"
-          onClick={() => onClickPublishedSetting(published)}
-        >
-          {intl.formatMessage({ id: "ID_PUBLISH_ITEM_EDIT" })}
+          <div className="Publish_GridItem_Bottom">
+            <div className="Publish_GridItem_Live_Wrapper">
+              <div
+                className={`Publish_GridItem_Live_Toggle ${isLive ? "On" : "Off"}`}
+                onClick={() => handleProjectLive(published)}
+              >
+                <span/>
+              </div>
+              <p className="Publish_GridItem_Live_Text">
+                {isLive ?
+                  intl.formatMessage({ id: "ID_MYPAGE_PROJECT_LIVE" }) :
+                  intl.formatMessage({ id: "ID_MYPAGE_PROJECT_NOLIVE" })
+                }
+              </p>
+            </div>
+
+            <div 
+              className="Publish_GridItem_Edit"
+              onClick={() => onClickPublishedSetting(published)}
+            >
+              {intl.formatMessage({ id: "ID_PUBLISH_ITEM_EDIT" })}
+            </div>
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };
