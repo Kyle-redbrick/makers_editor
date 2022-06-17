@@ -35,6 +35,8 @@ export const URL = {
   }
 };
 
+export const GOOGLE_SIGNIN_CLIENT_ID = "451745919454-7ga3u82oe852pukhe4esubr6crb67rmq.apps.googleusercontent.com";
+
 export const WIZLIVE_BANNER_LINK = (promotionId, userId) => {
   const url = `http://wizlive.com/wizlabPromotion/${promotionId}/`;
   if (userId) {

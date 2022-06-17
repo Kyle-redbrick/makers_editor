@@ -12,9 +12,8 @@ import logoImg from "../../../Image/wizlab_logo.svg";
 import * as TrackingUtil from "../../Util/TrackingUtil";
 import IconGoogle from "../../../Image/icon-google.svg";
 import { GoogleLogin } from 'react-google-login';
-
 import "./index.scss";
-const CLIENT_ID = '451745919454-7ga3u82oe852pukhe4esubr6crb67rmq.apps.googleusercontent.com';
+import GoogleSignIn from "../GoogleSignIn";
 
 class SignIn extends Component {
   constructor(props) {
@@ -163,6 +162,7 @@ class SignIn extends Component {
           onFailure={this.responseGoogle}
           cookiePolicy={'single_host_origin'}
         /> */}
+        <GoogleSignIn/>
         <div className="popup_warning">{warning}</div>
       </div>
     );
