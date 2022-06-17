@@ -123,7 +123,7 @@ const BlockCoding = (props) => {
               <h3 className="structure__content-title">{curriculum.course.title}</h3>
               <span className="structure__mission-length">{curriculum.course.progress.net} <FormattedMessage id="ID_COMMON_MISSION" /></span>
               {/* TODO 강의 시간 DB에 추가*/}
-              {/* <span className="structure__time"> · 200min</span> */}
+              <span className="structure__time"> · {curriculum.course.studyEsmtMinute+"min"}</span>
             </div>
 
             <button className={curriculum.isOpen ? "structure__slide-btn active" : "structure__slide-btn"} type="button" onClick={() => toggleSlide(index)}>
@@ -205,7 +205,7 @@ const Javascript = (props) => {
               <h3 className="structure__content-title">{curriculum.course.title}</h3>
               <span className="structure__mission-length">{curriculum.course.progress.net} <FormattedMessage id="ID_COMMON_MISSION" /></span>
               {/* TODO 강의 시간 */}
-              {/* <span className="structure__time"> · 320min</span> */}
+              <span className="structure__time"> · {curriculum.course.studyEsmtMinute+"min"}</span>
             </div>
 
             <button className={curriculum.isOpen ? "structure__slide-btn active" : "structure__slide-btn"} type="button" onClick={() => toggleSlide(index)}>
