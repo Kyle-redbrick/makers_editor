@@ -372,7 +372,7 @@ const zh = {
   ID_BUILDER_EDITPOP_CODE_CLOSE: "不公开",
   ID_WIZAPP_CATEGORY_GAME: "游戏",
   ID_WIZAPP_CATEGORY_UTIL: "Utility ",
-  ID_HOME_COPY_INFO: `© IDC ASIA Co., Ltd. All Rights Reserved.`,
+  ID_HOME_COPY_INFO: `MANGOSTEEMS PTE.LTD`,
   ID_HOME_FOOTER_01: `营业执照号 636-87-01115    |    通讯销售登记号 第2019-首尔江南-00100号    |    首尔特别市 江南区 江南大道94路10 K-square 701号 `,
   ID_FOOTER_TERMS: "使用条款",
   ID_FOOTER_PRIVACY: "个人信息处理方针",

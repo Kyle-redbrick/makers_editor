@@ -373,7 +373,7 @@ const ko = {
   ID_BUILDER_EDITPOP_CODE_CLOSE: "비공개",
   ID_WIZAPP_CATEGORY_GAME: "게임",
   ID_WIZAPP_CATEGORY_UTIL: "유틸리티",
-  ID_HOME_COPY_INFO: `© IDC ASIA Co., Ltd. All Rights Reserved.`,
+  ID_HOME_COPY_INFO: `MANGOSTEEMS PTE.LTD`,
   ID_HOME_FOOTER_01: `사업자등록번호 636-87-01115    |    통신판매업신고번호 제2019-서울강남-00100호    |    서울특별시 강남구 강남대로94길 10 케이스퀘어 701호    |    wizlab@wizschool.io`,
   ID_FOOTER_TERMS: "이용약관",
   ID_FOOTER_PRIVACY: "개인정보 처리방침",

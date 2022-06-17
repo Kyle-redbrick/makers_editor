@@ -375,7 +375,7 @@ const ja = {
   ID_BUILDER_EDITPOP_CODE_CLOSE: "非公開",
   ID_WIZAPP_CATEGORY_GAME: "Game",
   ID_WIZAPP_CATEGORY_UTIL: "Utility",
-  ID_HOME_COPY_INFO: `© IDC ASIA Co., Ltd. All Rights Reserved.`,
+  ID_HOME_COPY_INFO: `MANGOSTEEMS PTE.LTD`,
   ID_HOME_FOOTER_01: `Business registration number 636-87-01115    |    Mail-order business registration number 2019-Seoul Gangnam-00100    |    Suite 701, 10, K Square, Gangnam-daero 94-gil, Gangnam-gu, Seoul, Korea    |    wizlab@wizschool.io`,
   ID_FOOTER_TERMS: "利用規約",
   ID_FOOTER_PRIVACY: "プライバシーポリシー",
