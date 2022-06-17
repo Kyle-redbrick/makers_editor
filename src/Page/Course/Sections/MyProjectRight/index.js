@@ -14,7 +14,6 @@ import "./index.scss";
 function MyProjectRight (props) {
   return (
     <div className="right-banner">
-      {/* TODO 비구매 이용 시, 클래스 non-scroll 추가 */}
       <div className="course-content__wrap">
         {!props.course.unlocked && props.session.isLogin &&
           <div className="course-content__non-pay-box">
@@ -22,7 +21,12 @@ function MyProjectRight (props) {
             <FormattedMessage id="ID_LEARN_ALERT_TITLE" />
           </div>
         }
-        { props.session.isLogin ? <AfterList {...props} /> : <BeforeList {...props} /> }
+        { props.session.isLogin ?
+          <>
+            {props.course.unlocked && <AfterList {...props} />} 
+          </> :
+          <BeforeList {...props} />
+        }
       </div>
     </div>
   )
