@@ -22,7 +22,6 @@ const Self = styled.button`
   letter-spacing: 0.38px;
   color: #fff;
   background-color: ${(props) => (props.completed ? "#5b5b5b" : "#ff6f44")};
-  font-family: "Noto Sans KR", sans-serif;
 
   cursor: pointer;
 

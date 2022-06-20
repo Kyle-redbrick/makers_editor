@@ -125,7 +125,6 @@ const Button = styled.button`
   letter-spacing: 0.38px;
   cursor: pointer;
   color: #fff;
-  font-family: "Noto Sans KR";
   &:focus {
     outline: none;
   }

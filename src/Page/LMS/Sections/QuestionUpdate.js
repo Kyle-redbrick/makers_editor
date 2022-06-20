@@ -145,7 +145,6 @@ const ContentTextArea = styled.textarea`
   color: #fff;
   resize: none;
   overflow: auto;
-  font-family: "Noto Sans KR", sans-serif;
 
   &:focus {
     outline: none;

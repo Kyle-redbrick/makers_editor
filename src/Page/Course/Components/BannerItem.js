@@ -81,7 +81,6 @@ const SubTitle = styled.div`
 const Title = styled.h5`
   position: relative;
   text-shadow: 0 2px 20px #000000;
-  font-family: "Noto Sans KR", sans-serif;
   font-size: 36px;
   font-weight: bold;
   line-height: 1.11;

@@ -34,7 +34,6 @@ const LearnAgain = styled(LearnButtons.LearnAgain)`
   line-height: 1.5;
   letter-spacing: 0.3px;
   color: #fff;
-  font-family: "Noto Sans KR", sans-serif;
   outline: none;
   cursor: pointer;
   
@@ -222,7 +221,6 @@ const PlayButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: "Noto Sans KR", sans-serif;
   outline: none;
   cursor: pointer;
   &:focus {
