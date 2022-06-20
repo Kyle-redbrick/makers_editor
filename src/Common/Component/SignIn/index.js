@@ -8,10 +8,7 @@ import { showPopUp } from "../PopUp";
 import SignUp from "../SignUp";
 import ForgotPw from "../ForgotPw";
 import ForgotEmail from "../ForgotEmail";
-import logoImg from "../../../Image/wizlab_logo.svg";
 import * as TrackingUtil from "../../Util/TrackingUtil";
-import IconGoogle from "../../../Image/icon-google.svg";
-import { GoogleLogin } from 'react-google-login';
 import "./index.scss";
 import GoogleSignIn from "../GoogleSignIn";
 
@@ -155,13 +152,6 @@ class SignIn extends Component {
           Sign in width Google
         </button> */}
 
-        {/* <GoogleLogin
-          clientId={CLIENT_ID}
-          buttonText="Login"
-          onSuccess={this.responseGoogle}
-          onFailure={this.responseGoogle}
-          cookiePolicy={'single_host_origin'}
-        /> */}
         <GoogleSignIn/>
         <div className="popup_warning">{warning}</div>
       </div>

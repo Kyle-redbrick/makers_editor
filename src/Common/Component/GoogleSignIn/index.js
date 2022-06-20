@@ -2,10 +2,10 @@ import React from 'react'
 import { useEffect } from 'react';
 import { connect } from "react-redux";
 import { GOOGLE_SIGNIN_CLIENT_ID } from '../../Util/Constant';
-import { loginByGoogle } from '../../Util/HTTPRequest';
+import * as request from "../../Util/HTTPRequest";
 import * as userInfoActions from "../../Store/Reducer/UserInfo";
-import * as TrackingUtil from "../../Util/TrackingUtil";
 import "./index.scss";
+import PopUp, { showPopUp } from '../PopUp';
 
 const GoogleSignIn = (props) => {
   const google = window.google;
@@ -24,15 +24,28 @@ const GoogleSignIn = (props) => {
     }
 
     try {
-      const res = await loginByGoogle(params);
-      const json = await res.json();
-      localStorage.setItem("wizToken", json.token);
-      props.updateUserInfo(json.user);
-    } catch (e) {
+      const json = await request.loginByGoogle(params);
+
+      if(json.success) {
+        localStorage.setItem("wizToken", json.body.token);
+        props.updateUserInfo(json.user);
+        window.location = "/learn";
+      } else {
+        showPopUp(
+          <PopUp.OneButton
+            title={`Astro Coding Go에 \n 등록되지 않은 계정입니다. \n 관리자에게 문의해주세요.`}
+            buttonName="확인"
+          />,
+          {
+            darkmode: true,
+            dismissButton: false,
+            dismissOverlay: true,
+          }
+        );
+      }
+    } catch(e) {
       console.error(e);
-    }
-      TrackingUtil.sendGTMEvent("Login_Success");
-      window.location = "/learn";
+   }
   }
 
   const start = () => {

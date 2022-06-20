@@ -55,7 +55,6 @@
     "react-dom": "^16.9.0",
     "react-draggable": "^3.3.2",
     "react-ga": "^2.5.7",
-    "react-google-login": "^5.2.2",
     "react-html-parser": "^2.0.2",
     "react-intl": "^2.7.2",
     "react-json-editor-ajrm": "^2.5.13",
@@ -100,7 +99,6 @@
     "invalidateJa": "aws cloudfront create-invalidation --distribution E314WSM6HH6UHL --paths \"/*\"",
     "invalidateEn": "aws cloudfront create-invalidation --distribution E3HDRMMWFNXQ2I --paths \"/*\"",
     "upload": "yarn && yarn build && yarn deployJa && yarn deployEn && yarn invalidateJa && yarn invalidateEn",
-
     "build:prod": "NODE_OPTIONS=--max_old_space_size=4096 react-scripts build && rm build/static/**/*.map",
     "deployJa:prod": "aws s3 sync build_release/ s3://astroboy-dev.wizclass.com/prod-jp/",
     "deployEn:prod": "aws s3 sync build_release/ s3://astroboy-dev.wizclass.com/prod-en/",
@@ -112,7 +110,7 @@
   "eslintConfig": {
     "extends": [
       "plugin:react/recommended",
-      "react-app" 
+      "react-app"
     ]
   },
   "browserslist": [
