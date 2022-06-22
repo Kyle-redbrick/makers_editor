@@ -77,6 +77,8 @@
     color: #aeaeae;
     display: block;
     white-space: pre-wrap;
+    font-size: 24px;
+    font-weight: 700;
   }
 }
 
@@ -96,5 +98,11 @@
     &.information__slide-inner-wrap--profile {
       max-height: 435px;
     }
+  }
+}
+
+@media screen and (max-width:768px) {
+  .information {
+    padding: 80px 15px 178px;
   }
 }

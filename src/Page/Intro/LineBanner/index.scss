@@ -34,7 +34,7 @@
 
 .line-banner__go-to-link {
   position: absolute;
-  right:0;
+  right:15px;
   top:34px;
   display:flex;
   align-items: center;
@@ -52,3 +52,11 @@
   }
 }
 
+@media screen and (max-width:768px) {
+  .line-banner__go-to-link {
+    position: relative;
+    top: 0;
+    margin-top: 15px;
+    right: 0;
+  }
+}

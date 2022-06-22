@@ -373,7 +373,7 @@ const ko = {
   ID_BUILDER_EDITPOP_CODE_CLOSE: "비공개",
   ID_WIZAPP_CATEGORY_GAME: "게임",
   ID_WIZAPP_CATEGORY_UTIL: "유틸리티",
-  ID_HOME_COPY_INFO: `© IDC ASIA Co., Ltd. All Rights Reserved.`,
+  ID_HOME_COPY_INFO: `MANGOSTEEMS PTE.LTD`,
   ID_HOME_FOOTER_01: `사업자등록번호 636-87-01115    |    통신판매업신고번호 제2019-서울강남-00100호    |    서울특별시 강남구 강남대로94길 10 케이스퀘어 701호    |    wizlab@wizschool.io`,
   ID_FOOTER_TERMS: "이용약관",
   ID_FOOTER_PRIVACY: "개인정보 처리방침",
@@ -1170,7 +1170,7 @@ const ko = {
   ID_PERSORAL_SETTING_NEW_PASSWORD2: "새 비밀번호 확인",
   ID_PERSORAL_SETTING_MARKETING_CONFIRM: "마케팅 수신 동의",
   ID_PUBLISH_ITEM_EDIT: "수정",
-  ID_USER_INFO_TEMPLATE_ITEM_EDIT: "수정",
+  ID_USER_INFO_TEMPLATE_ITEM_EDIT: "프로필 수정",
   ID_USER_INFO_TEMPLATE_UNIT01: "개",
   ID_USER_INFO_TEMPLATE_UNIT02: "명",
   ID_BUILDER_CHATBOT_ERROR: "에러 발견!",
@@ -1424,6 +1424,8 @@ const ko = {
   ID_ATTENDANCE_TITLE: "출석현황",
   ID_PLAY_RECENT_GAMES: "Recently Played",
   ID_PLAY_ALL_GAMES: "All Games",
+  ID_PLAY_RECENT_GAMES_NO_RESULT: "There are no recently played games.",
+  ID_PLAY_ALL_GAMES_NO_RESULT: "There are no published games.",
 
   ID_INTRO_CONTACT_US : "Contact Us",
   ID_INTRO_SCROLL_ACTION_IMG_TITLE_1 : "Self Check",
@@ -1494,7 +1496,11 @@ const ko = {
   ID_ABOUT_CHARACTER_SUZU_TITLE : "SUZU",
   ID_ABOUT_CHARACTER_SUZU_CHILD_TITLE : "A cute 7 years old human girl and\nthe granddaughter of Professor Elefun.\nShe is extremely intelligent, capapble, and independent.",
   ID_ABOUT_CHARACTER_KITTY_TITLE : "Astro Kitty",
-  ID_ABOUT_CHARACTER_KITTY_CHILD_TITLE : "AI robot built to resemble a three months old kitten.\nAstro regards Astro Kitty as his mischievous\nbut adorable younger brother."
+  ID_ABOUT_CHARACTER_KITTY_CHILD_TITLE : "AI robot built to resemble a three months old kitten.\nAstro regards Astro Kitty as his mischievous\nbut adorable younger brother.",
+
+  ID_LEARN_ALERT_TITLE : "학습 가능한 차시가 없습니다",
+  ID_LEARN_NON_LEARNING_TITLE : "학습 권한 없음",
+  ID_LEARN_NON_LEARNING_SECOND_TITLE : "구매 후 이용 가능한 과정입니다"
 
 };
 export default ko;

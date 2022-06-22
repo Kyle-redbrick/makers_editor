@@ -375,7 +375,7 @@ const ja = {
   ID_BUILDER_EDITPOP_CODE_CLOSE: "非公開",
   ID_WIZAPP_CATEGORY_GAME: "Game",
   ID_WIZAPP_CATEGORY_UTIL: "Utility",
-  ID_HOME_COPY_INFO: `© IDC ASIA Co., Ltd. All Rights Reserved.`,
+  ID_HOME_COPY_INFO: `MANGOSTEEMS PTE.LTD`,
   ID_HOME_FOOTER_01: `Business registration number 636-87-01115    |    Mail-order business registration number 2019-Seoul Gangnam-00100    |    Suite 701, 10, K Square, Gangnam-daero 94-gil, Gangnam-gu, Seoul, Korea    |    wizlab@wizschool.io`,
   ID_FOOTER_TERMS: "利用規約",
   ID_FOOTER_PRIVACY: "プライバシーポリシー",
@@ -1184,7 +1184,7 @@ const ja = {
   ID_DREAM_BUILDER_MENU_CLOSE_CONFIRM_BUTTON: "つづく",
   ID_DREAM_BUILDER_MENU_CLOSE_CANCEL_BUTTON: "終了する",
   ID_DREAM_BUILDER_MISSION_NOT_COMPLETE: `あなたはまだ任務を終えていません。\n続行してもよろしいですか？`,
-  ID_DREAM_BUILDER_MISSION_CLEAR: "MISSION CLEAR",
+  ID_DREAM_BUILDER_MISSION_CLEAR: "STEP CLEAR",
   ID_DREAM_BUILDER_MISSION_CLEAR_SUBTITLE: `見事でした！\nこのまま最後まで走ってみましょう！`,
   ID_DREAM_BUILDER_MISSION_CLEAR_CANCEL_BUTTON: "Stay",
   ID_DREAM_BUILDER_MISSION_CLEAR_CONFIRM_BUTTON: "Next Mission",
@@ -1192,7 +1192,7 @@ const ja = {
   ID_DREAM_BUILDER_COURSE_CLEAR_SUBTITLE: "おめでとうございます！今回のコースのすべての授業を完了しました！\n名前とクラスを入力し、修了証を発行してみましょう！",
   ID_DREAM_BUILDER_COURSE_CLEAR_CANCEL_BUTTON: "取り消し",
   ID_DREAM_BUILDER_COURSE_CLEAR_SUBMIT_BUTTON: "提出",
-  ID_DREAM_BUILDER_QUEST_CLEAR: "QUEST CLEAR",
+  ID_DREAM_BUILDER_QUEST_CLEAR: "MISSION CLEAR",
   ID_DREAM_BUILDER_QUEST_CLEAR_SUBTITLE: `おめでとうございます！全てのミッションに成功しました。\nアイデアを追加して、あなただけの素敵なゲームをつくってみましょう！`,
   ID_DREAM_BUILDER_QUEST_CLEAR_CANCEL_BUTTON: "止まる",
   ID_DREAM_BUILDER_QUEST_CLEAR_CONFIRM_BUTTON: "次",
@@ -1410,6 +1410,8 @@ const ja = {
   ID_ATTENDANCE_TITLE: "出席状況",
   ID_PLAY_RECENT_GAMES: "最近再生しました",
   ID_PLAY_ALL_GAMES: "すべてのゲーム",
+  ID_PLAY_RECENT_GAMES_NO_RESULT: "最近プレイしたゲームはありません。",
+  ID_PLAY_ALL_GAMES_NO_RESULT: "公開されているゲームはありません。",
 
   ID_INTRO_CONTACT_US: "Contact Us",
   ID_INTRO_SCROLL_ACTION_IMG_TITLE_1: "セルフチェック",
@@ -1510,7 +1512,11 @@ const ja = {
   ID_ABOUT_CHARACTER_SUZU_TITLE : "SUZU",
   ID_ABOUT_CHARACTER_SUZU_CHILD_TITLE : "A cute 7 years old human girl and\nthe granddaughter of Professor Elefun.\nShe is extremely intelligent, capapble, and independent.",
   ID_ABOUT_CHARACTER_KITTY_TITLE : "Astro Kitty",
-  ID_ABOUT_CHARACTER_KITTY_CHILD_TITLE : "AI robot built to resemble a three months old kitten.\nAstro regards Astro Kitty as his mischievous\nbut adorable younger brother."
+  ID_ABOUT_CHARACTER_KITTY_CHILD_TITLE : "AI robot built to resemble a three months old kitten.\nAstro regards Astro Kitty as his mischievous\nbut adorable younger brother.",
+
+  ID_LEARN_ALERT_TITLE : "학습 가능한 차시가 없습니다",
+  ID_LEARN_NON_LEARNING_TITLE : "학습 권한 없음",
+  ID_LEARN_NON_LEARNING_SECOND_TITLE : "구매 후 이용 가능한 과정입니다"
 
 };
 export default ja;

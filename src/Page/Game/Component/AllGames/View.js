@@ -1,5 +1,5 @@
 import React from "react";
-import { injectIntl } from "react-intl";
+import { injectIntl, FormattedMessage } from "react-intl";
 import { Link } from "react-router-dom";
 import "./index.scss";
 
@@ -19,9 +19,7 @@ function View(props) {
             { id: "ID_PLAY_ALL_GAMES" }
           )}
         </p>
-        {props.total > 0
-          && <AllGamesList {...props} />
-        }
+          <AllGamesList {...props} />
       </div>
     </div>
   );
@@ -31,18 +29,26 @@ export default injectIntl(View);
 const AllGamesList = props => {
   return (
     <div className="Play__Game__Wrapper">
-      {props.allGames.map(game => <GameBox key={game.pId} game={game} />)}
-      {props.showMore && (
-        <div className="Play__Game__show-more-btn__wrapper">
-          <button
-            className="Play__Game__show-more-btn"
-            onClick={props.onClickMore}
-          >
-            <img src={plusIcon} alt="" />
-            Show More
-          </button>
-        </div>
-      )}
+      {props.total > 0 ?
+        <>
+          {props.allGames.map(game => <GameBox key={game.pId} game={game} />)}
+          {props.showMore && (
+            <div className="Play__Game__show-more-btn__wrapper">
+              <button
+                className="Play__Game__show-more-btn"
+                onClick={props.onClickMore}
+              >
+                <img src={plusIcon} alt="" />
+                <FormattedMessage id="ID_COMMON_VIEW_MORE_2" />
+              </button>
+            </div>
+          )}
+        </>
+      :
+      <div className="Play__Game__no-result">
+        <span><FormattedMessage id="ID_PLAY_ALL_GAMES_NO_RESULT" /></span>
+      </div>
+      }
     </div>
   );
 }

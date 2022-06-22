@@ -7,6 +7,7 @@ import { URL } from "../../../../Common/Util/Constant"
 import * as Popup from "../../../../Common/Component/PopUp";
 import GamePopup from "../../../CourseDetail/Components/GamePopup";
 import * as LearnButtons from "../../../../Common/Component/Button/Learn";
+import AlertIcon from "../../../../Image/icn_alert-circle.svg";
 import "./index.scss";
 
 
@@ -14,7 +15,18 @@ function MyProjectRight (props) {
   return (
     <div className="right-banner">
       <div className="course-content__wrap">
-        { props.session.isLogin ? <AfterList {...props} /> : <BeforeList {...props} /> }
+        {!props.course.unlocked && props.session.isLogin &&
+          <div className="course-content__non-pay-box">
+            <img alt="느낌표 아이콘" src={AlertIcon} />
+            <FormattedMessage id="ID_LEARN_ALERT_TITLE" />
+          </div>
+        }
+        { props.session.isLogin ?
+          <>
+            {props.course.unlocked && <AfterList {...props} />} 
+          </> :
+          <BeforeList {...props} />
+        }
       </div>
     </div>
   )
@@ -26,7 +38,7 @@ const BeforeList = (props) => {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    props.projects.map((item,index) => {
+    props.projects.map((item, index) => {
       item.isClickd = false
     })
     setItems([...props.projects])
@@ -44,7 +56,7 @@ const BeforeList = (props) => {
   return (
     <ul className="course-content__list course-content__list--register">
       {
-        items.map((item,index) =>
+        items.map((item, index) =>
           <li key={index} className="course-content__item" onClick={() => onClickItem(index)}>
             <div className="course-content__outline">
               <div className="course-content__thumbnail">
@@ -90,7 +102,7 @@ const AfterList = (props) => {
   }, [props]);
 
   const onClickItem = (i) => {
-    items.map((item,index) => {
+    items.map((item, index) => {
       i == index ? item.isClickd = !item.isClickd : item.isClickd = false
     })
     setItems([...items])
@@ -115,7 +127,7 @@ const AfterList = (props) => {
     <ul className="course-content__list">
       {
         items.map((item, index) =>
-          <li key={index} className={`course-content__item ${!item.unlocked && "lock"}`} onClick={() => onClickItem(index)}>
+          <li key={index} className={`course-content__item ${!item.unlocked && item.symbol === "BLOCKED" && "lock"} ${!item.unlocked && item.symbol === "LOCK" && "dim"}`} onClick={() => onClickItem(index)}>
             <div className="course-content__outline">
               <div className="course-content__thumbnail">
                 <img alt="차시 썸네일" src={URL.S3_DREAMCLASS + item.resources.thumbnailURL} />
@@ -126,22 +138,22 @@ const AfterList = (props) => {
                 <div className="course-content__clear-label">
                   {item.unlocked &&
                     <>
-                    {
-                      item.progress.completed / item.progress.net === 1 ?
-                        <>
-                          <img alt="수강 완료한 강의 아이콘" src={ClearIcon} />
-                          <span className="course-content__clear-text">
-                            <FormattedMessage id="ID_LEARN_ALL_STEPS_CLEAR" />
-                          </span>
-                        </>
-                        :
-                        <div className="course-content__progress-bar">
-                          <div className="course-content__progress-bar-thumb">
-                            <div className="course-content__progress-bar-track" style={{ width: item.progress.completed / item.progress.net * 100 }}></div>
+                      {
+                        item.progress.completed / item.progress.net === 1 ?
+                          <>
+                            <img alt="수강 완료한 강의 아이콘" src={ClearIcon} />
+                            <span className="course-content__clear-text">
+                              <FormattedMessage id="ID_LEARN_ALL_STEPS_CLEAR" />
+                            </span>
+                          </>
+                          :
+                          <div className="course-content__progress-bar">
+                            <div className="course-content__progress-bar-thumb">
+                              <div className="course-content__progress-bar-track" style={{ width: item.progress.completed / item.progress.net * 100 }}></div>
+                            </div>
+                            <span className="course-content__progress-length"><b>{item.progress.completed}</b>/{item.progress.net} Step</span>
                           </div>
-                          <span className="course-content__progress-length"><b>{item.progress.completed}</b>/{item.progress.net} Step</span>
-                        </div>
-                    }
+                      }
                     </>
                   }
                 </div>

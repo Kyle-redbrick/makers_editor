@@ -4,11 +4,10 @@ import Layout from "../../Common/Component/Layout";
 
 import Intro from "./Sections/Intro";
 import Lectures from "./Sections/Lectures";
-import Games from "./Sections/Games";
-import Comments from "./Sections/Comments";
-import { Comment, Lecture, Project, Game } from "../../models";
+import { Lecture, Project, Game } from "../../models";
 
-import { getComments, getLecture } from "./api";
+import { getLecture } from "./api";
+import { getLearn } from "../../Common/Util/HTTPRequest";
 
 const Self = styled.div``;
 
@@ -27,13 +26,12 @@ const Br = styled.div`
 
 const View = ({ courseId }) => {
   const [scrollFixed, setScrollFixed] = useState(false);
-
+  const [selectedCurr, setSelectedCurr] = useState({});
   const [lecture, setLecture] = useState({});
   const [projects, setProjects] = useState([]);
-  const [comments, setComments] = useState([]);
   const [publishedGames, setPublishedGames] = useState([]);
 
-  const init = useCallback(() => {
+  const init = async() => {
     getLecture({ id: courseId }).then((lecture) => {
       if (lecture) {
         setProjects(lecture.projects.map((p) => new Project(p, lecture)));
@@ -44,10 +42,21 @@ const View = ({ courseId }) => {
       }
     });
 
-    fetchComments();
-  }, [courseId])
+    const curriculum = await getLearn().then(json => json.body.curriculum);
+    for(let i = 0; i < curriculum.length; i++) {
+      if(curriculum[i].course.lectureId == courseId) {
+        setSelectedCurr(curriculum[i]);
+      }
+    }
+  }
 
-  useEffect(init, []);
+  useEffect(() => {
+    init();
+  }, []);
+
+  useEffect(() => {
+    init();
+  }, [courseId]);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -70,19 +79,6 @@ const View = ({ courseId }) => {
     }
   }, []);
 
-  const fetchComments = useCallback(
-    () => {
-      getComments({ lectureId: courseId }).then((comments) => {
-        setComments(comments.rows.map((c) => new Comment(c)));
-      });
-    },
-    [getComments]
-  );
-
-  const onAfterCommentSubmit = useCallback(() => {
-    fetchComments();
-  }, []);
-
   const onWindowFocus = useCallback(init, []);
   useEffect(() => {
     window.addEventListener("focus", onWindowFocus);
@@ -97,20 +93,12 @@ const View = ({ courseId }) => {
         <Intro
           lecture={lecture} 
           fixed={scrollFixed}
-          // onClickLearnNow={handleClickLearnNow}
         />
-        {/* <Br /> */}
-        <Lectures items={projects} />
-        {/* <Br /> */}
-        {
-          lecture.type !== 'python' && (
-            <>
-              <Games items={publishedGames} />
-              <Br />
-            </>
-          )
-        }
-        <Comments courseId={courseId} items={comments} onAfterSubmit={onAfterCommentSubmit} />
+        <Lectures
+          curriculum={selectedCurr}
+          projects={selectedCurr.projects}
+          items={projects}
+        />
       </Self>
     </Layout>
   );

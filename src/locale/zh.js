@@ -372,7 +372,7 @@ const zh = {
   ID_BUILDER_EDITPOP_CODE_CLOSE: "不公开",
   ID_WIZAPP_CATEGORY_GAME: "游戏",
   ID_WIZAPP_CATEGORY_UTIL: "Utility ",
-  ID_HOME_COPY_INFO: `© IDC ASIA Co., Ltd. All Rights Reserved.`,
+  ID_HOME_COPY_INFO: `MANGOSTEEMS PTE.LTD`,
   ID_HOME_FOOTER_01: `营业执照号 636-87-01115    |    通讯销售登记号 第2019-首尔江南-00100号    |    首尔特别市 江南区 江南大道94路10 K-square 701号 `,
   ID_FOOTER_TERMS: "使用条款",
   ID_FOOTER_PRIVACY: "个人信息处理方针",
@@ -1424,6 +1424,8 @@ const zh = {
   ID_ATTENDANCE_TITLE: "출석현황",
   ID_PLAY_RECENT_GAMES: "Recently Played",
   ID_PLAY_ALL_GAMES: "All Games",
+  ID_PLAY_RECENT_GAMES_NO_RESULT: "There are no recently played games.",
+  ID_PLAY_ALL_GAMES_NO_RESULT: "There are no published games.",
 
   ID_INTRO_CONTACT_US : "Contact Us",
   ID_INTRO_SCROLL_ACTION_IMG_TITLE_1 : "Self Check",
@@ -1494,7 +1496,11 @@ const zh = {
   ID_ABOUT_CHARACTER_SUZU_TITLE : "SUZU",
   ID_ABOUT_CHARACTER_SUZU_CHILD_TITLE : "A cute 7 years old human girl and\nthe granddaughter of Professor Elefun.\nShe is extremely intelligent, capapble, and independent.",
   ID_ABOUT_CHARACTER_KITTY_TITLE : "Astro Kitty",
-  ID_ABOUT_CHARACTER_KITTY_CHILD_TITLE : "AI robot built to resemble a three months old kitten.\nAstro regards Astro Kitty as his mischievous\nbut adorable younger brother."
+  ID_ABOUT_CHARACTER_KITTY_CHILD_TITLE : "AI robot built to resemble a three months old kitten.\nAstro regards Astro Kitty as his mischievous\nbut adorable younger brother.",
+
+  ID_LEARN_ALERT_TITLE : "학습 가능한 차시가 없습니다",
+  ID_LEARN_NON_LEARNING_TITLE : "학습 권한 없음",
+  ID_LEARN_NON_LEARNING_SECOND_TITLE : "구매 후 이용 가능한 과정입니다"
 
 };
 export default zh;

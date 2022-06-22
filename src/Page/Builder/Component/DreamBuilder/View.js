@@ -16,9 +16,7 @@ import "./index.scss";
 function View(props) {
   return (
     <div className="Page--BUILDER dream">
-      {/* {console.log(11111,props)} */}
-      {props.isTutorialShow && props.editorMode !== "javascript-wiz" &&  <Tutorial hiddenTutorial={props.hiddenTutorial} />}
-      {/* astro boy temp code */}
+      {props.isTutorialShow &&  <Tutorial hiddenTutorial={props.hiddenTutorial} />}
       {props.isAstroBoyProject && 
         <VideoPopup 
           src={"/astroboy_ep.34.mp4".toDreamclassS3URL()} 

@@ -8,8 +8,7 @@ import LoginAlertPopup from "../../PopUp/LoginAlertPopup";
 import * as userInfoActions from "../../../Store/Reducer/UserInfo";
 import SignIn from "../../SignIn";
 import SignUp from "../../SignUp";
-// import logoImg from "../../../../Image/dreamclass/logo.png";
-import logoImg from "../../../../Image/dreamclass/astroboy_logo.png"
+import logoImg from "../../../../Image/astro-new-logo.png";
 import searchImg from "../../../../Image/dreamclass/search.svg";
 import NotiOnIcon from "../../../../Image/dreamclass/notification-bell-new-notification.svg";
 import NotiOffIcon from "../../../../Image/dreamclass/notification-bell-normal.svg";
@@ -261,20 +260,6 @@ class Header extends Component {
                 })}
             </div>
             <div className="header_menus">
-              <div className="header_menu_icon searchBtn" onClick={handleClickSearchBar}>
-                <img src={searchImg} alt="" />
-              </div>
-              <div className={`header_menu_icon searchBar ${isSearchBarOpen ? "open" : "close"}`}>
-                <input
-                  type="text"
-                  placeholder={intl.formatMessage({ id: "ID_HEADER_SEARCH_PLACEHOLDER" })}
-                  value={searchValue}
-                  onFocus={onFocusSearch}
-                  onChange={(e) => { onChangeSearchValue(e) }}
-                  onKeyUp={handleOnKeyUp}
-                />
-                <img className="openSearchIcon" src={searchImg} alt="" onClick={onSubmitSearchValue} />
-              </div>
               {/* <div className={`header_menu_icon searchResult ${isSearchFocusOn ? "open" : "close"}`}>
                 <p className="quickLink">
                   {intl.formatMessage({ id: "ID_DREAM_HEADER_QUICK_LINK" })}

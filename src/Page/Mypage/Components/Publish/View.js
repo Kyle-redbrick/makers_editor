@@ -6,11 +6,15 @@ import heartIcon from "../../../../Image/heart.svg";
 import commentIcon from "../../../../Image/comment.svg";
 import badgeJsShadow from "../../../../Image/dreamclass/badge-js-shadow@2x.png";
 import badgePuzzleShadow from "../../../../Image/dreamclass/badge-oobc-shadow@2x.png";
+import IconHeart from "../../../../Image/icon-heart.svg";
+import IconEyes from "../../../../Image/icon-eyes.svg";
 import "./index.scss";
 
 export default function View(props) {
   const {
     intl,
+    mode,
+    count,
     isMyPage,
     publisheds,
     onClickPublishedSetting,
@@ -19,7 +23,10 @@ export default function View(props) {
   
   return (
     <div className="Publish">
-      <p className="title"><FormattedMessage id="ID_MYPAGE_TABTAPE_PUBLISH" /></p>
+      <p className="title">
+        <FormattedMessage id="ID_MYPAGE_TABTAPE_PUBLISH" />
+        <div className="Publish__list-length">{publisheds.length}</div>
+      </p>
       {publisheds.length > 0 ? (
         <div className="Publish_GridContainer">
           {publisheds.map((published, index) => (
@@ -111,6 +118,7 @@ const PublishItem = props => {
       >
         {published.name}
       </div>
+
       {isMyPage && (
         <div className="Publish_GridItem_Detail">
           <div className="Publish_GridItem_Wrap">
@@ -137,7 +145,7 @@ const PublishItem = props => {
 
             <div 
               className="Publish_GridItem_Edit"
-              onClick={() => {onClickPublishedSetting(published);}}
+              onClick={() => onClickPublishedSetting(published)}
             >
               {intl.formatMessage({ id: "ID_PUBLISH_ITEM_EDIT" })}
             </div>

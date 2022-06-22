@@ -2,7 +2,6 @@
 
   display: flex;
   flex-direction: column;
-  font-family: 'Montserrat', sans-serif;
   color: #FFFFFF;
 
   .intro__section-banner {
@@ -115,7 +114,7 @@
 
   .second-section__mission-info-list {
     display:flex;
-    align-items: center;
+    align-items: flex-start;
     list-style:none;
     padding:0;
     margin:0;
@@ -235,4 +234,11 @@
   line-height: 28px;
   font-weight: 500;
   white-space: pre-wrap;
+}
+
+@media screen and (max-width:768px) {
+  .intro-page__fade-in-img {
+    width: 100%;
+    object-fit: contain;
+  }
 }

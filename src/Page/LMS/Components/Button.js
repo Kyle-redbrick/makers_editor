@@ -14,7 +14,6 @@ const StyledButton = styled.button`
   text-align: center;
   color: #fff;
   cursor: pointer;
-  font-family: 'Noto Sans KR', sans-serif;
 
   &:focus {
     outline: none;

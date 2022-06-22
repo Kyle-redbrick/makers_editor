@@ -1,6 +1,6 @@
 .GameList-default {
   width: 1170px;
-  min-height: 100vh;
+  min-height: 50vh;
   margin: 0 auto;
 
   .Play__Title {
@@ -59,6 +59,19 @@
 
     > .Game__Box__Default:nth-child(4n + 1) {
       margin-left: 0;
+    }
+
+    .Play__Game__no-result {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 25vh;
+      width: 100%; 
+      span {
+        text-align: center;
+        font-size: 22px;
+        color: rgba(255, 255, 255, 0.5);
+      }
     }
 
     .Play__Game__show-more-btn__wrapper {

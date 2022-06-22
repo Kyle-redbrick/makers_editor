@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { injectIntl } from "react-intl";
-import { jsScript, oobcScript, oobcScript_en, oobcScript_ja } from "./script";
+import { jsScript, jsScript_en, jsScript_ja, oobcScript, oobcScript_en, oobcScript_ja } from "./script";
 import "./index.scss";
 
 class Tutorial extends Component {
@@ -16,15 +16,23 @@ class Tutorial extends Component {
   get script() {
     const lang = localStorage.getItem("lang");
     if (this.props.editorMode === "block") {
-      if (lang == "ja") {
-        return oobcScript_ja;
-      } else if (lang === "en") {
-        return oobcScript_en;
-      } else {
-        return oobcScript;
+      switch (lang) {
+        case "ja":
+          return oobcScript_ja;
+        case "en":
+          return oobcScript_en;
+        default :
+          return oobcScript;
       }
     } else {
-      return jsScript;
+      switch (lang) {
+        case "ja":
+          return jsScript_ja;
+        case "en":
+          return jsScript_en;
+        default :
+          return jsScript;
+      }
     }
   }
 

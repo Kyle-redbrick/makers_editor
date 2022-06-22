@@ -286,3 +286,9 @@
     margin-bottom: 0;
   }
 }
+
+@media screen and (max-width:768px) {
+  .structure__trial {
+    padding: 0 15px;
+  }
+}

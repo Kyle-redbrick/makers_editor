@@ -36,9 +36,16 @@ function AllCourse(props) {
         <ul className="all-course__project-list">
           {
             courses.map((item, index) =>
-              <li key={index} className={`all-course__project-item ${!item.unlocked && "lock"}`} onClick={() => linkToLearn(item.lectureId)}>
+              <li key={index} className="all-course__project-item" onClick={() => linkToLearn(item.lectureId)}>
                 <div className="all-course__project-inner">
                   <div className="all-course__project-thumbnail">
+                    {!item.unlocked &&
+                      <div className="all-course__non-pay-dimmed">
+                        <FormattedMessage id="ID_LEARN_NON_LEARNING_TITLE" />
+                        <FormattedMessage id="ID_LEARN_NON_LEARNING_SECOND_TITLE" />
+                      </div>
+                    }
+
                     <img alt="코스 강의 썸네일" src={URL.S3_DREAMCLASS + item.posterUrl} />
                     <span className="all-course__project-label">{item.label}</span>
                   </div>
@@ -49,13 +56,15 @@ function AllCourse(props) {
                       item.unlocked &&
                       <>
                         {
-                          item.progressStatus == "clear" ?
+                          item.progressStatus === "clear" ?
                             <span className="all-course__project-progress-label all-course__project-progress-label--ing">
                               <FormattedMessage id="ID_LEARN_CLEAR" />
-                            </span> :
-                            <span className="all-course__project-progress-label all-course__project-progress-label--learning">
-                              <FormattedMessage id="ID_LEARN_LEARNING" />
                             </span>
+                            :
+                            item.progressStatus === "learning" &&
+                              <span className="all-course__project-progress-label all-course__project-progress-label--learning">
+                                <FormattedMessage id="ID_LEARN_LEARNING" />
+                              </span>
                         }
                         <span className="all-course__project-progress-length">
                           <FormattedMessage id="ID_COMMON_TOTAL" /> {item.projects} <FormattedMessage id="ID_COMMON_MISSION" />

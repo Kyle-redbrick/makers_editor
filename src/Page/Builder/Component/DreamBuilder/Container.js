@@ -158,7 +158,7 @@ class Container extends Component {
   save(values) {
     const { id: myDreamLectureProjectId } = this.props.match.params;
     request
-      .saveMyDreamProject(myDreamLectureProjectId, values)
+      .saveAstroMission(myDreamLectureProjectId, values)
       .then(res => res.json())
       .then(json => {
         if (json.success) {
@@ -187,9 +187,10 @@ class Container extends Component {
   }
   alertProjectClear() {
     request
-      .getMyDreamProjectInfo(this.props.project.id)
+      .getAstroMissionCompleteInfo(this.props.project.id)
       .then(res => res.json())
       .then(json => {
+        console.log(111, json);
         this.setState({ it: json.it });
         this.setState({ stem: json.stem });
         this.setState({ sdg: json.sdg });
@@ -197,38 +198,21 @@ class Container extends Component {
       });
 
     setTimeout(() => {
-      // showPopUp(
-      //   <ProjectClearPopUp
-      //     it={this.state.it}
-      //     stem={this.state.stem}
-      //     sdg={this.state.sdg}
-      //     certificate={this.state.certificate}
-      //     onClickCancel={() => {
-      //       // if (this.props.isReplaying) {
-      //       //   window.close();
-      //       // } else {
-      //       //   this.createDeveloping(window.close);
-      //       // }
-      //     }}
-      //     onClickConfirm={() => {
-      //       // if (this.props.isReplaying) {
-      //       //   if (this.props.myProject.developing.isDeleted) {
-      //       //     this.createDeveloping(this.linkToDeveloping);
-      //       //   } else {
-      //       //     this.linkToDeveloping(this.props.myProject.developing);
-      //       //   }
-      //       // } else {
-      //       //   this.createDeveloping(this.linkToDeveloping);
-      //       // }
-      //       window.close();
-
-      //     }}
-      //   />,
-      //   {
-      //     dismissButton: false,
-      //     defaultPadding: false
-      //   }
-      // );
+      showPopUp(
+        <ProjectClearPopUp
+          it={this.state.it}
+          stem={this.state.stem}
+          sdg={this.state.sdg}
+          certificate={this.state.certificate}
+          onClickConfirm={() => {
+            this.props.history.push("/lms/mission");
+          }}
+        />,
+        {
+          dismissButton: false,
+          defaultPadding: false
+        }
+      );
     }, 1000);
   }
 

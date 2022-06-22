@@ -141,8 +141,7 @@ const IntroHeader = styled.div`
     backdrop-filter: blur(10px);
     background-color: rgba(0, 0, 0, 0.8);
     top: 0;
-    // top: 80px;
-    z-index: 10;
+    z-index: 22;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 
     @media screen and (max-width: 1169px) {

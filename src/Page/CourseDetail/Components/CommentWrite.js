@@ -53,7 +53,6 @@ const Textarea = styled(TextareaAutosize)`
   color: #fff;
   line-height: 1.56;
   resize: none;
-  font-family: "Noto Sans KR", sans-serif;
   overflow: hidden;
 
   &:focus {

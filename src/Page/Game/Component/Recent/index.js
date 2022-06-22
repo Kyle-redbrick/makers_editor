@@ -39,7 +39,9 @@ const Recent = () => {
       .getRecentlyPlayed()
       .then(res => res.json())
       .then(json => {
-        setRecentGames(json.body.list)
+        if(json.body) {
+          setRecentGames(json.body.list);
+        }
       })
   }, [])
 
@@ -49,11 +51,17 @@ const Recent = () => {
         <div className="GameList__recent-games__title">
           <FormattedMessage id="ID_PLAY_RECENT_GAMES" />
         </div>
-        <div className="GameList__recent-games__games">
-          {recentGames.map(game => 
-            <GameBox key={game.pId} game={game} />
-          )}
-        </div>
+      {recentGames.length > 0 ?
+          <div className="GameList__recent-games__games">
+            {recentGames.map(game => 
+              <GameBox key={game.pId} game={game} />
+            )}
+          </div>
+        :
+          <div className="GameList__recent-games__no-result">
+            <span><FormattedMessage id="ID_PLAY_RECENT_GAMES_NO_RESULT" /></span>
+          </div>
+      }
       </div>
     </div>
   )

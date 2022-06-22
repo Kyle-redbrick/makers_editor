@@ -9,17 +9,17 @@ const Self = styled.div`
   padding-bottom: 19.5px;
 
   @media screen and (max-width: 1169px) { 
-   width: 88.33vw;
-   margin: 19.5px auto 0;
+    width: 88.33vw;
+    margin: 19.5px auto 0;
   }
 `;
 
-const Lectures = ({ items, ...props }) => {
+const Lectures = ({ items, projects, curriculum, ...props }) => {
   return (
     <Self {...props}>
       <Container>
-        {items.map((item) => (
-          <LectureItem key={item.id} item={item} />
+        {projects && projects.map((project)=> (
+          <LectureItem key={project.id} project={project}/>
         ))}
       </Container>
     </Self>

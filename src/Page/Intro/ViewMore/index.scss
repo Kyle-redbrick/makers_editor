@@ -77,3 +77,13 @@
     margin-left: 5px;
   }
 }
+
+@media screen and (max-width:768px) {
+  .view-more__box {
+    flex-wrap: wrap;
+  }
+
+  .view-more__box-inner {
+    margin: 0 0 15px;
+  }
+}

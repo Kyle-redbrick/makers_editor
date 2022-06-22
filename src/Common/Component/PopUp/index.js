@@ -20,22 +20,45 @@ import PythonSetting from "../../../Page/Python/Components/PopupComponents/Setti
 import PythonClue from "../../../Page/Python/Components/PopupComponents/CluePopup";
 
 import "./index.scss";
+import locale from "../../../locale";
+
 
 import en from "react-intl/locale-data/en";
 import ko from "react-intl/locale-data/ko";
 import zh from "react-intl/locale-data/zh";
 import ja from "react-intl/locale-data/ja";
 
-import locale from "../../../locale";
 import { IntlProvider, addLocaleData } from "react-intl";
+
 
 addLocaleData([...en, ...ko, ...zh, ...ja]);
 
-// const defaultLang = localStorage.getItem("lang");
+const getNavigatorLanguage = () => {
+
+  let lang;
+  switch (window.location.hostname) {
+    case "astroboy-dev-jp.wizclass.com":
+    case "jp.astro-coding-go.com":
+      lang = "ja"
+      break;
+    case "astroboy-dev-en.wizclass.com":
+    case "en.astro-coding-go.com":
+      lang = "en"
+      break;
+    default:
+      lang = "en"
+      break;
+  }
+
+  localStorage.setItem("lang", lang);
+  return lang;
+};
+
+const lang = getNavigatorLanguage()
+
 
 class PopUpContainer extends Component {
   componentDidMount() {
-
     setTimeout(() => {
       const overlay = document.getElementById("popup_overlay");
       if (overlay) overlay.classList.remove("popup_overlay-invisible");
@@ -137,7 +160,7 @@ export const showPopUp = (content, options = {}, isBackTrans) => {
     setTimeout(() => {
       document.body.classList.add("body-unsrollable");
       ReactDOM.render(
-        <IntlProvider locale={localStorage.getItem("lang")} messages={locale[localStorage.getItem("lang")]}>
+        <IntlProvider locale={lang} messages={locale[lang]}>
           <Provider store={store}>
             <PopUpContainer
               dismiss={dismiss}

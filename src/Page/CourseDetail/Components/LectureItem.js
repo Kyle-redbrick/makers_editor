@@ -5,7 +5,9 @@ import * as Popup from "../../../Common/Component/PopUp";
 
 import * as LearnButtons from "../../../Common/Component/Button/Learn";
 import IMAGE from "./../Constants/Images";
+import { URL } from "../../../Common/Util/Constant";
 import GamePopup from "./GamePopup";
+import lockImg from "../../../Image/course-content--lock.svg"
 
 const Self = styled.div`
   display: flex;
@@ -32,7 +34,6 @@ const LearnAgain = styled(LearnButtons.LearnAgain)`
   line-height: 1.5;
   letter-spacing: 0.3px;
   color: #fff;
-  font-family: "Noto Sans KR", sans-serif;
   outline: none;
   cursor: pointer;
   
@@ -135,6 +136,7 @@ const Desc = styled.p`
 `;
 
 const Image = styled.div`
+  position: relative;
   width: 370px;
   background-image: url(${(props) => props.image});
   background-size: cover;
@@ -142,12 +144,51 @@ const Image = styled.div`
   background-position: center;
   border-radius: 16px 0 0 16px;
 
+
+  ${({unlocked}) => unlocked==false && `
+  .project-item__overlay {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      z-index: 20;
+      background: #000000;
+      opacity: 0.7;
+      border-radius: 16px 0 0 16px;
+  }
+  `}
+
+  ${({unlocked, symbol}) => unlocked==false && symbol==="BLOCKED" && `
+    .project-item__lock {
+      position: absolute;
+      display: block;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 70px;
+      height: 70px;
+      background: no-repeat center/contain url(${lockImg});
+      z-index: 21;
+    }
+  `}
+
   @media screen and (max-width: 1169px) {
     width: 100%;
     height: 50vw;
     border-radius: 16px 16px 0 0;
-  }
-`;
+    ${({unlocked}) => unlocked==false && `
+      .project-item__overlay {
+        border-radius: 16px 16px 0 0;
+      }
+    `}
+    ${({unlocked, symbol}) => unlocked==false && symbol==="BLOCKED" && `
+      .project-item__lock {
+        width: 125px;
+        height: 125px;
+      }
+    }`
+}`;
 
 const Label = styled.span`
   font-size: 15px;
@@ -180,7 +221,6 @@ const PlayButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: "Noto Sans KR", sans-serif;
   outline: none;
   cursor: pointer;
   &:focus {
@@ -300,11 +340,16 @@ const ButtonWrap = styled.div`
   }
 `;
 
-const LectureItem = ({ item, ...props }) => {
+const Layer = styled.div`
 
+
+`;
+
+const LectureItem = ({ project, ...props }) => {
+  
   const handleClickGame = useCallback(
     () => {
-      Popup.showPopUp(<GamePopup url={item.sampleGameUrl} />, {
+      Popup.showPopUp(<GamePopup url={project.resources.gameURL} />, {
         dismissButton: false,
         dismissOverlay: true,
         defaultPadding: false,
@@ -316,54 +361,56 @@ const LectureItem = ({ item, ...props }) => {
     [GamePopup, Popup.showPopUp]
   );
 
-  const progressText = `${item.completedMissionNum > item.totalMissionNum
-    ? item.totalMissionNum
-    : item.completedMissionNum
-    }/${item.totalMissionNum}`
-
   return (
     <Self {...props}>
-      <Image image={item.thumbnailUrl} />
+      <Image image={URL.S3_DREAMCLASS + project.resources.thumbnailURL} unlocked={project.unlocked} symbol={project.symbol}>
+        <div className="project-item__lock" />
+        <div className="project-item__overlay" />
+      </Image>
       <Content>
-        <Level><FormattedMessage id="ID_COURSE_DETAIL_MISSION" /> {item.number}</Level>
-        <Title>{item.title}</Title>
-        <Desc>{item.introduction}</Desc>
+        <Level>{project.label}</Level>
+        <Title>{project.title}</Title>
+        <Desc>{project.intro}</Desc>
         <Tags>
-          {item.programmingConceptTags.map(tag => <Tag key={tag.name}>{tag.name}</Tag>)}
+          {project.tag.programmingConcept.split(',').map((tag, index) => <Tag key={index}>{tag}</Tag> )}
         </Tags>
         <Command>
           <Label><FormattedMessage id="ID_COURSE_DETAIL_KEY_COMMAND" /> </Label>
-          {item.apiCommandConceptTags.map(tag => tag.name).join(", ")}
+          {project.tag.apiCommand.split(',').map(tag => tag).join(", ")}
         </Command>
-        <ProgressWrap>
-          <Progress value={item.progress}>
-            <ProgressBar />
-          </Progress>
-          {item.progress === 100 && (
-            <ProgressText><FormattedMessage id="ID_LEARN_ALL_STEPS_CLEAR" /></ProgressText>
-          )}
-          {item.progress >= 0 && item.progress !== 100 && (
-            <ProgressText>
-              {progressText} <FormattedMessage id="ID_COURSE_DETAIL_STEP_COMPLETE" />
-            </ProgressText>
-          )}
-        </ProgressWrap>
+        {project.unlocked &&
+          <ProgressWrap>
+            <Progress value={project.progress.completed/project.progress.net * 100}>
+              <ProgressBar />
+            </Progress>
+            {project.progress.net === project.progress.completed && (
+              <ProgressText><FormattedMessage id="ID_LEARN_ALL_STEPS_CLEAR" /></ProgressText>
+            )}
+            { project.progress.net !== project.progress.completed  && (
+              <ProgressText>
+                {project.progress.completed}/{project.progress.net} <FormattedMessage id="ID_COURSE_DETAIL_STEP_COMPLETE" />
+              </ProgressText>
+            )}
+          </ProgressWrap>
+        }
         <ButtonWrap>
-          {item.sampleGameUrl && (
+          {project.resources.gameURL && (
             <PlayButton type="button" onClick={handleClickGame}>
               <PlayButtonIcon src={IMAGE.ICON_JOYSTICK} alt="조이스틱 아이콘" />
               <FormattedMessage id="ID_COURSE_DETAIL_PLAY_GAME" />
             </PlayButton>
           )}
-          {item.completed ? (
-            <LearnAgain completed id={item.id} videoURL={item.videoURL} isShowVideo={false} />
+          {project.unlocked && <>
+          {project.progress.completed === project.progress.net ? (
+            <LearnAgain completed id={project.id} videoURL={project.resources.videoURL} isShowVideo={false} />
           ) : (
-            item.completedMissionNum === 0 ? (
-              <LearnNow id={item.id} videoURL={item.videoURL} isShowVideo={true} />
+            project.progress.completed === 0 ? (
+              <LearnNow id={project.id} videoURL={project.resources.videoURL} isShowVideo={true} />
             ) : (
-              <LearnContinue id={item.id} videoURL={item.videoURL} isShowVideo={false} />
+              <LearnContinue id={project.id} videoURL={project.resources.videoURL} isShowVideo={false} />
             )
           )}
+          </>}
         </ButtonWrap>
       </Content>
     </Self>

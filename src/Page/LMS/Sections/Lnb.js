@@ -219,7 +219,6 @@ const CertGrade = styled.div`
   position: absolute;
   left:56px;
   top:11px;
-  font-family: Noto Sans KR;
   font-style: normal;
   font-weight: bold;
   font-size: 16px;
@@ -231,7 +230,6 @@ const CertDesc = styled.div`
   position: absolute;
   left:56px;
   bottom:12px;
-  font-family: Noto Sans KR;
   font-size: 14px;
   line-height: 22px;
   color: #FFFFFF;

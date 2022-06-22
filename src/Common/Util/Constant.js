@@ -1,7 +1,7 @@
 const subdomain = "dreamdev.";
 export const URL = {
   //dev
-  SOCKET_SERVER: `https://astroboy-api-dev.wizclass.com:3002/`,
+  SOCKET_SERVER: `https://astro-sock-dev.wizclass.com/`,
   NOTIFICATION_SOCKET_SERVER: `https://astroboy-api-dev.wizclass.com:3002/`,
   API_SERVER: `https://astro-api-dev.wizclass.com/`,
   LIVE_TEST: `https://${subdomain}wizlab.net/liveTest/`,
@@ -34,6 +34,8 @@ export const URL = {
     return "https://d21hhf2g9kirkh.cloudfront.net"
   }
 };
+
+export const GOOGLE_SIGNIN_CLIENT_ID = "451745919454-7ga3u82oe852pukhe4esubr6crb67rmq.apps.googleusercontent.com";
 
 export const WIZLIVE_BANNER_LINK = (promotionId, userId) => {
   const url = `http://wizlive.com/wizlabPromotion/${promotionId}/`;
