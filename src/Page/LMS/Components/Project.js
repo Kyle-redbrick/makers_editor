@@ -225,7 +225,7 @@ const Project = ({ project, ...props }) => {
       <LectureDate>
         <Label><FormattedMessage id="ID_LMS_QUEST_DATE" /> </Label>
         {project.unlocked
-          ? project.lastStudyDate
+          ? project.user.lastStudyDate
           : "-"}
         <br />
         <Label><FormattedMessage id="ID_LMS_QUEST_STUDY_TIME" /> </Label>

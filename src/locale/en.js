@@ -1269,7 +1269,7 @@ const en = {
   ID_LMS_QUEST: "Quest",
   ID_LMS_QUEST_ALL_CLEAR: "All missions complete",
   ID_LMS_QUEST_CLEAR: "Mission complete",
-  ID_LMS_QUEST_DATE: "Recent activity date",
+  ID_LMS_QUEST_DATE: "Last Opened",
   ID_LMS_QUEST_STUDY_TIME: "Study time",
   ID_LMS_QUEST_STUDY_TIME_MIN: "min",
   ID_COURSE_DETAIL_MISSION: "Mission",
