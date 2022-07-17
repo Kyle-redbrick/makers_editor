@@ -1495,7 +1495,7 @@ export const postMyDreamProject = ({ projectId }) => {
 };
 
 export const saveMyDreamProject = (id, updateValues) => {
-  return fetchRequest(URL.API_SERVER + `myDreamProject/${id}/save`, "PUT", updateValues);
+  return fetchRequest(URL.API_SERVER + `myProject/complete/${id}`, "PUT", updateValues);
 };
 
 export const saveAstroMission = (id, updateValues) => {
