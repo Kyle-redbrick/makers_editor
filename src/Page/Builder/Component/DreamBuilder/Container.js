@@ -190,30 +190,29 @@ class Container extends Component {
       .getAstroMissionCompleteInfo(this.props.project.id)
       .then(res => res.json())
       .then(json => {
-        console.log(111, json);
         this.setState({ it: json.it });
         this.setState({ stem: json.stem });
         this.setState({ sdg: json.sdg });
         this.setState({ certficate: json.certficate });
-      });
 
-    setTimeout(() => {
-      showPopUp(
-        <ProjectClearPopUp
-          it={this.state.it}
-          stem={this.state.stem}
-          sdg={this.state.sdg}
-          certificate={this.state.certificate}
-          onClickConfirm={() => {
-            this.props.history.push("/lms/mission");
-          }}
-        />,
-        {
-          dismissButton: false,
-          defaultPadding: false
-        }
-      );
-    }, 1000);
+        // setTimeout(() => {
+          showPopUp(
+            <ProjectClearPopUp
+              it={json.it}
+              stem={json.stem}
+              sdg={json.sdg}
+              certificate={json.certificate}
+              onClickConfirm={() => {
+                this.props.history.push("/lms/mission");
+              }}
+            />,
+            {
+              dismissButton: false,
+              defaultPadding: false
+            }
+          );
+        }, 1000);
+      // });
   }
 
   createDeveloping(callback) {
