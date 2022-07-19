@@ -1,6 +1,7 @@
 import React from "react";
 import "./index.scss";
 import { Link } from "react-router-dom";
+import blankSrc from "../../../Image/blank_profile.png";
 
 const UserIconWrapper = props => {
   const { iconSrc, style, userId, userDefault } = props;
@@ -16,7 +17,7 @@ const UserIconWrapper = props => {
         >
           <img
             className="UserIconWrapper_Icon"
-            src={iconSrc}
+            src={iconSrc ? iconSrc : blankSrc}
             alt="img"
           />
         </div>
@@ -30,7 +31,7 @@ const UserIconWrapper = props => {
     >
       <img
         className="UserIconWrapper_Icon"
-        src={iconSrc}
+        src={iconSrc ? iconSrc : blankSrc}
         alt="img"
       />
     </div>
