@@ -1514,9 +1514,9 @@ const ja = {
   ID_ABOUT_CHARACTER_KITTY_TITLE : "Astro Kitty",
   ID_ABOUT_CHARACTER_KITTY_CHILD_TITLE : "AI robot built to resemble a three months old kitten.\nAstro regards Astro Kitty as his mischievous\nbut adorable younger brother.",
 
-  ID_LEARN_ALERT_TITLE : "학습 가능한 차시가 없습니다",
-  ID_LEARN_NON_LEARNING_TITLE : "학습 권한 없음",
-  ID_LEARN_NON_LEARNING_SECOND_TITLE : "구매 후 이용 가능한 과정입니다"
+  ID_LEARN_ALERT_TITLE : "学習できる授業がありません。",
+  ID_LEARN_NON_LEARNING_TITLE : "学習権限がありません。",
+  ID_LEARN_NON_LEARNING_SECOND_TITLE : "購入してから利用できる過程です。"
 
 };
 export default ja;
