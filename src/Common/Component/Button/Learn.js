@@ -32,7 +32,6 @@ const Self = styled.button`
     height:46px;
     `
   }
-
   ${(props) => props.lock &&
     `
     pointer-events: none;
@@ -42,6 +41,30 @@ const Self = styled.button`
       background-repeat:no-repeat;
       background-size:cover;
       background-position:center;
+      background-color: #313131;
+      border-radius: 9px;
+      border: none;
+      position:absolute;
+      width:100%;
+      height:100%;
+      top:0;
+      bottom:0;
+      z-index:10;
+      left:0;
+    }
+    `
+  }
+
+  ${(props) => props.block &&
+    `
+    pointer-events: none;
+    &::after {
+      content: '';
+      display:block;
+      background-repeat:no-repeat;
+      background-size:cover;
+      background-position:center;
+      border-radius: 9px;
       background-image:url(${ImgBtnLock});
       position:absolute;
       width:100%;
