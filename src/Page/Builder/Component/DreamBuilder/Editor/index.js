@@ -30,6 +30,7 @@ function Editor(props) {
           isSceneToolHidden={true}
         />
         <RightBar
+          showTutorial={props.showTutorial}
           handleSelectTab={props.handleSelectTab}
           handleChangeZIndex={props.handleChangeZIndex}
           popupZIndexes={props.popupZIndexes}

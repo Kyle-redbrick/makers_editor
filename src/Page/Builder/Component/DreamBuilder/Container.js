@@ -279,6 +279,10 @@ class Container extends Component {
     this.setState({ isTutorialShow: false });
   }
 
+  showTutorial = () => {
+    this.setState({ isTutorialShow: true });
+  }
+
   hiddenAstroBoyPopup = () => {
     this.setState({ isAstroBoyProject: false });
   }
@@ -291,6 +295,7 @@ class Container extends Component {
         isTutorialShow={this.state.isTutorialShow}
         isAstroBoyProject={this.state.isAstroBoyProject}
         hiddenTutorial={this.hiddenTutorial}
+        showTutorial={this.showTutorial}
         hiddenAstroBoyPopup={this.hiddenAstroBoyPopup}
       />
     );

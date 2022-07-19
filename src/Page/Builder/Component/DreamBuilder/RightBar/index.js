@@ -10,7 +10,7 @@ import propertyActiveImg from "../../../../../Image/builder/property-w.svg";
 import { EDITORMODE } from "../../../../../Common/Util/Constant";
 import "./index.scss"
 
-function RightBar({popupStates, handleSelectTab, intl, editorMode, isPropertyTabHidden}) {
+function RightBar({popupStates, showTutorial, handleSelectTab, intl, editorMode, isPropertyTabHidden }) {
   return (
     <div className={`RightBar RightBar_${editorMode}`}>
       {editorMode !== EDITORMODE.BLOCK && 
@@ -23,9 +23,9 @@ function RightBar({popupStates, handleSelectTab, intl, editorMode, isPropertyTab
         </div>
       }
       
-      <Link target="_blank" rel="noopener noreferrer" to ="/lms/questions" className="btn">
+      <div className="RightBar__tutorial btn" onClick={showTutorial}>
         <img src={questionImg} alt="question img" />
-      </Link>
+      </div>
 
       <div
         onClick={() => handleSelectTab("property")}

@@ -31,7 +31,10 @@ function View(props) {
         className={`dream_section dream_section-right${props.isMenuOpen ? " dream_section-overlay" : ""}`}
         onClick={props.closeDreamMenu}
       >
-        <Editor {...props} />
+        <Editor
+          showTutorial={props.showTutorial}
+          {...props} 
+        />
       </section>
       <ConditionChecker />
       <FullScreenButton />
