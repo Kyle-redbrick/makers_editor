@@ -9,9 +9,6 @@ import PhoneDropDown from "./PhoneDropDown";
 import closeImg from "../../../Image/builder/x-copy-3.svg";
 import closeImg_darkmode from "../../../Image/builder/x-copy-3_darkmode.svg";
 import * as TrackingUtil from "../../Util/TrackingUtil";
-import shareCopyImg from "../../../Image/share_icon_copy.png";
-import shareFbImg from "../../../Image/share_icon_fb.png";
-import shareKakaoImg from "../../../Image/share_icon_kakao.png";
 import { getColorTheme } from "../../../Page/Builder/utils/colorThemeUtil";
 import "./index.scss";
 
@@ -23,7 +20,7 @@ class QRPopup extends Component {
     }
     this.state = {
       phoneNum: "",
-      countryCode: "+82",
+      countryCode: "+1",
       copied: false
     };
   }
@@ -106,53 +103,6 @@ class QRPopup extends Component {
       });
   };
 
-  shareKakao = () => {
-    const { pId } = this.props.project;
-    window.Kakao.Link.sendCustom({
-      templateId: 30669,
-      templateArgs: { path: `detail/${pId}` },
-      fail: function(error) {
-        console.log(error);
-        alert("Error while sharing.");
-      },
-      callback: () => {
-        // this.checkBingo();
-      }
-    });
-    // setTimeout(this.checkBingo, 5000);
-  };
-
-  shareFB = () => {
-    const { pId } = this.props.project;
-    const url = URL.WIZ_APP + pId;
-    window.FB.ui(
-      {
-        method: "share",
-        href: url,
-        quote: url
-      },
-      function(response) {
-        if (response && !response.error_message) {
-          // this.checkBingo();
-        } else {
-          alert("Error while posting.");
-        }
-      }
-    );
-    // setTimeout(this.checkBingo, 5000);
-  };
-
-  copyUrl = () => {
-    const { pId } = this.props.project;
-    const url = URL.WIZ_APP + pId;
-    navigator.clipboard.writeText(url);
-    this.setState({ copied: true }, () => {
-      setTimeout(() => {
-        this.setState({ copied: false });
-      }, 1500);
-    });
-  };
-
   render() {
     const { phoneNum, countryCode, copied } = this.state;
     let { pId } = this.props.project;
@@ -197,17 +147,6 @@ class QRPopup extends Component {
               value=""
             />
           </form>
-          <div className="QRPopupSNS">
-            <div onClick={this.shareKakao} className="QRPopupSNSItem">
-              <img src={shareKakaoImg} alt="share kakao" />
-            </div>
-            <div onClick={this.shareFB} className="QRPopupSNSItem">
-              <img src={shareFbImg} alt="share fb" />
-            </div>
-            <div onClick={this.copyUrl} className="QRPopupSNSItem">
-              <img src={shareCopyImg} alt="share fb" />
-            </div>
-          </div>
         </div>
         <div className={`QRPopupCopied ${copied && "QRPopupCopiedShow"}`}>
           <FormattedMessage id="ID_SHARE_COPIED" />
