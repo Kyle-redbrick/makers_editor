@@ -190,6 +190,7 @@ class Container extends Component {
       .getAstroMissionCompleteInfo(this.props.project.id)
       .then(res => res.json())
       .then(json => {
+        console.log(111, json);
         this.setState({ it: json.it });
         this.setState({ stem: json.stem });
         this.setState({ sdg: json.sdg });

@@ -1,9 +1,8 @@
 const subdomain = "dreamdev.";
 export const URL = {
-  //dev
-  SOCKET_SERVER: `https://astro-sock-dev.wizclass.com/`,
+  SOCKET_SERVER: `https://astro-sock.wizclass.com/`,
   NOTIFICATION_SOCKET_SERVER: `https://astroboy-api-dev.wizclass.com:3002/`,
-  API_SERVER: `https://astro-api-dev.wizclass.com/`,
+  API_SERVER: `https://astro-api.wizclass.com/`,
   LIVE_TEST: `https://${subdomain}wizlab.net/liveTest/`,
   WIZ_APP: `https://${subdomain}wizlab.net/wizapp/`,
   GAME_SRC: `https://${subdomain}wizlab.net/`,
