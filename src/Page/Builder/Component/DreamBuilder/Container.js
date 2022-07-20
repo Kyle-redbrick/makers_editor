@@ -195,25 +195,25 @@ class Container extends Component {
         this.setState({ stem: json.stem });
         this.setState({ sdg: json.sdg });
         this.setState({ certficate: json.certficate });
-      });
 
-    setTimeout(() => {
-      showPopUp(
-        <ProjectClearPopUp
-          it={this.state.it}
-          stem={this.state.stem}
-          sdg={this.state.sdg}
-          certificate={this.state.certificate}
-          onClickConfirm={() => {
-            this.props.history.push("/lms/mission");
-          }}
-        />,
-        {
-          dismissButton: false,
-          defaultPadding: false
-        }
-      );
-    }, 1000);
+        // setTimeout(() => {
+          showPopUp(
+            <ProjectClearPopUp
+              it={json.it}
+              stem={json.stem}
+              sdg={json.sdg}
+              certificate={json.certificate}
+              onClickConfirm={() => {
+                this.props.history.push("/lms/mission");
+              }}
+            />,
+            {
+              dismissButton: false,
+              defaultPadding: false
+            }
+          );
+        }, 1000);
+      // });
   }
 
   createDeveloping(callback) {
@@ -280,6 +280,10 @@ class Container extends Component {
     this.setState({ isTutorialShow: false });
   }
 
+  showTutorial = () => {
+    this.setState({ isTutorialShow: true });
+  }
+
   hiddenAstroBoyPopup = () => {
     this.setState({ isAstroBoyProject: false });
   }
@@ -292,6 +296,7 @@ class Container extends Component {
         isTutorialShow={this.state.isTutorialShow}
         isAstroBoyProject={this.state.isAstroBoyProject}
         hiddenTutorial={this.hiddenTutorial}
+        showTutorial={this.showTutorial}
         hiddenAstroBoyPopup={this.hiddenAstroBoyPopup}
       />
     );

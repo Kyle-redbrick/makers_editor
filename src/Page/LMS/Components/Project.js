@@ -225,7 +225,7 @@ const Project = ({ project, ...props }) => {
       <LectureDate>
         <Label><FormattedMessage id="ID_LMS_QUEST_DATE" /> </Label>
         {project.unlocked
-          ? project.lastStudyDate
+          ? project.user.lastStudyDate
           : "-"}
         <br />
         <Label><FormattedMessage id="ID_LMS_QUEST_STUDY_TIME" /> </Label>
@@ -245,12 +245,12 @@ const Project = ({ project, ...props }) => {
           </JoystickButton>
         )}
         {project.progress.completed >= project.progress.net ? (
-          <LearnAgain completed lock={!project.unlocked} id={project.id} />
+          <LearnAgain completed block={!project.unlocked && project.symbol === "BLOCKED"} lock={!project.unlocked} id={project.id} />
         ) : (
           project.progress.completed === 0 ? (
-            <LearnNow lock={!project.unlocked} id={project.id} isShowVideo={true}  videoURL={URL.S3_DREAMCLASS + project.resources.videoURL} />
+            <LearnNow block={!project.unlocked && project.symbol === "BLOCKED"} lock={!project.unlocked} id={project.id} isShowVideo={true}  videoURL={URL.S3_DREAMCLASS + project.resources.videoURL} />
           ) : (
-            <LearnContinue lock={!project.unlocked} id={project.id} />
+            <LearnContinue block={!project.unlocked && project.symbol === "BLOCKED"} lock={!project.unlocked} id={project.id} />
           )
         )}
       </ButtonWrap>

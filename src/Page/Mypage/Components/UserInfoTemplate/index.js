@@ -38,7 +38,9 @@ class UserInfoTemplate extends React.Component {
       .userProfile({ email: this.props.targetEmail })
       .then(res => res.json())
       .catch(e => console.error(e));
-    this.setState({ user });
+    if (user.status != 409) {
+      this.setState({ user });
+    }
   }
 
   onClickSettingBtn = () => {

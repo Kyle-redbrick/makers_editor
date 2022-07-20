@@ -242,7 +242,7 @@ const Lecture = memo(({ course, ...props }) => {
   return (
     <Self>
       <Header>
-        <Thumbnail className={!course.course.unlocked && "lock"} image={URL.S3_DREAMCLASS + course.course.posterURL} />
+        <Thumbnail className={!course.course.unlocked && "lock"} image={URL.S3_DREAMCLASS + course.course.smallPosterURL} />
         <TitleWrap>
           <Title>{course.course.title}</Title>
           <ProgressWrap>
