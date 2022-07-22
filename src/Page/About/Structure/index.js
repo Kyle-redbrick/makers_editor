@@ -114,6 +114,10 @@ const BlockCoding = (props) => {
         <FormattedMessage id="ID_ABOUT_STRUCTURE_BLOCKCODING_EXPLAIN" />
       </p>
 
+      <h3 className="third-section__slie-wrap-title">
+        <FormattedMessage id="ID_ABOUT_COURSES_SLIDE_WRAP_TITLE" />
+      </h3>
+
       {bCurriculum.map((curriculum, index) => 
         <div key={curriculum.course.id} className="structure__slide-box">
           <div className="structure__slide-flex-box">
@@ -194,6 +198,11 @@ const Javascript = (props) => {
       <p className="structure__trial-explain">
         <FormattedMessage id="ID_ABOUT_STRUCTURE_JAVASCRIPT_EXPLAIN" />
       </p>
+
+      <h3 className="third-section__slie-wrap-title">
+        <FormattedMessage id="ID_ABOUT_COURSES_SLIDE_WRAP_TITLE" />
+      </h3>
+      
       { jsCurriculum.map((curriculum, index) =>
         <div key={curriculum.course.id} className="structure__slide-box">
           <div className="structure__slide-flex-box">

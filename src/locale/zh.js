@@ -1499,7 +1499,9 @@ const zh = {
 
   ID_LEARN_ALERT_TITLE : "학습 가능한 차시가 없습니다",
   ID_LEARN_NON_LEARNING_TITLE : "학습 권한 없음",
-  ID_LEARN_NON_LEARNING_SECOND_TITLE : "구매 후 이용 가능한 과정입니다"
+  ID_LEARN_NON_LEARNING_SECOND_TITLE : "구매 후 이용 가능한 과정입니다",
+
+  ID_ABOUT_COURSES_SLIDE_WRAP_TITLE : "Courses"
 
 };
 export default zh;
