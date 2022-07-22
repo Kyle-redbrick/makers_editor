@@ -1069,7 +1069,6 @@ const zh = {
   ID_DREAM_REPORT_CONFIRM_MSG: "신고가 접수되었습니다.",
   ID_DREAM_REPORT_CONFIRM_BUTTON: "确认",
   ID_DREAM_SLIDE_PLACEHOLDER: "슬라이드 내용이 없습니다.",
-  ID_DREAM_FOOTER_SERVICE_TIME: `运营时间 09:00 ~ 18:00 \n（午休时间12:00 ~ 13:00）`,
   ID_DREAM_HEADER_QUICK_LINK: "빠른 링크",
   ID_DREAM_HEADER_OOBC: "挑战吧！游戏创作者！",
   ID_DREAM_HEADER_JS: "创作本能！游戏制作人！",

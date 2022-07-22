@@ -74,9 +74,6 @@ class Footer extends Component {
             ))}
           </div>
           <div className="Footer--Inner__info-row">
-            <div className="Info--Service-time">
-              {this.props.intl.formatMessage({ id: "ID_DREAM_FOOTER_SERVICE_TIME" })}
-            </div>
             <div className="Info--Copy">
               <FormattedMessage id="ID_HOME_COPY_INFO" />
             </div>

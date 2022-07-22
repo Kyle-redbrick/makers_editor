@@ -1069,7 +1069,6 @@ const en = {
   ID_DREAM_REPORT_CONFIRM_MSG: "The report has been recieved.",
   ID_DREAM_REPORT_CONFIRM_BUTTON: "Confirm",
   ID_DREAM_SLIDE_PLACEHOLDER: "슬라이드 내용이 없습니다.",
-  ID_DREAM_FOOTER_SERVICE_TIME: `Business  hours 09:00 ~ 18:00 \n(Lunch break 12:00 ~ 13:00)`,
   ID_DREAM_HEADER_QUICK_LINK: "Quick link",
   ID_DREAM_HEADER_OOBC: "Challenge! Game maker!",
   ID_DREAM_HEADER_JS: "Developing instinct! Game producer.",
