@@ -231,6 +231,7 @@
   .popup_dismissbtn {
     filter: invert(0%) sepia(100%) saturate(0%) hue-rotate(72deg)
       brightness(102%) contrast(108%);
+      z-index:10;
   }
 
   .popup_button {
