@@ -1507,7 +1507,9 @@ const en = {
 
   ID_LEARN_ALERT_TITLE : "There are no available lessons.",
   ID_LEARN_NON_LEARNING_TITLE : "You don't have permission to access this.",
-  ID_LEARN_NON_LEARNING_SECOND_TITLE : "You must purchase this course to study it."
+  ID_LEARN_NON_LEARNING_SECOND_TITLE : "You must purchase this course to study it.",
+
+  ID_ABOUT_COURSES_SLIDE_WRAP_TITLE : "Courses"
 
 };
 export default en;

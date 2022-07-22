@@ -1516,7 +1516,9 @@ const ja = {
 
   ID_LEARN_ALERT_TITLE : "学習できる授業がありません。",
   ID_LEARN_NON_LEARNING_TITLE : "学習権限がありません。",
-  ID_LEARN_NON_LEARNING_SECOND_TITLE : "購入してから利用できる過程です。"
+  ID_LEARN_NON_LEARNING_SECOND_TITLE : "購入してから利用できる過程です。",
+
+  ID_ABOUT_COURSES_SLIDE_WRAP_TITLE : "Courses"
 
 };
 export default ja;
