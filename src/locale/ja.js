@@ -1072,7 +1072,6 @@ const ja = {
   ID_DREAM_REPORT_CONFIRM_MSG: "申告が受け付けられました",
   ID_DREAM_REPORT_CONFIRM_BUTTON: "確認",
   ID_DREAM_SLIDE_PLACEHOLDER: "슬라이드 내용이 없습니다.",
-  ID_DREAM_FOOTER_SERVICE_TIME: `運営時間 09:00 ~ 18:00 \n(お昼時間 12:00 ~ 13:00)`,
   ID_DREAM_HEADER_QUICK_LINK: "Quick link",
   ID_DREAM_HEADER_OOBC: "Challenge! Game maker!",
   ID_DREAM_HEADER_JS: "Developing instinct! Game producer.",
