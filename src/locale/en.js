@@ -1069,7 +1069,6 @@ const en = {
   ID_DREAM_REPORT_CONFIRM_MSG: "The report has been recieved.",
   ID_DREAM_REPORT_CONFIRM_BUTTON: "Confirm",
   ID_DREAM_SLIDE_PLACEHOLDER: "슬라이드 내용이 없습니다.",
-  ID_DREAM_FOOTER_SERVICE_TIME: `Business  hours 09:00 ~ 18:00 \n(Lunch break 12:00 ~ 13:00)`,
   ID_DREAM_HEADER_QUICK_LINK: "Quick link",
   ID_DREAM_HEADER_OOBC: "Challenge! Game maker!",
   ID_DREAM_HEADER_JS: "Developing instinct! Game producer.",
@@ -1507,7 +1506,9 @@ const en = {
 
   ID_LEARN_ALERT_TITLE : "There are no available lessons.",
   ID_LEARN_NON_LEARNING_TITLE : "You don't have permission to access this.",
-  ID_LEARN_NON_LEARNING_SECOND_TITLE : "You must purchase this course to study it."
+  ID_LEARN_NON_LEARNING_SECOND_TITLE : "You must purchase this course to study it.",
+
+  ID_ABOUT_COURSES_SLIDE_WRAP_TITLE : "Courses"
 
 };
 export default en;

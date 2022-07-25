@@ -1070,7 +1070,6 @@ const ko = {
   ID_DREAM_REPORT_CONFIRM_MSG: "신고가 접수되었습니다.",
   ID_DREAM_REPORT_CONFIRM_BUTTON: "확인",
   ID_DREAM_SLIDE_PLACEHOLDER: "슬라이드 내용이 없습니다.",
-  ID_DREAM_FOOTER_SERVICE_TIME: `운영시간: 09:00~18:00 \n(점심시간 12:00~13:00)`,
   ID_DREAM_HEADER_QUICK_LINK: "빠른 링크",
   ID_DREAM_HEADER_OOBC: "도전! 게임 메이커",
   ID_DREAM_HEADER_JS: "개발본능! 게임 프로듀서",
@@ -1500,7 +1499,9 @@ const ko = {
 
   ID_LEARN_ALERT_TITLE : "학습 가능한 차시가 없습니다",
   ID_LEARN_NON_LEARNING_TITLE : "학습 권한 없음",
-  ID_LEARN_NON_LEARNING_SECOND_TITLE : "구매 후 이용 가능한 과정입니다"
+  ID_LEARN_NON_LEARNING_SECOND_TITLE : "구매 후 이용 가능한 과정입니다",
+
+  ID_ABOUT_COURSES_SLIDE_WRAP_TITLE : "Courses"
 
 };
 export default ko;
