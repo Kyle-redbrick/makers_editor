@@ -29,13 +29,13 @@ export default class PageStatus extends React.Component {
   }
 
   sendCallback = isVisible => {
-    //if (!this.props.onChange) return;
+    if (!this.props.onChange) return;
 
-    // this.props.onChange({
-    //   isVisible: isVisible, 
-    //   willClose: this.willClose,
-    //   duration: this.getDuration()
-    // });
+    this.props.onChange({
+      isVisible: isVisible, 
+      willClose: this.willClose,
+      duration: this.getDuration()
+    });
   }
 
   onBeforeUnload = () => {
