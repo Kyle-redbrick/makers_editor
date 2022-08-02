@@ -17,6 +17,11 @@ export default class PageStatus extends React.Component {
   componentWillUnmount() {
     document.removeEventListener(visibility.event, this.onVisibilityChanged);
     window.removeEventListener("beforeunload", this.onBeforeUnload);
+    this.props.onChange({
+      isVisible: true, 
+      willClose: true,
+      duration: this.getDuration()
+    });
   }
 
   getDuration = () => {
@@ -24,13 +29,13 @@ export default class PageStatus extends React.Component {
   }
 
   sendCallback = isVisible => {
-    if (!this.props.onChange) return;
+    //if (!this.props.onChange) return;
 
-    this.props.onChange({
-      isVisible: isVisible, 
-      willClose: this.willClose,
-      duration: this.getDuration()
-    });
+    // this.props.onChange({
+    //   isVisible: isVisible, 
+    //   willClose: this.willClose,
+    //   duration: this.getDuration()
+    // });
   }
 
   onBeforeUnload = () => {
