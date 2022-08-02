@@ -17,11 +17,6 @@ export default class PageStatus extends React.Component {
   componentWillUnmount() {
     document.removeEventListener(visibility.event, this.onVisibilityChanged);
     window.removeEventListener("beforeunload", this.onBeforeUnload);
-    this.props.onChange({
-      isVisible: true, 
-      willClose: true,
-      duration: this.getDuration()
-    });
   }
 
   getDuration = () => {

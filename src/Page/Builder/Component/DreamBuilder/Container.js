@@ -204,7 +204,9 @@ class Container extends Component {
               sdg={json.sdg}
               certificate={json.certificate}
               onClickConfirm={() => {
-                this.props.history.push("/lms/mission");
+                window.opener=null;
+                window.open('','_self');
+                window.close();
               }}
             />,
             {
