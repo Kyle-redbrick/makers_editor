@@ -313,24 +313,6 @@ class Container extends Component {
     this.setState({ isShareBoxOpen : !this.state.isShareBoxOpen });
   }
 
-  handleShareFB = (pId) => {
-    const url = URL.WIZ_APP + pId;
-    window.FB.ui(
-      {
-        method: "share",
-        href: url,
-        quote: url
-      },
-      function(response) {
-        if (response && !response.error_message) {
-          request.checkShareGame({type: "facebook"});
-        } else {
-          alert("Error while posting.");
-        }
-      }
-    );
-  };
-
   handleCopyUrl = (pId) => {
     const url = URL.WIZ_APP + pId;
     navigator.clipboard.writeText(url);
@@ -479,7 +461,6 @@ class Container extends Component {
       handleFold,
       handleProjectCommentCount,
       handleRandomGame,
-      handleShareFB,
       handleCopyUrl
     } = this;
     if (!project) {
@@ -511,7 +492,6 @@ class Container extends Component {
         allCommentCount={allCommentCount}
         handleRandomGame={handleRandomGame}
         handleReport={handleReport}
-        handleShareFB={handleShareFB}
         handleCopyUrl={handleCopyUrl}
       />
     );

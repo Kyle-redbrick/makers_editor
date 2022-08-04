@@ -4,7 +4,7 @@ export const URL = {
   NOTIFICATION_SOCKET_SERVER: `https://astroboy-api-dev.wizclass.com:3002/`,
   API_SERVER: `https://astro-api.wizclass.com/`,
   LIVE_TEST: `https://${subdomain}wizlab.net/liveTest/`,
-  WIZ_APP: `https://${subdomain}wizlab.net/wizapp/`,
+  WIZ_APP: `https://en.astro-coding-go.com/game?pId=`,
   GAME_SRC: `https://${subdomain}wizlab.net/`,
   ORIGIN: `https://${subdomain}wizlab.net/`,
   WIZLIVE: `https://${subdomain}wizlive.com`,
