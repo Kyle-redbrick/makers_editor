@@ -25,7 +25,7 @@ function ScrollAction () {
             <p className="scroll-action__img-child-title"><FormattedMessage id="ID_INTRO_SCROLL_ACTION_IMG_CHILD_TITLE_1" /></p>
             <img alt="self check"src={ScrollImg} />
           </div>
-          <div className="scroll-action__img-wrap">
+          <div className="scroll-action__img-wrap scroll-action__img-wrap--secound ">
             <h3 className="scroll-action__img-title"><FormattedMessage id="ID_INTRO_SCROLL_ACTION_IMG_TITLE_2" /></h3>
             <p className="scroll-action__img-child-title"><FormattedMessage id="ID_INTRO_SCROLL_ACTION_IMG_CHILD_TITLE_2" /></p>
             <img alt="dashboard"src={ScrollImg2} />
