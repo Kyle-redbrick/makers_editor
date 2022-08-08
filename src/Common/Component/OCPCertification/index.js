@@ -101,8 +101,8 @@ class Container extends Component {
           />
           <div className="OCPCertificationTexts">
             <div className="OCPCertificationTextOrgName">
-              <div className="OCPCertificationText_Name">{this.props.name.lengs > 0 ? this.props.name : "_"}</div>
-              <div className="OCPCertificationText_Class">{this.props.class}</div>
+              <div className="OCPCertificationText_Name">{this.props.name.length > 0 ? this.props.name : "_"}</div>
+              {/* <div className="OCPCertificationText_Class">{this.props.class}</div> */}
               <div className="OCPCertificationText_School">{this.state.certDesc}</div>
             </div>
             <div className="OCPCertificationText_Date">

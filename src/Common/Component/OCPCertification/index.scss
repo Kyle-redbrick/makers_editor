@@ -27,8 +27,8 @@
   // img
   .OCPCertificationImg {
     display: block;
-    width: 909px;
-    height: 583px;
+    width: 845.2px;
+    height: 597.62px;
     object-fit: contain;
   }
   .OCPCertificationTexts {
@@ -45,13 +45,14 @@
     flex-direction: column;
     align-items: center;
     position: absolute;
-    top: 245px;
+    width: 531px;
+    top: 281.63px;
     left: 50%;
     transform: translateX(-50%);
   }
   .OCPCertificationText_School {
-    margin-top: 14px;
-    font-family: "Times New Roman";
+    margin-top: 17px;
+    font-family: "Open Sans";
     font-size: 13px;
     line-height: 24px;    
     text-align: center;
@@ -59,26 +60,26 @@
   }
   .OCPCertificationText_Name {
     margin-top: -10px;
-    font-family: "Alex Brush";
-    font-size: 54px;
-    line-height: 75px;
+    font-family: "DynalightOTF";
+    font-size: 60px;
+    line-height: 60px;
     text-align: center;
-    color: #1D1D1B;
+    color: #231815;
   }
 
   .OCPCertificationText_Class {
     margin-top: -16px;
-    font-family: "CookieRunOTF";
+    font-family: "DynalightOTF";
     font-size: 18px;
-    line-height: 24px;
+    line-height: 100%;
     text-align: center;
     color: #1D1D1B;
   }
 
   .OCPCertificationText_Date {
-    margin-left: 230px;
-    margin-top: 440px;
-    font-family: "Times New Roman";
+    margin-left: 127.52px;
+    margin-top: 475.63px;
+    font-family: "Iowan Old Style";
     font-size: 16px;
     line-height: 27px;
     color: #1D1D1B;
