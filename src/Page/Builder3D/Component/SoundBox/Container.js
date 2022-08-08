@@ -30,6 +30,7 @@ function Container(props) {
                 localeName: JSON.stringify({
                   ko: "전체",
                   zh: "All",
+                  ja: "すべて",
                   default: "All"
                 })
               },
