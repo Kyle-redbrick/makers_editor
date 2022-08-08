@@ -12,7 +12,7 @@ import { getColorTheme } from "../../utils/colorThemeUtil";
 import "./index.scss";
 
 function getLocalName(item) {
-  const lang = localStorage.getItem("wizLang");
+  const lang = localStorage.getItem("lang");
   let title;
   try {
     title =
