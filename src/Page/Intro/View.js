@@ -14,7 +14,9 @@ import IconClock from "../../Image/ic-clock.svg";
 import PlayGameSection from "./PlayGameSection";
 import LineBanner from "./LineBanner";
 import TextImg from "../../Image/fade-in-text.png";
+import TextImgJa from "../../Image/fade-in-text-ja.png";
 import TextImg2 from "../../Image/fade-in-text-2.png";
+import TextImg2Ja from "../../Image/fade-in-text-2-ja.png";
 import IntroduceSection from "./IntroduceSection";
 import ViewMore from "./ViewMore";
 /* import IntroduceSection from "./IntroduceSection"; */
@@ -134,7 +136,8 @@ function View(props) {
 
         {/* 텍스트 이미지 애니메이션 효과 */}
         <div className="intro-page__fade-in-text">
-          <img  alt="why use astro coding go?"  data-aos="fade-up" data-aos-duration="700"  className="intro-page__fade-in-img" src={TextImg} />
+          <img alt="why use astro coding go?" data-aos="fade-up" data-aos-duration="700" className="intro-page__fade-in-img"
+          src={lang === "en" ? TextImg : TextImgJa} />
         </div>
         
         {/* introduce 영역 */}
@@ -143,7 +146,8 @@ function View(props) {
 
         {/* 텍스트 이미지 애니메이션 효과 */}
         <div className="intro-page__fade-in-text intro-page__fade-in-text--second">
-          <img  alt="A self-Learning Platform For Instructors"  data-aos="fade-up" data-aos-duration="700"  className="intro-page__fade-in-img" src={TextImg2} />
+          <img  alt="A self-Learning Platform For Instructors"  data-aos="fade-up" data-aos-duration="700"  className="intro-page__fade-in-img"
+          src={lang === "en" ? TextImg2 : TextImg2Ja} />
         </div>
 
         {/* 스크롤 애니메이션 */}

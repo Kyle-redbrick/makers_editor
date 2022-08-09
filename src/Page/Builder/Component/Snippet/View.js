@@ -16,7 +16,7 @@ export default function(props) {
   } = props;
   const curItem = lists[selectedInx];
   const colorTheme = getColorTheme(getColorTheme);
-  const lang = localStorage.getItem("wizLang");
+  const lang = localStorage.getItem("lang");
   return (
     <div className="Snippet" onMouseDown={() => handleChangeZIndex("snippet")}>
       {/* title */}

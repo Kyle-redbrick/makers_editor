@@ -25,14 +25,15 @@ class ApiLibrary {
       tip: {
         description: {
           ko: "steps만큼 움직이며 바라보는 방향으로 이동하기",
-          // "en": "Moves the sprite forward a specified number of steps in the direction", // temp to Translate
-          // "zh": "zh" // temp to Translate
+          en: "Move \"steps\" in the facing direction",
+          ja: "steps値だけ動いて、向いている方向に移動する",
+            // zh: "zh" // temp to Translate
         },
         "params": [{
           name: "steps",
           description: {
             ko: "숫자 steps만큼 바라보는 방향으로 이동한다",
-            // "en": "Moves the sprite a specified number of steps", // temp to Translate
+            en: "Moves the sprite a specified number of steps", // temp to Translate
             // "zh": "zh" // temp to Translate
           }
         }],
@@ -50,7 +51,9 @@ class ApiLibrary {
       selection: "100",
       tip: {
         description: {
-          ko: "x좌표를 steps만큼 움직이며 이동하기"
+          ko: "x좌표를 steps만큼 움직이며 이동하기",
+          en: `Move "steps" towards the x-axis`,
+          ja: "x軸方向にsteps値だけ動いて移動する"
         },
         "params": [{
           name: "steps",
@@ -70,7 +73,9 @@ class ApiLibrary {
       selection: "100",
       tip: {
         description: {
-          ko: "y좌표를 steps만큼 움직이며 이동하기"
+          ko: "y좌표를 steps만큼 움직이며 이동하기",
+          en: `Move "steps" towards the y-axis`,
+          ja: "y軸方向にsteps値だけ動いて移動する"
         },
         "params": [{
           name: "steps",
@@ -90,7 +95,9 @@ class ApiLibrary {
       selection: "100",
       tip: {
         description: {
-          ko: "x,y 좌표로 움직이며 이동하기"
+          ko: "x,y 좌표로 움직이며 이동하기",
+          en: `Move "x" towards the x-axis and "y" towards the y-axis`,
+          ja: "x値だけx軸方向に、y値だけY軸方向に移動する"
         },
         "params": [{
           name: "x",
@@ -116,7 +123,9 @@ class ApiLibrary {
       "selectionType": "sprite",
       tip: {
         description: {
-          ko: "특정 스프라이트로 움직이며 이동하기"
+          ko: "특정 스프라이트로 움직이며 이동하기",
+          en: `Move to a designated sprite`,
+          ja: "特定のスプライトに動いて移動する",
         },
         "params": [{
           name: "name",
@@ -125,7 +134,9 @@ class ApiLibrary {
           }
         }],
         "description2": {
-          ko: "특정 스프라이트를 name 스프라이트의 좌표로 이동한다"
+          ko: "특정 스프라이트를 name 스프라이트의 좌표로 이동한다",
+          en: "Moves a specific sprite to the position of the name sprite.",
+          ja: "特定のスプライトがnameスプライトの座標に移動する",
         }
       },
       id: "moveToSprite",
@@ -135,10 +146,14 @@ class ApiLibrary {
       snippet: "moveToMousePointer()",
       tip: {
         description: {
-          ko: "마우스포인터로 움직이며 이동하기"
+          ko: "마우스포인터로 움직이며 이동하기",
+          en: "Move to the cursor",
+          ja: "カーソルに動いて移動する"
         },
         "description2": {
-          ko: "scene안에 마우스 포인터를 따라 스프라이트가 이동한다"
+          ko: "scene안에 마우스 포인터를 따라 스프라이트가 이동한다",
+          en: "The sprite will follow the cursor within a scene.",
+          ja: "scene内のカーソルを追ってスプライトが移動する"
         }
       },
       id: "moveToMousePointer",
@@ -148,10 +163,14 @@ class ApiLibrary {
       snippet: "moveToRandom()",
       tip: {
         description: {
-          ko: "임의의 좌표로 위치를 움직이며 이동하기"
+          ko: "임의의 좌표로 위치를 움직이며 이동하기",
+          en: "Move to a position with random coordinates",
+          ja: "任意の座標に位置を動かして移動する"
         },
         "description2": {
-          ko: "스프라이트의 위치를 임의의 좌표로 움직이며 이동한다"
+          ko: "스프라이트의 위치를 임의의 좌표로 움직이며 이동한다",
+          en: "Moves the position of the sprite to random coordinates.",
+          ja: "スプライトの位置が任意の座標に動いて移動する"
         }
       },
       id: "moveToRandom",
@@ -162,7 +181,9 @@ class ApiLibrary {
       selection: "100",
       tip: {
         description: {
-          ko: "움직이는 속도를 speed만큼 정하기"
+          ko: "움직이는 속도를 speed만큼 정하기",
+          en: `Set the movement speed to "speed"`,
+          ja: "動く速度をspeedの値にする"
         },
         "params": [{
           name: "speed",
@@ -171,7 +192,9 @@ class ApiLibrary {
           }
         }],
         "description2": {
-          ko: "move..() 관련 함수들의 이동속도를 설정한다\n"
+          ko: "move..() 관련 함수들의 이동속도를 설정한다\n",
+          en: "Sets the movement speed of functions related to move..()",
+          ja: "move..()に関する関数らの移動速度を設定する"
         }
       },
       id: "setMoveSpeed",
@@ -182,7 +205,9 @@ class ApiLibrary {
       selection: "100",
       tip: {
         description: {
-          ko: "steps만큼 바라보는 방향으로 위치를 설정하기"
+          ko: "steps만큼 바라보는 방향으로 위치를 설정하기",
+          en: `Move sprite in the facing direction according to "steps"`,
+          ja: "steps値だけスプライトが向いている方向に移動する"
         },
         "params": [{
           name: "steps",
@@ -202,7 +227,9 @@ class ApiLibrary {
       selection: "100",
       tip: {
         description: {
-          ko: "x좌표를 steps만큼 바꾸기"
+          ko: "x좌표를 steps만큼 바꾸기",
+          en: `Change sprite's x-coordinate according to "steps"`,
+          ja: "スプライトのx座標をsteps値だけ変更する"
         },
         "params": [{
           name: "steps",
@@ -222,7 +249,9 @@ class ApiLibrary {
       selection: "100",
       tip: {
         description: {
-          ko: "y좌표를 steps만큼 바꾸기"
+          ko: "y좌표를 steps만큼 바꾸기",
+          en: `Change sprite's y-coordinate according to "steps"`,
+          ja: "スプライトのy座標をsteps値だけ変更する"
         },
         "params": [{
           name: "steps",
@@ -242,7 +271,9 @@ class ApiLibrary {
       selection: "100",
       tip: {
         description: {
-          ko: "위치 변경하기"
+          ko: "위치 변경하기",
+          en: `Replace sprite's x and y coordinates with "x,y"`,
+          ja: "スプライトのX、Y軸の座標をx、yに変更する"
         },
         "params": [{
           name: "x",
@@ -268,7 +299,9 @@ class ApiLibrary {
       "selectionType": "sprite",
       tip: {
         description: {
-          ko: "특정 스프라이트로 위치를 변경하기"
+          ko: "특정 스프라이트로 위치를 변경하기",
+          en: "Change sprite's coordinates to the position of the sprite you entered in name",
+          ja: "スプライトの座標をnameに入力したスプライトの位置に変更する"
         },
         "params": [{
           name: "name",
@@ -287,10 +320,12 @@ class ApiLibrary {
       snippet: "goToMousePointer()",
       tip: {
         description: {
-          ko: "마우스포인터로 위치를 변경하기"
+          ko: "마우스포인터로 위치를 변경하기",
+          en: "Change sprite's coordinates to the position of the cursor",
+          ja: "スプライトの座標をカーソルの位置に変更する"
         },
         "description2": {
-          ko: "스프라이트의 좌표를 마우스 포인터의 좌표로 변경한다"
+          ko: "스프라이트의 좌표를 마우스 포인터의 좌표로 변경한다",
         }
       },
       id: "goToMousePointer",
@@ -300,7 +335,9 @@ class ApiLibrary {
       snippet: "goToRandom()",
       tip: {
         description: {
-          ko: "임의의 좌표로 위치를 변경하기"
+          ko: "임의의 좌표로 위치를 변경하기",
+          en: "Change sprite's position to random coordinates",
+          ja: "スプライトの位置を任意の座標に変更する"
         },
         "description2": {
           ko: "스프라이트의 위치를 임의의 좌표로 변경한다"
@@ -314,7 +351,9 @@ class ApiLibrary {
       selection: "90",
       tip: {
         description: {
-          ko: "스프라이트의 각도 설정하기"
+          ko: "스프라이트의 각도 설정하기",
+          en: "Set sprite's angle",
+          ja: "スプライトの角度を設定する"
         },
         "params": [{
           name: "degree",
@@ -323,7 +362,9 @@ class ApiLibrary {
           }
         }],
         "description2": {
-          ko: "스프라이트의 각도를 degree로 설정한다"
+          ko: "스프라이트의 각도를 degree로 설정한다",
+          en: "Sets the sprite's angle to \"degree\".",
+          ja: "スプライトの角度をdegreeに設定する"
         }
       },
       id: "setDegree",
@@ -334,7 +375,9 @@ class ApiLibrary {
       selection: "90",
       tip: {
         description: {
-          ko: "시계방향으로 돌기"
+          ko: "시계방향으로 돌기",
+          en: "Turn clockwise",
+          ja: "時計回りに回転する"
         },
         "params": [{
           name: "degree",
@@ -343,7 +386,9 @@ class ApiLibrary {
           }
         }],
         "description2": {
-          ko: "degree만큼 시계방향으로 스프라이트의 각도를 회전한다"
+          ko: "degree만큼 시계방향으로 스프라이트의 각도를 회전한다",
+          en: "Rotates the sprite's angle clockwise by \"degree\".",
+          ja: "degree値だけ時計回りにスプライトの角度を回転する"
         }
       },
       id: "turn",
@@ -355,7 +400,9 @@ class ApiLibrary {
       "selectionType": "sprite",
       tip: {
         description: {
-          ko: "특정 스프라이트로 방향 보기"
+          ko: "특정 스프라이트로 방향 보기",
+          en: "Turn to face a specific sprite",
+          ja: "特定のスプライトの方向を向く"
         },
         "params": [{
           name: "name",
@@ -364,7 +411,9 @@ class ApiLibrary {
           }
         }],
         "description2": {
-          ko: "특정 스프라이트를 바라보도록 각도를 회전한다"
+          ko: "특정 스프라이트를 바라보도록 각도를 회전한다",
+          en: "Rotates the angle to face a specific sprite.",
+          ja: "特定のスプライトを向くように角度を回転する"
         }
       },
       id: "turnToSprite",
@@ -374,10 +423,14 @@ class ApiLibrary {
       snippet: "turnToMousePointer()",
       tip: {
         description: {
-          ko: "마우스 방향 보기"
+          ko: "마우스 방향 보기",
+          en: "Turn to face the cursor",
+          ja: "カーソルの方向を向く"
         },
         "description2": {
-          ko: "마우스 포인터를 따라 스프라이트가 이동한다"
+          ko: "마우스 포인터를 따라 스프라이트가 회전한다. ",
+          en: "The sprite will rotate to follow the cursor.",
+          ja: "カーソルを追ってスプライトが回転する"
         }
       },
       id: "turnToMousePointer",
@@ -388,7 +441,9 @@ class ApiLibrary {
       selection: "true",
       tip: {
         description: {
-          ko: "좌우를 반전"
+          ko: "좌우를 반전",
+          en: "Flip sprite left and right",
+          ja: "スプライトの左右反転"
         },
         "params": [{
           name: "isFlipped",
@@ -408,7 +463,9 @@ class ApiLibrary {
       selection: "true",
       tip: {
         description: {
-          ko: "위아래로 뒤집기"
+          ko: "위아래로 뒤집기",
+          en: "Flip sprite upside down",
+          ja: "スプライトの上下反転"
         },
         "params": [{
           name: "isFlipped",
@@ -427,7 +484,9 @@ class ApiLibrary {
       snippet: "getX()",
       tip: {
         description: {
-          ko: "x좌표"
+          ko: "x좌표",
+          en: "Get sprite's x-coordinate value",
+          ja: "スプライトのx座標値を取得する"
         },
         "description2": {
           ko: "스프라이트의 x좌표 값을 반환한다"
@@ -440,7 +499,9 @@ class ApiLibrary {
       snippet: "getY()",
       tip: {
         description: {
-          ko: "y좌표"
+          ko: "y좌표",
+          en: "Get sprite's y-coordinate value",
+          ja: "スプライトのy座標値を取得する"
         },
         "description2": {
           ko: "스프라이트의 y좌표 값을 반환한다"
@@ -453,7 +514,9 @@ class ApiLibrary {
       snippet: "getMousePointerX()",
       tip: {
         description: {
-          ko: "마우스 x좌표"
+          ko: "마우스 x좌표",
+          en: "Get the cursor's x-coordinate value",
+          ja: "カーソルのx座標値を取得する"
         },
         "description2": {
           ko: "마우스 포인터의 x좌표 값을 반환한다"
@@ -466,7 +529,9 @@ class ApiLibrary {
       snippet: "getMousePointerY()",
       tip: {
         description: {
-          ko: "마우스 y좌표"
+          ko: "마우스 y좌표",
+          en: "Get the cursor's y-coordinate value",
+          ja: "カーソルのy座標値を取得する"
         },
         "description2": {
           ko: "마우스 포인터의 y좌표 값을 반환한다"
@@ -479,7 +544,9 @@ class ApiLibrary {
       snippet: "getDegree()",
       tip: {
         description: {
-          ko: "각도값"
+          ko: "각도값",
+          en: "Get sprite's angle value as a number",
+          ja: "スプライトの角度値を数字で取得する"
         },
         "description2": {
           ko: "스프라이트의 각도값을 숫자로 반환한다"
@@ -497,7 +564,9 @@ class ApiLibrary {
       "requiredParamCount": 1,
       tip: {
         description: {
-          ko: "sec초간 말하기"
+          ko: "sec초간 말하기",
+          en: "Speak for \"sec\"",
+          ja: "sec秒間話す"
         },
         "params": [{
           name: "message",
@@ -511,7 +580,9 @@ class ApiLibrary {
           }
         }],
         "description2": {
-          ko: "스프라이트에 message를 sec초 만큼 출력한다\n만약 sec가 없다면 말풍선이 사라지지 않는다"
+          ko: "스프라이트에 message를 sec초 만큼 출력한다. 만약 sec가 없다면 말풍선이 사라지지 않는다",
+          en: "Outputs the \"message\" from the sprite for \"sec\" seconds. If there is no \"sec\", the speech bubble will not disappear.",
+          ja: "スプライトにmessageをsec秒間出力する。sec値がない場合は吹き出しは消えない"
         }
       },
       id: "say",
@@ -521,10 +592,14 @@ class ApiLibrary {
       snippet: "stopSay()",
       tip: {
         description: {
-          ko: "말하기를 멈춘다"
+          ko: "말하기를 멈춘다",
+          en: "Stop speaking",
+          ja: "会話を止める"
         },
         "description2": {
-          ko: "say를 통해 하던 말을 멈추고 말풍선을 없앤다"
+          ko: "say를 통해 하던 말을 멈추고 말풍선을 없앤다",
+          en: "Ends speaking through \"say\" and removes the speech bubble.",
+          ja: "sayでの会話を止めて吹き出しを消す"
         }
       },
       id: "stopSay",
@@ -536,7 +611,9 @@ class ApiLibrary {
       "selectionType": "animation",
       tip: {
         description: {
-          ko: "애니메이션 실행하기"
+          ko: "애니메이션 실행하기",
+          en: "Run animation",
+          ja: "アニメーションを実行する"
         },
         "params": [{
           name: "name",
@@ -550,7 +627,9 @@ class ApiLibrary {
           }
         }],
         "description2": {
-          ko: "name 애니메이션을 isLoop에 따라 무한 혹은 1회 동작한다"
+          ko: "name 애니메이션을 실행한다. isLoop가 true일 경우 무한히, false 일 경우 1회만 실행한다. ",
+          en: "Runs the \"name\" animation. If \"isLoop\" is true, it will be executed indefinitely, and if it is false, it will be executed only once.",
+          ja: "nameアニメーションを実行する。isLoopがtrueの場合は無限に、falseの場合は1回だけ実行する。"
         }
       },
       id: "playAnimation",
@@ -560,10 +639,14 @@ class ApiLibrary {
       snippet: "stopAnimation()",
       tip: {
         description: {
-          ko: "애니메이션 멈추기"
+          ko: "애니메이션 멈추기",
+          en: "Stop animation",
+          ja: "アニメーションを止める"
         },
         "description2": {
-          ko: "동작중인 애니메이션을 멈춘다"
+          ko: "실행 중인 애니메이션을 멈춘다",
+          en: "Stops the animation that is currently running.",
+          ja: "実行中のアニメーションを止める"
         }
       },
       id: "stopAnimation",
@@ -573,10 +656,14 @@ class ApiLibrary {
       snippet: "getCurrentAnimation()",
       tip: {
         description: {
-          ko: "현재 동작중인 애니메이션 이름 가져오기"
+          ko: "현재 동작중인 애니메이션 이름 가져오기",
+          en: "Get the name of the animation currently running",
+          ja: "現在実行中のアニメーションの名前を取得する"
         },
         "description2": {
-          ko: "스프라이트에 동작중인 애니메이션이 있다면 그 이름을 가져온다"
+          ko: "스프라이트가 실행 중인 애니메이션이 있다면 그 이름을 가져온다",
+          en: "Get the name of the animation the sprite is currently running.",
+          ja: "スプライトが実行中のアニメーションがある場合、その名前を取得する"
         }
       },
       id: "getCurrentAnimation",
@@ -586,10 +673,14 @@ class ApiLibrary {
       snippet: "show()",
       tip: {
         description: {
-          ko: "보이기"
+          ko: "보이기",
+          en: "Show",
+          ja: "見せる"
         },
         "description2": {
-          ko: "scene에 스프라이트가 보이며, 초기값이 show이기\n때문에 hide()와 함께 사용해야 동작을 확인할 수 있다"
+          ko: "hide()와 함께 사용해야 동작을 확인할 수 있다.",
+          en: "This action can only be used in conjunction with hide().",
+          ja: "hide()と一緒に使用しないと動作を確認できない"
         }
       },
       id: "show",
@@ -599,10 +690,14 @@ class ApiLibrary {
       snippet: "hide()",
       tip: {
         description: {
-          ko: "숨기기"
+          ko: "숨기기",
+          en: "Hide",
+          ja: "隠す"
         },
         "description2": {
-          ko: "scene에서 스프라이트가 사라지며, show()와 함께 사용한다"
+          ko: "scene에서 스프라이트가 사라진다. show()와 함께 사용한다",
+          en: "The sprite disappears from the scene. Used with show().",
+          ja: "sceneからスプライトが消える。Show()と一緒に使用する"
         }
       },
       id: "hide",
@@ -612,10 +707,14 @@ class ApiLibrary {
       snippet: "bringToTop()",
       tip: {
         description: {
-          ko: "맨 앞으로 가져오기"
+          ko: "맨 앞으로 가져오기",
+          en: "Bring to front",
+          ja: "最前面に出す"
         },
         "description2": {
-          ko: "scene안에 여러 스프라이트가 중첩되었을 때\n이 함수를 호출한 스프라이트가 맨앞에 보이게 된다"
+          ko: "scene안에 여러 스프라이트가 중첩되었을 때 이 함수를 호출한 스프라이트가 맨앞에 보이게 된다",
+          en: "When there are multiple sprites in a scene, the sprite that called this function is shown in front.",
+          ja: "scene内に複数のスプライトが重なった時、この関数を呼び出したスプライトが最前面に見えるようになる"
         }
       },
       id: "bringToTop",
@@ -626,7 +725,9 @@ class ApiLibrary {
       selection: "100",
       tip: {
         description: {
-          ko: "크기를 value비율로 정하기"
+          ko: "크기 비율로 정하기",
+          en: "Set the scale",
+          ja: "サイズの比率を決める"
         },
         "params": [{
           name: "value",
@@ -635,7 +736,9 @@ class ApiLibrary {
           }
         }],
         "description2": {
-          ko: "비율로 스프라이트의 사이즈가 변경한다"
+          ko: "스프라이트의 사이즈가 입력한 비율만큼 커진다. (음수 비율을 입력했다면 작아진다.) ",
+          en: "Sets the size of the sprite based on the ratio entered. (If a negative ratio is entered, it becomes smaller.)",
+          ja: "スプライトのサイズが入力した比率だけ大きくなる。(負数比率を入力すると小さくなる。)"
         }
       },
       id: "setSize",
@@ -646,7 +749,9 @@ class ApiLibrary {
       selection: "10",
       tip: {
         description: {
-          ko: "크기를 value비율로 정하기"
+          ko: "크기 비율 더하기",
+          en: "Increase the scale",
+          ja: "サイズの比率を足す"
         },
         "params": [{
           name: "value",
@@ -655,7 +760,9 @@ class ApiLibrary {
           }
         }],
         "description2": {
-          ko: "비율로 스프라이트의 사이즈가 변경한다"
+          ko: "입력한 비율만큼 스프라이트의 사이즈가 커진다. (음수 비율을 입력했다면 작아진다.)  ",
+          en: "Increases the size of the sprite by the ratio entered. (If a negative ratio is entered, it becomes smaller.)",
+          ja: "入力した比率だけスプライトのサイズが大きくなる。(負数比率を入力すると小さくなる。)"
         }
       },
       id: "addSize",
@@ -665,7 +772,9 @@ class ApiLibrary {
       snippet: "getSize()",
       tip: {
         description: {
-          ko: "크기값"
+          ko: "스프라이트의 크기 값 받기",
+          en: "Get sprite's size value",
+          ja: "スプライトのサイズ値を取得する"
         },
         "description2": {
           ko: "스프라이트의 크기를 반환한다"
@@ -678,7 +787,9 @@ class ApiLibrary {
       snippet: "getWidth()",
       tip: {
         description: {
-          ko: "너비값"
+          ko: "스프라이트의 너비 값 받기",
+          en: "Get sprite's width value",
+          ja: "スプライトの幅値を取得する"
         },
         "description2": {
           ko: "스프라이트의 너비값을 반환한다"
@@ -691,7 +802,9 @@ class ApiLibrary {
       snippet: "getHeight()",
       tip: {
         description: {
-          ko: "높이값"
+          ko: "스프라이트의 높이 값 받기",
+          en: "Get sprite's height value",
+          ja: "スプライトの高さ値を取得する"
         },
         "description2": {
           ko: "스프라이트의 높이값을 반환한다"
@@ -705,7 +818,9 @@ class ApiLibrary {
       selection: "text",
       tip: {
         description: {
-          ko: "문구 설정하기"
+          ko: "문구 설정하기",
+          en: "Set text",
+          ja: "テキストを設定する"
         },
         "params": [{
           name: "text",
@@ -714,7 +829,9 @@ class ApiLibrary {
           }
         }],
         "description2": {
-          ko: "텍스트상자 스프라이트의 메시지를 수정한다"
+          ko: "텍스트상자 스프라이트의 메시지를 수정한다",
+          en: "Edits the textbox sprite's message.",
+          ja: "テキストボックスのスプライトのメッセージを修正する"
         }
       },
       id: "setText",
@@ -725,7 +842,9 @@ class ApiLibrary {
       selection: "text",
       tip: {
         description: {
-          ko: "문구 추가하기"
+          ko: "문구 추가하기",
+          en: "Add text",
+          ja: "テキストを追加する"
         },
         "params": [{
           name: "text",
@@ -734,7 +853,9 @@ class ApiLibrary {
           }
         }],
         "description2": {
-          ko: "텍스트상자 스프라이트의 기존 메시지에\ntext를 추가한다"
+          ko: "텍스트상자 스프라이트의 기존 메시지에 text를 추가한다",
+          en: "Adds text to an existing message in a textbox sprite.",
+          ja: "テキストボックスのスプライトの既存メッセージにtextを追加する"
         }
       },
       id: "appendText",
@@ -744,10 +865,14 @@ class ApiLibrary {
       snippet: "clearText()",
       tip: {
         description: {
-          ko: "문구 모두 지우기"
+          ko: "문구 모두 지우기",
+          en: "Clear all text",
+          ja: "テキストを全て削除する"
         },
         "description2": {
-          ko: "텍스트상자 스프라이트의 메시지를\n모두 지운다"
+          ko: "텍스트상자 스프라이트의 메시지를 모두 지운다",
+          en: "Clears all messages in a textbox sprite.",
+          ja: "テキストボックスのスプライトのメッセージをすべて削除する"
         }
       },
       id: "clearText",
@@ -760,7 +885,9 @@ class ApiLibrary {
           ko: "문구값"
         },
         "description2": {
-          ko: "텍스트상자 스프라이트의 메시지를 반환한다"
+          ko: "텍스트상자의 문구 텍스트 받기 ",
+          en: "Get the text in text box",
+          ja: "テキストボックスのテキストを取得する"
         }
       },
       id: "getText",
@@ -772,7 +899,9 @@ class ApiLibrary {
       "selectionType": "color",
       tip: {
         description: {
-          ko: "문구값"
+          ko: "문구 색상",
+          en: "Set text color",
+          ja: "テキスト色"
         },
         "params": [{
           name: "color",
@@ -781,7 +910,9 @@ class ApiLibrary {
           }
         }],
         "description2": {
-          ko: "텍스트상자 스프라이트의 문구 색상을 변경한다"
+          ko: "텍스트상자 스프라이트의 문구 색상을 변경한다",
+          en: "Changes the text color of a textbox sprite.",
+          ja: "テキストボックスのスプライトのテキスト色を変更する"
         }
       },
       id: "setTextColor",
@@ -791,10 +922,14 @@ class ApiLibrary {
       snippet: "setRandomTextColor()",
       tip: {
         description: {
-          ko: "문구 색상 무작위로 변경하기"
+          ko: "문구 색상 무작위로 변경하기",
+          en: "Set text color randomly",
+          ja: "テキスト色をランダムに変更する"
         },
         "description2": {
-          ko: "텍스트상자 스프라이트의 문구 색상을 무작위로 변경한다"
+          ko: "텍스트상자 스프라이트의 문구 색상을 무작위로 변경한다",
+          en: "Changes the text color of a textbox sprite to a random color.",
+          ja: "テキストボックスのスプライトのテキスト色をランダムに変更する"
         }
       },
       id: "setRandomTextColor",
@@ -804,10 +939,14 @@ class ApiLibrary {
       snippet: "getTextColor()",
       tip: {
         description: {
-          ko: "문구 색상 가져오기"
+          ko: "문구 색상 가져오기",
+          en: "Get text color",
+          ja: "テキスト色を取得する"
         },
         "description2": {
-          ko: "텍스트상자 스프라이트의 문구 색상값을 반환하다"
+          ko: "텍스트상자 스프라이트의 문구 색상값을 반환한다",
+          en: "Returns the text color value of a textbox sprite.",
+          ja: "テキストボックスのスプライトのテキスト色値を返す"
         }
       },
       id: "getTextColor",
@@ -817,10 +956,14 @@ class ApiLibrary {
       snippet: "shake()",
       tip: {
         description: {
-          ko: "흔들기"
+          ko: "흔들기",
+          en: "Shake",
+          ja: "シェイク"
         },
         "description2": {
-          ko: "scene에 흔들리는 효과를 적용한다"
+          ko: "scene에 흔들리는 효과를 적용한다",
+          en: "Applies a shake effect to the scene.",
+          ja: "sceneにシェイクエフェクトを適用する"
         }
       },
       id: "shake",
@@ -830,10 +973,14 @@ class ApiLibrary {
       snippet: "flash()",
       tip: {
         description: {
-          ko: "반짝임"
+          ko: "번쩍임",
+          en: "Flash",
+          ja: "フラッシュ"
         },
         "description2": {
-          ko: "scene에 반짝이는 효과를 적용한다"
+          ko: "scene에 번쩍이는 효과를 적용한다",
+          en: "Applies a flashing effect to the scene.",
+          ja: "sceneにフラッシュエフェクトを適用する"
         }
       },
       id: "flash",
@@ -843,7 +990,9 @@ class ApiLibrary {
       snippet: "getWorldWidth()",
       tip: {
         description: {
-          ko: "배경의 너비값"
+          ko: "배경 너비값 받기",
+          en: "Get the value of background width",
+          ja: "背景の幅値を取得する"
         },
         "description2": {
           ko: "scene의 너비값을 반환한다"
@@ -856,7 +1005,9 @@ class ApiLibrary {
       snippet: "getWorldHeight()",
       tip: {
         description: {
-          ko: "배경의 높이값"
+          ko: "배경 높이값 받기",
+          en: "Get the value of background height",
+          ja: "背景の高さ値を取得する"
         },
         "description2": {
           ko: "scene의 높이값을 반환한다"
@@ -872,7 +1023,9 @@ class ApiLibrary {
       snippet: "onFrame(function(){})",
       tip: {
         description: {
-          ko: "매 프레임마다 입력된 함수를 반복하여 호출하기"
+          ko: "매 프레임마다 입력된 함수를 반복하여 호출하기",
+          en: "Call the entered function repeatedly every frame",
+          ja: "毎フレームごとに入力された関数を繰り返して呼び出す"
         },
         "params": [{
           name: "function",
@@ -881,7 +1034,9 @@ class ApiLibrary {
           }
         }],
         "description2": {
-          ko: "보통 1초에 60번 호출된다."
+          ko: "보통 1초에 60번 호출된다.",
+          en: "Generally, it calls 60 times in a second.",
+          ja: "通常は1秒に60回呼び出される。"
         }
       },
       newLine: "onFrame(function(){",
@@ -892,7 +1047,9 @@ class ApiLibrary {
       snippet: "onSignal(\"name\",function(){})",
       tip: {
         description: {
-          ko: "특정한 신호를 받았을 때 입력된 함수 호출하기"
+          ko: "특정한 신호를 받았을 때 입력된 함수 호출하기",
+          en: "Call the entered function when a specific signal is received",
+          ja: "特定の信号を受信した時、入力された関数を呼び出す"
         },
         "params": [{
           name: "name",
@@ -916,7 +1073,9 @@ class ApiLibrary {
       snippet: "sendSignal(\"name\")",
       tip: {
         description: {
-          ko: "입력된 이름의 신호 보내기"
+          ko: "입력된 이름의 신호 보내기",
+          en: "Send a signal of the entered name",
+          ja: "入力された名前の信号を送信する"
         },
         "params": [{
           name: "name",
@@ -934,7 +1093,9 @@ class ApiLibrary {
       snippet: "changeScene(\"name\")",
       tip: {
         description: {
-          ko: "입력된 이름의 scene으로 변경하기"
+          ko: "입력된 이름의 scene으로 변경하기",
+          en: "Change to the scene of the entered name",
+          ja: "入力された名前のsceneに変更する"
         },
         "params": [{
           name: "name",
@@ -952,7 +1113,9 @@ class ApiLibrary {
       snippet: "onClick(function(){})",
       tip: {
         description: {
-          ko: "스프라이트를 클릭했을 때 입력된 함수 호출하기"
+          ko: "스프라이트를 클릭했을 때 입력된 함수 호출하기",
+          en: "Call the entered function when the sprite is clicked",
+          ja: "スプライトをクリックした時、入力された関数を呼び出す"
         },
         "params": [{
           name: "function",
@@ -969,7 +1132,9 @@ class ApiLibrary {
       snippet: "onClickUp(function(){})",
       tip: {
         description: {
-          ko: "스프라이트를 클릭했다가 뗐을 때 입력된 함수 호출하기"
+          ko: "스프라이트를 클릭했다가 뗐을 때 입력된 함수 호출하기",
+          en: "Call the entered function when the sprite is clicked and released",
+          ja: "スプライトをクリックして離した時、入力された関数を呼び出す"
         },
         "params": [{
           name: "function",
@@ -986,7 +1151,9 @@ class ApiLibrary {
       snippet: "onScreenClick(function(){})",
       tip: {
         description: {
-          ko: "화면을 클릭했을 때 입력된 함수 호출하기"
+          ko: "화면을 클릭했을 때 입력된 함수 호출하기",
+          en: "Call the entered function when the screen is clicked",
+          ja: "画面をクリックした時、入力された関数を呼び出す"
         },
         "params": [{
           name: "function",
@@ -1003,7 +1170,9 @@ class ApiLibrary {
       snippet: "onScreenClickUp(function(){})",
       tip: {
         description: {
-          ko: "화면을 클릭했다가 뗐을 때 입력된 함수 호출하기"
+          ko: "화면을 클릭했다가 뗐을 때 입력된 함수 호출하기",
+          en: "Call the entered function when the screen is clicked and released",
+          ja: "画面をクリックして離した時、入力された関数を呼び出す"
         },
         "params": [{
           name: "function",
@@ -1020,7 +1189,9 @@ class ApiLibrary {
       snippet: "onKey(\"key\",function(){})",
       tip: {
         description: {
-          ko: "특정 키를 눌렀을 때 호출되는 함수"
+          ko: "특정 키를 눌렀을 때 입력된 함수 호출하기",
+          en: "Call the entered function when a specific key is pressed",
+          ja: "特定のキーを押した時、入力された関数を呼び出す"
         },
         "params": [{
           name: "key",
@@ -1044,7 +1215,9 @@ class ApiLibrary {
       snippet: "onKeyUp(\"key\",function(){})",
       tip: {
         description: {
-          ko: "특정 키를 눌렀다가 뗐을 때 호출되는 함수"
+          ko: "특정 키를 눌렀다가 뗐을 때 입력된 함수 호출하기",
+          en: "Call the entered function when a specific key is pressed and released",
+          ja: "特定のキーを押して離した時、入力された関数を呼び出す"
         },
         "params": [{
           name: "key",
@@ -1068,7 +1241,9 @@ class ApiLibrary {
       snippet: "onOverlap(\"name\",function(){})",
       tip: {
         description: {
-          ko: "특정 스프라이트와 만났을 때 입력된 함수 호출하기"
+          ko: "특정 스프라이트와 만났을 때 입력된 함수 호출하기",
+          en: "Call the entered function when coming into contact with a specific sprite",
+          ja: "特定のスプライトと会った時、入力された関数を呼び出す"
         },
         "params": [{
           name: "name",
@@ -1092,7 +1267,9 @@ class ApiLibrary {
       snippet: "onOverlap([\"name1\",\"name2\"],function(){})",
       tip: {
         description: {
-          ko: "배열 속 스프라이트들과 만났을 때 입력된 함수 호출하기"
+          ko: "배열 속 스프라이트들과 만났을 때 입력된 함수 호출하기",
+          en: "Call the entered function when coming into contact with sprites in the array.",
+          ja: "配列内のスプライトと会った時、入力された関数を呼び出す"
         },
         "params": [{
           name: "Array",
@@ -1116,7 +1293,9 @@ class ApiLibrary {
       snippet: "onOverlapOnce(\"name\",function(){})",
       tip: {
         description: {
-          ko: "특정 스프라이트와 만났을 때 입력된 함수를 한번만 호출하기"
+          ko: "배열 속 스프라이트들과 만났을 때 입력된 함수 호출하기",
+          en: "Call the entered function when coming into contact with sprites in the array.",
+          ja: "配列内のスプライトと会った時、入力された関数を呼び出す"
         },
         "params": [{
           name: "name",
@@ -1140,7 +1319,9 @@ class ApiLibrary {
       snippet: "onOutStage(function(){})",
       tip: {
         description: {
-          ko: "화면 밖으로 나갔을 때 입력된 함수 호출하기"
+          ko: "화면 밖으로 나갔을 때 입력된 함수 호출하기",
+          en: "Call the entered function when leaving the screen",
+          ja: "画面外に出た時、入力された関数を呼び出す"
         },
         "params": [{
           name: "function",
@@ -1157,7 +1338,9 @@ class ApiLibrary {
       snippet: "onSwipe(\"left\",function(){})",
       tip: {
         description: {
-          ko: "화면을 특정한 방향으로 스와이프했을 때 입력된 함수 호출하기"
+          ko: "화면을 특정한 방향으로 스와이프했을 때 입력된 함수 호출하기",
+          en: "Call the entered function when the screen is swiped in a specific direction",
+          ja: "画面を特定の方向にスワイプした時、入力された関数を呼び出す"
         },
         "params": [{
           name: "direction",
@@ -1171,7 +1354,9 @@ class ApiLibrary {
           }
         }],
         "description2": {
-          ko: "방향 값으로는 left, right, top, down 이 있다."
+          ko: "방향 값으로는 left, right, top, down 이 있다.",
+          en: "Direction values include left, right, top, and down.",
+          ja: "方向値にはleft、right、top、downがある。"
         }
       },
       newLine: "onSwipe(\"left\",function(){",
@@ -1214,7 +1399,9 @@ class ApiLibrary {
       selection: "1",
       tip: {
         description: {
-          ko: "특정 시간 기다리기"
+          ko: "특정 시간 기다리기",
+          en: "Wait for a specific time",
+          ja: "特定の時間を待つ"
         },
         "params": [{
           name: "secs",
@@ -1223,7 +1410,9 @@ class ApiLibrary {
           }
         }],
         "description2": {
-          ko: "secs초만큼 다음코드를 실행하지 않고 기다린다"
+          ko: "secs초만큼 다음코드를 실행하지 않고 기다린다",
+          en: "Waits for \"secs\" seconds without executing the next code.",
+          ja: "secs秒だけ次のコードを実行せずに待つ"
         }
       },
       id: "wait",
@@ -1234,7 +1423,9 @@ class ApiLibrary {
       selection: "true",
       tip: {
         description: {
-          ko: "드래그 가능여부 설정하기"
+          ko: "드래그 가능여부 설정하기",
+          en: "Set draggability",
+          ja: "ドラッグの可・不可を設定する"
         },
         "params": [{
           name: "enabled",
@@ -1243,7 +1434,9 @@ class ApiLibrary {
           }
         }],
         "description2": {
-          ko: "enabled가 true이면 스프라이트를 마우스나 터치로 드래그할 수 있다"
+          ko: "enabled가 true이면 스프라이트를 마우스나 터치로 드래그할 수 있다",
+          en: "If \"enabled\" is true, the sprite can be dragged with the mouse or through touch.",
+          ja: "enabledがtrueの場合はスプライトをマウスやタッチでドラッグすることができる"
         }
       },
       id: "setDraggable",
@@ -1253,10 +1446,14 @@ class ApiLibrary {
       snippet: "kill()",
       tip: {
         description: {
-          ko: "없애기"
+          ko: "없애기",
+          en: "Remove",
+          ja: "削除する"
         },
         "description2": {
-          ko: "scene에서 스프라이트가 제거된다"
+          ko: "scene에서 스프라이트가 제거된다",
+          en: "The sprite will be removed from the scene.",
+          ja: "sceneからスプライトを削除する"
         }
       },
       id: "kill",
@@ -1266,10 +1463,14 @@ class ApiLibrary {
       snippet: "revive()",
       tip: {
         description: {
-          ko: "되살리기"
+          ko: "되살리기",
+          en: "Revive",
+          ja: "復元する"
         },
         "description2": {
-          ko: "secen에서 제거된(kill) 스프라이트를 되살린다"
+          ko: "scene에서 제거된(kill) 스프라이트를 되살린다",
+          en: "Revives a sprite that was removed (killed) in the scene.",
+          ja: "sceneから削除(kill)されたスプライトを復元する"
         }
       },
       id: "revive",
@@ -1279,10 +1480,14 @@ class ApiLibrary {
       snippet: "clone()",
       tip: {
         description: {
-          ko: "복제하기"
+          ko: "복제하기",
+          en: "Duplicate",
+          ja: "コピーする"
         },
         "description2": {
-          ko: "해당 스프라이트가 복제되고 복제된 스프라이트를 반환한다"
+          ko: "해당 스프라이트가 복제되고 복제된 스프라이트를 반환한다",
+          en: "Duplicates the selected sprite and returns the duplicate.",
+          ja: "選択したスプライトをコピーし、コピーされたスプライトを返す"
         }
       },
       id: "clone",
@@ -1293,7 +1498,9 @@ class ApiLibrary {
       selection: "message",
       tip: {
         description: {
-          ko: "디버그 메시지 출력"
+          ko: "디버그 메시지 출력",
+          en: "Print debug message",
+          ja: "デバッグメッセージを出力"
         },
         "params": [{
           name: "message",
@@ -1302,7 +1509,9 @@ class ApiLibrary {
           }
         }],
         "description2": {
-          ko: "chatbot의 대화창에 message를 출력할 수 있다"
+          ko: "chatbot의 대화창에 message를 출력할 수 있다",
+          en: "You can output a \"message\" to the chatbot's chat window.",
+          ja: "chatbotのメッセージボックスにmessageを出力することができる"
         }
       },
       id: "print",
@@ -1313,7 +1522,9 @@ class ApiLibrary {
       selection: "message",
       tip: {
         description: {
-          ko: "텍스트 입력받기"
+          ko: "텍스트 입력받기",
+          en: "Get text input",
+          ja: "テキストの入力を受け付ける"
         },
         "params": [{
           name: "message",
@@ -1322,7 +1533,9 @@ class ApiLibrary {
           }
         }],
         "description2": {
-          ko: "입력박스가 나타나고 문자열 또는 숫자를 입력할 수 있다.\n[확인]을 누르면 입력된 값을 반환한다"
+          ko: "입력박스가 나타나고 문자열 또는 숫자를 입력할 수 있다. [확인]을 누르면 입력된 값을 반환한다",
+          en: "An input box appears, and you can enter a string or number. If you click [OK], the entered value is returned.",
+          ja: "入力ボックスが表示されて文字列または数字を入力することができる。「確認」を押すと入力された値を返す"
         }
       },
       id: "input",
@@ -1332,7 +1545,9 @@ class ApiLibrary {
       snippet: "showRanking()",
       tip: {
         description: {
-          ko: "랭킹 보여주기(내림차순)"
+          ko: "랭킹 보여주기(내림차순)",
+          en: "Show ranking (descending order)",
+          ja: "ランキングを表示する(降順)"
         }
       },
       id: "showRanking",
@@ -1342,7 +1557,9 @@ class ApiLibrary {
       snippet: "showRankingAscending()",
       tip: {
         description: {
-          ko: "랭킹 보여주기(오름차순)"
+          ko: "랭킹 보여주기(오름차순)",
+          en: "Show ranking (ascending order)",
+          ja: "ランキングを表示する(昇順)"
         }
       },
       id: "showRankingAscending",
@@ -1352,7 +1569,9 @@ class ApiLibrary {
       snippet: "hideRanking()",
       tip: {
         description: {
-          ko: "랭킹 숨기기"
+          ko: "랭킹 숨기기",
+          en: "Hide ranking",
+          ja: "ランキングを隠す"
         }
       },
       id: "hideRanking",
@@ -1363,7 +1582,9 @@ class ApiLibrary {
       selection: "100",
       tip: {
         description: {
-          ko: "랭킹에 점수 저장하기"
+          ko: "랭킹에 점수 저장하기",
+          en: "Save scores in ranking",
+          ja: "ランキングにスコアを保存する"
         },
         "params": [{
           name: "score",
@@ -1372,7 +1593,9 @@ class ApiLibrary {
           }
         }],
         "description2": {
-          ko: "유저별로 가장 높은 점수 하나가 저장된다."
+          ko: "유저별로 가장 높은 점수 하나가 저장된다.",
+          en: "The highest scores for each user will be saved.",
+          ja: "ユーザー別に最高スコア1つが保存される"
         }
       },
       id: "saveScore",
@@ -1385,10 +1608,14 @@ class ApiLibrary {
       snippet: "isClickedSprite()",
       tip: {
         description: {
-          ko: "스프라이트를 클릭하고 있는지 여부"
+          ko: "스프라이트를 클릭하고 있는지 여부",
+          en: "Indicates if the sprite is being clicked",
+          ja: "スプライトをクリックしているかについて"
         },
         "description2": {
-          ko: "스프라이트를 클릭하고 있는 중이면 true, 그렇지 않으면 false를 반환한다"
+          ko: "스프라이트를 클릭하고 있는 중이면 true, 그렇지 않으면 false를 반환한다. ",
+          en: "Returns true if the sprite is being clicked. Otherwise false.",
+          ja: "スプライトをクリック中ならtrue、そうでないならfalseを返す。"
         }
       },
       id: "isClickedSprite",
@@ -1400,14 +1627,18 @@ class ApiLibrary {
       "selectionType": "key",
       tip: {
         description: {
-          ko: "특정키를 누르고 있는지 여부"
+          ko: "특정키를 누르고 있는지 여부",
+          en: "Indicates if a specific key is being pressed",
+          ja: "特定のキーを押しているかについて"
         },
         "params": [{
           name: "key",
           description: "판단할 키보드의 키"
         }],
         "description2": {
-          ko: "key를 누르고 있는 중이면 true, 그렇지 않으면 false를 반환한다"
+          ko: "key를 누르고 있는 중이면 true, 그렇지 않으면 false를 반환한다",
+          en: "Returns true if the key is being clicked. Otherwise false.",
+          ja: "キーを押している中ならtrue、そうでないならfalseを返す"
         }
       },
       id: "isPressedKey",
@@ -1417,10 +1648,14 @@ class ApiLibrary {
       snippet: "isClickedMouse()",
       tip: {
         description: {
-          ko: "마우스를 클릭하고 있는지 여부"
+          ko: "마우스를 클릭하고 있는지 여부",
+          en: "Indicates if a mouse button is being clicked",
+          ja: "マウスをクリックしているかについて"
         },
         "description2": {
-          ko: "마우스를 클릭하고 있는 중이면 true, 그렇지 않으면 false를 반환한다"
+          ko: "마우스를 클릭하고 있는 중이면 true, 그렇지 않으면 false를 반환한다",
+          en: "Returns true if the mouse is being clicked. Otherwise false.",
+          ja: "マウスをクリックしている中ならtrue、そうでないならfalseを返す"
         }
       },
       id: "isClickedMouse",
@@ -1450,7 +1685,9 @@ class ApiLibrary {
       name: "+,-,*,/,%",
       tip: {
         description: {
-          ko: "사칙연산"
+          ko: "사칙연산",
+          en: "Arithmetic operation",
+          ja: "四則演算"
         },
         "params": [{
           name: "+",
@@ -1484,7 +1721,9 @@ class ApiLibrary {
       name: "<, >, ==, !=",
       tip: {
         description: {
-          ko: "비교연산자"
+          ko: "비교연산자",
+          en: "Comparison operator",
+          ja: "比較演算子"
         },
         "params": [{
           name: "<",
@@ -1513,7 +1752,9 @@ class ApiLibrary {
       name: "!, ||, &&",
       tip: {
         description: {
-          ko: "논리연산자"
+          ko: "논리연산자",
+          en: "Logical operator",
+          ja: "論理演算子"
         },
         "params": [{
           name: "!expr",
@@ -1539,7 +1780,9 @@ class ApiLibrary {
       selection: "number",
       tip: {
         description: {
-          ko: "절대값"
+          ko: "절대값",
+          en: "Absolute value",
+          ja: "絶対値"
         },
         "params": [{
           name: "num",
@@ -1548,7 +1791,9 @@ class ApiLibrary {
           }
         }],
         "description2": {
-          ko: "num의 절대값을 반환한다"
+          ko: "num의 절대값을 반환한다",
+          en: "Returns the absolute value of \"num\".",
+          ja: "numの絶対値を返す"
         }
       },
       id: "abs",
@@ -1559,7 +1804,9 @@ class ApiLibrary {
       selection: "number",
       tip: {
         description: {
-          ko: "반올림"
+          ko: "반올림",
+          en: "Round",
+          ja: "四捨五入"
         },
         "params": [{
           name: "num",
@@ -1568,7 +1815,9 @@ class ApiLibrary {
           }
         }],
         "description2": {
-          ko: "num의 소수점 이하 첫째자리에서 반올림한 값을 반환한다"
+          ko: "num의 소수점 이하 첫째자리에서 반올림한 값을 반환한다",
+          en: `Returns the value rounded to the first decimal place of "num".`,
+          ja: "numの小数点以下1桁から四捨五入した値を返す"
         }
       },
       id: "round",
@@ -1579,7 +1828,9 @@ class ApiLibrary {
       selection: "number",
       tip: {
         description: {
-          ko: "올림"
+          ko: "올림",
+          en: "Round up",
+          ja: "切り上げ"
         },
         "params": [{
           name: "num",
@@ -1588,7 +1839,9 @@ class ApiLibrary {
           }
         }],
         "description2": {
-          ko: "num의 소수점 이하 첫째자리에서 올림한 값을 반환한다"
+          ko: "num의 소수점 이하 첫째자리에서 올림한 값을 반환한다",
+          en: `Returns the value rounded up to the first decimal place of "num".`,
+          ja: "numの小数点以下1桁から切り上げた値を返す"
         }
       },
       id: "ceil",
@@ -1599,7 +1852,9 @@ class ApiLibrary {
       selection: "number",
       tip: {
         description: {
-          ko: "버림"
+          ko: "버림",
+          en: "Round down",
+          ja: "切り捨て"
         },
         "params": [{
           name: "num",
@@ -1608,7 +1863,9 @@ class ApiLibrary {
           }
         }],
         "description2": {
-          ko: "num의 소수점 이하 첫째자리에서 버림한 값을 반환한다"
+          ko: "num의 소수점 이하 첫째자리에서 버림한 값을 반환한다",
+          en: "Returns the value rounded down to the first decimal place of \"num\".",
+          ja: "numの小数点以下1桁から切り捨てた値を返す"
         }
       },
       id: "floor",
@@ -1619,7 +1876,9 @@ class ApiLibrary {
       selection: "1",
       tip: {
         description: {
-          ko: "난수 생성하기"
+          ko: "난수 생성하기",
+          en: "Generate random numbers",
+          ja: "乱数を作成する"
         },
         "params": [{
           name: "min",
@@ -1633,7 +1892,9 @@ class ApiLibrary {
           }
         }],
         "description2": {
-          ko: "min과 max 사이의 값중에 하나를 무작위로 반환한다"
+          ko: "min과 max 사이의 값중에 하나를 무작위로 반환한다",
+          en: "Returns a random value between min and max.",
+          ja: "minとmaxの間の値から1つをランダムで返す"
         }
       },
       id: "getRandom",
@@ -1644,7 +1905,9 @@ class ApiLibrary {
       selection: "number",
       tip: {
         description: {
-          ko: "숫자의 제곱 구하기"
+          ko: "숫자의 제곱 구하기",
+          en: "Find the square of a number",
+          ja: "数字の二乗の計算"
         },
         "params": [{
           name: "num",
@@ -1658,7 +1921,9 @@ class ApiLibrary {
           }
         }],
         "description2": {
-          ko: "base를 exponent번 곱한 결과, 즉 baseexponent를 반환한다"
+          ko: "base를 exponent번 곱한 결과, 즉 baseexponent를 반환한다",
+          en: "Returns the result of multiplying \"base\" by \"exponent\" times, which is baseexponent in other words.",
+          ja: "baseをexponent回かけた結果、つまりbaseexponentを返す"
         }
       },
       id: "pow",
@@ -1669,7 +1934,9 @@ class ApiLibrary {
       selection: "number",
       tip: {
         description: {
-          ko: "숫자의 제곱근 구하기"
+          ko: "숫자의 제곱근 구하기",
+          en: "Find the square root of a number",
+          ja: "数字の平方根の計算"
         },
         "params": [{
           name: "num",
@@ -1678,7 +1945,9 @@ class ApiLibrary {
           }
         }],
         "description2": {
-          ko: "주어진 숫자에 루트(√ )를 씌운다. 만약 숫자가 음수이면 NaN를 반환한다"
+          ko: "주어진 숫자에 루트(√ )를 씌운다. 만약 숫자가 음수이면 NaN를 반환한다",
+          en: "Applies the root symbol (√ ) to the given number. If the number is negative, NaN is returned.",
+          ja: "与えられた数字の平方根(√)を求める。ただし、数字が負数ならNaNを返す"
         }
       },
       id: "sqrt",
@@ -1689,7 +1958,9 @@ class ApiLibrary {
       selection: "number",
       tip: {
         description: {
-          ko: "숫자의 자연로그 구하기"
+          ko: "숫자의 자연로그 구하기",
+          en: "Find the natural logarithm of a number",
+          ja: "数字の自然対数の計算"
         },
         "params": [{
           name: "num",
@@ -1709,7 +1980,9 @@ class ApiLibrary {
       selection: "true",
       tip: {
         description: {
-          ko: "벽과 충돌하게 설정하기"
+          ko: "벽과 충돌하게 설정하기",
+          en: "Set to collide with wall",
+          ja: "壁と衝突するように設定する"
         },
         "params": [{
           name: "enabled",
@@ -1718,7 +1991,9 @@ class ApiLibrary {
           }
         }],
         "description2": {
-          ko: "enabled가 true이고 물리효과가 적용된 스프라이트가 움직이는 중에\n스크린의 끝에 닿으면 충돌하게 된다"
+          ko: "enabled가 true이고 물리효과가 적용된 스프라이트가 움직이는 중에\n스크린의 끝에 닿으면 충돌하게 된다",
+          en: "If \"enabled\" is true and a sprite that has the physics effect applied reaches the end of the screen, it will collide.",
+          ja: "enabledがtrueで物理効果が適用されたスプライトが動いている時、スクリーンの端と接触すると衝突する"
         }
       },
       id: "setCollideScene",
@@ -1730,7 +2005,9 @@ class ApiLibrary {
       "selectionType": "sprite",
       tip: {
         description: {
-          ko: "특정 스프라이트와 충돌하게 설정하기"
+          ko: "특정 스프라이트와 충돌하게 설정하기",
+          en: "Set to collide with a specific sprite",
+          ja: "特定のスプライトと衝突するように設定する"
         },
         "params": [{
           name: "targetName",
@@ -1739,7 +2016,9 @@ class ApiLibrary {
           }
         }],
         "description2": {
-          ko: "targetName의 스프라이트와 닿았을 때 충돌하게 된다"
+          ko: "targetName의 스프라이트와 닿았을 때 충돌하게 된다",
+          en: "It will collide when it touches the sprite \"targetName\".",
+          ja: "targetNameのスプライトと接触すると衝突する"
         }
       },
       id: "setCollision",
@@ -1751,7 +2030,9 @@ class ApiLibrary {
       "selectionType": "sprite",
       tip: {
         description: {
-          ko: "특정 스프라이트와 충돌하게 설정하기"
+          ko: "특정 스프라이트와 충돌하게 설정하기",
+          en: "Set to collide with specific sprites",
+          ja: "特定のスプライトと衝突するように設定する"
         },
         "params": [{
           name: "[targetName]",
@@ -1760,7 +2041,9 @@ class ApiLibrary {
           }
         }],
         "description2": {
-          ko: "targetNames의 스프라이트들과 닿았을 때 충돌하게 된다"
+          ko: "[ ] 괄호 안에 입력한 스프라이트들과 닿았을 때 충돌하게 된다. 괄호 안에 입력할 때에는 스프라이트와 스프라이트 사이를 쉼표(,)로 분리해서 입력한다. ",
+          en: "It will collide when it touches the sprites entered in \"[ ]\". When entering in parentheses, separate each sprite with a comma (,).",
+          ja: "[ ]括弧の中に入力したスプライトと接触すると衝突する。括弧の中に入力する時は、スプライトとスプライトの間をコンマ(、)で分離して入力する。"
         }
       },
       id: "setCollision",
@@ -1772,7 +2055,9 @@ class ApiLibrary {
       "selectionType": "direction",
       tip: {
         description: {
-          ko: "충돌 방향값 설정하기"
+          ko: "충돌 방향값 설정하기",
+          en: "Set the collision direction value",
+          ja: "衝突の方向値を設定する"
         },
         "params": [{
           name: "direction",
@@ -1784,7 +2069,9 @@ class ApiLibrary {
           description: "true 또는 false"
         }],
         "description2": {
-          ko: "direction방향에 대한 충돌설정을 적용한다.\n예를 들어 특정 스프라이트에 down, false로 설정되면 \n그 스프라이트는 다른스프라이트와 충돌을 할 때 아래방향에 대한\n충돌은 하지 않게 된다"
+          ko: "direction방향에 대한 충돌설정을 적용한다. 예를 들어 특정 스프라이트에 down, false로 설정되면 그 스프라이트는 다른스프라이트와 충돌을 할 때 아래방향에 대한 충돌은 하지 않게 된다",
+          en: "Applies the collision setting for the \"direction\" direction. For example, if it is set to \"down, false\" for a specific sprite, when it collides with other sprites, it will not collide downwards.",
+          ja: "direction方向に対する衝突を適用する。例えば、特定のスプライトがdown、falseに設定されると、そのスプライトは他のスプライトと衝突する時、下の方向には衝突しない。"
         }
       },
       id: "setCollideSide",
@@ -1795,7 +2082,9 @@ class ApiLibrary {
       selection: "false",
       tip: {
         description: {
-          ko: "충돌했을 때의 움직임 설정"
+          ko: "충돌했을 때의 움직임 설정",
+          en: "Set the movement on collision",
+          ja: "衝突した時の動きの設定"
         },
         "params": [{
           name: "enabled",
@@ -1804,7 +2093,9 @@ class ApiLibrary {
           }
         }],
         "description2": {
-          ko: "false일 경우 setCollision을 통해 충돌설정이 되었을 때\n충돌은 하지만 충돌 후 튕겨나가지 않게 된다"
+          ko: "false일 경우 setCollision을 통해 충돌설정이 되었을 때 충돌은 하지만 충돌 후 튕겨나가지 않게 된다",
+          en: "If it is set as false, when a collision occurs through \"setCollision\", it will not bounce off.",
+          ja: "falseの場合、setCollisionで衝突設定されていると、衝突はするが、衝突後に弾かれることはない"
         }
       },
       id: "setMovable",
@@ -1815,7 +2106,9 @@ class ApiLibrary {
       selection: "10",
       tip: {
         description: {
-          ko: "질량 설정하기"
+          ko: "질량 설정하기",
+          en: "Set the mass",
+          ja: "質量を設定する"
         },
         "params": [{
           name: "value",
@@ -1824,7 +2117,9 @@ class ApiLibrary {
           }
         }],
         "description2": {
-          ko: "질량을 설정한다.\n다른 물리효과와 상호작용한다"
+          ko: "질량을 설정한다. 다른 물리효과와 상호작용한다",
+          en: "Sets the mass. Interacts with other physics effects.",
+          ja: "質量を設定する。他の物理効果と相互作用する"
         }
       },
       id: "setMass",
@@ -1835,7 +2130,9 @@ class ApiLibrary {
       selection: "100",
       tip: {
         description: {
-          ko: "x축 중력 설정하기"
+          ko: "x축 방향 중력 설정하기",
+          en: "Set the gravity of the x-axis direction",
+          ja: "x軸方向の重力を設定する"
         },
         "params": [{
           name: "value",
@@ -1855,7 +2152,9 @@ class ApiLibrary {
       selection: "100",
       tip: {
         description: {
-          ko: "y축 중력 설정하기"
+          ko: "y축 방향 중력 설정하기",
+          en: "Set the gravity of the y-axis direction",
+          ja: "y軸方向の重力を設定する"
         },
         "params": [{
           name: "value",
@@ -1875,7 +2174,9 @@ class ApiLibrary {
       selection: "100",
       tip: {
         description: {
-          ko: "x축 속도 설정하기"
+          ko: "x축 방향 속도 설정하기",
+          en: "Set the speed of the x-axis direction",
+          ja: "x軸方向の速度を設定する"
         },
         "params": [{
           name: "value",
@@ -1895,7 +2196,9 @@ class ApiLibrary {
       selection: "100",
       tip: {
         description: {
-          ko: "y축 속도 설정하기"
+          ko: "y축 속도 설정하기",
+          en: "Set the speed of the y-axis direction",
+          ja: "y軸方向の速度を設定する"
         },
         "params": [{
           name: "value",
@@ -1914,7 +2217,9 @@ class ApiLibrary {
       snippet: "getVelocityX()",
       tip: {
         description: {
-          ko: "x축 속도 가져오기"
+          ko: "x축 방향 속도 가져오기",
+          en: "Get x-axis speed",
+          ja: "x軸方向の速度を取得する"
         }
       },
       id: "getVelocityX",
@@ -1924,7 +2229,9 @@ class ApiLibrary {
       snippet: "getVelocityY()",
       tip: {
         description: {
-          ko: "y축 속도 가져오기"
+          ko: "y축 방향 속도 가져오기",
+          en: "Get y-axis speed",
+          ja: "y軸方向の速度を取得する"
         }
       },
       id: "getVelocityY",
@@ -1935,7 +2242,9 @@ class ApiLibrary {
       selection: "1",
       tip: {
         description: {
-          ko: "충돌했을 때 x축 튕기는 정도 설정하기"
+          ko: "충돌했을 때 x축 튕기는 정도 설정하기",
+          en: "Set the amount of bounce on the x-axis upon collision",
+          ja: "衝突した時、x軸の弾かれる程度を設定する"
         },
         "params": [{
           name: "value",
@@ -1944,7 +2253,9 @@ class ApiLibrary {
           }
         }],
         "description2": {
-          ko: "다른 스프라이트와 충돌했을 때, 설정한 값만큼 반작용이 일어난다.\n값이 1일 경우 작용하는 힘을 그대로 전달받게 된다"
+          ko: "다른 스프라이트와 충돌했을 때, 설정한 값만큼 반작용이 일어난다. 값이 1일 경우 작용하는 힘을 그대로 전달받게 된다",
+          en: "When colliding with another sprite, a reaction takes place based on the set value. If the value is 1, the applied force is transferred as it is.",
+          ja: "他のスプライトと衝突した時、設定値だけ反作用が起こる。値が1の場合、作用する力はそのまま伝わる"
         }
       },
       id: "setBounceX",
@@ -1955,7 +2266,9 @@ class ApiLibrary {
       selection: "1",
       tip: {
         description: {
-          ko: "충돌했을 때 y축 튕기는 정도 설정하기"
+          ko: "충돌했을 때 y축 튕기는 정도 설정하기",
+          en: "Set the amount of bounce on the y-axis upon collision",
+          ja: "衝突した時、y軸の弾かれる程度を設定する"
         },
         "params": [{
           name: "value",
@@ -1964,7 +2277,9 @@ class ApiLibrary {
           }
         }],
         "description2": {
-          ko: "다른 스프라이트와 충돌했을 때, 설정한 값만큼 반작용이 일어난다.\n값이 1일 경우 작용하는 힘을 그대로 전달받게 된다"
+          ko: "다른 스프라이트와 충돌했을 때, 설정한 값만큼 반작용이 일어난다. 값이 1일 경우 작용하는 힘을 그대로 전달받게 된다",
+          en: "When colliding with another sprite, a reaction takes place based on the set value. If the value is 1, the applied force is transferred as it is.",
+          ja: "他のスプライトと衝突した時、設定値だけ反作用が起こる。値が1の場合、作用する力はそのまま伝わる"
         }
       },
       id: "setBounceY",
@@ -1975,7 +2290,9 @@ class ApiLibrary {
       selection: "100",
       tip: {
         description: {
-          ko: "x축 가속도 설정하기"
+          ko: "x축 가속도 설정하기",
+          en: "Set x-axis acceleration",
+          ja: "x軸の加速度を設定する"
         },
         "params": [{
           name: "value",
@@ -1984,7 +2301,9 @@ class ApiLibrary {
           }
         }],
         "description2": {
-          ko: "x축에 대한 가속도를 설정한다.\n다른 물리효과와 상호작용한다"
+          ko: "x축에 대한 가속도를 설정한다. 다른 물리효과와 상호작용한다",
+          en: "Sets the acceleration on the x-axis. Interacts with other physics effects.",
+          ja: "x軸に対する加速度を設定する。他の物理効果と相互作用する"
         }
       },
       id: "setAccelerationX",
@@ -1995,7 +2314,9 @@ class ApiLibrary {
       selection: "1",
       tip: {
         description: {
-          ko: "y축 가속도 설정하기"
+          ko: "y축 가속도 설정하기",
+          en: "Set y-axis acceleration",
+          ja: "y軸の加速度を設定する"
         },
         "params": [{
           name: "value",
@@ -2004,7 +2325,9 @@ class ApiLibrary {
           }
         }],
         "description2": {
-          ko: "y축에 대한 가속도를 설정한다.\n다른 물리효과와 상호작용한다"
+          ko: "y축에 대한 가속도를 설정한다. 다른 물리효과와 상호작용한다",
+          en: "Sets the acceleration on the y-axis. Interacts with other physics effects.",
+          ja: "y軸に対する加速度を設定する。他の物理効果と相互作用する"
         }
       },
       id: "setAccelerationY",
@@ -2014,7 +2337,9 @@ class ApiLibrary {
       snippet: "setVelocityFromDegree(90,1,300)",
       tip: {
         description: {
-          ko: "방향으로 속도 설정하기"
+          ko: "방향으로 속도 설정하기",
+          en: "Set the speed in directions",
+          ja: "方向への速度を設定する"
         },
         "params": [{
           name: "degree",
@@ -2033,7 +2358,9 @@ class ApiLibrary {
           }
         }],
         "description2": {
-          ko: "velocity x,y값을 방향에따라 설정한다.\nforce가 0.5이고 maxSpeed가 100이면 적용되는 속도는 50이 된다."
+          ko: "velocity x,y값을 방향에따라 설정한다. force가 0.5이고 maxSpeed가 100이면 적용되는 속도는 50이 된다.",
+          en: "Sets the velocity of x and y values according to the direction. If the force is 0.5 and maxSpeed is 100, then the applied speed is 50.",
+          ja: "velocity x、y値を方向ごとに設定する。forceが0.5でmaxSpeedが100の場合は適用される速度は50になる。"
         }
       },
       id: "setVelocityFromDegree",
@@ -2043,7 +2370,9 @@ class ApiLibrary {
       snippet: "setAccelerationFromDegree(90,1,300)",
       tip: {
         description: {
-          ko: "방향으로 가속도 설정하기"
+          ko: "방향으로 가속도 설정하기",
+          en: "Set the acceleration in directions",
+          ja: "方向への加速度を設定する"
         },
         "params": [{
           name: "degree",
@@ -2075,7 +2404,9 @@ class ApiLibrary {
       snippet: "playSound(\"name\", false)",
       tip: {
         description: {
-          ko: "사운드 스프라이트 재생하기"
+          ko: "사운드 스프라이트 재생하기",
+          en: "Play sound sprite",
+          ja: "サウンドスプライトを再生する"
         },
         "params": [{
           name: "name",
@@ -2089,7 +2420,9 @@ class ApiLibrary {
           }
         }],
         "description2": {
-          ko: "입력된 사운드 스프라이트를\n1회 혹은 반복하여 재생한다."
+          ko: "입력된 사운드 스프라이트를 1회 혹은 반복하여 재생한다.",
+          en: "Plays the input sound sprite once or repeatedly.",
+          ja: "入力されたサウンドスプライトを1回または繰り返して再生する。"
         }
       },
       selection: "name",
@@ -2101,7 +2434,9 @@ class ApiLibrary {
       snippet: "restartSound(\"name\")",
       tip: {
         description: {
-          ko: "사운드 스프라이트 처음부터 다시 재생하기"
+          ko: "사운드 스프라이트 처음부터 다시 재생하기",
+          en: "Replay sound sprite from beginning",
+          ja: "サウンドスプライトを最初から再生する"
         },
         "params": [{
           name: "name",
@@ -2110,7 +2445,9 @@ class ApiLibrary {
           }
         }],
         "description2": {
-          ko: "입력된 사운드 스프라이트를 처음부터 다시 재생한다.\n(반복 여부는 playSound 함수에서 설정된 값을 따른다.)"
+          ko: "입력된 사운드 스프라이트를 처음부터 다시 재생한다. (반복 여부는 playSound 함수에서 설정된 값을 따른다.)",
+          en: "Replays the input sound sprite from the beginning. (The value set in the playSound function decides whether it repeats.)",
+          ja: "入力されたサウンドスプライトを最初から再生する。(繰り返しについてはplaySound関数で設定された値に従う。)"
         }
       },
       selection: "name",
@@ -2122,7 +2459,9 @@ class ApiLibrary {
       snippet: "resumeSound(\"name\")",
       tip: {
         description: {
-          ko: "사운드 스프라이트 이어서 재생하기"
+          ko: "사운드 스프라이트 이어서 재생하기",
+          en: "Continue playing sound sprite",
+          ja: "サウンドスプライトを続けて再生する"
         },
         "params": [{
           name: "name",
@@ -2131,7 +2470,9 @@ class ApiLibrary {
           }
         }],
         "description2": {
-          ko: "입력된 사운드 스프라이트를 일시정지된 위치부터 다시 재생한다.\n(반복 여부는 playSound 함수에서 설정된 값을 따른다.)"
+          ko: "입력된 사운드 스프라이트를 일시정지된 위치부터 다시 재생한다. (반복 여부는 playSound 함수에서 설정된 값을 따른다.)",
+          en: "Replays the input sound sprite from where it was paused. (The value set in the playSound function decides whether it repeats.)",
+          ja: "入力されたサウンドスプライトを一時停止された位置から続けて再生する。(繰り返しについてはplaySound関数で設定された値に従う。)"
         }
       },
       selection: "name",
@@ -2143,7 +2484,9 @@ class ApiLibrary {
       snippet: "stopAllSounds()",
       tip: {
         description: {
-          ko: "재생중인 모든 사운드 스프라이트 정지하기"
+          ko: "재생중인 모든 사운드 스프라이트 정지하기",
+          en: "Stop all playing sound sprites",
+          ja: "再生中のすべてのサウンドスプライトを停止する"
         }
       },
       id: "stopAllSounds",
@@ -2153,7 +2496,9 @@ class ApiLibrary {
       snippet: "stopSound(\"name\")",
       tip: {
         description: {
-          ko: "사운드 스프라이트 정지하기"
+          ko: "사운드 스프라이트 정지하기",
+          en: "Stop sound sprite",
+          ja: "サウンドスプライトを停止する"
         },
         "params": [{
           name: "name",
@@ -2171,7 +2516,9 @@ class ApiLibrary {
       snippet: "pauseSound(\"name\")",
       tip: {
         description: {
-          ko: "사운드 스프라이트 일시정지하기"
+          ko: "사운드 스프라이트 일시정지하기",
+          en: "Pause sound sprite",
+          ja: "サウンドスプライトを一時停止する"
         },
         "params": [{
           name: "name",
@@ -2189,7 +2536,9 @@ class ApiLibrary {
       snippet: "setSoundVolume(1)",
       tip: {
         description: {
-          ko: "앱의 음량 설정하기"
+          ko: "앱의 음량 설정하기",
+          en: "Set the application's volume",
+          ja: "アプリの音量を設定する"
         },
         "params": [{
           name: "value",
@@ -2206,7 +2555,9 @@ class ApiLibrary {
       snippet: "addSoundVolume(0.1)",
       tip: {
         description: {
-          ko: "앱의 음량을 value만큼 키우기"
+          ko: "앱의 음량을 value만큼 키우기",
+          en: "Increase the application's volume by \"value\"",
+          ja: "アプリの音量をvalue値だけ上げる"
         },
         "params": [{
           name: "value",
@@ -2223,7 +2574,9 @@ class ApiLibrary {
       snippet: "getSoundVolume()",
       tip: {
         description: {
-          ko: "현재 앱의 음량 가져오기"
+          ko: "현재 앱의 음량 가져오기",
+          en: "Get the current application's volume",
+          ja: "現在のアプリの音量を取得する"
         }
       },
       id: "getSoundVolume",
@@ -2236,7 +2589,9 @@ class ApiLibrary {
       snippet: "startTimer()",
       tip: {
         description: {
-          ko: "타이머 시작하기"
+          ko: "타이머 시작하기",
+          en: "Start timer",
+          ja: "タイマーを開始する"
         }
       },
       id: "startTimer",
@@ -2246,7 +2601,9 @@ class ApiLibrary {
       snippet: "pauseTimer()",
       tip: {
         description: {
-          ko: "타이머 멈추기"
+          ko: "타이머 멈추기",
+          en: "Stop timer",
+          ja: "タイマーを止める"
         }
       },
       id: "pauseTimer",
@@ -2256,7 +2613,9 @@ class ApiLibrary {
       snippet: "resumeTimer()",
       tip: {
         description: {
-          ko: "타이머 이어서 시작하기"
+          ko: "타이머 이어서 시작하기",
+          en: "Resume timer",
+          ja: "タイマーを再開する"
         }
       },
       id: "resumeTimer",
@@ -2266,7 +2625,9 @@ class ApiLibrary {
       snippet: "resetTimer()",
       tip: {
         description: {
-          ko: "타이머 0초로 되돌리기"
+          ko: "타이머 0초로 되돌리기",
+          en: "Reset the timer to 0 seconds",
+          ja: "タイマーを0秒に戻す"
         }
       },
       id: "resetTimer",
@@ -2276,7 +2637,9 @@ class ApiLibrary {
       snippet: "getTimer()",
       tip: {
         description: {
-          ko: "현재 타이머의 값 가져오기"
+          ko: "현재 타이머의 값 가져오기",
+          en: "Get the value of the current timer",
+          ja: "現在のタイマーの値を取得する"
         }
       },
       id: "getTimer",
@@ -2286,7 +2649,9 @@ class ApiLibrary {
       snippet: "getYear()",
       tip: {
         description: {
-          ko: "현재 연도를 가져오기"
+          ko: "현재 연도를 가져오기",
+          en: "Get current year",
+          ja: "現在の年度を取得する"
         }
       },
       id: "getYear",
@@ -2296,7 +2661,9 @@ class ApiLibrary {
       snippet: "getMonth()",
       tip: {
         description: {
-          ko: "현재 월을 가져오기"
+          ko: "현재 월을 가져오기",
+          en: "Get current month",
+          ja: "現在の月を取得する"
         }
       },
       id: "getMonth",
@@ -2306,7 +2673,9 @@ class ApiLibrary {
       snippet: "getDay()",
       tip: {
         description: {
-          ko: "현재 일을 가져오기"
+          ko: "현재 일을 가져오기",
+          en: "Get current day",
+          ja: "現在の日を取得する"
         }
       },
       id: "getDay",
@@ -2316,7 +2685,9 @@ class ApiLibrary {
       snippet: "getHour()",
       tip: {
         description: {
-          ko: "현재 시간을 가져오기"
+          ko: "현재 시간을 가져오기",
+          en: "Get current hour",
+          ja: "現在の時刻を取得する"
         }
       },
       id: "getHour",
@@ -2326,7 +2697,9 @@ class ApiLibrary {
       snippet: "getMin()",
       tip: {
         description: {
-          ko: "현재 분을 가져오기"
+          ko: "현재 분을 가져오기",
+          en: "Get current minute",
+          ja: "現在の分を取得する"
         }
       },
       id: "getMin",
@@ -2336,7 +2709,9 @@ class ApiLibrary {
       snippet: "getSec()",
       tip: {
         description: {
-          ko: "현재 초를 가져오기"
+          ko: "현재 초를 가져오기",
+          en: "Get current second",
+          ja: "現在の秒を取得する"
         }
       },
       id: "getSec",
@@ -2349,7 +2724,9 @@ class ApiLibrary {
       snippet: "startPen()",
       tip: {
         description: {
-          ko: "펜 사용 시작하기"
+          ko: "펜 사용 시작하기",
+          en: "Start using the pen",
+          ja: "ペンの使用を開始する"
         }
       },
       id: "startPen",
@@ -2359,7 +2736,9 @@ class ApiLibrary {
       snippet: "endPen()",
       tip: {
         description: {
-          ko: "펜 사용 끝내기"
+          ko: "펜 사용 끝내기",
+          en: "Stop using the pen",
+          ja: "ペンの使用を終える"
         }
       },
       id: "endPen",
@@ -2369,7 +2748,9 @@ class ApiLibrary {
       snippet: "setPenColor(\"red\")",
       tip: {
         description: {
-          ko: "펜 색깔 설정하기"
+          ko: "펜 색깔 설정하기",
+          en: "Set the pen color",
+          ja: "ペンの色を設定する"
         },
         "params": [{
           name: "color",
@@ -2387,7 +2768,9 @@ class ApiLibrary {
       snippet: "setRandomPenColor()",
       tip: {
         description: {
-          ko: "펜의 색깔을 랜덤으로 설정하기"
+          ko: "펜의 색깔을 랜덤으로 설정하기",
+          en: "Set the pen color to a random color",
+          ja: "ペンの色をランダムに設定する"
         }
       },
       id: "setRandomPenColor",
@@ -2397,7 +2780,9 @@ class ApiLibrary {
       snippet: "getPenColor()",
       tip: {
         description: {
-          ko: "사용중인 펜의 색깔 가져오기"
+          ko: "사용중인 펜의 색깔 가져오기",
+          en: "Get the pen color currently in use",
+          ja: "使用中のペンの色を取得する"
         }
       },
       id: "getPenColor",
@@ -2407,7 +2792,9 @@ class ApiLibrary {
       snippet: "setPenSize(1)",
       tip: {
         description: {
-          ko: "펜 두께를 size로 설정하기"
+          ko: "펜 두께를 size로 설정하기",
+          en: "Set the thickness of the pen to \"size\"",
+          ja: "ペンの太さをsizeで設定する"
         },
         "params": [{
           name: "size",
@@ -2424,7 +2811,9 @@ class ApiLibrary {
       snippet: "addPenSize(1)",
       tip: {
         description: {
-          ko: "펜 두께를 size만큼 두껍게 만들기"
+          ko: "펜 두께를 size만큼 두껍게 만들기",
+          en: "Increase the thickness of the pen according to \"size\"",
+          ja: "ペンの太さをsize値だけ太くする"
         },
         "params": [{
           name: "size",
@@ -2441,7 +2830,9 @@ class ApiLibrary {
       snippet: "getPenSize()",
       tip: {
         description: {
-          ko: "사용중인 펜의 두께 가져오기"
+          ko: "사용중인 펜의 두께 가져오기",
+          en: "Get the thickness of the pen currently in use",
+          ja: "使用中のペンの太さを取得する"
         }
       },
       id: "getPenSize",
@@ -2451,7 +2842,9 @@ class ApiLibrary {
       snippet: "erasePen()",
       tip: {
         description: {
-          ko: "사용했던 펜 내용 지우기"
+          ko: "사용했던 펜 내용 지우기",
+          en: "Erase the used pen's content",
+          ja: "使用したペンの履歴を削除する"
         }
       },
       id: "erasePen",
@@ -2464,10 +2857,14 @@ class ApiLibrary {
       snippet: "vibrate()",
       tip: {
         description: {
-          ko: "진동 설정하기"
+          ko: "진동 설정하기",
+          en: "Set vibration",
+          ja: "振動を設定する"
         },
         "description2": {
-          ko: "(모바일 전용)\n모바일 기기에서 진동이 울린다."
+          ko: "(모바일 전용) 모바일 기기에서 진동이 울린다.",
+          en: "(Mobile device only) The mobile device vibrates.",
+          ja: "(モバイル専用)モバイルデバイスが振動する。"
         }
       },
       id: "vibrate",
@@ -2478,10 +2875,14 @@ class ApiLibrary {
       newLine: "onShake(function(){",
       tip: {
         description: {
-          ko: "기기를 흔들었을 때"
+          ko: "기기를 흔들었을 때",
+          en: "When the device is shaken",
+          ja: "デバイスを振った時"
         },
         "description2": {
-          ko: "(모바일 전용)\n모바일 기기를 빠르게 흔들었을 때 호출된다."
+          ko: "(모바일 전용) 모바일 기기를 빠르게 흔들었을 때 호출된다.",
+          en: "(Mobile device only) Called when the mobile device is shaken quickly.",
+          ja: "(モバイル専用)モバイルデバイスを高速で振ると呼び出される。"
         }
       },
       id: "onShake",
@@ -2492,7 +2893,9 @@ class ApiLibrary {
       newLine: "onGyro(function(x,y){",
       tip: {
         description: {
-          ko: "기기를 기울일 때"
+          ko: "기기를 기울일 때",
+          en: "When the device is tilted",
+          ja: "デバイスを傾けた時"
         },
         "params": [{
           name: "x",
@@ -2506,7 +2909,9 @@ class ApiLibrary {
           }
         }],
         "description2": {
-          ko: "(모바일 전용)\n모바일 기기를 기울였을 때 호출된다."
+          ko: "(모바일 전용) 모바일 기기를 기울였을 때 호출된다.",
+          en: "(Mobile device only) Called when the mobile device is tilted.",
+          ja: "(モバイル専用)モバイルデバイスを傾けると呼び出される。"
         }
       },
       id: "onGyro",
@@ -2516,10 +2921,14 @@ class ApiLibrary {
       snippet: "startListening()",
       tip: {
         description: {
-          ko: "음성 입력을 받는다"
+          ko: "음성 입력을 받는다",
+          en: "Receive voice input",
+          ja: "音声入力を受け付ける"
         },
         "description2": {
-          ko: "(모바일 전용)\n모바일 기기를 통해 음성 입력을 대기한다.\n입력이 되면 onListening을 통해 입력된 음성값을 받는다."
+          ko: "(모바일 전용) 모바일 기기를 통해 음성 입력을 대기한다. 입력이 되면 onListening을 통해 입력된 음성값을 받는다.",
+          en: "(Mobile device only) Waits for voice input through a mobile device. When input is received, the input voice value is received through \"onListening\".",
+          ja: "(モバイル専用)モバイルデバイスで音声入力を待機する。入力されるとonListeningを通じて入力された音声値を取得する。"
         }
       },
       id: "startListening",
@@ -2530,7 +2939,9 @@ class ApiLibrary {
       newLine: "onListening(function(msg){",
       tip: {
         description: {
-          ko: "음성을 입력받았을 때"
+          ko: "음성을 입력받았을 때",
+          en: "When voice input is received",
+          ja: "音声が入力された時"
         },
         "params": [{
           name: "msg",
@@ -2539,7 +2950,9 @@ class ApiLibrary {
           }
         }],
         "description2": {
-          ko: "(모바일 전용)\nstartListening을 통해 입력된 음성 값을 받는다."
+          ko: "(모바일 전용) startListening을 통해 입력된 음성 값을 받는다.",
+          en: "(Mobile device only) Receives the input voice value through \"startListening\".",
+          ja: "(モバイル専用)startListeningを通じて入力された音声値を取得する"
         }
       },
       id: "onListening",
@@ -2549,7 +2962,9 @@ class ApiLibrary {
       snippet: "speak(\"Hello\")",
       tip: {
         description: {
-          ko: "음성을 출력한다."
+          ko: "음성을 출력한다.",
+          en: "Output the voice",
+          ja: "音声を出力する"
         },
         "params": [{
           name: "msg",
@@ -2558,7 +2973,9 @@ class ApiLibrary {
           }
         }],
         "description2": {
-          ko: "(모바일 전용)\nmsg값을 모바일 기기를 통해 음성으로 출력한다."
+          ko: "(모바일 전용) msg값을 모바일 기기를 통해 음성으로 출력한다.",
+          en: "(Mobile device only) Outputs the \"msg\" value in voice through the mobile device.",
+          ja: "(モバイル専用)msg値をモバイルデバイスを通じて音声で出力する。"
         }
       },
       id: "speak",
@@ -2568,7 +2985,9 @@ class ApiLibrary {
       snippet: "openCamera(\"front\")",
       tip: {
         description: {
-          ko: "모바일에서 카메라를 연다"
+          ko: "모바일에서 카메라를 연다",
+          en: "Open camera on mobile device",
+          ja: "モバイルでカメラを起動する"
         },
         "params": [{
           name: "facing",
@@ -2577,7 +2996,9 @@ class ApiLibrary {
           }
         }],
         "description2": {
-          ko: "(모바일 전용)\nfacing값을 통해 카메라 방향을 선택한 후 모바일 기기에서 카메라를 연다."
+          ko: "(모바일 전용) facing값을 통해 카메라 방향을 선택한 후 모바일 기기에서 카메라를 연다.",
+          en: "(Mobile device only) After selecting the camera direction through the \"facing\" value, opens the camera on the mobile device.",
+          ja: "(モバイル専用)facing値を通じてカメラの向きを選択した後、モバイルデバイスでカメラを起動する。"
         }
       },
       id: "openCamera",
@@ -2587,10 +3008,14 @@ class ApiLibrary {
       snippet: "closeCamera()",
       tip: {
         description: {
-          ko: "모바일에서 카메라를 닫는다"
+          ko: "모바일에서 카메라를 닫는다",
+          en: "Close camera on mobile device",
+          ja: "モバイルでカメラを閉じる"
         },
         "description2": {
-          ko: "(모바일 전용)\n모바일 기기에서 카메라를 닫는다."
+          ko: "(모바일 전용) 모바일 기기에서 카메라를 닫는다.",
+          en: "(Mobile device only) Closes the camera on the mobile device.",
+          ja: "(モバイル専用)モバイルデバイスでカメラを閉じる。"
         }
       },
       id: "closeCamera",
@@ -2600,10 +3025,14 @@ class ApiLibrary {
       snippet: "switchCamera()",
       tip: {
         description: {
-          ko: "카메라 방향을 전환한다"
+          ko: "카메라 방향을 전환한다",
+          en: "Change camera direction",
+          ja: "カメラの方向を転換する"
         },
         "description2": {
-          ko: "(모바일 전용)모바일 기기에서 카메라 방향을 전환한다."
+          ko: "(모바일 전용)모바일 기기에서 카메라 방향을 전환한다.",
+          en: "(Mobile device only) Switches the camera direction on the mobile device.",
+          ja: "(モバイル専用)モバイルデバイスでカメラの向きを変える。"
         }
       },
       id: "switchCamera",
@@ -2614,7 +3043,9 @@ class ApiLibrary {
       newLine: "{",
       tip: {
         description: {
-          ko: "카메라를 통해 얼굴을 인식한다."
+          ko: "카메라를 통해 얼굴을 인식한다.",
+          en: "Recognize a face through the camera",
+          ja: "カメラで顔を認識する。"
         },
         "params": [{
           name: "face",
@@ -2623,7 +3054,9 @@ class ApiLibrary {
           }
         }],
         "description2": {
-          ko: "(모바일 전용)\n모바일 기기에서 카메라로 얼굴을 인식한후 인식한 얼굴에 대한 정보를 가져온다."
+          ko: "(모바일 전용) 모바일 기기에서 카메라로 얼굴을 인식한후 인식한 얼굴에 대한 정보를 가져온다.",
+          en: "(Mobile device only) After recognizing a face with the camera on the mobile device, retrieves information about the face recognized.",
+          ja: "(モバイル専用)モバイルデバイスでカメラを認識した後、認識した顔に対する情報を取得する。"
         }
       },
       id: "onFaceDetect",
@@ -2638,10 +3071,14 @@ class ApiLibrary {
       selection: "name",
       tip: {
         description: {
-          ko: "함수를 선언한다."
+          ko: "함수를 선언한다.",
+          en: "Declare a function",
+          ja: "関数を宣言する。"
         },
         "description2": {
-          ko: "name이라는 이름의 함수를 선언한다.\n"
+          ko: "name이라는 이름의 함수를 선언한다.",
+          en: "Declares a function named \"name\".",
+          ja: "nameという名前の関数を宣言する。"
         }
       },
       id: "function",
@@ -2652,10 +3089,14 @@ class ApiLibrary {
       selection: "name",
       tip: {
         description: {
-          ko: "변수를 선언한다."
+          ko: "변수를 선언한다.",
+          en: "Declare a variable",
+          ja: "変数を宣言する。"
         },
         "description2": {
-          ko: "name이라는 이름의 변수를 선언한다.\n"
+          ko: "name이라는 이름의 함수를 선언한다.",
+          en: "Declares a function named \"name\".",
+          ja: "nameという名前の関数を宣言する。"
         }
       },
       id: "var",
@@ -2666,10 +3107,14 @@ class ApiLibrary {
       selection: "name",
       tip: {
         description: {
-          ko: "변수를 선언한다."
+          ko: "변수를 선언한다.",
+          en: "Declare a variable",
+          ja: "変数を宣言する。"
         },
         "description2": {
-          ko: "name이라는 이름의 변수를 선언한다.\n"
+          ko: "name이라는 이름의 함수를 선언한다.",
+          en: "Declares a function named \"name\".",
+          ja: "nameという名前の関数を宣言する。"
         }
       },
       id: "let",
@@ -2680,10 +3125,14 @@ class ApiLibrary {
       selection: "name",
       tip: {
         description: {
-          ko: "상수를 선언한다."
+          ko: "상수를 선언한다.",
+          en: "Declare a constant",
+          ja: "定数を宣言する。"
         },
         "description2": {
-          ko: "name이라는 이름의 상수를 선언한다.\n"
+          ko: "name이라는 이름의 상수를 선언한다.",
+          en: "Declares a constant named \"name\".",
+          ja: "nameという名前の定数を宣言する。"
         }
       },
       id: "const",
@@ -2695,10 +3144,14 @@ class ApiLibrary {
       "selectionType": "global",
       tip: {
         description: {
-          ko: "전역 오브젝트"
+          ko: "전역 오브젝트",
+          en: "Global object",
+          ja: "全域オブジェクト"
         },
         "description2": {
-          ko: "앱 전체에서 사용 가능한 전역 오브젝트이다.\nscene이 달라도 같이 사용된다"
+          ko: "앱 전체에서 사용 가능한 전역 오브젝트이다. scene이 달라도 같이 사용된다",
+          en: "A global object that can be used throughout the app. Even if the scene is different, it is used together.",
+          ja: "アプリ全体で使用できる全域オブジェクトである。Sceneが異なっても一緒に使用できる"
         }
       },
       id: "global",
@@ -2709,10 +3162,14 @@ class ApiLibrary {
       selection: "value",
       tip: {
         description: {
-          ko: "서버에 저장할 수 있는 오브젝트"
+          ko: "서버에 저장할 수 있는 오브젝트",
+          en: "Objects that can be saved on the server",
+          ja: "サーバーに保存できるオブジェクト"
         },
         "description2": {
-          ko: "(퍼블리싱 앱 전용 기능)"
+          ko: "(퍼블리싱 앱 전용 기능)",
+          en: "(Feature only for publishing apps)",
+          ja: "(パブリッシング専用機能)"
         }
       },
       id: "server.data",
@@ -2723,10 +3180,14 @@ class ApiLibrary {
       newLine: "server.save(function(){",
       tip: {
         description: {
-          ko: "server.data 오브젝트를 서버에 저장한다"
+          ko: "server.data 오브젝트를 서버에 저장한다",
+          en: "Save the server.data object to the server",
+          ja: "server dataオブジェクトをサーバーに保存する"
         },
         "description2": {
-          ko: "(퍼블리싱 앱 전용 기능)"
+      ko: "(퍼블리싱 앱 전용 기능)",
+      en: "(Feature only for publishing apps)",
+      ja: "(パブリッシング専用機能)"
         }
       },
       id: "server.save",
@@ -2737,10 +3198,14 @@ class ApiLibrary {
       newLine: "server.load(function(){",
       tip: {
         description: {
-          ko: "서버에 저장된 데이터를 불러와서 server.data에 저장한다"
+          ko: "서버에 저장된 데이터를 불러와서 server.data에 저장한다",
+          en: "Load the data stored in the server and save it in server.data",
+          ja: "サーバーに保存されたデータを読み込んでserver dataに保存する"
         },
         "description2": {
-          ko: "(퍼블리싱 앱 전용 기능)"
+          ko: "(퍼블리싱 앱 전용 기능)",
+          en: "(Feature only for publishing apps)",
+          ja: "(パブリッシング専用機能)"
         }
       },
       id: "server.load",
@@ -2751,10 +3216,14 @@ class ApiLibrary {
       newLine: "server.reset(function(){",
       tip: {
         description: {
-          ko: "server.data 오브젝트를 서버에서 초기화한다"
+          ko: "server.data 오브젝트를 서버에서 초기화한다",
+          en: "Reset the server.data object in the server",
+          ja: "server dataオブジェクトをサーバーから初期化する"
         },
         "description2": {
-          ko: "(퍼블리싱 앱 전용 기능)"
+          ko: "(퍼블리싱 앱 전용 기능)",
+          en: "(Feature only for publishing apps)",
+          ja: "(パブリッシング専用機能)"
         }
       },
       id: "server.reset",
@@ -2848,7 +3317,9 @@ class ApiLibrary {
       newLine: "translate(\"안녕하세요!\",\"en\",function(text){",
       tip: {
         description: {
-          ko: "입력된 텍스트를 특정 언어로 번역한다."
+          ko: "입력된 텍스트를 특정 언어로 번역한다.",
+          en: "Translate the entered text into a specific language",
+          ja: "入力されたテキストを特定の言語に翻訳する。"
         },
         "params": [{
           name: "text",
@@ -2874,7 +3345,9 @@ class ApiLibrary {
       snippet: "getName()",
       tip: {
         description: {
-          ko: "스프라이트의 이름 가져오기"
+          ko: "스프라이트의 이름 가져오기",
+          en: "Get sprite's name",
+          ja: "スプライトの名前を取得する"
         }
       },
       id: "getName",
@@ -2886,7 +3359,9 @@ class ApiLibrary {
       "selectionType": "sprite",
       tip: {
         description: {
-          ko: "스프라이트 가져오기"
+          ko: "스프라이트 가져오기",
+          en: "Get sprite",
+          ja: "スプライトを取得する"
         },
         "params": [{
           name: "name",
@@ -2895,300 +3370,13 @@ class ApiLibrary {
           }
         }],
         "description2": {
-          ko: "name이 이름인 스프라이트를 반환한다"
+          ko: "name이 이름인 스프라이트를 반환한다",
+          en: "Returns the sprite which is named \"name\".",
+          ja: "nameと名付けられたスプライトを返す"
         }
       },
       id: "getSprite",
       chatbotDescription: "getSprite(name)은 특정 스프라이트를 가져오는 함수야. name에 원하는 스프라이트의 이름을 적어봐."
-    }, {
-      name: "getX()",
-      snippet: "getX()",
-      tip: {
-        description: {
-          ko: "x좌표"
-        },
-        "description2": {
-          ko: "스프라이트의 x좌표 값을 반환한다"
-        }
-      },
-      id: "getX",
-      chatbotDescription: "getX()는 스프라이트의 X좌표 값을 반환하는 API야. X좌표는 왼쪽에서 시작해서 오른쪽으로 갈수록 숫자가 커져!"
-    }, {
-      name: "getY()",
-      snippet: "getY()",
-      tip: {
-        description: {
-          ko: "y좌표"
-        },
-        "description2": {
-          ko: "스프라이트의 y좌표 값을 반환한다"
-        }
-      },
-      id: "getY",
-      chatbotDescription: "getY()는 스프라이트의 Y좌표 값을 반환하는 API야. Y좌표는 위에서 시작해서 아래로 갈수록 숫자가 커져!"
-    }, {
-      name: "getDegree()",
-      snippet: "getDegree()",
-      tip: {
-        description: {
-          ko: "각도값"
-        },
-        "description2": {
-          ko: "스프라이트의 각도값을 숫자로 반환한다"
-        }
-      },
-      id: "getDegree",
-      chatbotDescription: "getDegree()는 스프라이트의 각도를 반환하는 API야."
-    }, {
-      name: "getSize()",
-      snippet: "getSize()",
-      tip: {
-        description: {
-          ko: "크기값"
-        },
-        "description2": {
-          ko: "스프라이트의 크기를 반환한다"
-        }
-      },
-      id: "getSize",
-      chatbotDescription: "getSize()는 스프라이트의 크기를 비율로 반환하는 API야. 스프라이트의 크기를 변경하지 않았다면 100%니깐 100이 반환되지."
-    }, {
-      name: "getWidth()",
-      snippet: "getWidth()",
-      tip: {
-        description: {
-          ko: "너비값"
-        },
-        "description2": {
-          ko: "스프라이트의 너비값을 반환한다"
-        }
-      },
-      id: "getWidth",
-      chatbotDescription: "getWidth()는 스프라이트의 너비를 반환하는 API야."
-    }, {
-      name: "getHeight()",
-      snippet: "getHeight()",
-      tip: {
-        description: {
-          ko: "높이값"
-        },
-        "description2": {
-          ko: "스프라이트의 높이값을 반환한다"
-        }
-      },
-      id: "getHeight",
-      chatbotDescription: "getHeight()는 스프라이트의 높이를 반환하는 API야."
-    }, {
-      name: "getWorldWidth()",
-      snippet: "getWorldWidth()",
-      tip: {
-        description: {
-          ko: "배경의 너비값"
-        },
-        "description2": {
-          ko: "scene의 너비값을 반환한다"
-        }
-      },
-      id: "getWorldWidth",
-      chatbotDescription: "getWorldWidth()는 배경의 너비를 반환하는 API야. "
-    }, {
-      name: "getWorldHeight()",
-      snippet: "getWorldHeight()",
-      tip: {
-        description: {
-          ko: "배경의 높이값"
-        },
-        "description2": {
-          ko: "scene의 높이값을 반환한다"
-        }
-      },
-      id: "getWorldHeight",
-      chatbotDescription: "getWorldHeight()는 배경의 높이를 반환하는 API야. "
-    }, {
-      name: "getCurrentAnimation()",
-      snippet: "getCurrentAnimation()",
-      tip: {
-        description: {
-          ko: "현재 동작중인 애니메이션 이름 가져오기"
-        },
-        "description2": {
-          ko: "스프라이트에 동작중인 애니메이션이 있다면 그 이름을 가져온다"
-        }
-      },
-      id: "getCurrentAnimation",
-      chatbotDescription: "getCurrentAnimation()은 현재 재생되고 있는 애니메이션의 이름을 반환하는 API야."
-    }, {
-      name: "getMousePointerX()",
-      snippet: "getMousePointerX()",
-      tip: {
-        description: {
-          ko: "마우스 x좌표"
-        },
-        "description2": {
-          ko: "마우스 포인터의 x좌표 값을 반환한다"
-        }
-      },
-      id: "getMousePointerX",
-      chatbotDescription: "getMousePointerX()는 마우스의 x값을 반환하는 API야."
-    }, {
-      name: "getMousePointerY()",
-      snippet: "getMousePointerY()",
-      tip: {
-        description: {
-          ko: "마우스 y좌표"
-        },
-        "description2": {
-          ko: "마우스 포인터의 y좌표 값을 반환한다"
-        }
-      },
-      id: "getMousePointerY",
-      chatbotDescription: "getMousePointerY()는 마우스의 y값을 반환하는 API야."
-    }, {
-      name: "getText()",
-      snippet: "getText()",
-      tip: {
-        description: {
-          ko: "문구값"
-        },
-        "description2": {
-          ko: "텍스트상자 스프라이트의 메시지를 반환한다"
-        }
-      },
-      id: "getText",
-      chatbotDescription: "getText()는 텍스트 상자의 메시지를 반환하는 API야."
-    }, {
-      name: "getTextColor()",
-      snippet: "getTextColor()",
-      tip: {
-        description: {
-          ko: "문구 색상 가져오기"
-        },
-        "description2": {
-          ko: "텍스트상자 스프라이트의 문구 색상값을 반환하다"
-        }
-      },
-      id: "getTextColor",
-      chatbotDescription: "getTextColor()는 텍스트 상자에 적은 메시지가 어떤 색인지 알려주는 API야."
-    }, {
-      name: "getVelocityX()",
-      snippet: "getVelocityX()",
-      tip: {
-        description: {
-          ko: "x축 속도 가져오기"
-        }
-      },
-      id: "getVelocityX",
-      chatbotDescription: "getVelocityX()는 스프라이트의 X축 속도를 반환하는 API야. X축은 가로를 의미해! 오른쪽으로 가고 있다면 X축 속도는 0보다 큰 숫자가 되지."
-    }, {
-      name: "getVelocityY()",
-      snippet: "getVelocityY()",
-      tip: {
-        description: {
-          ko: "y축 속도 가져오기"
-        }
-      },
-      id: "getVelocityY",
-      chatbotDescription: "getVelocityY()는 스프라이트의 Y축 속도를 반환하는 API야. Y축은 세로를 의미해! 아래로 가고 있다면 Y축 속도는 0보다 큰 숫자가 되지."
-    }, {
-      name: "getSoundVolume()",
-      snippet: "getSoundVolume()",
-      tip: {
-        description: {
-          ko: "현재 앱의 음량 가져오기"
-        }
-      },
-      id: "getSoundVolume",
-      chatbotDescription: "getSoundVolume()은 앱의 음량을 반환하는 API야. 음량은 0~1사이니깐 참고해."
-    }, {
-      name: "getTimer()",
-      snippet: "getTimer()",
-      tip: {
-        description: {
-          ko: "현재 타이머의 값 가져오기"
-        }
-      },
-      id: "getTimer",
-      chatbotDescription: "getTimer()는 현재 타이머의 값을 가져올 수 있는 API야. starTimer()와 함께 사용하면 시간을 잴 수 있어!"
-    }, {
-      name: "getYear()",
-      snippet: "getYear()",
-      tip: {
-        description: {
-          ko: "현재 연도를 가져오기"
-        }
-      },
-      id: "getYear",
-      chatbotDescription: "getDay()는 현재 년도를 반환하는 API야."
-    }, {
-      name: "getMonth()",
-      snippet: "getMonth()",
-      tip: {
-        description: {
-          ko: "현재 월을 가져오기"
-        }
-      },
-      id: "getMonth",
-      chatbotDescription: "getMonth()는 현재 몇 월인지를 반환하는 API야."
-    }, {
-      name: "getDay()",
-      snippet: "getDay()",
-      tip: {
-        description: {
-          ko: "현재 일을 가져오기"
-        }
-      },
-      id: "getDay",
-      chatbotDescription: "getDay()는 현재 며칠인지를 반환하는 API야."
-    }, {
-      name: "getHour()",
-      snippet: "getHour()",
-      tip: {
-        description: {
-          ko: "현재 시간을 가져오기"
-        }
-      },
-      id: "getHour",
-      chatbotDescription: "getHour()는 현재 몇 시인지를 반환하는 API야."
-    }, {
-      name: "getMin()",
-      snippet: "getMin()",
-      tip: {
-        description: {
-          ko: "현재 분을 가져오기"
-        }
-      },
-      id: "getMin",
-      chatbotDescription: "getMin()은 현재 몇 분인지를 반환하는 API야."
-    }, {
-      name: "getSec()",
-      snippet: "getSec()",
-      tip: {
-        description: {
-          ko: "현재 초를 가져오기"
-        }
-      },
-      id: "getSec",
-      chatbotDescription: "getSec()는 현재 몇 초인지를 반환하는 API야."
-    }, {
-      name: "getPenColor()",
-      snippet: "getPenColor()",
-      tip: {
-        description: {
-          ko: "사용중인 펜의 색깔 가져오기"
-        }
-      },
-      id: "getPenColor",
-      chatbotDescription: "getPenColor()는 스프라이트의 펜 색상을 반환하는 API야."
-    }, {
-      name: "getPenSize()",
-      snippet: "getPenSize()",
-      tip: {
-        description: {
-          ko: "사용중인 펜의 두께 가져오기"
-        }
-      },
-      id: "getPenSize",
-      chatbotDescription: "getPenSize()는 스프라이트의 펜 두께를 반환하는 API야."
     }]
   }]
   //for auto completer
