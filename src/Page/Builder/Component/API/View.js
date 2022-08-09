@@ -9,7 +9,7 @@ import "./index.scss";
 import ButtonIndicator from "../ButtonIndicator";
 
 const getTip = name => {
-  const language = localStorage.getItem("wizLang");
+  const language = localStorage.getItem("lang");
 
   const api = APILibrary.getAPI(name);
   if (!api || !api.tip) {

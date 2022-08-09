@@ -16,27 +16,27 @@ import publishDarkImg from "../../../../Image/builder/help/help_sub_publish-dark
 export default [
   {
     type: "main",
-    title: "레드브릭 빌더에 온걸 환영해요!",
+    title: "빌더에 온걸 환영해요!",
     title_localized: {
       zh: "欢迎来到WIZ LAB Builder！",
-      ja: "レッドブリックビルダーへようこそ！",
-      en: "Welcome to the Redbrick Builder!"
+      ja: "ビルダーへようこそ！",
+      en: "Welcome to the Builder!"
     },
-    subtitle: "안녕, 레드브릭 빌더를 더욱 즐겁게 이용할 수 있도록 기본 기능에 대해 설명해줄 거예요.",
+    subtitle: "기본 기능에 대해 설명해줄 거예요.",
     subtitle_localized: {
-      en: "Hello, this will instruct you on the basic features to help you enjoy Redbrick Builder.",
-      ja: "こんにちは。レッドブリックビルダーをより楽しく使えるように基本機能について説明しますね。",
+      en: "Hello, this tutorial will help you use the features of the Builder.",
+      ja: "こんにちは。ビルダーをより楽しく使えるように基本機能について説明します。",
       zh: "你好，我们将为大家介绍WIZ LAB Builder最基本的功能，以帮助大家更加方便有趣地使用WIZ LAB Builder。",
     },
     activeButtonTitle: "튜토리얼 시작하기",
     activeButtonTitle_localized: {
-      en: "Begin the tutorial",
+      en: "Begin",
       ja: "チュートリアルを始める",
       zh: "开始教程"
     },
     inactiveButtonTitle: "아니야 괜찮아, 넘길래",
     inactiveButtonTitle_localized: {
-      en: "No, I'll skip this",
+      en: "Skip",
       ja: "大丈夫だよ、スキップする",
       zh: "没关系，不用了。开始下一个吧。"
     }
@@ -45,8 +45,8 @@ export default [
     type: "sub",
     title: "코딩의 가장 기본! 코드입력란",
     title_localized: {
-      en: "The fundamental basic of coding! Code input field",
-      ja: "コーディングの基本中の基本 入力欄",
+      en: "Code Editor, where the magic happens!",
+      ja: "エディターでプログラミング開始！",
       zh: "编程的基础！输入代码是什么？"
     },
     subtitle: "여기에다 명령어 코드를 입력 할 수 있어요.\n친구들이 상상하는 모든 것들을 현실로 만들어 줄 거에요!",
@@ -118,7 +118,7 @@ export default [
     type: "sub",
     title: "스프라이트들을 조종해봐!",
     title_localized: {
-      en: "Control the sprites!",
+      en: "Apply commands to the sprites!",
       ja: "スプライトを操作してみよう！",
       zh: "让我们操控角色吧！"
     },
@@ -144,8 +144,8 @@ export default [
     type: "sub",
     title: "실행 버튼으로 창작한걸 실행해봐!",
     title_localized: {
-      en: "Use the run button to run your creation!",
-      ja: "実行ボタンで創作したものを実行してみよう！",
+      en: "Use the play button to check what you have built!",
+      ja: "実行ボタンで作ったゲームを実行してみよう！",
       zh: "使用运行按钮，运行一下已创作的作品吧！"
     },
     subtitle: "중간 중간 친구들이 만든 것들이\n제대로 작동하고 있는지 실행볼 수 있어요",
@@ -167,8 +167,8 @@ export default [
     type: "sub",
     title: "궁금한 점이 있다면?",
     title_localized: {
-      en: "Have any questions?",
-      ja: "気になる点があればこちら！",
+      en: "Need help to find commands?",
+      ja: "必要なコマンドがあればこちら！",
       zh: "如果有什么问题时"
     },
     subtitle: "동영상, API 목록, 채팅으로 궁금한게 있으면 꼭 클릭해봐요!",
@@ -194,7 +194,7 @@ export default [
     title: "게임 완성후에 퍼블리싱까지!",
     title_localized: {
       en: "Create a game and publish it!",
-      ja: "ゲームを完成してからパブリッシングまで！",
+      ja: "ゲームを完成してパブリッシングまで！",
       zh: "从游戏完成再到发布！"
     },
     subtitle: "게임이 완성 됐다고 생각 되면 친구들에게 자랑해봐요!\n(로그인은 필수!)",
@@ -224,14 +224,14 @@ export default [
     },
     subtitle: "여기까지가 친구들만의 독특한 게임을 창작하기에 앞서 알아야 할 기본적인 기능들이에요.\n자유롭게 위즈랩 빌더를 사용해봐요!",
     subtitle_localized: {
-      en: "These are the basics you need to know to create your unique game.\nUse the Redbrick builder as you wish now!",
-      ja: "ここまでがみなさんが独特なゲームを作り上げる前に知っておく必要がある基本的な機能です。\n自由にレッドブリックビルダーを使ってみましょう！",
+      en: "These are the basics you need to know to create your unique game.\nStart building!",
+      ja: "ゲームを作る前に知っておく基本的な機能でした。\n自由にビルダーを使ってみましょう！",
       zh: "创作属于自己的独特游戏之前该知道的基本功能都已经介绍完了。\n现在您可以自由使用WIZ LAB Builder了！",
     },
     activeButtonTitle: "창작 시작하기",
     activeButtonTitle_localized: {
-      en: "Begin creation",
-      ja: "創作を始める",
+      en: "Start building",
+      ja: "ゲーム作りを始める",
       zh: "开始创作",
     },
   }

@@ -44,18 +44,18 @@ export const jsScript = [
 
 export const jsScript_en = [
   { subTitle: "Guide Tab", title: "Click here for help!", imageURL: wjT01_en },
-  { subTitle: "Mission List", title: "Would you like to see your mission progress?", imageURL: wjT02_en },
+  { subTitle: "Mission List", title: "Would you like to see your mission status?", imageURL: wjT02_en },
   { subTitle: "Sprite / Sound", title: "What's a sprite?", imageURL: wjT03_en },
   { subTitle: "Enter Code", title: "Enter a code.", imageURL: wjT04_en },
-  { subTitle: "Convenient Functions", title: "Code Easily", imageURL: wjT05_en }
+  { subTitle: "Handy Tools", title: "", imageURL: wjT05_en }
 ];
 
 export const jsScript_ja = [
   { subTitle: "ガイドタブ", title: "ヘルプが必要ならここ！", imageURL: wjT01_ja },
-  { subTitle: "ミッションリスト", title: "ミッションの進行状況を見たいですか？", imageURL: wjT02_ja },
-  { subTitle: "スプライト / サウンド", title: "スプライトとは何ですか？", imageURL: wjT03_ja },
+  { subTitle: "ミッションリスト", title: "ミッションの進捗状況を見たいでしょうか。", imageURL: wjT02_ja },
+  { subTitle: "スプライト / サウンドリスト", title: "スプライトとは何ですか？", imageURL: wjT03_ja },
   { subTitle: "コード入力", title: "コードを入力してみましょう。", imageURL: wjT04_ja },
-  { subTitle: "便利機能", title: "コーディングをもっと楽に", imageURL: wjT05_ja }
+  { subTitle: "便利機能", title: "", imageURL: wjT05_ja }
 ];
 
 export const oobcScript = [
@@ -68,16 +68,16 @@ export const oobcScript = [
 
 export const oobcScript_en = [
   { subTitle: "Guide Tab", title: "Click here for help!", imageURL: woT01_en },
-  { subTitle: "Mission List", title: "Would you like to see your mission progress?", imageURL: woT02_en },
+  { subTitle: "Mission List", title: "Would you like to see your mission status?", imageURL: woT02_en },
   { subTitle: "Sprite / Sound", title: "What's a sprite?", imageURL: woT03_en },
   { subTitle: "Enter Code", title: "Enter a code.", imageURL: woT04_en },
-  { subTitle: "Convenient Functions", title: "Code Easily", imageURL: woT05_en }
+  { subTitle: "Handy Tools", title: "", imageURL: woT05_en }
 ];
 
 export const oobcScript_ja = [
   { subTitle: "ガイドタブ", title: "ヘルプが必要ならここ！", imageURL: woT01_jp },
-  { subTitle: "ミッションリスト", title: "ミッションの進行状況を見たいですか？", imageURL: woT02_jp },
-  { subTitle: "スプライト / サウンド", title: "スプライトとは何ですか？", imageURL: woT03_jp },
+  { subTitle: "ミッションリスト", title: "ミッションの進捗状況を見たいでしょうか。", imageURL: woT02_jp },
+  { subTitle: "スプライト / サウンドリスト", title: "スプライトとは何ですか？", imageURL: woT03_jp },
   { subTitle: "コード入力", title: "コードを入力してみましょう。", imageURL: woT04_jp },
-  { subTitle: "便利機能", title: "コーディングをもっと楽に", imageURL: woT05_jp }
+  { subTitle: "便利機能", title: "", imageURL: woT05_jp }
 ];
