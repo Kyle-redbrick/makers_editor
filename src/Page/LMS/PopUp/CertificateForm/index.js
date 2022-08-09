@@ -50,7 +50,7 @@ function CertificateForm(props) {
       <img className="dream_projectClear_image" src={clearImg} alt="clear" />
       <p className="popup_title">{props.intl.formatMessage({ id: "ID_DREAM_BUILDER_COURSE_CLEAR" })}</p>
       <div className="popup_subtitle">
-        {props.intl.formatMessage({ id: "ID_DREAM_BUILDER_QUEST_CLEAR_SUBTITLE" })}
+        {props.intl.formatMessage({ id: "ID_DREAM_BUILDER_QUEST_CLEAR_CERT_SUBTITLE" })}
       </div>
 
       <div className="questClear_certificate_form">
@@ -78,7 +78,7 @@ function CertificateForm(props) {
             if (props.dismiss) props.dismiss();
           }}
         >
-          {props.intl.formatMessage({ id: "ID_DREAM_BUILDER_COURSE_CLEAR_CANCEL_BUTTON" })}
+          {props.intl.formatMessage({ id: "ID_DREAM_BUILDER_QUEST_CLEAR_CERT_QUIT_BUTTON" })}
         </button>
         <button
           className="popup_button"
