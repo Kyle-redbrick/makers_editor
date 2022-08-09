@@ -59,10 +59,12 @@
 .structure__trial-title {
   font-size: 28px;
   color: #fff;
-  line-height: 28px;
+  line-height: 32px;
   font-weight: 700;
   display: block;
   margin: 0;
+  word-break: break-all;
+  white-space: pre-wrap;
 }
 
 .structure__trial-wrap {
