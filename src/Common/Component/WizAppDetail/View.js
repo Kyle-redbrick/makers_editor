@@ -39,7 +39,6 @@ function View(props) {
     isMobile,
     handleProjectCommentCount,
     allCommentCount,
-    handleShareFB,
     handleCopyUrl
   } = props;
   const isMine = userinfo.email && userinfo.email === project.user.email;
@@ -98,10 +97,6 @@ function View(props) {
 
               {isShareBoxOpen && 
                 <div className="shareDetailBox">
-                  <div onClick={() => handleShareFB(project.pId)} className="QRPopupSNSItem">
-                    <img src={shareFbImg} alt="share fb" />
-                    <span><FormattedMessage id="ID_WIZAPPDETAIL_SHARE_FACEBOOK" /></span>
-                  </div>
                   <div onClick={() => handleCopyUrl(project.pId)} className="QRPopupSNSItem">
                     <img src={shareCopyImg} alt="share url" />
                     <span><FormattedMessage id="ID_WIZAPPDETAIL_SHARE_COPY_LINK" /></span>
