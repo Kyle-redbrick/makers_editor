@@ -73,11 +73,12 @@ export default function(props) {
 
             <div className="contents__steps">
               {curItem.steps.map((step, index) => {
+                const isNeedIndex = curItem.steps.length !== 1;
                 return (
                   <div key={index} className="step__item">
-                    <div className="step__item__title">{`${index + 1}. ${
-                      step.title[lang]
-                    }`}</div>
+                    <div className="step__item__title">
+                      {`${isNeedIndex ? `${index + 1}. ` : ""}${step.title[lang]}`}
+                    </div>
                     {step.description && (
                       <div className="item step__item__desc">
                         {step.description[lang]}

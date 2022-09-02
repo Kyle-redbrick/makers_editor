@@ -106,7 +106,9 @@ const ko = {
   ID_SIGNUP_WARNING_PW_RE: "* 비밀번호가 일치하지 않습니다",
   ID_SIGNUP_WARNING_PW_EMPTY: "* 비밀번호를 입력해주세요",
   ID_SIGNUP_WARNING_PW_RE_EMPTY: "* 비밀번호를 한번 더 입력해주세요",
-  ID_SIGNUP_WARNING_NAME_FORMAT: "* 이름을 더 길게 입력해주세요",
+  ID_SIGNUP_WARNING_FIRSTNAME_FORMAT: "* 이름을 더 길게 입력해주세요",
+  ID_SIGNUP_WARNING_LASTNAME_FORMAT: "* 이름을 더 길게 입력해주세요",
+  ID_SIGNUP_WARNING_USERNAME_FORMAT: "* 이름을 더 길게 입력해주세요",
   ID_SIGNUP_WARNING_NAME_EMPTY: "* 이름을 입력해주세요",
   ID_SIGNUP_WARNING_PHONE_FORMAT: "* 전화번호를 정확히 입력해주세요",
   ID_SIGNUP_WARNING_PHONE_SIGNED: "* 이미 가입된 전화번호입니다",
@@ -1255,7 +1257,7 @@ const ko = {
   ID_DREAM_LMS_TODAY_GOAL_RECOMMEND_QUEST_SUBTITLE: "퀘스트 1",
   ID_DREAM_LMS_TODAY_GOAL_GRAPH: "달성 그래프",
   ID_DREAM_LMS_TODAY_GOAL_PROGRESS_TITLE: "개발자의 길",
-  ID_DASHBOARD_TAB_O1_MISSION_PROGRESS: "Mission Progress",
+  ID_DASHBOARD_TAB_O1_MISSION_PROGRESS: "Learning Progress",
   ID_DASHBOARD_TAB_O2_ATTENDANCE: "Attendance",
   ID_DASHBOARD_GET_CERTIFICATION: "Get Certification",
   ID_LMS_DASHBOARD: "대쉬보드",
@@ -1349,7 +1351,7 @@ const ko = {
 
   ID_INTRO_GAME_VIDEO_SECTION_TITLE : "Your very own game\ncreated with Astro",
   ID_INTRO_GAME_VIDEO_SECTION_CHILD_TITLE : "Experience what you can make at Astro Coding Go!",
-  ID_INTRO_GAME_VIDEO_LINE_BANNER_TITLE_LEFT : "How to play",
+  ID_INTRO_GAME_VIDEO_LINE_BANNER_TITLE_LEFT : "How to play:",
   ID_INTRO_LINE_BANNER_TITLE : "Try our free courses first!",
   ID_INTRO_LINE_BANNER_CHILD_TITLE : "Fun and learning all at once",
   ID_INTRO_LINE_BANNER_GO_TO_FREE_COURSE_LINK : "Go to Free Trial Course",
@@ -1501,7 +1503,9 @@ const ko = {
   ID_LEARN_NON_LEARNING_TITLE : "학습 권한 없음",
   ID_LEARN_NON_LEARNING_SECOND_TITLE : "구매 후 이용 가능한 과정입니다",
 
-  ID_ABOUT_COURSES_SLIDE_WRAP_TITLE : "Courses"
+  ID_ABOUT_COURSES_SLIDE_WRAP_TITLE : "Courses",
+
+  ID_SSO_ERROR_POPUP_TEXT: "Astro Coding Go에 등록되지 않은 계정입니다. 관리자에게 문의해주세요.",
 
 };
 export default ko;

@@ -44,7 +44,7 @@ The company may have a separate service policy for the smooth provision of servi
 **Article 7 (Obligation to Protect Personal Information)**
 The company strives to protect members' personal information as stipulated by relevant laws and regulations. For the protection and use of personal information, relevant laws and the Company's privacy policy will apply. However, the Company's privacy policy does not apply to linked websites other than the Company's official website.
 
-**Article 8 (Obligations for Member ID and Password Management)**
+**Article 8 (Obligation for Member ID and Password Management)**
 
 1. Members are responsible for managing their own IDs and passwords and may not allow any third party to use them.
 2. The company may restrict the use of the member's ID if there is a risk of leakage of personal information, content that causes social unrest, violates public morals, or causes the possibility of the member being mistaken as a representative or operator of the Company.
@@ -54,13 +54,13 @@ The company strives to protect members' personal information as stipulated by re
 Article 9 (Notifications to Members)
 In the event that the Company notifies a member, said notification can be provided through the service screen, e-mail address, etc., unless otherwise specified in these terms and conditions.
 
-**Article 10 (Company's Obligations to Users)**
+**Article 10 (Company's Obligation to Users)**
 
 1. The company must faithfully exercise the rights and fulfill the obligations stipulated in relevant laws and regulations and in these terms and conditions.
    1. The company shall take measures so that users can use the content and services.
    2. In the event that the Company recognizes that the opinions or complaints raised by users in relation to the use of content and services are justified, said opinions or complaints will be handled without delay.
 
-**Article 11 (Obligations of "Users")**
+**Article 11 (Obligation of Users)**
 
 1. Users (members/non-members) may not do the following:
    1. Enter false information or steal the information of others when applying for membership or changing member information
@@ -72,19 +72,19 @@ In the event that the Company notifies a member, said notification can be provid
    7. Engage in any other illegal or unfair conduct
 2. Users must comply with related laws and regulations, the provisions of these terms and conditions, the user guide, notices announced in relation to details and services, and notices from the Company, and users may not engage in any other acts that interfere with the business of the Company.
 
-**Article 12 (Provision of Services, etc.)**
+**Article 12 (Provision of Services)**
 
 1. The company provides the following services to its members.
    1. Programming Education Services
    2. Programming Coding Platform
    3. Programming Work Sharing Platform
    4. All services provided to members through additional development by the Company or partnership contracts with other companies
-1. The company may temporarily suspend the provision of services in the event of maintenance, replacement, and breakdown of information as well as communication facilities such as computers, communication interruptions, or operational reasons. In such an event, the Company shall notify members. However, if there is an unavoidable reason for the suspension of services that results in the Company’s being unable to notify members in advance, notification can be issued afterwards.
-1. The company may conduct regular maintenance if necessary for the provision of services, and the period of regular maintenance shall be dictated via the notice on the service provision screen.
+2. The company may temporarily suspend the provision of services in the event of maintenance, replacement, and breakdown of information as well as communication facilities such as computers, communication interruptions, or operational reasons. In such an event, the Company shall notify members. However, if there is an unavoidable reason for the suspension of services that results in the Company’s inability to notify members in advance, notification can be issued afterwards.
+3. The company may conduct regular maintenance if necessary for the provision of services, and the period of regular maintenance shall be dictated via the notice on the service provision screen.
    Article 13 (Change of Service)
-1. The company may change all or part of the services it is providing according to operational and technical needs in events where there are significant reasons.
-1. If there is a change in the details or method of use, the details of the service to be changed and the date of provision shall be posted on the initial screen of the service before the change.
-1. The company may modify, suspend, or change some or all of the services provided free of charge for the needs of the Company's policies and operations, and there is no separate compensation for members unless there are special regulations in relevant laws.
+4. The company may change all or part of the services it is providing according to operational and technical needs in events where there are significant reasons.
+5. If there is a change in the details or method of use, the details of the service to be changed and the date of provision shall be posted on the initial screen of the service before the change.
+6. The company may modify, suspend, or change some or all of the services provided free of charge for the needs of the Company's policies and operations, and there is no separate compensation for members unless there are special regulations in relevant laws.
 
 **Article 14 (Provision of Information and Publication of Advertisements)**
 
@@ -111,14 +111,14 @@ In the event that the Company notifies a member, said notification can be provid
 1. Copyright and intellectual property rights for the service belong to the Company. However, this does not include users’ posts and works provided under the partnership agreement.
 2. In relation to the service, the Company grants the user only the right to use the account, content, etc. in accordance with the terms and conditions set by the Company. The user cannot perform acts of disposal such as transference, sale, or provision of collateral.
 
-**Article 18 (Cancellation and Termination of Contracts for Members, etc.)**
+**Article 18 (Cancellation and Termination of Contracts for Members)**
 
 1. A member may apply for termination of the contract of use at any time through the customer service on the initial screen of the service or the My Information Management menu, etc.
 2. When a member terminates the contract, all member data will be destroyed immediately upon termination, except in cases where the Company retains member information to adhere to relevant laws and privacy policies.
 3. When a member terminates the contract, all posts made by the member that have been registered in their account, such as projects, etc., will be deleted. However, posts registered on the public bulletin board or posts that have been shared and republished will not be deleted. Thus, the member may delete this material themselves or ask the Company to delete them before they terminate their account.
 4. In relation to the preceding paragraph, posts may not be deleted if the member is not the author or if others have joint rights.
 
-**Article 19 (Use Limitation of Members, etc.)**
+**Article 19 (Use Limitation of Members)**
 
 1. If a member violates the obligations of these terms and conditions or interferes with the normal operation of the service, the Company may restrict the use of the service in stages through warnings, temporary suspension, permanent suspension, etc. In the event of permanent suspension of use according to this paragraph, all points and other benefits acquired through service use will also expire, and the Company will not provide compensation for this.
 2. If a member does not log in for more than 3 months, the Company may restrict the account of the member for the protection of personal information and operational efficiency.
@@ -126,9 +126,9 @@ In the event that the Company notifies a member, said notification can be provid
 4. In the event that the use of services is restricted or the contract is terminated in accordance with this article, the Company will provide notification in accordance with Article 9 [Notifications to Members].
 5. Members may file an objection against the usage limitation stipulated under this article according to the procedures set by the Company. At this time, if the Company recognizes that the objection is justified, the Company shall immediately resume the user’s use of the service.
 
-**Article 20 (Special Rules for the Contract of Use of Minors)**
+**Article 20 (Contract of Use of Minors)**
 
-1. In the event that a minor user under the age of 18 wants to use the paid service, the Company shall take measures to provide notification before concluding the contract. These measures shall dictate that, unless there consent has been received from a legal representative such as a parent, or the contract has been ratified after its conclusion, the minor or their legal representative may cancel the contract.
+1. In the event that a minor user under the age of 18 wants to use the paid service, the Company shall take measures to provide notification before concluding the contract. These measures shall dictate that, unless consent has been received from a legal representative such as a parent, or the contract has been ratified after its conclusion, the minor or their legal representative may cancel the contract.
 
 **Article 21 (Exemption Clause)**
 
@@ -145,7 +145,7 @@ In the event that the Company notifies a member, said notification can be provid
 **Article 23 (Settlement of Disputes)**
 In the event of a dispute, the Company shall take appropriate and prompt action based on legitimate opinions or complaints raised by users. However, if prompt processing is not feasible, the Company shall notify the user of the reasons and the processing plan.
 
-**Article 24 (Governing Law and Competent Court)**
+**Article 24 (Governing Law and Court)**
 
 1. Lawsuits filed between the Company and users shall be governed by the laws of Singapore.
 2. Litigation regarding disputes between the Company and members is based on the address of the user at the time of filing, and if there is no address, the district court with jurisdiction over the place of residence shall have exclusive jurisdiction.

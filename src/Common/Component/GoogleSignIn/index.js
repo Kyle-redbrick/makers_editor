@@ -1,5 +1,6 @@
 import React from 'react'
 import { useEffect } from 'react';
+import { injectIntl } from 'react-intl';
 import { connect } from "react-redux";
 import { GOOGLE_SIGNIN_CLIENT_ID } from '../../Util/Constant';
 import * as request from "../../Util/HTTPRequest";
@@ -33,8 +34,8 @@ const GoogleSignIn = (props) => {
       } else {
         showPopUp(
           <PopUp.OneButton
-            title={`Astro Coding Go에 \n 등록되지 않은 계정입니다. \n 관리자에게 문의해주세요.`}
-            buttonName="확인"
+            title={props.intl.formatMessage({id: "ID_SSO_ERROR_POPUP_TEXT"})}
+            buttonName={props.intl.formatMessage({id: "ID_COMMON_CONFIRM"})}
           />,
           {
             darkmode: true,
@@ -70,4 +71,4 @@ export default connect(
   {
     updateUserInfo: userInfoActions.updateUserInfo
   }
-)(GoogleSignIn);
+)(injectIntl(GoogleSignIn));

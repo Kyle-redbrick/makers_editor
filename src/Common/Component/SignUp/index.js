@@ -93,7 +93,7 @@ class SignUp extends Component {
           } else {
             this.setState({
               warning_name: formatMessage({
-                id: "ID_SIGNUP_WARNING_NAME_FORMAT"
+                id: "ID_SIGNUP_WARNING_FIRSTNAME_FORMAT"
               })
             });
           }
@@ -104,7 +104,7 @@ class SignUp extends Component {
           } else {
             this.setState({
               warning_fristName: formatMessage({
-                id: "ID_SIGNUP_WARNING_NAME_FORMAT"
+                id: "ID_SIGNUP_WARNING_LASTNAME_FORMAT"
               })
             });
           }
@@ -115,7 +115,7 @@ class SignUp extends Component {
           } else {
             this.setState({
               warning_nickName: formatMessage({
-                id: "ID_SIGNUP_WARNING_NAME_FORMAT"
+                id: "ID_SIGNUP_WARNING_USERNAME_FORMAT"
               })
             });
           }

@@ -80,7 +80,7 @@ const App = () => {
   return (
     <Router>
       <Suspense fallback={<SplashView />}>
-        <div className={`${lang}`} style={{ backgroundColor: "#282c36" }}>
+        <div className={`${lang}`} style={{ backgroundColor: "#282c36" }} lang={lang}>
           {token ?
             <Route
               exact

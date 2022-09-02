@@ -1,4 +1,4 @@
-export default `### Privacy Policy (required)
+export default `### Privacy Policy
 
 MANGOSTEEMS PTE. LTD (the “Company”) recognizes the importance of protecting your personal information. The Company abides to the laws pertaining to the protection of your personal information (“Personal Information Protection Laws”) and handles your personal information with utmost care in accordance to the items stipulated in the Privacy Policy (“Privacy Policy”) below. By using the Astro Coding Go! service, the User agrees to the Company's Privacy Policy.
 

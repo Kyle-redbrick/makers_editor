@@ -241,7 +241,7 @@ const Intro = ({ fixed, lecture, ...props }) => {
             <Icon type={lecture.type} fixed={fixed}/>
             <TitleWrap>
               <Title fixed={fixed}>{lecture.title}</Title>
-              <Categories fixed={fixed}>{lecture && lecture.course && `${lecture.course.title} | ${lecture.course.displayType} | ${props.intl.formatMessage({ id: "ID_PROJECT_TITLE" })} ${lecture.numberString}`}</Categories>
+              <Categories fixed={fixed}>{lecture && lecture.course && `${lecture.course.title} | ${lecture.course.displayType}`}</Categories>
             </TitleWrap>
             {/* {shortcutProject && <LearnNow id={shortcutProject.id} fixed={fixed} lectureId={lecture.id} />} */}
           </Row>
