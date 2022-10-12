@@ -1343,7 +1343,7 @@ const ja = {
   ID_CERT_ADVANCED_JS_DESC: "あなたは iGroup主催のソフトウェアの教育課程であるJSアドバンスを修了するためのすべての要求事項を満たし、イベント、座標、物理、乱数, 変数, 条件文,繰り返し文,複製,演算子を活用して8個のプロジェクトを自ら完成したため、この修了証を授与いたします。",
   ID_CERT_MASTERY_JS_DESC: "あなたは iGroup主催のソフトウェアの教育課程であるJSマスターを修了するためのすべての要求事項を満たし、イベント、座標、物理、乱数, 変数, 条件文,繰り返し文,複製,演算子,配列、関数を活用して4個のプロジェクトを自ら完成したため、この修了証を授与いたします。",
 
-  ID_INTRO_ABOUT_ASTRO_CODING_GO_TITLE: "アトムコーディングGo！とは",
+  ID_INTRO_ABOUT_ASTRO_CODING_GO_TITLE: "Astro Coding Go",
   ID_INTRO_SECOND_SECTION_TITLE: "コーディング授業、それ以上の「ミッション」",
   ID_INTRO_SECOND_SECTION_INFO_TITLE_1: "6 to 12",
   ID_INTRO_SECOND_SECTION_INFO_TITLE_2: "36 Missions",
