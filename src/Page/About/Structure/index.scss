@@ -297,6 +297,28 @@
   margin:0 0 25px;
 }
 
+.download {
+  display: table;
+  margin: 0 auto;
+}
+
+.onDownload {
+  display: flex;
+  align-items:center;
+  padding: 19px 20px 19px 20px;
+  border-radius: 50px;
+  cursor: pointer;
+
+  
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 18px;
+  text-align: center;
+  background: #1E67FC;
+}
+
 @media screen and (max-width:768px) {
   .structure__trial {
     padding: 0 15px;

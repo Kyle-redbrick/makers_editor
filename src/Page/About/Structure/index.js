@@ -12,6 +12,16 @@ import { Link } from "react-router-dom";
 import "./index.scss";
 import { URL } from "../../../Common/Util/Constant";
 
+
+import fileJp from "../../../file/curriculum_jp.pdf"
+import fileEn from "../../../file/curriculum_en.pdf"
+import icnDownload from "../../../Image/icn_download.png";
+
+
+const lang = localStorage.getItem("lang"); 
+const file = lang == "ja" ? fileJp : fileEn
+
+
 function Structure () {
   const [curriculum, setCurriculum] = useState([]);
   const [blockCurriculum, setBlockCurriculum] = useState([]);
@@ -45,7 +55,14 @@ function Structure () {
     setJsCurriculum(js);
   }
 
+  const onDownload = () => {
+    const link = document.createElement("a");
+    link.download = "Curriculum";
+    link.href = file;
+    link.click();
+  };
 
+  
   return (
     <div className="structure">
       <h3 className="structure__title"><FormattedMessage id="ID_ABOUT_STRUCTURE_TITLE" /></h3>
@@ -56,6 +73,13 @@ function Structure () {
           <FormattedMessage id="ID_ABOUT_DOWNLOAD_CURRICULUM" />
         </span>
       </a> */}
+
+
+      <div className="download">
+          <div className="onDownload" onClick={onDownload}>
+              <img src={icnDownload}/> <p style={{marginLeft: "17px"}}>Download Curriculum in PDF</p>
+          </div>
+       </div>
 
       <div className="structure__trial-wrap">
         <div className="structure__trial">
