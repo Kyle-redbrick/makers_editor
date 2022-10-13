@@ -57,7 +57,7 @@ function Structure () {
 
   const onDownload = () => {
     const link = document.createElement("a");
-    link.download = "Curriculum";
+    link.download = "Curriculum.pdf";
     link.href = file;
     link.click();
   };
