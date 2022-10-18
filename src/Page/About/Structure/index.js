@@ -57,7 +57,7 @@ function Structure () {
 
   const onDownload = () => {
     const link = document.createElement("a");
-    link.download = "Curriculum.pdf";
+    link.download = lang == "ja" ? "Astro Coding Go_カリキュラム.pdf" : "Astro Coding Go_Curriculum.pdf";
     link.href = file;
     link.click();
   };
