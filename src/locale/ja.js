@@ -1464,7 +1464,7 @@ const ja = {
   ID_ABOUT_STRUCTURE_TITLE : "カリキュラムの構造",
   ID_ABOUT_STRUCTURE_BLOCKCODING_EXPLAIN : "24個の様々なミッションに挑戦して「順次」から「反復」まで様々な概念を学習します。自社独自開発のOOBCはテキストプログラミング構文に沿ったブロックを使ってプログラミングする言語です。JavaScript や他の本格的なプログラミング言語の使い方が自然に身につきます。",
   ID_ABOUT_STRUCTURE_JAVASCRIPT_EXPLAIN : "12個の様々なミッションに挑戦して「関数」と「配列」等、上級概念を学習します。 オートコンプリートで生徒が属性をクリックして入力することができます。",
-  ID_ABOUT_DOWNLOAD_CURRICULUM : "PDF形式のカリキュラムをダウンロード",
+  ID_ABOUT_DOWNLOAD_CURRICULUM : "カリキュラムのダウンロード",
   ID_ABOUT_STRUCTURE_BLOCK_CODING : "ブロックプログラミングミッション\n(3 コース : 24 ミッション)",
   ID_ABOUT_STRUCTURE_JAVASCRIPT : "JavaScriptミッション\n(２ コース : 12 ミッション)",
   ID_ABOUT_MORE_TRIAL_TEXT : "無料トライアルのお試し",

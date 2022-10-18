@@ -77,7 +77,7 @@ function Structure () {
 
       <div className="download">
           <div className="onDownload" onClick={onDownload}>
-              <img src={icnDownload}/> <p style={{marginLeft: "17px"}}>Download Curriculum in PDF</p>
+              <img src={icnDownload}/> <p style={{marginLeft: "17px"}}><FormattedMessage id="ID_ABOUT_DOWNLOAD_CURRICULUM" /></p>
           </div>
        </div>
 
