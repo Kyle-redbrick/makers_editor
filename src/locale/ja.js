@@ -901,7 +901,7 @@ const ja = {
   ID_WIZERROR_MESSAGE_NOT_FUNCTION: "{symbol}은 함수가 아님",
   ID_WIZERROR_MESSAGE_CANNOT_READ_PROPERTY: "프로퍼티 {symbol}가 존재하지 않음",
   ID_WIZERROR_MESSAGE_INSTANCEOF_RIGHT_NOT_OBJECT: "instanceof 뒤에는 object 타입이 와야함",
-  ID_WIZERROR_LOCATION_FULL: "{sceneId}의 {spriteId} 스프라이트\n({line}번 줄 {column}번째 문자)",
+  ID_WIZERROR_LOCATION_FULL: "{sceneId}の{spriteId} スプライト\n({line}番目列の{column}番目文字)",
   ID_WIZERROR_LOCATION_LINE_COLUMN: "({line}번 줄 {column}번째 문자)",
   ID_WIZERROR_LOCATION_SCENE_SPRITE: "{sceneId}の{spriteId}スプライト",
   ID_WIZERROR_LOCATION_SCENE_SPRITE_API: "{sceneId}の{spriteId}スプライト({api})",
