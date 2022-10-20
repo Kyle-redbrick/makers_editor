@@ -1,5 +1,7 @@
 import codeImg from "../../../../Image/builder/help/help_sub_code.svg";
 import codeDarkImg from "../../../../Image/builder/help/help_sub_code-dark.svg";
+import codeDarkImg_ja from "../../../../Image/builder/help/help_1_dark_JP.svg";
+import codeDarkImg_en from "../../../../Image/builder/help/help_1_dark_EN.svg";
 import spriteImg from "../../../../Image/builder/help/help_sub_sprite.png";
 import spriteDarkImg from "../../../../Image/builder/help/help_sub_sprite-dark.png";
 import addImg from "../../../../Image/builder/help/help_sub_add.png";
@@ -59,7 +61,9 @@ export default [
     anchorStyle: { type: "top", left: "20%" },
     imageStyle: {
       img: codeImg,
-      darkImg: codeDarkImg,
+      darkImg_ko: codeDarkImg,
+      darkImg_en: codeDarkImg_en,
+      darkImg_ja: codeDarkImg_ja, 
       top: "42px",
       left: "171px"
     }

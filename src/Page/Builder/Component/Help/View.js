@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./index.scss";
 
 import helpMainImg from "../../../../Image/builder/help/help_main.png";
@@ -13,6 +13,8 @@ export default function(props) {
     onClickNext,
     onClickSkip
   } = props;
+  const language = localStorage.getItem("lang");
+
   const getText = (type) => {
     const language = localStorage.getItem("lang"); ;
 
@@ -80,14 +82,20 @@ export default function(props) {
           className="help_imgModal"
           style={{
             ...currentStep.imageStyle,
-            darkImg: undefined,
+            darkImg_ko: undefined,
+            darkImg_ja: undefined,
+            darkImg_en: undefined,
             img: undefined
           }}
         >
           <img
             src={
               darkmode
-                ? currentStep.imageStyle.darkImg
+                ? (language === "ja" ? 
+                    currentStep.imageStyle.darkImg_ja
+                  :
+                    currentStep.imageStyle.darkImg_en
+                )
                 : currentStep.imageStyle.img
             }
             alt={currentStep.title}
