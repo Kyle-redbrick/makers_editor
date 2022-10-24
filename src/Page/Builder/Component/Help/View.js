@@ -90,13 +90,14 @@ export default function(props) {
         >
           <img
             src={
-              darkmode
+              currentStepNum == 1 ? ( darkmode
                 ? (language === "ja" ? 
                     currentStep.imageStyle.darkImg_ja
                   :
                     currentStep.imageStyle.darkImg_en
                 )
-                : currentStep.imageStyle.img
+                : currentStep.imageStyle.img ) 
+                : (darkmode ?  currentStep.imageStyle.darkImg  : currentStep.imageStyle.img )
             }
             alt={currentStep.title}
           />

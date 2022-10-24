@@ -64,6 +64,9 @@ export default [
       darkImg_ko: codeDarkImg,
       darkImg_en: codeDarkImg_en,
       darkImg_ja: codeDarkImg_ja, 
+      width: "953px",
+      height: "279px",
+      
       top: "42px",
       left: "171px"
     }
