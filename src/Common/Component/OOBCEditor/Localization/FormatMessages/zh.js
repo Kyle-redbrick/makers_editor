@@ -120,5 +120,5 @@ export default {
   ID_OOBC_ALERT_REPLACE_BLOCK_MESSAGE:
     "如果替换这个代码块\n后面的代码块也会删除。\n确定要删除吗？",
 
-    ID_OOBC_CONSTANTEDITOR_KEY_MESSAGE: "Press any key.",
+    ID_OOBC_CONSTANTEDITOR_KEY_MESSAGE: "Press any key of your choice",
 };

@@ -121,5 +121,5 @@ export default {
   ID_OOBC_ALERT_REPLACE_BLOCK_MESSAGE:
     "The following blocks will be removed.\nStill want to switch blocks?",
 
-    ID_OOBC_CONSTANTEDITOR_KEY_MESSAGE: "Press the appropriate key on your keyboard.",
+    ID_OOBC_CONSTANTEDITOR_KEY_MESSAGE: "Press any key of your choice",
 };
