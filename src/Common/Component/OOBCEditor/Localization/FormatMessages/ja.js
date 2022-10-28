@@ -3,7 +3,7 @@ export default {
   ID_OOBC_GENERAL_CANCEL: "取消し",
   ID_OOBC_GENERAL_DELETE: "Delete",
   ID_OOBC_GENERAL_CLEAR: "確認",
-  ID_OOBC_GENERAL_REPLACE: "Switch",
+  ID_OOBC_GENERAL_REPLACE: "変更",
   ID_OOBC_GENERAL_CLOSE: "Close",
 
   ID_OOBC_BLOCK_STRING_DEFAULT: "text",
@@ -97,10 +97,10 @@ export default {
 
   ID_OOBC_CONTEXTMENU_DELETE: "削除",
   ID_OOBC_CONTEXTMENU_COPY: "コピー",
-  ID_OOBC_CONTEXTMENU_PASTE: "Paste",
+  ID_OOBC_CONTEXTMENU_PASTE: "貼り付け",
   ID_OOBC_CONTEXTMENU_ADD: "追加",
   ID_OOBC_CONTEXTMENU_DISABLE: "無効",
-  ID_OOBC_CONTEXTMENU_ENABLE: "Activate",
+  ID_OOBC_CONTEXTMENU_ENABLE: "有効",
   ID_OOBC_CONTEXTMENU_COMMENT: "Comment",
   ID_OOBC_CONTEXTMENU_DELETECOMMENT: "Delete Comment",
 
@@ -117,9 +117,9 @@ export default {
   ID_OOBC_ALERT_DELETELINE_TITLE: "行の削除",
   ID_OOBC_ALERT_DELETELINE_MESSAGE:
     "行を削除すると復元できません\n削除しますか？",
-  ID_OOBC_ALERT_REPLACE_BLOCK_TITLE: "Block Replacement",
+  ID_OOBC_ALERT_REPLACE_BLOCK_TITLE: "ブロック変更",
   ID_OOBC_ALERT_REPLACE_BLOCK_MESSAGE:
-    "The following blocks will be removed.\nStill want to switch blocks?",
+    "ブロックを変更しますか。変更する\nと今のブロックは消えます。",
 
     ID_OOBC_CONSTANTEDITOR_KEY_MESSAGE: "キーボードのどれかのキーを一つ押して下さい",
 };
