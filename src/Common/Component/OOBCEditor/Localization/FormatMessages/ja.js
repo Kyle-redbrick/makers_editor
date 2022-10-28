@@ -1,5 +1,5 @@
 export default {
-  ID_OOBC_GENERAL_CONFIRM: "Confirm",
+  ID_OOBC_GENERAL_CONFIRM: "確認",
   ID_OOBC_GENERAL_CANCEL: "取消し",
   ID_OOBC_GENERAL_DELETE: "Delete",
   ID_OOBC_GENERAL_CLEAR: "確認",
