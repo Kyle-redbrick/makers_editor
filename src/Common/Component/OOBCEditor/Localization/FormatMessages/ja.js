@@ -104,10 +104,10 @@ export default {
   ID_OOBC_CONTEXTMENU_COMMENT: "Comment",
   ID_OOBC_CONTEXTMENU_DELETECOMMENT: "Delete Comment",
 
-  ID_OOBC_ALERT_ADDVAR_TITLE: "Add Variable",
+  ID_OOBC_ALERT_ADDVAR_TITLE: "変数の追加",
   ID_OOBC_ALERT_ADDVAR_MESSAGE:
-    "*Only alphabet&number allowed.\n*First letter must be alphabet.",
-  ID_OOBC_ALERT_ADDVAR_PLACEHOLDER: "Enter Variable Name",
+    "*アルファベットと数字のみ可能です。\n*最初の文字はアルファベットである必要があります。",
+  ID_OOBC_ALERT_ADDVAR_PLACEHOLDER: "変数名を入力してください。",
   ID_OOBC_ALERT_ADDVAR_INVALIDNAME_MESSAGE: "Check variable naming rule again.",
   ID_OOBC_ALERT_ADDVAR_EXISTNAME_MESSAGE: "Already exist with that name",
   ID_OOBC_ALERT_DISABLED_BLOCK_TITLE: "Inavailable block",
