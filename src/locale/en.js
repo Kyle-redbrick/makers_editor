@@ -898,7 +898,7 @@ const en = {
   ID_WIZERROR_MESSAGE_NOT_DEFINED: "Use of undeclared symbol {symbol}",
   ID_WIZERROR_MESSAGE_NOT_FUNCTION: "{symbol}은 함수가 아님",
   ID_WIZERROR_MESSAGE_CANNOT_READ_PROPERTY: "프로퍼티 {symbol}가 존재하지 않음",
-  ID_WIZERROR_MESSAGE_CANNOT_READ_PROPERTIES: "Cannot read properties of undefined (reading 'setVelocityFromDegree')",
+  ID_WIZERROR_MESSAGE_CANNOT_READ_PROPERTIES: "Cannot read properties of undefined (reading '{apiName}')",
   ID_WIZERROR_MESSAGE_INSTANCEOF_RIGHT_NOT_OBJECT: "instanceof 뒤에는 object 타입이 와야함",
   ID_WIZERROR_LOCATION_FULL: "{sceneId}of {spriteId}\n(word number{column} of line number{line})",
   ID_WIZERROR_LOCATION_LINE_COLUMN: "({line}번 줄 {column}번째 문자)",

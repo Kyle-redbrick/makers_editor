@@ -120,9 +120,12 @@ class WizErrorStandard extends WizError {
         id: "ID_WIZERROR_MESSAGE_INSTANCEOF_RIGHT_NOT_OBJECT"
       });
     } else {
-      return formatMessage({
-        id: "ID_WIZERROR_MESSAGE_CANNOT_READ_PROPERTIES"
-      });
+      
+      const apiName = {"apiName":message.split("'")[1]}
+      return formatMessage(
+        { id: "ID_WIZERROR_MESSAGE_CANNOT_READ_PROPERTIES" },
+        apiName
+      );
       //return message;
     }
   }
