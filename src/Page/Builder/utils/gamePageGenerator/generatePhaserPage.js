@@ -18,8 +18,6 @@ import { injectIntl } from "react-intl";
  */
 export default async function(state, gameMeta, parserErrorHandler,intl) {
   // parse gameData into pId, gameName, state, screenMode
-
-  console.log(12121212121,intl.formatMessage({ id: "ID_GAMEPOPUP_ADD_LINK" }))
   
   const { pId, gameTitle, liveTest = false, isFromWizlab = false } = gameMeta;
   const systemVolume = isNaN(gameMeta.systemVolume)
