@@ -107,7 +107,8 @@ class Container extends Component {
     this.setState({ gameDoc: page });
   }
   handleParseError = (error, payload) => {
-    this.props.setIsPlaying(false);
+    //this.props.setIsPlaying(false);
+    setTimeout(() => this.props.setIsPlaying(false), 30);
     const wizError = WizError.create({
       error,
       payload,
