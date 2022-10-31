@@ -11,7 +11,6 @@ import { getColorTheme } from "../../utils/colorThemeUtil";
 
 function getLocalName(item) {
   const lang = localStorage.getItem("lang");
-  console.log(111111,lang)
   let title;
   try {
     title =

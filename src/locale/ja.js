@@ -1525,5 +1525,9 @@ const ja = {
 
   ID_SSO_ERROR_POPUP_TEXT: "アカウントの登録が必要です。所属の管理者にお問合せください。",
 
+  ID_PHASERPAGE_PLACEHOLDER: "値を入力してください。",
+  ID_PHASERPAGE_CANCEL: "取消し",
+  ID_PHASERPAGE_CONFIRM: "確認",
+
 };
 export default ja;

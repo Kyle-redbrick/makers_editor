@@ -101,7 +101,8 @@ class Container extends Component {
     const page = await generatePhaserPage(
       state,
       gameMeta,
-      this.handleParseError
+      this.handleParseError,
+      this.props.intl
     );
     this.setState({ gameDoc: page });
   }

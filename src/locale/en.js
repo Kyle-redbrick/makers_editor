@@ -1513,5 +1513,11 @@ const en = {
   ID_ABOUT_COURSES_SLIDE_WRAP_TITLE : "Courses",
 
   ID_SSO_ERROR_POPUP_TEXT: "There is no account associated with this email. Contact your administrator for assistance.",
+
+  
+  ID_PHASERPAGE_PLACEHOLDER: "Please Enter Value",
+  ID_PHASERPAGE_CANCEL: "Cancel",
+  ID_PHASERPAGE_CONFIRM: "Confirm",
+
 };
 export default en;

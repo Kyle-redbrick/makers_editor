@@ -1507,5 +1507,8 @@ const ko = {
 
   ID_SSO_ERROR_POPUP_TEXT: "Astro Coding Go에 등록되지 않은 계정입니다. 관리자에게 문의해주세요.",
 
+  ID_PHASERPAGE_PLACEHOLDER: "Please Enter Value",
+  ID_PHASERPAGE_CANCEL: "Cancel",
+  ID_PHASERPAGE_CONFIRM: "Confirm",
 };
 export default ko;

@@ -8,14 +8,19 @@ import AssetLibrary from "../assetLibrary";
 import Parser from "../parser";
 import obfuscate from "./obfuscate";
 import isDev from "./isDev";
+import { injectIntl } from "react-intl";
+
 
 /**
  * @param {Object} state - 프로젝트 스테이트
  * @param {Object} gameMeta - 게임 페이지 메타 데이터, { pId, gameTitle, liveTest = false, isFromWizlab = false, systemVolume }
  * @param {function} parserErrorHandler - 게임 코드 파싱 중 에러 발생 시 호출할 콜백
  */
-export default async function(state, gameMeta, parserErrorHandler) {
+export default async function(state, gameMeta, parserErrorHandler,intl) {
   // parse gameData into pId, gameName, state, screenMode
+
+  console.log(12121212121,intl.formatMessage({ id: "ID_GAMEPOPUP_ADD_LINK" }))
+  
   const { pId, gameTitle, liveTest = false, isFromWizlab = false } = gameMeta;
   const systemVolume = isNaN(gameMeta.systemVolume)
     ? 100
@@ -629,11 +634,11 @@ export default async function(state, gameMeta, parserErrorHandler) {
             type="text"
             class="InputBox--input"
             name="InputBox--input"
-            placeholder="Please Enter Value"
+            placeholder=${intl.formatMessage({ id: "ID_PHASERPAGE_PLACEHOLDER" })}
             onkeydown="onInputKeyDown();"
           />
-          <button class="InputBoxBtn InputBoxbtn--${screenMode} InputBoxBtn--cancel" onclick="onclickInputCancel();" >Cancel</button>
-          <button class="InputBoxBtn InputBoxbtn--${screenMode} InputBoxBtn--confirm" onclick="onclickInputConfirm();">Confirm</button>
+          <button class="InputBoxBtn InputBoxbtn--${screenMode} InputBoxBtn--cancel" onclick="onclickInputCancel();" >${intl.formatMessage({ id: "ID_PHASERPAGE_CANCEL" })}</button>
+          <button class="InputBoxBtn InputBoxbtn--${screenMode} InputBoxBtn--confirm" onclick="onclickInputConfirm();">${intl.formatMessage({ id: "ID_PHASERPAGE_CONFIRM" })}</button>
         </div>
     </div>
     ${loadingScreenElement}
