@@ -192,7 +192,7 @@ class Container extends Component {
         }
       };
       const gameMeta = { pId, gameTitle: name };
-      const doc = await generateGamePage(state, gameMeta);
+      const doc = await generateGamePage(state, gameMeta, null, this.props.intl);
       let url = await request.uploadPublished({ doc });
       url = await url.json();
       url = url.url;

@@ -8,7 +8,6 @@ import AssetLibrary from "../assetLibrary";
 import Parser from "../parser";
 import obfuscate from "./obfuscate";
 import isDev from "./isDev";
-import { injectIntl } from "react-intl";
 
 
 /**
@@ -16,7 +15,7 @@ import { injectIntl } from "react-intl";
  * @param {Object} gameMeta - 게임 페이지 메타 데이터, { pId, gameTitle, liveTest = false, isFromWizlab = false, systemVolume }
  * @param {function} parserErrorHandler - 게임 코드 파싱 중 에러 발생 시 호출할 콜백
  */
-export default async function(state, gameMeta, parserErrorHandler,intl) {
+export default async function(state, gameMeta, parserErrorHandler, intl) {
   // parse gameData into pId, gameName, state, screenMode
   
   const { pId, gameTitle, liveTest = false, isFromWizlab = false } = gameMeta;
