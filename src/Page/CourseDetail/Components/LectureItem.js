@@ -405,9 +405,9 @@ const LectureItem = ({ project, ...props }) => {
             <LearnAgain completed id={project.id} videoURL={project.resources.videoURL} isShowVideo={false} />
           ) : (
             project.progress.completed === 0 ? (
-              <LearnNow id={project.id} videoURL={project.resources.videoURL} isShowVideo={true} />
+              <LearnNow id={project.id} videoURL={URL.S3_DREAMCLASS + project.resources.videoURL} isShowVideo={true} />
             ) : (
-              <LearnContinue id={project.id} videoURL={project.resources.videoURL} isShowVideo={false} />
+              <LearnContinue id={project.id} videoURL={URL.S3_DREAMCLASS + project.resources.videoURL} isShowVideo={false} />
             )
           )}
           </>}
