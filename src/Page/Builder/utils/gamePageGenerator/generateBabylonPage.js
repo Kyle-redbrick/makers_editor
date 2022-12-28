@@ -81,7 +81,7 @@ async function generateBabylonPage(params) {
             type="text"
             class="InputBox--input"
             name="InputBox--input"
-            placeholder=${this.props.intl.formatMessage({ id: "ID_INPUT_PLACEHOLDER" })}
+            placeholder="${this.props.intl.formatMessage({ id: "ID_INPUT_PLACEHOLDER" })}"
             onkeydown="onInputKeyDown();"
           />
           <button class="InputBoxBtn InputBoxbtn--${screenMode} InputBoxBtn--cancel" onclick="onInputCancel();" >

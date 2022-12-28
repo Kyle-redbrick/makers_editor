@@ -106,7 +106,7 @@ export default {
 
   ID_OOBC_ALERT_ADDVAR_TITLE: "Add Variable",
   ID_OOBC_ALERT_ADDVAR_MESSAGE:
-    "*Only alphabet&number allowed.\n*First letter must be alphabet.",
+    "Only alphabetical and numeric values can be entered.\nThe first character must be an alphabet.",
   ID_OOBC_ALERT_ADDVAR_PLACEHOLDER: "Enter Variable Name",
   ID_OOBC_ALERT_ADDVAR_INVALIDNAME_MESSAGE: "Check variable naming rule again.",
   ID_OOBC_ALERT_ADDVAR_EXISTNAME_MESSAGE: "Already exist with that name",
@@ -116,10 +116,10 @@ export default {
     "Sprite with no animation\ncannot use animate blocks",
   ID_OOBC_ALERT_DELETELINE_TITLE: "Delete line",
   ID_OOBC_ALERT_DELETELINE_MESSAGE:
-    "You cannot restore your line.\nStill want to delete?",
+    "You cannot restore the contents in this line.\nDo you still wish to proceed?",
   ID_OOBC_ALERT_REPLACE_BLOCK_TITLE: "Block Replacement",
   ID_OOBC_ALERT_REPLACE_BLOCK_MESSAGE:
-    "The following blocks will be removed.\nStill want to switch blocks?",
+    "The current block will be removed.\nDo you still wish to change blocks?",
 
     ID_OOBC_CONSTANTEDITOR_KEY_MESSAGE: "Press any key of your choice",
 };
