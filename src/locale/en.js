@@ -1519,6 +1519,5 @@ const en = {
   ID_PHASERPAGE_PLACEHOLDER: "Please Enter Value",
   ID_PHASERPAGE_CANCEL: "Cancel",
   ID_PHASERPAGE_CONFIRM: "Confirm",
-
 };
 export default en;

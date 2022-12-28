@@ -631,7 +631,7 @@ export default async function(state, gameMeta, parserErrorHandler, intl) {
             type="text"
             class="InputBox--input"
             name="InputBox--input"
-            placeholder=${intl.formatMessage({ id: "ID_PHASERPAGE_PLACEHOLDER" })}
+            placeholder="${intl.formatMessage({ id: "ID_PHASERPAGE_PLACEHOLDER" })}"
             onkeydown="onInputKeyDown();"
           />
           <button class="InputBoxBtn InputBoxbtn--${screenMode} InputBoxBtn--cancel" onclick="onclickInputCancel();" >${intl.formatMessage({ id: "ID_PHASERPAGE_CANCEL" })}</button>
