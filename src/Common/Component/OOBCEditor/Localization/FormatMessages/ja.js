@@ -3,7 +3,7 @@ export default {
   ID_OOBC_GENERAL_CANCEL: "取消し",
   ID_OOBC_GENERAL_DELETE: "Delete",
   ID_OOBC_GENERAL_CLEAR: "削除",
-  ID_OOBC_GENERAL_REPLACE: "変更",
+  ID_OOBC_GENERAL_REPLACE: "へんこう",
   ID_OOBC_GENERAL_CLOSE: "Close",
 
   ID_OOBC_BLOCK_STRING_DEFAULT: "text",
@@ -97,29 +97,29 @@ export default {
 
   ID_OOBC_CONTEXTMENU_DELETE: "削除",
   ID_OOBC_CONTEXTMENU_COPY: "コピー",
-  ID_OOBC_CONTEXTMENU_PASTE: "貼り付け",
-  ID_OOBC_CONTEXTMENU_ADD: "追加",
+  ID_OOBC_CONTEXTMENU_PASTE: "はりつけ",
+  ID_OOBC_CONTEXTMENU_ADD: "ふやす",
   ID_OOBC_CONTEXTMENU_DISABLE: "無効",
   ID_OOBC_CONTEXTMENU_ENABLE: "有効",
   ID_OOBC_CONTEXTMENU_COMMENT: "Comment",
   ID_OOBC_CONTEXTMENU_DELETECOMMENT: "Delete Comment",
 
-  ID_OOBC_ALERT_ADDVAR_TITLE: "変数の追加",
+  ID_OOBC_ALERT_ADDVAR_TITLE: "変数をふやす",
   ID_OOBC_ALERT_ADDVAR_MESSAGE:
-    "*アルファベットと数字のみ可能です。\n*最初の文字はアルファベットである必要があります。",
-  ID_OOBC_ALERT_ADDVAR_PLACEHOLDER: "変数名を入力してください。",
+    "*アルファベットと数字のみ入力できます。\n*最初の文字はアルファベットである必要があります。",
+  ID_OOBC_ALERT_ADDVAR_PLACEHOLDER: "変数の名前を入力してください。",
   ID_OOBC_ALERT_ADDVAR_INVALIDNAME_MESSAGE: "Check variable naming rule again.",
   ID_OOBC_ALERT_ADDVAR_EXISTNAME_MESSAGE: "Already exist with that name",
   ID_OOBC_ALERT_DISABLED_BLOCK_TITLE: "Inavailable block",
   ID_OOBC_ALERT_DISABLED_BLOCK_MESSAGE: "This block is inavailable for there",
   ID_OOBC_ALERT_DISABLED_ANIMATEBLOCK_MESSAGE:
     "Sprite with no animation\ncannot use animate blocks",
-  ID_OOBC_ALERT_DELETELINE_TITLE: "行の削除",
+  ID_OOBC_ALERT_DELETELINE_TITLE: "行のさくじょ",
   ID_OOBC_ALERT_DELETELINE_MESSAGE:
-    "行を削除すると復元できません\n削除しますか？",
+    "行をさくじょすると元にもどせません。\nさくじょしますか？",
   ID_OOBC_ALERT_REPLACE_BLOCK_TITLE: "ブロック変更",
   ID_OOBC_ALERT_REPLACE_BLOCK_MESSAGE:
-    "ブロックを変更しますか。変更する\nと今のブロックは消えます。",
+    "ブロックをへんこうしますか。\nへんこうすると今のブロックは消えます。",
 
     ID_OOBC_CONSTANTEDITOR_KEY_MESSAGE: "キーボードのどれかのキーを一つ押して下さい",
 };

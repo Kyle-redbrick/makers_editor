@@ -26,7 +26,7 @@ class ApiLibrary {
         description: {
           ko: "steps만큼 움직이며 바라보는 방향으로 이동하기",
           en: "Move the value of \"steps\" in the direction the sprite is facing.",
-          ja: "向いている方向にsteps値移動する",
+          ja: "steps値だけ動いて、向いている方向に移動する",
             // zh: "zh" // temp to Translate
         },
         "params": [{
@@ -97,7 +97,7 @@ class ApiLibrary {
         description: {
           ko: "x,y 좌표로 움직이며 이동하기",
           en: `Move "x" towards the X-axis and "y" towards the Y-axis.`,
-          ja: "x軸方向にx値、Y軸方向にy値移動する"
+          ja: "x値だけx軸方向に、y値だけY軸方向に移動する"
         },
         "params": [{
           name: "x",
@@ -136,7 +136,7 @@ class ApiLibrary {
         "description2": {
           ko: "특정 스프라이트를 name 스프라이트의 좌표로 이동한다",
           en: "Moves the selected sprite to the position of a sprite specified in \"name\".",
-          ja: "特定のスプライトをnameスプライトの座標に移動する",
+          ja: "特定のスプライトがnameスプライトの座標に移動する",
         }
       },
       id: "moveToSprite",
@@ -170,7 +170,7 @@ class ApiLibrary {
         "description2": {
           ko: "스프라이트의 위치를 임의의 좌표로 움직이며 이동한다",
           en: "Moves the position of the sprite to random coordinates.",
-          ja: "スプライトの位置をランダムな座標に移動する"
+          ja: "スプライトの位置が任意の座標に動いて移動する"
         }
       },
       id: "moveToRandom",
@@ -207,7 +207,7 @@ class ApiLibrary {
         description: {
           ko: "steps만큼 바라보는 방향으로 위치를 설정하기",
           en: `Move sprite in the facing direction according to "steps".`,
-          ja: "スプライトが向いている方向にsteps値移動する"
+          ja: "steps値だけスプライトが向いている方向に移動する"
         },
         "params": [{
           name: "steps",
@@ -229,7 +229,7 @@ class ApiLibrary {
         description: {
           ko: "x좌표를 steps만큼 바꾸기",
           en: `Change the sprite's X-coordinate according to "steps".`,
-          ja: "スプライトのx座標をsteps値に変更する"
+          ja: "スプライトのx座標をsteps値だけ変更する"
         },
         "params": [{
           name: "steps",
@@ -251,7 +251,7 @@ class ApiLibrary {
         description: {
           ko: "y좌표를 steps만큼 바꾸기",
           en: `Change the sprite's Y-coordinate according to "steps".`,
-          ja: "スプライトのy座標をsteps値に変更する"
+          ja: "スプライトのy座標をsteps値だけ変更する"
         },
         "params": [{
           name: "steps",
@@ -337,7 +337,7 @@ class ApiLibrary {
         description: {
           ko: "임의의 좌표로 위치를 변경하기",
           en: "Move the sprite's position instantly to random coordinates.",
-          ja: "スプライトの位置を任意の座標に変更する"
+          ja: "スプライトの角度を設定する"
         },
         "description2": {
           ko: "스프라이트의 위치를 임의의 좌표로 변경한다",
@@ -389,7 +389,7 @@ class ApiLibrary {
         "description2": {
           ko: "degree만큼 시계방향으로 스프라이트의 각도를 회전한다",
           en: "Rotates the sprite's angle clockwise by \"degree\".",
-          ja: "スプライトを時計回りにdegree度回転する"
+          ja: "degree値だけ時計回りにスプライトの角度を回転する"
         }
       },
       id: "turn",
@@ -431,7 +431,7 @@ class ApiLibrary {
         "description2": {
           ko: "마우스 포인터를 따라 스프라이트가 회전한다. ",
           en: "The sprite will rotate to follow the cursor.",
-          ja: "スプライトはカーソルを追って回転する"
+          ja: "カーソルを追ってスプライトが回転する"
         }
       },
       id: "turnToMousePointer",
@@ -583,7 +583,7 @@ class ApiLibrary {
         "description2": {
           ko: "스프라이트에 message를 sec초 만큼 출력한다. 만약 sec가 없다면 말풍선이 사라지지 않는다",
           en: `If "sec" is not given a value, the speech bubble will not disappear.`,
-          ja: "sec秒間をスプライトのmessageとして出力する。sec値がない場合は吹き出しは消えない"
+          ja: "スプライトにmessageをsec秒間出力する。sec値がない場合は吹き出しは消えない"
         }
       },
       id: "say",
@@ -595,12 +595,12 @@ class ApiLibrary {
         description: {
           ko: "말하기를 멈춘다",
           en: "Removes the speech bubble.",
-          ja: "話すのを止める"
+          ja: "会話を止める"
         },
         "description2": {
           ko: "say를 통해 하던 말을 멈추고 말풍선을 없앤다",
           en: "The text displayed in the bubble will disappear along with the speech bubble itself.",
-          ja: "sayでの話すのを止めて吹き出しを消す"
+          ja: "sayでの会話を止めて吹き出しを消す"
         }
       },
       id: "stopSay",
@@ -664,7 +664,7 @@ class ApiLibrary {
         "description2": {
           ko: "스프라이트가 실행 중인 애니메이션이 있다면 그 이름을 가져온다",
           en: "Get the name of the animation the sprite is currently running.",
-          ja: "スプライトが現在実行中のアニメーションの名前を取得する"
+          ja: "スプライトが実行中のアニメーションがある場合、その名前を取得する"
         }
       },
       id: "getCurrentAnimation",
@@ -681,7 +681,7 @@ class ApiLibrary {
         "description2": {
           ko: "hide()와 함께 사용해야 동작을 확인할 수 있다.",
           en: "This action can be used in conjunction with hide().",
-          ja: "動作はhide()と一緒にでないと使用できない"
+          ja: "hide()と一緒に使用しないと動作を確認できない"
         }
       },
       id: "show",
@@ -715,7 +715,7 @@ class ApiLibrary {
         "description2": {
           ko: "scene안에 여러 스프라이트가 중첩되었을 때 이 함수를 호출한 스프라이트가 맨앞에 보이게 된다",
           en: "When there are multiple sprites in a scene, the sprite that called in this command will be shown in front.",
-          ja: "scene内に複数のスプライトがある時、この関数を呼び出したスプライトが最前面に表示される"
+          ja: "scene内に複数のスプライトが重なった時、この関数を呼び出したスプライトが最前面に見えるようになる"
         }
       },
       id: "bringToTop",
@@ -739,7 +739,7 @@ class ApiLibrary {
         "description2": {
           ko: "스프라이트의 사이즈가 입력한 비율만큼 커진다. (음수 비율을 입력했다면 작아진다.) ",
           en: "The default value is 100. If a number larger than 100 is entered, the sprite will get larger and if a number smaller than 100 is entered, the sprite will get smaller.",
-          ja: "入力された比率に基づいてスプライトのサイズを設定する。(マイナスの比率を入力すると小さくなる。)"
+          ja: "スプライトのサイズが入力した比率だけ大きくなる。(負数比率を入力すると小さくなる。)"
         }
       },
       id: "setSize",
@@ -752,7 +752,7 @@ class ApiLibrary {
         description: {
           ko: "크기 비율 더하기",
           en: "Increases the size of the sprite based on the numeric value in \"percent\".",
-          ja: "サイズの比率を増す"
+          ja: "サイズの比率を足す"
         },
         "params": [{
           name: "value",
@@ -763,7 +763,7 @@ class ApiLibrary {
         "description2": {
           ko: "입력한 비율만큼 스프라이트의 사이즈가 커진다. (음수 비율을 입력했다면 작아진다.)  ",
           en: "The default value is 1. If you type in 10, it will make the sprite increase it's size by 10 percent of its original size.",
-          ja: "入力された比率分スプライトのサイズを増す。(マイナスの比率を入力すると小さくなる。)"
+          ja: "入力した比率だけスプライトのサイズが大きくなる。(負数比率を入力すると小さくなる。)"
         }
       },
       id: "addSize",
@@ -832,7 +832,7 @@ class ApiLibrary {
         "description2": {
           ko: "텍스트상자 스프라이트의 메시지를 수정한다",
           en: "Edits the textbox message.",
-          ja: "テキストボックスのスプライトのメッセージを編集する"
+          ja: "テキストボックスのスプライトのメッセージを修正する"
         }
       },
       id: "setText",
@@ -902,7 +902,7 @@ class ApiLibrary {
         description: {
           ko: "문구 색상",
           en: "Set text color with the value of the color in \"color\".",
-          ja: "テキスト色を設定する"
+          ja: "テキストボックスのテキストを取得する"
         },
         "params": [{
           name: "color",
@@ -913,7 +913,7 @@ class ApiLibrary {
         "description2": {
           ko: "텍스트상자 스프라이트의 문구 색상을 변경한다",
           en: "Changes the text color of the textbox sprite.",
-          ja: "テキストボックスのスプライトのテキストの色を変更する"
+          ja: "テキストボックスのスプライトのテキスト色を変更する"
         }
       },
       id: "setTextColor",
@@ -925,12 +925,12 @@ class ApiLibrary {
         description: {
           ko: "문구 색상 무작위로 변경하기",
           en: "Sets the text to a random color.",
-          ja: "テキスト色をランダムに設定する"
+          ja: "テキスト色をランダムに変更する"
         },
         "description2": {
           ko: "텍스트상자 스프라이트의 문구 색상을 무작위로 변경한다",
           en: "Changes the text color of the textbox sprite to a random color.",
-          ja: "テキストボックスのスプライトのテキストの色をランダムな色に変更する"
+          ja: "テキストボックスのスプライトのテキスト色をランダムに変更する"
         }
       },
       id: "setRandomTextColor",
@@ -947,7 +947,7 @@ class ApiLibrary {
         "description2": {
           ko: "텍스트상자 스프라이트의 문구 색상값을 반환한다",
           en: "Returns the text color value of the textbox sprite.",
-          ja: "テキストボックスのスプライトのテキストの色の値を返す"
+          ja: "テキストボックスのスプライトのテキスト色値を返す"
         }
       },
       id: "getTextColor",
@@ -959,12 +959,12 @@ class ApiLibrary {
         description: {
           ko: "흔들기",
           en: "Shake",
-          ja: "揺れる"
+          ja: "シェイク"
         },
         "description2": {
           ko: "scene에 흔들리는 효과를 적용한다",
           en: "Applies a shake effect to the scene.",
-          ja: "sceneに揺れるエフェクトを適用する"
+          ja: "sceneにシェイクエフェクトを適用する"
         }
       },
       id: "shake",
@@ -976,12 +976,12 @@ class ApiLibrary {
         description: {
           ko: "번쩍임",
           en: "Flash",
-          ja: "フラッシュする"
+          ja: "フラッシュ"
         },
         "description2": {
           ko: "scene에 번쩍이는 효과를 적용한다",
           en: "Applies a flashing effect to the scene.",
-          ja: "sceneにフラッシュするエフェクトを適用する"
+          ja: "sceneにフラッシュエフェクトを適用する"
         }
       },
       id: "flash",
@@ -1026,7 +1026,7 @@ class ApiLibrary {
         description: {
           ko: "매 프레임마다 입력된 함수를 반복하여 호출하기",
           en: "Runs statements nested within the block each time the frame changes.",
-          ja: "各フレームで、入力された関数を呼び出す"
+          ja: "毎フレームごとに入力された関数を繰り返して呼び出す"
         },
         "params": [{
           name: "function",
@@ -1413,7 +1413,7 @@ class ApiLibrary {
         "description2": {
           ko: "secs초만큼 다음코드를 실행하지 않고 기다린다",
           en: "Wait \"secs\" seconds before executing the next statement.",
-          ja: "次のコードを実行せずにsecs秒待つ"
+          ja: "secs秒だけ次のコードを実行せずに待つ"
         }
       },
       id: "wait",
@@ -1437,7 +1437,7 @@ class ApiLibrary {
         "description2": {
           ko: "enabled가 true이면 스프라이트를 마우스나 터치로 드래그할 수 있다",
           en: "If \"enabled\" is set to true, the sprite can be dragged with the mouse.",
-          ja: "enabledがtrueの場合はスプライトをマウスやタッチパッドでドラッグすることができる"
+          ja: "enabledがtrueの場合はスプライトをマウスやタッチでドラッグすることができる"
         }
       },
       id: "setDraggable",
@@ -1454,7 +1454,7 @@ class ApiLibrary {
         "description2": {
           ko: "scene에서 스프라이트가 제거된다",
           en: "The sprite will be removed from the scene.",
-          ja: "sceneからスプライトは削除される"
+          ja: "sceneからスプライトを削除する"
         }
       },
       id: "kill",
@@ -1483,12 +1483,12 @@ class ApiLibrary {
         description: {
           ko: "복제하기",
           en: "Duplicate the sprite.",
-          ja: "複製する"
+          ja: "コピーする"
         },
         "description2": {
           ko: "해당 스프라이트가 복제되고 복제된 스프라이트를 반환한다",
           en: "Creates a copy of the sprite.",
-          ja: "選択したスプライトを複製し、複製されたスプライトを返す"
+          ja: "選択したスプライトをコピーし、コピーされたスプライトを返す"
         }
       },
       id: "clone",
@@ -1512,7 +1512,7 @@ class ApiLibrary {
         "description2": {
           ko: "chatbot의 대화창에 message를 출력할 수 있다",
           en: "You can output a \"message\" to the chatbot's chat window.",
-          ja: "chatbotのチャットウィンドウにmessageを出力することができる"
+          ja: "chatbotのメッセージボックスにmessageを出力することができる"
         }
       },
       id: "print",
@@ -1536,7 +1536,7 @@ class ApiLibrary {
         "description2": {
           ko: "입력박스가 나타나고 문자열 또는 숫자를 입력할 수 있다. [확인]을 누르면 입력된 값을 반환한다",
           en: "An input box appears, and you can enter a string or number. If you click [OK], the entered value is saved in the variable \"message\".",
-          ja: "入力ボックスが表示される。文字列または数字を入力することができる。「OK」を押すと入力された値が返される"
+          ja: "入力ボックスが表示されて文字列または数字を入力することができる。「確認」を押すと入力された値を返す"
         }
       },
       id: "input",
@@ -1596,7 +1596,7 @@ class ApiLibrary {
         "description2": {
           ko: "유저별로 가장 높은 점수 하나가 저장된다.",
           en: "The scores for each user will be saved.",
-          ja: "各ユーザーの最高スコアが保存される"
+          ja: "ユーザー別に最高スコア1つが保存される"
         }
       },
       id: "saveScore",
@@ -1611,12 +1611,12 @@ class ApiLibrary {
         description: {
           ko: "스프라이트를 클릭하고 있는지 여부",
           en: "Indicates if the sprite is being clicked.",
-          ja: "スプライトがクリックされているか"
+          ja: "スプライトをクリックしているかについて"
         },
         "description2": {
           ko: "스프라이트를 클릭하고 있는 중이면 true, 그렇지 않으면 false를 반환한다. ",
           en: "Returns the value \"true\" if the sprite is being clicked. If it's not, the value returned is \"false\".",
-          ja: "スプライトがクリックされているならtrue、そうでないならfalseを返す。"
+          ja: "スプライトをクリック中ならtrue、そうでないならfalseを返す。"
         }
       },
       id: "isClickedSprite",
@@ -1630,7 +1630,7 @@ class ApiLibrary {
         description: {
           ko: "특정키를 누르고 있는지 여부",
           en: "Indicates if the specified key is being pressed.",
-          ja: "特定のキーが押されているか"
+          ja: "特定のキーを押しているかについて"
         },
         "params": [{
           name: "key",
@@ -1639,7 +1639,7 @@ class ApiLibrary {
         "description2": {
           ko: "key를 누르고 있는 중이면 true, 그렇지 않으면 false를 반환한다",
           en: "Returns the value \"true\" if the key is being clicked. If it's not, the value returned is \"false\".",
-          ja: "キーが押されているならtrue、そうでないならfalseを返す"
+          ja: "キーを押している中ならtrue、そうでないならfalseを返す"
         }
       },
       id: "isPressedKey",
@@ -1651,12 +1651,12 @@ class ApiLibrary {
         description: {
           ko: "마우스를 클릭하고 있는지 여부",
           en: "Indicates if a mouse button is being clicked",
-          ja: "マウスボタンがクリックされているか"
+          ja: "マウスをクリックしているかについて"
         },
         "description2": {
           ko: "마우스를 클릭하고 있는 중이면 true, 그렇지 않으면 false를 반환한다",
           en: "Returns the value \"true\" if the mouse is being clicked. If it's not, the value returned is \"false\".",
-          ja: "マウスがクリックされているならtrue、そうでないならfalseを返す"
+          ja: "マウスをクリックしている中ならtrue、そうでないならfalseを返す"
         }
       },
       id: "isClickedMouse",
@@ -1683,7 +1683,7 @@ class ApiLibrary {
   }, {
     name: "ID_OPERATOR",
     api: [{
-      name: "+,-,*,/,%",
+      name: "=,+,-,*,/,%",
       tip: {
         description: {
           ko: "사칙연산",
@@ -1818,7 +1818,7 @@ class ApiLibrary {
         "description2": {
           ko: "num의 소수점 이하 첫째자리에서 반올림한 값을 반환한다",
           en: `Returns the value rounded to the first decimal place of "num".`,
-          ja: "numの小数点以下1桁まで四捨五入した値を返す"
+          ja: "numの小数点以下1桁から四捨五入した値を返す"
         }
       },
       id: "round",
@@ -1842,7 +1842,7 @@ class ApiLibrary {
         "description2": {
           ko: "num의 소수점 이하 첫째자리에서 올림한 값을 반환한다",
           en: `Returns the value rounded up to the first decimal place of "num".`,
-          ja: "numの小数点以下1桁まで切り上げた値を返す"
+          ja: "numの小数点以下1桁から切り上げた値を返す"
         }
       },
       id: "ceil",
@@ -1866,7 +1866,7 @@ class ApiLibrary {
         "description2": {
           ko: "num의 소수점 이하 첫째자리에서 버림한 값을 반환한다",
           en: "Returns the value rounded down to the first decimal place of \"num\".",
-          ja: "numの小数点以下1桁まで切り捨てた値を返す"
+          ja: "numの小数点以下1桁から切り捨てた値を返す"
         }
       },
       id: "floor",
@@ -1994,7 +1994,7 @@ class ApiLibrary {
         "description2": {
           ko: "enabled가 true이고 물리효과가 적용된 스프라이트가 움직이는 중에\n스크린의 끝에 닿으면 충돌하게 된다",
           en: `If the value of enabled is "true", the sprite will collide with the edge of the screen.`,
-          ja: "enabledがtrueで物理効果が適用されたスプライトがスクリーンの端に着いた時、衝突する。"
+          ja: "enabledがtrueで物理効果が適用されたスプライトが動いている時、スクリーンの端と接触すると衝突する"
         }
       },
       id: "setCollideScene",
@@ -2008,7 +2008,7 @@ class ApiLibrary {
         description: {
           ko: "특정 스프라이트와 충돌하게 설정하기",
           en: "Set the sprite to collide with a specific sprite.",
-          ja: "特定の一つのスプライトと衝突するように設定する"
+          ja: "特定のスプライトと衝突するように設定する"
         },
         "params": [{
           name: "targetName",
@@ -2033,7 +2033,7 @@ class ApiLibrary {
         description: {
           ko: "특정 스프라이트와 충돌하게 설정하기",
           en: "Set the sprite to collide with the specificied sprites in the array.",
-          ja: "特定の複数のスプライトと衝突するように設定する"
+          ja: "特定のスプライトと衝突するように設定する"
         },
         "params": [{
           name: "[targetName]",
@@ -2044,7 +2044,7 @@ class ApiLibrary {
         "description2": {
           ko: "[ ] 괄호 안에 입력한 스프라이트들과 닿았을 때 충돌하게 된다. 괄호 안에 입력할 때에는 스프라이트와 스프라이트 사이를 쉼표(,)로 분리해서 입력한다. ",
           en: `The sprite will collide with all the sprites entered in the array [ ]. Make sure to separate individual sprites in the square brackets [ ] with commas.`,
-          ja: "[ ]括弧の中に入力したスプライトと接触すると衝突する。括弧の中に入力する時は、スプライトとスプライトの間をコンマ(、)で分けて入力する。"
+          ja: "[ ]括弧の中に入力したスプライトと接触すると衝突する。括弧の中に入力する時は、スプライトとスプライトの間をコンマ(、)で分離して入力する。"
         }
       },
       id: "setCollision",
@@ -2085,7 +2085,7 @@ class ApiLibrary {
         description: {
           ko: "충돌했을 때의 움직임 설정",
           en: "Set the sprite to be movable or immovable upon collision.",
-          ja: "衝突した時の動きを設定する"
+          ja: "衝突した時の動きの設定"
         },
         "params": [{
           name: "enabled",
@@ -2096,7 +2096,7 @@ class ApiLibrary {
         "description2": {
           ko: "false일 경우 setCollision을 통해 충돌설정이 되었을 때 충돌은 하지만 충돌 후 튕겨나가지 않게 된다",
           en: `If it is set as false, the sprite will not move after being hit.`,
-          ja: "falseの場合、setCollisionで衝突設定されていると、衝突はするが、衝突後に弾むことはない"
+          ja: "falseの場合、setCollisionで衝突設定されていると、衝突はするが、衝突後に弾かれることはない"
         }
       },
       id: "setMovable",
@@ -2120,7 +2120,7 @@ class ApiLibrary {
         "description2": {
           ko: "질량을 설정한다. 다른 물리효과와 상호작용한다",
           en: "Sets the mass. Interacts with other physics effects.",
-          ja: "質量を設定する。他の物理効果と一緒に働く"
+          ja: "質量を設定する。他の物理効果と相互作用する"
         }
       },
       id: "setMass",
@@ -2155,7 +2155,7 @@ class ApiLibrary {
         description: {
           ko: "y축 방향 중력 설정하기",
           en: "Set the gravity of the Y-axis direction.",
-          ja: "y軸方向の重力を設定する"
+          ja: "y軸方向"
         },
         "params": [{
           name: "value",
@@ -2177,7 +2177,7 @@ class ApiLibrary {
         description: {
           ko: "x축 방향 속도 설정하기",
           en: "Set the velocity of the x-axis direction.",
-          ja: "x軸方向の速度を設定する"
+          ja: "y軸方向の速度を設定する"
         },
         "params": [{
           name: "value",
@@ -2232,7 +2232,7 @@ class ApiLibrary {
         description: {
           ko: "y축 방향 속도 가져오기",
           en: "Get the value for the Y-axis velocity.",
-          ja: "y軸方向の速度を取得する"
+          ja: "x軸方向の速度を取得する"
         }
       },
       id: "getVelocityY",
@@ -2245,7 +2245,7 @@ class ApiLibrary {
         description: {
           ko: "충돌했을 때 x축 튕기는 정도 설정하기",
           en: "Set the bounce force on the X-axis upon collision.",
-          ja: "衝突した時、x軸の弾む値を設定する"
+          ja: "衝突した時、x軸の弾かれる程度を設定する"
         },
         "params": [{
           name: "value",
@@ -2256,7 +2256,7 @@ class ApiLibrary {
         "description2": {
           ko: "다른 스프라이트와 충돌했을 때, 설정한 값만큼 반작용이 일어난다. 값이 1일 경우 작용하는 힘을 그대로 전달받게 된다",
           en: "The value in \"value\" will determine how big of a force the bounce in the X-axis will be. If the value is set to 1, the boucing force will be equal in magtitude to the force it hits the other object in.",
-          ja: "他のスプライトと衝突した時、設定値に基づいて反応する。値が1の場合、作用する力はそのまま伝わる"
+          ja: "他のスプライトと衝突した時、設定値だけ反作用が起こる。値が1の場合、作用する力はそのまま伝わる"
         }
       },
       id: "setBounceX",
@@ -2269,7 +2269,7 @@ class ApiLibrary {
         description: {
           ko: "충돌했을 때 y축 튕기는 정도 설정하기",
           en: "Set the bounce force on the Y-axis upon collision.",
-          ja: "衝突した時、y軸の弾む値を設定する"
+          ja: "衝突した時、y軸の弾かれる程度を設定する"
         },
         "params": [{
           name: "value",
@@ -2304,7 +2304,7 @@ class ApiLibrary {
         "description2": {
           ko: "x축에 대한 가속도를 설정한다. 다른 물리효과와 상호작용한다",
           en: "Sets the acceleration on the x-axis. Interacts with other physics effects.",
-          ja: "x軸に対する加速度を設定する。他の物理効果と一緒に働く"
+          ja: "x軸に対する加速度を設定する。他の物理効果と相互作用する"
         }
       },
       id: "setAccelerationX",
@@ -2340,7 +2340,7 @@ class ApiLibrary {
         description: {
           ko: "방향으로 속도 설정하기",
           en: "Set the velocity in a specified direction.",
-          ja: "異なった方向への速度を設定する"
+          ja: "方向への速度を設定する"
         },
         "params": [{
           name: "degree",
@@ -2361,7 +2361,7 @@ class ApiLibrary {
         "description2": {
           ko: "velocity x,y값을 방향에따라 설정한다. force가 0.5이고 maxSpeed가 100이면 적용되는 속도는 50이 된다.",
           en: "This sets up the X and Y-axis velocities based on the angle and force specified.",
-          ja: "x軸の速度とy軸の速度を方向に基づいて設定する。forceが0.5でmaxSpeedが100の場合は適用される速度は50になる。"
+          ja: "velocity x、y値を方向ごとに設定する。forceが0.5でmaxSpeedが100の場合は適用される速度は50になる。"
         }
       },
       id: "setVelocityFromDegree",
@@ -2373,7 +2373,7 @@ class ApiLibrary {
         description: {
           ko: "방향으로 가속도 설정하기",
           en: "Set the acceleration in a specified direction.",
-          ja: "異なった方向への加速度を設定する"
+          ja: "方向への加速度を設定する"
         },
         "params": [{
           name: "degree",
@@ -2448,7 +2448,7 @@ class ApiLibrary {
         "description2": {
           ko: "입력된 사운드 스프라이트를 처음부터 다시 재생한다. (반복 여부는 playSound 함수에서 설정된 값을 따른다.)",
           en: "Replays the \"name\" sound sprite from the beginning. (The value set in the playSound function decides whether it repeats.)",
-          ja: "入力されたサウンドスプライトを最初から再生する。(playSound関数で設定された値に従って繰り返す。)"
+          ja: "入力されたサウンドスプライトを最初から再生する。(繰り返しについてはplaySound関数で設定された値に従う。)"
         }
       },
       selection: "name",
@@ -2473,7 +2473,7 @@ class ApiLibrary {
         "description2": {
           ko: "입력된 사운드 스프라이트를 일시정지된 위치부터 다시 재생한다. (반복 여부는 playSound 함수에서 설정된 값을 따른다.)",
           en: "Replays the \"name\" sound sprite from where it was paused. (The value set in the playSound function decides whether it repeats.)",
-          ja: "入力されたサウンドスプライトを一時停止された位置から続けて再生する。(playSound関数で設定された値に従って繰り返す。)"
+          ja: "入力されたサウンドスプライトを一時停止された位置から続けて再生する。(繰り返しについてはplaySound関数で設定された値に従う。)"
         }
       },
       selection: "name",
@@ -2771,7 +2771,7 @@ class ApiLibrary {
         description: {
           ko: "펜의 색깔을 랜덤으로 설정하기",
           en: "Set the pen color to a random color.",
-          ja: "ペンの色をランダムな色に設定する"
+          ja: "ペンの色をランダムに設定する"
         }
       },
       id: "setRandomPenColor",
@@ -2795,7 +2795,7 @@ class ApiLibrary {
         description: {
           ko: "펜 두께를 size로 설정하기",
           en: "Set the thickness of the pen by entering a numerical value into \"size\".",
-          ja: "ペンの太さをsizeに設定する"
+          ja: "ペンの太さをsizeで設定する"
         },
         "params": [{
           name: "size",
@@ -2845,7 +2845,7 @@ class ApiLibrary {
         description: {
           ko: "사용했던 펜 내용 지우기",
           en: "Delete content produced by the pen.",
-          ja: "使用したペンの変更履歴を削除する"
+          ja: "使用したペンの履歴を削除する"
         }
       },
       id: "erasePen",
@@ -2864,7 +2864,7 @@ class ApiLibrary {
         },
         "description2": {
           ko: "(모바일 전용) 모바일 기기에서 진동이 울린다.",
-          ja: "(モバイル機器だけ)モバイル機器が振動する。"
+          ja: "(モバイル専用)モバイルデバイスが振動する。"
         }
       },
       id: "vibrate",
@@ -2881,7 +2881,7 @@ class ApiLibrary {
         },
         "description2": {
           ko: "(모바일 전용) 모바일 기기를 빠르게 흔들었을 때 호출된다.",
-          ja: "(モバイル機器だけ)モバイル機器を高速で振ると呼び出される。"
+          ja: "(モバイル専用)モバイルデバイスを高速で振ると呼び出される。"
         }
       },
       id: "onShake",
@@ -2909,7 +2909,7 @@ class ApiLibrary {
         }],
         "description2": {
           ko: "(모바일 전용) 모바일 기기를 기울였을 때 호출된다.",
-          ja: "(モバイル機器だけ)モバイル機器を傾けると呼び出される。"
+          ja: "(モバイル専用)モバイルデバイスを傾けると呼び出される。"
         }
       },
       id: "onGyro",
@@ -2925,7 +2925,7 @@ class ApiLibrary {
         },
         "description2": {
           ko: "(모바일 전용) 모바일 기기를 통해 음성 입력을 대기한다. 입력이 되면 onListening을 통해 입력된 음성값을 받는다.",
-          ja: "(モバイル機器だけ)モバイル機器で音声入力を待機する。入力されるとonListeningを通じて入力された音声値を取得する。"
+          ja: "(モバイル専用)モバイルデバイスで音声入力を待機する。入力されるとonListeningを通じて入力された音声値を取得する。"
         }
       },
       id: "startListening",
@@ -2948,7 +2948,7 @@ class ApiLibrary {
         }],
         "description2": {
           ko: "(모바일 전용) startListening을 통해 입력된 음성 값을 받는다.",
-          ja: "(モバイル機器だけ)startListeningを通じて入力された音声値を取得する"
+          ja: "(モバイル専用)startListeningを通じて入力された音声値を取得する"
         }
       },
       id: "onListening",
@@ -2970,7 +2970,7 @@ class ApiLibrary {
         }],
         "description2": {
           ko: "(모바일 전용) msg값을 모바일 기기를 통해 음성으로 출력한다.",
-          ja: "(モバイル機器だけ)msg値をモバイル機器を通じて音声で出力する。"
+          ja: "(モバイル専用)msg値をモバイルデバイスを通じて音声で出力する。"
         }
       },
       id: "speak",
@@ -2982,7 +2982,7 @@ class ApiLibrary {
         description: {
           ko: "모바일에서 카메라를 연다",
           en: "(Mobile device only) Opens the camera on the mobile device based on the value of \"facing\".",
-          ja: "モバイル機器のカメラを起動する"
+          ja: "モバイルでカメラを起動する"
         },
         "params": [{
           name: "facing",
@@ -2992,7 +2992,7 @@ class ApiLibrary {
         }],
         "description2": {
           ko: "(모바일 전용) facing값을 통해 카메라 방향을 선택한 후 모바일 기기에서 카메라를 연다.",
-          ja: "(モバイル機器だけ)facing値を通じてカメラの向きを選択した後、モバイルデ機器のカメラを起動する。"
+          ja: "(モバイル専用)facing値を通じてカメラの向きを選択した後、モバイルデバイスでカメラを起動する。"
         }
       },
       id: "openCamera",
@@ -3004,11 +3004,11 @@ class ApiLibrary {
         description: {
           ko: "모바일에서 카메라를 닫는다",
           en: "(Mobile device only) Closes the camera on the mobile device.",
-          ja: "モバイル機器のカメラを閉じる"
+          ja: "モバイルでカメラを閉じる"
         },
         "description2": {
           ko: "(모바일 전용) 모바일 기기에서 카메라를 닫는다.",
-          ja: "(モバイル機器だけ)モバイル機器のカメラを閉じる。"
+          ja: "(モバイル専用)モバイルデバイスでカメラを閉じる。"
         }
       },
       id: "closeCamera",
@@ -3024,7 +3024,7 @@ class ApiLibrary {
         },
         "description2": {
           ko: "(모바일 전용)모바일 기기에서 카메라 방향을 전환한다.",
-          ja: "(モバイル機器だけ)モバイル機器のカメラの向きを変える。"
+          ja: "(モバイル専用)モバイルデバイスでカメラの向きを変える。"
         }
       },
       id: "switchCamera",
@@ -3047,7 +3047,7 @@ class ApiLibrary {
         }],
         "description2": {
           ko: "(모바일 전용) 모바일 기기에서 카메라로 얼굴을 인식한후 인식한 얼굴에 대한 정보를 가져온다.",
-          ja: "(モバイル機器だけ)モバイルデ機器のカメラを認識した後、認識した顔に対する情報を取得する。"
+          ja: "(モバイル専用)モバイルデバイスでカメラを認識した後、認識した顔に対する情報を取得する。"
         }
       },
       id: "onFaceDetect",
@@ -3087,7 +3087,7 @@ class ApiLibrary {
         "description2": {
           ko: "name이라는 이름의 함수를 선언한다.",
           en: "Declares a variable named \"name\".",
-          ja: "nameという名前の関数を宣言する。"
+          ja: "nameという名前の変数を宣言する。"
         }
       },
       id: "var",
@@ -3105,7 +3105,7 @@ class ApiLibrary {
         "description2": {
           ko: "name이라는 이름의 함수를 선언한다.",
           en: "Declares a variable named \"name\".",
-          ja: "nameという名前の関数を宣言する。"
+          ja: "nameという名前の変数を宣言する。"
         }
       },
       id: "let",
@@ -3137,12 +3137,12 @@ class ApiLibrary {
         description: {
           ko: "전역 오브젝트",
           en: "Global object",
-          ja: "グローバルオブジェクト"
+          ja: "全域オブジェクト"
         },
         "description2": {
           ko: "앱 전체에서 사용 가능한 전역 오브젝트이다. scene이 달라도 같이 사용된다",
           en: "A global object can be used throughout the game. It is not restricted to the sprite or scene it was declared in.",
-          ja: "アプリ全体で使用できるグローバルオブジェクトである。Sceneが異なっても一使用できる"
+          ja: "アプリ全体で使用できる全域オブジェクトである。Sceneが異なっても一緒に使用できる"
         }
       },
       id: "global",
@@ -3160,7 +3160,7 @@ class ApiLibrary {
         "description2": {
           ko: "(퍼블리싱 앱 전용 기능)",
           en: "(Feature only for publishing apps)",
-          ja: "(アプリをパブリッシュするためだけの機能)"
+          ja: "(パブリッシング専用機能)"
         }
       },
       id: "server.data",
@@ -3196,7 +3196,7 @@ class ApiLibrary {
         "description2": {
           ko: "(퍼블리싱 앱 전용 기능)",
           en: "(Feature only for publishing apps)",
-          ja: "(アプリをパブリッシュするためだけの機能)"
+          ja: "(パブリッシング専用機能)"
         }
       },
       id: "server.load",
@@ -3209,12 +3209,12 @@ class ApiLibrary {
         description: {
           ko: "server.data 오브젝트를 서버에서 초기화한다",
           en: "Reset the server.data object in the server",
-          ja: "サーバーのserver dataオブジェクトを初期化する"
+          ja: "server dataオブジェクトをサーバーから初期化する"
         },
         "description2": {
           ko: "(퍼블리싱 앱 전용 기능)",
           en: "(Feature only for publishing apps)",
-          ja: "(アプリをパブリッシュするためだけの機能)"
+          ja: "(パブリッシング専用機能)"
         }
       },
       id: "server.reset",
