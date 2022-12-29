@@ -58,7 +58,7 @@
         description: {
           ko: "자유롭게 원하는 숫자를 입력해보세요.",
           en: "You can enter a different number to change the speed.",
-          ja: "自由に好きな数字を入力してください。",
+          ja: "好きな数字を入力してください。",
           zh: "请自由输入任意数字。",
           default: "자유롭게 원하는 숫자를 입력해보세요."
         }
@@ -68,7 +68,7 @@
           ko:
             "캐릭터가 장면아래로 떨어지나요? 다음 코드를 입력해서 화면밖으로 못나가게 만들어보세요.",
           en: "Does the character fall off screen? Enter the following code to prevent it from falling beyond the edge of the screen.",
-          ja: "キャラクターが画面外に落ちてしまいましたか？次のコードを入力して画面外に出ないようにしましょう。",
+          ja: "キャラクターが画面外にはみ出ましたか？次のコードを入力して画面外に出ないようにしてみましょう。",
           zh:
             "角色是不是总掉到场景外面去呢？请输入以下代码，让角色无法脱离界面吧。",
           default:
@@ -716,7 +716,7 @@ onFrame(function(){
     title: {
       ko: "튕기는 공 만들기",
       en: "Creating a Bouncing Ball",
-      ja: "弾むボールの作成",
+      ja: "弾んでいるボールの作成",
       zh: "让球来回反弹",
       default: "튕기는 공 만들기"
     },
@@ -754,7 +754,7 @@ setVelocityY(500)`
         title: {
           ko: "X, Y축 모두 부딪혔을 때 튕기게 설정합니다.",
           en: "Set it to bounce when hits the X and Y axes.",
-          ja: "X軸、もしくはY軸にぶつかった時に弾むように設定してください。",
+          ja: "X、Y軸両方向とぶつかった時に弾むように設定します。",
           zh: "请设置成碰到X轴跟Y轴时都能弹回。",
           default: "X, Y축 모두 부딪혔을 때 튕기게 설정합니다."
         },
