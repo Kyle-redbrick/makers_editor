@@ -1089,7 +1089,7 @@ const ja = {
   ID_BUILDER_CONFIRM_INFO: `이벤트 참여 및 퍼블리싱이 \n완료되었습니다.`,
   ID_WIZAPPDETAIL_SHARE_KAKAO: "카카오톡 공유",
   ID_WIZAPPDETAIL_SHARE_FACEBOOK: "Facebook共有",
-  ID_WIZAPPDETAIL_SHARE_COPY_LINK: "リンク共有",
+  ID_WIZAPPDETAIL_SHARE_COPY_LINK: "リンクシェア",
   ID_WIZAPPDETAIL_MAKER_COMMENT: "コメント",
   ID_WIZMATE_EGO_MSG: "안녕! 난 위즈메이트 에고야 :)",
   ID_LAYOUT_NOTI_PUBLISHED_COMMENT: `{targetUser}님이 {targetProject}앱에 댓글을 남겼습니다.`,
