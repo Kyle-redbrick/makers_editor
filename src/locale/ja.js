@@ -1074,7 +1074,7 @@ const ja = {
   ID_DREAM_REPORT_CANCLE_BUTTON: "取り消し",
   ID_DREAM_REPORT_CONFIRM_MSG: "申告が受け付けられました",
   ID_DREAM_REPORT_CONFIRM_BUTTON: "確認",
-  ID_DREAM_SLIDE_PLACEHOLDER: "슬라이드 내용이 없습니다.",
+  ID_DREAM_SLIDE_PLACEHOLDER: "呼び出し中です。少々お待ちください",
   ID_DREAM_HEADER_QUICK_LINK: "Quick link",
   ID_DREAM_HEADER_OOBC: "Challenge! Game maker!",
   ID_DREAM_HEADER_JS: "Developing instinct! Game producer.",
