@@ -112417,7 +112417,7 @@ Phaser.Video.prototype = {
 
     /**
      * On some mobile browsers you cannot play a video until the user has explicitly touched the video to allow it.
-     * Phaser handles this via the `setTouchLock` method. However if you have 3 different videos, maybe an "Intro", "Start" and "Game Over"
+     * Phaser handles this via the `setTouchLock` method. However if you have 3 different videos, maybe an "Intro", "Start" and "Find OT2"
      * split into three different Video objects, then you will need the user to touch-unlock every single one of them.
      *
      * You can avoid this by using just one Video object and simply changing the video source. Once a Video element is unlocked it remains
