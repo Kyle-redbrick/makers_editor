@@ -50,11 +50,13 @@
   text-align: right;
   display: flex;
   flex-direction: column;
+  flex:0 0 50%;
 
   img {
     width: 100%;
     display:block;
-    max-width: 570px;
+    max-width: 480px;
+    margin: 30px auto 0;
   }
 }
 
@@ -65,15 +67,6 @@
   text-align: center;
   margin-bottom: 40px;
   overflow: hidden;
-
-  &.scroll-action__img-wrap--secound {
-    img {
-      max-width:480px;
-      margin:0 auto;
-      position:relative;
-      top:30px;
-    }
-  }
 }
 
 .scroll-action__img-title {

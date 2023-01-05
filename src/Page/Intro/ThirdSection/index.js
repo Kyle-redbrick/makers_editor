@@ -5,6 +5,9 @@ import SwiperCore, { Pagination } from "swiper/core";
 import ImgVertical1 from "../../../Image/img-vertical-1.PNG";
 import ImgVertical2 from "../../../Image/img-vertical-2.PNG";
 import ImgVertical3 from "../../../Image/img-vertical-3.PNG";
+import ImgVerticalJa1 from "../../../Image/ImgVerticalJa1.png";
+import ImgVerticalJa2 from "../../../Image/ImgVerticalJa2.png"; 
+import ImgVerticalJa3 from "../../../Image/ImgVerticalJa3.png";
 import "swiper/swiper.scss";
 import "swiper/components/pagination/pagination.min.css";
 
@@ -13,6 +16,7 @@ import "./index.scss";
 function ThirdSection (props) {
   SwiperCore.use([Pagination]);
 
+  const lang = localStorage.getItem("lang"); 
   const array = [`<p class='third-section__slide-bullet'>${props.intl.formatMessage({id: "ID_INTRO_THIRD_SECTION_BUTTON_TEXT_1"})}</p>`, `<p className='third-section__slide-bullet'>${props.intl.formatMessage({id: "ID_INTRO_THIRD_SECTION_BUTTON_TEXT_2"})}</p>`, `<p className='third-section__slide-bullet'>${props.intl.formatMessage({id: "ID_INTRO_THIRD_SECTION_BUTTON_TEXT_3"})}</p>`]; 
 
   return (
@@ -43,16 +47,13 @@ function ThirdSection (props) {
           >
 
           <SwiperSlide>
-            {/* TODO 비디오 삽입 영역 */}
-            <img src={ImgVertical1} alt="Learn through 36 Mission" />
+            <img src={lang === "en" ? ImgVertical1 : ImgVerticalJa1 } alt="Learn through 36 Mission" />
           </SwiperSlide>
           <SwiperSlide>
-            {/* TODO 비디오 삽입 영역 */}
-            <img src={ImgVertical2} alt="Build your own games" />
+            <img src={lang === "en" ? ImgVertical2 : ImgVerticalJa2} alt="Build your own games" />
           </SwiperSlide>
           <SwiperSlide>
-            {/* TODO 비디오 삽입 영역 */}
-            <img src={ImgVertical3} alt="Share with your classmates" />
+            <img src={lang === "en" ? ImgVertical3 : ImgVerticalJa3} alt="Share with your classmates" />
           </SwiperSlide>
         </Swiper>
       </div>
