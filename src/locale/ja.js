@@ -1454,9 +1454,9 @@ const ja = {
   ID_ABOUT_HORIZONTAL_SLIDE_ITEM_CHILD_TITLE_2 : "「物理エンジン」について学び、アーケードゲームを作成します。",
   ID_ABOUT_HORIZONTAL_SLIDE_ITEM_TITLE_3 : "プラズマメルトダウン",
   ID_ABOUT_HORIZONTAL_SLIDE_ITEM_CHILD_TITLE_3 : "「ループ」について学び、巨大なプラズマを破壊します。",
-  ID_ABOUT_HORIZONTAL_SLIDE_ITEM_TITLE_4 : "ボボの秘密",
+  ID_ABOUT_HORIZONTAL_SLIDE_ITEM_TITLE_4 : "ボボのひみつ",
   ID_ABOUT_HORIZONTAL_SLIDE_ITEM_CHILD_TITLE_4 : "Javascriptを使用して「イベント」を実装し、脱出ゲームを作成します。",
-  ID_ABOUT_HORIZONTAL_SLIDE_ITEM_TITLE_5 : "危険な島",
+  ID_ABOUT_HORIZONTAL_SLIDE_ITEM_TITLE_5 : "海にうかぶごみの島",
   ID_ABOUT_HORIZONTAL_SLIDE_ITEM_CHILD_TITLE_5 : "「関数」について学び、チームアトムと一緒に汚染された海を掃除します。",
 
   ID_PLAY_RECENT_GAMES: "さいきん再生しました",

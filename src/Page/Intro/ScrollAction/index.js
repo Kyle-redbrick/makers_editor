@@ -2,15 +2,19 @@ import React from "react";
 import { FormattedMessage } from "react-intl";
 import IconCheck from "../../../Image/icon-scroll-check.svg";
 import IconDashboard from "../../../Image/icon-scroll-dashboard.svg";
-import ScrollImg from "../../../Image/img-scroll-1.png";
+import ScrollImg from "../../../Image/Img-scroll-1.png";
 import ScrollImg2 from "../../../Image/img-scroll-2.png";
-import ScrollImg3 from "../../../Image/img-scroll-3.png";
-import ScrollImg4 from "../../../Image/img-scroll-4.png";
+import ScrollImg3 from "../../../Image/Img-scroll-3.png";
+import ScrollImg4 from "../../../Image/Img-scroll-4.png";
+import ScrollImgJa1 from "../../../Image/Img-scroll-ja-1.png";
+import ScrollImgJa2 from "../../../Image/Img-scroll-ja-2.png";
+import ScrollImgJa3 from "../../../Image/Img-scroll-ja-3.png";
+import ScrollImgJa4 from "../../../Image/Img-scroll-ja-4.png";
 
 import "./index.scss"; 
 
 function ScrollAction () { 
-
+  const lang = localStorage.getItem("lang"); 
   return (
     <div className="scroll-action">
       <div className="scroll-action__wrap">
@@ -23,12 +27,12 @@ function ScrollAction () {
           <div className="scroll-action__img-wrap">
             <h3 className="scroll-action__img-title"><FormattedMessage id="ID_INTRO_SCROLL_ACTION_IMG_TITLE_1" /></h3>
             <p className="scroll-action__img-child-title"><FormattedMessage id="ID_INTRO_SCROLL_ACTION_IMG_CHILD_TITLE_1" /></p>
-            <img alt="self check"src={ScrollImg} />
+            <img alt="self check"src={lang === "en" ? ScrollImg : ScrollImgJa1} />
           </div>
           <div className="scroll-action__img-wrap scroll-action__img-wrap--secound ">
             <h3 className="scroll-action__img-title"><FormattedMessage id="ID_INTRO_SCROLL_ACTION_IMG_TITLE_2" /></h3>
             <p className="scroll-action__img-child-title"><FormattedMessage id="ID_INTRO_SCROLL_ACTION_IMG_CHILD_TITLE_2" /></p>
-            <img alt="dashboard"src={ScrollImg2} />
+            <img alt="dashboard"src={lang === "en" ? ScrollImg2 : ScrollImgJa2} />
           </div>
         </div>
       </div>
@@ -42,12 +46,12 @@ function ScrollAction () {
           <div className="scroll-action__img-wrap">
             <h3 className="scroll-action__img-title"><FormattedMessage id="ID_INTRO_SCROLL_ACTION_IMG_TITLE_3" /></h3>
             <p className="scroll-action__img-child-title"><FormattedMessage id="ID_INTRO_SCROLL_ACTION_IMG_CHILD_TITLE_3" /></p>
-            <img alt="code sorting feature"src={ScrollImg3} />
+            <img alt="code sorting feature"src={lang === "en" ? ScrollImg3 : ScrollImgJa3} />
           </div>
           <div className="scroll-action__img-wrap">
             <h3 className="scroll-action__img-title"><FormattedMessage id="ID_INTRO_SCROLL_ACTION_IMG_TITLE_4" /></h3>
             <p className="scroll-action__img-child-title"><FormattedMessage id="ID_INTRO_SCROLL_ACTION_IMG_CHILD_TITLE_4" /></p>
-            <img alt="API dictionary"src={ScrollImg4} />
+            <img alt="API dictionary"src={lang === "en" ? ScrollImg4 : ScrollImgJa4} />
           </div>
         </div>
       </div>
