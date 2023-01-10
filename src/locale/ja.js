@@ -1443,7 +1443,7 @@ const ja = {
   ID_ABOUT_CURRICULUM_CARD_TITLE_1 : "CSTA基準カリキュラム",
   ID_ABOUT_CURRICULUM_CARD_CONTENT_1 : "アメリカのCSTA(Computer Science Teacher Association)で制定した教育基準案に基づいて世界的なカリキュラムを導入したプログラミング教育を提供します。",
   ID_ABOUT_CURRICULUM_CARD_TITLE_2 : "統合型STEM教育",
-  ID_ABOUT_CURRICULUM_CARD_CONTENT_2 : "自然科学、生物、物理、技術、数学まで！Go Astro Boy Go!クリップと一緒に多様なSTEM概念を学び、思考力を育てることができます。",
+  ID_ABOUT_CURRICULUM_CARD_CONTENT_2 : "自然科学、生物、物理、技術、数学まで！クリップと一緒に多様なSTEM概念を学び、思考力を育てることができます。",
   ID_ABOUT_CURRICULUM_CARD_TITLE_3 : "UNのSDGs(Sustainable Development Goals) 連携",
   ID_ABOUT_CURRICULUM_CARD_CONTENT_3 : "プロジェクトと一緒にUNの17個の持続可能な開発目標の核心価値について学べることができます。",
 
@@ -1486,12 +1486,12 @@ const ja = {
   ID_ABOUT_INFORMATION_PROFILE_INNER_PARTNER_IDC : "IDC ASIA Co., Ltd. /iGroup Korea",
   ID_ABOUT_INFORMATION_PROFILE_INNER_PARTNER_IDC_ADDRESS : "www.igroupkorea.kr",
 
-  ID_ABOUT_TOP_BANNER_TITLE : "Astroによる実用的なコーディングレッスン",
+  ID_ABOUT_TOP_BANNER_TITLE : "実用的なコーディングレッスン",
   ID_ABOUT_TOP_BANNER_CHILD_TITLE : "学生と教師の両方のためのSW教育プラットフォーム！",
   ID_INTRO_TOP_BANNER_TITLE : "GO! GO! アトム と一緒に\nプログラミングを学ぼう",
   ID_INTRO_TOP_BANNER_CHILD_TITLE : "Astro Coding Go!（ACG）は世界中で愛されるキャラクター、アトムと一緒に\nCSTAの基準に基づいて制作されたK-12対象のプログラミング教育プラットフォームです",
 
-  ID_INTRO_CONTACT_1_INSTITUTION_NAME: "機関名",
+  ID_INTRO_CONTACT_1_INSTITUTION_NAME: "学校名/会社名/機関名",
   ID_INTRO_CONTACT_1_STUDENTS_COUNT: "受講生は何人を予想していますか？",
   ID_INTRO_CONTACT_1_NOTE: "お問い合わせ内容",
 
