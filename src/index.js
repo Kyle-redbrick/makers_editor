@@ -31,7 +31,7 @@ const getNavigatorLanguage = () => {
       break;
     case "astroboy-dev-en.wizclass.com":
     case "en.astro-coding-go.com":
-      lang = "ja"
+      lang = "en"
       break;
     default:
       lang = "en"
