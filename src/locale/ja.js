@@ -1436,7 +1436,7 @@ const ja = {
   ID_INTRO_EASY_ITEM_TITLE_2 : "先生はクラス別に学習の進み具合に\n合わせてミッションを割り当て、\n授業を行います。",
   ID_INTRO_EASY_ITEM_TITLE_3 : "出席と学習の進み具合を一か所で管理します。",
 
-  ID_ABOUT_INTRO_TITLE: "Go Astro Boy Go！チームアトムと一緒に学ぶプログラミング教室",
+  ID_ABOUT_INTRO_TITLE: "チームアトムと一緒に学ぶプログラミング教室",
   ID_ABOUT_INTRO_CHILD_TITLE: "アトム、アトニャン、スズ。世界各地の「ミッション」に向かってチームアトム出動！",
 
   ID_ABOUT_CURRICULUM_TITLE : "プレミアムのカリキュラム",
