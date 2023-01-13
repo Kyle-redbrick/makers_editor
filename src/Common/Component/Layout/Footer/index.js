@@ -74,16 +74,20 @@ class Footer extends Component {
             ))}
           </div>
           <div className="Footer--Inner__info-row">
-            <div className="Agreement Info--Copy">
-              <FormattedMessage id="ID_HOME_COPY_INFO" />
+            <div className="Footer--Inner__copyRight_inner">
+              <div className="Agreement Info--Copy">
+                <FormattedMessage id="ID_HOME_COPY_INFO" />
+              </div>
+
+              <div className="Info-email">
+                Email: acg@mangosteems.com
+              </div>
+              <img className="Logo" src={logo_gray} alt="logo" />
             </div>
+            
             <div className="Agreement Info-email">
               ©Tezuka Productions
             </div>
-            <div className="Info-email">
-              Email: acg@mangosteems.com
-            </div>
-            <img className="Logo" src={logo_gray} alt="logo" />
           </div>
         </div>
       </div>

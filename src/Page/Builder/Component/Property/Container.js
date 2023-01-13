@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useState, useCallback } from "react";
 import { connect } from "react-redux";
 import AssetLibrary from "../../utils/assetLibrary";
 import RndWrapper from "../../utils/RndWrapper";
@@ -217,6 +217,7 @@ class Container extends Component {
     if (!isOn) {
       return <div />;
     }
+
     return (
       <RndWrapper
         id="property"

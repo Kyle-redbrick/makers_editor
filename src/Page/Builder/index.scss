@@ -84,7 +84,7 @@ p {
   }
   .Content_Main {
     position: relative;
-    width: 100%;
+    width: calc(100% - 200px);
     height: 100%;
   }
   .Content_Main:after {
@@ -136,5 +136,16 @@ p {
 .ocpView {
   .Content_Main {
     display: flex;
+  }
+}
+
+.__react_component_tooltip {
+  max-width: 110px;
+  word-break: break-all;
+  padding: 8px 10px;
+  text-align: center;
+
+  &.left {
+    max-width: 60px;
   }
 }

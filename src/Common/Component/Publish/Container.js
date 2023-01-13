@@ -393,7 +393,7 @@ class Container extends Component {
           descriptionValidation={descriptionValidation}
         />
 
-        <ReactToolTip multiline={true} className="publish__tooltip" />
+        <ReactToolTip  multiline={true} className="publish__tooltip" />
       </div>
     );
   }

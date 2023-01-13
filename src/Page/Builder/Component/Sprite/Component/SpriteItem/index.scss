@@ -17,7 +17,7 @@
     cursor: pointer;
     position: absolute;
     top: 5px;
-    right: 21px;
+    right: 5px;
     img {
       display: block;
       width: 12px;
@@ -53,12 +53,10 @@
   }
   .SpriteItemName {
     text-align: center;
-    width: 90%;
-    overflow: hidden;
-    text-overflow: ellipsis;
     font-size: 12px;
     letter-spacing: -0.26px;
     color: var(--W_Gray03);
-    margin: 6px 0;
+    margin: 6px 10px;
+    word-break: break-all;
   }
 }

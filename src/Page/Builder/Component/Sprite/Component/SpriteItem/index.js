@@ -35,6 +35,24 @@ class SpriteItem extends Component {
             }}
           >
             <img className={thumbClassName} src={thumb} alt="thumb" />
+
+            {isLocked ? (
+            <div className="SpriteItemLock">
+              <img src={lockImg} alt="sprite lock" />
+            </div>
+            ) : (
+              isSelected && (
+                <div
+                  onClick={e => {
+                    e.preventDefault();
+                    handleRemoveSprite(spriteName);
+                  }}
+                  className="SpriteItemRemove"
+                >
+                  <img src={removeImg} alt="sprite remove" />
+                </div>
+              )
+            )}
           </div>
         </ButtonIndicator>
         <div
@@ -43,23 +61,6 @@ class SpriteItem extends Component {
         >
           {spriteName}
         </div>
-        {isLocked ? (
-          <div className="SpriteItemLock">
-            <img src={lockImg} alt="sprite lock" />
-          </div>
-        ) : (
-          isSelected && (
-            <div
-              onClick={e => {
-                e.preventDefault();
-                handleRemoveSprite(spriteName);
-              }}
-              className="SpriteItemRemove"
-            >
-              <img src={removeImg} alt="sprite remove" />
-            </div>
-          )
-        )}
       </div>
     );
   }

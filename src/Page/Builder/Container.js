@@ -84,7 +84,8 @@ class Container extends Component {
       popupStates,
       popupZIndexes,
       currentTutorial: undefined,
-      videoclassRef: undefined
+      videoclassRef: undefined,
+      isTooltipPositionLeft: false,
     };
 
     switch (this.state.pageType) {
@@ -762,7 +763,8 @@ class Container extends Component {
       popupZIndexes,
       currentTutorial,
       isFreeTrial,
-      videoclassRef
+      videoclassRef,
+      isTooltipPositionLeft
     } = this.state;
     const { pId } = this.state.params;
     const {
@@ -775,6 +777,20 @@ class Container extends Component {
       showModal,
       setVideoclassRef
     } = this;
+
+    const calculateNewPosition = pos => {
+      if(pos.left <= 0)  {
+        !isTooltipPositionLeft && this.setState({ isTooltipPositionLeft : true})
+      } else {
+        isTooltipPositionLeft && this.setState({ isTooltipPositionLeft : false})
+      }
+      
+      const newPosition = {
+        top: pos.top,
+        left: pos.left <= 0 ? 0 : pos.left,
+      };
+      return newPosition;
+    };
 
     return (
       <DndProvider backend={HTML5Backend}>
@@ -810,6 +826,8 @@ class Container extends Component {
           setVideoclassRef={setVideoclassRef}
           email={email}
           name={name}
+          calculateNewPosition={calculateNewPosition}
+          isTooltipPositionLeft={isTooltipPositionLeft}
         />
       </DndProvider>
     );

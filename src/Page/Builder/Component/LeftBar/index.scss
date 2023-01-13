@@ -5,6 +5,8 @@
     flex-direction: row;
     position: relative;
     z-index: 2;
+    width: 100%;
+    max-width: 200px;
   }
   .LeftBarButtons {
     border-right: 1px solid var(--W_Gray01);
@@ -12,7 +14,9 @@
     // padding-right: 10px;
     display: flex;
     flex-direction: column;
-    width: 60px;
+    width: 100%;
+    max-width: 60px;
+    flex: 0 0 60px;
     &.hidden {
       display: none;
     }
@@ -57,6 +61,8 @@
   .LeftBarView {
     background: var(--W_White);
     border-right: 1px solid var(--W_Gray01);
-    width: auto;
+    width: 100%;
+    max-width: 140px;
+    flex: 0 0 140px;
   }
 }

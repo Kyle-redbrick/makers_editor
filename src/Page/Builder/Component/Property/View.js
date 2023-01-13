@@ -28,7 +28,9 @@ export default function View(props) {
     handleLockToggle,
     handleCopySprite,
     handleRemoveSprite,
-    zIndex
+    zIndex,
+    value,
+    onChange
   } = props;
   const colorTheme = getColorTheme();
   if (!sprite) {

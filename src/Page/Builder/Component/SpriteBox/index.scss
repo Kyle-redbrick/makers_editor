@@ -36,11 +36,11 @@
     // width: 100%;
   }
   .SpriteBoxContentLeft {
-    width: 140px;
+    width: 170px;
     border-right: 1px solid var(--W_Gray01);
   }
   .SpriteBoxContentRight {
-    width: calc(100% - 140px);
+    width: calc(100% - 170px);
     overflow: auto;
     padding-left: 16px;
   }

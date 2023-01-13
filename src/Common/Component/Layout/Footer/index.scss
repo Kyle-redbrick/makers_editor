@@ -17,6 +17,11 @@
   .Footer--Inner__term-row, .Footer--Inner__info-row {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .Footer--Inner__info-row {
+    justify-content: space-between;
+    margin-top:10px;
   }
   .Logo {
     position: absolute;
@@ -47,12 +52,19 @@
     &::after {
       content: '';
       position: absolute;
-      top: 55%;
+      top: 50%;
       right: -12px;
       transform: translateY(-50%);
       width: 1px;
       height: 12px;
       background: #808080;
+    }
+
+    &.Info-email {
+      margin-right:0;
+      &:after {
+        display: none;
+      }
     }
   }
 
@@ -63,6 +75,12 @@
 
   .Logo {
     display: none;
+  }
+
+  .Footer--Inner__copyRight_inner {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
   }
   
 
@@ -81,7 +99,7 @@
       display: none;
     }
     .Info--Copy {
-      margin: 10px 0;
+      margin-right:20px;
     }
     .Info--Service-time {
       white-space: pre-wrap;

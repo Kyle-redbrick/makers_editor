@@ -68,7 +68,9 @@ export default function(props) {
     handleChangeZIndex,
     currentTutorial,
     email,
-    name
+    name,
+    calculateNewPosition,
+    isTooltipPositionLeft
   } = props;
 
   const liveProps = {
@@ -292,7 +294,7 @@ export default function(props) {
             />
           )}
           <ToastContainer autoClose={2000} />
-          <ReactToolTip multiline={true} />
+          <ReactToolTip className={isTooltipPositionLeft ? "left" : ""} multiline={true} place="bottom" effect="solid" overridePosition={calculateNewPosition} />
         </div>
       );
     }
