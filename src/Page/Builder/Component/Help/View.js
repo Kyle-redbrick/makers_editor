@@ -38,7 +38,7 @@ export default function(props) {
         "ko" : "다음",
         "ja" : "次へ",
         "zh" : "下一页",
-        "en" : "next"
+        "en" : "Next"
       },
       "skip" : {
         "ko" : "스킵하기",

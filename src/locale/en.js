@@ -163,7 +163,7 @@ const en = {
   ID_INTRO_ASTRO_CODING_TITLE: "Introducing ACG!",
   ID_INTRO_ASTRO_CODING_DETAIL: "Go on an adventure as a member of Team Astro! Try different coding projects with Astro. Astro Coding go! is structured to help students learn coding naturally through interesting stories in a project-based curriculum. Build basic coding foundations with block coding and develop professional skills with JavaScript. From the North Pole, desert, sea, and to space! We invite you to explore all over the world.",
   ID_INTRO_ASTRO_BLOCK_TITLE: "Astro Coding Go - Block Coding",
-  ID_INTRO_BLOCKCODING_ELEMENTARY: "Courses for students new to coding.\nLearn to code by creating simple games with block coding.",
+  ID_INTRO_BLOCKCODING_ELEMENTARY: "Courses for students new to coding.\nLearn to code by creating simple games using block coding concepts",
   ID_INTRO_BLOCKCODING_BASIC: "This course teaches basic programming and algorithm principles with block coding. Try different kinds of projects, such as avoiding obstacles and platformer games.",
   ID_INTRO_BLOCKCODING_ADVANCED: "This block coding course teaches advanced programming concepts. Use essential CS concepts such as conditional statement, loop statement, and duplication to create the project.",
   ID_INTRO_ASTRO_JAVASCRIPT_TITLE: "Astro Coding Go - Javascript Coding",
@@ -1367,7 +1367,7 @@ const en = {
   ID_INTRO_INTRODUCE_AREA_CONTENT_TITLE_4: "Patented Object-Oriented Block Coding (OOBC) Technology.",
   ID_INTRO_INTRODUCE_AREA_CONTENT_CHILD_TITLE_1: "After learning block coding or JavaScript (JS) languages through ACG's courses,\nstudents are able to create their own games using Team Astro characters with the Builder tool.",
   ID_INTRO_INTRODUCE_AREA_CONTENT_CHILD_TITLE_2: "Instructors are able to create classes and select which students to include in each.\nACG Courses and missions can be assigned to each class, and are made accessible to only those students.\nInstructors are also able to monitor the progress of each individual student.",
-  ID_INTRO_INTRODUCE_AREA_CONTENT_CHILD_TITLE_3: `By following the steps to learn and apply various coding concepts, students ultimately make a Team Astro game with the completion of each Mission.\nFor example, "variables" are applied to make a platform game, and "conditional statements" to build a game to stop a runaway train.\nAfter learning from the course missions, students may use the Builder feature to build their own games.`,
+  ID_INTRO_INTRODUCE_AREA_CONTENT_CHILD_TITLE_3: `By following steps to learn and apply various coding concepts, students ultimately make a Team Astro game with the completion of each mission.\nFor example, "variables" are applied to make a platform game, and "conditional statements" to build a game to stop a runaway train.\nAfter learning from the course missions, students may use the Builder feature to build their own games.`,
   ID_INTRO_INTRODUCE_AREA_CONTENT_CHILD_TITLE_4: "Unlike other block coding languages, ACG's patented OOBC is unique in its sentence-like structure, familiarizing students with the grammar and syntax of text coding.\nThis in turn helps them transition to learn JavaScript and other coding languages.",
 
   ID_INTRO_CONTACT_1_INSTITUTION_NAME: "School / Company / Institution name",
@@ -1485,7 +1485,7 @@ const en = {
   ID_ABOUT_INFORMATION_TECHNICAL : "Technical Specifications",
   ID_ABOUT_INFORMATION_PROFILE : "Company Profile",
   ID_ABOUT_INFORMATION_TECHNICAL_INNER : "Hardware : Desktop/laptop/tablet\nResolution : Minimum 1280 × 800\nOS : Windows 10 / MacOS 10.14 or higher\nBrowser :  This product is optimized for Google Chrome\nInternet connection : Minimum 30Mbps",
-  ID_ABOUT_INFORMATION_PROFILE_INNER : "MANGOSTEEMS PTE. LTD..",
+  ID_ABOUT_INFORMATION_PROFILE_INNER : "MANGOSTEEMS PTE. LTD.",
   ID_ABOUT_INFORMATION_PROFILE_INNER_FOUNDED : "Founded : 2018",
   ID_ABOUT_INFORMATION_PROFILE_INNER_ADDRESS : "Address : 31 Kaki Bukit Road 3 #06-07 Techlink Singapore (417818)",
   ID_ABOUT_INFORMATION_PROFILE_INNER_ADDRESS_SECOND_LINE : "www.mangosteems.com",
@@ -1500,7 +1500,7 @@ const en = {
   ID_ABOUT_TOP_BANNER_TITLE : "Practical Coding Exercises",
   ID_ABOUT_TOP_BANNER_CHILD_TITLE : "Optimized platform for students and instructors",
 
-  ID_INTRO_TOP_BANNER_TITLE : "Learn to code with Go Astro Boy Go!",
+  ID_INTRO_TOP_BANNER_TITLE : "Learn to Code with Go Astro Boy Go!",
   ID_INTRO_TOP_BANNER_CHILD_TITLE : "Astro Coding Go! (ACG) is a K-12 coding education platform\naligned to CSTA standards",
 
   ID_ABOUT_CHARACTER_BOY_TITLE : "Astro Boy",
