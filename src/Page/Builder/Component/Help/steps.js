@@ -47,7 +47,7 @@ export default [
     type: "sub",
     title: "코딩의 가장 기본! 코드입력란",
     title_localized: {
-      en: "Code Editor, where the magic happens!",
+      en: "Code Editor",
       ja: "エディターでプログラミング開始！",
       zh: "编程的基础！输入代码是什么？"
     },
@@ -75,7 +75,7 @@ export default [
     type: "sub",
     title: "스프라이트란?",
     title_localized: {
-      en: "What is a sprite?",
+      en: "What is a Sprite?",
       ja: "スプライトとは？",
       zh: "角色是什么？"
     },
@@ -100,7 +100,7 @@ export default [
     type: "sub",
     title: "스프라이트를 추가해보자!",
     title_localized: {
-      en: "Add sprites!",
+      en: "Add Sprites!",
       ja: "スプライトを追加してみよう！",
       zh: "让我们来添加角色吧！"
     },
@@ -125,7 +125,7 @@ export default [
     type: "sub",
     title: "스프라이트들을 조종해봐!",
     title_localized: {
-      en: "Apply commands to the sprites!",
+      en: "Game Preview Screen",
       ja: "スプライトを操作してみよう！",
       zh: "让我们操控角色吧！"
     },
@@ -151,7 +151,7 @@ export default [
     type: "sub",
     title: "실행 버튼으로 창작한걸 실행해봐!",
     title_localized: {
-      en: "Use the play button to check what you have built!",
+      en: "Run the Game",
       ja: "実行ボタンで作ったゲームを実行してみよう！",
       zh: "使用运行按钮，运行一下已创作的作品吧！"
     },
@@ -174,13 +174,13 @@ export default [
     type: "sub",
     title: "궁금한 점이 있다면?",
     title_localized: {
-      en: "Need help to find commands?",
+      en: "Need Some Guidance?",
       ja: "必要なコマンドがあればこちら！",
       zh: "如果有什么问题时"
     },
     subtitle: "동영상, API 목록, 채팅으로 궁금한게 있으면 꼭 클릭해봐요!",
     subtitle_localized: {
-      en: "You can find some helpful tips to code some features by pressing the lightbulb button. If you forget the specific name of a command, you can search for it in the API list by clicking the button below!",
+      en: "You can find some helpful tips to code some features by pressing the lightbulb button. If you forget the specific name of a command, you can search for it in the API list by clicking the <> button!",
       ja: "動画、APIリスト、チャットで気になるものがあればかぜひクリックしてみてね！",
       zh: "有什么问题时一定要点击视频、API目录、聊天窗口来解决疑问哦！",
     },
@@ -200,7 +200,7 @@ export default [
     type: "sub",
     title: "게임 완성후에 퍼블리싱까지!",
     title_localized: {
-      en: "Create a game and publish it!",
+      en: "Save the game and publish it!",
       ja: "ゲームを完成してパブリッシングまで！",
       zh: "从游戏完成再到发布！"
     },
@@ -237,7 +237,7 @@ export default [
     },
     activeButtonTitle: "창작 시작하기",
     activeButtonTitle_localized: {
-      en: "Start building",
+      en: "Start Building",
       ja: "ゲーム作りを始める",
       zh: "开始创作",
     },

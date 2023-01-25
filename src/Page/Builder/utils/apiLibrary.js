@@ -53,7 +53,7 @@ class ApiLibrary {
         description: {
           ko: "x좌표를 steps만큼 움직이며 이동하기",
           en: `Move "steps" towards the X-axis.`,
-          ja: "x軸方向にsteps値だけ動いて移動する"
+          ja: "x軸（じく）方向にsteps値だけ動いて移動する"
         },
         "params": [{
           name: "steps",
@@ -75,7 +75,7 @@ class ApiLibrary {
         description: {
           ko: "y좌표를 steps만큼 움직이며 이동하기",
           en: `Move "steps" towards the Y-axis.`,
-          ja: "y軸方向にsteps値だけ動いて移動する"
+          ja: "y軸（じく）方向にsteps値だけ動いて移動する"
         },
         "params": [{
           name: "steps",
@@ -273,7 +273,7 @@ class ApiLibrary {
         description: {
           ko: "위치 변경하기",
           en: `Replace the sprite's X and Y coordinates with "x,y".`,
-          ja: "スプライトのX、Y軸の座標をx、yに変更する"
+          ja: "スプライトのX、Y軸（じく）の座標をx、yに変更する"
         },
         "params": [{
           name: "x",
@@ -487,7 +487,7 @@ class ApiLibrary {
         description: {
           ko: "x좌표",
           en: "Get the sprite's X-coordinate value.",
-          ja: "スプライトのx座標値を取得する"
+          ja: "スプライトのx座標（ざひょう）値を取得する"
         },
         "description2": {
           ko: "스프라이트의 x좌표 값을 반환한다"
@@ -502,7 +502,7 @@ class ApiLibrary {
         description: {
           ko: "y좌표",
           en: "Get the sprite's Y-coordinate value.",
-          ja: "スプライトのy座標値を取得する"
+          ja: "スプライトのy座標（ざひょう）値を取得する"
         },
         "description2": {
           ko: "스프라이트의 y좌표 값을 반환한다"
@@ -517,7 +517,7 @@ class ApiLibrary {
         description: {
           ko: "마우스 x좌표",
           en: "Get the cursor's X-coordinate value.",
-          ja: "カーソルのx座標値を取得する"
+          ja: "カーソルのx座標（ざひょう）値を取得する"
         },
         "description2": {
           ko: "마우스 포인터의 x좌표 값을 반환한다"
@@ -532,7 +532,7 @@ class ApiLibrary {
         description: {
           ko: "마우스 y좌표",
           en: "Get the cursor's Y-coordinate value.",
-          ja: "カーソルのy座標値を取得する"
+          ja: "カーソルのy座標（ざひょう）値を取得する"
         },
         "description2": {
           ko: "마우스 포인터의 y좌표 값을 반환한다"
@@ -675,7 +675,7 @@ class ApiLibrary {
       tip: {
         description: {
           ko: "보이기",
-          en: "Displays an object specified in the ().",
+          en: "This action can be used in conjunction with hide().",
           ja: "見せる"
         },
         "description2": {
@@ -692,7 +692,7 @@ class ApiLibrary {
       tip: {
         description: {
           ko: "숨기기",
-          en: "Hides an object specified in the ().",
+          en: "This action is used in conjuction with show().",
           ja: "隠す"
         },
         "description2": {
@@ -873,7 +873,7 @@ class ApiLibrary {
         "description2": {
           ko: "텍스트상자 스프라이트의 메시지를 모두 지운다",
           en: "Clears all text in the textbox sprite.",
-          ja: "テキストボックスのスプライトのメッセージをすべて削除する"
+          ja: "テキストボックスのスプライトのメッセージをすべて削除（さくじょ）する"
         }
       },
       id: "clearText",
@@ -1269,7 +1269,7 @@ class ApiLibrary {
       tip: {
         description: {
           ko: "배열 속 스프라이트들과 만났을 때 입력된 함수 호출하기",
-          en: "Runs the nested statements when coming into contact with the sprites in an array specified in the square brackets of the command.",
+          en: "Runs the nested statements when the sprite first comes into contact with the specified sprite in the 'name' section of the command.",
           ja: "配列内のスプライトと会った時、入力された関数を呼び出す"
         },
         "params": [{
@@ -1454,7 +1454,7 @@ class ApiLibrary {
         "description2": {
           ko: "scene에서 스프라이트가 제거된다",
           en: "The sprite will be removed from the scene.",
-          ja: "sceneからスプライトを削除する"
+          ja: "sceneからスプライトを削除（さくじょ）する"
         }
       },
       id: "kill",
@@ -1471,7 +1471,7 @@ class ApiLibrary {
         "description2": {
           ko: "scene에서 제거된(kill) 스프라이트를 되살린다",
           en: "DIsplays the sprite that was removed from the scene.",
-          ja: "sceneから削除(kill)されたスプライトを復元する"
+          ja: "sceneから削除（さくじょ）(kill)されたスプライトを復元する"
         }
       },
       id: "revive",
@@ -2304,7 +2304,7 @@ class ApiLibrary {
         "description2": {
           ko: "x축에 대한 가속도를 설정한다. 다른 물리효과와 상호작용한다",
           en: "Sets the acceleration on the x-axis. Interacts with other physics effects.",
-          ja: "x軸に対する加速度を設定する。他の物理効果と相互作用する"
+          ja: "x軸（じく）に対する加速度を設定する。他の物理効果と相互作用する"
         }
       },
       id: "setAccelerationX",
@@ -2436,7 +2436,7 @@ class ApiLibrary {
       tip: {
         description: {
           ko: "사운드 스프라이트 처음부터 다시 재생하기",
-          en: "Replay the sound sprite from the beginning.",
+          en: "Replays the 'name' sound sprite from the beginning. (The value set in the playSound function decides whether it repeats.)",
           ja: "サウンドスプライトを最初から再生する"
         },
         "params": [{
@@ -2461,7 +2461,7 @@ class ApiLibrary {
       tip: {
         description: {
           ko: "사운드 스프라이트 이어서 재생하기",
-          en: "Continue playing the sound sprite.",
+          en: "Replays the 'name' sound sprite from where it was paused. (The value set in the playSound function decides whether it repeats.)",
           ja: "サウンドスプライトを続けて再生する"
         },
         "params": [{
