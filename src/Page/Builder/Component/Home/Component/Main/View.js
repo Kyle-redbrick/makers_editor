@@ -246,13 +246,6 @@ const ProjectItem = props => {
                 <img src={editIcon} alt="edit" />
                 {intl.formatMessage({ id: "ID_BUILDER_MAIN_EDIT" })}
               </li>
-              <li
-                onClick={() => {
-                  if (project.live) onClickPublishProject(project.pId);
-                }}
-              >
-                <img src={viewAppIcon} alt="" />{intl.formatMessage({ id: "ID_BUILDER_MAIN_VIEW_APP" })}
-              </li>
             </>
           ) : (
             <>

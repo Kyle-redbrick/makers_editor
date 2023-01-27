@@ -2,8 +2,6 @@ import React from "react";
 import "./index.scss";
 import FilteringHeader from "../FilteringHeader";
 
-import toggleLive from "../../../../../../Image/button-toggle-on.png";
-import toggleNoLive from "../../../../../../Image/button-toggle-off.png";
 import projectDetailIcon from "../../../../../../Image/icon-more.svg";
 import editIcon from "../../../../../../Image/icon-edit.svg";
 import viewAppIcon from "../../../../../../Image/icon-view-app.svg";
@@ -54,15 +52,6 @@ function View(props) {
                     {item.updatedAt &&
                       item.updatedAt.split("T")[0].replaceAll("-", ".")}
                   </div>
-                  <div className="projectItem__toggle">
-                    <p className="toggle__text">{intl.formatMessage({ id: "ID_BUILDER_MYPUBLISHED_OPEN" })}</p>
-                    <img
-                      className="toggle__img"
-                      src={item.live ? toggleLive : toggleNoLive}
-                      alt="Live"
-                      onClick={() => handleProjectLive(item)}
-                    />
-                  </div>
                 </div>
                 <div
                   className={`projectItem__detail ${selectProject.pId ===
@@ -78,13 +67,6 @@ function View(props) {
                     <li onClick={() => onClickProjectEdit(item)}>
                       <img src={editIcon} alt="" />
                       {intl.formatMessage({ id: "ID_BUILDER_MAIN_EDIT" })}
-                    </li>
-                    <li
-                      onClick={() => {
-                        if (item.live) onClickShowProject(item.pId);
-                      }}
-                    >
-                      <img src={viewAppIcon} alt="" />{intl.formatMessage({ id: "ID_BUILDER_MAIN_VIEW_APP" })}
                     </li>
                   </ul>
                 </div>

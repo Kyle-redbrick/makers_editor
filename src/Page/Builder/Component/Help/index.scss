@@ -38,8 +38,15 @@
       transform: translate(-50%, -50%) scale(1.1);
     }
     .help_mainModal_img {
-      margin: 0 auto;
+      margin: 0 auto -34px;
+      position: relative;
+      z-index: 5;
       width: 276px;
+
+      &.help_mainModal_img_end {
+        width:310px;
+        top:10px;
+      }
     }
     .help_mainModal_frame {
       position: relative;
@@ -180,7 +187,6 @@
     .help_imgModal img {
       display: block;
       // width: 953px;
-      // height: 279px;
     }
   }
 }

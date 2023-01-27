@@ -51,6 +51,7 @@ class Container extends Component {
     const totalStepNum = this.steps.length;
     const currentStep = this.steps[currentStepNum];
     const darkmode = getColorTheme() === "darkMode";
+    
     return (
       <View
         animOn={animOn}

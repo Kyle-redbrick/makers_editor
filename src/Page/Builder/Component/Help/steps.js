@@ -18,6 +18,7 @@ import publishDarkImg from "../../../../Image/builder/help/help_sub_publish-dark
 export default [
   {
     type: "main",
+    display:"start",
     title: "빌더에 온걸 환영해요!",
     title_localized: {
       zh: "欢迎来到WIZ LAB Builder！",
@@ -85,7 +86,7 @@ export default [
       ja: "スプライトはゲームの創作に使うイメージです。\nこれで私たちはゲームのキャラクターと家具などを作れます！",
       zh: "角色是在游戏创作时要用的图像。\n我们可以用这个来做出游戏人物、家具等等！",
     },
-    modalStyle: { top: "52px", left: "257px" },
+    modalStyle: { top: "52px", left: "305px" },
     anchorStyle: { type: "left", top: "20%" },
     imageStyle: {
       img: spriteImg,
@@ -93,7 +94,7 @@ export default [
       top: "42px",
       left: "70px",
       transformOrigin: "top left",
-      transform: "scale(0.75)"
+      transform: "scale(0.5)"
     }
   },
   {
@@ -135,7 +136,7 @@ export default [
       ja: "プレビューは追加したスプライトと背景を修正するのをリアルタイムで見せてくれます！",
       zh: "预览（preview）可以将添加的角色和背景的整个修改过程\n实时地呈现给大家！",
     },
-    modalStyle: { bottom: "421px", right: "360px" },
+    modalStyle: { bottom: "470px", right: "360px" },
     anchorStyle: { type: "bottom", right: "20%" },
     imageStyle: {
       img: previewImg,
@@ -143,7 +144,7 @@ export default [
       bottom: "60px",
       right: "120px",
       transformOrigin: "bottom right",
-      transform: "scale(0.5)",
+      transform: "scale(0.25)",
       borderRadius: "40px"
     }
   },
@@ -223,6 +224,7 @@ export default [
   },
   {
     type: "main",
+    display:"end",
     title: "축하해요!",
     title_localized: {
       en: "Congratulations!",

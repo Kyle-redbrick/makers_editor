@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import "./index.scss";
 
 import helpMainImg from "../../../../Image/builder/help/help_main.png";
+import helpEndImg from "../../../../Image/builder/help/help_end.png";
 
 export default function(props) {
   const {
@@ -62,6 +63,7 @@ export default function(props) {
           onClickNext={onClickNext}
           onClickSkip={onClickSkip}
           animOn={animOn}
+          currentStep={currentStep}
         />
       ) : (
         <SubModal
@@ -115,11 +117,12 @@ const MainModal = props => {
     inactiveButtonTitle,
     onClickNext,
     onClickSkip,
-    animOn
+    animOn,
+    currentStep,
   } = props;
   return (
     <div className={`help_mainModal ${animOn ? "help_mainModal-anim" : ""}`}>
-      <img className="help_mainModal_img" src={helpMainImg} alt="helpMainImg" />
+      <img className={`help_mainModal_img ${currentStep.display === "end" ? "help_mainModal_img_end" : "" }` } src={currentStep.display === "start" ? helpMainImg : helpEndImg } alt="helpMainImg" />
       <div className="help_mainModal_frame">
         <div className="help_mainModal_content">
           <div className="help_mainModal_title">{title}</div>
