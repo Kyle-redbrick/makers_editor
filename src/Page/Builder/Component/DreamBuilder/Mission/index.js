@@ -37,9 +37,10 @@ function Mission(props) {
       if(!confirm) {
         return;
       }
-    }
+    } else {
       props.setCurrentDreamMissionIndex(props.missionIndex + 1);
-    },
+    }
+  },
     [props.mission, props.missionIndex, isNextEnabled]
   )
 
