@@ -887,7 +887,7 @@ const en = {
   ID_WIZERROR_TITLE_PARAMETER_NOT_FOUND: "Parameter Error",
   ID_WIZERROR_MESSAGE_PARAMETER_UNDEFINED: "There is no parameter.",
   ID_WIZERROR_MESSAGE_PARAMETER_INVALID_TYPE: "매개변수의 타입이 올바르지 않음",
-  ID_WIZERROR_MESSAGE_PARAMETER_NOT_FOUND: "사용할 수 없는 매개변수",
+  ID_WIZERROR_MESSAGE_PARAMETER_NOT_FOUND: "The following parameter is unrecognizable.",
   ID_WIZERROR_MESSAGE_UNKNOWN: "알 수 없는 에러",
   ID_WIZERROR_MESSAGE_UNEXPECTED_TOKEN: "This token is unrecognizable",
   ID_WIZERROR_MESSAGE_UNTERMINATED_STRING: "닫히지 않은 문자열",
