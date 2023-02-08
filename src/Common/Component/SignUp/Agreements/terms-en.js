@@ -1,7 +1,7 @@
 export default `### Terms and Conditions
 
 **Article 1 (Purpose)**
-The purpose of these terms and conditions is to stipulate the rights, obligations and responsibilities between the Company and users in relation to the use of the Astro Coding Go service (hereinafter referred to as "ACG"), an online software education platform provided by MANGOSTEEMS PTE. LTD. (hereinafter referred to as “the Company”), and other services.
+The purpose of these terms and conditions is to stipulate the rights, obligations and responsibilities between the Company and users in relation to the use of the Astro Coding Go service (hereinafter referred to as "ACG"), an online software education platform provided by MANGOSTEEMS CO.,LTD. (hereinafter referred to as “the Company”), and other services.
 
 **Article 2 (Definitions)**
 Definitions of terms used in these Terms and Conditions are as follows.

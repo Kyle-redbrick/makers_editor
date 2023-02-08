@@ -39,9 +39,11 @@ const ko = {
   ID_HOME_EDITOR_TITLE: "에디터 추천 게임",
   ID_HOME_EDITOR_MORE: "지난 추천 게임보기",
   ID_HOME_GUIDE_BANNER_TITLE: "위즈랩이 처음이세요?",
-  ID_HOME_GUIDE_BANNER_SUBTITLE: "위즈랩 완벽 가이드와 함께 첫 게임을 만들어보세요.",
+  ID_HOME_GUIDE_BANNER_SUBTITLE:
+    "위즈랩 완벽 가이드와 함께 첫 게임을 만들어보세요.",
   ID_HOME_GUIDE_BANNER_MOBILE_TITLE: "개발자 튜터와 함께 코딩을 배우고 싶다면?",
-  ID_HOME_GUIDE_BANNER_MOBILE_SUBTITLE: "프리미엄 1:1 온라인 코딩 수업, WizLive를 만나보세요.",
+  ID_HOME_GUIDE_BANNER_MOBILE_SUBTITLE:
+    "프리미엄 1:1 온라인 코딩 수업, WizLive를 만나보세요.",
   ID_HOME_GUIDE_BANNER_TUTORIAL: "튜토리얼",
   ID_HOME_GUIDE_BANNER_FREETRIAL: "위즈라이브 무료체험",
   ID_HOME_WEEKLY_BEST_TITLE: "이번 주 인기 작품",
@@ -75,7 +77,8 @@ const ko = {
   ID_SIGNIN_CHECK_EMAILPW: "* 이메일과 비밀번호를 확인해주세요",
   ID_SIGNUP: "회원가입",
   ID_SIGNUP_TITLE: "위즈스쿨 통합 회원가입",
-  ID_SIGNUP_DESC: "한번의 가입으로 위즈랩과 위즈라이브 모두 이용하실 수 있습니다.",
+  ID_SIGNUP_DESC:
+    "한번의 가입으로 위즈랩과 위즈라이브 모두 이용하실 수 있습니다.",
   ID_SIGNUP_SIGNUP: "가입하기",
   ID_SIGNUP_SIGNIN: "로그인",
   ID_SIGNUP_SIGNIN_DESC: "이미 위즈랩 회원이신가요?",
@@ -116,12 +119,14 @@ const ko = {
   ID_SIGNUP_WARNING_SMSCODE_FORMAT: "* 인증번호를 정확히 입력해주세요",
   ID_SIGNUP_WARNING_SMSCODE_UNSENT: "* 먼저 인증번호를 발급받아주세요",
   ID_SIGNUP_WARNING_SMSCODE_UNACCEPTED: "* 인증번호가 올바르지 않습니다",
-  ID_SIGNUP_WARNING_SMSCODE_EMPTY: "* 인증번호를 입력하고 인증버튼을 눌러주세요",
+  ID_SIGNUP_WARNING_SMSCODE_EMPTY:
+    "* 인증번호를 입력하고 인증버튼을 눌러주세요",
   ID_SIGNUP_WARNING_RECOMMEND: "* 추천인 코드가 올바르지 않습니다",
   ID_SIGNUP_WARNING_AGREEMENT: "* 필수 이용약관에 동의해주세요",
   ID_SIGNUP_SIGNED_TITLE: "회원가입이 완료되었습니다!",
   ID_SIGNUP_SIGNED_CONFIRM: "확인",
-  ID_SIGNUP_TERMS_AGREEMENT_TERMSOFUSE: "(필수) 주식회사 레드브릭 이용약관 동의",
+  ID_SIGNUP_TERMS_AGREEMENT_TERMSOFUSE:
+    "(필수) 주식회사 레드브릭 이용약관 동의",
   ID_SIGNUP_TERMS_AGREEMENT_PRIVACY: "(필수) 개인정보 수집이용 동의",
   ID_SIGNUP_TERMS_AGREEMENT_AD: "(선택) 광고성 정보발송 동의",
   ID_SIGNEDOUT_USER: "탈퇴한 유저",
@@ -153,23 +158,33 @@ const ko = {
   ID_WIZAPP_NEWS_TITLE: "위즈랩 신규게임",
   ID_WIZAPP_NEWS_TAG: "NEW!",
   ID_INTRO_ABOUT_ASTROBOY_GO_TITLE: "아스트로 보이 고! 란...",
-  ID_INTRO_ABOUT_ASTROBOY_GO: "Astro, the most advanced AI robot with a human boy appearance, sets out to solve\nproblems happening all over the world together with Astro Kitty, a ktten-like robot,\nand Suzu, a super intelligent human girl as a team.",
+  ID_INTRO_ABOUT_ASTROBOY_GO:
+    "Astro, the most advanced AI robot with a human boy appearance, sets out to solve\nproblems happening all over the world together with Astro Kitty, a ktten-like robot,\nand Suzu, a super intelligent human girl as a team.",
   ID_INTRO_CHARACTER_TITLE: "Characters",
   ID_INTRO_CHARACTER_ASTROBOY_TITLE: "Astro Boy",
-  ID_INTRO_CHARACTER_ASTROBOY: "AI robot built to resemble a young\nhuman boy.\nHe embodies helpful and heroic\nspirit, and is always motivated in his\nrescue mission.",
+  ID_INTRO_CHARACTER_ASTROBOY:
+    "AI robot built to resemble a young\nhuman boy.\nHe embodies helpful and heroic\nspirit, and is always motivated in his\nrescue mission.",
   ID_INTRO_CHARACTER_ASTROKITTY_TITLE: "Astro Kitty",
-  ID_INTRO_CHARACTER_ASTROKITTY: "AI robot built to resemble a three\nmonth old kitten.\nAstro regards Astro Kitty as his\nmischievous but adorable younger\nbrother.",
+  ID_INTRO_CHARACTER_ASTROKITTY:
+    "AI robot built to resemble a three\nmonth old kitten.\nAstro regards Astro Kitty as his\nmischievous but adorable younger\nbrother.",
   ID_INTRO_CHARACTER_SUZU_TITLE: "SUZU",
-  ID_INTRO_CHARACTER_SUZU: "A cute 7 years old human girl and the\ngranddaughter of Professor Elefun.\nShe is extremely intelligent, capable,\nand independent.",
+  ID_INTRO_CHARACTER_SUZU:
+    "A cute 7 years old human girl and the\ngranddaughter of Professor Elefun.\nShe is extremely intelligent, capable,\nand independent.",
   ID_INTRO_ASTRO_CODING_TITLE: "아스트로 코딩 고! 란...",
-  ID_INTRO_ASTRO_CODING_DETAIL: "팀 아톰의 일원이 되어 떠나는 모험! 아톰과 함께 다양한 코딩 프로젝트에 도전해 보세요. 아스트로 코딩 고! 는 생생한 스토리와 프로젝트 기반 커리큘럼을 통해 학생이 흡수하듯 코딩을 배울 수 있도록 구성되어 있습니다. 블로코딩을 통해 기본 코딩 개념을 다지고, 자바스크립트로 전문 기량을 키워보세요. 북극, 사막, 바다에서부터 우주까지!  곳곳을 누비는 미션에 여러분을 초대합니다.",
+  ID_INTRO_ASTRO_CODING_DETAIL:
+    "팀 아톰의 일원이 되어 떠나는 모험! 아톰과 함께 다양한 코딩 프로젝트에 도전해 보세요. 아스트로 코딩 고! 는 생생한 스토리와 프로젝트 기반 커리큘럼을 통해 학생이 흡수하듯 코딩을 배울 수 있도록 구성되어 있습니다. 블로코딩을 통해 기본 코딩 개념을 다지고, 자바스크립트로 전문 기량을 키워보세요. 북극, 사막, 바다에서부터 우주까지!  곳곳을 누비는 미션에 여러분을 초대합니다.",
   ID_INTRO_ASTRO_BLOCK_TITLE: "Astro Coding Go - Block Coding",
-  ID_INTRO_BLOCKCODING_ELEMENTARY: "코딩을 처음 접하는 학생을 위한 과정.\n블록 코딩으로 간단한 게임을 만들며 코딩의 원리에 대해 배워나갑니다..",
-  ID_INTRO_BLOCKCODING_BASIC: "블록 코딩을 통해 기초 프로그래밍과 알고리즘 원리를 배우는 과정입니다. 장애물 피하기, 플랫포머 게임 등 다양한 종류의 프로젝트에 도전할 수 있습니다.",
-  ID_INTRO_BLOCKCODING_ADVANCED: "상급 프로그래밍 개념에 도전하는 블록코딩 과정입니다. 조건문, 반복문, 복제 등의 필수 CS 개념을 자유롭게 활용해 프로젝트를 제작합니다. .",
+  ID_INTRO_BLOCKCODING_ELEMENTARY:
+    "코딩을 처음 접하는 학생을 위한 과정.\n블록 코딩으로 간단한 게임을 만들며 코딩의 원리에 대해 배워나갑니다..",
+  ID_INTRO_BLOCKCODING_BASIC:
+    "블록 코딩을 통해 기초 프로그래밍과 알고리즘 원리를 배우는 과정입니다. 장애물 피하기, 플랫포머 게임 등 다양한 종류의 프로젝트에 도전할 수 있습니다.",
+  ID_INTRO_BLOCKCODING_ADVANCED:
+    "상급 프로그래밍 개념에 도전하는 블록코딩 과정입니다. 조건문, 반복문, 복제 등의 필수 CS 개념을 자유롭게 활용해 프로젝트를 제작합니다. .",
   ID_INTRO_ASTRO_JAVASCRIPT_TITLE: "Astro Coding Go - Javascript Coding",
-  ID_INTRO_JAVASCRIPT_ADVANCED: "블록코딩에 익숙해졌거나, 코딩을 시작하는 고학년 학생을 위한 자바스크립트 과정입니다. JS를 사용한 프로젝트에 도전하면서 프로그래밍의 기반을 다집니다. ",
-  ID_INTRO_JAVASCRIPT_MASTERY: "자바스크립트와 리스트, 함수를 비롯한 CS 개념을 자유롭게 활용하여 상급 프로젝트를 진행합니다. ",
+  ID_INTRO_JAVASCRIPT_ADVANCED:
+    "블록코딩에 익숙해졌거나, 코딩을 시작하는 고학년 학생을 위한 자바스크립트 과정입니다. JS를 사용한 프로젝트에 도전하면서 프로그래밍의 기반을 다집니다. ",
+  ID_INTRO_JAVASCRIPT_MASTERY:
+    "자바스크립트와 리스트, 함수를 비롯한 CS 개념을 자유롭게 활용하여 상급 프로젝트를 진행합니다. ",
   ID_INTRO_CODING_LEARN: "Learn Now",
   ID_INTRO_CODING_ELEMENTARY: "Elementary",
   ID_INTRO_CODING_BASIC: "Basic",
@@ -223,7 +238,8 @@ const ko = {
   ID_COMMUNITY_DETAIL_COMMENT_SELECT_OFF: "채택",
   ID_COMMUNITY_DETAIL_COMMENT_SELECT_ON: "채택됨",
   ID_COMMUNITY_DETAIL_COMMENT_DELETED_REPLAY: "(삭제된 댓글입니다.)",
-  ID_COMMUNITY_DETAIL_COMMENT_WRITE_ATTACHMENT_LIMIT_TOAST: "최대 3장까지 첨부 가능합니다.",
+  ID_COMMUNITY_DETAIL_COMMENT_WRITE_ATTACHMENT_LIMIT_TOAST:
+    "최대 3장까지 첨부 가능합니다.",
   ID_COMMUNITY_DETAIL_COMMENT_WRITE_ATTACHMENT_BUTTON: "사진 첨부(최대 3장)",
   ID_COMMUNITY_DETAIL_COMMENT_WRITE_CONTENT_EMPTY: "내용을 입력해주세요.",
   ID_COMMUNITY_DETAIL_COMMENT_WRITE_CANCEL_BUTTON: "취소",
@@ -251,10 +267,12 @@ const ko = {
   ID_SOCIAL_WRITE_TITLE_PLACEHOLER: "제목",
   ID_SOCIAL_WRITE_EDITOR_PLACEHOLER: "내용을 입력해주세요",
   ID_SOCIAL_WRITE_TAG: "태그",
-  ID_SOCIAL_WRITE_TAG_TIP: "다른 사용자들이 회원님의 글을 찾을 수 있도록 태그를 지정해주세요",
+  ID_SOCIAL_WRITE_TAG_TIP:
+    "다른 사용자들이 회원님의 글을 찾을 수 있도록 태그를 지정해주세요",
   ID_SOCIAL_WRITE_TAG_PLACEHOLER: "태그를 입력해주세요",
   ID_SOCIAL_WRITE_QUEST: "퀘스트",
-  ID_SOCIAL_WRITE_QUEST_TIP: "성실한 답변을 달아준 회원에게 자신의 포인트를 선물할 수 있습니다.",
+  ID_SOCIAL_WRITE_QUEST_TIP:
+    "성실한 답변을 달아준 회원에게 자신의 포인트를 선물할 수 있습니다.",
   ID_SOCIAL_WRITE_QUEST_PLACEHOLDER: "포인트 입력",
   ID_SOCIAL_WRITE_POINT_AVAILABLE: "보유포인트",
   ID_SOCIAL_WRITE_POINT_USED: "사용포인트",
@@ -328,7 +346,8 @@ const ko = {
   ID_POPUP_SHARE_DESC: "휴대전화로 실행 요청중입니다",
   ID_BUILDER_ALERT_TITLE_WARNING: "경고",
   ID_BUILDER_ALERT_TITLE_SUCC: "성공!",
-  ID_BUILDER_ALERT_MSG_READONLY: "이 프로젝트는 읽기 전용입니다.\n수정사항이 반영되지 않습니다.",
+  ID_BUILDER_ALERT_MSG_READONLY:
+    "이 프로젝트는 읽기 전용입니다.\n수정사항이 반영되지 않습니다.",
   ID_BUILDER_ALERT_CLOSEBTN: "닫기",
   ID_BUILDER_ALERT_CONFIRMBTN: "확인",
   ID_BUILDER_ALERT_CANCELBTN: "취소",
@@ -340,16 +359,19 @@ const ko = {
   ID_BUILDER_ALERT_MSG_QRSUCC: "메시지가 전송되었습니다.",
   ID_BUILDER_ALERT_MSG_QRFAIL: "메시지 전송에 실패했습니다.",
   ID_BUILDER_ALERT_MSG_REMOVE_QUESTION: `“{spriteName}”를 삭제하시겠습니까?`,
-  ID_BUILDER_ALERT_MSG_REMOVE_QUESTION_SUBTITLE: "스프라이트를 삭제하면,\n 작성한 코드도 함께 삭제되며 복구할 수 없습니다. \n 그래도 삭제하시겠습니까?",
+  ID_BUILDER_ALERT_MSG_REMOVE_QUESTION_SUBTITLE:
+    "스프라이트를 삭제하면,\n 작성한 코드도 함께 삭제되며 복구할 수 없습니다. \n 그래도 삭제하시겠습니까?",
   ID_BUILDER_ALERT_MSG_REMOVE_SPRITE_CONFIRM: "삭제하기",
   ID_BUILDER_ALERT_MSG_REMOVEALL_QUESTION: "모든 스프라이트를 지우시겠습니까?",
   ID_BUILDER_ALERT_MSG_EMPTY_IMAGE: "빈 이미지는 저장할 수 없습니다.",
   ID_BUILDER_ALERT_MSG_CLIVE_NOT_FOUND: "예약된 수업 정보가 없습니다.",
   ID_BUILDER_ALERT_CHECKBOX_DELETE_ALL_SOUNDS: "모든 사운드 삭제하기",
-  ID_BUILDER_ALERT_MSG_GOTO_APP: "퍼블리싱이 완료되었습니다.\n앱을 확인하시겠습니까?",
+  ID_BUILDER_ALERT_MSG_GOTO_APP:
+    "퍼블리싱이 완료되었습니다.\n앱을 확인하시겠습니까?",
   ID_BUILDER_PROJECTLIST: "템플릿 가져오기",
   ID_BUILDER_PROJECTLIST_TITLE: "템플릿",
-  ID_BUILDER_PROJECTLIST_CONFIRM: "현재 작성되어있는 코드가 모두 사라집니다. \n 템플릿을 가져오시겠습니까?",
+  ID_BUILDER_PROJECTLIST_CONFIRM:
+    "현재 작성되어있는 코드가 모두 사라집니다. \n 템플릿을 가져오시겠습니까?",
   ID_BUILDER_PROJECTLIST_CANCEL: "취소",
   ID_BUILDER_PROJECTLIST_OK: "가져오기",
   ID_BUILDER_PUBLISHING: "앱 퍼블리싱하기",
@@ -368,14 +390,16 @@ const ko = {
   ID_BUILDER_EDITPOP_UPLOAD: "업데이트",
   ID_BUILDER_EDITPOP_CANCEL: "취소",
   ID_BUILDER_EDITPOP_TAG: "태그",
-  ID_BUILDER_EDITPOP_TIP_TAG: "다른 사용자가 회원님의 글을 잘 찾을 수 있도록<br/> 태그를 지정해주세요.<br/> 위즈랩에서 자주 사용되는 태그를 추천해드립니다.",
+  ID_BUILDER_EDITPOP_TIP_TAG:
+    "다른 사용자가 회원님의 글을 잘 찾을 수 있도록<br/> 태그를 지정해주세요.<br/> 위즈랩에서 자주 사용되는 태그를 추천해드립니다.",
   ID_BUILDER_EDITPOP_TAG_PLACEHOLDER: "태그를 입력하세요",
-  ID_BUILDER_EDITPOP_TIP_CODE: "코드 공개를 선택하면, 다른 사용자가 회원님의 <br/>프로젝트를 복사하여 수정할 수 있습니다.",
+  ID_BUILDER_EDITPOP_TIP_CODE:
+    "코드 공개를 선택하면, 다른 사용자가 회원님의 <br/>프로젝트를 복사하여 수정할 수 있습니다.",
   ID_BUILDER_EDITPOP_CODE_OPEN: "공개",
   ID_BUILDER_EDITPOP_CODE_CLOSE: "비공개",
   ID_WIZAPP_CATEGORY_GAME: "게임",
   ID_WIZAPP_CATEGORY_UTIL: "유틸리티",
-  ID_HOME_COPY_INFO: `MANGOSTEEMS PTE. LTD.`,
+  ID_HOME_COPY_INFO: `MANGOSTEEMS CO.,LTD.`,
   ID_HOME_FOOTER_01: `사업자등록번호 636-87-01115    |    통신판매업신고번호 제2019-서울강남-00100호    |    서울특별시 강남구 강남대로94길 10 케이스퀘어 701호    |    wizlab@wizschool.io`,
   ID_FOOTER_TERMS: "이용약관",
   ID_FOOTER_PRIVACY: "개인정보 처리방침",
@@ -403,7 +427,8 @@ const ko = {
   ID_WIZLAB_DRAWING_MOBILE: "모바일 사진찍기",
   ID_STORAGE_CONTAINER_TEXT_EDITOR_DROP_DOWN_SEARCH: "검색",
   ID_STORAGE_CONTAINER_TEXT_EDITOR_DROP_DOWN_NOT_FOUND: "검색결과가 없습니다",
-  ID_STORAGE_CONTAINER_TEXT_EDITOR_DROP_DOWN_SKIN_TEXT: "기본 피부톤을 선택하세요",
+  ID_STORAGE_CONTAINER_TEXT_EDITOR_DROP_DOWN_SKIN_TEXT:
+    "기본 피부톤을 선택하세요",
   ID_STORAGE_CONTAINER_TEXT_EDITOR_DROP_DOWN_CATEGORIES_SEARCH: "검색 결과",
   ID_STORAGE_CONTAINER_TEXT_EDITOR_DROP_DOWN_CATEGORIES_RECENT: "최근 사용",
   ID_STORAGE_CONTAINER_TEXT_EDITOR_DROP_DOWN_CATEGORIES_PEOPLE: "스마일 & 사람",
@@ -471,15 +496,19 @@ const ko = {
   ID_BUILDER_CODE_SORT: "코드 정렬하기",
   ID_BUILDER_CODE_SORT_COMPLETE: "코드가 정렬되었습니다.",
   ID_BUILDER_CODE_SORT_AFTER_FIX_ERROR: "에러를 수정한 후 정렬해주세요",
-  ID_DUMMY_RANKING_NOT_SUPPORT: "랭킹 기능은 퍼블리싱을 한 후 위즈앱에서 확인하실 수 있습니다.",
+  ID_DUMMY_RANKING_NOT_SUPPORT:
+    "랭킹 기능은 퍼블리싱을 한 후 위즈앱에서 확인하실 수 있습니다.",
   ID_BUILDER_ERROR: "에러 발생",
   ID_BUILDER_LIVE_ACCESS_TITLE: "권한을 확인해주세요",
-  ID_BUILDER_LIVE_ACCESS_MSG: "카메라 또는 마이크의 권한이 활성화되어있지 않습니다.",
+  ID_BUILDER_LIVE_ACCESS_MSG:
+    "카메라 또는 마이크의 권한이 활성화되어있지 않습니다.",
   ID_BUILDER_LIVE_ACCESS_TITLE_DEVICE_ERROR: "장비를 확인해주세요",
   ID_BUILDER_LIVE_ACCESS_MSG_NO_DEVICE: "연결된 카메라 또는 마이크가 없습니다.",
-  ID_BUILDER_LIVE_ACCESS_MSG_NO_USABLE_DEVICE: "카메라 또는 마이크가 다른곳에서 사용중입니다.",
+  ID_BUILDER_LIVE_ACCESS_MSG_NO_USABLE_DEVICE:
+    "카메라 또는 마이크가 다른곳에서 사용중입니다.",
   ID_BUILDER_LIVE_ACCESS_MSG_NO_USABLE_CHROME: "Chrome의 버전을 확인해주세요.",
-  ID_BUILDER_LIVE_ACCESS_MSG_NO_USABLE_BY_SYSTEM: "System에서 미디어 장치 권한이 허용되지 않았습니다.",
+  ID_BUILDER_LIVE_ACCESS_MSG_NO_USABLE_BY_SYSTEM:
+    "System에서 미디어 장치 권한이 허용되지 않았습니다.",
   ID_BUILDER_LIVE_ACCESS_OK: "확인",
   ID_WEBRTC_UNSUPPORT: "위즈라이브는 크롬에서 정상동작합니다.",
   ID_WIZLIVE_EXIT_CONFIRM: "수업을 종료하시겠습니까?",
@@ -493,10 +522,12 @@ const ko = {
   ID_POOR_NETWORK: "네트워크 통신이 원활하지 않습니다",
   ID_FREE_TRIAL_SURVEY_SUBMIT_OK: "확인",
   ID_FREE_TRIAL_SURVEY_SUBMIT_TITLE: "평가를 완료했습니다",
-  ID_FREE_TRIAL_SURVEY_SUBMIT_DESCRIPTION: "오늘 학습 결과에 대한 더 자세한 설명을 원하시면\n아래 번호로 문의 해주세요.",
+  ID_FREE_TRIAL_SURVEY_SUBMIT_DESCRIPTION:
+    "오늘 학습 결과에 대한 더 자세한 설명을 원하시면\n아래 번호로 문의 해주세요.",
   ID_FREE_TRIAL_SURVEY_SUBMIT_CONTANT: "02) 6358 - 2021",
   ID_FREE_TRIAL_SURVEY_STEP1: "무료 체험 수업 피드백",
-  ID_FREE_TRIAL_SURVEY_STEP1_TITLE: "수업이 종료되었습니다.\n무료 체험 수업은 만족스러웠나요?",
+  ID_FREE_TRIAL_SURVEY_STEP1_TITLE:
+    "수업이 종료되었습니다.\n무료 체험 수업은 만족스러웠나요?",
   ID_FREE_TRIAL_SURVEY_STEP1_LEVEL: "수업 난이도는 어땠나요?",
   ID_FREE_TRIAL_SURVEY_STEP1_LEVEL_ITEM1: "쉬워요",
   ID_FREE_TRIAL_SURVEY_STEP1_LEVEL_ITEM2: "보통이에요",
@@ -509,20 +540,28 @@ const ko = {
   ID_FREE_TRIAL_SURVEY_STEP1_SPEED_ITEM1: "너무 빨라요",
   ID_FREE_TRIAL_SURVEY_STEP1_SPEED_ITEM2: "적당해요",
   ID_FREE_TRIAL_SURVEY_STEP1_SPEED_ITEM3: "지루해요",
-  ID_FREE_TRIAL_SURVEY_STEP1_INPUT1: "위즈라이브 수업에 기대하는 점이 있다면 자유롭게 작성해주세요.",
-  ID_FREE_TRIAL_SURVEY_STEP1_INPUT1_HINT: "ex) 우주에서 비행선을 조종하며 전쟁하는 게임을 만들어 보고 싶어요!",
-  ID_FREE_TRIAL_SURVEY_STEP1_INPUT2: "더 궁금하신 점이나 건의 사항이있다면 자유롭게 작성해주세요.",
-  ID_FREE_TRIAL_SURVEY_STEP1_INPUT2_HINT: "확인 후 업무 시간 내 상담 전화를 드립니다.",
+  ID_FREE_TRIAL_SURVEY_STEP1_INPUT1:
+    "위즈라이브 수업에 기대하는 점이 있다면 자유롭게 작성해주세요.",
+  ID_FREE_TRIAL_SURVEY_STEP1_INPUT1_HINT:
+    "ex) 우주에서 비행선을 조종하며 전쟁하는 게임을 만들어 보고 싶어요!",
+  ID_FREE_TRIAL_SURVEY_STEP1_INPUT2:
+    "더 궁금하신 점이나 건의 사항이있다면 자유롭게 작성해주세요.",
+  ID_FREE_TRIAL_SURVEY_STEP1_INPUT2_HINT:
+    "확인 후 업무 시간 내 상담 전화를 드립니다.",
   ID_FREE_TRIAL_SURVEY_STEP1_SEND: "다음",
   ID_FREE_TRIAL_SURVEY_STEP2: "튜터 피드백",
   ID_FREE_TRIAL_SURVEY_STEP2_TITLE: "오늘 함께한 튜터는 어땠나요?",
   ID_FREE_TRIAL_SURVEY_STEP2_RATING: "별점을 주고 학습평가를 확인해보세요.",
   ID_FREE_TRIAL_SURVEY_STEP2_INPUT1: "튜터에게 전하고 싶은 말을 남겨주세요.",
-  ID_FREE_TRIAL_SURVEY_STEP2_INPUT1_HINT: "ex) 오늘 수업 재미있었어요! 다음에 또 같이 수업 했으면 좋겠어요!",
-  ID_FREE_TRIAL_SURVEY_STEP2_INPUT2: "위즈라이브에게 하고 싶은 말을 남겨주세요.",
-  ID_FREE_TRIAL_SURVEY_STEP2_INPUT2_HINT: "해당 내용은 튜터에게 공개되지 않습니다.",
+  ID_FREE_TRIAL_SURVEY_STEP2_INPUT1_HINT:
+    "ex) 오늘 수업 재미있었어요! 다음에 또 같이 수업 했으면 좋겠어요!",
+  ID_FREE_TRIAL_SURVEY_STEP2_INPUT2:
+    "위즈라이브에게 하고 싶은 말을 남겨주세요.",
+  ID_FREE_TRIAL_SURVEY_STEP2_INPUT2_HINT:
+    "해당 내용은 튜터에게 공개되지 않습니다.",
   ID_FREE_TRIAL_SURVEY_STEP2_SEND: "보내기",
-  ID_FEEDBACK_SUBMIT_DESCRIPTION: "24시간 이내에 학습평가를 확인할 수 있습니다.",
+  ID_FEEDBACK_SUBMIT_DESCRIPTION:
+    "24시간 이내에 학습평가를 확인할 수 있습니다.",
   ID_PROJECT_TITLE: "프로젝트",
   ID_PROJECT_NEW: "새 프로젝트",
   ID_PROJECT_LOAD: "불러오기",
@@ -568,8 +607,10 @@ const ko = {
   ID_POPUP_MOBILE_WAITING_DESC: "휴대전화로 실행 요청중입니다",
   ID_POPUP_MOBILE_FAIL_TITLE: `게임이 정상적으로\n실행되지 않았습니다`,
   ID_POPUP_MOBILE_FAIL_DESC_01: "위즈앱이 실행되고 있는지 확인해주세요.",
-  ID_POPUP_MOBILE_FAIL_DESC_02: "PC와 동일한 아이디로 로그인되어 있는지 확인해주세요.",
-  ID_POPUP_MOBILE_FAIL_DESC_03: " 아직 앱이 없다면 위즈스쿨을 검색하고 다운받아보세요.",
+  ID_POPUP_MOBILE_FAIL_DESC_02:
+    "PC와 동일한 아이디로 로그인되어 있는지 확인해주세요.",
+  ID_POPUP_MOBILE_FAIL_DESC_03:
+    " 아직 앱이 없다면 위즈스쿨을 검색하고 다운받아보세요.",
   ID_POPUP_MOBILE_FAIL_BTN: " 다시 요청하기",
   ID_RIGHTBAR_VIDEO: "동영상",
   ID_RIGHTBAR_SNIPPET: "스니펫",
@@ -586,8 +627,10 @@ const ko = {
   ID_MYPAGE_TABTAPE_ACTIVITY: "나의 활동",
   ID_MYPAGE_TABTAPE_SETTING: "개인정보 수정",
   ID_MYPAGE_PUBLISH_NOTHING: "퍼블리싱한 게임이 없습니다",
-  ID_MYPAGE_TOOLTIP_TIER: "위즈랩에서는 회원등급 서비스를 도입할 예정입니다.​\n조금만 기다려주세요!",
-  ID_MYPAGE_TOOLTIP_POINT: "위즈랩에서는 포인트 제도를 도입할 예정입니다.\n조금만 기다려주세요!",
+  ID_MYPAGE_TOOLTIP_TIER:
+    "위즈랩에서는 회원등급 서비스를 도입할 예정입니다.​\n조금만 기다려주세요!",
+  ID_MYPAGE_TOOLTIP_POINT:
+    "위즈랩에서는 포인트 제도를 도입할 예정입니다.\n조금만 기다려주세요!",
   ID_MYPAGE_USERINFO_PUBLISH: "퍼블리싱 앱",
   ID_MYPAGE_USERINFO_SUBSCRIBE: "구독자",
   ID_MYPAGE_USERINFO_INTERESTED: "구독중",
@@ -607,8 +650,10 @@ const ko = {
   ID_MYPAGE_PERSONAL_SUBMIT: "개인정보수정",
   ID_MYPAGE_PERSONAL_SIGNOUT: "탈퇴하기",
   ID_MYPAGE_NAME_USERNAME: "닉네임",
-  ID_MYPAGE_NAME_USERNAME_WARNING: "닉네임 변경은 마지막 변경일을 기준으로 15일 이후에 가능합니다.",
-  ID_MYPAGE_NAME_USERNAME_OFFICIAL_WARNING: "운영진을 사칭할 수 있는 닉네임은 사용할 수 없습니다.",
+  ID_MYPAGE_NAME_USERNAME_WARNING:
+    "닉네임 변경은 마지막 변경일을 기준으로 15일 이후에 가능합니다.",
+  ID_MYPAGE_NAME_USERNAME_OFFICIAL_WARNING:
+    "운영진을 사칭할 수 있는 닉네임은 사용할 수 없습니다.",
   ID_MYPAGE_NAME_USERSTATUSMSG: "한줄 소개글",
   ID_MYPAGE_NAME_USERICON: "프로필 사진",
   ID_MYPAGE_NAME_USEREMAIL: "이메일 주소",
@@ -651,7 +696,8 @@ const ko = {
   ID_MYPAGE_POPUP_LOGIN: "로그인",
   ID_MYPAGE_ICONSETTING_TABTAPE_ICON: "아이콘",
   ID_MYPAGE_ICONSETTING_TABTAPE_EDGE: "테두리",
-  ID_MYPAGE_ICONSETTING_TABTAPE_ICONTOOLTIP: "아이콘을 통해 자신을 나타낼 수 있습니다",
+  ID_MYPAGE_ICONSETTING_TABTAPE_ICONTOOLTIP:
+    "아이콘을 통해 자신을 나타낼 수 있습니다",
   ID_MYPAGE_ICONSETTING_TABTAPE_EDGETOOLTIP: `위즈랩 이벤트 및 퀘스트를 통해 테두리를 획득할 수 있습니다.\n테두리로 자신을 뽐내주세요`,
   ID_MYPAGE_TOOLTIP_TIER_CONFIRM: "확인",
   ID_TOOLTIP_PROJECT_MANAGEMENT: "프로젝트 관리",
@@ -668,7 +714,8 @@ const ko = {
   ID_TOOLTIP_VOLUME: "소리 조절",
   ID_BROWSER_BLOCK_TEXT1: "IE 브라우저는 추후 지원 예정입니다.",
   ID_BROWSER_BLOCK_TEXT2: "크롬 브라우저 사용을 권장합니다.",
-  ID_BROWSER_BLOCK_TEXT3: "현재 페이지는 크롬 브라우저에 최적화되어 있습니다. 크롬 브라우저 사용을 권장합니다.",
+  ID_BROWSER_BLOCK_TEXT3:
+    "현재 페이지는 크롬 브라우저에 최적화되어 있습니다. 크롬 브라우저 사용을 권장합니다.",
   ID_GAME_PLAYER_PLAY_BUTTON: "시작하기",
   ID_GAME_PLAYER_PLAY_BUTTON_MOBILE: "앱으로 실행하기",
   ID_GAME_PLAYER_PLAY_BUTTON_MOBILE_WEB: "모바일 웹으로 계속하기",
@@ -709,26 +756,34 @@ const ko = {
   ID_VIDEOCLASS_STEP_END: "이미지 보기",
   ID_VIDEOCLASS_STEP_SPRITE_SELECTED: "스프라이트 선택",
   ID_EGO: "에고",
-  ID_EGO_CUSTOMIDMAP_ADDSPRITE: "좋아! {addSpriteId} 스프라이트를 {customSpriteId}로 사용하자",
-  ID_EGO_CUSTOMIDMAP_OTHERSPRITE: "다른 스프라이트를 {customSpriteId}로 사용하려구?",
-  ID_EGO_CUSTOMIDMAP_OTHERTYPE: "{customSpriteId}는 {customIdType} 타입을 추가해줘야해!",
+  ID_EGO_CUSTOMIDMAP_ADDSPRITE:
+    "좋아! {addSpriteId} 스프라이트를 {customSpriteId}로 사용하자",
+  ID_EGO_CUSTOMIDMAP_OTHERSPRITE:
+    "다른 스프라이트를 {customSpriteId}로 사용하려구?",
+  ID_EGO_CUSTOMIDMAP_OTHERTYPE:
+    "{customSpriteId}는 {customIdType} 타입을 추가해줘야해!",
   ID_EGO_CUSTOMIDMAP_MULTIPLESPRITE: "스프라이트를 하나만 골라줘",
   ID_EGO_CONDITION_SPRITE_EXIST: "{spriteId} 스프라이트를 추가해줘!",
-  ID_EGO_CONDITION_SPRITE_INDEX: "{spriteId} 드래그해서 {index}번째 위치로 이동시켜봐!",
+  ID_EGO_CONDITION_SPRITE_INDEX:
+    "{spriteId} 드래그해서 {index}번째 위치로 이동시켜봐!",
   ID_EGO_CONDITION_SPRITE_SELECTED: "{spriteId}를 클릭해서 선택해보자!",
   ID_EGO_CONDITION_SCENE_EMPTY: "{sceneId}에 있는 모든 스프라이트를 지워보자!",
   ID_EGO_CONDITION_SCENE_FIRST: "{sceneId}가 첫 번째 장면이 되게 해야해!",
   ID_EGO_CONDITION_SCENE_SELECTED: "{sceneId}를 클릭해서 선택해보자!",
-  ID_EGO_CONDITION_CUSTOM_ID_EXIST: "아직 {customSpriteId}로 사용할 스프라이트를 선택하지 않았어..",
-  ID_EGO_CONDITION_CODE_EXIST: "{spriteId} 스프라이트에 코드가 잘 작성되었는지 한 번 더 확인해볼까?",
+  ID_EGO_CONDITION_CUSTOM_ID_EXIST:
+    "아직 {customSpriteId}로 사용할 스프라이트를 선택하지 않았어..",
+  ID_EGO_CONDITION_CODE_EXIST:
+    "{spriteId} 스프라이트에 코드가 잘 작성되었는지 한 번 더 확인해볼까?",
   ID_EGO_CONDITION_PLAY_ONCE: "한 번 실행해보고 다음 단계로 넘어가자!",
   ID_EGO_CONDITION_GAME_EVENT: "게임을 실행해보고 조건을 달성해보자!",
   ID_EGO_CONDITION_DEFAULT: "문제가 생겼어! 관리자에게 문의해줄래?",
-  ID_EGO_CONDITION_OOBC_LINE_EXIST: "{spriteId}에 블록이\n잘 입력됐는지 확인해보자!",
+  ID_EGO_CONDITION_OOBC_LINE_EXIST:
+    "{spriteId}에 블록이\n잘 입력됐는지 확인해보자!",
   ID_SIGNIN_FORGOT_EMAIL: "이메일 찾기",
   ID_SIGNIN_FORGOT_EMAIL_DESC: "이메일을 잊어버리셨나요?",
   ID_FIND_EMAIL_TITLE: "이메일 찾기",
-  ID_FIND_EMAIL_DESC: "관리자에게 요청하시거나 다음 주소로 요청 메일을 보내주세요. 요청 메일에는 다음 정보가 포함되어있어야 합니다.",
+  ID_FIND_EMAIL_DESC:
+    "관리자에게 요청하시거나 다음 주소로 요청 메일을 보내주세요. 요청 메일에는 다음 정보가 포함되어있어야 합니다.",
   ID_FIND_EMAIL_LIST_1: "소속 기관",
   ID_FIND_EMAIL_LIST_2: "이름",
   ID_FIND_EMAIL_LIST_3: "연락처 (선택)",
@@ -737,7 +792,8 @@ const ko = {
   ID_FIND_EMAIL_SENT_TITLE: "이메일을 휴대폰번호로\n전송했습니다",
   ID_FIND_EMAIL_SENT_FAIL_TITLE: "등록되지 않은 휴대폰입니다",
   ID_FIND_EMAIL_SENT_OK: "확인",
-  ID_FIND_EMAIL_SENT_LIMIT_TITLE: "이메일 찾기 횟수를 초과하였습니다. wizlab@wizschool.io로 문의주세요",
+  ID_FIND_EMAIL_SENT_LIMIT_TITLE:
+    "이메일 찾기 횟수를 초과하였습니다. wizlab@wizschool.io로 문의주세요",
   ID_EDITOR_EMPTYSPIRTE: "코드를 입력하려면 먼저 스프라이트를 추가해 주세요.",
   ID_HOME_BANNER00_TITLE: "몬텐노의 금고털기",
   ID_HOME_BANNER00_SUBTITLE: "방탈출에 도전하라!",
@@ -750,14 +806,16 @@ const ko = {
   ID_CERTIFICATE_ALERT_NAME_CLASS: "* Please enter name and class",
   ID_CERTIFICATE_ALERT_NAME: "* Please enter name",
   ID_CERTIFICATE_ALERT_CLASS: "* Please enter class",
-  ID_CERT_POPUP_TITLE: "위즈랩에 회원가입을 하면 언제든 인증서를 다운 받을 수 있습니다.",
+  ID_CERT_POPUP_TITLE:
+    "위즈랩에 회원가입을 하면 언제든 인증서를 다운 받을 수 있습니다.",
   ID_CERT_POPUP_CANCEL: "나중에 할래요",
   ID_CERT_POPUP_SIGNUP: "회원가입",
   ID_WIZAPP_WIZLIVE_TAG: "WizLive!",
   ID_WIZAPP_WIZLIVE_TITLE: "위즈라이브에서 만들 수 있는 게임",
   ID_SHARE_COPIED: "클립보드에 복사했습니다.",
   ID_TOAST_RANKING_NOT_SUPPORT: "API는 퍼블리싱한 앱에서만 사용가능합니다.",
-  ID_TOAST_API_NOT_SUPPORT: "{apiName} API는 퍼블리싱한 앱에서만 사용 가능합니다.",
+  ID_TOAST_API_NOT_SUPPORT:
+    "{apiName} API는 퍼블리싱한 앱에서만 사용 가능합니다.",
   ID_SPAM_POPUP_TITLE_BAD_WORD: "부적절한 언어는 사용할수 없습니다.",
   ID_SPAM_POPUP_TITLE_DUPLICATION: "같은 내용을 중복해서 사용할수 없습니다.",
   ID_SPAM_POPUP_TITLE_TIME: "일정시간이 지난뒤 글을 작성해 주세요",
@@ -774,9 +832,11 @@ const ko = {
   ID_REPORT_POPUP_FAIL_CONFIRM: "확인",
   ID_REPORT_POPUP_EMPTY_TEXT: "내용을 입력하세요",
   ID_SOCIAL_WARNNING: "1000글자 이내로 입력해주세요.",
-  ID_BLOCKED_USER_POPUP_TITLE_PUBLISHING: "이용정지 기간으로 \n퍼블리싱 할 수 없습니다.",
+  ID_BLOCKED_USER_POPUP_TITLE_PUBLISHING:
+    "이용정지 기간으로 \n퍼블리싱 할 수 없습니다.",
   ID_BLOCKED_USER_POPUP_TITLE_SOCIAL: "이용 정지 기간 입니다",
-  ID_BLOCKED_USER_POPUP_TITLE_CHAT: "이용 정지 기간이므로 \n채팅을 할 수 없습니다",
+  ID_BLOCKED_USER_POPUP_TITLE_CHAT:
+    "이용 정지 기간이므로 \n채팅을 할 수 없습니다",
   ID_BLOCKED_USER_POPUP_PERIOD: "이용 해제일: {year}년 {month}월 {day}일",
   ID_BLOCKED_USER_POPUP_CONFRIM: "확인",
   ID_OOBC_EDITOR_CONFIRM: "확인",
@@ -787,19 +847,24 @@ const ko = {
   ID_OOBC_EDITOR_CONSTANT_TITLE: "{constant} 입력하기",
   ID_OOBC_EDITOR_CONSTANT_SUBTITLE: "{constant} 값을 입력해주세요",
   ID_OOBC_EDITOR_ADDVAR_TITLE: "변수 만들기",
-  ID_OOBC_EDITOR_ADDVAR_SUBTITLE: "*영문, 숫자만 입력할 수 있어요\n*첫 글자는 반드시 영문으로 입력해주세요",
+  ID_OOBC_EDITOR_ADDVAR_SUBTITLE:
+    "*영문, 숫자만 입력할 수 있어요\n*첫 글자는 반드시 영문으로 입력해주세요",
   ID_OOBC_EDITOR_ADDVAR_PLACEHOLDER: "변수 이름을 입력해주세요",
   ID_OOBC_EDITOR_ADDVAR_WARN_REGEX_TITLE: "경고!",
   ID_OOBC_EDITOR_ADDVAR_WARN_REGEX_SUBTITLE: "변수 이름 규칙을 지켜주세요",
   ID_OOBC_EDITOR_ADDVAR_WARN_EXIST_TITLE: "경고!",
   ID_OOBC_EDITOR_ADDVAR_WARN_EXIST_SUBTITLE: "이미 사용 중인 변수 이름이에요",
   ID_OOBC_EDITOR_WARN_TITLE: "경고!",
-  ID_OOBC_EDITOR_WARN_DISABLED_BLOCK_PLAYANIMATION: "해당 스프라이트에는 애니메이션이 없어요",
-  ID_OOBC_EDITOR_WARN_DISABLED_BLOCK_STOPANIMATION: "해당 스프라이트에는 애니메이션이 없어요",
+  ID_OOBC_EDITOR_WARN_DISABLED_BLOCK_PLAYANIMATION:
+    "해당 스프라이트에는 애니메이션이 없어요",
+  ID_OOBC_EDITOR_WARN_DISABLED_BLOCK_STOPANIMATION:
+    "해당 스프라이트에는 애니메이션이 없어요",
   ID_OOBC_EDITOR_WARN_REPLACE_TITLE: "경고!",
-  ID_OOBC_EDITOR_WARN_REPLACE_SUBTITLE: "뒤에 오는 블록들이 함께 지워질 수 있어요!\n그래도 교체할까요?",
+  ID_OOBC_EDITOR_WARN_REPLACE_SUBTITLE:
+    "뒤에 오는 블록들이 함께 지워질 수 있어요!\n그래도 교체할까요?",
   ID_OOBC_EDITOR_WARN_LINEDELETE_TITLE: "경고!",
-  ID_OOBC_EDITOR_WARN_LINEDELETE_SUBTITLE: "줄을 삭제하면 되돌릴 수 없어요!\n그래도 삭제할까요?",
+  ID_OOBC_EDITOR_WARN_LINEDELETE_SUBTITLE:
+    "줄을 삭제하면 되돌릴 수 없어요!\n그래도 삭제할까요?",
   ID_OOBC_BLOCK_CATEGORY_SPRITE: "Sprite",
   ID_OOBC_BLOCK_CATEGORY_PROPERTY: "Property",
   ID_OOBC_BLOCK_CATEGORY_ACTION: "Action",
@@ -899,15 +964,21 @@ const ko = {
   ID_WIZERROR_MESSAGE_NOT_DEFINED: "선언되지 않은 심볼 {symbol} 사용",
   ID_WIZERROR_MESSAGE_NOT_FUNCTION: "{symbol}은 함수가 아님",
   ID_WIZERROR_MESSAGE_CANNOT_READ_PROPERTY: "프로퍼티 {symbol}가 존재하지 않음",
-  ID_WIZERROR_MESSAGE_CANNOT_READ_PROPERTIES: "Cannot read properties of undefined (reading '{apiName}')",
-  ID_WIZERROR_MESSAGE_INSTANCEOF_RIGHT_NOT_OBJECT: "instanceof 뒤에는 object 타입이 와야함",
-  ID_WIZERROR_LOCATION_FULL: "{sceneId}의 {spriteId} 스프라이트\n({line}번 줄 {column}번째 문자)",
+  ID_WIZERROR_MESSAGE_CANNOT_READ_PROPERTIES:
+    "Cannot read properties of undefined (reading '{apiName}')",
+  ID_WIZERROR_MESSAGE_INSTANCEOF_RIGHT_NOT_OBJECT:
+    "instanceof 뒤에는 object 타입이 와야함",
+  ID_WIZERROR_LOCATION_FULL:
+    "{sceneId}의 {spriteId} 스프라이트\n({line}번 줄 {column}번째 문자)",
   ID_WIZERROR_LOCATION_LINE_COLUMN: "({line}번 줄 {column}번째 문자)",
   ID_WIZERROR_LOCATION_SCENE_SPRITE: "{sceneId}의 {spriteId} 스프라이트",
-  ID_WIZERROR_LOCATION_SCENE_SPRITE_API: "{sceneId}의 {spriteId} 스프라이트({api})",
-  ID_WIZERROR_LOCATION_FULL_3D: "{sceneName}의 {gameObjectName} 오브젝트\n({line}번 줄 {column}번째 문자)",
+  ID_WIZERROR_LOCATION_SCENE_SPRITE_API:
+    "{sceneId}의 {spriteId} 스프라이트({api})",
+  ID_WIZERROR_LOCATION_FULL_3D:
+    "{sceneName}의 {gameObjectName} 오브젝트\n({line}번 줄 {column}번째 문자)",
   ID_WIZERROR_LOCATION_SCENE_OBJECT: "{sceneName}의 {gameObjectName} 오브젝트",
-  ID_WIZERROR_LOCATION_SCENE_OBJECT_API: "{sceneName}의 {gameObjectName} 오브젝트({api})",
+  ID_WIZERROR_LOCATION_SCENE_OBJECT_API:
+    "{sceneName}의 {gameObjectName} 오브젝트({api})",
   TEST_DEVICE_CHANGE_TITLE: "장비 변경하기",
   ID_APK_CREATINGPROCESS_GUIDE: "이용안내",
   ID_APK_CREATINGPROCESS_SELECTAPP: "앱 선택",
@@ -936,7 +1007,8 @@ const ko = {
   ID_QNA_WRITE_QUESTION_DESC: "창작 중 궁금한 내용이 있으면 질문해 주세요.",
   ID_QNA_WRITE_QUESTION_OPT1: "코드 추가하기",
   ID_QNA_WRITE_QUESTION_OPT2: "프로젝트 공개",
-  ID_QNA_WRITE_QUESTION_OPT2_DESC: "프로젝트를 공개하면 다른 사람이 프로젝트를 확인하고 답변을 남길 수 있습니다.",
+  ID_QNA_WRITE_QUESTION_OPT2_DESC:
+    "프로젝트를 공개하면 다른 사람이 프로젝트를 확인하고 답변을 남길 수 있습니다.",
   ID_QNA_WRITE_QUESTION_ADD: "등록하기",
   ID_QNA_TEXTAREA_PLACEHOLDER: "내용을 입력해주세요..",
   ID_QNA_ACE_PLACEHOLDER: "//코드를 입력해주세요..\n",
@@ -1023,7 +1095,8 @@ const ko = {
   ID_CHATBOT_API_QUESTION: "{api} 사용법 알려줘",
   ID_CHATBOT_CLASS_QUESTION: "{class}에 대해서 더 배우고싶어",
   ID_RANKING_TITLE: "드림클래스 사용자 랭킹",
-  ID_RANKING_SUBTITLE: "총 {count}명의 학생이 드림클래스 IT과정에서 학습 중입니다. ",
+  ID_RANKING_SUBTITLE:
+    "총 {count}명의 학생이 드림클래스 IT과정에서 학습 중입니다. ",
   ID_RANKING_SUBTITLE2: "랭킹은 학기마다 초기화 됩니다.",
   ID_RANKING_TAB_LEARN: "학습",
   ID_RANKING_TAB_CREATE: "창작",
@@ -1050,7 +1123,8 @@ const ko = {
   ID_GAME_LIST_TAB_ALL: "전체",
   ID_GAME_LIST_TAB_JAVASCRIPT: "개발본능! 게임 프로듀서",
   ID_GAME_LIST_TAB_OOBC: "도전! 게임 메이커",
-  ID_GAME_LIST_PLACEHOLDER: "찾아봐도 아무 것도 없어요. 다른 이름으로 검색해 볼까요?",
+  ID_GAME_LIST_PLACEHOLDER:
+    "찾아봐도 아무 것도 없어요. 다른 이름으로 검색해 볼까요?",
   ID_MYPAGE_SETTING_TITLE: "프로필 수정",
   ID_MYPAGE_SETTING_NICKNAME: "닉네임",
   ID_MYPAGE_SETTING_STATUS_MSG: "한줄 소개글",
@@ -1099,7 +1173,8 @@ const ko = {
   ID_LAYOUT_NOTI_SUBSCRIBE: `{targetUser}님이 구독을 시작했습니다.`,
   ID_LAYOUT_NOTI_NEWAPP: `{targetUser}님이 새 앱 {targetProject}을 등록했습니다.`,
   ID_LAYOUT_NOTI_REPLY: `{targetUser}님이 댓글에서 회원님을 태그했습니다.\n"{message}"`,
-  ID_LAYOUT_NOTI_DEFAULT: "현재 버전에서 지원하지 않습니다. 앱을 업데이트 해주세요.",
+  ID_LAYOUT_NOTI_DEFAULT:
+    "현재 버전에서 지원하지 않습니다. 앱을 업데이트 해주세요.",
   ID_WIZAPP_MODE_CHALLENGE_RANK: "👍 시즌1 참여작 랭킹",
   ID_WIZAPP_MODE_CHALLENGE_NEW: "🔥 새로운 도전작",
   ID_WIZAPP_MODE_SSAFY_RANK: "👍 실시간 랭킹",
@@ -1114,8 +1189,10 @@ const ko = {
   ID_ALERT_MANAGE_REPORT_DEVICE_ERROR: "장비가 없습니다!",
   ID_TUTORIAL_TITLE: "어서와요, 미래의 개발자님들!",
   ID_TUTORIAL_DESC01: "여러분 모두가 드림클래스 IT 과정의 주인공입니다.",
-  ID_TUTORIAL_DESC02: "마음에 드는 프로젝트를 골라 상상만 했던 게임을 직접 만들어 볼까요? 요원이 되어 보는 건 어떤가요?",
-  ID_TUTORIAL_DESC03: "오늘의 퀘스트를 수행해서 명성을 획득하고, 창작한 게임을 퍼블리싱해서 모두에게 자랑해 보세요. 게시글을 올려 자유롭게 소통할 수도 있답니다.",
+  ID_TUTORIAL_DESC02:
+    "마음에 드는 프로젝트를 골라 상상만 했던 게임을 직접 만들어 볼까요? 요원이 되어 보는 건 어떤가요?",
+  ID_TUTORIAL_DESC03:
+    "오늘의 퀘스트를 수행해서 명성을 획득하고, 창작한 게임을 퍼블리싱해서 모두에게 자랑해 보세요. 게시글을 올려 자유롭게 소통할 수도 있답니다.",
   ID_TUTORIAL_DESC04: "한 가지만 기억하세요 - 배우고, 놀고, 떠들기!",
   ID_PYTHON_SUBMIT_MSG: "제출하시겠습니까?",
   ID_PYTHON_SUBMIT_ERROR_MSG: "먼저 코드를 실행해 주세요.",
@@ -1325,45 +1402,58 @@ const ko = {
   ID_COMMENT_TITLE: "댓글",
   ID_DATE_FORMAT_MIN: "분 전",
 
-  ID_CERT_ELEMENTARY_BLOCK_DESC:"is awarded with this certificate for successfully fulfilling requirements of Elementary Block Coding, a software education course offered by iGroup, and completing 5 projects utilizing Event, Sequence, Physical Engine.",
-  ID_CERT_BASIC_BLOCK_DESC:"is awarded with this certificate for successfully fulfilling requirements of Basic Block Coding, a software education course offered by iGroup, and completing 15 projects utilizing Event, Sequence, Physical Engine, Variable, and Conditional Statement.",
-  ID_CERT_ADVANCED_BLOCK_DESC:"is awarded with this certificate for successfully fulfilling requirements of Advanced Block Coding, a software education course offered by iGroup, and completing 4 projects utilizing Pysical Engine,  Variable,  Conditional Statement, Clone, and Loop.",
-  ID_CERT_ADVANCED_JS_DESC:"is awarded with this certificate for successfully fulfilling requirements of Advanced JavaScript, a software education course offered by iGroup, and completing 8 projects utilizing Event, Sequence, Physical Engine, Random Number,  Varibale, Conditional Statement, and Operator.",
-  ID_CERT_MASTERY_JS_DESC:"is awarded with this certificate for successfully fulfilling requirements of JavaScript Mastery, a software education course offered by iGroup, and completing 4 projects utilizing Random Number, Variable, Conditional Statement, Operator, List, Index,  Loop, and Function.",
+  ID_CERT_ELEMENTARY_BLOCK_DESC:
+    "is awarded with this certificate for successfully fulfilling requirements of Elementary Block Coding, a software education course offered by iGroup, and completing 5 projects utilizing Event, Sequence, Physical Engine.",
+  ID_CERT_BASIC_BLOCK_DESC:
+    "is awarded with this certificate for successfully fulfilling requirements of Basic Block Coding, a software education course offered by iGroup, and completing 15 projects utilizing Event, Sequence, Physical Engine, Variable, and Conditional Statement.",
+  ID_CERT_ADVANCED_BLOCK_DESC:
+    "is awarded with this certificate for successfully fulfilling requirements of Advanced Block Coding, a software education course offered by iGroup, and completing 4 projects utilizing Pysical Engine,  Variable,  Conditional Statement, Clone, and Loop.",
+  ID_CERT_ADVANCED_JS_DESC:
+    "is awarded with this certificate for successfully fulfilling requirements of Advanced JavaScript, a software education course offered by iGroup, and completing 8 projects utilizing Event, Sequence, Physical Engine, Random Number,  Varibale, Conditional Statement, and Operator.",
+  ID_CERT_MASTERY_JS_DESC:
+    "is awarded with this certificate for successfully fulfilling requirements of JavaScript Mastery, a software education course offered by iGroup, and completing 4 projects utilizing Random Number, Variable, Conditional Statement, Operator, List, Index,  Loop, and Function.",
 
-  ID_SIGNUP_CREATE_TITLE : "계정 생성하기",
-  ID_SIGNUP_FIRST_NAME : "성",
-  ID_SIGNUP_NICKNAME:"Nickname",
+  ID_SIGNUP_CREATE_TITLE: "계정 생성하기",
+  ID_SIGNUP_FIRST_NAME: "성",
+  ID_SIGNUP_NICKNAME: "Nickname",
   ID_SIGNUP_FIRST_NAME_PLACEHOLDER: "성을 입력해주세요",
 
-  ID_INTRO_ABOUT_ASTRO_CODING_GO_TITLE : "About Astro Coding Go!",
-  ID_INTRO_SECOND_SECTION_TITLE : "A coding class\nwith next-level missions",
-  ID_INTRO_SECOND_SECTION_INFO_TITLE_1 : "6 to 12",
-  ID_INTRO_SECOND_SECTION_INFO_TITLE_2 : "36 missions",
-  ID_INTRO_SECOND_SECTION_INFO_TITLE_3 : "100 hours",
-  ID_INTRO_SECOND_SECTION_INFO_TITLE_1_EXPLAN : "A coding class\nfor students aged 6 to 12",
-  ID_INTRO_SECOND_SECTION_INFO_TITLE_2_EXPLAN : "36 STEM convergence missions\nmeeting the CSTA standard",
-  ID_INTRO_SECOND_SECTION_INFO_TITLE_3_EXPLAN : "A 100 hours PBL curriculum\nto develop pracrical skills",
-  
-  ID_INTRO_THIRD_SECTION_TITLE : "Here's how\nthe curriculum works",
-  ID_INTRO_THIRD_SECTION_BUTTON_TEXT_1:"Learn through ACG’s 36 Missions",
-  ID_INTRO_THIRD_SECTION_BUTTON_TEXT_2:"Build your own games",
-  ID_INTRO_THIRD_SECTION_BUTTON_TEXT_3:"Share and Play with your classmates",
+  ID_INTRO_ABOUT_ASTRO_CODING_GO_TITLE: "About Astro Coding Go!",
+  ID_INTRO_SECOND_SECTION_TITLE: "A coding class\nwith next-level missions",
+  ID_INTRO_SECOND_SECTION_INFO_TITLE_1: "6 to 12",
+  ID_INTRO_SECOND_SECTION_INFO_TITLE_2: "36 missions",
+  ID_INTRO_SECOND_SECTION_INFO_TITLE_3: "100 hours",
+  ID_INTRO_SECOND_SECTION_INFO_TITLE_1_EXPLAN:
+    "A coding class\nfor students aged 6 to 12",
+  ID_INTRO_SECOND_SECTION_INFO_TITLE_2_EXPLAN:
+    "36 STEM convergence missions\nmeeting the CSTA standard",
+  ID_INTRO_SECOND_SECTION_INFO_TITLE_3_EXPLAN:
+    "A 100 hours PBL curriculum\nto develop pracrical skills",
 
-  ID_INTRO_GAME_VIDEO_SECTION_TITLE : "Your very own game\ncreated with Astro",
-  ID_INTRO_GAME_VIDEO_SECTION_CHILD_TITLE : "Experience what you can make at Astro Coding Go!",
-  ID_INTRO_GAME_VIDEO_LINE_BANNER_TITLE_LEFT : "How to play:",
-  ID_INTRO_LINE_BANNER_TITLE : "Try our free courses first!",
-  ID_INTRO_LINE_BANNER_CHILD_TITLE : "Fun and learning all at once",
-  ID_INTRO_LINE_BANNER_GO_TO_FREE_COURSE_LINK : "Go to Free Trial Course",
+  ID_INTRO_THIRD_SECTION_TITLE: "Here's how\nthe curriculum works",
+  ID_INTRO_THIRD_SECTION_BUTTON_TEXT_1: "Learn through ACG’s 36 Missions",
+  ID_INTRO_THIRD_SECTION_BUTTON_TEXT_2: "Build your own games",
+  ID_INTRO_THIRD_SECTION_BUTTON_TEXT_3: "Share and Play with your classmates",
+
+  ID_INTRO_GAME_VIDEO_SECTION_TITLE: "Your very own game\ncreated with Astro",
+  ID_INTRO_GAME_VIDEO_SECTION_CHILD_TITLE:
+    "Experience what you can make at Astro Coding Go!",
+  ID_INTRO_GAME_VIDEO_LINE_BANNER_TITLE_LEFT: "How to play:",
+  ID_INTRO_LINE_BANNER_TITLE: "Try our free courses first!",
+  ID_INTRO_LINE_BANNER_CHILD_TITLE: "Fun and learning all at once",
+  ID_INTRO_LINE_BANNER_GO_TO_FREE_COURSE_LINK: "Go to Free Trial Course",
   ID_INTRO_INTRODUCE_AREA_CONTENT_TITLE: "Unique Builder",
   ID_INTRO_INTRODUCE_AREA_CONTENT_TITLE_2: "Systematic LMS",
   ID_INTRO_INTRODUCE_AREA_CONTENT_TITLE_3: "Project-Based Practical Classes",
   ID_INTRO_INTRODUCE_AREA_CONTENT_TITLE_4: "The Patented OOBC Technology",
-  ID_INTRO_INTRODUCE_AREA_CONTENT_CHILD_TITLE_1: "ACG’s unique builder allows you to create your own games with Team Astro characters.\nStudents can utilize what they learned from the missions to select\nthe characters and items they want and code.",
-  ID_INTRO_INTRODUCE_AREA_CONTENT_CHILD_TITLE_2: "Teach students easily by assigning missions for them to try.\nManage multiple classes at once while keeping track of the progress of each student.\nEven instructors who aren't expert coders can teach classes with ease.",
-  ID_INTRO_INTRODUCE_AREA_CONTENT_CHILD_TITLE_3: "Apply CS concepts such as variables and functions to each mission and learn practical cases\nrather than stopping at theoretical learning. And with the additional builder feature, students can\napply the skills they learned and create their very own games themselves.",
-  ID_INTRO_INTRODUCE_AREA_CONTENT_CHILD_TITLE_4: "The OOBC block language used in Astro Coding Go! uses a sentence structure that is different\nfrom the existing block code language, helping the transition to text coding such as JS.\n* OOBC : object-oriented block coding",
+  ID_INTRO_INTRODUCE_AREA_CONTENT_CHILD_TITLE_1:
+    "ACG’s unique builder allows you to create your own games with Team Astro characters.\nStudents can utilize what they learned from the missions to select\nthe characters and items they want and code.",
+  ID_INTRO_INTRODUCE_AREA_CONTENT_CHILD_TITLE_2:
+    "Teach students easily by assigning missions for them to try.\nManage multiple classes at once while keeping track of the progress of each student.\nEven instructors who aren't expert coders can teach classes with ease.",
+  ID_INTRO_INTRODUCE_AREA_CONTENT_CHILD_TITLE_3:
+    "Apply CS concepts such as variables and functions to each mission and learn practical cases\nrather than stopping at theoretical learning. And with the additional builder feature, students can\napply the skills they learned and create their very own games themselves.",
+  ID_INTRO_INTRODUCE_AREA_CONTENT_CHILD_TITLE_4:
+    "The OOBC block language used in Astro Coding Go! uses a sentence structure that is different\nfrom the existing block code language, helping the transition to text coding such as JS.\n* OOBC : object-oriented block coding",
 
   ID_INTRO_CONTACT_1_INSTITUTION_NAME: "School / Company / Institution name",
   ID_INTRO_CONTACT_1_STUDENTS_COUNT: "How many students will be enrolled in?",
@@ -1381,22 +1471,28 @@ const ko = {
   ID_INTRO_CONTACT_2_EMAIL: "Email",
   ID_INTRO_CONTACT_2_SUCCESS: "SUCCESS",
 
-  ID_ABOUT_CHARACTER_BOY_TITLE : "Astro Boy",
-  ID_ABOUT_CHARACTER_BOY_CHILD_TITLE : "AI robot built to resemble a young human boy.\nHe embodies helpful and heroic spirit,\nand is always motivated in his rescue mission.",
-  ID_ABOUT_CHARACTER_SUZU_TITLE : "SUZU",
-  ID_ABOUT_CHARACTER_SUZU_CHILD_TITLE : "A cute 7 years old human girl and\nthe granddaughter of Professor Elefun.\nShe is extremely intelligent, capapble, and independent.",
-  ID_ABOUT_CHARACTER_KITTY_TITLE : "Astro Kitty",
-  ID_ABOUT_CHARACTER_KITTY_CHILD_TITLE : "AI robot built to resemble a three months old kitten.\nAstro regards Astro Kitty as his mischievous\nbut adorable younger brother.",
+  ID_ABOUT_CHARACTER_BOY_TITLE: "Astro Boy",
+  ID_ABOUT_CHARACTER_BOY_CHILD_TITLE:
+    "AI robot built to resemble a young human boy.\nHe embodies helpful and heroic spirit,\nand is always motivated in his rescue mission.",
+  ID_ABOUT_CHARACTER_SUZU_TITLE: "SUZU",
+  ID_ABOUT_CHARACTER_SUZU_CHILD_TITLE:
+    "A cute 7 years old human girl and\nthe granddaughter of Professor Elefun.\nShe is extremely intelligent, capapble, and independent.",
+  ID_ABOUT_CHARACTER_KITTY_TITLE: "Astro Kitty",
+  ID_ABOUT_CHARACTER_KITTY_CHILD_TITLE:
+    "AI robot built to resemble a three months old kitten.\nAstro regards Astro Kitty as his mischievous\nbut adorable younger brother.",
 
-  ID_INTRO_SCROLL_AREA_LEFT_TITLE : "Self Managing Education",
-  ID_INTRO_SCROLL_AREA_LEFT_CHILD_TITLE : "A self-managing education method provides tips and\nanswers within each mission, ultimately minimizing the\ninstructions that are required for instructors.",
-  ID_INTRO_SCROLL_AREA_LEFT_TITLE_2 : "Study Assistant Tools",
-  ID_INTRO_SCROLL_AREA_LEFT_CHILD_TITLE_2 : "The assistant provides tools to help students solve\ndifficult problems on their own such as code sorting,\nAPI Dictionary, and a question and answer board while\nthey write their own code.",
-  ID_INTRO_CONTACT_TITLE : "Contact US",
-  ID_INTRO_CONTACT_CHILD_TITLE : "Complete the contact form to receive\na free account and try the premium content\nof Astro Coding Go for free.",
-  ID_INTRO_VIEW_MORE_NOTICE_TITLE : "Teach coding on a fun and exciting way!",
-  ID_INTRO_VIEW_MORE_LEFT_TITLE : "Want to know more\nabout the Curriculum?",
-  ID_INTRO_VIEW_MORE_RIGHT_TITLE : "Start your free trial\ncourse right now!",
+  ID_INTRO_SCROLL_AREA_LEFT_TITLE: "Self Managing Education",
+  ID_INTRO_SCROLL_AREA_LEFT_CHILD_TITLE:
+    "A self-managing education method provides tips and\nanswers within each mission, ultimately minimizing the\ninstructions that are required for instructors.",
+  ID_INTRO_SCROLL_AREA_LEFT_TITLE_2: "Study Assistant Tools",
+  ID_INTRO_SCROLL_AREA_LEFT_CHILD_TITLE_2:
+    "The assistant provides tools to help students solve\ndifficult problems on their own such as code sorting,\nAPI Dictionary, and a question and answer board while\nthey write their own code.",
+  ID_INTRO_CONTACT_TITLE: "Contact US",
+  ID_INTRO_CONTACT_CHILD_TITLE:
+    "Complete the contact form to receive\na free account and try the premium content\nof Astro Coding Go for free.",
+  ID_INTRO_VIEW_MORE_NOTICE_TITLE: "Teach coding on a fun and exciting way!",
+  ID_INTRO_VIEW_MORE_LEFT_TITLE: "Want to know more\nabout the Curriculum?",
+  ID_INTRO_VIEW_MORE_RIGHT_TITLE: "Start your free trial\ncourse right now!",
 
   ID_INTRO_CONTACT_BUTTON_BACK: "Back",
   ID_INTRO_CONTACT_BUTTON_SEND: "Send Message",
@@ -1420,8 +1516,10 @@ const ko = {
   ID_ACCOUNT_EDIT_NAME_POPUP_ENTER_FAMILY_NAME: "성을 입력하세요.",
   ID_ACCOUNT_EDIT_NICKNAME_POPUP_TITLE: "닉네임 수정",
   ID_ACCOUNT_EDIT_NICKNAME_POPUP_ENTER_NICKNAME: "닉네임을 입력하세요.",
-  ID_ACCOUNT_SETTING_ALERT_NEW_PWD_NOT_EQUAL: "새 비밀번호와 비밀번호 확인이 일치하지 않습니다. ",
-  ID_ACCOUNT_SETTING_ALERT_NEW_PWD_LENGTH: "비밀번호는 6자리 이상 입력해야 합니다.",
+  ID_ACCOUNT_SETTING_ALERT_NEW_PWD_NOT_EQUAL:
+    "새 비밀번호와 비밀번호 확인이 일치하지 않습니다. ",
+  ID_ACCOUNT_SETTING_ALERT_NEW_PWD_LENGTH:
+    "비밀번호는 6자리 이상 입력해야 합니다.",
 
   ID_ATTENDANCE_TITLE: "출석현황",
   ID_PLAY_RECENT_GAMES: "Recently Played",
@@ -1429,84 +1527,111 @@ const ko = {
   ID_PLAY_RECENT_GAMES_NO_RESULT: "There are no recently played games.",
   ID_PLAY_ALL_GAMES_NO_RESULT: "There are no published games.",
 
-  ID_INTRO_CONTACT_US : "Contact Us",
-  ID_INTRO_SCROLL_ACTION_IMG_TITLE_1 : "Self Check",
-  ID_INTRO_SCROLL_ACTION_IMG_CHILD_TITLE_1 : "Student can view what they learned\nfrom each mission on their own",
-  ID_INTRO_SCROLL_ACTION_IMG_TITLE_2 : "Dashboard",
-  ID_INTRO_SCROLL_ACTION_IMG_CHILD_TITLE_2 : "The dashboard feature helps students\nassess their own learning progress",
-  ID_INTRO_SCROLL_ACTION_IMG_TITLE_3 : "Code sorting feature",
-  ID_INTRO_SCROLL_ACTION_IMG_CHILD_TITLE_3 : "Arrange a written code\naccording to JS grammar.",
-  ID_INTRO_SCROLL_ACTION_IMG_TITLE_4 : "API Dictionary",
-  ID_INTRO_SCROLL_ACTION_IMG_CHILD_TITLE_4 : "Find the commands\nyou need by function.",
-  ID_INTRO_PLAY_WAY : "Press button to destroy plasma!",
-  ID_INTRO_CONTACT_COMPLETE_TITLE : "컨택 폼 제출 완료",
-  ID_INTRO_CONTACT_COMPLETE_CHILD_TITLE : "컨택 주셔서 감사합니다.\n담당자 확인 후 연락드리겠습니다.",
-  ID_INTRO_CONTACT_COMPLETE_OK_BUTTON : "확인",
-  ID_INTRO_EASY_SECTION_TITLE : "Instructor LMS Feature\nfor Easy Instruction and Guidance",
-  ID_INTRO_EASY_SECTION_CHILD_TITLE : "The LMS (Learning Management System) manages\nvarious classes and can be applied flexibly in various institutions.",
-  ID_INTRO_EASY_ITEM_TITLE_1 : "Create classes\nand manage students",
-  ID_INTRO_EASY_ITEM_TITLE_2 : "Assign missions to students\nto try for each class",
-  ID_INTRO_EASY_ITEM_TITLE_3 : "Monitor the attendance\nand mission progress of students",
+  ID_INTRO_CONTACT_US: "Contact Us",
+  ID_INTRO_SCROLL_ACTION_IMG_TITLE_1: "Self Check",
+  ID_INTRO_SCROLL_ACTION_IMG_CHILD_TITLE_1:
+    "Student can view what they learned\nfrom each mission on their own",
+  ID_INTRO_SCROLL_ACTION_IMG_TITLE_2: "Dashboard",
+  ID_INTRO_SCROLL_ACTION_IMG_CHILD_TITLE_2:
+    "The dashboard feature helps students\nassess their own learning progress",
+  ID_INTRO_SCROLL_ACTION_IMG_TITLE_3: "Code sorting feature",
+  ID_INTRO_SCROLL_ACTION_IMG_CHILD_TITLE_3:
+    "Arrange a written code\naccording to JS grammar.",
+  ID_INTRO_SCROLL_ACTION_IMG_TITLE_4: "API Dictionary",
+  ID_INTRO_SCROLL_ACTION_IMG_CHILD_TITLE_4:
+    "Find the commands\nyou need by function.",
+  ID_INTRO_PLAY_WAY: "Press button to destroy plasma!",
+  ID_INTRO_CONTACT_COMPLETE_TITLE: "컨택 폼 제출 완료",
+  ID_INTRO_CONTACT_COMPLETE_CHILD_TITLE:
+    "컨택 주셔서 감사합니다.\n담당자 확인 후 연락드리겠습니다.",
+  ID_INTRO_CONTACT_COMPLETE_OK_BUTTON: "확인",
+  ID_INTRO_EASY_SECTION_TITLE:
+    "Instructor LMS Feature\nfor Easy Instruction and Guidance",
+  ID_INTRO_EASY_SECTION_CHILD_TITLE:
+    "The LMS (Learning Management System) manages\nvarious classes and can be applied flexibly in various institutions.",
+  ID_INTRO_EASY_ITEM_TITLE_1: "Create classes\nand manage students",
+  ID_INTRO_EASY_ITEM_TITLE_2:
+    "Assign missions to students\nto try for each class",
+  ID_INTRO_EASY_ITEM_TITLE_3:
+    "Monitor the attendance\nand mission progress of students",
 
-  ID_ABOUT_CURRICULUM_TITLE : "Premium Quality Curriculum",
-  ID_ABOUT_CURRICULUM_CARD_TITLE_1 : "CSTA Standard",
-  ID_ABOUT_CURRICULUM_CARD_CONTENT_1 : "Student will receive CS education\nthat meets global standards as the\nprogram is designed according to the US CSTA standard.",
-  ID_ABOUT_CURRICULUM_CARD_TITLE_2 : "STEM Convergence",
-  ID_ABOUT_CURRICULUM_CARD_CONTENT_2 : "Naturak sciences,biology, physicsm\ntechnology, and math! Students can learn various STEM concepts with Astro Boy Go! clips and utilize what they learned in their projects.",
-  ID_ABOUT_CURRICULUM_CARD_TITLE_3 : "UN SDGs",
-  ID_ABOUT_CURRICULUM_CARD_CONTENT_3 : "Students can learn the core concepts of the UN's 17 Sustainable\nDevelopment Goals through the\nproject and grow up to become\nmature citizens.",
-  ID_ABOUT_HORIZONTAL_SLIDE_TITLE : "Learn coding with exciting adventures!",
-  ID_ABOUT_HORIZONTAL_SLIDE_ITEM_TITLE_1 : "Hungry Recycle Robot",
-  ID_ABOUT_HORIZONTAL_SLIDE_ITEM_CHILD_TITLE_1 : "Learn about events and create a simple puzzle game.",
-  ID_ABOUT_HORIZONTAL_SLIDE_ITEM_TITLE_2 : "Find OT2",
-  ID_ABOUT_HORIZONTAL_SLIDE_ITEM_CHILD_TITLE_2 : "Learn about the physics engine and create an arcade game.",
-  ID_ABOUT_HORIZONTAL_SLIDE_ITEM_TITLE_3 : "Plasma meltdown",
-  ID_ABOUT_HORIZONTAL_SLIDE_ITEM_CHILD_TITLE_3 : "Learn about loop statements and defeat the giant plasma.",
-  ID_ABOUT_HORIZONTAL_SLIDE_ITEM_TITLE_4 : "Bobo’s secret",
-  ID_ABOUT_HORIZONTAL_SLIDE_ITEM_CHILD_TITLE_4 : "Use JavaScript to implement events and create an escape room.",
-  ID_ABOUT_HORIZONTAL_SLIDE_ITEM_TITLE_5 : "Garbage Island",
-  ID_ABOUT_HORIZONTAL_SLIDE_ITEM_CHILD_TITLE_5 : "Learn about functions and clean the polluted ocean with Astro.",
-  ID_ABOUT_INTRO_TITLE : "Exciting Coding Lessons with Go Astro Go!",
-  ID_ABOUT_INTRO_CHILD_TITLE : "Astro sets out to solve problems happening\nall over the world together with SUZU and Astro Kitty",
-  ID_ABOUT_STRUCTURE_TITLE : "Curriculum Structure",
-  ID_ABOUT_DOWNLOAD_CURRICULUM : "Download Curriculum in PDF",
-  ID_ABOUT_STRUCTURE_BLOCK_CODING : "Block Coding",
-  ID_ABOUT_STRUCTURE_JAVASCRIPT : "JavaScript",
-  ID_ABOUT_MORE_TRIAL_TEXT : "Go to Free Trial",
-  ID_ABOUT_INFORMATION_TITLE : "Information",
-  ID_ABOUT_INFORMATION_TECHNICAL : "Technical Specifications",
-  ID_ABOUT_INFORMATION_PROFILE : "Company Profile",
-  ID_ABOUT_INFORMATION_TECHNICAL_INNER : "Hardware : Desktop/laptop/tablet\nResolution : Minimum 1280*800\nOS : Windows 10/MaxOS 10.14 or higher\nBrowser : Chrome 64, FireFox 58, Safari 11.2, Microsoft Edge 17\nInternet connection : Minimum 30Mbps",
-  ID_ABOUT_INFORMATION_PROFILE_INNER : "MANGOSTEEMS PTE. LTD.",
-  ID_ABOUT_INFORMATION_PROFILE_INNER_FOUNDED : "Founded : 2018",
-  ID_ABOUT_INFORMATION_PROFILE_INNER_ADDRESS : "Address : 31 Kaki Bukit Road 3 #06-07 Techlink Singapore (417818)",
-  ID_ABOUT_INFORMATION_PROFILE_INNER_ADDRESS_SECOND_LINE : "www.mangosteems.com",
-  ID_ABOUT_INFORMATION_PROFILE_INNER_CONTACT : "Contact : acg@mangosteems.com",
-  ID_ABOUT_INFORMATION_PROFILE_INNER_PARTNER_TITLE : "Partner Companies",
-  ID_ABOUT_INFORMATION_PROFILE_INNER_PARTNER_IGROUP : "iGroup Asia-Pacific Ltd.",
-  ID_ABOUT_INFORMATION_PROFILE_INNER_PARTNER_ADDRESS : "www.igroupnet.com",
-  ID_ABOUT_INFORMATION_PROFILE_INNER_PARTNER_IDC : "IDC ASIA Co., Ltd. /iGroup Korea",
-  ID_ABOUT_INFORMATION_PROFILE_INNER_PARTNER_IDC_ADDRESS : "www.igroupkorea.kr",
+  ID_ABOUT_CURRICULUM_TITLE: "Premium Quality Curriculum",
+  ID_ABOUT_CURRICULUM_CARD_TITLE_1: "CSTA Standard",
+  ID_ABOUT_CURRICULUM_CARD_CONTENT_1:
+    "Student will receive CS education\nthat meets global standards as the\nprogram is designed according to the US CSTA standard.",
+  ID_ABOUT_CURRICULUM_CARD_TITLE_2: "STEM Convergence",
+  ID_ABOUT_CURRICULUM_CARD_CONTENT_2:
+    "Naturak sciences,biology, physicsm\ntechnology, and math! Students can learn various STEM concepts with Astro Boy Go! clips and utilize what they learned in their projects.",
+  ID_ABOUT_CURRICULUM_CARD_TITLE_3: "UN SDGs",
+  ID_ABOUT_CURRICULUM_CARD_CONTENT_3:
+    "Students can learn the core concepts of the UN's 17 Sustainable\nDevelopment Goals through the\nproject and grow up to become\nmature citizens.",
+  ID_ABOUT_HORIZONTAL_SLIDE_TITLE: "Learn coding with exciting adventures!",
+  ID_ABOUT_HORIZONTAL_SLIDE_ITEM_TITLE_1: "Hungry Recycle Robot",
+  ID_ABOUT_HORIZONTAL_SLIDE_ITEM_CHILD_TITLE_1:
+    "Learn about events and create a simple puzzle game.",
+  ID_ABOUT_HORIZONTAL_SLIDE_ITEM_TITLE_2: "Find OT2",
+  ID_ABOUT_HORIZONTAL_SLIDE_ITEM_CHILD_TITLE_2:
+    "Learn about the physics engine and create an arcade game.",
+  ID_ABOUT_HORIZONTAL_SLIDE_ITEM_TITLE_3: "Plasma meltdown",
+  ID_ABOUT_HORIZONTAL_SLIDE_ITEM_CHILD_TITLE_3:
+    "Learn about loop statements and defeat the giant plasma.",
+  ID_ABOUT_HORIZONTAL_SLIDE_ITEM_TITLE_4: "Bobo’s secret",
+  ID_ABOUT_HORIZONTAL_SLIDE_ITEM_CHILD_TITLE_4:
+    "Use JavaScript to implement events and create an escape room.",
+  ID_ABOUT_HORIZONTAL_SLIDE_ITEM_TITLE_5: "Garbage Island",
+  ID_ABOUT_HORIZONTAL_SLIDE_ITEM_CHILD_TITLE_5:
+    "Learn about functions and clean the polluted ocean with Astro.",
+  ID_ABOUT_INTRO_TITLE: "Exciting Coding Lessons with Go Astro Go!",
+  ID_ABOUT_INTRO_CHILD_TITLE:
+    "Astro sets out to solve problems happening\nall over the world together with SUZU and Astro Kitty",
+  ID_ABOUT_STRUCTURE_TITLE: "Curriculum Structure",
+  ID_ABOUT_DOWNLOAD_CURRICULUM: "Download Curriculum in PDF",
+  ID_ABOUT_STRUCTURE_BLOCK_CODING: "Block Coding",
+  ID_ABOUT_STRUCTURE_JAVASCRIPT: "JavaScript",
+  ID_ABOUT_MORE_TRIAL_TEXT: "Go to Free Trial",
+  ID_ABOUT_INFORMATION_TITLE: "Information",
+  ID_ABOUT_INFORMATION_TECHNICAL: "Technical Specifications",
+  ID_ABOUT_INFORMATION_PROFILE: "Company Profile",
+  ID_ABOUT_INFORMATION_TECHNICAL_INNER:
+    "Hardware : Desktop/laptop/tablet\nResolution : Minimum 1280*800\nOS : Windows 10/MaxOS 10.14 or higher\nBrowser : Chrome 64, FireFox 58, Safari 11.2, Microsoft Edge 17\nInternet connection : Minimum 30Mbps",
+  ID_ABOUT_INFORMATION_PROFILE_INNER: "MANGOSTEEMS CO.,LTD.",
+  ID_ABOUT_INFORMATION_PROFILE_INNER_FOUNDED: "Founded : 2018",
+  ID_ABOUT_INFORMATION_PROFILE_INNER_ADDRESS:
+    "Address : 57/1 SOI LADPRAO 30, CHANKASEM, JATUJAK, BANGKOK (10900)",
+  ID_ABOUT_INFORMATION_PROFILE_INNER_ADDRESS_SECOND_LINE: "www.mangosteems.com",
+  ID_ABOUT_INFORMATION_PROFILE_INNER_CONTACT: "Contact : acg@mangosteems.com",
+  ID_ABOUT_INFORMATION_PROFILE_INNER_PARTNER_TITLE: "Partner Companies",
+  ID_ABOUT_INFORMATION_PROFILE_INNER_PARTNER_IGROUP: "iGroup Asia-Pacific Ltd.",
+  ID_ABOUT_INFORMATION_PROFILE_INNER_PARTNER_ADDRESS: "www.igroupnet.com",
+  ID_ABOUT_INFORMATION_PROFILE_INNER_PARTNER_IDC:
+    "IDC ASIA Co., Ltd. /iGroup Korea",
+  ID_ABOUT_INFORMATION_PROFILE_INNER_PARTNER_IDC_ADDRESS: "www.igroupkorea.kr",
 
-  ID_ABOUT_TOP_BANNER_TITLE : "Practical Coding Lessons with Astro",
-  ID_ABOUT_TOP_BANNER_CHILD_TITLE : "SW Education platform for both students and teacher!",
-  ID_INTRO_TOP_BANNER_TITLE : "Learn to code with Go Astro Go!",
-  ID_INTRO_TOP_BANNER_CHILD_TITLE : "Astro Coding Go is a coding educatio platform\ncreated based on CSTA standards",
+  ID_ABOUT_TOP_BANNER_TITLE: "Practical Coding Lessons with Astro",
+  ID_ABOUT_TOP_BANNER_CHILD_TITLE:
+    "SW Education platform for both students and teacher!",
+  ID_INTRO_TOP_BANNER_TITLE: "Learn to code with Go Astro Go!",
+  ID_INTRO_TOP_BANNER_CHILD_TITLE:
+    "Astro Coding Go is a coding educatio platform\ncreated based on CSTA standards",
 
-  ID_ABOUT_CHARACTER_BOY_TITLE : "Astro Boy",
-  ID_ABOUT_CHARACTER_BOY_CHILD_TITLE : "AI robot built to resemble a young human boy.\nHe embodies helpful and heroic spirit,\nand is always motivated in his rescue mission.",
-  ID_ABOUT_CHARACTER_SUZU_TITLE : "SUZU",
-  ID_ABOUT_CHARACTER_SUZU_CHILD_TITLE : "A cute 7 years old human girl and\nthe granddaughter of Professor Elefun.\nShe is extremely intelligent, capapble, and independent.",
-  ID_ABOUT_CHARACTER_KITTY_TITLE : "Astro Kitty",
-  ID_ABOUT_CHARACTER_KITTY_CHILD_TITLE : "AI robot built to resemble a three months old kitten.\nAstro regards Astro Kitty as his mischievous\nbut adorable younger brother.",
+  ID_ABOUT_CHARACTER_BOY_TITLE: "Astro Boy",
+  ID_ABOUT_CHARACTER_BOY_CHILD_TITLE:
+    "AI robot built to resemble a young human boy.\nHe embodies helpful and heroic spirit,\nand is always motivated in his rescue mission.",
+  ID_ABOUT_CHARACTER_SUZU_TITLE: "SUZU",
+  ID_ABOUT_CHARACTER_SUZU_CHILD_TITLE:
+    "A cute 7 years old human girl and\nthe granddaughter of Professor Elefun.\nShe is extremely intelligent, capapble, and independent.",
+  ID_ABOUT_CHARACTER_KITTY_TITLE: "Astro Kitty",
+  ID_ABOUT_CHARACTER_KITTY_CHILD_TITLE:
+    "AI robot built to resemble a three months old kitten.\nAstro regards Astro Kitty as his mischievous\nbut adorable younger brother.",
 
-  ID_LEARN_ALERT_TITLE : "학습 가능한 차시가 없습니다",
-  ID_LEARN_NON_LEARNING_TITLE : "학습 권한 없음",
-  ID_LEARN_NON_LEARNING_SECOND_TITLE : "구매 후 이용 가능한 과정입니다",
+  ID_LEARN_ALERT_TITLE: "학습 가능한 차시가 없습니다",
+  ID_LEARN_NON_LEARNING_TITLE: "학습 권한 없음",
+  ID_LEARN_NON_LEARNING_SECOND_TITLE: "구매 후 이용 가능한 과정입니다",
 
-  ID_ABOUT_COURSES_SLIDE_WRAP_TITLE : "Courses",
+  ID_ABOUT_COURSES_SLIDE_WRAP_TITLE: "Courses",
 
-  ID_SSO_ERROR_POPUP_TEXT: "Astro Coding Go에 등록되지 않은 계정입니다. 관리자에게 문의해주세요.",
+  ID_SSO_ERROR_POPUP_TEXT:
+    "Astro Coding Go에 등록되지 않은 계정입니다. 관리자에게 문의해주세요.",
 
   ID_PHASERPAGE_PLACEHOLDER: "Please Enter Value",
   ID_PHASERPAGE_CANCEL: "Cancel",
