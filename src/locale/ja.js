@@ -30,7 +30,8 @@ const ja = {
   ID_COMMON_CONFIRM: "確認",
   ID_TUTORIAL_POPUP_TITLE: "Do you not know what to do?",
   ID_HOME_MAIN_CREATE: "Create",
-  ID_HOME_BANNER_DETAIL: "Play the games you made\non your mobile devices\nright away",
+  ID_HOME_BANNER_DETAIL:
+    "Play the games you made\non your mobile devices\nright away",
   ID_HOME_CODE_SUBTITLE: "Share The Creativity",
   ID_HOME_CODE_TITLE: "소프트웨어 창작 플랫폼, 위즈랩",
   ID_HOME_CODE_MOBILE_SUBTITLE: "Share The Creativity",
@@ -38,9 +39,11 @@ const ja = {
   ID_HOME_EDITOR_TITLE: "에디터 추천 게임",
   ID_HOME_EDITOR_MORE: "지난 추천 게임보기",
   ID_HOME_GUIDE_BANNER_TITLE: "위즈랩이 처음이세요?",
-  ID_HOME_GUIDE_BANNER_SUBTITLE: "위즈랩 완벽 가이드와 함께 첫 게임을 만들어보세요.",
+  ID_HOME_GUIDE_BANNER_SUBTITLE:
+    "위즈랩 완벽 가이드와 함께 첫 게임을 만들어보세요.",
   ID_HOME_GUIDE_BANNER_MOBILE_TITLE: "개발자 튜터와 함께 코딩을 배우고 싶다면?",
-  ID_HOME_GUIDE_BANNER_MOBILE_SUBTITLE: "프리미엄 1:1 온라인 코딩 수업, WizLive를 만나보세요.",
+  ID_HOME_GUIDE_BANNER_MOBILE_SUBTITLE:
+    "프리미엄 1:1 온라인 코딩 수업, WizLive를 만나보세요.",
   ID_HOME_GUIDE_BANNER_TUTORIAL: "튜토리얼",
   ID_HOME_GUIDE_BANNER_FREETRIAL: "위즈라이브 무료체험",
   ID_HOME_WEEKLY_BEST_TITLE: "이번 주 인기 작품",
@@ -74,7 +77,8 @@ const ja = {
   ID_SIGNIN_CHECK_EMAILPW: "メールアドレスとパスワードを確認してください。",
   ID_SIGNUP: "アカウント登録",
   ID_SIGNUP_TITLE: "統合レッドブリックメンバーシップへに参加",
-  ID_SIGNUP_DESC: "一度の加入でRedbrickと Wizliveのすべてのサービスを楽しむことができます。",
+  ID_SIGNUP_DESC:
+    "一度の加入でRedbrickと Wizliveのすべてのサービスを楽しむことができます。",
   ID_SIGNUP_SIGNUP: "アカウント登録",
   ID_SIGNUP_SIGNIN: "ログイン",
   ID_SIGNUP_SIGNIN_DESC: "すでにアカウントをお持ちですか？",
@@ -115,7 +119,8 @@ const ja = {
   ID_SIGNUP_WARNING_SMSCODE_FORMAT: "* 確認コードを正しく入力してください",
   ID_SIGNUP_WARNING_SMSCODE_UNSENT: "* 検証コードが必要です",
   ID_SIGNUP_WARNING_SMSCODE_UNACCEPTED: "* 検証コードが正しくありません",
-  ID_SIGNUP_WARNING_SMSCODE_EMPTY: "* 検証コードを入力し、[確認]ボタンをクリックします。",
+  ID_SIGNUP_WARNING_SMSCODE_EMPTY:
+    "* 検証コードを入力し、[確認]ボタンをクリックします。",
   ID_SIGNUP_WARNING_RECOMMEND: "* Invalid promotion code",
   ID_SIGNUP_WARNING_AGREEMENT: "* 必要な契約条件に同意してください",
   ID_SIGNUP_SIGNED_TITLE: "サインアップが完了されました!",
@@ -153,23 +158,33 @@ const ja = {
   ID_WIZAPP_NEWS_TAG: "NEW!",
   ID_GAME_EDITOR_TITLE: "エディターおすすめのゲーム",
   ID_INTRO_ABOUT_ASTROBOY_GO_TITLE: "Go! Go!  アトム について",
-  ID_INTRO_ABOUT_ASTROBOY_GO: "地球環境がテーマのコメディ＆アクションシリーズ！アトム、スズ、アトニャンアトニャン、３人の”チームアトム”が力を合わせて地球環境に起こる様々な問題を解決するミッションに挑見ます！チームアトムは時にケンカや失敗を重ねながらも、ミッションを通して自然のメカニズムを知り、命の多様性を発見して行きます。毎回どこかで起こるミッションは彼らにとってハラハラワクワクの冒険なのです！",
+  ID_INTRO_ABOUT_ASTROBOY_GO:
+    "地球環境がテーマのコメディ＆アクションシリーズ！アトム、スズ、アトニャンアトニャン、３人の”チームアトム”が力を合わせて地球環境に起こる様々な問題を解決するミッションに挑見ます！チームアトムは時にケンカや失敗を重ねながらも、ミッションを通して自然のメカニズムを知り、命の多様性を発見して行きます。毎回どこかで起こるミッションは彼らにとってハラハラワクワクの冒険なのです！",
   ID_INTRO_CHARACTER_TITLE: "キャラクター",
   ID_INTRO_CHARACTER_ASTROBOY_TITLE: "アトム",
-  ID_INTRO_CHARACTER_ASTROBOY: "人間の男の子そっくりのAIロボット。様々なスーパーパワーを持ち合わせ、地球上に起こるどんなミッションも解決して行きます。正義感と思いやりに溢れた、チームアトムの勇敢なリーダーです。です。",
+  ID_INTRO_CHARACTER_ASTROBOY:
+    "人間の男の子そっくりのAIロボット。様々なスーパーパワーを持ち合わせ、地球上に起こるどんなミッションも解決して行きます。正義感と思いやりに溢れた、チームアトムの勇敢なリーダーです。です。",
   ID_INTRO_CHARACTER_ASTROKITTY_TITLE: "アトニャン",
-  ID_INTRO_CHARACTER_ASTROKITTY: "子猫の形をしたAIロボット。アトムと同様のスーパーパワーを持ち合わせていますが、いたずらが好きで好奇心に溢れ、いつも本能の赴くまま。まさに子猫のような、いつも明るいチームのムードメーカーです。",
+  ID_INTRO_CHARACTER_ASTROKITTY:
+    "子猫の形をしたAIロボット。アトムと同様のスーパーパワーを持ち合わせていますが、いたずらが好きで好奇心に溢れ、いつも本能の赴くまま。まさに子猫のような、いつも明るいチームのムードメーカーです。",
   ID_INTRO_CHARACTER_SUZU_TITLE: "スズ",
-  ID_INTRO_CHARACTER_SUZU: "お茶の水博士の孫の天才少女。人間の女の子なのでスーパーパワーはありませんが、自分の知識とお茶の水博士が作ってくれた様々なガジェット（機械）を駆使してミッションに協力します。まじめで頭が良く、みんあのまとめ役です。",
+  ID_INTRO_CHARACTER_SUZU:
+    "お茶の水博士の孫の天才少女。人間の女の子なのでスーパーパワーはありませんが、自分の知識とお茶の水博士が作ってくれた様々なガジェット（機械）を駆使してミッションに協力します。まじめで頭が良く、みんあのまとめ役です。",
   ID_INTRO_ASTRO_CODING_TITLE: "ACGを紹介します。",
-  ID_INTRO_ASTRO_CODING_DETAIL: "チームアトムの一員となって旅立つ冒険！アトムと一緒に多様なコーディングプロジェクトに挑戦してみましょう。アトムコーディングGo！はリアルなストーリーやプロジェクト基盤カリキュラムを通して学生が吸収するように、コーディングを学べる構成となっています。ブロックコーディングを通して基本コーディングの概念を整え、JavaScriptで専門的なスキルを身に着けてみましょう。北極、砂漠、海から宇宙まで！色んなところを飛び回るミッションにみなさんをお招きいたします。",
+  ID_INTRO_ASTRO_CODING_DETAIL:
+    "チームアトムの一員となって旅立つ冒険！アトムと一緒に多様なコーディングプロジェクトに挑戦してみましょう。アトムコーディングGo！はリアルなストーリーやプロジェクト基盤カリキュラムを通して学生が吸収するように、コーディングを学べる構成となっています。ブロックコーディングを通して基本コーディングの概念を整え、JavaScriptで専門的なスキルを身に着けてみましょう。北極、砂漠、海から宇宙まで！色んなところを飛び回るミッションにみなさんをお招きいたします。",
   ID_INTRO_ASTRO_BLOCK_TITLE: "ブロックコーデイングコース",
-  ID_INTRO_BLOCKCODING_ELEMENTARY: "コーディングを初めて学ぶ生徒のためのコース。\nブロックコーディングで簡単なゲームを作りながら、コーディングの原理について学びます。",
-  ID_INTRO_BLOCKCODING_BASIC: "ブロックコーディングを通してプログラミングの基礎とアルゴリズムの原理を学ぶコースです。障害物をよける、プラットフォームゲームなどの多様な種類のプロジェクトに挑戦できます。",
-  ID_INTRO_BLOCKCODING_ADVANCED: "上級プログラミング概念に挑戦するブロックコーディングのコースです。条件文、繰り返し文、複製などの必須CS概念を自由に活用し、プロジェクトを作成します。",
+  ID_INTRO_BLOCKCODING_ELEMENTARY:
+    "コーディングを初めて学ぶ生徒のためのコース。\nブロックコーディングで簡単なゲームを作りながら、コーディングの原理について学びます。",
+  ID_INTRO_BLOCKCODING_BASIC:
+    "ブロックコーディングを通してプログラミングの基礎とアルゴリズムの原理を学ぶコースです。障害物をよける、プラットフォームゲームなどの多様な種類のプロジェクトに挑戦できます。",
+  ID_INTRO_BLOCKCODING_ADVANCED:
+    "上級プログラミング概念に挑戦するブロックコーディングのコースです。条件文、繰り返し文、複製などの必須CS概念を自由に活用し、プロジェクトを作成します。",
   ID_INTRO_ASTRO_JAVASCRIPT_TITLE: "JavaScript（テキスト）コーデイングコース",
-  ID_INTRO_JAVASCRIPT_ADVANCED: "ブロックコーディングに慣れたか、もしくはコーディングを始める高学年の学生のためのJavaScriptコースです。JSを使ってプロジェクトに挑戦しながら、プログラミングの基盤を整えます。",
-  ID_INTRO_JAVASCRIPT_MASTERY: "JavaScriptとリスト、関数を含むCS概念を自由に活用し、上級プロジェクトを進めます。",
+  ID_INTRO_JAVASCRIPT_ADVANCED:
+    "ブロックコーディングに慣れたか、もしくはコーディングを始める高学年の学生のためのJavaScriptコースです。JSを使ってプロジェクトに挑戦しながら、プログラミングの基盤を整えます。",
+  ID_INTRO_JAVASCRIPT_MASTERY:
+    "JavaScriptとリスト、関数を含むCS概念を自由に活用し、上級プロジェクトを進めます。",
   ID_INTRO_CODING_LEARN: "学習",
   ID_INTRO_CODING_ELEMENTARY: "エレメンタリー",
   ID_INTRO_CODING_BASIC: "ベーシック",
@@ -224,8 +239,10 @@ const ja = {
   ID_COMMUNITY_DETAIL_COMMENT_SELECT_OFF: "選択",
   ID_COMMUNITY_DETAIL_COMMENT_SELECT_ON: "Selected",
   ID_COMMUNITY_DETAIL_COMMENT_DELETED_REPLAY: "(This is a deleted comment.)",
-  ID_COMMUNITY_DETAIL_COMMENT_WRITE_ATTACHMENT_LIMIT_TOAST: "Up to 3 imsage files can be attached.",
-  ID_COMMUNITY_DETAIL_COMMENT_WRITE_ATTACHMENT_BUTTON: "Attach image files (up to three files)",
+  ID_COMMUNITY_DETAIL_COMMENT_WRITE_ATTACHMENT_LIMIT_TOAST:
+    "Up to 3 imsage files can be attached.",
+  ID_COMMUNITY_DETAIL_COMMENT_WRITE_ATTACHMENT_BUTTON:
+    "Attach image files (up to three files)",
   ID_COMMUNITY_DETAIL_COMMENT_WRITE_CONTENT_EMPTY: "Please enter the details.",
   ID_COMMUNITY_DETAIL_COMMENT_WRITE_CANCEL_BUTTON: "取り消し",
   ID_COMMUNITY_DETAIL_COMMENT_WRITE_SUBMIT_BUTTON: "Register your reply",
@@ -233,7 +250,8 @@ const ja = {
   ID_COMMUNITY_DETAIL_COMMENT_WRITE_UPLOADING: "Uploading…",
   ID_COMMUNITY_DETAIL_COMMENT_WRITE_POINT_BEFORE: "When adoped as an answer",
   ID_COMMUNITY_DETAIL_COMMENT_WRITE_POINT_AFTER: "Point payment",
-  ID_COMMUNITY_DETAIL_COMMENT_WRITE_TEXTAREA_HINT: "Please fill out the content…",
+  ID_COMMUNITY_DETAIL_COMMENT_WRITE_TEXTAREA_HINT:
+    "Please fill out the content…",
   ID_SOCIAL_CATEGORY_RECENT: "新規",
   ID_SOCIAL_CATEGORY_TREND: "Trend",
   ID_SOCIAL_SEARCH_PLACEHOLDER: "Please enter your search term",
@@ -255,7 +273,8 @@ const ja = {
   ID_SOCIAL_WRITE_TAG_TIP: "Please tag for other users to find your post",
   ID_SOCIAL_WRITE_TAG_PLACEHOLER: "Please enter your tags",
   ID_SOCIAL_WRITE_QUEST: "Quest",
-  ID_SOCIAL_WRITE_QUEST_TIP: "You can give your points to the members with the comments you like.",
+  ID_SOCIAL_WRITE_QUEST_TIP:
+    "You can give your points to the members with the comments you like.",
   ID_SOCIAL_WRITE_QUEST_PLACEHOLDER: "Enter points",
   ID_SOCIAL_WRITE_POINT_AVAILABLE: "Points earned",
   ID_SOCIAL_WRITE_POINT_USED: "Points redeemed",
@@ -329,7 +348,8 @@ const ja = {
   ID_POPUP_SHARE_DESC: "携帯電話での実行を要求しています",
   ID_BUILDER_ALERT_TITLE_WARNING: "警告",
   ID_BUILDER_ALERT_TITLE_SUCC: "成功!",
-  ID_BUILDER_ALERT_MSG_READONLY: "このゲームは読み取り専用です。\n変更は反映されません。",
+  ID_BUILDER_ALERT_MSG_READONLY:
+    "このゲームは読み取り専用です。\n変更は反映されません。",
   ID_BUILDER_ALERT_CLOSEBTN: "閉める",
   ID_BUILDER_ALERT_CONFIRMBTN: "確認",
   ID_BUILDER_ALERT_CANCELBTN: "取り消し",
@@ -341,16 +361,20 @@ const ja = {
   ID_BUILDER_ALERT_MSG_QRSUCC: "メッセージが送信されました。",
   ID_BUILDER_ALERT_MSG_QRFAIL: "メッセージの配信に失敗しました。",
   ID_BUILDER_ALERT_MSG_REMOVE_QUESTION: `このスプライトを削除\n“{spriteName}”してもよろしいですか？`,
-  ID_BUILDER_ALERT_MSG_REMOVE_QUESTION_SUBTITLE: "スプライトを削除すると書き込んだコードは復元（ふくげん）できません。\n削除（さくじょ）しますか?",
+  ID_BUILDER_ALERT_MSG_REMOVE_QUESTION_SUBTITLE:
+    "スプライトを削除すると書き込んだコードは復元（ふくげん）できません。\n削除（さくじょ）しますか?",
   ID_BUILDER_ALERT_MSG_REMOVE_SPRITE_CONFIRM: "削除",
-  ID_BUILDER_ALERT_MSG_REMOVEALL_QUESTION: "すべてのスプライトを削除（さくじょ）してもよろしいですか？",
+  ID_BUILDER_ALERT_MSG_REMOVEALL_QUESTION:
+    "すべてのスプライトを削除（さくじょ）してもよろしいですか？",
   ID_BUILDER_ALERT_MSG_EMPTY_IMAGE: "空白の画像は保存できません。",
-  ID_BUILDER_ALERT_MSG_CLIVE_NOT_FOUND: "スケジュールされたクラス情報はありません。",
+  ID_BUILDER_ALERT_MSG_CLIVE_NOT_FOUND:
+    "スケジュールされたクラス情報はありません。",
   ID_BUILDER_ALERT_CHECKBOX_DELETE_ALL_SOUNDS: "すべてのサウンドを削除します",
   ID_BUILDER_ALERT_MSG_GOTO_APP: "公開を完了しました。\nアプリを確認しますか?",
   ID_BUILDER_PROJECTLIST: "テンプレートを持ってくる",
   ID_BUILDER_PROJECTLIST_TITLE: "テンプレート",
-  ID_BUILDER_PROJECTLIST_CONFIRM: "現在作成されているコードがすべて消えます。 \nテンプレートをお持ちしますか？",
+  ID_BUILDER_PROJECTLIST_CONFIRM:
+    "現在作成されているコードがすべて消えます。 \nテンプレートをお持ちしますか？",
   ID_BUILDER_PROJECTLIST_CANCEL: "取り消し",
   ID_BUILDER_PROJECTLIST_OK: "持ってくる",
   ID_BUILDER_PUBLISHING: "アプリケーションを公開する",
@@ -369,14 +393,16 @@ const ja = {
   ID_BUILDER_EDITPOP_UPLOAD: "アップデート",
   ID_BUILDER_EDITPOP_CANCEL: "しめる",
   ID_BUILDER_EDITPOP_TAG: "タグ",
-  ID_BUILDER_EDITPOP_TIP_TAG: "タグを付けて、他のユーザーがあなたの投稿を正しく見つけることができるようにしてください。Redbrickで頻繁に使用されるタグを推奨します。",
+  ID_BUILDER_EDITPOP_TIP_TAG:
+    "タグを付けて、他のユーザーがあなたの投稿を正しく見つけることができるようにしてください。Redbrickで頻繁に使用されるタグを推奨します。",
   ID_BUILDER_EDITPOP_TAG_PLACEHOLDER: "タグを入力してください。",
-  ID_BUILDER_EDITPOP_TIP_CODE: "コードを公開する場合、他のユーザーが<br/>プロジェクトをコピーおよび編集できます。",
+  ID_BUILDER_EDITPOP_TIP_CODE:
+    "コードを公開する場合、他のユーザーが<br/>プロジェクトをコピーおよび編集できます。",
   ID_BUILDER_EDITPOP_CODE_OPEN: "プレイできます",
   ID_BUILDER_EDITPOP_CODE_CLOSE: "まだできません",
   ID_WIZAPP_CATEGORY_GAME: "Game",
   ID_WIZAPP_CATEGORY_UTIL: "Utility",
-  ID_HOME_COPY_INFO: `MANGOSTEEMS PTE. LTD.`,
+  ID_HOME_COPY_INFO: `MANGOSTEEMS CO.,LTD.`,
   ID_HOME_FOOTER_01: `Business registration number 636-87-01115    |    Mail-order business registration number 2019-Seoul Gangnam-00100    |    Suite 701, 10, K Square, Gangnam-daero 94-gil, Gangnam-gu, Seoul, Korea    |    wizlab@wizschool.io`,
   ID_FOOTER_TERMS: "利用規約",
   ID_FOOTER_PRIVACY: "プライバシーポリシー",
@@ -403,15 +429,21 @@ const ja = {
   ID_WIZLAB_DRAWING_SAVING: "適用中です...",
   ID_WIZLAB_DRAWING_MOBILE: "Take mobile photos",
   ID_STORAGE_CONTAINER_TEXT_EDITOR_DROP_DOWN_SEARCH: "Search",
-  ID_STORAGE_CONTAINER_TEXT_EDITOR_DROP_DOWN_NOT_FOUND: "No results were found for your search",
-  ID_STORAGE_CONTAINER_TEXT_EDITOR_DROP_DOWN_SKIN_TEXT: "Please choose a basic skin tone.",
-  ID_STORAGE_CONTAINER_TEXT_EDITOR_DROP_DOWN_CATEGORIES_SEARCH: "Search results",
+  ID_STORAGE_CONTAINER_TEXT_EDITOR_DROP_DOWN_NOT_FOUND:
+    "No results were found for your search",
+  ID_STORAGE_CONTAINER_TEXT_EDITOR_DROP_DOWN_SKIN_TEXT:
+    "Please choose a basic skin tone.",
+  ID_STORAGE_CONTAINER_TEXT_EDITOR_DROP_DOWN_CATEGORIES_SEARCH:
+    "Search results",
   ID_STORAGE_CONTAINER_TEXT_EDITOR_DROP_DOWN_CATEGORIES_RECENT: "Recently used",
-  ID_STORAGE_CONTAINER_TEXT_EDITOR_DROP_DOWN_CATEGORIES_PEOPLE: "Smile & People",
-  ID_STORAGE_CONTAINER_TEXT_EDITOR_DROP_DOWN_CATEGORIES_NATURE: "Animal & Nature",
+  ID_STORAGE_CONTAINER_TEXT_EDITOR_DROP_DOWN_CATEGORIES_PEOPLE:
+    "Smile & People",
+  ID_STORAGE_CONTAINER_TEXT_EDITOR_DROP_DOWN_CATEGORIES_NATURE:
+    "Animal & Nature",
   ID_STORAGE_CONTAINER_TEXT_EDITOR_DROP_DOWN_CATEGORIES_FOODS: "Food",
   ID_STORAGE_CONTAINER_TEXT_EDITOR_DROP_DOWN_CATEGORIES_ACTIVITY: "Activities",
-  ID_STORAGE_CONTAINER_TEXT_EDITOR_DROP_DOWN_CATEGORIES_PLACES: "Travel & Place",
+  ID_STORAGE_CONTAINER_TEXT_EDITOR_DROP_DOWN_CATEGORIES_PLACES:
+    "Travel & Place",
   ID_STORAGE_CONTAINER_TEXT_EDITOR_DROP_DOWN_CATEGORIES_OBJECTS: "Objects",
   ID_STORAGE_CONTAINER_TEXT_EDITOR_DROP_DOWN_CATEGORIES_SYMBOLS: "Shapes",
   ID_STORAGE_CONTAINER_TEXT_EDITOR_DROP_DOWN_CATEGORIES_FLAGS: "Flags",
@@ -461,7 +493,8 @@ const ja = {
   ID_API_DESCRIPTION_EXAMPLE: "Usage examples",
   ID_SETTING_SIGNOUTBTN: "Delete your account",
   ID_SETTING_SIGNOUT_TITLE: "Are you sure to delete your account?",
-  ID_SETTING_SIGNOUT_MSG: "You will not be able to use any service from WizSchool ",
+  ID_SETTING_SIGNOUT_MSG:
+    "You will not be able to use any service from WizSchool ",
   ID_SETTING_SIGNOUT_OK: "Delete your account",
   ID_SETTING_SIGNOUT_CANCEL: "取り消し",
   ID_SETTING_SIGNOUT_CONFIRM_TITLE: "You account has been deleted",
@@ -472,15 +505,19 @@ const ja = {
   ID_BUILDER_CODE_SORT: "コードを整列する。",
   ID_BUILDER_CODE_SORT_COMPLETE: "コードが整列されました。",
   ID_BUILDER_CODE_SORT_AFTER_FIX_ERROR: "エラーを直してから整列",
-  ID_DUMMY_RANKING_NOT_SUPPORT: "You can check the ranking function in the WizApp after publishing.",
+  ID_DUMMY_RANKING_NOT_SUPPORT:
+    "You can check the ranking function in the WizApp after publishing.",
   ID_BUILDER_ERROR: "Error occurred",
   ID_BUILDER_LIVE_ACCESS_TITLE: "Please check your permissions",
-  ID_BUILDER_LIVE_ACCESS_MSG: "The permission of the camera or microphone is not activated.",
+  ID_BUILDER_LIVE_ACCESS_MSG:
+    "The permission of the camera or microphone is not activated.",
   ID_BUILDER_LIVE_ACCESS_TITLE_DEVICE_ERROR: "장비를 확인해주세요",
   ID_BUILDER_LIVE_ACCESS_MSG_NO_DEVICE: "연결된 카메라 또는 마이크가 없습니다.",
-  ID_BUILDER_LIVE_ACCESS_MSG_NO_USABLE_DEVICE: "카메라 또는 마이크가 다른곳에서 사용중입니다.",
+  ID_BUILDER_LIVE_ACCESS_MSG_NO_USABLE_DEVICE:
+    "카메라 또는 마이크가 다른곳에서 사용중입니다.",
   ID_BUILDER_LIVE_ACCESS_MSG_NO_USABLE_CHROME: "Chrome의 버전을 확인해주세요.",
-  ID_BUILDER_LIVE_ACCESS_MSG_NO_USABLE_BY_SYSTEM: "System에서 미디어 장치 권한이 허용되지 않았습니다.",
+  ID_BUILDER_LIVE_ACCESS_MSG_NO_USABLE_BY_SYSTEM:
+    "System에서 미디어 장치 권한이 허용되지 않았습니다.",
   ID_BUILDER_LIVE_ACCESS_OK: "確認",
   ID_WEBRTC_UNSUPPORT: "WizLive works fine in Chrome.",
   ID_WIZLIVE_EXIT_CONFIRM: "Are you sure you to end the class?",
@@ -490,14 +527,17 @@ const ja = {
   ID_WIZLIVE_EXIT_COMPLETE: "Class is over",
   ID_WIZLIVE_FEEDBACK_GO: "Start",
   ID_WIZLIVE_FEEDBACK_NEXTTIME: "Later",
-  ID_WIZLIVE_FEEDBACK_REQUEST: "Please fill out the evaluation form within 24 hours",
+  ID_WIZLIVE_FEEDBACK_REQUEST:
+    "Please fill out the evaluation form within 24 hours",
   ID_POOR_NETWORK: " Network connection is not stable. ",
   ID_FREE_TRIAL_SURVEY_SUBMIT_OK: "確認",
   ID_FREE_TRIAL_SURVEY_SUBMIT_TITLE: "Evaluation completed",
-  ID_FREE_TRIAL_SURVEY_SUBMIT_DESCRIPTION: "If you would like to learn more about today's learning results,\nplease contact us at the number below.",
+  ID_FREE_TRIAL_SURVEY_SUBMIT_DESCRIPTION:
+    "If you would like to learn more about today's learning results,\nplease contact us at the number below.",
   ID_FREE_TRIAL_SURVEY_SUBMIT_CONTANT: "02) 6358-2021",
   ID_FREE_TRIAL_SURVEY_STEP1: "Feedback on free trial class",
-  ID_FREE_TRIAL_SURVEY_STEP1_TITLE: "Class is over.\nAre you satisfied with your free trial class?",
+  ID_FREE_TRIAL_SURVEY_STEP1_TITLE:
+    "Class is over.\nAre you satisfied with your free trial class?",
   ID_FREE_TRIAL_SURVEY_STEP1_LEVEL: "How was the class difficulty?",
   ID_FREE_TRIAL_SURVEY_STEP1_LEVEL_ITEM1: "Easy",
   ID_FREE_TRIAL_SURVEY_STEP1_LEVEL_ITEM2: "Normal",
@@ -510,25 +550,35 @@ const ja = {
   ID_FREE_TRIAL_SURVEY_STEP1_SPEED_ITEM1: "Too fast",
   ID_FREE_TRIAL_SURVEY_STEP1_SPEED_ITEM2: "About right",
   ID_FREE_TRIAL_SURVEY_STEP1_SPEED_ITEM3: "Too slow",
-  ID_FREE_TRIAL_SURVEY_STEP1_INPUT1: "If you have any suggestions for WizLive classes, please feel free to tell us.",
-  ID_FREE_TRIAL_SURVEY_STEP1_INPUT1_HINT: "ex) I want to make a space war game, controlling airships!",
-  ID_FREE_TRIAL_SURVEY_STEP1_INPUT2: "If you have any questions or suggestions, please feel free to tell us.",
-  ID_FREE_TRIAL_SURVEY_STEP1_INPUT2_HINT: "Please allow us to contact you during the business hours after the review.",
+  ID_FREE_TRIAL_SURVEY_STEP1_INPUT1:
+    "If you have any suggestions for WizLive classes, please feel free to tell us.",
+  ID_FREE_TRIAL_SURVEY_STEP1_INPUT1_HINT:
+    "ex) I want to make a space war game, controlling airships!",
+  ID_FREE_TRIAL_SURVEY_STEP1_INPUT2:
+    "If you have any questions or suggestions, please feel free to tell us.",
+  ID_FREE_TRIAL_SURVEY_STEP1_INPUT2_HINT:
+    "Please allow us to contact you during the business hours after the review.",
   ID_FREE_TRIAL_SURVEY_STEP1_SEND: "Next",
   ID_FREE_TRIAL_SURVEY_STEP2: "Tutor feedback",
   ID_FREE_TRIAL_SURVEY_STEP2_TITLE: "How was your tutor today?",
-  ID_FREE_TRIAL_SURVEY_STEP2_RATING: "Please give a star rating and check the learning evaluation.",
+  ID_FREE_TRIAL_SURVEY_STEP2_RATING:
+    "Please give a star rating and check the learning evaluation.",
   ID_FREE_TRIAL_SURVEY_STEP2_INPUT1: "Please leave the words for your tutor.",
-  ID_FREE_TRIAL_SURVEY_STEP2_INPUT1_HINT: "ex) Today's class was fun! I hope to have another class next time!",
-  ID_FREE_TRIAL_SURVEY_STEP2_INPUT2: "Let us know about your thoughts on WizLive service.",
-  ID_FREE_TRIAL_SURVEY_STEP2_INPUT2_HINT: "The content is not disclosed to the tutor.",
+  ID_FREE_TRIAL_SURVEY_STEP2_INPUT1_HINT:
+    "ex) Today's class was fun! I hope to have another class next time!",
+  ID_FREE_TRIAL_SURVEY_STEP2_INPUT2:
+    "Let us know about your thoughts on WizLive service.",
+  ID_FREE_TRIAL_SURVEY_STEP2_INPUT2_HINT:
+    "The content is not disclosed to the tutor.",
   ID_FREE_TRIAL_SURVEY_STEP2_SEND: "メールで送信",
-  ID_FEEDBACK_SUBMIT_DESCRIPTION: "You can check the learning evaluation within 24 hours.",
+  ID_FEEDBACK_SUBMIT_DESCRIPTION:
+    "You can check the learning evaluation within 24 hours.",
   ID_PROJECT_TITLE: "プロジェクト",
   ID_PROJECT_NEW: "新しいプロジェクト",
   ID_PROJECT_LOAD: "インポート",
   ID_PROJECT_SEARCH: "Search",
-  ID_PROJECT_POPUP_DELETE_TITLE: "Are you sure to delete the “{projectName}” project?",
+  ID_PROJECT_POPUP_DELETE_TITLE:
+    "Are you sure to delete the “{projectName}” project?",
   ID_PROJECT_POPUP_DELETE_SUB_TITLE: `프로젝트를 삭제하면 복구할 수 없습니다.\n그래도 삭제하시겠습니까?`,
   ID_PROJECT_POPUP_DELETE_OK: "確認",
   ID_PROJECT_POPUP_DELETE_CANCEL: "取り消し",
@@ -556,7 +606,8 @@ const ja = {
   ID_QNA_TITLE: "Q&A",
   ID_DRAWING_EDITOR_TITLE: "ペイント",
   ID_TEXT_BOX_TITLE: "テキストボックス",
-  ID_LEARN_TITLE_NONLOGIN: "5つのコースのうち、一つのミッションを無料体験できます！",
+  ID_LEARN_TITLE_NONLOGIN:
+    "5つのコースのうち、一つのミッションを無料体験できます！",
   ID_LEARN_ALL_COURSES: "すべてのコース",
   ID_LEARN_ALL_STEPS_CLEAR: "すべてのステップがクリア",
   ID_LEARN_GAME_PREVIEW: "ゲームを \nプレイする",
@@ -569,8 +620,10 @@ const ja = {
   ID_POPUP_MOBILE_WAITING_DESC: "携帯電話での実行を要求しています",
   ID_POPUP_MOBILE_FAIL_TITLE: `게임이 정상적으로\n실행되지 았습니다`,
   ID_POPUP_MOBILE_FAIL_DESC_01: "Please check if the WizApp is running.",
-  ID_POPUP_MOBILE_FAIL_DESC_02: "Make sure you are logged in with the same ID as on your PC.",
-  ID_POPUP_MOBILE_FAIL_DESC_03: "If you don't have the app yet, search for WizSchool and download it.",
+  ID_POPUP_MOBILE_FAIL_DESC_02:
+    "Make sure you are logged in with the same ID as on your PC.",
+  ID_POPUP_MOBILE_FAIL_DESC_03:
+    "If you don't have the app yet, search for WizSchool and download it.",
   ID_POPUP_MOBILE_FAIL_BTN: "Request again",
   ID_RIGHTBAR_VIDEO: "Videos",
   ID_RIGHTBAR_SNIPPET: "Snippet",
@@ -587,8 +640,10 @@ const ja = {
   ID_MYPAGE_TABTAPE_ACTIVITY: "My activities",
   ID_MYPAGE_TABTAPE_SETTING: "Edit personal information",
   ID_MYPAGE_PUBLISH_NOTHING: "パブリッシングしたゲームがありません。",
-  ID_MYPAGE_TOOLTIP_TIER: "WisLab is going to introduce a member-level service soon.",
-  ID_MYPAGE_TOOLTIP_POINT: "WizLab is going to introduce a point reward system soon.",
+  ID_MYPAGE_TOOLTIP_TIER:
+    "WisLab is going to introduce a member-level service soon.",
+  ID_MYPAGE_TOOLTIP_POINT:
+    "WizLab is going to introduce a point reward system soon.",
   ID_MYPAGE_USERINFO_PUBLISH: "パブリッシュしたゲーム",
   ID_MYPAGE_USERINFO_SUBSCRIBE: "Follower",
   ID_MYPAGE_USERINFO_INTERESTED: "Following",
@@ -608,8 +663,10 @@ const ja = {
   ID_MYPAGE_PERSONAL_SUBMIT: "Edit personal information",
   ID_MYPAGE_PERSONAL_SIGNOUT: "Delete you account",
   ID_MYPAGE_NAME_USERNAME: "User nickname",
-  ID_MYPAGE_NAME_USERNAME_WARNING: "닉네임 변경은 마지막 변경일을 기준으로 15일 이후에 가능합니다.",
-  ID_MYPAGE_NAME_USERNAME_OFFICIAL_WARNING: "운영진을 사칭할 수 있는 닉네임은 사용할 수 없습니다.",
+  ID_MYPAGE_NAME_USERNAME_WARNING:
+    "닉네임 변경은 마지막 변경일을 기준으로 15일 이후에 가능합니다.",
+  ID_MYPAGE_NAME_USERNAME_OFFICIAL_WARNING:
+    "운영진을 사칭할 수 있는 닉네임은 사용할 수 없습니다.",
   ID_MYPAGE_NAME_USERICON: "プロフィールイメージ",
   ID_MYPAGE_NAME_USEREMAIL: "E-mail",
   ID_MYPAGE_NAME_USERPHONE: "전화번호",
@@ -652,7 +709,8 @@ const ja = {
   ID_MYPAGE_POPUP_LOGIN: "ログイン",
   ID_MYPAGE_ICONSETTING_TABTAPE_ICON: "아이콘",
   ID_MYPAGE_ICONSETTING_TABTAPE_EDGE: "테두리",
-  ID_MYPAGE_ICONSETTING_TABTAPE_ICONTOOLTIP: "아이콘을 통해 자신을 나타낼 수 있습니다",
+  ID_MYPAGE_ICONSETTING_TABTAPE_ICONTOOLTIP:
+    "아이콘을 통해 자신을 나타낼 수 있습니다",
   ID_MYPAGE_ICONSETTING_TABTAPE_EDGETOOLTIP: `위즈랩 이벤트 및 퀘스트를 통해 테두리를 획득할 수 있습니다.\n테두리로 자신을 뽐내주세요`,
   ID_MYPAGE_TOOLTIP_TIER_CONFIRM: "確認",
   ID_TOOLTIP_PROJECT_MANAGEMENT: "ゲーム管理",
@@ -669,7 +727,8 @@ const ja = {
   ID_TOOLTIP_VOLUME: "サウンドコントロール",
   ID_BROWSER_BLOCK_TEXT1: "IE 브라우저는 추후 지원 예정입니다.",
   ID_BROWSER_BLOCK_TEXT2: "크롬 브라우저 사용을 권장합니다.",
-  ID_BROWSER_BLOCK_TEXT3: "현재 페이지는 크롬 브라우저에 최적화되어 있습니다. 크롬 브라우저 사용을 권장합니다.",
+  ID_BROWSER_BLOCK_TEXT3:
+    "현재 페이지는 크롬 브라우저에 최적화되어 있습니다. 크롬 브라우저 사용을 권장합니다.",
   ID_GAME_PLAYER_PLAY_BUTTON: "Start",
   ID_GAME_PLAYER_PLAY_BUTTON_MOBILE: "앱으로 실행하기",
   ID_GAME_PLAYER_PLAY_BUTTON_MOBILE_WEB: "모바일 웹으로 계속하기",
@@ -710,26 +769,34 @@ const ja = {
   ID_VIDEOCLASS_STEP_END: "이미지 보기",
   ID_VIDEOCLASS_STEP_SPRITE_SELECTED: "스프라이트 선택",
   ID_EGO: "에고",
-  ID_EGO_CUSTOMIDMAP_ADDSPRITE: "좋아! {addSpriteId} 스프라이트를 {customSpriteId}로 사용하자",
-  ID_EGO_CUSTOMIDMAP_OTHERSPRITE: "다른 스프라이트를 {customSpriteId}로 사용하려구?",
-  ID_EGO_CUSTOMIDMAP_OTHERTYPE: "{customSpriteId}는 {customIdType} 타입을 추가해줘야해!",
+  ID_EGO_CUSTOMIDMAP_ADDSPRITE:
+    "좋아! {addSpriteId} 스프라이트를 {customSpriteId}로 사용하자",
+  ID_EGO_CUSTOMIDMAP_OTHERSPRITE:
+    "다른 스프라이트를 {customSpriteId}로 사용하려구?",
+  ID_EGO_CUSTOMIDMAP_OTHERTYPE:
+    "{customSpriteId}는 {customIdType} 타입을 추가해줘야해!",
   ID_EGO_CUSTOMIDMAP_MULTIPLESPRITE: "스프라이트를 하나만 골라줘",
   ID_EGO_CONDITION_SPRITE_EXIST: "{spriteId} 스프라이트를 추가해줘!",
-  ID_EGO_CONDITION_SPRITE_INDEX: "{spriteId} 드래그해서 {index}번째 위치로 이동시켜봐!",
+  ID_EGO_CONDITION_SPRITE_INDEX:
+    "{spriteId} 드래그해서 {index}번째 위치로 이동시켜봐!",
   ID_EGO_CONDITION_SPRITE_SELECTED: "{spriteId}를 클릭해서 선택해보자!",
   ID_EGO_CONDITION_SCENE_EMPTY: "{sceneId}에 있는 모든 스프라이트를 지워보자!",
   ID_EGO_CONDITION_SCENE_FIRST: "{sceneId}가 첫 번째 장면이 되게 해야해!",
   ID_EGO_CONDITION_SCENE_SELECTED: "{sceneId}를 클릭해서 선택해보자!",
-  ID_EGO_CONDITION_CUSTOM_ID_EXIST: "아직 {customSpriteId}로 사용할 스프라이트를 선택하지 않았어..",
-  ID_EGO_CONDITION_CODE_EXIST: "{spriteId} 스프라이트에 코드가 잘 작성되었는지 한 번 더 확인해볼까?",
+  ID_EGO_CONDITION_CUSTOM_ID_EXIST:
+    "아직 {customSpriteId}로 사용할 스프라이트를 선택하지 않았어..",
+  ID_EGO_CONDITION_CODE_EXIST:
+    "{spriteId} 스프라이트에 코드가 잘 작성되었는지 한 번 더 확인해볼까?",
   ID_EGO_CONDITION_PLAY_ONCE: "한 번 실행해보고 다음 단계로 넘어가자!",
   ID_EGO_CONDITION_GAME_EVENT: "게임을 실행해보고 조건을 달성해보자!",
   ID_EGO_CONDITION_DEFAULT: "문제가 생겼어! 관리자에게 문의해줄래?",
-  ID_EGO_CONDITION_OOBC_LINE_EXIST: "{spriteId}에 블록이\n잘 입력됐는지 확인해보자!",
+  ID_EGO_CONDITION_OOBC_LINE_EXIST:
+    "{spriteId}에 블록이\n잘 입력됐는지 확인해보자!",
   ID_SIGNIN_FORGOT_EMAIL: "メールアドレスを再設定する",
   ID_SIGNIN_FORGOT_EMAIL_DESC: "メールを忘れましたか??",
   ID_FIND_EMAIL_TITLE: "メールアドレスを再設定する",
-  ID_FIND_EMAIL_DESC: "管理者に要請するか、次のアドレスにリクエストメールを送信してください。リクエストメールには、次の情報が含まれている必要があります。",
+  ID_FIND_EMAIL_DESC:
+    "管理者に要請するか、次のアドレスにリクエストメールを送信してください。リクエストメールには、次の情報が含まれている必要があります。",
   ID_FIND_EMAIL_LIST_1: "所属機関",
   ID_FIND_EMAIL_LIST_2: "氏名",
   ID_FIND_EMAIL_LIST_3: "連絡先（選択）",
@@ -751,14 +818,17 @@ const ja = {
   ID_CERTIFICATE_ALERT_NAME_CLASS: "* Please enter name and class",
   ID_CERTIFICATE_ALERT_NAME: "* Please enter name",
   ID_CERTIFICATE_ALERT_CLASS: "* Please enter class",
-  ID_CERT_POPUP_TITLE: "위즈랩에 회원가입을 하면 언제든 인증서를 다운 받을 수 있습니다.",
+  ID_CERT_POPUP_TITLE:
+    "위즈랩에 회원가입을 하면 언제든 인증서를 다운 받을 수 있습니다.",
   ID_CERT_POPUP_CANCEL: "나중에 할래요",
   ID_CERT_POPUP_SIGNUP: "アカウント登録",
   ID_WIZAPP_WIZLIVE_TAG: "WizLive!",
   ID_WIZAPP_WIZLIVE_TITLE: "위즈라이브에서 만들 수 있는 게임",
   ID_SHARE_COPIED: "クリップボードにコピーしました。",
-  ID_TOAST_RANKING_NOT_SUPPORT: "API is only available for published applications",
-  ID_TOAST_API_NOT_SUPPORT: "{apiName} API is only available for published applications",
+  ID_TOAST_RANKING_NOT_SUPPORT:
+    "API is only available for published applications",
+  ID_TOAST_API_NOT_SUPPORT:
+    "{apiName} API is only available for published applications",
   ID_SPAM_POPUP_TITLE_BAD_WORD: "부적절한 언어는 사용할수 없습니다.",
   ID_SPAM_POPUP_TITLE_DUPLICATION: "같은 내용을 중복해서 사용할수 없습니다.",
   ID_SPAM_POPUP_TITLE_TIME: "일정시간이 지난뒤 글을 작성해 주세요",
@@ -775,9 +845,11 @@ const ja = {
   ID_REPORT_POPUP_FAIL_CONFIRM: "確認",
   ID_REPORT_POPUP_EMPTY_TEXT: "내용을 입력하세요",
   ID_SOCIAL_WARNNING: "1000글자 이내로 입력해주세요.",
-  ID_BLOCKED_USER_POPUP_TITLE_PUBLISHING: "이용정지 기간으로 \n퍼블리싱 할 수 없습니다.",
+  ID_BLOCKED_USER_POPUP_TITLE_PUBLISHING:
+    "이용정지 기간으로 \n퍼블리싱 할 수 없습니다.",
   ID_BLOCKED_USER_POPUP_TITLE_SOCIAL: "이용 정지 기간 입니다",
-  ID_BLOCKED_USER_POPUP_TITLE_CHAT: "이용 정지 기간이므로 \n채팅을 할 수 없습니다",
+  ID_BLOCKED_USER_POPUP_TITLE_CHAT:
+    "이용 정지 기간이므로 \n채팅을 할 수 없습니다",
   ID_BLOCKED_USER_POPUP_PERIOD: "이용 해제일: {year}년 {month}월 {day}일",
   ID_BLOCKED_USER_POPUP_CONFRIM: "確認",
   ID_OOBC_EDITOR_CONFIRM: "確認",
@@ -788,19 +860,25 @@ const ja = {
   ID_OOBC_EDITOR_CONSTANT_TITLE: "{constant} 入力してください。",
   ID_OOBC_EDITOR_CONSTANT_SUBTITLE: "{constant} Enter a value",
   ID_OOBC_EDITOR_ADDVAR_TITLE: "Add Variable",
-  ID_OOBC_EDITOR_ADDVAR_SUBTITLE: "*Only Alphabet,Number allowed\n*First letter must be Alphabet",
+  ID_OOBC_EDITOR_ADDVAR_SUBTITLE:
+    "*Only Alphabet,Number allowed\n*First letter must be Alphabet",
   ID_OOBC_EDITOR_ADDVAR_PLACEHOLDER: "Enter Variable Name",
   ID_OOBC_EDITOR_ADDVAR_WARN_REGEX_TITLE: "Think Carefully!",
-  ID_OOBC_EDITOR_ADDVAR_WARN_REGEX_SUBTITLE: "You have to follow variable naming rules!",
+  ID_OOBC_EDITOR_ADDVAR_WARN_REGEX_SUBTITLE:
+    "You have to follow variable naming rules!",
   ID_OOBC_EDITOR_ADDVAR_WARN_EXIST_TITLE: "Think Carefully!",
   ID_OOBC_EDITOR_ADDVAR_WARN_EXIST_SUBTITLE: "The variable already exists.",
   ID_OOBC_EDITOR_WARN_TITLE: "Oops!",
-  ID_OOBC_EDITOR_WARN_DISABLED_BLOCK_PLAYANIMATION: "This Sprite has no Animation.",
-  ID_OOBC_EDITOR_WARN_DISABLED_BLOCK_STOPANIMATION: "This Sprite has no Animation.",
+  ID_OOBC_EDITOR_WARN_DISABLED_BLOCK_PLAYANIMATION:
+    "This Sprite has no Animation.",
+  ID_OOBC_EDITOR_WARN_DISABLED_BLOCK_STOPANIMATION:
+    "This Sprite has no Animation.",
   ID_OOBC_EDITOR_WARN_REPLACE_TITLE: "Think Carefully!",
-  ID_OOBC_EDITOR_WARN_REPLACE_SUBTITLE: "The following blocks will be removed. \nDo you still want to switch blocks?",
+  ID_OOBC_EDITOR_WARN_REPLACE_SUBTITLE:
+    "The following blocks will be removed. \nDo you still want to switch blocks?",
   ID_OOBC_EDITOR_WARN_LINEDELETE_TITLE: "Think Carefully!",
-  ID_OOBC_EDITOR_WARN_LINEDELETE_SUBTITLE: "You will no longer retrieve your line. \nDo you still want to delete this line?",
+  ID_OOBC_EDITOR_WARN_LINEDELETE_SUBTITLE:
+    "You will no longer retrieve your line. \nDo you still want to delete this line?",
   ID_OOBC_BLOCK_CATEGORY_SPRITE: "スプライト",
   ID_OOBC_BLOCK_CATEGORY_PROPERTY: "Property",
   ID_OOBC_BLOCK_CATEGORY_ACTION: "Action",
@@ -900,15 +978,21 @@ const ja = {
   ID_WIZERROR_MESSAGE_NOT_DEFINED: "宣言されていないシンボル{symbol}使用 ",
   ID_WIZERROR_MESSAGE_NOT_FUNCTION: "{symbol}은 함수가 아님",
   ID_WIZERROR_MESSAGE_CANNOT_READ_PROPERTY: "프로퍼티 {symbol}가 존재하지 않음",
-  ID_WIZERROR_MESSAGE_CANNOT_READ_PROPERTIES: "定まっていない`{apiName}`のプロパティを読み込めません。",
-  ID_WIZERROR_MESSAGE_INSTANCEOF_RIGHT_NOT_OBJECT: "instanceof 뒤에는 object 타입이 와야함",
-  ID_WIZERROR_LOCATION_FULL: "{sceneId}の{spriteId} スプライト\n({line}番目列の{column}番目文字)",
+  ID_WIZERROR_MESSAGE_CANNOT_READ_PROPERTIES:
+    "定まっていない`{apiName}`のプロパティを読み込めません。",
+  ID_WIZERROR_MESSAGE_INSTANCEOF_RIGHT_NOT_OBJECT:
+    "instanceof 뒤에는 object 타입이 와야함",
+  ID_WIZERROR_LOCATION_FULL:
+    "{sceneId}の{spriteId} スプライト\n({line}番目列の{column}番目文字)",
   ID_WIZERROR_LOCATION_LINE_COLUMN: "({line}번 줄 {column}번째 문자)",
   ID_WIZERROR_LOCATION_SCENE_SPRITE: "{sceneId}の{spriteId}スプライト",
-  ID_WIZERROR_LOCATION_SCENE_SPRITE_API: "{sceneId}の{spriteId}スプライト({api})",
-  ID_WIZERROR_LOCATION_FULL_3D: "{sceneName}의 {gameObjectName} 오브젝트\n({line}번 줄 {column}번째 문자)",
+  ID_WIZERROR_LOCATION_SCENE_SPRITE_API:
+    "{sceneId}の{spriteId}スプライト({api})",
+  ID_WIZERROR_LOCATION_FULL_3D:
+    "{sceneName}의 {gameObjectName} 오브젝트\n({line}번 줄 {column}번째 문자)",
   ID_WIZERROR_LOCATION_SCENE_OBJECT: "{sceneName}의 {gameObjectName} 오브젝트",
-  ID_WIZERROR_LOCATION_SCENE_OBJECT_API: "{sceneName}의 {gameObjectName} 오브젝트({api})",
+  ID_WIZERROR_LOCATION_SCENE_OBJECT_API:
+    "{sceneName}의 {gameObjectName} 오브젝트({api})",
   TEST_DEVICE_CHANGE_TITLE: "장비 변경하기",
   ID_APK_CREATINGPROCESS_GUIDE: "이용안내",
   ID_APK_CREATINGPROCESS_SELECTAPP: "앱 선택",
@@ -932,12 +1016,15 @@ const ja = {
   ID_QNA_ANSWERS_COUNT: "+{count}",
   ID_QNA_WRITE_QUESTION_TITLE: "質問を登録する",
   ID_QNA_SELECT_QUETION_TYPE: "質問のタイプを選択してください",
-  ID_QNA_QUETION_TYPE_TECH: "(機能質問)ホームページの作動がうまくできないようです。",
-  ID_QNA_QUETION_TYPE_STUDY: "(学習質問)コーディングしながら 気になることがあります。",
+  ID_QNA_QUETION_TYPE_TECH:
+    "(機能質問)ホームページの作動がうまくできないようです。",
+  ID_QNA_QUETION_TYPE_STUDY:
+    "(学習質問)コーディングしながら 気になることがあります。",
   ID_QNA_WRITE_QUESTION_DESC: "창작 중 궁금한 내용이 있으면 질문해 주세요.",
   ID_QNA_WRITE_QUESTION_OPT1: "코드 추가하기",
   ID_QNA_WRITE_QUESTION_OPT2: "프로젝트 공개",
-  ID_QNA_WRITE_QUESTION_OPT2_DESC: "프로젝트를 공개하면 다른 사람이 프로젝트를 확인하고 답변을 남길 수 있습니다.",
+  ID_QNA_WRITE_QUESTION_OPT2_DESC:
+    "프로젝트를 공개하면 다른 사람이 프로젝트를 확인하고 답변을 남길 수 있습니다.",
   ID_QNA_WRITE_QUESTION_ADD: "등록하기",
   ID_QNA_TEXTAREA_PLACEHOLDER: "내용을 입력해주세요..",
   ID_QNA_ACE_PLACEHOLDER: "//코드를 입력해주세요..\n",
@@ -1025,7 +1112,8 @@ const ja = {
   ID_CHATBOT_API_QUESTION: "{api} 사용법 알려줘",
   ID_CHATBOT_CLASS_QUESTION: "{class}에 대해서 더 자세히 배우고싶어",
   ID_RANKING_TITLE: "Dreamclass User Ranking",
-  ID_RANKING_SUBTITLE: "In total, there are {count} students who are currently enrolled in the Dreamclass' IT curriculum.",
+  ID_RANKING_SUBTITLE:
+    "In total, there are {count} students who are currently enrolled in the Dreamclass' IT curriculum.",
   ID_RANKING_SUBTITLE2: "The ranking resets every semester.",
   ID_RANKING_TAB_LEARN: "Education",
   ID_RANKING_TAB_CREATE: "Creation",
@@ -1052,7 +1140,8 @@ const ja = {
   ID_GAME_LIST_TAB_ALL: "全て",
   ID_GAME_LIST_TAB_JAVASCRIPT: "Developing instinct! Game producer.",
   ID_GAME_LIST_TAB_OOBC: "Challenge! Game maker!",
-  ID_GAME_LIST_PLACEHOLDER: "探してみても何もありません。 他の名前で検索してみましょうか。",
+  ID_GAME_LIST_PLACEHOLDER:
+    "探してみても何もありません。 他の名前で検索してみましょうか。",
   ID_MYPAGE_SETTING_TITLE: "プロフィール修正",
   ID_MYPAGE_SETTING_NICKNAME: "닉네임",
   ID_MYPAGE_SETTING_STATUS_MSG: "1行紹介文",
@@ -1101,7 +1190,8 @@ const ja = {
   ID_LAYOUT_NOTI_SUBSCRIBE: `{targetUser}님이 구독을 시작했습니다.`,
   ID_LAYOUT_NOTI_NEWAPP: `{targetUser}님이 새 앱 {targetProject}을 등록했습니다.`,
   ID_LAYOUT_NOTI_REPLY: `{targetUser}님이 댓글에서 회원님을 태그했습니다.\n"{message}"`,
-  ID_LAYOUT_NOTI_DEFAULT: "현재 버전에서 지원하지 않습니다. 앱을 업데이트 해주세요.",
+  ID_LAYOUT_NOTI_DEFAULT:
+    "현재 버전에서 지원하지 않습니다. 앱을 업데이트 해주세요.",
   ID_WIZAPP_MODE_CHALLENGE_RANK: "👍 시즌1 참여작 랭킹",
   ID_WIZAPP_MODE_CHALLENGE_NEW: "🔥 새로운 도전작",
   ID_WIZAPP_MODE_SSAFY_RANK: "👍 실시간 랭킹",
@@ -1116,8 +1206,10 @@ const ja = {
   ID_ALERT_MANAGE_REPORT_DEVICE_ERROR: "장비가 없습니다!",
   ID_TUTORIAL_TITLE: "Welcome, future developers!",
   ID_TUTORIAL_DESC01: "All of you are the stars of the WizClass IT course.",
-  ID_TUTORIAL_DESC02: "Let's choose a project that we like and make our own game that we only imagined of! Why not be an agent for a day?",
-  ID_TUTORIAL_DESC03: "Perform today's quest and earn fame! Publish your game and show it off to everyone.",
+  ID_TUTORIAL_DESC02:
+    "Let's choose a project that we like and make our own game that we only imagined of! Why not be an agent for a day?",
+  ID_TUTORIAL_DESC03:
+    "Perform today's quest and earn fame! Publish your game and show it off to everyone.",
   ID_TUTORIAL_DESC04: "Remember just this - learn, play, chat!",
   ID_PYTHON_SUBMIT_MSG: "Do you want to submit?",
   ID_PYTHON_SUBMIT_ERROR_MSG: "먼저 코드를 실행해 주세요.",
@@ -1191,12 +1283,14 @@ const ja = {
   ID_DREAM_BUILDER_MISSION_CLEAR_CANCEL_BUTTON: "やめる",
   ID_DREAM_BUILDER_MISSION_CLEAR_CONFIRM_BUTTON: "つぎへ",
   ID_DREAM_BUILDER_COURSE_CLEAR: "COURSE CLEAR",
-  ID_DREAM_BUILDER_COURSE_CLEAR_SUBTITLE: "おめでとうございます！今回のコースのすべての授業を完了しました！\n名前とクラスを入力し、修了証を発行してみましょう！",
+  ID_DREAM_BUILDER_COURSE_CLEAR_SUBTITLE:
+    "おめでとうございます！今回のコースのすべての授業を完了しました！\n名前とクラスを入力し、修了証を発行してみましょう！",
   ID_DREAM_BUILDER_COURSE_CLEAR_CANCEL_BUTTON: "学習を終了しますか？",
   ID_DREAM_BUILDER_COURSE_CLEAR_SUBMIT_BUTTON: "提出",
   ID_DREAM_BUILDER_QUEST_CLEAR: "ミッションコンプリート！",
   ID_DREAM_BUILDER_QUEST_CLEAR_SUBTITLE: `おめでとうございます！全てのミッションをクリアしました。\学んだことはふくしゅうしましょう！`,
-  ID_DREAM_BUILDER_QUEST_CLEAR_CERT_SUBTITLE: "おめでとうございます！今回コースのミッションを全て修了しました。\n名前とクラス名を入力すると修了証を発行します。",
+  ID_DREAM_BUILDER_QUEST_CLEAR_CERT_SUBTITLE:
+    "おめでとうございます！今回コースのミッションを全て修了しました。\n名前とクラス名を入力すると修了証を発行します。",
   ID_DREAM_BUILDER_QUEST_CLEAR_CERT_QUIT_BUTTON: "学習を終了しますか？",
   ID_DREAM_BUILDER_QUEST_CLEAR_CANCEL_BUTTON: "やめる",
   ID_DREAM_BUILDER_QUEST_CLEAR_CONFIRM_BUTTON: "次",
@@ -1259,7 +1353,8 @@ const ja = {
   ID_DREAM_LMS_TODAY_GOAL_TITLE: "今日のマイ達成目標を設定しましょう！",
   ID_DREAM_LMS_TODAY_GOAL_DESC: "全て達成すれば、追加ポイント",
   ID_DREAM_LMS_TODAY_GOAL_BUTTON: "目処づけ",
-  ID_DREAM_LMS_TODAY_GOAL_RECOMMEND_QUEST_TITLE: "オススメのミッションはこちら！",
+  ID_DREAM_LMS_TODAY_GOAL_RECOMMEND_QUEST_TITLE:
+    "オススメのミッションはこちら！",
   ID_DREAM_LMS_TODAY_GOAL_RECOMMEND_QUEST_SUBTITLE: "クエスト１",
   ID_DREAM_LMS_TODAY_GOAL_GRAPH: "達成グラフ",
   ID_DREAM_LMS_TODAY_GOAL_PROGRESS_TITLE: "開発者への道",
@@ -1332,17 +1427,21 @@ const ja = {
   ID_COMMENT_TITLE: "コメント",
   ID_DATE_FORMAT_MIN: "分前",
 
-
   ID_SIGNUP_CREATE_TITLE: "メンバーシップに参加",
   ID_SIGNUP_FIRST_NAME: "名字 *",
   ID_SIGNUP_NICKNAME: "ニックネーム *",
   ID_SIGNUP_FIRST_NAME_PLACEHOLDER: "名字を入力してください。",
 
-  ID_CERT_ELEMENTARY_BLOCK_DESC: "あなたは iGroup主催のソフトウェアの教育課程であるブロックコーディングエレメンタリーを修了するためのすべての要求事項を満たし、イベント、座標、物理を活用して5個のプロジェクトを自ら完成したため、この修了証を授与いたします。",
-  ID_CERT_BASIC_BLOCK_DESC: "あなたは iGroup主催のソフトウェアの教育課程であるブロックコーディングベーシックを修了するためのすべての要求事項を満たし、イベント、座標、物理、変数, 条件文を活用して15個のプロジェクトを自ら完成したため、この修了証を授与いたします。",
-  ID_CERT_ADVANCED_BLOCK_DESC: "あなたは iGroup主催のソフトウェアの教育課程であるブロックコーディングアドバンスを修了するためのすべての要求事項を満たし、イベント、座標、物理、変数, 条件文,繰り返し文,複製を活用して4個のプロジェクトを自ら完成したため、この修了証を授与いたします。",
-  ID_CERT_ADVANCED_JS_DESC: "あなたは iGroup主催のソフトウェアの教育課程であるJSアドバンスを修了するためのすべての要求事項を満たし、イベント、座標、物理、乱数, 変数, 条件文,繰り返し文,複製,演算子を活用して8個のプロジェクトを自ら完成したため、この修了証を授与いたします。",
-  ID_CERT_MASTERY_JS_DESC: "あなたは iGroup主催のソフトウェアの教育課程であるJSマスターを修了するためのすべての要求事項を満たし、イベント、座標、物理、乱数, 変数, 条件文,繰り返し文,複製,演算子,配列、関数を活用して4個のプロジェクトを自ら完成したため、この修了証を授与いたします。",
+  ID_CERT_ELEMENTARY_BLOCK_DESC:
+    "あなたは iGroup主催のソフトウェアの教育課程であるブロックコーディングエレメンタリーを修了するためのすべての要求事項を満たし、イベント、座標、物理を活用して5個のプロジェクトを自ら完成したため、この修了証を授与いたします。",
+  ID_CERT_BASIC_BLOCK_DESC:
+    "あなたは iGroup主催のソフトウェアの教育課程であるブロックコーディングベーシックを修了するためのすべての要求事項を満たし、イベント、座標、物理、変数, 条件文を活用して15個のプロジェクトを自ら完成したため、この修了証を授与いたします。",
+  ID_CERT_ADVANCED_BLOCK_DESC:
+    "あなたは iGroup主催のソフトウェアの教育課程であるブロックコーディングアドバンスを修了するためのすべての要求事項を満たし、イベント、座標、物理、変数, 条件文,繰り返し文,複製を活用して4個のプロジェクトを自ら完成したため、この修了証を授与いたします。",
+  ID_CERT_ADVANCED_JS_DESC:
+    "あなたは iGroup主催のソフトウェアの教育課程であるJSアドバンスを修了するためのすべての要求事項を満たし、イベント、座標、物理、乱数, 変数, 条件文,繰り返し文,複製,演算子を活用して8個のプロジェクトを自ら完成したため、この修了証を授与いたします。",
+  ID_CERT_MASTERY_JS_DESC:
+    "あなたは iGroup主催のソフトウェアの教育課程であるJSマスターを修了するためのすべての要求事項を満たし、イベント、座標、物理、乱数, 変数, 条件文,繰り返し文,複製,演算子,配列、関数を活用して4個のプロジェクトを自ら完成したため、この修了証を授与いたします。",
 
   ID_INTRO_ABOUT_ASTRO_CODING_GO_TITLE: "Astro Coding Go!とは",
   ID_INTRO_SECOND_SECTION_TITLE: "コーディング授業、それ以上の「ミッション」",
@@ -1350,42 +1449,57 @@ const ja = {
   ID_INTRO_SECOND_SECTION_INFO_TITLE_2: "36 Missions",
   ID_INTRO_SECOND_SECTION_INFO_TITLE_3: "100 Hours",
   ID_INTRO_SECOND_SECTION_INFO_TITLE_1_EXPLAN: "6~12歳の生徒対象のSTEM教育",
-  ID_INTRO_SECOND_SECTION_INFO_TITLE_2_EXPLAN: "５つのコース: \nCSTAに基づいた36個のミッションで\n構成された\nブロックプログラミング＆JavaScript教育",
-  ID_INTRO_SECOND_SECTION_INFO_TITLE_3_EXPLAN: "応用力を育てる100時間の\nプロジェクト基盤の(Problem Based Learning, PBL)\nカリキュラム",
+  ID_INTRO_SECOND_SECTION_INFO_TITLE_2_EXPLAN:
+    "５つのコース: \nCSTAに基づいた36個のミッションで\n構成された\nブロックプログラミング＆JavaScript教育",
+  ID_INTRO_SECOND_SECTION_INFO_TITLE_3_EXPLAN:
+    "応用力を育てる100時間の\nプロジェクト基盤の(Problem Based Learning, PBL)\nカリキュラム",
 
   ID_INTRO_THIRD_SECTION_TITLE: "このように進められます。",
-  ID_INTRO_THIRD_SECTION_BUTTON_TEXT_1:"36のミッションを通して学ぶ",
-  ID_INTRO_THIRD_SECTION_BUTTON_TEXT_2:"独自のゲームを作成する",
-  ID_INTRO_THIRD_SECTION_BUTTON_TEXT_3:"クラスメートと共有する",
+  ID_INTRO_THIRD_SECTION_BUTTON_TEXT_1: "36のミッションを通して学ぶ",
+  ID_INTRO_THIRD_SECTION_BUTTON_TEXT_2: "独自のゲームを作成する",
+  ID_INTRO_THIRD_SECTION_BUTTON_TEXT_3: "クラスメートと共有する",
   ID_INTRO_GAME_VIDEO_SECTION_TITLE: "アトムで作る自分だけのゲーム",
 
-  ID_INTRO_GAME_VIDEO_SECTION_CHILD_TITLE: "各ミッションをクリアしながらゲームを作りましょう。",
+  ID_INTRO_GAME_VIDEO_SECTION_CHILD_TITLE:
+    "各ミッションをクリアしながらゲームを作りましょう。",
   ID_INTRO_GAME_VIDEO_LINE_BANNER_TITLE_LEFT: "プレイ方法",
 
   ID_INTRO_LINE_BANNER_TITLE: "無料トライアルはここで！",
-  ID_INTRO_LINE_BANNER_CHILD_TITLE: "5つのコースのうち、一つのミッションを体験できます",
+  ID_INTRO_LINE_BANNER_CHILD_TITLE:
+    "5つのコースのうち、一つのミッションを体験できます",
   ID_INTRO_LINE_BANNER_GO_TO_FREE_COURSE_LINK: "今すぐ無料トライアルする",
 
-  ID_INTRO_INTRODUCE_AREA_CONTENT_TITLE: "ビルダー、トップクラスのゲーム創作ツール",
+  ID_INTRO_INTRODUCE_AREA_CONTENT_TITLE:
+    "ビルダー、トップクラスのゲーム創作ツール",
   ID_INTRO_INTRODUCE_AREA_CONTENT_TITLE_2: "先生のニーズに合わせた最適なLMS",
-  ID_INTRO_INTRODUCE_AREA_CONTENT_TITLE_3: "創作者のプログラミング経験をもとにした実践的なプロジェクト授業",
-  ID_INTRO_INTRODUCE_AREA_CONTENT_TITLE_4: "自社独自開発のブロックプログラミング言語\n(object-oriented block coding) (OOBC)",
+  ID_INTRO_INTRODUCE_AREA_CONTENT_TITLE_3:
+    "創作者のプログラミング経験をもとにした実践的なプロジェクト授業",
+  ID_INTRO_INTRODUCE_AREA_CONTENT_TITLE_4:
+    "自社独自開発のブロックプログラミング言語\n(object-oriented block coding) (OOBC)",
 
-  ID_INTRO_INTRODUCE_AREA_CONTENT_CHILD_TITLE_1: "ACGコースで学習したブロックプログラミングと\nJavaScriptを活用してビルダー機能で\n自分だけのゲームを自由に作ることができます。\nチームアトムが登場する\n自分だけのゲームを作りましょう！",
-  ID_INTRO_INTRODUCE_AREA_CONTENT_CHILD_TITLE_2: "ミッションを指定して授業開始！学習の進み具合に合わせて授業を行います。\n複数のクラスを管理しながら生徒一人一人の学習の進み具合の管理まで！\n専門的な教育を受けていない先生でも問題なく授業を行うことができます。",
-  ID_INTRO_INTRODUCE_AREA_CONTENT_CHILD_TITLE_3: "ミッションを通して様々なプログラミング概念を学び、\nミッションをクリアすると1つのゲームを作ることができます。\n「変数」を使って「プラットフォーム・ゲーム」を、\n「条件文」を使って走る列車を止めるゲームを作りましょう。\n授業が終わった後は？\nビルダー機能を活用して自分だけのゲームを作ることもできます。",
-  ID_INTRO_INTRODUCE_AREA_CONTENT_CHILD_TITLE_4: "Astro Coding Go！で使用されるブロック言語OOBCは自社独自開発のプログラミング言語です。\n既存のブロックプログラミング言語とは異なり、文章構造形式を使用しているため、\nJavaScriptなどのテキストプログラミングへの転換をサポートします。",
+  ID_INTRO_INTRODUCE_AREA_CONTENT_CHILD_TITLE_1:
+    "ACGコースで学習したブロックプログラミングと\nJavaScriptを活用してビルダー機能で\n自分だけのゲームを自由に作ることができます。\nチームアトムが登場する\n自分だけのゲームを作りましょう！",
+  ID_INTRO_INTRODUCE_AREA_CONTENT_CHILD_TITLE_2:
+    "ミッションを指定して授業開始！学習の進み具合に合わせて授業を行います。\n複数のクラスを管理しながら生徒一人一人の学習の進み具合の管理まで！\n専門的な教育を受けていない先生でも問題なく授業を行うことができます。",
+  ID_INTRO_INTRODUCE_AREA_CONTENT_CHILD_TITLE_3:
+    "ミッションを通して様々なプログラミング概念を学び、\nミッションをクリアすると1つのゲームを作ることができます。\n「変数」を使って「プラットフォーム・ゲーム」を、\n「条件文」を使って走る列車を止めるゲームを作りましょう。\n授業が終わった後は？\nビルダー機能を活用して自分だけのゲームを作ることもできます。",
+  ID_INTRO_INTRODUCE_AREA_CONTENT_CHILD_TITLE_4:
+    "Astro Coding Go！で使用されるブロック言語OOBCは自社独自開発のプログラミング言語です。\n既存のブロックプログラミング言語とは異なり、文章構造形式を使用しているため、\nJavaScriptなどのテキストプログラミングへの転換をサポートします。",
 
   ID_INTRO_SCROLL_AREA_LEFT_TITLE: "セルフマネジメント教育\n（自己管理教育）",
-  ID_INTRO_SCROLL_AREA_LEFT_CHILD_TITLE: "セルフマネジメント教育方法により、生徒は自分で学習を進めることができます。\n各ミッションでコツと答えが提供され、先生の手間が省けます。",
+  ID_INTRO_SCROLL_AREA_LEFT_CHILD_TITLE:
+    "セルフマネジメント教育方法により、生徒は自分で学習を進めることができます。\n各ミッションでコツと答えが提供され、先生の手間が省けます。",
 
   ID_INTRO_SCROLL_AREA_LEFT_TITLE_2: "学習アシスタント",
-  ID_INTRO_SCROLL_AREA_LEFT_CHILD_TITLE_2: "コード並び替え機能、API辞書、オートコンプリートなどの\n様々なツールを提供して生徒のコード作成をサポートし、\n一人で問題を解決することができます。",
+  ID_INTRO_SCROLL_AREA_LEFT_CHILD_TITLE_2:
+    "コード並び替え機能、API辞書、オートコンプリートなどの\n様々なツールを提供して生徒のコード作成をサポートし、\n一人で問題を解決することができます。",
 
   ID_INTRO_CONTACT_TITLE: "Contact Us",
-  ID_INTRO_CONTACT_CHILD_TITLE: "右記フォームより\nお気軽にお問合わせください。\n担当者より追ってご連絡します。",
+  ID_INTRO_CONTACT_CHILD_TITLE:
+    "右記フォームより\nお気軽にお問合わせください。\n担当者より追ってご連絡します。",
 
-  ID_INTRO_VIEW_MORE_NOTICE_TITLE: "面白いプログラミング「ミッション」、アトムと一緒に！",
+  ID_INTRO_VIEW_MORE_NOTICE_TITLE:
+    "面白いプログラミング「ミッション」、アトムと一緒に！",
   ID_INTRO_VIEW_MORE_LEFT_TITLE: "カリキュラムが気になる方はこちら！",
   ID_INTRO_VIEW_MORE_RIGHT_TITLE: "今すぐ無料トライアルを体験しに行こう！",
   ID_INTRO_VIEW_MORE_BUTTON_TEXT: "もっと見る",
@@ -1399,17 +1513,22 @@ const ja = {
   ID_ACCOUNT_SETTING_TAB_02_CURRENT_PWD: "現在のパスワード",
   ID_ACCOUNT_SETTING_TAB_02_NEW_PWD: "新しいパスワード",
   ID_ACCOUNT_SETTING_TAB_02_NEW_PWD_CHECK: "新しいパスワードの確認",
-  ID_ACCOUNT_SETTING_TAB_02_ENTER_CURRENT_PWD: "現在のパスワードを入力してください。",
-  ID_ACCOUNT_SETTING_TAB_02_ENTER_NEW_PWD: "新しいパスワードを入力してください。",
+  ID_ACCOUNT_SETTING_TAB_02_ENTER_CURRENT_PWD:
+    "現在のパスワードを入力してください。",
+  ID_ACCOUNT_SETTING_TAB_02_ENTER_NEW_PWD:
+    "新しいパスワードを入力してください。",
   ID_ACCOUNT_EDIT_NAME_POPUP_TITLE: "氏名の修正",
   ID_ACCOUNT_EDIT_NAME_POPUP_GIVEN_NAME: "名前",
   ID_ACCOUNT_EDIT_NAME_POPUP_FAMILY_NAME: "名字",
   ID_ACCOUNT_EDIT_NAME_POPUP_ENTER_GIVEN_NAME: "名前を入力してください。",
   ID_ACCOUNT_EDIT_NAME_POPUP_ENTER_FAMILY_NAME: "名字を入力してください。",
   ID_ACCOUNT_EDIT_NICKNAME_POPUP_TITLE: "ニックネームを編集",
-  ID_ACCOUNT_EDIT_NICKNAME_POPUP_ENTER_NICKNAME: "ニックネームを入力してください。",
-  ID_ACCOUNT_SETTING_ALERT_NEW_PWD_NOT_EQUAL: "新しいパスワードとパスワード確認用が一致しません。",
-  ID_ACCOUNT_SETTING_ALERT_NEW_PWD_LENGTH: "パスワードは6文字以上を入力してください。",
+  ID_ACCOUNT_EDIT_NICKNAME_POPUP_ENTER_NICKNAME:
+    "ニックネームを入力してください。",
+  ID_ACCOUNT_SETTING_ALERT_NEW_PWD_NOT_EQUAL:
+    "新しいパスワードとパスワード確認用が一致しません。",
+  ID_ACCOUNT_SETTING_ALERT_NEW_PWD_LENGTH:
+    "パスワードは6文字以上を入力してください。",
 
   ID_ATTENDANCE_TITLE: "出席状況",
   ID_PLAY_RECENT_GAMES: "さいきん再生しました",
@@ -1419,77 +1538,105 @@ const ja = {
 
   ID_INTRO_CONTACT_US: "Contact Us",
   ID_INTRO_SCROLL_ACTION_IMG_TITLE_1: "セルフチェック",
-  ID_INTRO_SCROLL_ACTION_IMG_CHILD_TITLE_1: "各ミッションの重要概念を説明し、\nそれを活用するように誘導します。",
+  ID_INTRO_SCROLL_ACTION_IMG_CHILD_TITLE_1:
+    "各ミッションの重要概念を説明し、\nそれを活用するように誘導します。",
   ID_INTRO_SCROLL_ACTION_IMG_TITLE_2: "ダッシュボード",
 
-  ID_INTRO_SCROLL_ACTION_IMG_CHILD_TITLE_2: "ダッシュボードから学習の進み具合と\n出席現況を確認することができます。",
+  ID_INTRO_SCROLL_ACTION_IMG_CHILD_TITLE_2:
+    "ダッシュボードから学習の進み具合と\n出席現況を確認することができます。",
   ID_INTRO_SCROLL_ACTION_IMG_TITLE_3: "コードの並び替え（Sort Code）機能",
-  ID_INTRO_SCROLL_ACTION_IMG_CHILD_TITLE_3: "コードの並び替え（Sort Code）」をクリックするだけで生徒は自分が作成した\nJavaScriptのコードを綺麗に自動整形・フォーマットすることができます。",
+  ID_INTRO_SCROLL_ACTION_IMG_CHILD_TITLE_3:
+    "コードの並び替え（Sort Code）」をクリックするだけで生徒は自分が作成した\nJavaScriptのコードを綺麗に自動整形・フォーマットすることができます。",
   ID_INTRO_SCROLL_ACTION_IMG_TITLE_4: "API辞書",
-  ID_INTRO_SCROLL_ACTION_IMG_CHILD_TITLE_4: "API辞書は全てのコマンドを機能別に分類し、\n生徒が使用したいコマンドを見つけるように\nサポートする検索バーがあります。",
+  ID_INTRO_SCROLL_ACTION_IMG_CHILD_TITLE_4:
+    "API辞書は全てのコマンドを機能別に分類し、\n生徒が使用したいコマンドを見つけるように\nサポートする検索バーがあります。",
 
-  ID_INTRO_PLAY_WAY : "ボタンを押してプラズマを破壊してください。",
+  ID_INTRO_PLAY_WAY: "ボタンを押してプラズマを破壊してください。",
 
-  ID_INTRO_EASY_SECTION_TITLE : "生徒の指導に役立つ、先生のためのLMS機能を提供",
-  ID_INTRO_EASY_SECTION_CHILD_TITLE : "様々なクラスを管理できるLMS (Learning Management System)で、\n様々な機関で柔軟に活用することができます。",
-  ID_INTRO_EASY_ITEM_TITLE_1 : "LMSを使って、先生は新しいクラスを作ります。そして、生徒管理をします。管理職の先生は他の先生を管理・監督します。",
-  ID_INTRO_EASY_ITEM_TITLE_2 : "先生はクラス別に学習の進み具合に\n合わせてミッションを割り当て、\n授業を行います。",
-  ID_INTRO_EASY_ITEM_TITLE_3 : "出席と学習の進み具合を一か所で管理します。",
+  ID_INTRO_EASY_SECTION_TITLE: "生徒の指導に役立つ、先生のためのLMS機能を提供",
+  ID_INTRO_EASY_SECTION_CHILD_TITLE:
+    "様々なクラスを管理できるLMS (Learning Management System)で、\n様々な機関で柔軟に活用することができます。",
+  ID_INTRO_EASY_ITEM_TITLE_1:
+    "LMSを使って、先生は新しいクラスを作ります。そして、生徒管理をします。管理職の先生は他の先生を管理・監督します。",
+  ID_INTRO_EASY_ITEM_TITLE_2:
+    "先生はクラス別に学習の進み具合に\n合わせてミッションを割り当て、\n授業を行います。",
+  ID_INTRO_EASY_ITEM_TITLE_3: "出席と学習の進み具合を一か所で管理します。",
 
   ID_ABOUT_INTRO_TITLE: "チームアトムと一緒に学ぶプログラミング教室",
-  ID_ABOUT_INTRO_CHILD_TITLE: "アトム、アトニャン、スズ。世界各地の「ミッション」に向かってチームアトム出動！",
+  ID_ABOUT_INTRO_CHILD_TITLE:
+    "アトム、アトニャン、スズ。世界各地の「ミッション」に向かってチームアトム出動！",
 
-  ID_ABOUT_CURRICULUM_TITLE : "プレミアムのカリキュラム",
-  ID_ABOUT_CURRICULUM_CARD_TITLE_1 : "CSTA基準カリキュラム",
-  ID_ABOUT_CURRICULUM_CARD_CONTENT_1 : "アメリカのCSTA(Computer Science Teacher Association)で制定した教育基準案に基づいて世界的なカリキュラムを導入したプログラミング教育を提供します。",
-  ID_ABOUT_CURRICULUM_CARD_TITLE_2 : "統合型STEM教育",
-  ID_ABOUT_CURRICULUM_CARD_CONTENT_2 : "自然科学、生物、物理、技術、数学まで！クリップと一緒に多様なSTEM概念を学び、思考力を育てることができます。",
-  ID_ABOUT_CURRICULUM_CARD_TITLE_3 : "UNのSDGs(Sustainable Development Goals) 連携",
-  ID_ABOUT_CURRICULUM_CARD_CONTENT_3 : "プロジェクトと一緒にUNの17個の持続可能な開発目標の核心価値について学べることができます。",
+  ID_ABOUT_CURRICULUM_TITLE: "プレミアムのカリキュラム",
+  ID_ABOUT_CURRICULUM_CARD_TITLE_1: "CSTA基準カリキュラム",
+  ID_ABOUT_CURRICULUM_CARD_CONTENT_1:
+    "アメリカのCSTA(Computer Science Teacher Association)で制定した教育基準案に基づいて世界的なカリキュラムを導入したプログラミング教育を提供します。",
+  ID_ABOUT_CURRICULUM_CARD_TITLE_2: "統合型STEM教育",
+  ID_ABOUT_CURRICULUM_CARD_CONTENT_2:
+    "自然科学、生物、物理、技術、数学まで！クリップと一緒に多様なSTEM概念を学び、思考力を育てることができます。",
+  ID_ABOUT_CURRICULUM_CARD_TITLE_3:
+    "UNのSDGs(Sustainable Development Goals) 連携",
+  ID_ABOUT_CURRICULUM_CARD_CONTENT_3:
+    "プロジェクトと一緒にUNの17個の持続可能な開発目標の核心価値について学べることができます。",
 
-  ID_ABOUT_HORIZONTAL_SLIDE_TITLE : "エキサイティングな冒険でプログラミングを学びましょう！",
-  ID_ABOUT_HORIZONTAL_SLIDE_ITEM_TITLE_1 : "空腹のロボット",
-  ID_ABOUT_HORIZONTAL_SLIDE_ITEM_CHILD_TITLE_1 : "「イベント」について学び、簡単なパズルゲームを作成します。",
-  ID_ABOUT_HORIZONTAL_SLIDE_ITEM_TITLE_2 : "ゲームオーバー",
-  ID_ABOUT_HORIZONTAL_SLIDE_ITEM_CHILD_TITLE_2 : "「物理エンジン」について学び、アーケードゲームを作成します。",
-  ID_ABOUT_HORIZONTAL_SLIDE_ITEM_TITLE_3 : "プラズマメルトダウン",
-  ID_ABOUT_HORIZONTAL_SLIDE_ITEM_CHILD_TITLE_3 : "「ループ」について学び、巨大なプラズマを破壊します。",
-  ID_ABOUT_HORIZONTAL_SLIDE_ITEM_TITLE_4 : "ボボのひみつ",
-  ID_ABOUT_HORIZONTAL_SLIDE_ITEM_CHILD_TITLE_4 : "Javascriptを使用して「イベント」を実装し、脱出ゲームを作成します。",
-  ID_ABOUT_HORIZONTAL_SLIDE_ITEM_TITLE_5 : "海にうかぶごみの島",
-  ID_ABOUT_HORIZONTAL_SLIDE_ITEM_CHILD_TITLE_5 : "「関数」について学び、チームアトムと一緒に汚染された海を掃除します。",
+  ID_ABOUT_HORIZONTAL_SLIDE_TITLE:
+    "エキサイティングな冒険でプログラミングを学びましょう！",
+  ID_ABOUT_HORIZONTAL_SLIDE_ITEM_TITLE_1: "空腹のロボット",
+  ID_ABOUT_HORIZONTAL_SLIDE_ITEM_CHILD_TITLE_1:
+    "「イベント」について学び、簡単なパズルゲームを作成します。",
+  ID_ABOUT_HORIZONTAL_SLIDE_ITEM_TITLE_2: "ゲームオーバー",
+  ID_ABOUT_HORIZONTAL_SLIDE_ITEM_CHILD_TITLE_2:
+    "「物理エンジン」について学び、アーケードゲームを作成します。",
+  ID_ABOUT_HORIZONTAL_SLIDE_ITEM_TITLE_3: "プラズマメルトダウン",
+  ID_ABOUT_HORIZONTAL_SLIDE_ITEM_CHILD_TITLE_3:
+    "「ループ」について学び、巨大なプラズマを破壊します。",
+  ID_ABOUT_HORIZONTAL_SLIDE_ITEM_TITLE_4: "ボボのひみつ",
+  ID_ABOUT_HORIZONTAL_SLIDE_ITEM_CHILD_TITLE_4:
+    "Javascriptを使用して「イベント」を実装し、脱出ゲームを作成します。",
+  ID_ABOUT_HORIZONTAL_SLIDE_ITEM_TITLE_5: "海にうかぶごみの島",
+  ID_ABOUT_HORIZONTAL_SLIDE_ITEM_CHILD_TITLE_5:
+    "「関数」について学び、チームアトムと一緒に汚染された海を掃除します。",
 
   ID_PLAY_RECENT_GAMES: "さいきん再生しました",
   ID_PLAY_ALL_GAMES: "すべてのゲーム",
 
-  ID_ABOUT_STRUCTURE_TITLE : "カリキュラムの構造",
-  ID_ABOUT_STRUCTURE_BLOCKCODING_EXPLAIN : "24個の様々なミッションに挑戦して「順次」から「反復」まで様々な概念を学習します。自社独自開発のOOBCはテキストプログラミング構文に沿ったブロックを使ってプログラミングする言語です。JavaScript や他の本格的なプログラミング言語の使い方が自然に身につきます。",
-  ID_ABOUT_STRUCTURE_JAVASCRIPT_EXPLAIN : "12個の様々なミッションに挑戦して「関数」と「配列」等、上級概念を学習します。 オートコンプリートで生徒が属性をクリックして入力することができます。",
-  ID_ABOUT_DOWNLOAD_CURRICULUM : "カリキュラムのダウンロード",
-  ID_ABOUT_STRUCTURE_BLOCK_CODING : "ブロックプログラミングミッション\n(3 コース : 24 ミッション)",
-  ID_ABOUT_STRUCTURE_JAVASCRIPT : "JavaScriptミッション\n(２ コース : 12 ミッション)",
-  ID_ABOUT_MORE_TRIAL_TEXT : "無料トライアルのお試し",
+  ID_ABOUT_STRUCTURE_TITLE: "カリキュラムの構造",
+  ID_ABOUT_STRUCTURE_BLOCKCODING_EXPLAIN:
+    "24個の様々なミッションに挑戦して「順次」から「反復」まで様々な概念を学習します。自社独自開発のOOBCはテキストプログラミング構文に沿ったブロックを使ってプログラミングする言語です。JavaScript や他の本格的なプログラミング言語の使い方が自然に身につきます。",
+  ID_ABOUT_STRUCTURE_JAVASCRIPT_EXPLAIN:
+    "12個の様々なミッションに挑戦して「関数」と「配列」等、上級概念を学習します。 オートコンプリートで生徒が属性をクリックして入力することができます。",
+  ID_ABOUT_DOWNLOAD_CURRICULUM: "カリキュラムのダウンロード",
+  ID_ABOUT_STRUCTURE_BLOCK_CODING:
+    "ブロックプログラミングミッション\n(3 コース : 24 ミッション)",
+  ID_ABOUT_STRUCTURE_JAVASCRIPT:
+    "JavaScriptミッション\n(２ コース : 12 ミッション)",
+  ID_ABOUT_MORE_TRIAL_TEXT: "無料トライアルのお試し",
 
-  ID_ABOUT_INFORMATION_TITLE : "情報",
-  ID_ABOUT_INFORMATION_TECHNICAL : "Technical Specifications",
-  ID_ABOUT_INFORMATION_PROFILE : "会社概要",
-  ID_ABOUT_INFORMATION_TECHNICAL_INNER : "ハードウェア : デスクトップ/ノートパソコン/タブレット端末\n解像度 : 1280 × 800 以上\nOS 環境 : Windows 10 / MacOS 10.14 以上\nブラウザ : このプロダクトはグーグルクロームに最適化されています。\nインターネット接続 : 30Mbps以上",
+  ID_ABOUT_INFORMATION_TITLE: "情報",
+  ID_ABOUT_INFORMATION_TECHNICAL: "Technical Specifications",
+  ID_ABOUT_INFORMATION_PROFILE: "会社概要",
+  ID_ABOUT_INFORMATION_TECHNICAL_INNER:
+    "ハードウェア : デスクトップ/ノートパソコン/タブレット端末\n解像度 : 1280 × 800 以上\nOS 環境 : Windows 10 / MacOS 10.14 以上\nブラウザ : このプロダクトはグーグルクロームに最適化されています。\nインターネット接続 : 30Mbps以上",
 
-  ID_ABOUT_INFORMATION_PROFILE_INNER : "MANGOSTEEMS PTE. LTD.",
-  ID_ABOUT_INFORMATION_PROFILE_INNER_FOUNDED : "設立 : 2018",
-  ID_ABOUT_INFORMATION_PROFILE_INNER_ADDRESS : "住所 : 31 Kaki Bukit Road 3 #06-07 Techlink Singapore (417818)",
-  ID_ABOUT_INFORMATION_PROFILE_INNER_ADDRESS_SECOND_LINE : "www.mangosteems.com",
-  ID_ABOUT_INFORMATION_PROFILE_INNER_CONTACT : "コンタクト : acg@mangosteems.com",
-  ID_ABOUT_INFORMATION_PROFILE_INNER_PARTNER_TITLE : "パートナー企業",
-  ID_ABOUT_INFORMATION_PROFILE_INNER_PARTNER_IGROUP : "iGroup Asia-Pacific Ltd.",
-  ID_ABOUT_INFORMATION_PROFILE_INNER_PARTNER_ADDRESS : "www.igroupnet.com",
-  ID_ABOUT_INFORMATION_PROFILE_INNER_PARTNER_IDC : "IDC ASIA Co., Ltd. /iGroup Korea",
-  ID_ABOUT_INFORMATION_PROFILE_INNER_PARTNER_IDC_ADDRESS : "www.igroupkorea.kr",
+  ID_ABOUT_INFORMATION_PROFILE_INNER: "MANGOSTEEMS CO.,LTD.",
+  ID_ABOUT_INFORMATION_PROFILE_INNER_FOUNDED: "設立 : 2018",
+  ID_ABOUT_INFORMATION_PROFILE_INNER_ADDRESS:
+    "住所 : 57/1 SOI LADPRAO 30, CHANKASEM, JATUJAK, BANGKOK (10900)",
+  ID_ABOUT_INFORMATION_PROFILE_INNER_ADDRESS_SECOND_LINE: "www.mangosteems.com",
+  ID_ABOUT_INFORMATION_PROFILE_INNER_CONTACT:
+    "コンタクト : acg@mangosteems.com",
+  ID_ABOUT_INFORMATION_PROFILE_INNER_PARTNER_TITLE: "パートナー企業",
+  ID_ABOUT_INFORMATION_PROFILE_INNER_PARTNER_IGROUP: "iGroup Asia-Pacific Ltd.",
+  ID_ABOUT_INFORMATION_PROFILE_INNER_PARTNER_ADDRESS: "www.igroupnet.com",
+  ID_ABOUT_INFORMATION_PROFILE_INNER_PARTNER_IDC:
+    "IDC ASIA Co., Ltd. /iGroup Korea",
+  ID_ABOUT_INFORMATION_PROFILE_INNER_PARTNER_IDC_ADDRESS: "www.igroupkorea.kr",
 
-  ID_ABOUT_TOP_BANNER_TITLE : "実用的なコーディングレッスン",
-  ID_ABOUT_TOP_BANNER_CHILD_TITLE : "学生と教師の両方のためのSW教育プラットフォーム！",
-  ID_INTRO_TOP_BANNER_TITLE : "GO! GO! アトム と一緒に\nプログラミングを学ぼう",
-  ID_INTRO_TOP_BANNER_CHILD_TITLE : "Astro Coding Go!（ACG）は世界中で愛されるキャラクター、アトムと一緒に\nCSTAの基準に基づいて制作されたK-12対象のプログラミング教育プラットフォームです",
+  ID_ABOUT_TOP_BANNER_TITLE: "実用的なコーディングレッスン",
+  ID_ABOUT_TOP_BANNER_CHILD_TITLE:
+    "学生と教師の両方のためのSW教育プラットフォーム！",
+  ID_INTRO_TOP_BANNER_TITLE: "GO! GO! アトム と一緒に\nプログラミングを学ぼう",
+  ID_INTRO_TOP_BANNER_CHILD_TITLE:
+    "Astro Coding Go!（ACG）は世界中で愛されるキャラクター、アトムと一緒に\nCSTAの基準に基づいて制作されたK-12対象のプログラミング教育プラットフォームです",
 
   ID_INTRO_CONTACT_1_INSTITUTION_NAME: "学校名/会社名/機関名",
   ID_INTRO_CONTACT_1_STUDENTS_COUNT: "受講生は何人を予想していますか？",
@@ -1511,24 +1658,27 @@ const ja = {
   ID_INTRO_CONTACT_BUTTON_SEND: "送信",
   ID_INTRO_CONTACT_BUTTON_NEXT: "次",
 
-  ID_ABOUT_CHARACTER_BOY_TITLE : "Astro Boy",
-  ID_ABOUT_CHARACTER_BOY_CHILD_TITLE : "AI robot built to resemble a young human boy.\nHe embodies helpful and heroic spirit,\nand is always motivated in his rescue mission.",
-  ID_ABOUT_CHARACTER_SUZU_TITLE : "SUZU",
-  ID_ABOUT_CHARACTER_SUZU_CHILD_TITLE : "A cute 7 years old human girl and\nthe granddaughter of Professor Elefun.\nShe is extremely intelligent, capapble, and independent.",
-  ID_ABOUT_CHARACTER_KITTY_TITLE : "Astro Kitty",
-  ID_ABOUT_CHARACTER_KITTY_CHILD_TITLE : "AI robot built to resemble a three months old kitten.\nAstro regards Astro Kitty as his mischievous\nbut adorable younger brother.",
+  ID_ABOUT_CHARACTER_BOY_TITLE: "Astro Boy",
+  ID_ABOUT_CHARACTER_BOY_CHILD_TITLE:
+    "AI robot built to resemble a young human boy.\nHe embodies helpful and heroic spirit,\nand is always motivated in his rescue mission.",
+  ID_ABOUT_CHARACTER_SUZU_TITLE: "SUZU",
+  ID_ABOUT_CHARACTER_SUZU_CHILD_TITLE:
+    "A cute 7 years old human girl and\nthe granddaughter of Professor Elefun.\nShe is extremely intelligent, capapble, and independent.",
+  ID_ABOUT_CHARACTER_KITTY_TITLE: "Astro Kitty",
+  ID_ABOUT_CHARACTER_KITTY_CHILD_TITLE:
+    "AI robot built to resemble a three months old kitten.\nAstro regards Astro Kitty as his mischievous\nbut adorable younger brother.",
 
-  ID_LEARN_ALERT_TITLE : "学習できる授業がありません。",
-  ID_LEARN_NON_LEARNING_TITLE : "学習権限がありません。",
-  ID_LEARN_NON_LEARNING_SECOND_TITLE : "購入してから利用できる過程です。",
+  ID_LEARN_ALERT_TITLE: "学習できる授業がありません。",
+  ID_LEARN_NON_LEARNING_TITLE: "学習権限がありません。",
+  ID_LEARN_NON_LEARNING_SECOND_TITLE: "購入してから利用できる過程です。",
 
-  ID_ABOUT_COURSES_SLIDE_WRAP_TITLE : "Courses",
+  ID_ABOUT_COURSES_SLIDE_WRAP_TITLE: "Courses",
 
-  ID_SSO_ERROR_POPUP_TEXT: "アカウントの登録が必要です。所属の管理者にお問合せください。",
+  ID_SSO_ERROR_POPUP_TEXT:
+    "アカウントの登録が必要です。所属の管理者にお問合せください。",
 
   ID_PHASERPAGE_PLACEHOLDER: "値を入力してください。",
   ID_PHASERPAGE_CANCEL: "取消し",
   ID_PHASERPAGE_CONFIRM: "確認",
-
 };
 export default ja;
