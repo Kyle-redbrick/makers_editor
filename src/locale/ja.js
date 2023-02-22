@@ -69,7 +69,7 @@ const ja = {
   ID_SIGNIN_EMAIL: "メール",
   ID_SIGNIN_EMAIL_PLACEHOLDER: "メールアドレスを入力してください。",
   ID_SIGNIN_PW: "パスワード",
-  ID_SIGNIN_PW_PLACEHOLDER: "パスワードをご入力ください。",
+  ID_SIGNIN_PW_PLACEHOLDER: "6文字以上で入力してください。",
   ID_SIGNIN_FORGOTPW: "パスワードを再設定する",
   ID_SIGNIN_FORGOTPW_DESC: "パスワードを忘れましたか?",
   ID_SIGNIN_SIGNUP: "アカウント登録",
@@ -90,7 +90,7 @@ const ja = {
   ID_SIGNUP_PW_RE: "確認する",
   ID_SIGNUP_PW_RE_PLACEHOLDER: "パスワードをご入力ください。",
   ID_SIGNUP_NAME: "ニックネーム *",
-  ID_SIGNUP_NAME_PLACEHOLDER: "ニックネームをご入力ください。",
+  ID_SIGNUP_NAME_PLACEHOLDER: "※本名は使わないでください。",
   ID_SIGNUP_PHONE: "モバイル",
   ID_SIGNUP_PHONE_PLACEHOLDER: "電話番号",
   ID_SIGNUP_SMSCODE_PLACEHOLDER: "確認コード",
@@ -111,7 +111,7 @@ const ja = {
   ID_SIGNUP_WARNING_PW_RE_EMPTY: "* パスワードをご入力ください。",
   ID_SIGNUP_WARNING_FIRSTNAME_FORMAT: "* 名前をもう少し長く入力してください",
   ID_SIGNUP_WARNING_LASTNAME_FORMAT: "* 名前をもう少し長く入力してください",
-  ID_SIGNUP_WARNING_USERNAME_FORMAT: "* 名前をもう少し長く入力してください",
+  ID_SIGNUP_WARNING_USERNAME_FORMAT: "* 名前と名字を先に入力してください。",
   ID_SIGNUP_WARNING_NAME_EMPTY: "* 名前を入力してください",
   ID_SIGNUP_WARNING_PHONE_FORMAT: "* 電話番号を正しく入力してください",
   ID_SIGNUP_WARNING_PHONE_SIGNED: "* これはすでに登録済みの電話番号です",
@@ -1285,12 +1285,12 @@ const ja = {
   ID_DREAM_BUILDER_COURSE_CLEAR: "COURSE CLEAR",
   ID_DREAM_BUILDER_COURSE_CLEAR_SUBTITLE:
     "おめでとうございます！今回のコースのすべての授業を完了しました！\n名前とクラスを入力し、修了証を発行してみましょう！",
-  ID_DREAM_BUILDER_COURSE_CLEAR_CANCEL_BUTTON: "学習を終了しますか？",
-  ID_DREAM_BUILDER_COURSE_CLEAR_SUBMIT_BUTTON: "提出",
+  ID_DREAM_BUILDER_COURSE_CLEAR_CANCEL_BUTTON: "閉じる",
+  ID_DREAM_BUILDER_COURSE_CLEAR_SUBMIT_BUTTON: "発行",
   ID_DREAM_BUILDER_QUEST_CLEAR: "ミッションコンプリート！",
   ID_DREAM_BUILDER_QUEST_CLEAR_SUBTITLE: `おめでとうございます！全てのミッションをクリアしました。\学んだことはふくしゅうしましょう！`,
   ID_DREAM_BUILDER_QUEST_CLEAR_CERT_SUBTITLE:
-    "おめでとうございます！今回コースのミッションを全て修了しました。\n名前とクラス名を入力すると修了証を発行します。",
+    "おめでとうございます！\n全てのミッションを修了しました。\n名前とクラスを入力すると終了証を発行します。",
   ID_DREAM_BUILDER_QUEST_CLEAR_CERT_QUIT_BUTTON: "学習を終了しますか？",
   ID_DREAM_BUILDER_QUEST_CLEAR_CANCEL_BUTTON: "やめる",
   ID_DREAM_BUILDER_QUEST_CLEAR_CONFIRM_BUTTON: "次",
@@ -1427,21 +1427,23 @@ const ja = {
   ID_COMMENT_TITLE: "コメント",
   ID_DATE_FORMAT_MIN: "分前",
 
-  ID_SIGNUP_CREATE_TITLE: "メンバーシップに参加",
+  ID_SIGNUP_CREATE_TITLE: "登録",
+  ID_SIGNUP_CREATE_SUB_TITLE:
+    "ユーザー情報をご入力ください。\n（すべて必須項目です。）",
   ID_SIGNUP_FIRST_NAME: "名字 *",
-  ID_SIGNUP_NICKNAME: "ニックネーム *",
+  ID_SIGNUP_NICKNAME: "名前 *",
   ID_SIGNUP_FIRST_NAME_PLACEHOLDER: "名字を入力してください。",
 
   ID_CERT_ELEMENTARY_BLOCK_DESC:
-    "あなたは iGroup主催のソフトウェアの教育課程であるブロックコーディングエレメンタリーを修了するためのすべての要求事項を満たし、イベント、座標、物理を活用して5個のプロジェクトを自ら完成したため、この修了証を授与いたします。",
+    "あなたはAstroCodingGo主催のプログラミング教育課程であるブロックコーディング-エレメンタリーにおいて、イベント、座標、物理を活用し5つのプロジェクトを完了した事をここに証します。",
   ID_CERT_BASIC_BLOCK_DESC:
-    "あなたは iGroup主催のソフトウェアの教育課程であるブロックコーディングベーシックを修了するためのすべての要求事項を満たし、イベント、座標、物理、変数, 条件文を活用して15個のプロジェクトを自ら完成したため、この修了証を授与いたします。",
+    "あなたはAstroCodingGo主催のプログラミング教育課程であるブロックコーディング- ベーシックにおいて、イベント、座標、物理、変数, 条件文を活用し13つのプロジェクトを完了した事をここに証します。",
   ID_CERT_ADVANCED_BLOCK_DESC:
-    "あなたは iGroup主催のソフトウェアの教育課程であるブロックコーディングアドバンスを修了するためのすべての要求事項を満たし、イベント、座標、物理、変数, 条件文,繰り返し文,複製を活用して4個のプロジェクトを自ら完成したため、この修了証を授与いたします。",
+    "あなたはAstroCodingGo主催のプログラミング教育課程であるブロックコーディング-アドバンスにおいて、イベント、座標、物理、変数, 条件文,繰り返し文,複製を活用し6つのプロジェクトを完了した事をここに証します。",
   ID_CERT_ADVANCED_JS_DESC:
-    "あなたは iGroup主催のソフトウェアの教育課程であるJSアドバンスを修了するためのすべての要求事項を満たし、イベント、座標、物理、乱数, 変数, 条件文,繰り返し文,複製,演算子を活用して8個のプロジェクトを自ら完成したため、この修了証を授与いたします。",
+    "あなたはAstroCodingGo主催のプログラミング教育課程であるJavaScript-アドバンスにおいて、イベント、座標、物理、乱数, 変数, 条件文,繰り返し文,複製,演算子を活用し8つのプロジェクトを完了した事をここに証します。",
   ID_CERT_MASTERY_JS_DESC:
-    "あなたは iGroup主催のソフトウェアの教育課程であるJSマスターを修了するためのすべての要求事項を満たし、イベント、座標、物理、乱数, 変数, 条件文,繰り返し文,複製,演算子,配列、関数を活用して4個のプロジェクトを自ら完成したため、この修了証を授与いたします。",
+    "あなたはAstroCodingGo主催のプログラミング教育課程であるJavaScript-マスターにおいて、イベント、座標、物理、乱数, 変数, 条件文,繰り返し文,複製,演算子,配列、関数を活用し4つのプロジェクトを完了した事をここに証します。",
 
   ID_INTRO_ABOUT_ASTRO_CODING_GO_TITLE: "Astro Coding Go!とは",
   ID_INTRO_SECOND_SECTION_TITLE: "コーディング授業、それ以上の「ミッション」",
@@ -1680,5 +1682,8 @@ const ja = {
   ID_PHASERPAGE_PLACEHOLDER: "値を入力してください。",
   ID_PHASERPAGE_CANCEL: "取消し",
   ID_PHASERPAGE_CONFIRM: "確認",
+
+  ID_SIGN_UP_EXIST_EMAIL_WARNING:
+    "すでに存在するe-mailアドレスです。\n学校/会社/機関の管理者または先生に変更する新しいメールアドレスから登録招待を受けてください。",
 };
 export default ja;

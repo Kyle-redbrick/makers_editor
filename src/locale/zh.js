@@ -1388,6 +1388,8 @@ const zh = {
     "is awarded with this certificate for successfully fulfilling requirements of JavaScript Mastery, a software education course offered by iGroup, and completing 4 projects utilizing Random Number, Variable, Conditional Statement, Operator, List, Index,  Loop, and Function.",
 
   ID_SIGNUP_CREATE_TITLE: "Sign Up",
+  ID_SIGNUP_CREATE_SUB_TITLE:
+    "Please enter your user information.\n(All items are required.)",
   ID_SIGNUP_FIRST_NAME: "성",
   ID_SIGNUP_NICKNAME: "Nickname",
   ID_SIGNUP_FIRST_NAME_PLACEHOLDER: "성을 입력해주세요",
@@ -1611,5 +1613,8 @@ const zh = {
   ID_PHASERPAGE_PLACEHOLDER: "Please Enter Value",
   ID_PHASERPAGE_CANCEL: "Cancel",
   ID_PHASERPAGE_CONFIRM: "Confirm",
+
+  ID_SIGN_UP_EXIST_EMAIL_WARNING:
+    "This e-mail already exists. Receive an invitation to register with a new email that you change to your school/company/institution's administrator or teacher.",
 };
 export default zh;

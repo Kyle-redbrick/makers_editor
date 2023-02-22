@@ -22,19 +22,18 @@ import "slick-carousel/slick/slick-theme.css";
 addLocaleData([...en, ...ko, ...zh, ...ja]);
 
 const getNavigatorLanguage = () => {
-
   let lang;
   switch (window.location.hostname) {
     case "astroboy-dev-jp.wizclass.com":
     case "jp.astro-coding-go.com":
-      lang = "ja"
+      lang = "ja";
       break;
     case "astroboy-dev-en.wizclass.com":
     case "en.astro-coding-go.com":
-      lang = "en"
+      lang = "en";
       break;
     default:
-      lang = "en"
+      lang = "ja";
       break;
   }
 

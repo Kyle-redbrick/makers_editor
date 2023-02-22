@@ -28,17 +28,16 @@ import advertisement_en from "./Agreements/advertisement-en";
 import arrowImg from "../../../Image/signup_arrow.svg";
 import PhoneDropDown from "../QRPopup/PhoneDropDown";
 
-
 class SignUp extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      email:"",
-      name:"",
-      fristName:"",
-      nickName:"",
-      password:"",
+      email: "",
+      name: "",
+      fristName: "",
+      nickName: "",
+      password: "",
 
       warning_email: "",
       warning_name: "",
@@ -46,19 +45,20 @@ class SignUp extends Component {
       warning_nickName: "",
       warning_password: "",
 
-      errInfo: ""
+      errInfo: "",
     };
   }
 
   componentDidMount = () => {
-    this.setState({email:this.props.userEmail})
+    this.setState({ email: this.props.userEmail });
   };
 
   checkEmailFormat = () => {
-    const regex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    const regex =
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return regex.test(this.state.email);
   };
-    checkNameFormat = () => {
+  checkNameFormat = () => {
     return this.state.name.length >= 2;
   };
   checkFirstNameFormat = () => {
@@ -71,63 +71,63 @@ class SignUp extends Component {
     return this.state.password.length >= 6;
   };
 
-  onChangeInput = e => {
+  onChangeInput = (e) => {
     const { formatMessage } = this.props.intl;
     const { id, value } = e.target;
     this.setState({ [id]: value }, () => {
       switch (id) {
         case "email":
           if (this.checkEmailFormat() || value === "") {
-            this.setState({ warning_email: "" ,email: value});
+            this.setState({ warning_email: "", email: value });
           } else {
             this.setState({
               warning_email: formatMessage({
-                id: "ID_SIGNUP_WARNING_EMAIL_FORMAT"
-              })
+                id: "ID_SIGNUP_WARNING_EMAIL_FORMAT",
+              }),
             });
           }
           break;
         case "name":
           if (this.checkNameFormat() || value === "") {
-            this.setState({ warning_name: "" ,name: value});
+            this.setState({ warning_name: "", name: value });
           } else {
             this.setState({
               warning_name: formatMessage({
-                id: "ID_SIGNUP_WARNING_FIRSTNAME_FORMAT"
-              })
+                id: "ID_SIGNUP_WARNING_FIRSTNAME_FORMAT",
+              }),
             });
           }
           break;
         case "fristName":
           if (this.checkNameFormat() || value === "") {
-            this.setState({ warning_fristName: "" ,fristName: value});
+            this.setState({ warning_fristName: "", fristName: value });
           } else {
             this.setState({
               warning_fristName: formatMessage({
-                id: "ID_SIGNUP_WARNING_LASTNAME_FORMAT"
-              })
+                id: "ID_SIGNUP_WARNING_LASTNAME_FORMAT",
+              }),
             });
           }
           break;
         case "nickName":
           if (this.checkNickNameFormat() || value === "") {
-            this.setState({ warning_nickName: "" ,nickName: value});
+            this.setState({ warning_nickName: "", nickName: value });
           } else {
             this.setState({
               warning_nickName: formatMessage({
-                id: "ID_SIGNUP_WARNING_USERNAME_FORMAT"
-              })
+                id: "ID_SIGNUP_WARNING_USERNAME_FORMAT",
+              }),
             });
           }
           break;
         case "password":
           if (this.checkPasswordFormat()) {
-            this.setState({ warning_password: "" ,password: value});
+            this.setState({ warning_password: "", password: value });
           } else {
             this.setState({
               warning_password: formatMessage({
-                id: "ID_SIGNUP_WARNING_PW_FORMAT"
-              })
+                id: "ID_SIGNUP_WARNING_PW_FORMAT",
+              }),
             });
           }
           break;
@@ -137,45 +137,45 @@ class SignUp extends Component {
     });
   };
 
-  onClickSignUp = e => {
-
+  onClickSignUp = (e) => {
     const params = {
-      email:this.state.email,
-      name:this.state.name,
-      fristName:this.state.fristName,
-      nickName:this.state.nickName,
+      email: this.state.email,
+      name: this.state.name,
+      fristName: this.state.fristName,
+      nickName: this.state.nickName,
       password: sha256(this.state.password),
-    }
+    };
 
-    request.inviteSignup({...params},{"authorityKey":this.props.activateToken}).
-    then(res => res.json()).
-    then(res => {
-      if(res.success) {
-        request.loginByToken({token:res.body.token})
-        .then(res => res.json())
-        .then(json => {
-          if(json.token){
-            localStorage.setItem("wizToken",  json.token);
+    request
+      .inviteSignup({ ...params }, { authorityKey: this.props.activateToken })
+      .then((res) => res.json())
+      .then((res) => {
+        if (res.success) {
+          request
+            .loginByToken({ token: res.body.token })
+            .then((res) => res.json())
+            .then((json) => {
+              if (json.token) {
+                localStorage.setItem("wizToken", json.token);
 
-            // const url = window.location.href 
-            // const newUrl = url.split("?").pop()
-            // window.location.href = url.replace("/?" + newUrl,"")
-            this.props.updateUserInfo(json.user);
-            this.props.dismiss()
-          }else {
-            this.setState({errInfo : json})
-          }
-          
-        })
-      }else {
-        this.setState({errInfo : res.reason})
-      }
-    })
-  }
+                // const url = window.location.href
+                // const newUrl = url.split("?").pop()
+                // window.location.href = url.replace("/?" + newUrl,"")
+                this.props.updateUserInfo(json.user);
+                this.props.dismiss();
+              } else {
+                this.setState({ errInfo: json });
+              }
+            });
+        } else {
+          this.setState({ errInfo: res.reason });
+        }
+      });
+  };
 
-  onClickDismiss = ()=> {
-    this.props.dismiss()
-  }
+  onClickDismiss = () => {
+    this.props.dismiss();
+  };
 
   render() {
     const { formatMessage } = this.props.intl;
@@ -185,15 +185,14 @@ class SignUp extends Component {
       fristName,
       nickName,
       password,
-      
+
       warning_email,
       warning_name,
       warning_fristName,
       warning_nickName,
       warning_password,
 
-      agreement
-
+      agreement,
     } = this.state;
     const {
       onChangeInput,
@@ -224,6 +223,10 @@ class SignUp extends Component {
         <form autoComplete="off">
           <div className="signup_title">
             {formatMessage({ id: "ID_SIGNUP_CREATE_TITLE" })}
+
+            <p className="signup_sub_title">
+              {formatMessage({ id: "ID_SIGNUP_CREATE_SUB_TITLE" })}
+            </p>
           </div>
 
           {/* ===== 이메일 =================================== */}
@@ -233,18 +236,22 @@ class SignUp extends Component {
             </div>
             <div className="signup__input__right">
               <input
-                className={`popup_input ${warning_email !== "" ? "popup_input-warning" : ""
-                  }`}
+                className={`popup_input ${
+                  warning_email !== "" ? "popup_input-warning" : ""
+                }`}
                 id="email"
-                placeholder={formatMessage({ id: "ID_SIGNIN_EMAIL_PLACEHOLDER" })}
+                placeholder={formatMessage({
+                  id: "ID_SIGNIN_EMAIL_PLACEHOLDER",
+                })}
                 value={email}
                 onChange={onChangeInput}
                 type="text"
                 autoComplete="off"
-
                 disabled
               />
-              {warning_email && <div className="popup_warning">{warning_email}</div>}
+              {warning_email && (
+                <div className="popup_warning">{warning_email}</div>
+              )}
             </div>
           </div>
 
@@ -255,16 +262,21 @@ class SignUp extends Component {
             </div>
             <div className="signup__input__right">
               <input
-                className={`popup_input ${warning_name !== "" ? "popup_input-warning" : ""
-                  }`}
+                className={`popup_input ${
+                  warning_name !== "" ? "popup_input-warning" : ""
+                }`}
                 id="name"
-                placeholder={formatMessage({ id: "ID_SIGNUP_WARNING_NAME_EMPTY" })}
+                placeholder={formatMessage({
+                  id: "ID_SIGNUP_WARNING_NAME_EMPTY",
+                })}
                 value={name}
                 onChange={onChangeInput}
                 type="text"
                 autoComplete="off"
               />
-              {warning_name && <div className="popup_warning">{warning_name}</div>}
+              {warning_name && (
+                <div className="popup_warning">{warning_name}</div>
+              )}
             </div>
           </div>
 
@@ -275,16 +287,21 @@ class SignUp extends Component {
             </div>
             <div className="signup__input__right">
               <input
-                className={`popup_input ${warning_fristName !== "" ? "popup_input-warning" : ""
-                  }`}
+                className={`popup_input ${
+                  warning_fristName !== "" ? "popup_input-warning" : ""
+                }`}
                 id="fristName"
-                placeholder={formatMessage({ id: "ID_SIGNUP_FIRST_NAME_PLACEHOLDER" })}
+                placeholder={formatMessage({
+                  id: "ID_SIGNUP_FIRST_NAME_PLACEHOLDER",
+                })}
                 value={fristName}
                 onChange={onChangeInput}
                 type="text"
                 autoComplete="off"
               />
-              {warning_fristName && <div className="popup_warning">{warning_fristName}</div>}
+              {warning_fristName && (
+                <div className="popup_warning">{warning_fristName}</div>
+              )}
             </div>
           </div>
 
@@ -295,16 +312,21 @@ class SignUp extends Component {
             </div>
             <div className="signup__input__right">
               <input
-                className={`popup_input ${warning_nickName !== "" ? "popup_input-warning" : ""
-                  }`}
+                className={`popup_input ${
+                  warning_nickName !== "" ? "popup_input-warning" : ""
+                }`}
                 id="nickName"
-                placeholder={formatMessage({ id: "ID_SIGNUP_NAME_PLACEHOLDER" })}
+                placeholder={formatMessage({
+                  id: "ID_SIGNUP_NAME_PLACEHOLDER",
+                })}
                 value={nickName}
                 onChange={onChangeInput}
                 type="text"
                 autoComplete="off"
               />
-              {warning_nickName && <div className="popup_warning">{warning_nickName}</div>}
+              {warning_nickName && (
+                <div className="popup_warning">{warning_nickName}</div>
+              )}
             </div>
           </div>
 
@@ -315,8 +337,9 @@ class SignUp extends Component {
             </div>
             <div className="signup__input__right">
               <input
-                className={`popup_input ${warning_password !== "" ? "popup_input-warning" : ""
-                  }`}
+                className={`popup_input ${
+                  warning_password !== "" ? "popup_input-warning" : ""
+                }`}
                 id="password"
                 type="password"
                 placeholder={formatMessage({ id: "ID_SIGNIN_PW_PLACEHOLDER" })}
@@ -324,20 +347,32 @@ class SignUp extends Component {
                 onChange={onChangeInput}
                 autoComplete="off"
               />
-              {warning_password && <div className="popup_warning">{warning_password}</div>}
+              {warning_password && (
+                <div className="popup_warning">{warning_password}</div>
+              )}
             </div>
           </div>
 
           <div className="popup_warning">{this.state.errInfo}</div>
 
+          {/* TODO 학생초대 메일 - 이미 존재하는 메일 주소일 경우 노출합니다. */}
+          <p className="popup_exist_email_warning">
+            {formatMessage({ id: "ID_SIGN_UP_EXIST_EMAIL_WARNING" })}
+          </p>
+
           <div className="popup__btn-box">
             {/* TODO 취소 버튼 */}
-            <button type="button" className="popup_button popup-button--close" onClick={onClickDismiss}>
+            <button
+              type="button"
+              className="popup_button popup-button--close"
+              onClick={onClickDismiss}
+            >
               {formatMessage({ id: "ID_COMMENT_CANCEL_BUTTON" })}
             </button>
 
             {/* TODO 가입 버튼 / 조건 충족 시 클래스 active 추가하여 활성화합니다. */}
-            <button type="button"
+            <button
+              type="button"
               className="popup_button popup_button-singup popup_button-singup--use-active active"
               onClick={onClickSignUp}
             >
@@ -350,9 +385,6 @@ class SignUp extends Component {
   }
 }
 
-export default connect(
-  undefined,
-  {
-    updateUserInfo: userInfoActions.updateUserInfo
-  }
-)(injectIntl(SignUp));
+export default connect(undefined, {
+  updateUserInfo: userInfoActions.updateUserInfo,
+})(injectIntl(SignUp));

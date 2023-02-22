@@ -69,7 +69,7 @@ const en = {
   ID_SIGNIN_EMAIL: "Email",
   ID_SIGNIN_EMAIL_PLACEHOLDER: "Please enter an email address",
   ID_SIGNIN_PW: "Password",
-  ID_SIGNIN_PW_PLACEHOLDER: "Please enter your password",
+  ID_SIGNIN_PW_PLACEHOLDER: "Use 6 or more characters.",
   ID_SIGNIN_FORGOTPW: "Reset password",
   ID_SIGNIN_FORGOTPW_DESC: "Forgot password?",
   ID_SIGNIN_SIGNUP: "Join",
@@ -90,7 +90,7 @@ const en = {
   ID_SIGNUP_PW_RE: "Confirm",
   ID_SIGNUP_PW_RE_PLACEHOLDER: "Please enter your password again",
   ID_SIGNUP_NAME: "First Name *",
-  ID_SIGNUP_NAME_PLACEHOLDER: "Please enter your user name",
+  ID_SIGNUP_NAME_PLACEHOLDER: "※ Don’t use your real name",
   ID_SIGNUP_PHONE: "Mobile",
   ID_SIGNUP_PHONE_PLACEHOLDER: "Phone number",
   ID_SIGNUP_SMSCODE_PLACEHOLDER: "Verification code",
@@ -112,7 +112,7 @@ const en = {
   ID_SIGNUP_WARNING_PW_RE_EMPTY: "* Please enter your password again",
   ID_SIGNUP_WARNING_FIRSTNAME_FORMAT: "* Please enter your first name",
   ID_SIGNUP_WARNING_LASTNAME_FORMAT: "* Please enter your last name",
-  ID_SIGNUP_WARNING_USERNAME_FORMAT: "* Invalid user name",
+  ID_SIGNUP_WARNING_USERNAME_FORMAT: "* Please enter your first and last name.",
   ID_SIGNUP_WARNING_NAME_EMPTY: "Please enter your first name",
   ID_SIGNUP_WARNING_PHONE_FORMAT: "* Please enter your phone number correctly",
   ID_SIGNUP_WARNING_PHONE_SIGNED: "* This is already a registered phone number",
@@ -1287,12 +1287,12 @@ const en = {
   ID_DREAM_BUILDER_MISSION_CLEAR_SUBTITLE: `Great job!\nShall we move on to the next step?`,
   ID_DREAM_BUILDER_MISSION_CLEAR_CANCEL_BUTTON: "Try Again",
   ID_DREAM_BUILDER_MISSION_CLEAR_CONFIRM_BUTTON: "Next",
-  ID_DREAM_BUILDER_COURSE_CLEAR: "COURSE CLEAR",
+  ID_DREAM_BUILDER_COURSE_CLEAR: "COURSE COMPLETE!",
   ID_DREAM_BUILDER_COURSE_CLEAR_CANCEL_BUTTON: "Cancel",
   ID_DREAM_BUILDER_COURSE_CLEAR_SUBMIT_BUTTON: "Submit",
   ID_DREAM_BUILDER_QUEST_CLEAR: "MISSION COMPLETE!",
-  ID_DREAM_BUILDER_QUEST_CLEAR_SUBTITLE: `Congratulations!\nYou have completed all the steps in this mission.\nLet's take a look at what you've learned today!`,
-  ID_DREAM_BUILDER_QUEST_CLEAR_CERT_SUBTITLE: `Congratulations! You have completed all the steps in this mission.\nLet's take a look at what you've learned today!`,
+  ID_DREAM_BUILDER_QUEST_CLEAR_SUBTITLE: `Congratulations!\nYou have completed all the missions in this cours.\nEnter your name and class below to print the certificate!`,
+  ID_DREAM_BUILDER_QUEST_CLEAR_CERT_SUBTITLE: `Congratulations!\nYou have completed all the missions in this cours.\nEnter your name and class below to print the certificate!`,
   ID_DREAM_BUILDER_QUEST_CLEAR_CERT_QUIT_BUTTON: "Quit",
   ID_DREAM_BUILDER_QUEST_CLEAR_CANCEL_BUTTON: "Try Again",
   ID_DREAM_BUILDER_QUEST_CLEAR_CONFIRM_BUTTON: "Exit Mission",
@@ -1430,17 +1430,19 @@ const en = {
   ID_DATE_FORMAT_MIN: "min ago",
 
   ID_CERT_ELEMENTARY_BLOCK_DESC:
-    "is awarded with this certificate for successfully fulfilling the requirements of Elementary Block Coding, a software education course offered by iGroup, and completing 5 projects utilizing Event, Sequence, Physical Engine.",
+    "is awarded with this certificate for successfully fulfilling the requirements of Elementary Block Coding, a software education course offered by Astro Coding Go!, and completing 5 projects utilizing Event, Sequence, Physical Engine.",
   ID_CERT_BASIC_BLOCK_DESC:
-    "is awarded with this certificate for successfully fulfilling the requirements of Basic Block Coding, a software education course offered by iGroup, and completing 15 projects utilizing Event, Sequence, Physical Engine, Variable, and Conditional Statement.",
+    "is awarded with this certificate for successfully fulfilling the requirements of Basic Block Coding, a software education course offered by Astro Coding Go!, and completing 15 projects utilizing Event, Sequence, Physical Engine, Variable, and Conditional Statement.",
   ID_CERT_ADVANCED_BLOCK_DESC:
-    "is awarded with this certificate for successfully fulfilling the requirements of Advanced Block Coding, a software education course offered by iGroup, and completing 4 projects utilizing Physical Engine,  Variable,  Conditional Statement, Clone, and Loop.",
+    "is awarded with this certificate for successfully fulfilling the requirements of Advanced Block Coding, a software education course offered by Astro Coding Go!, and completing 4 projects utilizing Physical Engine,  Variable,  Conditional Statement, Clone, and Loop.",
   ID_CERT_ADVANCED_JS_DESC:
-    "is awarded with this certificate for successfully fulfilling the requirements of Advanced JavaScript, a software education course offered by iGroup, and completing 8 projects utilizing Event, Sequence, Physical Engine, Random Number,  Variable, Conditional Statement, and Operator.",
+    "is awarded with this certificate for successfully fulfilling the requirements of Advanced JavaScript, a software education course offered by Astro Coding Go!, and completing 8 projects utilizing Event, Sequence, Physical Engine, Random Number,  Variable, Conditional Statement, and Operator.",
   ID_CERT_MASTERY_JS_DESC:
-    "is awarded with this certificate for successfully fulfilling the requirements of JavaScript Mastery, a software education course offered by iGroup, and completing 4 projects utilizing Random Number, Variable, Conditional Statement, Operator, List, Index, Loop, and Function.",
+    "is awarded with this certificate for successfully fulfilling the requirements of JavaScript Mastery, a software education course offered by Astro Coding Go!, and completing 4 projects utilizing Random Number, Variable, Conditional Statement, Operator, List, Index, Loop, and Function.",
 
   ID_SIGNUP_CREATE_TITLE: "Join Astro Coding Go!",
+  ID_SIGNUP_CREATE_SUB_TITLE:
+    "Please enter your user information.\n(All items are required.)",
   ID_SIGNUP_FIRST_NAME: "Last Name *",
   ID_SIGNUP_NICKNAME: "User Name *",
   ID_SIGNUP_FIRST_NAME_PLACEHOLDER: "Please enter your last name",
@@ -1673,5 +1675,8 @@ const en = {
   ID_PHASERPAGE_PLACEHOLDER: "Please Enter Value",
   ID_PHASERPAGE_CANCEL: "Cancel",
   ID_PHASERPAGE_CONFIRM: "Confirm",
+
+  ID_SIGN_UP_EXIST_EMAIL_WARNING:
+    "This e-mail already exists. Receive an invitation to register with a new email that you change to your school/company/institution's administrator or teacher.",
 };
 export default en;

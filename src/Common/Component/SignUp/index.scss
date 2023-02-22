@@ -7,10 +7,17 @@
   .signup_title {
     text-align: left;
     font-size: 24px;
-    margin-bottom: 40px;
+    margin-bottom: 25px;
     font-weight: 700;
     line-height: 26px;
     color: #fff;
+  }
+
+  .signup_sub_title {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 10px 0 0;
+    white-space: pre-wrap;
   }
 
   .signup_input_wrapper {
@@ -19,7 +26,7 @@
     margin-top: 16px;
     align-items: flex-start;
   }
-  
+
   .signup_input_title {
     display: flex;
     flex: 0 0 35%;
@@ -62,7 +69,8 @@
     // line-height: 20px;
     color: #fff;
 
-    &:focus, &:active {
+    &:focus,
+    &:active {
       border-color: #fff;
     }
   }
@@ -292,15 +300,23 @@
     margin: 12px 0 0;
     background-color: #383838;
   }
-  
+
   .popup__btn-box {
     display: flex;
     align-items: center;
-    margin: 46px -5px 0;
-  
-    button { 
+    margin: 26px -5px 0;
+
+    button {
       margin: 0 5px;
     }
+  }
+
+  .popup_exist_email_warning {
+    font-size: 15px;
+    font-weight: 500;
+    margin: 20px 0 10px;
+    white-space: pre-wrap;
+    line-height: 160%;
   }
 
   .popup_button-singup--use-active {
@@ -308,7 +324,7 @@
     color: #8e8e8e;
 
     &.active {
-      background-color: #FF6F44;
+      background-color: #ff6f44;
       color: #fff;
     }
   }

@@ -1414,6 +1414,8 @@ const ko = {
     "is awarded with this certificate for successfully fulfilling requirements of JavaScript Mastery, a software education course offered by iGroup, and completing 4 projects utilizing Random Number, Variable, Conditional Statement, Operator, List, Index,  Loop, and Function.",
 
   ID_SIGNUP_CREATE_TITLE: "계정 생성하기",
+  ID_SIGNUP_CREATE_SUB_TITLE:
+    "사용자 정보를 입력하십시오.\n(모든 항목이 필요합니다.)",
   ID_SIGNUP_FIRST_NAME: "성",
   ID_SIGNUP_NICKNAME: "Nickname",
   ID_SIGNUP_FIRST_NAME_PLACEHOLDER: "성을 입력해주세요",
@@ -1636,5 +1638,8 @@ const ko = {
   ID_PHASERPAGE_PLACEHOLDER: "Please Enter Value",
   ID_PHASERPAGE_CANCEL: "Cancel",
   ID_PHASERPAGE_CONFIRM: "Confirm",
+
+  ID_SIGN_UP_EXIST_EMAIL_WARNING:
+    "이미 존재하는 이메일입니다. 학교/회사/기관의 관리자 또는 선생님에게 변경하는 새로운 이메일로 등록 초대장을 받아주세요.",
 };
 export default ko;
