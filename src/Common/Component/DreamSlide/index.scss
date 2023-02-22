@@ -48,8 +48,14 @@
   .codeblock_body {
     position: relative;
     padding: 6px 6px 12px 6px;
-    overflow: hidden;
+    overflow: scroll;
+    scrollbar-width: none;
   }
+
+  .codeblock_body::-webkit-scrollbar {
+    display: none;
+  }
+
   .codeblock_body_copy {
     z-index: 2;
     position: absolute;
@@ -77,10 +83,9 @@
     line-height: 1.6em;
   }
   .codeblock_oobc {
-
   }
   .oobceditor {
-    width: 100%;
+    // width: 100%;
     height: 100%;
     background-color: transparent;
     --oobceditorBlockHeight: 42px;
