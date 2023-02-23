@@ -57,8 +57,10 @@
     display: flex;
     flex-wrap: wrap;
 
-    > .Game__Box__Default:nth-child(4n + 1) {
-      margin-left: 0;
+    @media screen and (min-width: 1169px){
+      > .Game__Box__Default:nth-child(4n + 1) {
+        margin-left: 0;
+      }
     }
 
     .Play__Game__no-result {
@@ -78,7 +80,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 100%;
+      width: 100vw;
       margin-bottom: 40px;
 
       .Play__Game__show-more-btn {
@@ -282,15 +284,23 @@
       flex-wrap: wrap;
     }
 
+    .Game__Box__Default + .Game__Box__Default {
+      margin-left: 0;
+    }
+
     .Play__Game__Wrapper {
-      display: flex;
-      flex-wrap: wrap;
+      display: grid;
+      justify-content: center;
+      grid-template-columns: repeat(auto-fill, minmax(50% , auto));
       margin-top: 10px;
       margin-bottom: 50px;
 
       .Game__Box__Default {
-        width: 42.77vw;
-        margin-left: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
         margin-bottom: 20px;
 
         .Game__Box__Default__Image__Wrapper {
@@ -318,10 +328,6 @@
           min-height: 60px;
         }
       }
-  
-      > .Game__Box__Default:nth-child(2n + 1) {
-        margin-left: 0;
-      }
     }
     
   }
@@ -334,5 +340,12 @@
     font-size: 16px;
     font-weight: normal;
     color: rgba(255, 255, 255, 0.5);
+  }
+}
+
+
+@media screen and (max-width:1170px) {
+  .GameList-default {
+    width: 100%;
   }
 }

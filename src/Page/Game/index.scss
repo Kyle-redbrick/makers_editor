@@ -1,5 +1,7 @@
 .Page--Game {
   width: 100%;
+  overflow: scroll;
+  height: 100vh;
   background: #000000;
   color: #ffffff;
   a {
