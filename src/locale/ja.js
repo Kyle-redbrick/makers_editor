@@ -1,12 +1,12 @@
 const ja = {
   ID_TITLE: "WizLab",
   ID_HEADER_LANG: "English",
-  ID_HEADER_LINK_ABOUT: "About",
+  ID_HEADER_LINK_ABOUT: "説明",
   ID_HEADER_LINK_INTRO: "Intro",
-  ID_HEADER_LINK_BUILDER: "Build",
-  ID_HEADER_LINK_LEARN: "Learn",
+  ID_HEADER_LINK_BUILDER: "作る",
+  ID_HEADER_LINK_LEARN: "学ぶ",
   ID_HEADER_LINK_TUTORIAL: "Learn",
-  ID_HEADER_LINK_GAME: "Play",
+  ID_HEADER_LINK_GAME: "遊ぶ",
   ID_HEADER_LINK_SOCIAL: "Social",
   ID_HEADER_LINK_EVENT: "Event",
   ID_HEADER_LINK_NOTICE: "Notice",
@@ -606,8 +606,7 @@ const ja = {
   ID_QNA_TITLE: "Q&A",
   ID_DRAWING_EDITOR_TITLE: "ペイント",
   ID_TEXT_BOX_TITLE: "テキストボックス",
-  ID_LEARN_TITLE_NONLOGIN:
-    "5つのコースのうち、一つのミッションを無料体験できます！",
+  ID_LEARN_TITLE_NONLOGIN: "BCのMission 1を無料体験できます！",
   ID_LEARN_ALL_COURSES: "すべてのコース",
   ID_LEARN_ALL_STEPS_CLEAR: "すべてのステップがクリア",
   ID_LEARN_GAME_PREVIEW: "ゲームを \nプレイする",
@@ -1055,7 +1054,7 @@ const ja = {
   ID_QNA_REFRESH: "リロード",
   ID_QNA_ALERT_CONFIRM: "確認",
   ID_QNA_ALERT_CANCEL: "取り消し",
-  ID_HEADER_LMS: "Dashboard",
+  ID_HEADER_LMS: "ダッシュボード",
   CONDITION_IS_PLAYING: "게임이 실행 중인지",
   CONDITION_DID_PLAY_ONCE: "최소 한 번 게임 실행하기",
   CONDITION_DID_GAME_EVENT_OCCUR: "게임에서 액션 수행하기",
@@ -1368,7 +1367,7 @@ const ja = {
   ID_LMS_COURSE_4: "アドバンス",
   ID_LMS_COURSE_5: "マスター",
   ID_LMS_QUESTION: "質問があります",
-  ID_LMS_GO: "ショットカット",
+  ID_LMS_GO: "ショートカット",
   ID_LMS_QUEST: "クエスト",
   ID_LMS_QUEST_ALL_CLEAR: "すべてのミッションコンプリ―ト",
   ID_LMS_QUEST_CLEAR: "ミッションコンプリート",
@@ -1449,12 +1448,12 @@ const ja = {
   ID_INTRO_SECOND_SECTION_TITLE: "コーディング授業、それ以上の「ミッション」",
   ID_INTRO_SECOND_SECTION_INFO_TITLE_1: "6 to 12",
   ID_INTRO_SECOND_SECTION_INFO_TITLE_2: "36 Missions",
-  ID_INTRO_SECOND_SECTION_INFO_TITLE_3: "100 Hours",
+  ID_INTRO_SECOND_SECTION_INFO_TITLE_3: "88 Hours",
   ID_INTRO_SECOND_SECTION_INFO_TITLE_1_EXPLAN: "6~12歳の生徒対象のSTEM教育",
   ID_INTRO_SECOND_SECTION_INFO_TITLE_2_EXPLAN:
     "５つのコース: \nCSTAに基づいた36個のミッションで\n構成された\nブロックプログラミング＆JavaScript教育",
   ID_INTRO_SECOND_SECTION_INFO_TITLE_3_EXPLAN:
-    "応用力を育てる100時間の\nプロジェクト基盤の(Problem Based Learning, PBL)\nカリキュラム",
+    "応用力を育てる88時間の\nプロジェクト基盤の(Problem Based Learning, PBL)\nカリキュラム",
 
   ID_INTRO_THIRD_SECTION_TITLE: "このように進められます。",
   ID_INTRO_THIRD_SECTION_BUTTON_TEXT_1: "36のミッションを通して学ぶ",
@@ -1467,8 +1466,7 @@ const ja = {
   ID_INTRO_GAME_VIDEO_LINE_BANNER_TITLE_LEFT: "プレイ方法",
 
   ID_INTRO_LINE_BANNER_TITLE: "無料トライアルはここで！",
-  ID_INTRO_LINE_BANNER_CHILD_TITLE:
-    "5つのコースのうち、一つのミッションを体験できます",
+  ID_INTRO_LINE_BANNER_CHILD_TITLE: "BCのMission 1を無料体験できます！",
   ID_INTRO_LINE_BANNER_GO_TO_FREE_COURSE_LINK: "今すぐ無料トライアルする",
 
   ID_INTRO_INTRODUCE_AREA_CONTENT_TITLE:

@@ -39,7 +39,7 @@ function View(props) {
     isMobile,
     handleProjectCommentCount,
     allCommentCount,
-    handleCopyUrl
+    handleCopyUrl,
   } = props;
   const isMine = userinfo.email && userinfo.email === project.user.email;
   const screenMode = project.screenMode ? project.screenMode : "HORIZONTAL";
@@ -47,129 +47,144 @@ function View(props) {
   return (
     <div id="wizappDetail">
       <div className="wizAppDetail_wrapper">
-      <div className="header__close header__close--pc" onClick={handleClose}>
-        <img src={closeImg} alt="close"/>
-      </div>
-      <div className="wizappDetail__inner">
-        <div className="wizappDetail__header">
-          <div
-            className="header__close header__close--mobile"
-            onClick={handleClose}
-          >
-            <img src={closeImg} alt="close"/>
-          </div>
-          <div className="header__project--thumbnail">
-            <img src={project.icon} alt="thumbnail" />
-          </div>
-          <div className="header__project--info">
-            <p className="info__title">{project.name}</p>
-            <p className="info__sub">
-              <span className="viewCount">{project.viewCount}</span>
-            </p>
-          </div>
+        <div className="header__close header__close--pc" onClick={handleClose}>
+          <img src={closeImg} alt="close" />
         </div>
-        <div className="wizappDetail__content">
-          <div className="content__game">
-            <Game project={project} pId={project.pId} screenMode={screenMode} />
+        <div className="wizappDetail__inner">
+          <div className="wizappDetail__header">
+            <div
+              className="header__close header__close--mobile"
+              onClick={handleClose}
+            >
+              <img src={closeImg} alt="close" />
+            </div>
+            <div className="header__project--thumbnail">
+              <img src={project.icon} alt="thumbnail" />
+            </div>
+            <div className="header__project--info">
+              <p className="info__title">{project.name}</p>
+              <p className="info__sub">
+                <span className="viewCount">{project.viewCount}</span>
+              </p>
+            </div>
           </div>
-          <div className="header__project--buttons">
-            <div className="likeButton" onClick={handleLikeToggle}>
-              <img src={isLiked ? likeOnImg : likeOffImg} alt="like" />
-              <label className="CountLabel">{project.likeCount}</label>
+          <div className="wizappDetail__content">
+            <div className="content__game">
+              <Game
+                project={project}
+                pId={project.pId}
+                screenMode={screenMode}
+              />
             </div>
-            <div className="replyButton" onClick={moveToComment} style={{display: "none"}}>
-              <img src={replyIconImg} alt="reply" />
-              <label className="CountLabel">{allCommentCount}</label>
-            </div>
-            {project.isCopyAllowed && (
-              <div className="game__copyButton" onClick={handleCopyProject}>
-                <img src={copyProjectIconImg} alt=""/>
-                <label>
-                  <FormattedMessage id="ID_WIZAPPDETAIL_COPY_CODE" />
-                </label>
+            <div className="header__project--buttons">
+              <div className="likeButton" onClick={handleLikeToggle}>
+                <img src={isLiked ? likeOnImg : likeOffImg} alt="like" />
+                <label className="CountLabel">{project.likeCount}</label>
               </div>
-            )}
-            <div className={`shareButton ${isShareBoxOpen ? "open" : "close"}`} onClick={(e) => handleShareProject(e)}>
-              <img src={shareIconImg} alt="share" />
-              <label className="CountLabel">
-                <FormattedMessage id="ID_WIZAPPDETAIL_SHARE" />
-              </label>
-
-              {isShareBoxOpen && 
-                <div className="shareDetailBox">
-                  <div onClick={() => handleCopyUrl(project.pId)} className="QRPopupSNSItem">
-                    <img src={shareCopyImg} alt="share url" />
-                    <span><FormattedMessage id="ID_WIZAPPDETAIL_SHARE_COPY_LINK" /></span>
-                  </div>
-                </div>
-              }
-            </div>
-            {!isMine && (
-              <div className="sirenButton" onClick={handleReport}>
-                <img src={sirenIconImg} alt="siren" />
-                <label className="CountLabel">
-                  <FormattedMessage id="ID_WIZAPPDETAIL_SIREN" />
-                </label>
-              </div>
-            )}
-            {isMine && (
-              <div className="EditButton button" onClick={handleEditProject}>
-                <img src={editIconImg} alt="edit" />
-                <label className="CountLabel">
-                  <FormattedMessage id="ID_WIZAPPDETAIL_EDIT" />
-                </label>
-              </div>
-            )}
-          </div>
-
-          <div className="content__user">
-            <p className="content__maker__title"><FormattedMessage id="ID_WIZAPPDETAIL_MAKER_COMMENT" /></p>
-            <div className="content__maker__wrapper">
-              <Link
-                to={`/userpage/${project.user.id}`}
-                style={{ textDecoration: "none" }}
+              <div
+                className="replyButton"
+                onClick={moveToComment}
+                style={{ display: "none" }}
               >
-                <img className="user__img" src={project.user.icon} alt="" />
-                <div className="user__info__box">
-                  <p className="user__name">
-                    {project.user.name}
-                    {userinfo.isOfficial && (
-                      <img
-                        className="user__officialImg"
-                        src={officialIcon}
-                        alt={userinfo.name}
-                      />
-                    )}
-                  </p>
+                <img src={replyIconImg} alt="reply" />
+                <label className="CountLabel">{allCommentCount}</label>
+              </div>
+              {project.isCopyAllowed && (
+                <div className="game__copyButton" onClick={handleCopyProject}>
+                  <img src={copyProjectIconImg} alt="" />
+                  <label>
+                    <FormattedMessage id="ID_WIZAPPDETAIL_COPY_CODE" />
+                  </label>
                 </div>
-              </Link>
+              )}
+              <div
+                className={`shareButton ${isShareBoxOpen ? "open" : "close"}`}
+                onClick={(e) => handleShareProject(e)}
+              >
+                <img src={shareIconImg} alt="share" />
+                <label className="CountLabel">
+                  <FormattedMessage id="ID_WIZAPPDETAIL_SHARE" />
+                </label>
 
-              {!isMine && (
-                <button
-                  style={{display: "none"}}
-                  className={`UserSubscribe UserInfo__subscribe ${isSubscribed &&
-                    "subscribe"}`}
-                  onClick={() => handleSubscribe(project.user.email)}
-                >
-                  {isSubscribed ? (
-                    <FormattedMessage id="ID_WIZAPPDETAIL_FOLLOWING" />
-                  ) : (
-                    <FormattedMessage id="ID_WIZAPPDETAIL_DO_FOLLOW" />
-                  )}
-                </button>
+                {isShareBoxOpen && (
+                  <div className="shareDetailBox">
+                    <div
+                      onClick={() => handleCopyUrl(project.pId)}
+                      className="QRPopupSNSItem"
+                    >
+                      <img src={shareCopyImg} alt="share url" />
+                      <span>
+                        <FormattedMessage id="ID_WIZAPPDETAIL_SHARE_COPY_LINK" />
+                      </span>
+                    </div>
+                  </div>
+                )}
+              </div>
+              {isMine && (
+                <div className="EditButton button" onClick={handleEditProject}>
+                  <img src={editIconImg} alt="edit" />
+                  <label className="CountLabel">
+                    <FormattedMessage id="ID_WIZAPPDETAIL_EDIT" />
+                  </label>
+                </div>
               )}
             </div>
-            <div className={`description description--${isDescFold ? "fold" : "full"}`}>
-              {project.description}
-            </div>
-            {isDescFold && (
-              <div className="description--more" onClick={() => handleFold()}>
-                <FormattedMessage id="ID_WIZAPPDETAIL_VIEW_MORE" />
+
+            <div className="content__user">
+              <p className="content__maker__title">
+                <FormattedMessage id="ID_WIZAPPDETAIL_MAKER_COMMENT" />
+              </p>
+              <div className="content__maker__wrapper">
+                <Link
+                  to={`/userpage/${project.user.id}`}
+                  style={{ textDecoration: "none" }}
+                >
+                  <img className="user__img" src={project.user.icon} alt="" />
+                  <div className="user__info__box">
+                    <p className="user__name">
+                      {project.user.name}
+                      {userinfo.isOfficial && (
+                        <img
+                          className="user__officialImg"
+                          src={officialIcon}
+                          alt={userinfo.name}
+                        />
+                      )}
+                    </p>
+                  </div>
+                </Link>
+
+                {!isMine && (
+                  <button
+                    style={{ display: "none" }}
+                    className={`UserSubscribe UserInfo__subscribe ${
+                      isSubscribed && "subscribe"
+                    }`}
+                    onClick={() => handleSubscribe(project.user.email)}
+                  >
+                    {isSubscribed ? (
+                      <FormattedMessage id="ID_WIZAPPDETAIL_FOLLOWING" />
+                    ) : (
+                      <FormattedMessage id="ID_WIZAPPDETAIL_DO_FOLLOW" />
+                    )}
+                  </button>
+                )}
               </div>
-            )}
+              <div
+                className={`description description--${
+                  isDescFold ? "fold" : "full"
+                }`}
+              >
+                {project.description}
+              </div>
+              {isDescFold && (
+                <div className="description--more" onClick={() => handleFold()}>
+                  <FormattedMessage id="ID_WIZAPPDETAIL_VIEW_MORE" />
+                </div>
+              )}
+            </div>
           </div>
         </div>
-      </div>
       </div>
     </div>
   );

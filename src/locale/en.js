@@ -609,8 +609,7 @@ const en = {
   ID_QNA_TITLE: "Q&A",
   ID_DRAWING_EDITOR_TITLE: "Paint",
   ID_TEXT_BOX_TITLE: "Textbox",
-  ID_LEARN_TITLE_NONLOGIN:
-    "Select one of the five courses and try your first Mission",
+  ID_LEARN_TITLE_NONLOGIN: "Try your first mission of Block Coding Course!",
   ID_LEARN_TITLE: "WizLab Tutorial Step 1 - Build a room escape game",
   ID_LEARN_ALL_COURSES: "All Courses",
   ID_LEARN_ALL_STEPS_CLEAR: "All steps clear",
@@ -1452,13 +1451,13 @@ const en = {
     "Learn Coding by Completing Exciting ACG missions",
   ID_INTRO_SECOND_SECTION_INFO_TITLE_1: "Ages 6 to 12",
   ID_INTRO_SECOND_SECTION_INFO_TITLE_2: "36 Missions",
-  ID_INTRO_SECOND_SECTION_INFO_TITLE_3: "100 Hours",
+  ID_INTRO_SECOND_SECTION_INFO_TITLE_3: "88 Hours",
   ID_INTRO_SECOND_SECTION_INFO_TITLE_1_EXPLAN:
     "STEM education for students aged 6-12.",
   ID_INTRO_SECOND_SECTION_INFO_TITLE_2_EXPLAN:
     "5 Courses of 36 missions\n teaching block coding and JavaScript,\naligned to the global CSTA (Computer Science Teachers Association) standards.",
   ID_INTRO_SECOND_SECTION_INFO_TITLE_3_EXPLAN:
-    "A 100-hour project-based learning\n(PBL) curriculum for applied skill development.",
+    "A 88-hour project-based learning\n(PBL) curriculum for applied skill development.",
 
   ID_INTRO_THIRD_SECTION_TITLE: "ACG Learning Process",
   ID_INTRO_THIRD_SECTION_BUTTON_TEXT_1:
@@ -1472,7 +1471,7 @@ const en = {
   ID_INTRO_GAME_VIDEO_LINE_BANNER_TITLE_LEFT: "How to play:",
   ID_INTRO_LINE_BANNER_TITLE: "Free Trial",
   ID_INTRO_LINE_BANNER_CHILD_TITLE:
-    "Select one of the five ACG courses and try the first mission",
+    "Try your first mission of Block Coding Course!",
   ID_INTRO_LINE_BANNER_GO_TO_FREE_COURSE_LINK: "Go to free trial",
   ID_INTRO_INTRODUCE_AREA_CONTENT_TITLE: "Builder, a Unique Game Creation Tool",
   ID_INTRO_INTRODUCE_AREA_CONTENT_TITLE_2:
