@@ -112,7 +112,7 @@ const en = {
   ID_SIGNUP_WARNING_PW_RE_EMPTY: "* Please enter your password again",
   ID_SIGNUP_WARNING_FIRSTNAME_FORMAT: "* Please enter your first name",
   ID_SIGNUP_WARNING_LASTNAME_FORMAT: "* Please enter your last name",
-  ID_SIGNUP_WARNING_USERNAME_FORMAT: "* Please enter your first and last name.",
+  ID_SIGNUP_WARNING_USERNAME_FORMAT: "* Please enter a nickname.",
   ID_SIGNUP_WARNING_NAME_EMPTY: "Please enter your first name",
   ID_SIGNUP_WARNING_PHONE_FORMAT: "* Please enter your phone number correctly",
   ID_SIGNUP_WARNING_PHONE_SIGNED: "* This is already a registered phone number",

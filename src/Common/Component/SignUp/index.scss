@@ -320,13 +320,9 @@
   }
 
   .popup_button-singup--use-active {
-    background-color: #383838;
-    color: #8e8e8e;
-
-    &.active {
-      background-color: #ff6f44;
-      color: #fff;
-    }
+    background-color: #ff6f44;
+    color: #fff;
+    pointer-events: unset;
   }
 
   .popup_contents {
