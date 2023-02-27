@@ -1,33 +1,23 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Rating from "react-rating";
-import { FormattedMessage } from "react-intl";
+import { FormattedMessage, IntlProvider } from "react-intl";
 import * as request from "./HTTPRequest";
-
-import en from "react-intl/locale-data/en";
-import ko from "react-intl/locale-data/ko";
-import zh from "react-intl/locale-data/zh";
-import ja from "react-intl/locale-data/ja";
 import locale from "../../locale";
-
 import starImageOff from "../../Image/star-off.svg";
 import starImageOn from "../../Image/star-on.svg";
 
-import { IntlProvider, addLocaleData } from "react-intl";
-
-addLocaleData([...en, ...ko, ...zh, ...ja]);
-
 const defaultLang = localStorage.getItem("lang");
 
-export const showStudentFeedbackPopUp = callback => {
-  const handleClose = e => {
+export const showStudentFeedbackPopUp = (callback) => {
+  const handleClose = (e) => {
     const empty = React.createElement("div");
     ReactDOM.render(empty, document.getElementById("alert"));
   };
 
   let handleOK = handleClose;
   if (callback) {
-    handleOK = e => {
+    handleOK = (e) => {
       if (score === 0) {
         return;
       } else if (comment === "") {
@@ -39,18 +29,18 @@ export const showStudentFeedbackPopUp = callback => {
   }
 
   let score = 0;
-  const onChangeScore = newScore => {
+  const onChangeScore = (newScore) => {
     score = newScore;
   };
   let comment = "";
-  const onChangeComment = newComment => {
+  const onChangeComment = (newComment) => {
     comment = newComment;
   };
 
   const element = React.createElement(
     "div",
     {
-      id: "wizAlert"
+      id: "wizAlert",
     },
     <React.Fragment>
       <div className="overlay" onClick={handleClose} />
@@ -64,23 +54,19 @@ export const showStudentFeedbackPopUp = callback => {
         <div className="rating">
           <Rating
             initialRating={0}
-            emptySymbol={
-              <img src={starImageOff} className="rating_star" alt="star-img" />
-            }
-            fullSymbol={
-              <img src={starImageOn} className="rating_star" alt="star-img" />
-            }
-            onChange={score => {
+            emptySymbol={<img src={starImageOff} className="rating_star" alt="star-img" />}
+            fullSymbol={<img src={starImageOn} className="rating_star" alt="star-img" />}
+            onChange={(score) => {
               onChangeScore(score);
             }}
           />
         </div>
         <div className="textarea">
           <FormattedMessage id={"ID_WIZLIVE_FEEDBACK_PLACEHOLDER"}>
-            {placeholder => (
+            {(placeholder) => (
               <textarea
                 placeholder={placeholder}
-                onChange={e => {
+                onChange={(e) => {
                   onChangeComment(e.target.value);
                 }}
               />
@@ -105,14 +91,14 @@ export const showStudentFeedbackPopUp = callback => {
 export const showAlert = (titleId, msgId, btnTextId, callback) => {
   btnTextId = !btnTextId ? "OK" : btnTextId;
 
-  const handleClose = e => {
+  const handleClose = (e) => {
     const empty = React.createElement("div");
     ReactDOM.render(empty, document.getElementById("alert"));
   };
 
   let handleOK = handleClose;
   if (callback) {
-    handleOK = e => {
+    handleOK = (e) => {
       callback();
       handleClose();
     };
@@ -121,7 +107,7 @@ export const showAlert = (titleId, msgId, btnTextId, callback) => {
   const element = React.createElement(
     "div",
     {
-      id: "wizAlert"
+      id: "wizAlert",
     },
     <React.Fragment>
       <div className="overlay" onClick={handleClose} />
@@ -155,33 +141,23 @@ export const showAlert = (titleId, msgId, btnTextId, callback) => {
  * @param target - 신고 대상의 정보, { PublishedCommentId, PublishedReplyId, CommunityArticleId, CommunityArticleCommentId, CommunityArticleReplyId }
  */
 export const showReport = (email, target) => {
-  const handleClose = e => {
+  const handleClose = (e) => {
     const empty = React.createElement("div");
     ReactDOM.render(empty, document.getElementById("alert"));
   };
 
   const postReport = () => {
     const message = document.getElementById("report_popup_textarea").value;
-    request.postReport({ email, message, target }).then(res =>
-      res.json().then(json => {
+    request.postReport({ email, message, target }).then((res) =>
+      res.json().then((json) => {
         if (json.success) {
-          showAlert(
-            "ID_REPORT_POST_SUCCESS_TITLE",
-            undefined,
-            "ID_REPORT_POST_SUCCESS_CONFIRM",
-            () => {
-              handleClose();
-            }
-          );
+          showAlert("ID_REPORT_POST_SUCCESS_TITLE", undefined, "ID_REPORT_POST_SUCCESS_CONFIRM", () => {
+            handleClose();
+          });
         } else {
-          showAlert(
-            "ID_REPORT_POST_FAIL_TITLE",
-            "ID_REPORT_POST_FAIL_MSG",
-            "ID_REPORT_POST_FAIL_CONFIRM",
-            () => {
-              handleClose();
-            }
-          );
+          showAlert("ID_REPORT_POST_FAIL_TITLE", "ID_REPORT_POST_FAIL_MSG", "ID_REPORT_POST_FAIL_CONFIRM", () => {
+            handleClose();
+          });
         }
       })
     );
@@ -193,23 +169,19 @@ export const showReport = (email, target) => {
     <React.Fragment>
       <div className="overlay" onClick={handleClose} />
       <div className="report_popup">
-        <div className="report_popup_title"><FormattedMessage id={"ID_ALERT_MANAGE_TITLE"} /></div>
+        <div className="report_popup_title">
+          <FormattedMessage id={"ID_ALERT_MANAGE_TITLE"} />
+        </div>
         <textarea
           id="report_popup_textarea"
           className="report_popup_textarea"
           placeholder={this.props.intl.formatMessage({ id: "ID_ALERT_MANAGE_REPORT_POPUP_PLACEHOLDER" })}
         />
         <section className="report_popup_buttons">
-          <button
-            className="report_popup_button report_popup_button-cancel"
-            onClick={handleClose}
-          >
+          <button className="report_popup_button report_popup_button-cancel" onClick={handleClose}>
             <FormattedMessage id={"ID_ALERT_MANAGE_CLOSE_BUTTON"} />
           </button>
-          <button
-            className="report_popup_button report_popup_button-report"
-            onClick={postReport}
-          >
+          <button className="report_popup_button report_popup_button-report" onClick={postReport}>
             <FormattedMessage id={"ID_ALERT_MANAGE_TITLE"} />
           </button>
         </section>
@@ -225,21 +197,14 @@ export const showReport = (email, target) => {
   );
 };
 
-export const showTwoBtnAlert = (
-  titleId,
-  okBtnTextId,
-  cancelBtnTextId,
-  callback,
-  mainColorOkBtn = true,
-  msgId
-) => {
+export const showTwoBtnAlert = (titleId, okBtnTextId, cancelBtnTextId, callback, mainColorOkBtn = true, msgId) => {
   okBtnTextId = !okBtnTextId ? "OK" : okBtnTextId;
 
-  const handleClose = e => {
+  const handleClose = (e) => {
     const empty = React.createElement("div");
     ReactDOM.render(empty, document.getElementById("alert"));
   };
-  const handleOK = e => {
+  const handleOK = (e) => {
     handleClose();
     callback();
   };
@@ -247,7 +212,7 @@ export const showTwoBtnAlert = (
   const element = React.createElement(
     "div",
     {
-      id: "wizAlert"
+      id: "wizAlert",
     },
     <React.Fragment>
       <div className="overlay" onClick={handleClose} />
@@ -269,12 +234,7 @@ export const showTwoBtnAlert = (
           >
             <FormattedMessage id={okBtnTextId} />
           </button>
-          <button
-            type="button"
-            className="two_btn"
-            id="two_btn_cancel"
-            onClick={handleClose}
-          >
+          <button type="button" className="two_btn" id="two_btn_cancel" onClick={handleClose}>
             <FormattedMessage id={cancelBtnTextId} />
           </button>
         </div>
@@ -301,11 +261,11 @@ export const showTwoBtnAlertWithValues = (
 ) => {
   okBtnTextId = !okBtnTextId ? "OK" : okBtnTextId;
 
-  const handleClose = e => {
+  const handleClose = (e) => {
     const empty = React.createElement("div");
     ReactDOM.render(empty, document.getElementById("alert"));
   };
-  const handleOK = e => {
+  const handleOK = (e) => {
     callback();
     handleClose();
   };
@@ -313,7 +273,7 @@ export const showTwoBtnAlertWithValues = (
   const element = React.createElement(
     "div",
     {
-      id: "wizAlert"
+      id: "wizAlert",
     },
     <React.Fragment>
       <div className="overlay" onClick={handleClose} />
@@ -333,12 +293,7 @@ export const showTwoBtnAlertWithValues = (
           >
             <FormattedMessage id={okBtnTextId} />
           </button>
-          <button
-            type="button"
-            className="two_btn"
-            id="two_btn_cancel"
-            onClick={handleClose}
-          >
+          <button type="button" className="two_btn" id="two_btn_cancel" onClick={handleClose}>
             <FormattedMessage id={cancelBtnTextId} />
           </button>
         </div>
@@ -355,7 +310,7 @@ export const showTwoBtnAlertWithValues = (
 };
 
 export const showDeviceTest = (callback, mediaDivice) => {
-  const handleClose = e => {
+  const handleClose = (e) => {
     const empty = React.createElement("div");
     ReactDOM.render(empty, document.getElementById("alert"));
   };
@@ -367,7 +322,7 @@ export const showDeviceTest = (callback, mediaDivice) => {
   const element = React.createElement(
     "div",
     {
-      id: "wizAlert"
+      id: "wizAlert",
     },
     <React.Fragment>
       <div className="overlay" onClick={handleClose} />
@@ -381,7 +336,7 @@ export const showDeviceTest = (callback, mediaDivice) => {
           {mediaDivice.video ? (
             <React.Fragment>
               <select
-                onChange={e => {
+                onChange={(e) => {
                   changeDevice("video", e.target.value);
                 }}
               >
@@ -399,7 +354,7 @@ export const showDeviceTest = (callback, mediaDivice) => {
           {mediaDivice.audio.input ? (
             <React.Fragment>
               <select
-                onChange={e => {
+                onChange={(e) => {
                   changeDevice("audioInput", e.target.value);
                 }}
               >
@@ -417,7 +372,7 @@ export const showDeviceTest = (callback, mediaDivice) => {
           {mediaDivice.audio.output ? (
             <React.Fragment>
               <select
-                onChange={e => {
+                onChange={(e) => {
                   changeDevice("audioOutput", e.target.value);
                 }}
               >
@@ -459,14 +414,14 @@ export const showTwoBtnAlertWithTextarea = (
   callback
 ) => {
   var message = "";
-  const onChangeMessage = e => {
+  const onChangeMessage = (e) => {
     message = e.target.value;
   };
-  const handleClose = e => {
+  const handleClose = (e) => {
     const empty = React.createElement("div");
     ReactDOM.render(empty, document.getElementById("alert"));
   };
-  const handleOK = e => {
+  const handleOK = (e) => {
     handleClose();
     callback(message);
   };
@@ -474,7 +429,7 @@ export const showTwoBtnAlertWithTextarea = (
   const element = React.createElement(
     "div",
     {
-      id: "wizAlert"
+      id: "wizAlert",
     },
     <React.Fragment>
       <div className="overlay" onClick={handleClose} />
@@ -484,26 +439,14 @@ export const showTwoBtnAlertWithTextarea = (
         </div>
         <div className="textarea">
           <FormattedMessage id={placeholderId} values={placeholderValues}>
-            {placeholder => (
-              <textarea placeholder={placeholder} onChange={onChangeMessage} />
-            )}
+            {(placeholder) => <textarea placeholder={placeholder} onChange={onChangeMessage} />}
           </FormattedMessage>
         </div>
         <div className="two_btns">
-          <button
-            type="button"
-            className="two_btn"
-            id="two_btn_main_color"
-            onClick={handleOK}
-          >
+          <button type="button" className="two_btn" id="two_btn_main_color" onClick={handleOK}>
             <FormattedMessage id={okBtnTextId} />
           </button>
-          <button
-            type="button"
-            className="two_btn"
-            id="two_btn_cancel"
-            onClick={handleClose}
-          >
+          <button type="button" className="two_btn" id="two_btn_cancel" onClick={handleClose}>
             <FormattedMessage id={cancelBtnTextId} />
           </button>
         </div>
@@ -519,21 +462,14 @@ export const showTwoBtnAlertWithTextarea = (
   );
 };
 
-export const showTwoBtnAlertWithKeyValueMsg = (
-  msgId,
-  okBtnTextId,
-  cancelBtnTextId,
-  msg,
-  callback,
-  mainColorOkBtn
-) => {
+export const showTwoBtnAlertWithKeyValueMsg = (msgId, okBtnTextId, cancelBtnTextId, msg, callback, mainColorOkBtn) => {
   okBtnTextId = !okBtnTextId ? "OK" : okBtnTextId;
 
-  const handleClose = e => {
+  const handleClose = (e) => {
     const empty = React.createElement("div");
     ReactDOM.render(empty, document.getElementById("alert"));
   };
-  const handleOK = e => {
+  const handleOK = (e) => {
     callback();
     handleClose();
   };
@@ -541,7 +477,7 @@ export const showTwoBtnAlertWithKeyValueMsg = (
   const element = React.createElement(
     "div",
     {
-      id: "wizAlert"
+      id: "wizAlert",
     },
     <React.Fragment>
       <div className="overlay" onClick={handleClose} />
@@ -568,12 +504,7 @@ export const showTwoBtnAlertWithKeyValueMsg = (
           >
             <FormattedMessage id={okBtnTextId} />
           </button>
-          <button
-            type="button"
-            className="two_btn"
-            id="two_btn_cancel"
-            onClick={handleClose}
-          >
+          <button type="button" className="two_btn" id="two_btn_cancel" onClick={handleClose}>
             <FormattedMessage id={cancelBtnTextId} />
           </button>
         </div>
@@ -601,24 +532,24 @@ export const showTwoBtnAlertWithCheckBox = (
   okBtnTextId = !okBtnTextId ? "OK" : okBtnTextId;
   let checkBoxValue = true;
 
-  const handleClose = e => {
+  const handleClose = (e) => {
     const empty = React.createElement("div");
     ReactDOM.render(empty, document.getElementById("alert"));
   };
 
-  const handleOK = e => {
+  const handleOK = (e) => {
     handleClose();
     callback(checkBoxValue);
   };
 
-  const handleCheckBox = e => {
+  const handleCheckBox = (e) => {
     checkBoxValue = !checkBoxValue;
   };
 
   const element = React.createElement(
     "div",
     {
-      id: "wizAlert"
+      id: "wizAlert",
     },
     <React.Fragment>
       <div className="overlay" onClick={handleClose} />
@@ -654,12 +585,7 @@ export const showTwoBtnAlertWithCheckBox = (
           >
             <FormattedMessage id={okBtnTextId} />
           </button>
-          <button
-            type="button"
-            className="two_btn"
-            id="two_btn_cancel"
-            onClick={handleClose}
-          >
+          <button type="button" className="two_btn" id="two_btn_cancel" onClick={handleClose}>
             <FormattedMessage id={cancelBtnTextId} />
           </button>
         </div>
@@ -674,15 +600,15 @@ export const showTwoBtnAlertWithCheckBox = (
   );
 };
 
-export const showFreeTrialSubmitPopup = callback => {
-  const handleClose = e => {
+export const showFreeTrialSubmitPopup = (callback) => {
+  const handleClose = (e) => {
     const empty = React.createElement("div");
     ReactDOM.render(empty, document.getElementById("alert"));
   };
 
   let handleOK = handleClose;
   if (callback) {
-    handleOK = e => {
+    handleOK = (e) => {
       callback();
       handleClose();
     };
@@ -691,7 +617,7 @@ export const showFreeTrialSubmitPopup = callback => {
   const element = React.createElement(
     "div",
     {
-      id: "wizAlert"
+      id: "wizAlert",
     },
     <React.Fragment>
       <div className="overlay" onClick={handleClose} />

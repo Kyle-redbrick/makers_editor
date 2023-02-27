@@ -1,40 +1,35 @@
 import React from "react";
 import moment from "moment";
-import { addLocaleData, IntlProvider } from "react-intl";
-import en from "react-intl/locale-data/en";
-import ko from "react-intl/locale-data/ko";
-import zh from "react-intl/locale-data/zh";
-import ja from "react-intl/locale-data/ja";
+import { IntlProvider } from "react-intl";
 import locale from "../../locale";
 import PopUp, { showPopUp } from "../Component/PopUp";
 
-const CheckBlockedUser = userinfo => {
+const CheckBlockedUser = (userinfo) => {
   if (userinfo && userinfo.blocked) {
     const endDate = moment(userinfo.blocked.endDate, "YYYY-MM-DD");
     let lang = localStorage.getItem("lang");
 
     const intlProvider = new IntlProvider({
       locale: lang,
-      messages: locale[lang]
+      messages: locale[lang],
     });
     const { intl } = intlProvider.getChildContext();
-    addLocaleData([...en, ...ko, ...zh, ...ja]);
 
     showPopUp(
       <PopUp.OneButton
         title={intl.formatMessage({
-          id: "ID_BLOCKED_USER_POPUP_TITLE_SOCIAL"
+          id: "ID_BLOCKED_USER_POPUP_TITLE_SOCIAL",
         })}
         subtitle={intl.formatMessage(
           { id: "ID_BLOCKED_USER_POPUP_PERIOD" },
           {
             year: `${endDate.year()}`,
             month: `${endDate.month() + 1}`,
-            day: `${endDate.date()}`
+            day: `${endDate.date()}`,
           }
         )}
         buttonName={intl.formatMessage({
-          id: "ID_BLOCKED_USER_POPUP_CONFRIM"
+          id: "ID_BLOCKED_USER_POPUP_CONFRIM",
         })}
       />,
       { darkmode: true }

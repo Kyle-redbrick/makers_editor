@@ -7,7 +7,7 @@ import OneButton from "./OneButton";
 import TwoButton from "./TwoButton";
 import OneInput from "./OneInput";
 import TwoInput from "./TwoInput";
-import Agreement from "./Agreement"
+import Agreement from "./Agreement";
 import dismissImg from "../../../Image/popup_dismiss.svg";
 
 // python Page
@@ -22,31 +22,21 @@ import PythonClue from "../../../Page/Python/Components/PopupComponents/CluePopu
 import "./index.scss";
 import locale from "../../../locale";
 
-
-import en from "react-intl/locale-data/en";
-import ko from "react-intl/locale-data/ko";
-import zh from "react-intl/locale-data/zh";
-import ja from "react-intl/locale-data/ja";
-
-import { IntlProvider, addLocaleData } from "react-intl";
-
-
-addLocaleData([...en, ...ko, ...zh, ...ja]);
+import { IntlProvider } from "react-intl";
 
 const getNavigatorLanguage = () => {
-
   let lang;
   switch (window.location.hostname) {
     case "astroboy-dev-jp.wizclass.com":
     case "jp.astro-coding-go.com":
-      lang = "ja"
+      lang = "ja";
       break;
     case "astroboy-dev-en.wizclass.com":
     case "en.astro-coding-go.com":
-      lang = "en"
+      lang = "en";
       break;
     default:
-      lang = "en"
+      lang = "en";
       break;
   }
 
@@ -54,8 +44,7 @@ const getNavigatorLanguage = () => {
   return lang;
 };
 
-const lang = getNavigatorLanguage()
-
+const lang = getNavigatorLanguage();
 
 class PopUpContainer extends Component {
   componentDidMount() {
@@ -65,10 +54,10 @@ class PopUpContainer extends Component {
       const contents = document.getElementById("popup_contents");
       if (contents) contents.classList.remove("popup_contents-larged");
     }, 10);
-    window.onpopstate = e => {
+    window.onpopstate = (e) => {
       //dismiss popup
       ReactDOM.render(null, document.getElementById("popup"));
-    }
+    };
   }
 
   render() {
@@ -82,12 +71,13 @@ class PopUpContainer extends Component {
       overflow,
       mobileFullscreen,
       pythonPopup,
-      isBackTrans
+      isBackTrans,
     } = this.props;
     return (
       <div
-        className={`popup_container ${darkmode ? "popup_container-darkmode" : ""
-          } ${pythonPopup ? "popup_container-python" : ""}`}
+        className={`popup_container ${darkmode ? "popup_container-darkmode" : ""} ${
+          pythonPopup ? "popup_container-python" : ""
+        }`}
       >
         <div
           id="popup_overlay"
@@ -99,17 +89,17 @@ class PopUpContainer extends Component {
         <div id="popup_scrollable" className="popup_scrollable">
           <div
             id="popup_contents"
-            className={` ${isBackTrans ? "popup_contents_opacity" : "popup_contents"} popup_contents-larged ${defaultPadding ? "popup_contents-defaultPadding" : ""
-              } ${scrollable ? "popup_contents-scrollable" : ""} ${overflow ? "popup_contents-overflow-show" : ""
-              } ${mobileFullscreen ? "popup_contents-mobileFullscreen" : ""}`}
+            className={` ${isBackTrans ? "popup_contents_opacity" : "popup_contents"} popup_contents-larged ${
+              defaultPadding ? "popup_contents-defaultPadding" : ""
+            } ${scrollable ? "popup_contents-scrollable" : ""} ${overflow ? "popup_contents-overflow-show" : ""} ${
+              mobileFullscreen ? "popup_contents-mobileFullscreen" : ""
+            }`}
           >
             {dismissButton && (
               <img
                 id="popup_dismissbtn"
                 className={
-                  localStorage.getItem("colorTheme") === "darkMode"
-                    ? `popup_dismissbtn_darkmode`
-                    : `popup_dismissbtn`
+                  localStorage.getItem("colorTheme") === "darkMode" ? `popup_dismissbtn_darkmode` : `popup_dismissbtn`
                 }
                 src={dismissImg}
                 alt="popup_dismissbtn"
@@ -153,7 +143,7 @@ export const showPopUp = (content, options = {}, isBackTrans) => {
     overflow = false,
     mobileFullscreen = false,
     enterToConfirm = true,
-    pythonPopup = false
+    pythonPopup = false,
   } = options;
 
   if (content) {
@@ -206,5 +196,5 @@ export default {
   PythonCollection,
   PythonExecResult,
   PythonSetting,
-  PythonClue
+  PythonClue,
 };

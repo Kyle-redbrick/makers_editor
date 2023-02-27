@@ -5,21 +5,12 @@ import ReactDOM from "react-dom";
 import "./Common/Extension";
 import "./index.scss";
 import App from "./App";
-
-import en from "react-intl/locale-data/en";
-import ko from "react-intl/locale-data/ko";
-import zh from "react-intl/locale-data/zh";
-import ja from "react-intl/locale-data/ja";
-
 import locale from "./locale";
-
-import { IntlProvider, addLocaleData } from "react-intl";
+import { IntlProvider } from "react-intl";
 import ReactGA from "react-ga";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
-addLocaleData([...en, ...ko, ...zh, ...ja]);
 
 const getNavigatorLanguage = () => {
   let lang;
