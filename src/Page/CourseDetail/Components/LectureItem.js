@@ -7,7 +7,7 @@ import * as LearnButtons from "../../../Common/Component/Button/Learn";
 import IMAGE from "./../Constants/Images";
 import { URL } from "../../../Common/Util/Constant";
 import GamePopup from "./GamePopup";
-import lockImg from "../../../Image/course-content--lock.svg"
+import lockImg from "../../../Image/course-content--lock.svg";
 
 const Self = styled.div`
   display: flex;
@@ -36,7 +36,7 @@ const LearnAgain = styled(LearnButtons.LearnAgain)`
   color: #fff;
   outline: none;
   cursor: pointer;
-  
+
   &:focus {
     outline: none;
   }
@@ -145,7 +145,9 @@ const Image = styled.div`
   border-radius: 16px 0 0 16px;
 
 
-  ${({unlocked}) => unlocked==false && `
+  ${({ unlocked }) =>
+    unlocked == false &&
+    `
   .project-item__overlay {
       content: '';
       display: block;
@@ -159,7 +161,10 @@ const Image = styled.div`
   }
   `}
 
-  ${({unlocked, symbol}) => unlocked==false && symbol==="BLOCKED" && `
+  ${({ unlocked, symbol }) =>
+    unlocked == false &&
+    symbol === "BLOCKED" &&
+    `
     .project-item__lock {
       position: absolute;
       display: block;
@@ -177,18 +182,22 @@ const Image = styled.div`
     width: 100%;
     height: 50vw;
     border-radius: 16px 16px 0 0;
-    ${({unlocked}) => unlocked==false && `
+    ${({ unlocked }) =>
+      unlocked == false &&
+      `
       .project-item__overlay {
         border-radius: 16px 16px 0 0;
       }
     `}
-    ${({unlocked, symbol}) => unlocked==false && symbol==="BLOCKED" && `
+    ${({ unlocked, symbol }) =>
+      unlocked == false &&
+      symbol === "BLOCKED" &&
+      `
       .project-item__lock {
         width: 125px;
         height: 125px;
       }
-    }`
-}`;
+    }`}`;
 
 const Label = styled.span`
   font-size: 15px;
@@ -208,11 +217,10 @@ const PlayButton = styled.button`
   position: absolute;
   right: 20px;
   top: 20px;
-  width: 119px;
+  width: fit-content;
   height: 34px;
   border-radius: 10px;
   border: solid 1px #ff6f44;
-  white-space: pre-wrap;
   background-color: transparent;
   font-size: 14px;
   font-weight: bold;
@@ -296,7 +304,7 @@ const ProgressWrap = styled.div`
   display: flex;
   align-items: center;
 
-  @media screen and (max-width: 1169px){
+  @media screen and (max-width: 1169px) {
     margin-bottom: 20px;
   }
 `;
@@ -309,7 +317,6 @@ const Tag = styled.div`
   line-height: 1;
   color: #fff;
   padding: 0 5px;
-  margin-right: 5px;
   height: 30px;
   display: flex;
   justify-content: center;
@@ -319,6 +326,8 @@ const Tag = styled.div`
 const Tags = styled.div`
   display: flex;
   margin-bottom: 5px;
+  flex-wrap: wrap;
+  gap: 10px;
 `;
 
 const Title = styled.div`
@@ -340,30 +349,27 @@ const ButtonWrap = styled.div`
   }
 `;
 
-const Layer = styled.div`
-
-
-`;
+const Layer = styled.div``;
 
 const LectureItem = ({ project, ...props }) => {
-  
-  const handleClickGame = useCallback(
-    () => {
-      Popup.showPopUp(<GamePopup url={project.resources.gameURL} />, {
-        dismissButton: false,
-        dismissOverlay: true,
-        defaultPadding: false,
-        darkmode: true,
-        mobileFullscreen: true,
-        overflow: true,
-      });
-    },
-    [GamePopup, Popup.showPopUp]
-  );
+  const handleClickGame = useCallback(() => {
+    Popup.showPopUp(<GamePopup url={project.resources.gameURL} />, {
+      dismissButton: false,
+      dismissOverlay: true,
+      defaultPadding: false,
+      darkmode: true,
+      mobileFullscreen: true,
+      overflow: true,
+    });
+  }, [GamePopup, Popup.showPopUp]);
 
   return (
     <Self {...props}>
-      <Image image={URL.S3_DREAMCLASS + project.resources.thumbnailURL} unlocked={project.unlocked} symbol={project.symbol}>
+      <Image
+        image={URL.S3_DREAMCLASS + project.resources.thumbnailURL}
+        unlocked={project.unlocked}
+        symbol={project.symbol}
+      >
         <div className="project-item__lock" />
         <div className="project-item__overlay" />
       </Image>
@@ -372,27 +378,39 @@ const LectureItem = ({ project, ...props }) => {
         <Title>{project.title}</Title>
         <Desc>{project.intro}</Desc>
         <Tags>
-          {project.tag.programmingConcept.split(',').map((tag, index) => <Tag key={index}>{tag}</Tag> )}
+          {project.tag.programmingConcept.split(",").map((tag, index) => (
+            <Tag key={index}>{tag}</Tag>
+          ))}
         </Tags>
         <Command>
-          <Label><FormattedMessage id="ID_COURSE_DETAIL_KEY_COMMAND" /> </Label>
-          {project.tag.apiCommand.split(',').map(tag => tag).join(", ")}
+          <Label>
+            <FormattedMessage id="ID_COURSE_DETAIL_KEY_COMMAND" />{" "}
+          </Label>
+          {project.tag.apiCommand
+            .split(",")
+            .map((tag) => tag)
+            .join(", ")}
         </Command>
-        {project.unlocked &&
+        {project.unlocked && (
           <ProgressWrap>
-            <Progress value={project.progress.completed/project.progress.net * 100}>
+            <Progress
+              value={(project.progress.completed / project.progress.net) * 100}
+            >
               <ProgressBar />
             </Progress>
             {project.progress.net === project.progress.completed && (
-              <ProgressText><FormattedMessage id="ID_LEARN_ALL_STEPS_CLEAR" /></ProgressText>
-            )}
-            { project.progress.net !== project.progress.completed  && (
               <ProgressText>
-                {project.progress.completed}/{project.progress.net} <FormattedMessage id="ID_COURSE_DETAIL_STEP_COMPLETE" />
+                <FormattedMessage id="ID_LEARN_ALL_STEPS_CLEAR" />
+              </ProgressText>
+            )}
+            {project.progress.net !== project.progress.completed && (
+              <ProgressText>
+                {project.progress.completed}/{project.progress.net}{" "}
+                <FormattedMessage id="ID_COURSE_DETAIL_STEP_COMPLETE" />
               </ProgressText>
             )}
           </ProgressWrap>
-        }
+        )}
         <ButtonWrap>
           {project.resources.gameURL && (
             <PlayButton type="button" onClick={handleClickGame}>
@@ -400,17 +418,30 @@ const LectureItem = ({ project, ...props }) => {
               <FormattedMessage id="ID_COURSE_DETAIL_PLAY_GAME" />
             </PlayButton>
           )}
-          {project.unlocked && <>
-          {project.progress.completed === project.progress.net ? (
-            <LearnAgain completed id={project.id} videoURL={project.resources.videoURL} isShowVideo={false} />
-          ) : (
-            project.progress.completed === 0 ? (
-              <LearnNow id={project.id} videoURL={URL.S3_DREAMCLASS + project.resources.videoURL} isShowVideo={true} />
-            ) : (
-              <LearnContinue id={project.id} videoURL={URL.S3_DREAMCLASS + project.resources.videoURL} isShowVideo={false} />
-            )
+          {project.unlocked && (
+            <>
+              {project.progress.completed === project.progress.net ? (
+                <LearnAgain
+                  completed
+                  id={project.id}
+                  videoURL={project.resources.videoURL}
+                  isShowVideo={false}
+                />
+              ) : project.progress.completed === 0 ? (
+                <LearnNow
+                  id={project.id}
+                  videoURL={URL.S3_DREAMCLASS + project.resources.videoURL}
+                  isShowVideo={true}
+                />
+              ) : (
+                <LearnContinue
+                  id={project.id}
+                  videoURL={URL.S3_DREAMCLASS + project.resources.videoURL}
+                  isShowVideo={false}
+                />
+              )}
+            </>
           )}
-          </>}
         </ButtonWrap>
       </Content>
     </Self>
