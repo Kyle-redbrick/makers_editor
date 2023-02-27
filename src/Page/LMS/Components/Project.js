@@ -4,9 +4,7 @@ import moment from "moment";
 import styled from "@emotion/styled";
 import * as LearnButtons from "../../../Common/Component/Button/Learn";
 import * as Popup from "../../../Common/Component/PopUp";
-import { URL } from "../../../Common/Util/Constant"
-
-
+import { URL } from "../../../Common/Util/Constant";
 
 import Button from "./Button";
 import { COLOR } from "../Constants";
@@ -19,13 +17,13 @@ const Self = styled.div`
   display: flex;
   align-items: center;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
-  width:100%;
+  width: 100%;
 
   &:first-of-type {
     border-top: none;
   }
 
-  @media screen and (max-width: 1169px){
+  @media screen and (max-width: 1169px) {
     flex-direction: column;
     align-items: flex-start;
     padding: 15px;
@@ -59,7 +57,7 @@ const Title = styled.div`
   color: #fff;
   margin-bottom: 3px;
 
-  @media screen and (max-width: 1169px){
+  @media screen and (max-width: 1169px) {
     margin: 10px 0;
   }
 `;
@@ -121,7 +119,7 @@ const ProgressText = styled.div`
 `;
 
 const LectureDate = styled.div`
-  width: 276px;
+  flex: 0 0 250px;
   padding-left: 30px;
   font-size: 16px;
   line-height: 1.69;
@@ -154,7 +152,7 @@ const IconJoystick = styled.img`
 const JoystickText = styled.span`
   display: none;
 
-  @media screen and (max-width: 1169px){
+  @media screen and (max-width: 1169px) {
     display: inline-block;
     margin-left: 8px;
     font-size: 14px;
@@ -166,7 +164,7 @@ const JoystickText = styled.span`
 const ButtonWrap = styled.div`
   display: flex;
   align-items: center;
-  position:relative;
+  position: relative;
 
   @media screen and (max-width: 1169px) {
     width: 100%;
@@ -180,26 +178,24 @@ const GameBtn = styled.img`
 `;
 
 const Project = ({ project, ...props }) => {
-  const handleClickGame = useCallback(
-    () => {
-      Popup.showPopUp(<GamePopup url={project.resources.gameURL} />, {
-        dismissButton: false,
-        dismissOverlay: true,
-        defaultPadding: false,
-        darkmode: true,
-        mobileFullscreen: true,
-        overflow: true,
-      });
-    },
-    [GamePopup, Popup.showPopUp]
-  );
+  const handleClickGame = useCallback(() => {
+    Popup.showPopUp(<GamePopup url={project.resources.gameURL} />, {
+      dismissButton: false,
+      dismissOverlay: true,
+      defaultPadding: false,
+      darkmode: true,
+      mobileFullscreen: true,
+      overflow: true,
+    });
+  }, [GamePopup, Popup.showPopUp]);
 
   const { intl } = props;
 
-  const progressText = `${project.progress.completed > project.progress.net
-    ? project.progress.net
-    : project.progress.completed
-    }/${project.progress.net}`
+  const progressText = `${
+    project.progress.completed > project.progress.net
+      ? project.progress.net
+      : project.progress.completed
+  }/${project.progress.net}`;
 
   return (
     <Self {...props}>
@@ -207,7 +203,9 @@ const Project = ({ project, ...props }) => {
       <TitleWrap>
         <Title>{project.title}</Title>
         <ProgressWrap>
-          <Progress value={project.progress.completed / project.progress.net * 100}>
+          <Progress
+            value={(project.progress.completed / project.progress.net) * 100}
+          >
             <ProgressBar />
           </Progress>
           {project.progress.net / project.progress.completed <= 1 ? (
@@ -216,42 +214,60 @@ const Project = ({ project, ...props }) => {
             </ProgressText>
           ) : (
             <ProgressText>
-              {progressText} <FormattedMessage id="ID_COURSE_DETAIL_STEP_COMPLETE" />
+              {progressText}{" "}
+              <FormattedMessage id="ID_COURSE_DETAIL_STEP_COMPLETE" />
             </ProgressText>
           )}
         </ProgressWrap>
       </TitleWrap>
 
       <LectureDate>
-        <Label><FormattedMessage id="ID_LMS_QUEST_DATE" /> </Label>
-        {project.unlocked
-          ? project.user.lastStudyDate
-          : "-"}
+        <Label>
+          <FormattedMessage id="ID_LMS_QUEST_DATE" />{" "}
+        </Label>
+        {project.unlocked ? project.user.lastStudyDate : "-"}
         <br />
-        <Label><FormattedMessage id="ID_LMS_QUEST_STUDY_TIME" /> </Label>
+        <Label>
+          <FormattedMessage id="ID_LMS_QUEST_STUDY_TIME" />{" "}
+        </Label>
         {project.unlocked
-          ? project.user.studyMinute + intl.formatMessage({ id: "ID_LMS_QUEST_STUDY_TIME_MIN" })
+          ? project.user.studyMinute +
+            intl.formatMessage({ id: "ID_LMS_QUEST_STUDY_TIME_MIN" })
           : "-"}
       </LectureDate>
 
-      <GameBtn src={IMAGE.GAME_BUTTON_IMG}  onClick={handleClickGame}/>
-
+      <GameBtn src={IMAGE.GAME_BUTTON_IMG} onClick={handleClickGame} />
 
       <ButtonWrap>
         {project.sampleGameUrl && (
           <JoystickButton type="button" onClick={handleClickGame}>
             <IconJoystick alt="조이스틱 아이콘" src={IMAGE.ICON_JOYSTICK} />
-            <JoystickText><FormattedMessage id="ID_COURSE_DETAIL_PLAY_GAME" /></JoystickText>
+            <JoystickText>
+              <FormattedMessage id="ID_COURSE_DETAIL_PLAY_GAME" />
+            </JoystickText>
           </JoystickButton>
         )}
         {project.progress.completed >= project.progress.net ? (
-          <LearnAgain completed block={!project.unlocked && project.symbol === "BLOCKED"} lock={!project.unlocked} id={project.id} />
+          <LearnAgain
+            completed
+            block={!project.unlocked && project.symbol === "BLOCKED"}
+            lock={!project.unlocked}
+            id={project.id}
+          />
+        ) : project.progress.completed === 0 ? (
+          <LearnNow
+            block={!project.unlocked && project.symbol === "BLOCKED"}
+            lock={!project.unlocked}
+            id={project.id}
+            isShowVideo={true}
+            videoURL={URL.S3_DREAMCLASS + project.resources.videoURL}
+          />
         ) : (
-          project.progress.completed === 0 ? (
-            <LearnNow block={!project.unlocked && project.symbol === "BLOCKED"} lock={!project.unlocked} id={project.id} isShowVideo={true}  videoURL={URL.S3_DREAMCLASS + project.resources.videoURL} />
-          ) : (
-            <LearnContinue block={!project.unlocked && project.symbol === "BLOCKED"} lock={!project.unlocked} id={project.id} />
-          )
+          <LearnContinue
+            block={!project.unlocked && project.symbol === "BLOCKED"}
+            lock={!project.unlocked}
+            id={project.id}
+          />
         )}
       </ButtonWrap>
     </Self>
