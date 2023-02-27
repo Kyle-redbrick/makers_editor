@@ -33,7 +33,7 @@ const getNavigatorLanguage = () => {
       lang = "en";
       break;
     default:
-      lang = "ja";
+      lang = "en";
       break;
   }
 
