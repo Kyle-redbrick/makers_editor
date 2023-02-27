@@ -14,13 +14,14 @@ function View(props) {
     onChangeSearch,
     isClickedDropDown,
     onClickTitle,
-    intl
+    intl,
   } = props;
   return (
     <div className="filteringHeader">
       <div
-        className={`${isClickedDropDown === "engine" &&
-          "header__title__selected"} wrapper`}
+        className={`${
+          isClickedDropDown === "engine" && "header__title__selected"
+        } wrapper`}
       >
         <p className="header__title" onClick={() => onClickTitle("engine")}>
           {intl.formatMessage({ id: "ID_DREAM_BUILDER_HOME_ENGINE" })}
@@ -61,13 +62,11 @@ function View(props) {
       </div>
 
       <div
-        className={`${isClickedDropDown === "lang" &&
-          "header__title__selected"} wrapper`}
+        className={`${
+          isClickedDropDown === "lang" && "header__title__selected"
+        } wrapper`}
       >
-        <p
-          className="header__title"
-          onClick={() => onClickTitle("lang")}
-        >
+        <p className="header__title" onClick={() => onClickTitle("lang")}>
           {intl.formatMessage({ id: "ID_DREAM_BUILDER_HOME_LANG" })}
           <img src={dropdownIcon} alt="" />
         </p>
@@ -105,10 +104,15 @@ function View(props) {
         </ul>
       </div>
       <div className="header__search">
-        <input onChange={onChangeSearch} placeholder="Search" />
+        <input
+          onChange={onChangeSearch}
+          placeholder={intl.formatMessage({
+            id: "ID_PROJECT_SEARCH",
+          })}
+        />
       </div>
     </div>
   );
 }
 
-export default injectIntl(View); 
+export default injectIntl(View);

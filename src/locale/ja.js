@@ -576,7 +576,7 @@ const ja = {
   ID_PROJECT_TITLE: "プロジェクト",
   ID_PROJECT_NEW: "新しいプロジェクト",
   ID_PROJECT_LOAD: "インポート",
-  ID_PROJECT_SEARCH: "Search",
+  ID_PROJECT_SEARCH: "検索",
   ID_PROJECT_POPUP_DELETE_TITLE:
     "Are you sure to delete the “{projectName}” project?",
   ID_PROJECT_POPUP_DELETE_SUB_TITLE: `프로젝트를 삭제하면 복구할 수 없습니다.\n그래도 삭제하시겠습니까?`,
