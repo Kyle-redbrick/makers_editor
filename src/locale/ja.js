@@ -814,7 +814,7 @@ const ja = {
   ID_BINGO_POPUP_INFO: "빙고 미션 달성!",
   ID_BINGO_POPUP_CLOSE: "閉める",
   ID_BINGO_POPUP_DETAIL: "자세히보기",
-  ID_CERTIFICATE_ALERT_NAME_CLASS: "* Please enter name and class",
+  ID_CERTIFICATE_ALERT_NAME_CLASS: "* 名前とクラスを入力してください。",
   ID_CERTIFICATE_ALERT_NAME: "* Please enter name",
   ID_CERTIFICATE_ALERT_CLASS: "* Please enter class",
   ID_CERT_POPUP_TITLE:
