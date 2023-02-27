@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { injectIntl } from "react-intl";
+import { isMobile } from "react-device-detect";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
+import { TouchBackend } from "react-dnd-touch-backend"
 import "react-toastify/dist/ReactToastify.css";
 import * as projectActions from "./Store/Reducer/project";
 import * as previewActions from "./Store/Reducer/preview";
@@ -792,8 +794,16 @@ class Container extends Component {
       return newPosition;
     };
 
+    window.addEventListener("dragover",function(e){
+      e.preventDefault();  
+    },false);
+
+    window.addEventListener("drop",function(e){
+      e.preventDefault();
+    },false);
+
     return (
-      <DndProvider backend={HTML5Backend}>
+      <DndProvider backend={isMobile ? TouchBackend : HTML5Backend}>
         <View
           screenMode={screenMode}
           location={location}
