@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { useDrag, useDrop } from "react-dnd";
 import { DndProvider } from "react-dnd-multi-backend";
-import HTML5toTouch from "react-dnd-multi-backend/dist/esm/HTML5toTouch";
+import { HTML5toTouch } from "../../../../../Page/Builder/utils/customHTML5toTouch";
 import "./index.scss";
 
 import anchorDefault from "../../Image/anchor-default.svg";

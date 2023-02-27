@@ -1,10 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { injectIntl } from "react-intl";
-import { isMobile } from "react-device-detect";
-import { DndProvider } from "react-dnd";
-import { HTML5Backend } from "react-dnd-html5-backend";
-import { TouchBackend } from "react-dnd-touch-backend"
+import { HTML5toTouch } from "./utils/customHTML5toTouch";
+import { DndProvider } from 'react-dnd-multi-backend'
 import "react-toastify/dist/ReactToastify.css";
 import * as projectActions from "./Store/Reducer/project";
 import * as previewActions from "./Store/Reducer/preview";
@@ -17,7 +15,6 @@ import { detectIE } from "../../Common/Util/detectBrowser";
 import View from "./View";
 import Popup, { showPopUp } from "../../Common/Component/PopUp";
 import * as TrackingUtil from "../../Common/Util/TrackingUtil";
-
 class Container extends Component {
   constructor(props) {
     super(props);
@@ -803,7 +800,7 @@ class Container extends Component {
     },false);
 
     return (
-      <DndProvider backend={isMobile ? TouchBackend : HTML5Backend}>
+      <DndProvider options={HTML5toTouch}>
         <View
           screenMode={screenMode}
           location={location}
