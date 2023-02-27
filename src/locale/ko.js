@@ -135,6 +135,7 @@ const ko = {
   ID_FORGOTPW_PLACEHOLDER: "이메일을 입력해주세요",
   ID_FORGOTPW_CONFIRM: "보내기",
   ID_FORGOTPW_WARNING_EMAIL_FORMAT: "* 이메일 주소가 올바르지 않습니다.",
+  ID_FORGOTPW_WARNING_NOT_EXIST_EMAIL:"해당 이메일 주소를 가진 계정이 없습니다",
   ID_FORGOTPW_SEND_TITLE: "링크를 전송했습니다",
   ID_FORGOTPW_SEND_CONFIRM: "확인",
   ID_CHALLENGE_TITLE: "이달의 게임",

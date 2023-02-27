@@ -134,6 +134,7 @@ const ja = {
   ID_FORGOTPW_PLACEHOLDER: "メールアドレスをご入力ください。",
   ID_FORGOTPW_CONFIRM: "メールを送信する",
   ID_FORGOTPW_WARNING_EMAIL_FORMAT: "メールアドレスが正しくありません。",
+  ID_FORGOTPW_WARNING_NOT_EXIST_EMAIL: "正しく入力されていないか、メールアドレスが違います",
   ID_FORGOTPW_SEND_TITLE: "リンクを送信しました。",
   ID_FORGOTPW_SEND_CONFIRM: "確認する",
   ID_CHALLENGE_TITLE: "Game of the month",

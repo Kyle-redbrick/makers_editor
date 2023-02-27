@@ -138,6 +138,7 @@ const en = {
   ID_FORGOTPW_PLACEHOLDER: "Please enter your e-mail",
   ID_FORGOTPW_CONFIRM: "Send email",
   ID_FORGOTPW_WARNING_EMAIL_FORMAT: "This is an incorrect email.",
+  ID_FORGOTPW_WARNING_NOT_EXIST_EMAIL: "We don't have an account with that email address",
   ID_FORGOTPW_SEND_TITLE: "The link has been sent.",
   ID_FORGOTPW_SEND_CONFIRM: "Confirm",
   ID_CHALLENGE_TITLE: "Game of the month",
