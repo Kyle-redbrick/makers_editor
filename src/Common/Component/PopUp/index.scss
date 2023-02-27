@@ -43,15 +43,12 @@
   }
 
   .popup_contents_opacity {
-    position: absolute;
+    position: relative;
     overflow: hidden;
     z-index: 102;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
     border-radius: 20px;
     color: #ffffff;
-    transition: 0.1s transform;
+    margin: auto;
   }
 
   .popup_contents-larged {
