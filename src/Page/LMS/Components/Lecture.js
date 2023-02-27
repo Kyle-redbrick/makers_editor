@@ -1,7 +1,9 @@
 import React, { memo, useCallback, useState } from "react";
-import { FormattedMessage } from "react-intl";
+import { connect } from "react-redux";
+import { useHistory, withRouter } from "react-router-dom";
+import { FormattedMessage, injectIntl } from "react-intl";
 import styled from "@emotion/styled";
-import { URL } from "../../../Common/Util/Constant";
+import { URL, USER_TYPE } from "../../../Common/Util/Constant";
 import Button, { LinkButton as OrigLinkButton } from "./Button";
 import ProjectComponent from "./Project";
 import { showPopUp } from "../../../Common/Component/PopUp";
@@ -140,10 +142,19 @@ const ButtonWrap = styled.div`
   }
 `;
 
-const LinkButton = styled(OrigLinkButton)`
+const LinkButton = styled.button`
   margin-left: 10px;
+  width: 96px;
+  height: 40px;
   background-color: #353535;
-  width: fit-content;
+  border-radius: 10px;
+  border: none;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1;
+  text-align: center;
+  color: #fff;
+  cursor: pointer;
 
   @media screen and (max-width: 1169px) {
     width: calc(80vw - 10px - 44px);
@@ -203,6 +214,7 @@ const CertButton = styled.button`
 `;
 
 const Lecture = memo(({ course, ...props }) => {
+  const history = useHistory()
   const [show, setShow] = useState(false);
 
   const handleClickToggle = useCallback(() => {
@@ -218,7 +230,7 @@ const Lecture = memo(({ course, ...props }) => {
           course={course}
           name={certData.userName}
           class={certData.userClass}
-          // updateCourses={props.userClass}
+        // updateCourses={props.userClass}
         />,
         {
           dismissButton: true,
@@ -233,6 +245,14 @@ const Lecture = memo(({ course, ...props }) => {
       });
     }
   };
+
+  const goToLearn = () => {
+    if (props.userType === USER_TYPE.SUPER_ADMIN) {
+      alert("Not available")
+      return;
+    }
+    history.push(`/course/${course.course.lectureId}`)
+  }
 
   return (
     <Self>
@@ -257,7 +277,7 @@ const Lecture = memo(({ course, ...props }) => {
               {parseInt(
                 (course.course.progress.completed /
                   course.course.progress.net) *
-                  100
+                100
               )}
               %
             </ProgressText>
@@ -297,4 +317,8 @@ const Lecture = memo(({ course, ...props }) => {
   );
 });
 
-export default Lecture;
+
+export default connect(
+  state => ({ userType: state.userinfo.userType }),
+  {}
+)(injectIntl(withRouter(Lecture)));

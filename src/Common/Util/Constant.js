@@ -10,7 +10,7 @@ export const URL = {
   WIZLIVE: `https://${subdomain}wizlive.com`,
   WIZLIVE_WWW: `https://www.${subdomain}wizlive.com`,
   ICE_SERVERS: [
-  {
+    {
       urls: [
         `stun:wizlive.wizschool.io:3478`,
         `turn:wizlive.wizschool.io:3478`
@@ -333,8 +333,7 @@ export const OCP_IMAGES = {
         "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/beginner/1-1/1-1+%E1%84%89%E1%85%B3%E1%84%90%E1%85%A9%E1%84%85%E1%85%B5.png",
       tutorials: [...Array(9).keys()].map(
         element =>
-          `${URL.S3_VIDEOCLASS}/ocp/${
-            OCP_GRADE.BEGINNER
+          `${URL.S3_VIDEOCLASS}/ocp/${OCP_GRADE.BEGINNER
           }/tutorial/tutorial_${element + 1}.png`
       ),
       mission1:
@@ -1333,6 +1332,10 @@ export const LEARNING_COMPLETE_ID = [
   "learning_js_c1",
   "learning_python_c1"
 ]
+
+export const USER_TYPE = {
+  SUPER_ADMIN: "Z"
+}
 
 export const isConnectProd = () => {
   return false;
