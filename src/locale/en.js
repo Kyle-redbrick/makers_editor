@@ -1551,7 +1551,7 @@ const en = {
   ID_ACCOUNT_SETTING_ALERT_NEW_PWD_NOT_EQUAL:
     "The new password and the confirmation password do not match.",
   ID_ACCOUNT_SETTING_ALERT_NEW_PWD_LENGTH:
-    "The password needs to be at least 6 characters.",
+    "Please enter the current password correctly.",
 
   ID_ATTENDANCE_TITLE: "Attendance",
   ID_PLAY_RECENT_GAMES: "Recently Played",
