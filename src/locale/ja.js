@@ -585,7 +585,7 @@ const ja = {
   ID_PROJECT_POPUP_COPY_TITLE: "Do you want to copy the project?",
   ID_PROJECT_POPUP_COPY_OK: "確認",
   ID_PROJECT_POPUP_COPY_CANCEL: "取り消し",
-  ID_PROJECT_POPUP_EDIT_TITLE: "Change name",
+  ID_PROJECT_POPUP_EDIT_TITLE: "ゲーム名修正",
   ID_PROJECT_POPUP_EDIT_OK: "なおす",
   ID_PROJECT_EMPTY_TITLE: "Empty Project",
   ID_PROJECT_TEMPLATE_TITLE: "Templates",
