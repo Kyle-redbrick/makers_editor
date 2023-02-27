@@ -557,7 +557,7 @@ function getClassNameFor(block) {
 }
 function getGameObjectCopyId(gameObject) {
   const gameObjectName = gameObject.data;
-  const regexExp = /(\()\d+(?=\))/g
+  const regexExp = /(?!\()-?\d+(?=\))/g
   const matches = gameObjectName.match(regexExp);
 
   if(matches) {
