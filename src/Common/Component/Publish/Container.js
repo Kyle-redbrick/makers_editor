@@ -11,6 +11,7 @@ import { generatePIDForTutorial } from "../../Util/PIDGenerator";
 import { ImageCompressor } from "../../Util/FileCompressor";
 import stringify from "json-stringify-safe";
 import PopUp, { showPopUp } from "../PopUp";
+import jwt_decode from "jwt-decode";
 import View from "./View";
 import "./index.scss";
 
@@ -130,7 +131,17 @@ class Container extends Component {
     let icon = this.getIcon();
 
     // create tutorial developingProject
-    const { email, tutorialLevel } = this.props;
+    const {email, tutorialLevel } = this.props;
+    let decodedEmail = "";
+
+    if(!email) {
+      const token = localStorage.getItem("astroToken");
+      const decoded = jwt_decode(token);
+      decodedEmail = decoded.email;
+    }
+    
+    const emailData = email ? email : decodedEmail;
+
     if (tutorialLevel) {
       icon = this.props.project.screenshotURL;
       const name = this.props.intl.formatMessage({ id: "ID_PUBLISH_TUTORIAL" });
@@ -143,7 +154,7 @@ class Container extends Component {
       await request.postDevelopingProject({
         pId,
         icon,
-        email,
+        email: emailData,
         name,
         state,
         useCustomIcon
@@ -162,7 +173,7 @@ class Container extends Component {
     // create/update publishedProject
     let params = {
       pId,
-      email,
+      email: emailData,
       icon,
       name,
       description,
@@ -216,6 +227,7 @@ class Container extends Component {
             this.props.publishCallback({
               pId,
               icon,
+              email: emailData,
               name,
               description,
               category,
