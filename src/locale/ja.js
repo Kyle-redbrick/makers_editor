@@ -135,7 +135,8 @@ const ja = {
   ID_FORGOTPW_PLACEHOLDER: "メールアドレスをご入力ください。",
   ID_FORGOTPW_CONFIRM: "メールを送信する",
   ID_FORGOTPW_WARNING_EMAIL_FORMAT: "メールアドレスが正しくありません。",
-  ID_FORGOTPW_WARNING_NOT_EXIST_EMAIL: "正しく入力されていないか、メールアドレスが違います",
+  ID_FORGOTPW_WARNING_NOT_EXIST_EMAIL:
+    "正しく入力されていないか、メールアドレスが違います",
   ID_FORGOTPW_SEND_TITLE: "リンクを送信しました。",
   ID_FORGOTPW_SEND_CONFIRM: "確認する",
   ID_CHALLENGE_TITLE: "Game of the month",
@@ -817,8 +818,8 @@ const ja = {
   ID_BINGO_POPUP_CLOSE: "閉める",
   ID_BINGO_POPUP_DETAIL: "자세히보기",
   ID_CERTIFICATE_ALERT_NAME_CLASS: "* 名前とクラスを入力してください。",
-  ID_CERTIFICATE_ALERT_NAME: "* Please enter name",
-  ID_CERTIFICATE_ALERT_CLASS: "* Please enter class",
+  ID_CERTIFICATE_ALERT_NAME: "* 名前を入力してください",
+  ID_CERTIFICATE_ALERT_CLASS: "* クラスを入力してください",
   ID_CERT_POPUP_TITLE:
     "위즈랩에 회원가입을 하면 언제든 인증서를 다운 받을 수 있습니다.",
   ID_CERT_POPUP_CANCEL: "나중에 할래요",
@@ -1283,7 +1284,7 @@ const ja = {
   ID_DREAM_BUILDER_MISSION_CLEAR_SUBTITLE: `よくできました！\nその調子でがんばりましょう！`,
   ID_DREAM_BUILDER_MISSION_CLEAR_CANCEL_BUTTON: "やめる",
   ID_DREAM_BUILDER_MISSION_CLEAR_CONFIRM_BUTTON: "つぎへ",
-  ID_DREAM_BUILDER_COURSE_CLEAR: "COURSE CLEAR",
+  ID_DREAM_BUILDER_COURSE_CLEAR: "コースクリア",
   ID_DREAM_BUILDER_COURSE_CLEAR_SUBTITLE:
     "おめでとうございます！今回のコースのすべての授業を完了しました！\n名前とクラスを入力し、修了証を発行してみましょう！",
   ID_DREAM_BUILDER_COURSE_CLEAR_CANCEL_BUTTON: "閉じる",
