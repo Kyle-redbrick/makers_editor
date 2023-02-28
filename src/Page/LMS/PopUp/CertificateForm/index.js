@@ -3,7 +3,7 @@ import { injectIntl } from "react-intl";
 import "./index.scss"
 import { showPopUp } from "../../../../Common/Component/PopUp";
 // import * as request from "../../../../Common/Util/HTTPRequest";
-import clearImg from "../../../../Image/quest-clear-img-astroboy.svg"
+import clearImg from "../../../../Image/quest-clear-img-astroboy.png"
 
 import Print from "../../../../Common/Component/OCPCertification";
 
@@ -36,11 +36,11 @@ function CertificateForm(props) {
         course={props.course}
         name={nameInput.current.value}
         class={classInput.current.value}
-        // updateCourses={props.updateCourses}
+      // updateCourses={props.updateCourses}
       />, {
       dismissButton: true,
       defaultPadding: false
-    },{isBackTrans:true});
+    }, { isBackTrans: true });
 
 
   }
