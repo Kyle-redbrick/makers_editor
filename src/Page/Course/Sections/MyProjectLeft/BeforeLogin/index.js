@@ -29,6 +29,8 @@ function BeforeLogin(props) {
     window.open(`/dreamclass/${id}/37da860b-2eca-4ea6-8c36-d6b5dd700437`);
   }
 
+  const freeProjectId = props.curriculum[0].course.freeProjectId;
+
   return (
     <div className="content-slide">
       <div className="content-slide__slide">
@@ -58,7 +60,7 @@ function BeforeLogin(props) {
                 {
                   item.course.freeProjectId &&
                   // <button type="button" className="content-slide__experience-btn" onClick={()=>{linkToLearn(item.course.freeProjectId)}}>Experience</button>
-                  <LearnButtons.LearnExperience learnWidth={true} id={item.course.freeProjectId} />
+                  <LearnButtons.LearnExperience learnWidth={true} id={freeProjectId} />
 
                 }
               </SwiperSlide>
