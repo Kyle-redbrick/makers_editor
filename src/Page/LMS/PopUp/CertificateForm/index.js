@@ -3,7 +3,7 @@ import { injectIntl } from "react-intl";
 import "./index.scss"
 import { showPopUp } from "../../../../Common/Component/PopUp";
 // import * as request from "../../../../Common/Util/HTTPRequest";
-import clearImg from "../../../../Image/quest-clear-img-astroboy.png"
+import clearImg from "../../../../Image/quest-clear-img-astroboy.svg"
 
 import Print from "../../../../Common/Component/OCPCertification";
 

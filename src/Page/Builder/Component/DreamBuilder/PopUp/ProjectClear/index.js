@@ -1,7 +1,7 @@
 import React from "react";
 import { injectIntl } from "react-intl";
 import "./index.scss"
-import clearImg from "../../../../../../Image/quest-clear-img-astroboy.png"
+import clearImg from "../../../../../../Image/quest-clear-img-astroboy.svg"
 
 function ProjectClear(props) {
   return (
