@@ -6,8 +6,8 @@ import spriteImg from "../../../../Image/builder/help/help_sub_sprite.png";
 import spriteDarkImg from "../../../../Image/builder/help/help_sub_sprite-dark.png";
 import addImg from "../../../../Image/builder/help/help_sub_add.png";
 import addDarkImg from "../../../../Image/builder/help/help_sub_add-dark.png";
-import menuImg from "../../../../Image/builder/help/help_sub_menu.svg";
-import menuDarkImg from "../../../../Image/builder/help/help_sub_menu-dark.svg";
+import menuImg from "../../../../Image/builder/help/help_sub_menu.png";
+import menuDarkImg from "../../../../Image/builder/help/help_sub_menu-dark.png";
 import previewImg from "../../../../Image/builder/help/help_sub_preview.png";
 import previewDarkImg from "../../../../Image/builder/help/help_sub_preview-dark.png";
 import playImg from "../../../../Image/builder/help/help_sub_play.svg";
@@ -18,7 +18,7 @@ import publishDarkImg from "../../../../Image/builder/help/help_sub_publish-dark
 export default [
   {
     type: "main",
-    display:"start",
+    display: "start",
     title: "빌더에 온걸 환영해요!",
     title_localized: {
       zh: "欢迎来到WIZ LAB Builder！",
@@ -64,10 +64,10 @@ export default [
       img: codeImg,
       darkImg_ko: codeDarkImg,
       darkImg_en: codeDarkImg_en,
-      darkImg_ja: codeDarkImg_ja, 
+      darkImg_ja: codeDarkImg_ja,
       width: "953px",
       height: "279px",
-      
+
       top: "42px",
       left: "171px"
     }
@@ -224,7 +224,7 @@ export default [
   },
   {
     type: "main",
-    display:"end",
+    display: "end",
     title: "축하해요!",
     title_localized: {
       en: "Congratulations!",
