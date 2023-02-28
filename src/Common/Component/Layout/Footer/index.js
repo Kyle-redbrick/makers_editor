@@ -31,45 +31,40 @@ class Footer extends Component {
       {
         id: "Terms",
         title: this.props.intl.formatMessage({
-          id: "ID_FOOTER_TERMS"
+          id: "ID_FOOTER_TERMS",
         }),
-        text: termDoc
+        text: termDoc,
       },
       {
         id: "Privacy",
         title: this.props.intl.formatMessage({
-          id: "ID_FOOTER_PRIVACY"
+          id: "ID_FOOTER_PRIVACY",
         }),
-        text: privacyDoc
+        text: privacyDoc,
       },
-    ]
+    ];
   }
 
-  onClickShowAgreement = id => {
-    const agreement = this.agreements.find(agreement => agreement.id === id);
+  onClickShowAgreement = (id) => {
+    const agreement = this.agreements.find((agreement) => agreement.id === id);
     showPopUp(
-      <PopUp.Agreement
-        title={agreement.title}
-        content={agreement.text}
-      />
+      <PopUp.Agreement title={agreement.title} content={agreement.text} />
     );
-  }
+  };
 
   render() {
-    const {
-      agreements,
-      onClickShowAgreement
-    } = this;
+    const { agreements, onClickShowAgreement } = this;
     return (
       <div className="Footer">
         <div className="Footer--Inner">
           <div className="Footer--Inner__term-row">
             {agreements.map((agreement, index) => (
-              <div className="Agreement" key={index}
-                onClick={() => onClickShowAgreement(agreement.id)}>
-                <div className={agreement.id}>
-                  {agreement.title}
-                </div>
+              <div
+                className="Agreement"
+                key={index}
+                onClick={() => onClickShowAgreement(agreement.id)}
+              >
+                <div className={agreement.id}>{agreement.title}</div>
               </div>
             ))}
           </div>
@@ -79,15 +74,11 @@ class Footer extends Component {
                 <FormattedMessage id="ID_HOME_COPY_INFO" />
               </div>
 
-              <div className="Info-email">
-                Email: acg@mangosteems.com
-              </div>
+              <div className="Info-email">Email: acg@mangosteems.com</div>
               <img className="Logo" src={logo_gray} alt="logo" />
             </div>
-            
-            <div className="Agreement Info-email">
-              ©Tezuka Productions
-            </div>
+
+            <div className="Agreement Info-email">©Tezuka Productions</div>
           </div>
         </div>
       </div>

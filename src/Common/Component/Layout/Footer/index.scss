@@ -14,14 +14,15 @@
     justify-content: center;
     color: #808080;
   }
-  .Footer--Inner__term-row, .Footer--Inner__info-row {
+  .Footer--Inner__term-row,
+  .Footer--Inner__info-row {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
   }
   .Footer--Inner__info-row {
     justify-content: space-between;
-    margin-top:10px;
+    margin-top: 10px;
   }
   .Logo {
     position: absolute;
@@ -33,14 +34,15 @@
   .Terms {
     font-size: 13px;
     font-weight: bold;
+    cursor: pointer;
   }
   .Privacy {
     padding: 0;
     font-size: 13px;
     font-weight: bold;
+    cursor: pointer;
   }
   .Agreement {
-    cursor: pointer;
     position: relative;
     color: inherit;
     font-size: 13px;
@@ -50,7 +52,7 @@
     margin-right: 24px;
 
     &::after {
-      content: '';
+      content: "";
       position: absolute;
       top: 50%;
       right: -12px;
@@ -61,14 +63,17 @@
     }
 
     &.Info-email {
-      margin-right:0;
+      margin-right: 0;
       &:after {
         display: none;
       }
     }
   }
 
-  .Info--Copy, .Info--Call, .Info--Service-time, .Info-email {
+  .Info--Copy,
+  .Info--Call,
+  .Info--Service-time,
+  .Info-email {
     font-size: 13px;
     margin-right: 20px;
   }
@@ -82,7 +87,6 @@
     align-items: center;
     flex-wrap: wrap;
   }
-  
 
   @media screen and (max-width: 1169px) {
     display: block;
@@ -92,14 +96,15 @@
       height: auto;
       padding: 30px 21px;
     }
-    .Terms, .Privacy {
+    .Terms,
+    .Privacy {
       display: inline-block;
     }
-    .Privacy a:after{
+    .Privacy a:after {
       display: none;
     }
     .Info--Copy {
-      margin-right:20px;
+      margin-right: 20px;
     }
     .Info--Service-time {
       white-space: pre-wrap;
