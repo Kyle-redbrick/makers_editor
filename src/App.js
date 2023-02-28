@@ -3,7 +3,7 @@ import {
   withRouter,
   BrowserRouter as Router,
   Route,
-  Redirect
+  Redirect,
 } from "react-router-dom";
 import QueryString from "query-string";
 import { ToastContainer } from "react-toastify";
@@ -77,23 +77,36 @@ const App = () => {
 
   const token = localStorage.getItem("wizToken");
   const lang = localStorage.getItem("lang");
+
+  const vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty("--vh", `${vh}px`);
+
+  window.addEventListener("resize", () => {
+    console.log("resize");
+    const vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty("--vh", `${vh}px`);
+  });
   return (
     <Router>
       <Suspense fallback={<SplashView />}>
-        <div className={`${lang}`} style={{ backgroundColor: "#282c36" }} lang={lang}>
-          {token ?
+        <div
+          className={`${lang}`}
+          style={{ backgroundColor: "#282c36" }}
+          lang={lang}
+        >
+          {token ? (
             <Route
               exact
               path="/"
               render={() => <HandleQueryString Component={Learn} />}
             />
-            :
+          ) : (
             <Route
               exact
               path="/"
               render={() => <HandleQueryString Component={Intro} />}
             />
-          }
+          )}
 
           <Route exact path="/tutorial" component={Tutorial} />
           <Route
@@ -115,7 +128,7 @@ const App = () => {
               "/ocp2/block/:grade/:step",
               "/ocp2/js/:type/:grade/:step",
               "/dreamclass/:id",
-              "/dreamclass/:id/:email"
+              "/dreamclass/:id/:email",
             ]}
             render={() => <HandleQueryString Component={Builder} />}
           />
@@ -124,7 +137,7 @@ const App = () => {
             path={[
               "/builder3d",
               "/builder3d/:pId",
-              "/builder3d/:pId/:templateId"
+              "/builder3d/:pId/:templateId",
             ]}
             component={Builder3D}
           />
@@ -289,7 +302,9 @@ const App = () => {
           <Route
             exact
             path="/lms/questions/update/:id"
-            render={props => <LMS path={PAGE.QNA_UPDATE} item={props.location.state} />}
+            render={(props) => (
+              <LMS path={PAGE.QNA_UPDATE} item={props.location.state} />
+            )}
           />
           <Route
             exact
@@ -302,7 +317,11 @@ const App = () => {
             render={() => <HandleQueryString Component={CourseDetail} />}
           />
           <Route exact path="/courses" component={Courses} />
-          <Route exact path="/pythonPage/:myDreamProjectId" component={PythonPage} />
+          <Route
+            exact
+            path="/pythonPage/:myDreamProjectId"
+            component={PythonPage}
+          />
           <Route exact path="/ranking" component={Ranking} />
         </div>
         <ToastContainer />
