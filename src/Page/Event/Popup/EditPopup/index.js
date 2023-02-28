@@ -1,54 +1,55 @@
-import React, { useState, useEffect } from 'react';
-import CloseIcon from "../../../../Image/icon-close.svg"
+import React, { useState } from "react";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
 import "./index.scss";
 import * as request from "../../../../Common/Util/HTTPRequest";
 import { FormattedMessage, injectIntl } from "react-intl";
 
 function EditPopup(props) {
-
-  return (
-    <div>
-      {props.id == "name" ? <EditName {...props} /> : <EditNickname {...props} />}
-    </div>
-  )
+  return <div>{props.id == "name" ? <EditName {...props} /> : <EditNickname {...props} />}</div>;
 }
 
 const EditName = (props) => {
-  const [warnText, setWarnText] = useState({ "warnName": "", "warnRes": "" });
-  let name = ""
-  let firstName = ""
-  let nameData = undefined
+  const [warnText, setWarnText] = useState({ warnName: "", warnRes: "" });
+  let nameData = undefined;
 
-  const onClickSubmit = async () => {
+  const schema = yup.object().shape({
+    name: yup.string().required(),
+    familyname: yup.string().required(),
+  });
 
+  const editForm = useForm({
+    mode: "all",
+    resolver: yupResolver(schema),
+  });
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = editForm;
+
+  const { name: name_error, familyname: familyname_error } = errors;
+
+  const onClickSubmit = async ({ name, familyname }) => {
     if (name.length > 0 && name.length < 31) {
-      nameData = await request.modifyName({ "section": "name", "familyname": firstName, "givenname": name })
+      nameData = await request.modifyName({ section: "name", familyname, givenname: name });
       if (nameData.success) {
-        props.updateUserInfo({ "fullname": { "family": firstName, "given": name }, "name": nameData.body.newValue });
-        props.dismiss()
+        props.updateUserInfo({ fullname: { family: familyname, given: name }, name: nameData.body.newValue });
+        props.dismiss();
       } else {
-        setWarnText({ "warnName": "name.length > 0 && name.length < 31" })
+        setWarnText({ warnName: "name.length > 0 && name.length < 31" });
       }
     } else {
       if (nameData) {
-        setWarnText({ "warnRes": nameData.reason })
+        setWarnText({ warnRes: nameData.reason });
       }
     }
-  }
-  const onChangeValue = (e) => {
-    const { id, value } = e.target;
-    switch (id) {
-      case "name":
-        name = value
-        break
-      case "firstName":
-        firstName = value
-        break
-    }
-  }
+  };
 
   return (
-    <div className="edit-popup__inner">
+    <form className="edit-popup__inner" onSubmit={handleSubmit(onClickSubmit)}>
       <div className="edit-popup__head">
         <h3 className="edit-popup__title">
           <FormattedMessage id="ID_ACCOUNT_EDIT_NAME_POPUP_TITLE" />
@@ -63,9 +64,15 @@ const EditName = (props) => {
             </span>
             <div className="edit-popup__right">
               <FormattedMessage id="ID_ACCOUNT_EDIT_NAME_POPUP_ENTER_GIVEN_NAME">
-                {placeholder =>
-                  <input id="name" type="text" placeholder={placeholder} className="edit-popup__input" onChange={onChangeValue} />
-                }
+                {(placeholder) => (
+                  <input
+                    id="name"
+                    type="text"
+                    placeholder={placeholder}
+                    className={`edit-popup__input ${name_error ? "error" : ""}`}
+                    {...register("name")}
+                  />
+                )}
               </FormattedMessage>
               <p className="edit-popup__input-help">{warnText.warnName}</p>
             </div>
@@ -76,9 +83,15 @@ const EditName = (props) => {
             </span>
             <div className="edit-popup__right">
               <FormattedMessage id="ID_ACCOUNT_EDIT_NAME_POPUP_ENTER_FAMILY_NAME">
-                {placeholder =>
-                  <input id="firstName" type="text" placeholder={placeholder} className="edit-popup__input" onChange={onChangeValue} />
-                }
+                {(placeholder) => (
+                  <input
+                    id="firstName"
+                    type="text"
+                    placeholder={placeholder}
+                    className={`edit-popup__input ${familyname_error ? "error" : ""}`}
+                    {...register("familyname")}
+                  />
+                )}
               </FormattedMessage>
             </div>
           </div>
@@ -87,46 +100,55 @@ const EditName = (props) => {
 
       <p className="edit-popup__input-help">{warnText.warnFristName}</p>
       <div className="edit-popup__footer">
-        <button className="edit-popup__submit-btn" type="submit" onClick={onClickSubmit}>
+        <button className="edit-popup__submit-btn" type="submit">
           <FormattedMessage id="ID_COMMON_APPLY" />
         </button>
       </div>
-    </div>
-  )
-}
+    </form>
+  );
+};
 
 const EditNickname = (props) => {
+  const [warnText, setWarnText] = useState({ warnName: "", warnRes: "" });
+  let nickName = "";
+  let nickNameData = undefined;
 
-  const [warnText, setWarnText] = useState({ "warnName": "", "warnRes": "" });
-  let nickName = ""
-  let nickNameData = undefined
+  const schema = yup.object().shape({
+    nickname: yup.string().required(),
+  });
 
-  const onClickSubmit = async () => {
+  const editForm = useForm({
+    mode: "all",
+    resolver: yupResolver(schema),
+  });
 
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = editForm;
+
+  const { nickname: nickname_error } = errors;
+
+  const onClickSubmit = async ({ nickname }) => {
     if (nickName.length > 0 && nickName.length < 31) {
-
-      nickNameData = await request.modifyName({ "section": "nickname", "nickname": nickName, })
+      nickNameData = await request.modifyName({ section: "nickname", nickname });
       if (nickNameData.success) {
-        props.updateUserInfo({ nickName: nickName });
-        setWarnText({ "warnName": "", "warnRes": "" })
-        props.dismiss()
+        props.updateUserInfo({ nickName: nickname });
+        setWarnText({ warnName: "", warnRes: "" });
+        props.dismiss();
       } else {
-        setWarnText({ "warnRes": "err" })
+        setWarnText({ warnRes: "err" });
       }
     } else {
       if (nickNameData) {
-        setWarnText({ "warnRes": nickNameData.reason })
+        setWarnText({ warnRes: nickNameData.reason });
       }
     }
-
-  }
-  const onChangeValue = (e) => {
-    const { value } = e.target;
-    nickName = value
-  }
+  };
 
   return (
-    <div className="edit-popup__inner">
+    <form className="edit-popup__inner" onSubmit={handleSubmit(onClickSubmit)}>
       <div className="edit-popup__head">
         <h3 className="edit-popup__title">
           <FormattedMessage id="ID_ACCOUNT_EDIT_NICKNAME_POPUP_TITLE" />
@@ -141,9 +163,14 @@ const EditNickname = (props) => {
             </span>
             <div className="edit-popup__right">
               <FormattedMessage id="ID_ACCOUNT_EDIT_NICKNAME_POPUP_ENTER_NICKNAME">
-                {placeholder =>
-                  <input type="text" placeholder={placeholder} className="edit-popup__input" onChange={onChangeValue} />
-                }
+                {(placeholder) => (
+                  <input
+                    type="text"
+                    placeholder={placeholder}
+                    className={`edit-popup__input ${nickname_error && "error"}`}
+                    {...register("nickname")}
+                  />
+                )}
               </FormattedMessage>
               <p className="edit-popup__input-help">{warnText.warnName}</p>
             </div>
@@ -154,13 +181,12 @@ const EditNickname = (props) => {
       <p className="edit-popup__input-help">{warnText.warnRes}</p>
 
       <div className="edit-popup__footer">
-        <button className="edit-popup__submit-btn" type="submit" onClick={onClickSubmit}>
+        <button className="edit-popup__submit-btn" type="submit">
           <FormattedMessage id="ID_COMMON_APPLY" />
         </button>
       </div>
-    </div>
-  )
-}
+    </form>
+  );
+};
 
 export default injectIntl(EditPopup);
-

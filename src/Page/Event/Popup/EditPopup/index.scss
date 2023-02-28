@@ -85,9 +85,14 @@
   height: 47px;
   color: #fff;
 
-  &:focus, &:active {
+  &:focus,
+  &:active {
     border-color: #fff;
     outline: none;
+  }
+
+  &.error {
+    border-color: #ff6f44;
   }
 }
 
