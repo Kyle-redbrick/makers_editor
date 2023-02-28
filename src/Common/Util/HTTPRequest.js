@@ -11,8 +11,8 @@ export const fetchRequest = (url, method, param) => {
     headers["Pragma"] = "no-cache";
   }
 
-  if (localStorage.getItem("wizToken")) {
-    headers["Authorization"] = localStorage.getItem("wizToken");
+  if (localStorage.getItem("astroToken")) {
+    headers["Authorization"] = localStorage.getItem("astroToken");
   }
 
   headers["locale"] = localStorage.getItem("lang");
@@ -1511,8 +1511,8 @@ export const getMyDreamProjectInfo = id => {
 
 export const dreamUpload = formData => {
   const headers = {};
-  if (localStorage.getItem("wizToken")) {
-    headers["Authorization"] = localStorage.getItem("wizToken");
+  if (localStorage.getItem("astroToken")) {
+    headers["Authorization"] = localStorage.getItem("astroToken");
   }
   headers["locale"] = localStorage.getItem("wizLang");
   return fetch(URL.API_SERVER + "upload/dream", {

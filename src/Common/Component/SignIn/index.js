@@ -42,7 +42,7 @@ class SignIn extends Component {
           if (json.success) {
             TrackingUtil.sendGTMEvent("Login_Success");
 
-            localStorage.setItem("wizToken", json.body.token);
+            localStorage.setItem("astroToken", json.body.token);
             this.props.updateUserInfo(json.body.user);
 
             window.location = "/learn";

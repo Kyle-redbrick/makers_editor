@@ -76,7 +76,7 @@ class UserInfoContainer extends React.Component {
         }
       } else if (e.data.type === "token") {
         if (e.data.data) {
-          localStorage.setItem("wizToken", e.data.data);
+          localStorage.setItem("astroToken", e.data.data);
           this.handleLoginByToken();
         } else {
           this.setState({ wizliveURL: URL.WIZLIVE_WWW });
@@ -88,7 +88,7 @@ class UserInfoContainer extends React.Component {
   };
 
   handleLoginByToken = async e => {
-    const token = localStorage.getItem("wizToken");
+    const token = localStorage.getItem("astroToken");
     // console.log("login by token", token);
     if (token) {
       const params = { token };
@@ -99,24 +99,24 @@ class UserInfoContainer extends React.Component {
         if (json.user) {
           let user = json.user;
           user.payment = json.payment;
-          localStorage.setItem("wizToken", json.token);
+          localStorage.setItem("astroToken", json.token);
           this.props.updateUserInfo(user);
           this.setState({ mounted: true });
         } else {
           // console.log("user not found");
-          // localStorage.removeItem("wizToken");
+          // localStorage.removeItem("astroToken");
           this.props.updateUserInfo();
           this.setState({ mounted: true });
         }
       } catch (err) {
         // console.log("request failed");
-        // localStorage.removeItem("wizToken");
+        // localStorage.removeItem("astroToken");
         this.props.updateUserInfo();
         this.setState({ mounted: true });
       }
     } else {
       // console.log("token not found");
-      // localStorage.removeItem("wizToken");
+      // localStorage.removeItem("astroToken");
       this.props.updateUserInfo();
       this.setState({ mounted: true });
     }
@@ -144,7 +144,7 @@ class UserInfoContainer extends React.Component {
   handleWindowFocus = e => {
     const isNeedUpdate = this.windowFocused === false;
     this.windowFocused = true;
-    const token = localStorage.getItem("wizToken");
+    const token = localStorage.getItem("astroToken");
     if (token) {
       const json = this.parseJwt(token);
       const tokenEmail = json.email;
@@ -171,7 +171,7 @@ class UserInfoContainer extends React.Component {
     const params = QueryString.parse(window.location.search);
     const { loginToken } = params;
     if (loginToken) {
-      localStorage.setItem("wizToken", loginToken);
+      localStorage.setItem("astroToken", loginToken);
       const replaceUrl = window.location.href.split("?")[0];
       window.history.replaceState({}, undefined, replaceUrl);
     }

@@ -45,7 +45,8 @@ const Container = (props) => {
   const handleSignupSubmit = () => {
     const params = {
       email: getValues("email"),
-      name: getValues("name") + " " + getValues("lastName"),
+      familyname: getValues("lastName"),
+      name: getValues("name"),
       nickName: getValues("nickName"),
       password: sha256(getValues("password")),
     };
@@ -59,12 +60,12 @@ const Container = (props) => {
             .loginByToken({ token: res.body.token })
             .then((res) => res.json())
             .then((json) => {
-              if (json.token && json.success) {
-                localStorage.setItem("wizToken", json.token);
+              if (json.token) {
+                localStorage.setItem("astroToken", json.token);
                 props.updateUserInfo(json.user);
                 props.dismiss();
               }
-            });
+            })
         } else {
           setSubmitErr(res.reason);
         }

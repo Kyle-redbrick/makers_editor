@@ -140,13 +140,13 @@ const View = ({
           </div>
         </div>
 
-        <div className="popup_warning">{submitErr}</div>
+        {submitErr && <div className="popup_warning">Internal Server Error</div>}
 
-        {submitErr &&
+        {/* {submitErr &&
           <p className="popup_exist_email_warning">
             {intl.formatMessage({ id: "ID_SIGN_UP_EXIST_EMAIL_WARNING" })}
           </p>
-        }
+        } */}
 
         <div className="popup__btn-box">
           <button

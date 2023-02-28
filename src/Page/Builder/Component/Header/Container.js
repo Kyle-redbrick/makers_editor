@@ -143,7 +143,7 @@ class Container extends Component {
   };
 
   handleLogout = () => {
-    localStorage.removeItem("wizToken");
+    localStorage.removeItem("astroToken");
     this.props.updateUserInfo();
   };
 

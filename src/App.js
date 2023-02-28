@@ -75,7 +75,7 @@ const App = () => {
     AOS.refresh();
   }, []);
 
-  const token = localStorage.getItem("wizToken");
+  const token = localStorage.getItem("astroToken");
   const lang = localStorage.getItem("lang");
 
   const vh = window.innerHeight * 0.01;

@@ -28,7 +28,7 @@ const GoogleSignIn = (props) => {
       const json = await request.loginByGoogle(params);
 
       if(json.success) {
-        localStorage.setItem("wizToken", json.body.token);
+        localStorage.setItem("astroToken", json.body.token);
         props.updateUserInfo(json.user);
         window.location = "/learn";
       } else {

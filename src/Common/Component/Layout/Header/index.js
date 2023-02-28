@@ -85,7 +85,7 @@ class Header extends Component {
   };
 
   checkLogin = (e) => {
-    const isLoggedIn = localStorage.getItem("wizToken");
+    const isLoggedIn = localStorage.getItem("astroToken");
     if (!isLoggedIn) {
       e.preventDefault();
       showPopUp(<LoginAlertPopup />, {
@@ -117,7 +117,7 @@ class Header extends Component {
   };
 
   onClickLogout = () => {
-    localStorage.removeItem("wizToken");
+    localStorage.removeItem("astroToken");
     this.props.updateUserInfo();
     this.handleToggleMobileMenu();
   };

@@ -75,7 +75,7 @@ class DropDown extends Component {
   };
 
   onClickLogout = () => {
-    localStorage.removeItem("wizToken");
+    localStorage.removeItem("astroToken");
     this.props.updateUserInfo();
     this.props.history.push({
       pathname: "/intro"

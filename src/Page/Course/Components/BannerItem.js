@@ -115,7 +115,7 @@ const Desc = styled.p`
 const BannerItem = ({ item, ...props }) => {
 
   const checkLogin = (e) => {
-  const isLoggedIn = localStorage.getItem("wizToken");
+  const isLoggedIn = localStorage.getItem("astroToken");
   if(!isLoggedIn && item.link!="/intro") {
     e.preventDefault();
     Popup.showPopUp(<LoginAlertPopup />, {
