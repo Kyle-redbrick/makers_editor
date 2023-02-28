@@ -1,5 +1,4 @@
 .builder--home {
-  position: fixed;
   background: var(--W_White);
   left: 0;
   top: 0;
@@ -7,22 +6,28 @@
   width: 100%;
   z-index: 30;
 
+  .builder--home__inner {
+    height: 100%;
+  }
+
   .home--content {
     display: flex;
     flex-direction: row;
-    height: 100vh;
+    height: 100%;
   }
   .content--left {
     width: 269px;
-    padding: 42px 30px 0;
+    padding: 42px 30px;
     background: #393e4f;
     box-shadow: 2px 0 10px 0 rgba(40, 44, 54, 0.5);
+    position: fixed;
+    top: 0;
+    bottom: 0;
   }
   .content--right {
     width: calc(100vw - 269px);
-    padding-top: 42px;
-    padding-right: 45px;
-    padding-left: 45px;
+    padding: 42px 45px;
+    margin-left: auto;
 
     background: #2f3443;
     overflow-y: auto;
