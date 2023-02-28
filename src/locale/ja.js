@@ -28,6 +28,7 @@ const ja = {
   ID_COMMON_TOTAL: "合計",
   ID_COMMON_MISSION: "ミッション",
   ID_COMMON_CONFIRM: "確認",
+  ID_COMMON_NOT_AVAILABLE: "ご利用いただけません。",
   ID_TUTORIAL_POPUP_TITLE: "Do you not know what to do?",
   ID_HOME_MAIN_CREATE: "Create",
   ID_HOME_BANNER_DETAIL:

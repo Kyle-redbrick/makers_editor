@@ -4,7 +4,7 @@ import { useHistory, withRouter } from "react-router-dom";
 import { FormattedMessage, injectIntl } from "react-intl";
 import styled from "@emotion/styled";
 import { URL, USER_TYPE } from "../../../Common/Util/Constant";
-import Button, { LinkButton as OrigLinkButton } from "./Button";
+import Button from "./Button";
 import ProjectComponent from "./Project";
 import { showPopUp } from "../../../Common/Component/PopUp";
 import CertificateForm from "../PopUp/CertificateForm";
@@ -248,7 +248,7 @@ const Lecture = memo(({ course, ...props }) => {
 
   const goToLearn = () => {
     if (props.userType === USER_TYPE.SUPER_ADMIN) {
-      alert("Not available")
+      alert(props.intl.formatMessage({ id: "ID_COMMON_NOT_AVAILABLE" }))
       return;
     }
     history.push(`/course/${course.course.lectureId}`)
@@ -293,7 +293,7 @@ const Lecture = memo(({ course, ...props }) => {
         </ButtonWrap>
 
         <ButtonWrap>
-          <LinkButton to={`/course/${course.course.lectureId}`}>
+          <LinkButton onClick={goToLearn}>
             <FormattedMessage id="ID_LMS_GO" />
           </LinkButton>
 
