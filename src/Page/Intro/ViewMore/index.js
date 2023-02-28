@@ -1,5 +1,4 @@
 import React from "react";
-import { HashLink } from 'react-router-hash-link';
 import AtomImg from "../../../Image/img-atom.png";
 import MoreIcon from "../../../Image/btn_arrow_right.svg";
 import CharacterImg from "../../../Image/img_left-character.png";
@@ -9,9 +8,10 @@ import { Link } from "react-router-dom";
 import "./index.scss";
 
 function ViewMore() {
-  const contact = document.querySelector(".contact")
 
   const goToContact = () => {
+    const contact = document.querySelector(".contact")
+
     contact.scrollIntoView()
   }
   return (
