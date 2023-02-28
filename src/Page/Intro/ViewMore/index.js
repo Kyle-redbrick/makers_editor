@@ -11,7 +11,6 @@ function ViewMore() {
 
   const goToContact = () => {
     const contact = document.querySelector(".contact")
-
     contact.scrollIntoView()
   }
   return (
