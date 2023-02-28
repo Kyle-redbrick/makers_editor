@@ -5,9 +5,8 @@ import { postMyDreamProject } from "../../Util/HTTPRequest";
 import * as Popup from "../PopUp";
 import IntroPopup from "../../../Page/CourseDetail/Components/IntroPopup";
 import AlertPopup from "../../../Page/CourseDetail/Components/AlertPopup";
-import LoginAlertPopup from "../PopUp/LoginAlertPopup";
 import { isMobileOnly } from "react-device-detect";
-import { FormattedMessage, useIntl } from "react-intl";
+import { useIntl } from "react-intl";
 import ImgBtnLock from "../../../Image/my-lecture-btn-lock.svg";
 
 const Self = styled.button`
@@ -130,7 +129,6 @@ const getRedirectURLOf = (myDreamProject) => {
 };
 
 export const Learn = ({ id: projectId, isShowVideo, videoURL, lectureId, title, fixed, ...props }) => {
-  console.log(title);
   const handleClick = useCallback(() => {
     // if(isShowVideo){
     //   Popup.showPopUp(<IntroPopup btnAction={onClickSkipBtn} url={videoURL} />, {
@@ -162,7 +160,6 @@ export const Learn = ({ id: projectId, isShowVideo, videoURL, lectureId, title, 
 
           if (isShowVideo) {
             Popup.showPopUp(<IntroPopup redirectURL={redirectURL} url={videoURL} />, {
-              dismissButton: false,
               defaultPadding: false,
               darkmode: true,
               mobileFullscreen: true,
