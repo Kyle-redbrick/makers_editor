@@ -2,9 +2,7 @@ import React, { useCallback, useEffect, useRef, useState } from "react";
 import { FormattedMessage } from "react-intl";
 import styled from "@emotion/styled";
 import * as Popup from "../../../Common/Component/PopUp";
-
-import IMAGE from "./../Constants/Images";
-// import { Bar } from "recharts";
+import IMAGE from "../Constants/Images";
 
 const Self = styled.div`
   position: relative;
@@ -17,7 +15,7 @@ const Self = styled.div`
 const Content = styled.div`
   padding: 30px 20px 40px;
   text-align: center;
-`
+`;
 
 const Button = styled.button`
   width: 370px;
@@ -35,7 +33,7 @@ const Button = styled.button`
   &:focus {
     outline: none;
   }
-`
+`;
 
 const LearnVideoWrap = styled.div`
   height: 321px;
@@ -43,7 +41,7 @@ const LearnVideoWrap = styled.div`
   overflow: hidden;
   border-radius: 16px 16px 0 0;
   overflow: hidden;
-`
+`;
 
 const Video = styled.video`
   min-width: 100%;
@@ -54,16 +52,16 @@ const Video = styled.video`
   -webkit-transform: translateX(-50%) translateY(-50%);
   transform: translateX(-50%) translateY(-50%);
   outline: none;
-`
+`;
 
-const VideoSource = styled.source``
+const VideoSource = styled.source``;
 
 const PlayButton = styled.div`
   position: absolute;
   cursor: pointer;
   width: 64px;
   height: 64px;
-  background-image: url(${IMAGE.ICON_PLAY});
+  background-image: url(${IMAGE.ICON_REPLAY});
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -71,14 +69,10 @@ const PlayButton = styled.div`
   left: 50%;
   margin-left: -32px;
   margin-top: -32px;
+`;
 
-  ${(props) => props.playing && `
-    display: none;
-  `} 
-`
-
-const IntroPopup = ({ redirectURL ,id, url, type }) => {
-  const videoRef = useRef();
+const IntroPopup = ({ redirectURL, id, url, type }) => {
+  const videoRef = useRef(null);
   const [playing, setPlaying] = useState(false);
 
   useEffect(() => {
@@ -86,59 +80,52 @@ const IntroPopup = ({ redirectURL ,id, url, type }) => {
 
     return () => {
       setPlaying(false);
-    }
+    };
   }, []);
 
-  const goToLearn = useCallback(
-    () => {
-      Popup.hidePopUp();
-      window.open(redirectURL, "_blank");
-    },
-    [Popup.hidePopUp]
-  );
+  const goToLearn = useCallback(() => {
+    Popup.hidePopUp();
+    window.open(redirectURL, "_blank");
+  }, [Popup.hidePopUp]);
 
   const playVideo = useCallback(() => {
     videoRef.current.play();
     setPlaying(true);
   }, [videoRef]);
 
-  // const endVideo = useCallback(
-  //   () => {
-  //     Popup.hidePopUp();
-  //     //window.open(url, "_blank");
-  //     window.open(redirectURL, "_blank");
-  //   },
-  //   [Popup.hidePopUp]
-  // );
+  const endVideo = () => {
+    setPlaying(false);
+  };
 
-  
   const videoSrc = (type) => {
     if (type === "oobc") return "/oobc_intro.mp4";
     if (type === "javascript") return "/js_intro.mp4";
     if (type === "python") return "/python_intro.mp4";
-    if (type === "learning_oobc_c1") return "/oobc_outro.mp4"; 
-    if (type === "learning_js_c1") return "/js_outro.mp4"; 
-    if (type === "learning_python_c1") return "/python_outro.mp4"; 
+    if (type === "learning_oobc_c1") return "/oobc_outro.mp4";
+    if (type === "learning_js_c1") return "/js_outro.mp4";
+    if (type === "learning_python_c1") return "/python_outro.mp4";
     return "";
-  }
+  };
 
   const buttonText = () => {
-    if (type === "learning_oobc_c1") return <FormattedMessage id="ID_COURSE_DETAIL_SKIP_LEAVE_BTN" />
-    if (type === "learning_js_c1") return <FormattedMessage id="ID_COURSE_DETAIL_SKIP_LEAVE_BTN" />
-    if (type === "learning_python_c1") return <FormattedMessage id="ID_COURSE_DETAIL_SKIP_LEAVE_BTN" />
-    return <FormattedMessage id="ID_COURSE_DETAIL_SKIP_BTN" />
-  }
+    if (type === "learning_oobc_c1") return <FormattedMessage id="ID_COURSE_DETAIL_SKIP_LEAVE_BTN" />;
+    if (type === "learning_js_c1") return <FormattedMessage id="ID_COURSE_DETAIL_SKIP_LEAVE_BTN" />;
+    if (type === "learning_python_c1") return <FormattedMessage id="ID_COURSE_DETAIL_SKIP_LEAVE_BTN" />;
+    return <FormattedMessage id="ID_COURSE_DETAIL_SKIP_BTN" />;
+  };
 
   return (
     <Self>
       <LearnVideoWrap>
-        <Video controls={true} ref={videoRef} >
+        <Video controls ref={videoRef} onEnded={endVideo}>
           <VideoSource src={url} />
         </Video>
-        <PlayButton playing={playing} onClick={playVideo} />
+        {!playing && <PlayButton onClick={playVideo} />}
       </LearnVideoWrap>
       <Content>
-          <Button type="button" onClick={goToLearn}>{buttonText()}</Button>
+        <Button type="button" onClick={goToLearn}>
+          {buttonText()}
+        </Button>
       </Content>
     </Self>
   );

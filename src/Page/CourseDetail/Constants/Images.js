@@ -3,7 +3,6 @@ import badgeJs from "../../../Image/course/tag-js.svg";
 import badgePuzzle from "../../../Image/course/tag-puzzle.svg";
 import badgePython from "../../../Image/course/tag-python.svg";
 
-
 import iconCheck from "../../../Image/course/icon-check.svg";
 import iconClose from "../../../Image/course/icon-close.svg";
 import iconJoystick from "../../../Image/course/icon-joystick.svg";
@@ -22,8 +21,9 @@ import iconView from "../../../Image/count_view.svg";
 import iconComment from "../../../Image/count_comment.svg";
 
 import iconPlay from "../../../Image/course/icon-play.svg";
+import iconReplay from "../../../Image/course/icon-replay.svg";
 
-import iconAlert from "../../../Image/course/icon-alert.svg"
+import iconAlert from "../../../Image/course/icon-alert.svg";
 
 const IMAGE = {
   ARROW_LINK: arrowLink,
@@ -49,8 +49,9 @@ const IMAGE = {
   ICON_VIEW: iconView,
   ICON_COMMENT: iconComment,
 
-  ICON_PLAY: iconPlay, 
-  ICON_ALERT: iconAlert
-} 
+  ICON_PLAY: iconPlay,
+  ICON_REPLAY: iconReplay,
+  ICON_ALERT: iconAlert,
+};
 
 export default IMAGE;
