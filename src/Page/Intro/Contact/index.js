@@ -1,5 +1,4 @@
 import React from "react";
-import {useState, useEffect} from "react";
 import {FormattedMessage, injectIntl, useIntl} from "react-intl";
 import * as request from "../../../Common/Util/HTTPRequest";
 import PopUp, {showPopUp} from "../../../Common/Component/PopUp";
@@ -123,7 +122,7 @@ const SelectBox = ({num, title, list}) => {
 
 const InputText = ({num, title}) => {
   return (
-    <div className="contact_form_input">
+    <div>
       <TitleArea num={num} title={title} />
       <input className="contact_input" type="text" />
     </div>
