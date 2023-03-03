@@ -99,16 +99,18 @@
   gap: 16px;
 }
 
-.contact_select_label {
+.contact_select_label,
+.contact_checkbox {
   box-sizing: border-box;
   position: relative;
   display: block;
   padding-left: 16px;
   font-size: 13px;
-  cursor: pointer;
   white-space: nowrap;
+  cursor: pointer;
 
-  input[type="radio"] {
+  input[type="radio"],
+  input[type="checkbox"] {
     appearance: none;
   }
 
@@ -124,7 +126,8 @@
     border-radius: 2px;
   }
 
-  input[type="radio"]:checked ~ .contact_select_check_mark {
+  input[type="radio"]:checked ~ .contact_select_check_mark,
+  input[type="checkbox"]:checked ~ .contact_select_check_mark {
     border: 1.4px solid #1e67fc;
     border-radius: 2px;
     &:after {
@@ -182,6 +185,7 @@
 }
 
 .contact_checkbox {
+  color: #aeaeae;
   span {
     color: rgba(30, 103, 252, 1);
     text-decoration: underline;

@@ -83,6 +83,7 @@ const Form = () => {
         <input type="checkbox" id="agree" />I agree to the{" "}
         <span onClick={() => onClickLink("term")}>Terms of Use</span> and{" "}
         <span onClick={() => onClickLink("policy")}>Privacy Policy</span>
+        <span className="contact_select_check_mark" />
       </label>
       <button
         className={`contact_submit_btn ${false ? "active" : ""}`}
