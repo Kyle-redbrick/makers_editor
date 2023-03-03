@@ -136,7 +136,8 @@ const ko = {
   ID_FORGOTPW_PLACEHOLDER: "이메일을 입력해주세요",
   ID_FORGOTPW_CONFIRM: "보내기",
   ID_FORGOTPW_WARNING_EMAIL_FORMAT: "* 이메일 주소가 올바르지 않습니다.",
-  ID_FORGOTPW_WARNING_NOT_EXIST_EMAIL: "해당 이메일 주소를 가진 계정이 없습니다",
+  ID_FORGOTPW_WARNING_NOT_EXIST_EMAIL:
+    "해당 이메일 주소를 가진 계정이 없습니다",
   ID_FORGOTPW_SEND_TITLE: "링크를 전송했습니다",
   ID_FORGOTPW_SEND_CONFIRM: "확인",
   ID_CHALLENGE_TITLE: "이달의 게임",
@@ -1498,9 +1499,27 @@ const ko = {
   ID_INTRO_VIEW_MORE_LEFT_TITLE: "Want to know more\nabout the Curriculum?",
   ID_INTRO_VIEW_MORE_RIGHT_TITLE: "Start your free trial\ncourse right now!",
 
-  ID_INTRO_CONTACT_BUTTON_BACK: "Back",
   ID_INTRO_CONTACT_BUTTON_SEND: "Send Message",
-  ID_INTRO_CONTACT_BUTTON_NEXT: "Next",
+
+  ID_INTRO_CONTACT_SUBTITLE1: "Subject",
+  ID_INTRO_CONTACT_SUBTITLE2: "First Name",
+  ID_INTRO_CONTACT_SUBTITLE3: "E-mail",
+  ID_INTRO_CONTACT_SUBTITLE4: "Phone Number",
+  ID_INTRO_CONTACT_SUBTITLE5: "Institution/Organization",
+  ID_INTRO_CONTACT_SUBTITLE6: "How did you find ‘Astro Coding Go!’?",
+  ID_INTRO_CONTACT_SUBTITLE7: "Inquiry",
+
+  ID_INTRO_CONTACT_SUBJECT1: "Registration",
+  ID_INTRO_CONTACT_SUBJECT2: "Project Features",
+  ID_INTRO_CONTACT_SUBJECT3: "Partnership",
+  ID_INTRO_CONTACT_SUBJECT4: "Other",
+
+  ID_INTRO_CONTACT_FIND_REASON1: "Print Flyer",
+  ID_INTRO_CONTACT_FIND_REASON2: "E-mail Marketing",
+  ID_INTRO_CONTACT_FIND_REASON3: "Internet Search",
+  ID_INTRO_CONTACT_FIND_REASON4: "Online Ads",
+  ID_INTRO_CONTACT_FIND_REASON5: "Referral",
+  ID_INTRO_CONTACT_FIND_REASON6: "Other (please specify)",
 
   // 계정 설정
   ID_ACCOUNT_SETTING_TITLE: "계정 설정",

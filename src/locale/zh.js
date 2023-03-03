@@ -1472,9 +1472,28 @@ const zh = {
   ID_INTRO_VIEW_MORE_NOTICE_TITLE: "Teach coding on a fun and exciting way!",
   ID_INTRO_VIEW_MORE_LEFT_TITLE: "Want to know more\nabout the Curriculum?",
   ID_INTRO_VIEW_MORE_RIGHT_TITLE: "Start your free trial\ncourse right now!",
-  ID_INTRO_CONTACT_BUTTON_BACK: "Back",
+
   ID_INTRO_CONTACT_BUTTON_SEND: "Send Message",
-  ID_INTRO_CONTACT_BUTTON_NEXT: "Next",
+
+  ID_INTRO_CONTACT_SUBTITLE1: "Subject",
+  ID_INTRO_CONTACT_SUBTITLE2: "First Name",
+  ID_INTRO_CONTACT_SUBTITLE3: "E-mail",
+  ID_INTRO_CONTACT_SUBTITLE4: "Phone Number",
+  ID_INTRO_CONTACT_SUBTITLE5: "Institution/Organization",
+  ID_INTRO_CONTACT_SUBTITLE6: "How did you find ‘Astro Coding Go!’?",
+  ID_INTRO_CONTACT_SUBTITLE7: "Inquiry",
+
+  ID_INTRO_CONTACT_SUBJECT1: "Registration",
+  ID_INTRO_CONTACT_SUBJECT2: "Project Features",
+  ID_INTRO_CONTACT_SUBJECT3: "Partnership",
+  ID_INTRO_CONTACT_SUBJECT4: "Other",
+
+  ID_INTRO_CONTACT_FIND_REASON1: "Print Flyer",
+  ID_INTRO_CONTACT_FIND_REASON2: "E-mail Marketing",
+  ID_INTRO_CONTACT_FIND_REASON3: "Internet Search",
+  ID_INTRO_CONTACT_FIND_REASON4: "Online Ads",
+  ID_INTRO_CONTACT_FIND_REASON5: "Referral",
+  ID_INTRO_CONTACT_FIND_REASON6: "Other (please specify)",
 
   // 계정 설정
   ID_ACCOUNT_SETTING_TITLE: "Account Settings",
