@@ -1,5 +1,8 @@
-import React, {useState, useEffect} from "react";
+import React from "react";
 import {FormattedMessage, injectIntl, useIntl} from "react-intl";
+import {useForm} from "react-hook-form";
+import * as yup from "yup";
+import {yupResolver} from "@hookform/resolvers/yup";
 import * as request from "../../../Common/Util/HTTPRequest";
 import PopUp, {showPopUp} from "../../../Common/Component/PopUp";
 import "./index.scss";
@@ -32,32 +35,33 @@ export default injectIntl(Contact);
 const Form = () => {
   const intl = useIntl();
 
-  const [isActiveSubmitBtn, setIsActiveSubmitBtn] = useState(false);
-  const [subject, setSubject] = useState(null);
-  const [firstName, setFirstName] = useState(null);
-  const [email, setEmail] = useState(null);
-  const [phone, setPhone] = useState(null);
-  const [organization, setOrganization] = useState(null);
-  const [findReason, setFindReason] = useState(null);
-  const [inquiry, setInquiry] = useState(null);
-  const [agree, setAgree] = useState(null);
+  const schema = yup.object({
+    subject: yup.string().required(),
+    firstName: yup.string().required(),
+    email: yup.string().email().required(),
+    phone: yup.number().required(),
+    organization: yup.string().required(),
+    findReason: yup.string().required(),
+    inquiry: yup.string().required(),
+    agree: yup.bool().oneOf([true]),
+  });
 
-  useEffect(() => {
-    if (
-      subject &&
-      firstName &&
-      email &&
-      phone &&
-      organization &&
-      findReason &&
-      inquiry &&
-      agree
-    ) {
-      setIsActiveSubmitBtn(true);
-    } else {
-      setIsActiveSubmitBtn(false);
-    }
-  }, [
+  const contactForm = useForm({
+    mode: "all",
+    resolver: yupResolver(schema),
+  });
+
+  const {
+    register,
+    handleSubmit,
+    formState: {isValid},
+  } = contactForm;
+
+  const onClickLink = type => {
+    showPopUp(<PopUp.Agreement type={type} />);
+  };
+
+  const onClickSubmit = async ({
     subject,
     firstName,
     email,
@@ -66,87 +70,95 @@ const Form = () => {
     findReason,
     inquiry,
     agree,
-  ]);
-
-  const onClickLink = type => {
-    showPopUp(<PopUp.Agreement type={type} />);
-  };
-
-  const onClickSubmit = async () => {
-    const params = "";
-    const res = await request.sendContact(params);
-    if (res) {
-      showPopUp(
-        <PopUp.OneButton
-          title={
-            res.success
-              ? intl.formatMessage({id: "ID_INTRO_CONTACT_2_SUCCESS"})
-              : res.reason
-          }
-          buttonName={"OK"}
-        />,
-        {darkmode: true},
-      );
+  }) => {
+    if (isValid) {
+      const params = {
+        subject,
+        firstName,
+        email,
+        phone,
+        organization,
+        findReason,
+        inquiry,
+        agree,
+      };
+      const res = await request.sendContact(params);
+      if (res) {
+        showPopUp(
+          <PopUp.OneButton
+            title={
+              res.success
+                ? intl.formatMessage({id: "ID_INTRO_CONTACT_2_SUCCESS"})
+                : res.reason
+            }
+            buttonName={"OK"}
+          />,
+          {darkmode: true},
+        );
+      }
     }
   };
 
   return (
-    <div className="contact_form">
+    <form className="contact_form" onSubmit={handleSubmit(onClickSubmit)}>
       <SelectBox
         intl={intl}
         num={1}
+        name="subject"
         title={intl.formatMessage({id: "ID_INTRO_CONTACT_SUBTITLE1"})}
         list={[...Array(4)].map((_, i) => `ID_INTRO_CONTACT_SUBJECT${i + 1}`)}
-        setState={setSubject}
+        register={register}
       />
       <div className="contact_form_row">
         <InputText
           num={2}
+          name="firstName"
           type="text"
           title={intl.formatMessage({id: "ID_INTRO_CONTACT_SUBTITLE2"})}
-          setState={setFirstName}
+          register={register}
         />
         <InputText
           num={3}
+          name="email"
           type="email"
           title={intl.formatMessage({id: "ID_INTRO_CONTACT_SUBTITLE3"})}
-          setState={setEmail}
+          register={register}
         />
       </div>
       <div className="contact_form_row">
         <InputText
           num={4}
+          name="phone"
           type="tel"
           title={intl.formatMessage({id: "ID_INTRO_CONTACT_SUBTITLE4"})}
-          setState={setPhone}
+          register={register}
         />
         <InputText
           num={5}
+          name="organization"
           type="text"
           title={intl.formatMessage({id: "ID_INTRO_CONTACT_SUBTITLE5"})}
-          setState={setOrganization}
+          register={register}
         />
       </div>
       <SelectBox
         intl={intl}
+        name="findReason"
         num={6}
         title={intl.formatMessage({id: "ID_INTRO_CONTACT_SUBTITLE6"})}
         list={[...Array(6)].map(
           (_, i) => `ID_INTRO_CONTACT_FIND_REASON${i + 1}`,
         )}
-        setState={setFindReason}
+        register={register}
       />
       <TextArea
         num={7}
+        name="inquiry"
         title={intl.formatMessage({id: "ID_INTRO_CONTACT_SUBTITLE7"})}
-        setState={setInquiry}
+        register={register}
       />
-      <label
-        htmlFor="agree"
-        className="contact_checkbox"
-        onChange={() => setAgree(!agree)}
-      >
-        <input type="checkbox" id="agree" />
+      <label htmlFor="agree" className="contact_checkbox">
+        <input type="checkbox" id="agree" {...register("agree")} />
         {intl.formatMessage(
           {id: "ID_INTRO_CONTACT_TERM"},
           {
@@ -165,13 +177,13 @@ const Form = () => {
         <span className="contact_select_check_mark" />
       </label>
       <button
-        className={`contact_submit_btn ${isActiveSubmitBtn ? "active" : ""}`}
+        className={`contact_submit_btn ${isValid ? "active" : ""}`}
         type="submit"
         onClick={onClickSubmit}
       >
         {intl.formatMessage({id: "ID_INTRO_CONTACT_BUTTON_SEND"})}
       </button>
-    </div>
+    </form>
   );
 };
 
@@ -183,7 +195,7 @@ const TitleArea = ({num, title}) => {
   );
 };
 
-const SelectBox = ({intl, num, title, list, setState}) => {
+const SelectBox = ({intl, num, name, title, list, register}) => {
   return (
     <div>
       <TitleArea num={num} title={title} />
@@ -194,8 +206,8 @@ const SelectBox = ({intl, num, title, list, setState}) => {
               type="radio"
               id={item}
               name={title}
-              value={item}
-              onChange={() => setState(intl.formatMessage({id: item}))}
+              value={intl.formatMessage({id: item})}
+              {...register(name)}
             />
             {intl.formatMessage({id: item})}
             <span className="contact_select_check_mark" />
@@ -206,27 +218,20 @@ const SelectBox = ({intl, num, title, list, setState}) => {
   );
 };
 
-const InputText = ({num, title, type, setState}) => {
+const InputText = ({num, name, title, type, register}) => {
   return (
     <div>
       <TitleArea num={num} title={title} />
-      <input
-        className="contact_input"
-        type={type}
-        onChange={({target}) => setState(target.value)}
-      />
+      <input className="contact_input" type={type} {...register(name)} />
     </div>
   );
 };
 
-const TextArea = ({num, title, setState}) => {
+const TextArea = ({num, name, title, register}) => {
   return (
     <div>
       <TitleArea num={num} title={title} />
-      <textarea
-        className="contact_textarea"
-        onChange={({target}) => setState(target.value)}
-      />
+      <textarea className="contact_textarea" {...register(name)} />
     </div>
   );
 };
