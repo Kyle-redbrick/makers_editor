@@ -139,7 +139,8 @@ const en = {
   ID_FORGOTPW_PLACEHOLDER: "Please enter your e-mail",
   ID_FORGOTPW_CONFIRM: "Send email",
   ID_FORGOTPW_WARNING_EMAIL_FORMAT: "This is an incorrect email.",
-  ID_FORGOTPW_WARNING_NOT_EXIST_EMAIL: "We don't have an account with that email address",
+  ID_FORGOTPW_WARNING_NOT_EXIST_EMAIL:
+    "We don't have an account with that email address",
   ID_FORGOTPW_SEND_TITLE: "The link has been sent.",
   ID_FORGOTPW_SEND_CONFIRM: "Confirm",
   ID_CHALLENGE_TITLE: "Game of the month",
@@ -1528,9 +1529,30 @@ const en = {
   ID_INTRO_VIEW_MORE_NOTICE_TITLE: "Go on exciting coding missions with Astro!",
   ID_INTRO_VIEW_MORE_LEFT_TITLE: "Learn more about the curriculum",
   ID_INTRO_VIEW_MORE_RIGHT_TITLE: "Start a free trial",
-  ID_INTRO_CONTACT_BUTTON_BACK: "Back",
+
   ID_INTRO_CONTACT_BUTTON_SEND: "Send Message",
-  ID_INTRO_CONTACT_BUTTON_NEXT: "Next",
+
+  ID_INTRO_CONTACT_SUBTITLE1: "Subject",
+  ID_INTRO_CONTACT_SUBTITLE2: "First Name",
+  ID_INTRO_CONTACT_SUBTITLE3: "E-mail",
+  ID_INTRO_CONTACT_SUBTITLE4: "Phone Number",
+  ID_INTRO_CONTACT_SUBTITLE5: "Institution/Organization",
+  ID_INTRO_CONTACT_SUBTITLE6: "How did you find ‘Astro Coding Go!’?",
+  ID_INTRO_CONTACT_SUBTITLE7: "Inquiry",
+
+  ID_INTRO_CONTACT_SUBJECT1: "Registration",
+  ID_INTRO_CONTACT_SUBJECT2: "Project Features",
+  ID_INTRO_CONTACT_SUBJECT3: "Partnership",
+  ID_INTRO_CONTACT_SUBJECT4: "Other",
+
+  ID_INTRO_CONTACT_FIND_REASON1: "Print Flyer",
+  ID_INTRO_CONTACT_FIND_REASON2: "E-mail Marketing",
+  ID_INTRO_CONTACT_FIND_REASON3: "Internet Search",
+  ID_INTRO_CONTACT_FIND_REASON4: "Online Ads",
+  ID_INTRO_CONTACT_FIND_REASON5: "Referral",
+  ID_INTRO_CONTACT_FIND_REASON6: "Other (please specify)",
+
+  ID_INTRO_CONTACT_TERM: "I agree to the {term} and {privacy}",
 
   // 계정 설정
   ID_ACCOUNT_SETTING_TITLE: "Account Settings",
