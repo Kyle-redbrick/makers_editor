@@ -1529,7 +1529,7 @@ const ja = {
   ID_INTRO_CONTACT_FIND_REASON5: "知人からの紹介",
   ID_INTRO_CONTACT_FIND_REASON6: "その他",
 
-  ID_INTRO_CONTACT_TERM: "I agree to the {term} and {privacy}",
+  ID_INTRO_CONTACT_TERM: "{term}および{privacy}に同意する（必須）",
 
   // 계정 설정
   ID_ACCOUNT_SETTING_TITLE: "アカウント設定",
