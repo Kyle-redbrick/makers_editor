@@ -1521,6 +1521,8 @@ const ko = {
   ID_INTRO_CONTACT_FIND_REASON5: "Referral",
   ID_INTRO_CONTACT_FIND_REASON6: "Other (please specify)",
 
+  ID_INTRO_CONTACT_TERM: "I agree to the {term} and {privacy}",
+
   // 계정 설정
   ID_ACCOUNT_SETTING_TITLE: "계정 설정",
   ID_ACCOUNT_SETTING_TAB_01: "계정 관리",

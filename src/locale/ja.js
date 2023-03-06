@@ -1529,6 +1529,8 @@ const ja = {
   ID_INTRO_CONTACT_FIND_REASON5: "知人からの紹介",
   ID_INTRO_CONTACT_FIND_REASON6: "その他",
 
+  ID_INTRO_CONTACT_TERM: "I agree to the {term} and {privacy}",
+
   // 계정 설정
   ID_ACCOUNT_SETTING_TITLE: "アカウント設定",
   ID_ACCOUNT_SETTING_TAB_01: "アカウント管理",

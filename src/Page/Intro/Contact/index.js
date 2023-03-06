@@ -69,7 +69,7 @@ const Form = () => {
   ]);
 
   const onClickLink = type => {
-    // TODO : show agreement popup
+    showPopUp(<PopUp.Agreement type={type} />);
   };
 
   const onClickSubmit = async () => {
@@ -146,9 +146,22 @@ const Form = () => {
         className="contact_checkbox"
         onChange={() => setAgree(!agree)}
       >
-        <input type="checkbox" id="agree" />I agree to the{" "}
-        <span onClick={() => onClickLink("term")}>Terms of Use</span> and{" "}
-        <span onClick={() => onClickLink("policy")}>Privacy Policy</span>
+        <input type="checkbox" id="agree" />
+        {intl.formatMessage(
+          {id: "ID_INTRO_CONTACT_TERM"},
+          {
+            term: (
+              <span onClick={() => onClickLink("ID_FOOTER_TERMS")}>
+                {intl.formatMessage({id: "ID_FOOTER_TERMS"})}
+              </span>
+            ),
+            privacy: (
+              <span onClick={() => onClickLink("ID_FOOTER_PRIVACY")}>
+                {intl.formatMessage({id: "ID_FOOTER_PRIVACY"})}
+              </span>
+            ),
+          },
+        )}
         <span className="contact_select_check_mark" />
       </label>
       <button
