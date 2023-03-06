@@ -26,8 +26,6 @@
   }
   .popup_scrollable {
     height: 100%;
-    overflow-x: hidden;
-    overflow-y: auto;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -37,9 +35,34 @@
     z-index: 102;
     border-radius: 20px;
     color: #ffffff;
-    background-color: #393e4f;
+    display: flex;
+    align-items: center;
     margin: auto;
     position: relative;
+    height: 100%;
+    overflow-y: auto;
+    overflow-y: overlay;
+
+    &::-webkit-scrollbar {
+      width: 15px;
+      height: 15px;
+    }
+    &::-webkit-scrollbar-track {
+      background: transparent;
+      background-color: overlay;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: #d1d1d1;
+      background-clip: padding-box;
+      border: 5px solid transparent;
+      border-radius: 100px;
+    }
+  }
+
+  .inner {
+    position: relative;
+    margin: auto;
+    border-radius: 20px;
   }
 
   .popup_contents_opacity {
@@ -71,6 +94,7 @@
     width: 14px;
     height: 14px;
     cursor: pointer;
+    z-index: 5;
   }
 
   .popup_dismissbtn_darkmode {
@@ -105,6 +129,7 @@
     box-sizing: border-box;
     white-space: pre;
     cursor: pointer;
+    border-radius: 8px;
     outline: none;
   }
   .popup_button:hover {
@@ -219,7 +244,7 @@
   }
   .popup_contents {
     color: #fff;
-    background-color: #1c1c1c;
+    // background-color: #1c1c1c;
   }
 
   .popup_dismissbtn {

@@ -2,6 +2,9 @@
   width: 380px;
   height: 320px;
   text-align: center;
+  background-color: #1c1c1c;
+  padding: 20px;
+  border-radius: 20px;
 
   .forgotpw_title {
     font-size: 24px;
@@ -21,16 +24,16 @@
     white-space: pre-wrap;
     line-height: 1.6;
   }
-  
+
   .forgot-email__required-info {
     li {
       text-align: left;
     }
   }
-  
+
   .forgot-email__contact {
     text-align: center;
-    color: #FFA944;
+    color: #ffa944;
     font-weight: bold;
     font-size: 18px;
   }

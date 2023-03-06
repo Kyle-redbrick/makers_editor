@@ -2,6 +2,7 @@
   width: 570px;
   background-color: #1c1c1c;
   padding: 20px 33px 29px 33px;
+  border-radius: 20px;
 
   /* header */
   .publishpopup__header {
@@ -105,12 +106,12 @@
     object-fit: cover;
     cursor: pointer;
     overflow: hidden;
-    
+
     .publishform__icon__img {
       width: 130px;
       height: 130px;
     }
-    
+
     .thumbnailIcon {
       position: absolute;
       top: 0;
@@ -178,7 +179,7 @@
     cursor: pointer;
   }
 
-  .publishform__code_allow__wrapper{
+  .publishform__code_allow__wrapper {
     display: flex;
 
     .text {
@@ -208,9 +209,10 @@
       width: 27px;
       height: 27px;
       border-radius: 8px;
-      box-shadow: 0 3px 1px 0 rgba(0, 0, 0, 0.06), 0 3px 8px 0 rgba(0, 0, 0, 0.15);
+      box-shadow: 0 3px 1px 0 rgba(0, 0, 0, 0.06),
+        0 3px 8px 0 rgba(0, 0, 0, 0.15);
       border: solid 0.5px rgba(0, 0, 0, 0.04);
-      background-color: #ffffff; 
+      background-color: #ffffff;
       transition: 0.5s all;
     }
 
@@ -227,7 +229,8 @@
     justify-content: flex-end;
   }
 
-  .publishbtn, .cancleBtn {
+  .publishbtn,
+  .cancleBtn {
     width: 150px;
     line-height: 50px;
     border-radius: 10px;
@@ -257,7 +260,7 @@
     .publishform {
       margin-top: 30px;
     }
-    
+
     .publishform__icon__button {
       font-size: 14px;
     }
@@ -266,7 +269,7 @@
       display: flex;
       flex-direction: column-reverse;
       margin-bottom: 20px;
-      
+
       > div {
         width: 100%;
       }

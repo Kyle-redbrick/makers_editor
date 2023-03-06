@@ -3,9 +3,10 @@
   background: rgba(0, 0, 0, 0.7);
   width: 100%;
   height: 100%;
-  padding-top: calc((127 / 1080) * 100vh);
   color: #ffffff;
   z-index: 100;
+  display: flex;
+  align-items: center;
 
   .tutorial_popup {
     box-sizing: border-box;

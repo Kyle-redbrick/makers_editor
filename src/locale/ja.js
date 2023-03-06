@@ -1293,7 +1293,7 @@ const ja = {
   ID_DREAM_BUILDER_QUEST_CLEAR_SUBTITLE: `おめでとうございます！全てのミッションをクリアしました。\学んだことはふくしゅうしましょう！`,
   ID_DREAM_BUILDER_QUEST_CLEAR_CERT_SUBTITLE:
     "おめでとうございます！\n全てのミッションを修了しました。\n名前とクラスを入力すると終了証を発行します。",
-  ID_DREAM_BUILDER_QUEST_CLEAR_CERT_QUIT_BUTTON: "学習を終了しますか？",
+  ID_DREAM_BUILDER_QUEST_CLEAR_CERT_QUIT_BUTTON: "閉じる",
   ID_DREAM_BUILDER_QUEST_CLEAR_CANCEL_BUTTON: "やめる",
   ID_DREAM_BUILDER_QUEST_CLEAR_CONFIRM_BUTTON: "次",
   ID_DREAM_BUILDER_TUTORIAL_RESET: "最初からやり直す",

@@ -75,9 +75,9 @@ class PopUpContainer extends Component {
     } = this.props;
     return (
       <div
-        className={`popup_container ${darkmode ? "popup_container-darkmode" : ""} ${
-          pythonPopup ? "popup_container-python" : ""
-        }`}
+        className={`popup_container ${
+          darkmode ? "popup_container-darkmode" : ""
+        } ${pythonPopup ? "popup_container-python" : ""}`}
       >
         <div
           id="popup_overlay"
@@ -89,24 +89,30 @@ class PopUpContainer extends Component {
         <div id="popup_scrollable" className="popup_scrollable">
           <div
             id="popup_contents"
-            className={` ${isBackTrans ? "popup_contents_opacity" : "popup_contents"} popup_contents-larged ${
+            className={` ${
+              isBackTrans ? "popup_contents_opacity" : "popup_contents"
+            } popup_contents-larged ${
               defaultPadding ? "popup_contents-defaultPadding" : ""
-            } ${scrollable ? "popup_contents-scrollable" : ""} ${overflow ? "popup_contents-overflow-show" : ""} ${
-              mobileFullscreen ? "popup_contents-mobileFullscreen" : ""
-            }`}
+            } ${scrollable ? "popup_contents-scrollable" : ""} ${
+              overflow ? "popup_contents-overflow-show" : ""
+            } ${mobileFullscreen ? "popup_contents-mobileFullscreen" : ""}`}
           >
-            {dismissButton && (
-              <img
-                id="popup_dismissbtn"
-                className={
-                  localStorage.getItem("colorTheme") === "darkMode" ? `popup_dismissbtn_darkmode` : `popup_dismissbtn`
-                }
-                src={dismissImg}
-                alt="popup_dismissbtn"
-                onClick={dismiss}
-              />
-            )}
-            {this.props.children}
+            <div className="inner">
+              {dismissButton && (
+                <img
+                  id="popup_dismissbtn"
+                  className={
+                    localStorage.getItem("colorTheme") === "darkMode"
+                      ? `popup_dismissbtn_darkmode`
+                      : `popup_dismissbtn`
+                  }
+                  src={dismissImg}
+                  alt="popup_dismissbtn"
+                  onClick={dismiss}
+                />
+              )}
+              {this.props.children}
+            </div>
           </div>
         </div>
       </div>

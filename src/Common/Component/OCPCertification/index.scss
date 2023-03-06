@@ -1,8 +1,6 @@
 .OCPCertificationContainer {
   position: relative;
-  .OCPCertification {
-    margin-top: 50px;
-  }
+
   //tools
   .OCPCertificationContainerTools {
     display: flex;
@@ -13,7 +11,7 @@
   .OCPCertificationPrint {
     padding: 15px;
     font-size: 18px;
-    background-color: #4313AB;
+    background-color: #4313ab;
     color: white;
     margin-top: 20px;
     width: 162px;
@@ -27,34 +25,37 @@
   // img
   .OCPCertificationImg {
     display: block;
-    width: 845.2px;
-    height: 597.62px;
+    width: calc(100vw * 740 / 1200);
+    max-width: 720px;
+    height: calc(100vw * 493 / 1200);
+    max-height: 493px;
     object-fit: contain;
   }
   .OCPCertificationTexts {
     position: absolute;
     top: 0;
     left: 0;
+    height: 100%;
     width: 100%;
     // height: 100%;
     color: #434343;
   }
-  
+
   .OCPCertificationTextOrgName {
     display: flex;
     flex-direction: column;
     align-items: center;
     position: absolute;
-    width: 531px;
-    top: 281.63px;
+    width: 60%;
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, -50%);
   }
   .OCPCertificationText_School {
     margin-top: 17px;
     font-family: "Open Sans";
     font-size: 13px;
-    line-height: 24px;    
+    line-height: 24px;
     text-align: center;
     color: #484848;
   }
@@ -73,16 +74,17 @@
     font-size: 18px;
     line-height: 100%;
     text-align: center;
-    color: #1D1D1B;
+    color: #1d1d1b;
   }
 
   .OCPCertificationText_Date {
-    margin-left: 127.52px;
-    margin-top: 475.63px;
     font-family: "Iowan Old Style";
     font-size: 16px;
     line-height: 27px;
-    color: #1D1D1B;
+    color: #1d1d1b;
+    position: absolute;
+    bottom: 26.3%;
+    left: 19%;
   }
 }
 
