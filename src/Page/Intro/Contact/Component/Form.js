@@ -32,6 +32,7 @@ const Form = () => {
     register,
     handleSubmit,
     formState: {isValid},
+    reset,
   } = contactForm;
 
   const onClickLink = type => {
@@ -85,6 +86,7 @@ const Form = () => {
           />,
           {darkmode: true},
         );
+        reset();
       }
     }
   };
