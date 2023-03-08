@@ -5,6 +5,8 @@ import Context from "../OOBCEditor/Component/Context";
 import { LineGroup, Line } from "../OOBCEditor/Component/Line";
 import { BlockGroup } from "../OOBCEditor/Component/Block";
 import OOBC from "../OOBCEditor/OOBC";
+import * as request from "../../Util/HTTPRequest";
+import lockImg from "../../../Image/course-content--lock.svg";
 
 import dropdownIconUp from "../../../Image/dropdown-up.svg";
 import dropdownIconDown from "../../../Image/dropdown-down.svg";
@@ -13,7 +15,17 @@ import copyIcon from "../../../Image/slide_code_copy.svg";
 class CodeRenderer extends PureComponent {
   constructor(props) {
     super(props);
-    this.state = { isFolded: true };
+    this.state = {
+      isFolded: true,
+      isShow: false,
+    };
+  }
+
+  async componentDidMount() {
+    if(this.props.projectId) {
+      const res = await request.getProjectShowHintState(this.props.projectId);
+      this.setState({isShow: res.isShow})
+    }
   }
 
   get id() {
@@ -63,12 +75,19 @@ class CodeRenderer extends PureComponent {
         </div>
         {this.state.isFolded || (
           <div className="codeblock_body">
-            <Code
-              id={this.id}
-              language={this.language}
-              code={this.code}
-              getSpriteIcon={this.props.getSpriteIcon}
-            />
+            {this.state.isShow ?
+              <Code
+                id={this.id}
+                isShow={this.state.isShow}
+                language={this.language}
+                code={this.code}
+                getSpriteIcon={this.props.getSpriteIcon}
+              />
+              : 
+              <div className="not_show_codeblock">
+                <img src={lockImg} alt="" />
+              </div>
+            }
             {this.language !== "oobc" && <div className="codeblock_body_copy" onClick={this.onClickCopy}>
               <img src={copyIcon} alt="copy" />
             </div>}

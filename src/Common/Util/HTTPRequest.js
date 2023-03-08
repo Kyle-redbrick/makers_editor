@@ -1635,3 +1635,9 @@ export const sendContact = (params) => {
     res => res.json()
   );
 }
+
+export const getProjectShowHintState = (projectId) => {
+  return fetchRequest(URL.API_SERVER + `myProject/${projectId}`, "GET").then(
+    res => res.json()
+  );
+}

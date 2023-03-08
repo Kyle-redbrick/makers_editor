@@ -110,7 +110,7 @@ class UserInfoContainer extends React.Component {
         }
       } catch (err) {
         // console.log("request failed");
-        // localStorage.removeItem("astroToken");
+        localStorage.removeItem("astroToken");
         this.props.updateUserInfo();
         this.setState({ mounted: true });
       }

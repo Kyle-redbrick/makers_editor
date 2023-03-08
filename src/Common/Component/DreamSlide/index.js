@@ -4,9 +4,23 @@ import AssetLibrary from "../../../Page/Builder/utils/assetLibrary";
 import { htmlParserWith } from "./htmlParser";
 import CodeRenderer from "./codeRenderer";
 import { injectIntl } from "react-intl";
+import { connect } from "react-redux";
 import "./index.scss";
 
 class DreamSlide extends Component {
+  
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      projectId: ""
+    }
+  }
+  componentDidUpdate(prevProps, prevState) {
+    if(prevProps.myProject !== this.props.myProject) {
+      this.setState({projectId: this.props.myProject.project.id})
+    }
+  }
 
   shouldComponentUpdate(nextProps) {
     if(this.props.markdown !== nextProps.markdown) {
@@ -45,7 +59,7 @@ class DreamSlide extends Component {
               htmlParserWith({ getSpriteIcon: this.getSpriteIcon })
             ]}
             renderers={{
-              code: props => <CodeRenderer {...props} getSpriteIcon={this.getSpriteIcon} />
+              code: props => <CodeRenderer {...props} projectId={this.state.projectId} getSpriteIcon={this.getSpriteIcon} />
             }}
           >
             {this.props.markdown}
@@ -60,4 +74,6 @@ class DreamSlide extends Component {
   }
 }
 
-export default injectIntl(DreamSlide);
+export default connect(state => ({
+  myProject: state.dream.myProject
+}))(injectIntl(DreamSlide));
