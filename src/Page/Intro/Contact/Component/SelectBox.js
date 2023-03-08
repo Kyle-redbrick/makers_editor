@@ -14,7 +14,7 @@ const SelectBox = ({num, name, title, list, register}) => {
               type="radio"
               id={item}
               name={title}
-              value={intl.formatMessage({id: item})}
+              value={item}
               {...register(name)}
             />
             {intl.formatMessage({id: item})}
