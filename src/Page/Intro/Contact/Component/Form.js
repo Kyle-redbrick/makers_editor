@@ -67,7 +67,7 @@ const Form = () => {
         subject: SUBJECT_TYPE[subject],
         name,
         email,
-        phone,
+        phone: `+${phone}`,
         institutionName,
         findType: ASTRO_FIND_ROUTE[findType],
         note,
