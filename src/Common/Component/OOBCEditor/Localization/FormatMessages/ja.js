@@ -108,7 +108,8 @@ export default {
   ID_OOBC_ALERT_ADDVAR_MESSAGE:
     "*アルファベットと数字のみ入力できます。\n*最初の文字はアルファベットである必要があります。",
   ID_OOBC_ALERT_ADDVAR_PLACEHOLDER: "変数の名前を入力してください。",
-  ID_OOBC_ALERT_ADDVAR_INVALIDNAME_MESSAGE: "Check variable naming rule again.",
+  ID_OOBC_ALERT_ADDVAR_INVALIDNAME_MESSAGE:
+    "変数名のルールをもう一度確認してください。",
   ID_OOBC_ALERT_ADDVAR_EXISTNAME_MESSAGE: "Already exist with that name",
   ID_OOBC_ALERT_DISABLED_BLOCK_TITLE: "Inavailable block",
   ID_OOBC_ALERT_DISABLED_BLOCK_MESSAGE: "This block is inavailable for there",
@@ -121,5 +122,6 @@ export default {
   ID_OOBC_ALERT_REPLACE_BLOCK_MESSAGE:
     "ブロックをへんこうしますか。\nへんこうすると今のブロックは消えます。",
 
-    ID_OOBC_CONSTANTEDITOR_KEY_MESSAGE: "キーボードのどれかのキーを一つ押して下さい",
+  ID_OOBC_CONSTANTEDITOR_KEY_MESSAGE:
+    "キーボードのどれかのキーを一つ押して下さい",
 };
