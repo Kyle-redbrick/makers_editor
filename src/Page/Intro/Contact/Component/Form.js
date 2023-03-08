@@ -14,12 +14,12 @@ const Form = () => {
 
   const schema = yup.object({
     subject: yup.string().required(),
-    firstName: yup.string().required(),
+    name: yup.string().required(),
     email: yup.string().email().required(),
     phone: yup.number().required(),
-    organization: yup.string().required(),
-    findReason: yup.string().required(),
-    inquiry: yup.string().required(),
+    institutionName: yup.string().required(),
+    findType: yup.string().required(),
+    note: yup.string().required(),
     agree: yup.bool().oneOf([true]),
   });
 
@@ -32,6 +32,7 @@ const Form = () => {
     register,
     handleSubmit,
     formState: {isValid},
+    reset,
   } = contactForm;
 
   const onClickLink = type => {
@@ -40,24 +41,37 @@ const Form = () => {
 
   const onClickSubmit = async ({
     subject,
-    firstName,
+    name,
     email,
     phone,
-    organization,
-    findReason,
-    inquiry,
-    agree,
+    institutionName,
+    findType,
+    note,
   }) => {
     if (isValid) {
+      const SUBJECT_TYPE = {
+        ID_INTRO_CONTACT_SUBJECT1: "REGISTRATION",
+        ID_INTRO_CONTACT_SUBJECT2: "PRODUCT_FEATURE",
+        ID_INTRO_CONTACT_SUBJECT3: "PARTNERSHIP",
+        ID_INTRO_CONTACT_SUBJECT4: "OTHER",
+      };
+      const ASTRO_FIND_ROUTE = {
+        ID_INTRO_CONTACT_FIND_REASON1: "PRINT_FLYER",
+        ID_INTRO_CONTACT_FIND_REASON2: "EMAIL_MARKETING",
+        ID_INTRO_CONTACT_FIND_REASON3: "INTERNET_SEARCH",
+        ID_INTRO_CONTACT_FIND_REASON4: "ONLINE_ADS",
+        ID_INTRO_CONTACT_FIND_REASON5: "REFERRAL",
+        ID_INTRO_CONTACT_FIND_REASON6: "OTHER",
+      };
+
       const params = {
-        subject,
-        firstName,
+        subject: SUBJECT_TYPE[subject],
+        name,
         email,
-        phone,
-        organization,
-        findReason,
-        inquiry,
-        agree,
+        phone: `+${phone}`,
+        institutionName,
+        findType: ASTRO_FIND_ROUTE[findType],
+        note,
       };
       const res = await request.sendContact(params);
       if (res) {
@@ -72,6 +86,7 @@ const Form = () => {
           />,
           {darkmode: true},
         );
+        reset();
       }
     }
   };
@@ -88,7 +103,7 @@ const Form = () => {
       <div className="contact_form_row">
         <InputText
           num={2}
-          name="firstName"
+          name="name"
           type="text"
           title={intl.formatMessage({id: "ID_INTRO_CONTACT_SUBTITLE2"})}
           register={register}
@@ -111,7 +126,7 @@ const Form = () => {
         />
         <InputText
           num={5}
-          name="organization"
+          name="institutionName"
           type="text"
           title={intl.formatMessage({id: "ID_INTRO_CONTACT_SUBTITLE5"})}
           register={register}
@@ -119,7 +134,7 @@ const Form = () => {
       </div>
       <SelectBox
         intl={intl}
-        name="findReason"
+        name="findType"
         num={6}
         title={intl.formatMessage({id: "ID_INTRO_CONTACT_SUBTITLE6"})}
         list={[...Array(6)].map(
@@ -129,7 +144,7 @@ const Form = () => {
       />
       <TextArea
         num={7}
-        name="inquiry"
+        name="note"
         title={intl.formatMessage({id: "ID_INTRO_CONTACT_SUBTITLE7"})}
         register={register}
       />
@@ -155,7 +170,6 @@ const Form = () => {
       <button
         className={`contact_submit_btn ${isValid ? "active" : ""}`}
         type="submit"
-        onClick={onClickSubmit}
       >
         {intl.formatMessage({id: "ID_INTRO_CONTACT_BUTTON_SEND"})}
       </button>
