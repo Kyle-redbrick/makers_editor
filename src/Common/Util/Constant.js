@@ -1334,7 +1334,10 @@ export const LEARNING_COMPLETE_ID = [
 ]
 
 export const USER_TYPE = {
-  SUPER_ADMIN: "Z"
+  SUPER_ADMIN: "Z",
+  ADMIN: "A",
+  TUTOR: "T",
+  STUDENT: "S"
 }
 
 export const isConnectProd = () => {

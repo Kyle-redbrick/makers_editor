@@ -1,13 +1,13 @@
 import React, { Component, PureComponent } from "react";
-import { EDITORMODE } from "../../Util/Constant";
+import { EDITORMODE, USER_TYPE } from "../../Util/Constant";
 import Clipboard from "../../Util/Clipboard";
 import Context from "../OOBCEditor/Component/Context";
 import { LineGroup, Line } from "../OOBCEditor/Component/Line";
 import { BlockGroup } from "../OOBCEditor/Component/Block";
 import OOBC from "../OOBCEditor/OOBC";
+import jwt_decode from "jwt-decode";
 import * as request from "../../Util/HTTPRequest";
 import lockImg from "../../../Image/course-content--lock.svg";
-
 import dropdownIconUp from "../../../Image/dropdown-up.svg";
 import dropdownIconDown from "../../../Image/dropdown-down.svg";
 import copyIcon from "../../../Image/slide_code_copy.svg";
@@ -22,9 +22,13 @@ class CodeRenderer extends PureComponent {
   }
 
   async componentDidMount() {
-    if(this.props.projectId) {
+    const tokenInfo = jwt_decode(localStorage.getItem("astroToken"));
+
+    if(tokenInfo.userType === USER_TYPE.STUDENT) {
       const res = await request.getProjectShowHintState(this.props.projectId);
       this.setState({isShow: res.isShow})
+    } else {
+      this.setState({isShow: true})
     }
   }
 
