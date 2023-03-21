@@ -1290,9 +1290,9 @@ const ja = {
   ID_DREAM_BUILDER_COURSE_CLEAR_CANCEL_BUTTON: "閉じる",
   ID_DREAM_BUILDER_COURSE_CLEAR_SUBMIT_BUTTON: "発行",
   ID_DREAM_BUILDER_QUEST_CLEAR: "ミッションコンプリート！",
-  ID_DREAM_BUILDER_QUEST_CLEAR_SUBTITLE: `おめでとうございます！全てのミッションをクリアしました。\学んだことはふくしゅうしましょう！`,
+  ID_DREAM_BUILDER_QUEST_CLEAR_SUBTITLE: `おめでとうございます！全てのミッションをクリアしました。\n学んだことはふくしゅうしましょう！`,
   ID_DREAM_BUILDER_QUEST_CLEAR_CERT_SUBTITLE:
-    "おめでとうございます！\n全てのミッションを修了しました。\n名前とクラスを入力すると終了証を発行します。",
+    "おめでとうございます！\n全てのミッションを修了しました。\n名前を入力すると終了証を発行します。",
   ID_DREAM_BUILDER_QUEST_CLEAR_CERT_QUIT_BUTTON: "閉じる",
   ID_DREAM_BUILDER_QUEST_CLEAR_CANCEL_BUTTON: "やめる",
   ID_DREAM_BUILDER_QUEST_CLEAR_CONFIRM_BUTTON: "次",
