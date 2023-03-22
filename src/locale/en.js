@@ -1536,13 +1536,13 @@ const en = {
   ID_INTRO_CONTACT_SUBTITLE2: "First Name",
   ID_INTRO_CONTACT_SUBTITLE3: "E-mail",
   ID_INTRO_CONTACT_SUBTITLE4: "Phone Number",
-  ID_INTRO_CONTACT_SUBTITLE5: "Institution/Organization",
-  ID_INTRO_CONTACT_SUBTITLE6: "How did you find ‘Astro Coding Go!’?",
+  ID_INTRO_CONTACT_SUBTITLE5: "School/Company/Institution name",
+  ID_INTRO_CONTACT_SUBTITLE6: "Estimate number of students to enroll",
   ID_INTRO_CONTACT_SUBTITLE7: "Inquiry",
 
   ID_INTRO_CONTACT_SUBJECT1: "Registration",
   ID_INTRO_CONTACT_SUBJECT2: "Project Features",
-  ID_INTRO_CONTACT_SUBJECT3: "Partnership",
+  ID_INTRO_CONTACT_SUBJECT3: "Group Trial",
   ID_INTRO_CONTACT_SUBJECT4: "Other",
 
   ID_INTRO_CONTACT_FIND_REASON1: "Print Flyer",

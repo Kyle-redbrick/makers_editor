@@ -285,7 +285,7 @@ const Lecture = memo(({ course, ...props }) => {
         </TitleWrap>
 
         <ButtonWrap>
-          {course.course.certificate && (
+          {course.course.certificate && props.userType === USER_TYPE.STUDENT && (
             <CertButton onClick={() => onclickCertBtn(course.course)}>
               <FormattedMessage id="ID_DASHBOARD_GET_CERTIFICATION" />
             </CertButton>
