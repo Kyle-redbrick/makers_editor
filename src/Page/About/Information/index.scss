@@ -59,26 +59,51 @@
   padding: 32px 71px 42px;
   transition: all .3s ease-in-out;
 
-  > span, a {
-    font-size: 20px;
-    line-height: 36px;
-    color: #aeaeae;
-    font-weight: 500;
-    white-space: pre-wrap;
-    display: block;
-  }
+  .information__slide-box__section {
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #383838;
 
-  > a {
-    text-decoration: underline;
-    cursor: pointer;
-  }
+    &:last-child {
+      border-bottom: none;
+    }
+    > span, a {
+      font-size: 20px;
+      line-height: 36px;
+      color: #aeaeae;
+      font-weight: 500;
+      white-space: pre-wrap;
+      display: block;
+    }
+  
+    > a {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  
+    > b {
+      color: #aeaeae;
+      display: block;
+      white-space: pre-wrap;
+      font-size: 24px;
+      font-weight: 700;
+    }
 
-  > b {
-    color: #aeaeae;
-    display: block;
-    white-space: pre-wrap;
-    font-size: 24px;
-    font-weight: 700;
+    .information__slide-box__img_container {
+      display: flex;
+      width: 100%;
+      align-items: center;
+      justify-content: left;
+
+      img {
+        height: 90px;
+    
+      }
+    }
+
+    .redbrick_logo {
+      height: 50px !important;
+    }
   }
 }
 
@@ -96,7 +121,7 @@
     }
   
     &.information__slide-inner-wrap--profile {
-      max-height: 435px;
+      max-height: 100%;
     }
   }
 }

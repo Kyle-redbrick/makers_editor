@@ -1604,8 +1604,10 @@ const zh = {
   ID_ABOUT_INFORMATION_PROFILE_INNER_PARTNER_ADDRESS: "www.igroupnet.com",
   ID_ABOUT_INFORMATION_PROFILE_INNER_PARTNER_IDC:
     "IDC ASIA Co., Ltd. /iGroup Korea",
+  ID_ABOUT_INFORMATION_PROFILE_DEVELOPER: "Developer",
+  ID_ABOUT_INFORMATION_PROFILE_SALE_AGENT: "Sale Agent",
   ID_ABOUT_INFORMATION_PROFILE_INNER_PARTNER_IDC_ADDRESS: "www.igroupkorea.kr",
-
+  ID_ABOUT_INFORMATION_PROFILE_DEVELOPER_REDBRICK: "https://redbrick.land",
   ID_ABOUT_TOP_BANNER_TITLE: "Practical Coding Lessons with Astro",
   ID_ABOUT_TOP_BANNER_CHILD_TITLE:
     "SW Education platform for both students and teacher!",

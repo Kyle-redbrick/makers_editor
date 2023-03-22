@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import { FormattedMessage } from "react-intl";
 import SlideArrowIcon from "../../../Image/infor_btn_arrow_down.svg";
+import RedbrickLogo from "../../../Image/Redbrick_logo.png";
+import IGroupLogo from "../../../Image/iGroup_logo.png";
+import mangoSteemLogo from "../../../Image/mango_steem_logo.png";
+import IDCLogo from "../../../Image/IDC_Asia_logo.png";
 import "./index.scss";
 
 function Information() {
@@ -40,7 +44,9 @@ function Information() {
           }
         >
           <div className="information__slide-inner-content">
-            <FormattedMessage id="ID_ABOUT_INFORMATION_TECHNICAL_INNER" />
+            <div className="information__slide-box__section">
+              <FormattedMessage id="ID_ABOUT_INFORMATION_TECHNICAL_INNER" />
+            </div>
           </div>
         </div>
       </div>
@@ -66,42 +72,72 @@ function Information() {
           }
         >
           <div className="information__slide-inner-content">
-            <b>
-              <FormattedMessage id="ID_ABOUT_INFORMATION_PROFILE_INNER" />
-            </b>
-            <FormattedMessage id="ID_ABOUT_INFORMATION_PROFILE_INNER_FOUNDED" />
-            <FormattedMessage id="ID_ABOUT_INFORMATION_PROFILE_INNER_ADDRESS" />
-            <a
-              className="information__link"
-              rel="noopener noreferrer"
-              href="https://mangosteems.com/"
-              target="_blank"
-            >
-              <FormattedMessage id="ID_ABOUT_INFORMATION_PROFILE_INNER_ADDRESS_SECOND_LINE" />
-            </a>
-            <FormattedMessage id="ID_ABOUT_INFORMATION_PROFILE_INNER_CONTACT" />
-            <br />
-            <b>
-              <FormattedMessage id="ID_ABOUT_INFORMATION_PROFILE_INNER_PARTNER_TITLE" />
-            </b>
-            <FormattedMessage id="ID_ABOUT_INFORMATION_PROFILE_INNER_PARTNER_IGROUP" />
-            <a
-              className="information__link"
-              rel="noopener noreferrer"
-              href="https://www.igroupnet.com/"
-              target="_blank"
-            >
-              <FormattedMessage id="ID_ABOUT_INFORMATION_PROFILE_INNER_PARTNER_ADDRESS" />
-            </a>
-            <FormattedMessage id="ID_ABOUT_INFORMATION_PROFILE_INNER_PARTNER_IDC" />
-            <a
-              className="information__link"
-              rel="noopener noreferrer"
-              href="http://www.igroupkorea.kr/"
-              target="_blank"
-            >
-              <FormattedMessage id="ID_ABOUT_INFORMATION_PROFILE_INNER_PARTNER_IDC_ADDRESS" />
-            </a>
+            <div className="information__slide-box__section">
+              <b>
+                <FormattedMessage id="ID_ABOUT_INFORMATION_PROFILE_INNER" />
+              </b>
+              <FormattedMessage id="ID_ABOUT_INFORMATION_PROFILE_INNER_FOUNDED" />
+              <br />
+              <FormattedMessage id="ID_ABOUT_INFORMATION_PROFILE_INNER_ADDRESS" />
+              <a
+                className="information__link"
+                rel="noopener noreferrer"
+                href="https://mangosteems.com/"
+                target="_blank"
+              >
+                <FormattedMessage id="ID_ABOUT_INFORMATION_PROFILE_INNER_ADDRESS_SECOND_LINE" />
+              </a>
+              <FormattedMessage id="ID_ABOUT_INFORMATION_PROFILE_INNER_CONTACT" />
+              <br />
+              <br />
+              <b>
+                <FormattedMessage id="ID_ABOUT_INFORMATION_PROFILE_INNER_PARTNER_TITLE" />
+              </b>
+              <FormattedMessage id="ID_ABOUT_INFORMATION_PROFILE_INNER_PARTNER_IGROUP" />
+              <a
+                className="information__link"
+                rel="noopener noreferrer"
+                href="https://www.igroupnet.com/"
+                target="_blank"
+              >
+                <FormattedMessage id="ID_ABOUT_INFORMATION_PROFILE_INNER_PARTNER_ADDRESS" />
+              </a>
+              <div className="information__slide-box__img_container">
+                <img src={mangoSteemLogo} alt="managosteem logo" />
+                <img src={IGroupLogo} alt="igroup logo" />
+              </div>
+            </div>
+            <div className="information__slide-box__section">
+              <b>{`< Developer >`}</b>
+              <FormattedMessage id="ID_ABOUT_INFORMATION_PROFILE_INNER_PARTNER_IDC" />
+              <br />
+              {/* <FormattedMessage id="ID_ABOUT_INFORMATION_PROFILE_INNER_PARTNER_ADDRESS" /> */}
+              <a
+                className="information__link"
+                rel="noopener noreferrer"
+                href="http://www.igroupkorea.kr/"
+                target="_blank"
+              >
+                <FormattedMessage id="ID_ABOUT_INFORMATION_PROFILE_INNER_PARTNER_IDC_ADDRESS" />
+              </a>
+              <span>Redbrick</span>
+              <a
+                className="information__link"
+                rel="noopener noreferrer"
+                href="https://redbrick.land/"
+                target="_blank"
+              >
+                <FormattedMessage id="ID_ABOUT_INFORMATION_PROFILE_DEVELOPER_REDBRICK" />
+              </a>
+              <div className="information__slide-box__img_container">
+                <img src={IDCLogo} alt="IDC logo" />
+                <img className="redbrick_logo" src={RedbrickLogo} alt="redbrick logo" />
+              </div>
+            </div>
+            <div className="information__slide-box__section">
+              <b>{`< Sales Agent >`}</b>
+              <span>IWASHIMA Co., Ltd</span>
+            </div>
           </div>
         </div>
       </div>
