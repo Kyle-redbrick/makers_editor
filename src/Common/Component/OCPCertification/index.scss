@@ -1,12 +1,20 @@
+
 .OCPCertificationContainer {
   position: relative;
+
+  .OCPCertification {
+    width: calc(100vw * 740 / 1200);
+    max-width: 720px;
+    height: calc(100vw * 493 / 1200);
+    max-height: 493px;
+    object-fit: contain;
+  }
 
   //tools
   .OCPCertificationContainerTools {
     position: relative;
     display: flex;
     justify-content: center;
-    //float: left;
   }
 
   .OCPCertificationPrint {
@@ -26,12 +34,10 @@
   // img
   .OCPCertificationImg {
     display: block;
-    width: calc(100vw * 740 / 1200);
-    max-width: 720px;
-    height: calc(100vw * 493 / 1200);
-    max-height: 493px;
-    object-fit: contain;
+    width: 100%;
+    height: 100%;
   }
+
   .OCPCertificationTexts {
     position: absolute;
     top: 0;
@@ -39,7 +45,6 @@
     margin-top: 2px;
     height: 100%;
     width: 100%;
-    // height: 100%;
     color: #434343;
   }
 
@@ -102,3 +107,4 @@
 @page {
   size: landscape;
 }
+

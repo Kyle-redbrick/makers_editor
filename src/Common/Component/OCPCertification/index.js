@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import moment from "moment";
 import "./index.scss";
 import { showPopUp } from "../../../Common/Component/PopUp";
+import ReactToPrint from "react-to-print";
 import html2canvas from "html2canvas";
 import * as request from "../../../Common/Util/HTTPRequest";
 
@@ -10,15 +11,46 @@ import backgroundImage from "../../../Image/certificate-bg.png";
 import { injectIntl } from "react-intl";
 
 class Container extends Component {
+  componentRef = null;
+
   constructor(props) {
     super(props);
     this.state = {
-      certDesc: ""
+      certDesc: "",
+      isLoading: false,
     };
   }
 
   componentDidMount() {
     this.setCertDesc(this.props.course.id)
+  }
+
+  convertComponentToImg = async () => {
+    const canvas = await html2canvas(
+    document.querySelector(".OCPCertification"),
+      {
+        scrollX: 0,
+        scrollY: 0
+      }
+    );
+
+    let imgURL = canvas
+      .toDataURL("image/png")
+      .replace("image/png", "image/octet-stream");
+
+    return imgURL;
+  }
+
+  handleBeforeGetContent = async () => {
+    let imgURL = await this.convertComponentToImg();
+
+    const printDiv = document.getElementById("printarea");
+    printDiv.innerHTML = `<img src=${imgURL} />`
+
+     this.componentRef.style.display = "block";
+
+    this.setComponentRef(printDiv);
+    document.body.style.display = "none";
   }
 
   setCertDesc(id) {
@@ -43,35 +75,8 @@ class Container extends Component {
     }
   }
 
-  printCertificate() {
-    const html = document.querySelector("html");
-    const printContents = document.querySelector(".OCPCertification").innerHTML;
-    const printDiv = document.createElement("div");
-    printDiv.className = "OCPCertificationContainer";
-    html.appendChild(printDiv);
-    printDiv.innerHTML = printContents;
-    document.body.style.display = "none";
-    //document.title = "wizclass";
-    window.print();
-    document.body.style.display = "block";
-    printDiv.style.display = "none";
-    // if (this.props.callback) this.props.callback();
-    //showPopUp(null);
-    this.disableCertBtn()
-  }
-
   async downloadCertificate() {
-    const canvas = await html2canvas(
-      document.querySelector(".OCPCertification"),
-      {
-        scrollX: 0,
-        scrollY: 0
-      }
-    );
-
-    let imgURL = canvas
-      .toDataURL("image/png")
-      .replace("image/png", "image/octet-stream");
+    let imgURL = await this.convertComponentToImg();
     let downloadLink = document.createElement("a");
     //TODO 다운로드 파일 타입 이름 변경
     downloadLink.setAttribute(
@@ -80,20 +85,37 @@ class Container extends Component {
     );
     downloadLink.setAttribute("href", imgURL);
     downloadLink.click();
-    // if (this.props.callback) {this.props.callback();}
-    //showPopUp(null);
     this.disableCertBtn()
   }
+
+  setComponentRef = (ref) => {
+    this.componentRef = ref;
+  };
+
+  reactToPrintContent = () => {
+    return this.componentRef.current;
+  };
+
+  handleAfterPrint = () => {
+    document.body.style.display = "block";
+    this.componentRef.style.display = "none";
+  };
+
 
   async disableCertBtn () {
     await request.addCertificateInfo({courseId:this.props.course.id,name:this.props.name, userClass:this.props.class})
   }
 
+  reactToPrintTrigger = () => {
+    return <div className="OCPCertificationPrint">Print</div>;
+  };
+
   render() {
     const { name, organization, grade, type } = this.props;
     return (
       <div className={`OCPCertificationContainer`}>
-        <div className="OCPCertification">
+        <div id="printarea" ref={this.setComponentRef}/>
+        <div className="OCPCertification" >
           <img
             className="OCPCertificationImg"
             src={backgroundImage}
@@ -114,9 +136,14 @@ class Container extends Component {
           <div className="OCPCertificationPrint" onClick={() => this.downloadCertificate()}>
             Download
           </div>
-          <div className="OCPCertificationPrint" onClick={() => this.printCertificate()}>
-            Print
-          </div>
+          <ReactToPrint
+            content={()=> this.componentRef}
+            documentTitle="certificate"
+            onAfterPrint={this.handleAfterPrint}
+            onBeforeGetContent={this.handleBeforeGetContent}
+            removeAfterPrint
+            trigger={this.reactToPrintTrigger}
+          />
         </div>
       </div>
     );
