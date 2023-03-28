@@ -55,14 +55,6 @@ const Form = () => {
         ID_INTRO_CONTACT_SUBJECT3: "PARTNERSHIP",
         ID_INTRO_CONTACT_SUBJECT4: "OTHER",
       };
-      const ASTRO_FIND_ROUTE = {
-        ID_INTRO_CONTACT_FIND_REASON1: "PRINT_FLYER",
-        ID_INTRO_CONTACT_FIND_REASON2: "EMAIL_MARKETING",
-        ID_INTRO_CONTACT_FIND_REASON3: "INTERNET_SEARCH",
-        ID_INTRO_CONTACT_FIND_REASON4: "ONLINE_ADS",
-        ID_INTRO_CONTACT_FIND_REASON5: "REFERRAL",
-        ID_INTRO_CONTACT_FIND_REASON6: "OTHER",
-      };
 
       const params = {
         subject: SUBJECT_TYPE[subject],
@@ -70,7 +62,7 @@ const Form = () => {
         email,
         phone: `+${phone}`,
         institutionName,
-        findType: ASTRO_FIND_ROUTE[findType],
+        findType,
         note,
       };
       const res = await request.sendContact(params);
@@ -132,14 +124,10 @@ const Form = () => {
           register={register}
         />
       </div>
-      <SelectBox
-        intl={intl}
-        name="findType"
+      <TextArea
         num={6}
+        name="findType"
         title={intl.formatMessage({id: "ID_INTRO_CONTACT_SUBTITLE6"})}
-        list={[...Array(6)].map(
-          (_, i) => `ID_INTRO_CONTACT_FIND_REASON${i + 1}`,
-        )}
         register={register}
       />
       <TextArea
