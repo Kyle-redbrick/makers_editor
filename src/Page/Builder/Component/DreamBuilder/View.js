@@ -17,7 +17,7 @@ function View(props) {
   return (
     <div className="Page--BUILDER dream">
       {props.isTutorialShow && (
-        <Tutorial hiddenTutorial={props.hiddenTutorial} />
+        <Tutorial project={props.project} hiddenTutorial={props.hiddenTutorial} />
       )}
       {props.isAstroBoyProject && (
         <VideoPopup

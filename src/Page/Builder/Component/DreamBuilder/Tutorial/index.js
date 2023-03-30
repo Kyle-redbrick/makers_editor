@@ -1,7 +1,17 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { injectIntl } from "react-intl";
-import { jsScript, jsScript_en, jsScript_ja, oobcScript, oobcScript_en, oobcScript_ja } from "./script";
+import {
+  BCScript_ja,
+  BCScript_en,
+  JSScript_en,
+  JSScript_ja,
+  bc_elem_img,
+  bc_basic_img,
+  bc_advanced_img,
+  js_advanced_img,
+  js_mastery_img,
+} from "./script";
 import "./index.scss";
 
 class Tutorial extends Component {
@@ -10,7 +20,25 @@ class Tutorial extends Component {
     this.state = {
       scriptIndex: 0
     };
+  }
 
+  get imageUrl() {
+    const {lecture} = this.props.project;
+    const lang = localStorage.getItem("lang");
+    switch(lecture.title) {
+      case "OOBC-ELEMENTARY":
+        return bc_elem_img[lang];
+      case "OOBC-BASIC":
+        return bc_basic_img[lang];
+      case "OOBC-ADVANCED":
+        return bc_advanced_img[lang];
+      case "JAVASCRIPT-ADVANCED":
+        return js_advanced_img[lang];
+      case "JAVASCRIPT-MASTERY":
+        return js_mastery_img[lang];
+      default:
+        return;
+    }
   }
 
   get script() {
@@ -18,20 +46,20 @@ class Tutorial extends Component {
     if (this.props.editorMode === "block") {
       switch (lang) {
         case "ja":
-          return oobcScript_ja;
+          return BCScript_ja;
         case "en":
-          return oobcScript_en;
+          return BCScript_en;
         default :
-          return oobcScript;
+          return BCScript_en;
       }
     } else {
       switch (lang) {
         case "ja":
-          return jsScript_ja;
+          return JSScript_ja;
         case "en":
-          return jsScript_en;
+          return JSScript_en;
         default :
-          return jsScript;
+          return JSScript_en;
       }
     }
   }
@@ -55,7 +83,7 @@ class Tutorial extends Component {
         <div className="tutorial_popup">
           <p className="guideLabel"><span className="num">{this.state.scriptIndex + 1}</span>{this.script[this.state.scriptIndex].subTitle}</p>
           <p className="guideTitle">{this.script[this.state.scriptIndex].title}</p>
-          <img className="guideImg" src={this.script[this.state.scriptIndex].imageURL} alt="guide" />
+          <img className="guideImg" src={this.imageUrl[this.state.scriptIndex]} alt="guide" />
           <div className="buttonWrapper">
             {this.state.scriptIndex === this.script.length - 1 ? (
               <>
