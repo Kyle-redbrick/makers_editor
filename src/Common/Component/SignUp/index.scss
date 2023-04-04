@@ -1,6 +1,11 @@
 .signup {
-  width: 380px;
+  width: 100%;
+  max-width: 470px;
   text-align: center;
+  padding: 25px;
+  border-radius: 20px;
+  background-color: #1c1c1c;
+
   .signup__padding {
     padding: 0 36px;
   }
@@ -22,7 +27,7 @@
 
   .signup_input_wrapper {
     display: flex;
-    width: 380px;
+    width: 100%;
     margin-top: 16px;
     align-items: flex-start;
   }
@@ -387,7 +392,10 @@
   .signup {
     margin: 0 auto;
     padding: 0;
-    width: 320px;
+    width: 100%;
+    max-width: 375px;
+    padding: 20px;
+    border-radius: 20px;
 
     .signup__padding {
       padding: 0;
