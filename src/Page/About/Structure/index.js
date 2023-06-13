@@ -105,8 +105,8 @@ const BlockCoding = (props) => {
   const lang = localStorage.getItem("lang");
   const BlockVideoUrl =
     lang == "ja"
-      ? "https://s3.ap-northeast-2.amazonaws.com/astroboy-dev.wizclass.com/assets/media/OOBC_JP.mp4"
-      : "https://s3.ap-northeast-2.amazonaws.com/astroboy-dev.wizclass.com/assets/media/OOBC_EN.mp4";
+      ? "https://d21hhf2g9kirkh.cloudfront.net/video/astroboy/ja/OOBC_JP.mp4"
+      : "https://d21hhf2g9kirkh.cloudfront.net/video/astroboy/en/OOBC_EN.mp4";
 
   useEffect(() => {
     setBCurriculum(props.curriculum);
@@ -219,8 +219,8 @@ const Javascript = (props) => {
   const lang = localStorage.getItem("lang");
   const JavaVideoUrl =
     lang == "ja"
-      ? "https://s3.ap-northeast-2.amazonaws.com/astroboy-dev.wizclass.com/assets/media/JS_JP.mp4#t=0.001"
-      : "https://s3.ap-northeast-2.amazonaws.com/astroboy-dev.wizclass.com/assets/media/JS_EN.mp4#t=0.001";
+      ? "https://d21hhf2g9kirkh.cloudfront.net/video/astroboy/ja/JS_JP.mp4#t=0.001"
+      : "https://d21hhf2g9kirkh.cloudfront.net/video/astroboy/en/JS_EN.mp4#t=0.001";
   const [jsCurriculum, setJsCurriculum] = useState([]);
 
   useEffect(() => {

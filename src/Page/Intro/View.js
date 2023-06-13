@@ -33,7 +33,7 @@ import "./index.scss";
 function View(props) {
 
   const lang = localStorage.getItem("lang"); 
-  const IntroVideoUrl = lang == "ja" ? "https://s3.ap-northeast-2.amazonaws.com/astroboy-dev.wizclass.com/assets/media/OT_JP.mp4#t=0.001" : "https://s3.ap-northeast-2.amazonaws.com/astroboy-dev.wizclass.com/assets/media/OT_EN.mp4"
+  const IntroVideoUrl = lang == "ja" ? "https://d21hhf2g9kirkh.cloudfront.net/video/astroboy/ja/OT_JP.mp4#t=0.001" : "https://d21hhf2g9kirkh.cloudfront.net/video/astroboy/en/OT_EN.mp4"
   
   const onClickScrollTop = () => {
     window.scrollTo(0, 0);
