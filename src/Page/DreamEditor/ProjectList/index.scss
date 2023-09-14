@@ -25,8 +25,15 @@
   }
   .dreamEditor_projectList_refresh {
     position: absolute;
-    top: 6px;
+    top: 22px;
     right: 12px;
+    font-size: 12px;
+    cursor: pointer;
+  }
+  .dreamEditor_projectList_course_add {
+    position: absolute;
+    top: 22px;
+    right: 70px;
     font-size: 12px;
     cursor: pointer;
   }

@@ -16,62 +16,75 @@ class Container extends Component {
       myProjects: [],
       myPublisheds: [],
       myApks: [],
-      news: []
+      news: [],
     };
     this.limit = 10;
   }
   componentDidMount = () => {
     this.fetchMyProjects();
     this.fetchMyPublished();
-    this.fetchMyApk();
-    this.fetchNews();
+    // this.fetchMyApk();
+    // this.fetchNews();
   };
-  fetchNews = async () => {
-    const params = { type: "builder", limit: 3, offset: 0 };
-    try {
-      let res = await request.getNewsList(params);
-      let news = await res.json();
-      this.setState({ news: news.rows || [] });
-    } catch (error) {
-      console.log(error);
-      this.setState({ news: [] });
-    }
-  };
+  // fetchNews = async () => {
+  //   const params = { type: "builder", limit: 3, offset: 0 };
+  //   try {
+  //     let res = await request.getNewsList(params);
+  //     let news = await res.json();
+  //     this.setState({ news: news.rows || [] });
+  //   } catch (error) {
+  //     console.log(error);
+  //     this.setState({ news: [] });
+  //   }
+  // };
   fetchMyProjects = async () => {
-    if (!this.props.email) return;
-    let params = {
-      email: this.props.email,
-      offset: 0,
-      limit: this.limit,
-      keyword: ""
-    };
+    let params = { offset: 0, limit: 10 };
 
     try {
-      let res = await request.getDevelopingProjects(params);
+      let res = await request.getMySaasProject(params);
       let myProjects = await res.json();
-      this.setState({ myProjects: myProjects.rows || [] });
+      // console.log("myProjects", myProjects.data.projectList);
+      this.setState({ myProjects: myProjects.data.projectList || [] });
     } catch (error) {
-      this.setState({ myProjects: [] });
       console.log(error);
+      this.setState({ myProjects: [] });
     }
   };
+  // fetchMyProjects = async () => {
+  //   if (!this.props.email) return;
+  //   let params = {
+  //     email: this.props.email,
+  //     offset: 0,
+  //     limit: this.limit,
+  //     keyword: "",
+  //   };
+
+  //   try {
+  //     let res = await request.getDevelopingProjects(params);
+  //     let myProjects = await res.json();
+  //     this.setState({ myProjects: myProjects.rows || [] });
+  //   } catch (error) {
+  //     this.setState({ myProjects: [] });
+  //     console.log(error);
+  //   }
+  // };
 
   fetchMyPublished = async () => {
     if (!this.props.email) return;
     let params = {
       email: this.props.email,
       offset: 0,
-      limit: this.limit
+      limit: this.limit,
     };
     try {
       let res = await request.getPublishedProjectsByLive(params);
       let publisheds = await res.json();
       this.setState({
         myPublisheds:
-          publisheds.rows.map(p => {
+          publisheds.rows.map((p) => {
             p.type = p.project.type;
             return p;
-          }) || []
+          }) || [],
       });
     } catch (error) {
       console.log(error);
@@ -79,25 +92,25 @@ class Container extends Component {
     }
   };
 
-  fetchMyApk = async () => {
-    if (!this.props.email) return;
-    try {
-      let res = await request.getWizlabAPKs({ userId: this.props.userId });
-      let apks = await res.json();
-      if (apks.success) {
-        this.setState({ myApks: apks.wizlabAPKs.slice(this.limit) || [] });
-      }
-    } catch (error) {
-      console.log(error);
-      this.setState({ myApks: [] });
-    }
-  };
+  // fetchMyApk = async () => {
+  //   if (!this.props.email) return;
+  //   try {
+  //     let res = await request.getWizlabAPKs({ userId: this.props.userId });
+  //     let apks = await res.json();
+  //     if (apks.success) {
+  //       this.setState({ myApks: apks.wizlabAPKs.slice(this.limit) || [] });
+  //     }
+  //   } catch (error) {
+  //     console.log(error);
+  //     this.setState({ myApks: [] });
+  //   }
+  // };
   onClick2DGame = () => {
     showPopUp(<NewProjectPopup gameDimension="2D" email={this.props.email} />);
   };
-  onClick3DGame = () => {
-    showPopUp(<NewProjectPopup gameDimension="3D" email={this.props.email} />);
-  };
+  // onClick3DGame = () => {
+  //   showPopUp(<NewProjectPopup gameDimension="3D" email={this.props.email} />);
+  // };
   onClickMyProjectMore = () => {
     this.props.resetSelectProject();
     this.props.setCurrentPage("myProject");
@@ -106,41 +119,48 @@ class Container extends Component {
     this.props.resetSelectProject();
     this.props.setCurrentPage("myPublished");
   };
-  onClickMyApkMore = () => {
-    this.props.setCurrentPage("myApk");
-  };
-  onClickProject = (pId, type) => {
-    if (!pId) return;
+  // onClickMyApkMore = () => {
+  //   this.props.setCurrentPage("myApk");
+  // };
+  onClickProject = (id) => {
+    if (!id) return;
     this.props.history.replace({
-      pathname: `/${
-        type === "js3d" ? PAGETYPE.BUILDER3D : PAGETYPE.BUILDER
-      }/${pId}`
+      pathname: `/${PAGETYPE.BUILDER}/${id}`,
     });
-    type !== "js3d" && window.location.reload();
+    window.location.reload();
   };
-  onClickPublishProject = pId => {
+  // onClickProject = (pId, type) => {
+  //   if (!pId) return;
+  //   this.props.history.replace({
+  //     pathname: `/${
+  //       type === "js3d" ? PAGETYPE.BUILDER3D : PAGETYPE.BUILDER
+  //     }/${pId}`,
+  //   });
+  //   type !== "js3d" && window.location.reload();
+  // };
+  onClickPublishProject = (pId) => {
     if (!pId) return;
     this.props.history.push(`?pId=${pId}`);
   };
-  setSlickRef = ref => {
+  setSlickRef = (ref) => {
     this.slick = ref;
   };
-  handlePrev = e => {
+  handlePrev = (e) => {
     e.preventDefault();
     this.slick.slickPrev();
   };
-  handleNext = e => {
+  handleNext = (e) => {
     e.preventDefault();
     this.slick.slickNext();
   };
   setProjectName = (pId, newName) => {
-    this.setState(prev => ({
+    this.setState((prev) => ({
       myProjects: prev.myProjects.map((item, index) => {
         if (item.pId === pId) {
           item.name = newName;
         }
         return item;
-      })
+      }),
     }));
   };
   render() {
@@ -150,7 +170,7 @@ class Container extends Component {
       onClickDetailBtn,
       selectProject,
       handleDelete,
-      handleCopy
+      handleCopy,
     } = this.props;
     const { myProjects, myPublisheds, myApks, news } = this.state;
     const {
@@ -165,7 +185,7 @@ class Container extends Component {
       handlePrev,
       handleNext,
       fetchMyProjects,
-      setProjectName
+      setProjectName,
     } = this;
     return (
       <View
@@ -197,6 +217,6 @@ class Container extends Component {
   }
 }
 export default connect(
-  state => ({ email: state.userinfo.email, userId: state.userinfo.id }),
+  (state) => ({ email: state.userinfo.email, userId: state.userinfo.id }),
   {}
 )(injectIntl(withRouter(Container)));

@@ -2,12 +2,12 @@ import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { injectIntl } from "react-intl";
-import generatePID from "../../../../Common/Util/PIDGenerator"
-import { showPopUp } from "../../../../Common/Component/PopUp"
+import generatePID from "../../../../Common/Util/PIDGenerator";
+import { showPopUp } from "../../../../Common/Component/PopUp";
 import * as request from "../../../../Common/Util/HTTPRequest";
 import * as projectActions from "../../Store/Reducer/project";
 import * as previewActions from "../../Store/Reducer/preview";
-import * as dreamActions from "../../Store/Reducer/dream"
+import * as dreamActions from "../../Store/Reducer/dream";
 import AssetLibrary from "../../utils/assetLibrary";
 import MissionClearPopUp from "./PopUp/MissionClear";
 import ProjectClearPopUp from "./PopUp/ProjectClear";
@@ -22,18 +22,18 @@ class Container extends Component {
       isAstroBoyProject: false,
       it: "",
       stem: "",
-      sdg: ""
+      sdg: "",
     };
   }
   componentDidMount() {
     this.load();
   }
   load() {
-    const { id: myDreamLectureProjectId ,email} = this.props.match.params;
+    const { id: myDreamLectureProjectId, email } = this.props.match.params;
     request
       .getMyDreamProject(myDreamLectureProjectId + "/" + email)
-      .then(res => res.json())
-      .then(myDreamProject => {
+      .then((res) => res.json())
+      .then((myDreamProject) => {
         if (!myDreamProject) {
           window.alert("no myDreamProject");
           return;
@@ -50,7 +50,9 @@ class Container extends Component {
         // }
 
         try {
-          myDreamProject.project.template = JSON.parse(myDreamProject.project.localized[0].template)
+          myDreamProject.project.template = JSON.parse(
+            myDreamProject.project.localized[0].template
+          );
         } catch (err) {
           window.alert("wrong template");
           return;
@@ -62,7 +64,10 @@ class Container extends Component {
 
   componentDidUpdate(prevProps, prevState) {
     if (this.props.myProject) {
-      if (!prevProps.myProject || prevProps.myProject.id !== this.props.myProject.id) {
+      if (
+        !prevProps.myProject ||
+        prevProps.myProject.id !== this.props.myProject.id
+      ) {
         this.didSetMyProject();
       }
     }
@@ -81,16 +86,18 @@ class Container extends Component {
   didSetMyProject() {
     const { myProject } = this.props;
 
-    const missions =
-      (myProject.project.template.missions || [])
-        .map((mission, index) => ({
-          ...mission,
-          isCompleted: index < myProject.completedMissionNum
-        }))
+    const missions = (myProject.project.template.missions || []).map(
+      (mission, index) => ({
+        ...mission,
+        isCompleted: index < myProject.completedMissionNum,
+      })
+    );
 
-    let currentMissionIndex = this.props.isReplaying ? 0 : myProject.completedMissionNum;
+    let currentMissionIndex = this.props.isReplaying
+      ? 0
+      : myProject.completedMissionNum;
     if (currentMissionIndex > missions.length - 1) {
-      currentMissionIndex = missions.length - 1
+      currentMissionIndex = missions.length - 1;
     }
 
     this.props.setDreamMissions(missions);
@@ -152,44 +159,59 @@ class Container extends Component {
 
     this.save({
       completedMissionNum: this.props.missions.length,
-      completed: true
+      completed: true,
     });
   }
   save(values) {
     const { id: myDreamLectureProjectId } = this.props.match.params;
     request
       .saveAstroMission(myDreamLectureProjectId, values)
-      .then(res => res.json())
-      .then(json => {
+      .then((res) => res.json())
+      .then((json) => {
         if (json.success) {
-          console.log(this.props.intl.formatMessage({ id: "ID_DREAMBUILDER_SAVE_LECTURE" }));
+          console.log(
+            this.props.intl.formatMessage({
+              id: "ID_DREAMBUILDER_SAVE_LECTURE",
+            })
+          );
         } else {
-          console.warn(`${this.props.intl.formatMessage({ id: "ID_DREAMBUILDER_SAVE_LECTURE_ERROR" })}(${json.reason})`);
+          console.warn(
+            `${this.props.intl.formatMessage({
+              id: "ID_DREAMBUILDER_SAVE_LECTURE_ERROR",
+            })}(${json.reason})`
+          );
         }
       });
   }
 
   alertMissionClear() {
-    if (!this.props.currentMission.conditions || this.props.currentMission.conditions.length < 1) return;
+    if (
+      !this.props.currentMission.conditions ||
+      this.props.currentMission.conditions.length < 1
+    )
+      return;
     setTimeout(() => {
       showPopUp(
         <MissionClearPopUp
           onClickConfirm={() => {
             this.props.setIsPlaying(false);
-            this.props.setCurrentDreamMissionIndex(this.props.currentMissionIndex + 1);
+            this.props.setCurrentDreamMissionIndex(
+              this.props.currentMissionIndex + 1
+            );
           }}
-        />, {
-        dismissButton: false,
-        defaultPadding: false
-      }
+        />,
+        {
+          dismissButton: false,
+          defaultPadding: false,
+        }
       );
     }, 2000);
   }
   alertProjectClear() {
     request
       .getAstroMissionCompleteInfo(this.props.project.id)
-      .then(res => res.json())
-      .then(json => {
+      .then((res) => res.json())
+      .then((json) => {
         console.log(111, json);
         this.setState({ it: json.it });
         this.setState({ stem: json.stem });
@@ -197,25 +219,25 @@ class Container extends Component {
         this.setState({ certficate: json.certficate });
 
         // setTimeout(() => {
-          showPopUp(
-            <ProjectClearPopUp
-              it={json.it}
-              stem={json.stem}
-              sdg={json.sdg}
-              certificate={json.certificate}
-              onClickConfirm={() => {
-                window.opener=null;
-                window.open('','_self');
-                window.close();
-              }}
-            />,
-            {
-              dismissButton: false,
-              defaultPadding: false
-            }
-          );
-        }, 1000);
-      // });
+        showPopUp(
+          <ProjectClearPopUp
+            it={json.it}
+            stem={json.stem}
+            sdg={json.sdg}
+            certificate={json.certificate}
+            onClickConfirm={() => {
+              window.opener = null;
+              window.open("", "_self");
+              window.close();
+            }}
+          />,
+          {
+            dismissButton: false,
+            defaultPadding: false,
+          }
+        );
+      }, 1000);
+    // });
   }
 
   createDeveloping(callback) {
@@ -224,20 +246,25 @@ class Container extends Component {
       pId: generatePID(this.props.email),
       email: this.props.email,
       name: project.title,
-      type: { javascript: "js", oobc: "wizlabOOBC" }[project.lecture.course.type],
-      icon: project.localized && project.localized[0].thumbnailURL.toDreamclassS3URL() || "",
+      type: { javascript: "js", oobc: "wizlabOOBC" }[
+        project.lecture.course.type
+      ],
+      icon:
+        (project.localized &&
+          project.localized[0].thumbnailURL.toDreamclassS3URL()) ||
+        "",
       useCustomIcon: true,
       state: JSON.stringify(this.getManipulatedProjectState()),
-      myDreamProjectId: id
-    }
+      myDreamProjectId: id,
+    };
     request
       .postDevelopingProject(params)
-      .then(res => res.json())
-      .then(developing => {
+      .then((res) => res.json())
+      .then((developing) => {
         if (callback) {
           callback(developing);
         }
-      })
+      });
   }
   getManipulatedProjectState() {
     const state = JSON.parse(JSON.stringify(this.props.projectState));
@@ -252,43 +279,45 @@ class Container extends Component {
     }
     return state;
   }
-  linkToDeveloping = developing => {
+  linkToDeveloping = (developing) => {
     this.props.history.replace(`/builder/${developing.pId}`);
     this.props.history.go(0);
-  }
+  };
 
   forceSlideRerender = () => {
     this.setState({ shouldSlideRerender: true }, () => {
       this.setState({ shouldSlideRerender: false });
     });
-  }
+  };
 
   didShowTutorialPopup = async () => {
     // temp : astro boy 동영상을 보여주기 위한 임시조치
     const title =
-      this.props.project
-      && this.props.project.localized[0]
-      && this.props.project.localized[0].title
+      this.props.project &&
+      this.props.project.localized[0] &&
+      this.props.project.localized[0].title;
     if (title === "Catch the Super Magnet") {
       return this.setState({ isAstroBoyProject: true });
     }
 
-    const didShowTutorialPopup = localStorage.getItem(`didShowTutorial_${this.props.editorMode}`);
+    const didShowTutorialPopup = localStorage.getItem(
+      `didShowTutorial_${this.props.editorMode}`
+    );
     if (didShowTutorialPopup) this.setState({ isTutorialShow: false });
     else this.setState({ isTutorialShow: true });
-  }
+  };
 
   hiddenTutorial = () => {
     this.setState({ isTutorialShow: false });
-  }
+  };
 
   showTutorial = () => {
     this.setState({ isTutorialShow: true });
-  }
+  };
 
   hiddenAstroBoyPopup = () => {
     this.setState({ isAstroBoyProject: false });
-  }
+  };
 
   render() {
     return (
@@ -306,7 +335,7 @@ class Container extends Component {
 }
 
 export default connect(
-  state => ({
+  (state) => ({
     project: state.dream.myProject && state.dream.myProject.project,
     editorMode: state.scene.editorMode,
     email: state.userinfo.email,
@@ -320,8 +349,8 @@ export default connect(
     projectState: {
       scene: state.scene,
       interaction: state.interaction,
-      preview: state.preview
-    }
+      preview: state.preview,
+    },
   }),
   {
     setProject: projectActions.setProject,
@@ -329,6 +358,6 @@ export default connect(
     setMyDreamProject: dreamActions.setMyDreamProject,
     setDreamMissions: dreamActions.setDreamMissions,
     setCurrentDreamMissionIndex: dreamActions.setCurrentDreamMissionIndex,
-    completeCurrentDreamMission: dreamActions.completeCurrentDreamMission
+    completeCurrentDreamMission: dreamActions.completeCurrentDreamMission,
   }
 )(withRouter(injectIntl(Container)));

@@ -3,6 +3,7 @@ export const URL = {
   SOCKET_SERVER: `https://astro-sock.wizclass.com/`,
   NOTIFICATION_SOCKET_SERVER: `https://astroboy-api-dev.wizclass.com:3002/`,
   API_SERVER: `https://astro-api.wizclass.com/`,
+  API_SAAS_SERVER: `http://nlb-1rcn4n272bsiyjk4g3.ap-northeast-2.nlb.aliyuncs.com/`,
   LIVE_TEST: `https://${subdomain}wizlab.net/liveTest/`,
   WIZ_APP: `https://en.astro-coding-go.com/game?pId=`,
   GAME_SRC: `https://${subdomain}wizlab.net/`,
@@ -13,11 +14,11 @@ export const URL = {
     {
       urls: [
         `stun:wizlive.wizschool.io:3478`,
-        `turn:wizlive.wizschool.io:3478`
+        `turn:wizlive.wizschool.io:3478`,
       ],
       username: `wizmate`,
-      credential: `dudtkdxhdghk`
-    }
+      credential: `dudtkdxhdghk`,
+    },
   ],
   MQ: `wss://b-cbf4fce1-6979-4051-8fd6-2017eca62b9a-1.mq.ap-northeast-2.amazonaws.com:61619`,
   RECORD_S3: `https://wizschool-record.s3.ap-northeast-2.amazonaws.com`,
@@ -30,11 +31,15 @@ export const URL = {
     // } else {
     //   return "https://d21hhf2g9kirkh.cdfront.net"
     // }
-    return "https://d21hhf2g9kirkh.cloudfront.net"
-  }
+    return "https://d21hhf2g9kirkh.cloudfront.net";
+  },
+  get THUMBNAIL_ALI() {
+    return `https://redbrick-makers.oss-ap-northeast-2.aliyuncs.com/`;
+  },
 };
 
-export const GOOGLE_SIGNIN_CLIENT_ID = "451745919454-7ga3u82oe852pukhe4esubr6crb67rmq.apps.googleusercontent.com";
+export const GOOGLE_SIGNIN_CLIENT_ID =
+  "451745919454-7ga3u82oe852pukhe4esubr6crb67rmq.apps.googleusercontent.com";
 
 export const WIZLIVE_BANNER_LINK = (promotionId, userId) => {
   const url = `http://wizlive.com/wizlabPromotion/${promotionId}/`;
@@ -55,7 +60,7 @@ export const VCTYPE = {
     EDIT_MAP: "EDIT_MAP",
     CUSTOMSPRITE: "CUSTOMSPRITE",
     START: "START",
-    END: "END"
+    END: "END",
   },
   CONDITION: {
     SPRITE_EXIST: "SPRITE_EXIST",
@@ -69,15 +74,15 @@ export const VCTYPE = {
     CODE_AST: "CODE_AST",
     PLAY_ONCE: "PLAY_ONCE",
     GAME_EVENT: "GAME_EVENT",
-    OOBC_LINE_EXIST: "OOBC_LINE_EXIST"
+    OOBC_LINE_EXIST: "OOBC_LINE_EXIST",
   },
   EGO: {
     TEXT: "TEXT",
     IMAGE: "IMAGE",
     PLAY: "PLAY",
     NEXT: "NEXT",
-    COMPONENT: "COMPONENT"
-  }
+    COMPONENT: "COMPONENT",
+  },
 };
 
 // deprecated
@@ -88,7 +93,7 @@ export const VideoClassStageType = {
   PLAY: "PLAY",
   CODE: "CODE",
   TEST: "TEST",
-  END: "END"
+  END: "END",
 };
 export const VideoClassConditionType = {
   SPRITE_EXIST: "SPRITE_EXIST",
@@ -97,11 +102,11 @@ export const VideoClassConditionType = {
   SCENE_SELECTED: "SCENE_SELECTED",
   SPRITE_SELECTED: "SPRITE_SELECTED",
   PLAY_ONCE: "PLAY_ONCE",
-  PUBLISH_PROJECT: "PUBLISH_PROJECT"
+  PUBLISH_PROJECT: "PUBLISH_PROJECT",
 };
 export const VideoClassEgoType = {
   TEXT: "TEXT",
-  IMAGE: "IMAGE"
+  IMAGE: "IMAGE",
 };
 
 export const WORLD = {
@@ -110,7 +115,7 @@ export const WORLD = {
   MIN_WIDTH: 1280,
   MIN_HEIGHT: 720,
   MAX_WIDTH: 9999,
-  MAX_HEIGHT: 9999
+  MAX_HEIGHT: 9999,
 };
 
 // gamePageGenerator.js & parser.js
@@ -196,26 +201,26 @@ export const ActionType = {
   ADD_GLOBAL_VARIABLE: "ADD_GLOBAL_VARIABLE",
 
   SET_STUDENTS: "SET_STUDENTS",
-  GET_CURRENT_USER: "GET_CURRENT_USER"
+  GET_CURRENT_USER: "GET_CURRENT_USER",
 };
 
 export const MainPopupType = {
   LOGIN: "POPUP_LOGIN",
-  SIGNUP: "POPUP_SIGNUP"
+  SIGNUP: "POPUP_SIGNUP",
 };
 
 export const DrawerType = {
   API: "DRAWER_API",
   ANIME: "DRAWER_ANIME",
   SOUND: "DRAWER_SOUND",
-  CHAT: "DRAWER_CHAT"
+  CHAT: "DRAWER_CHAT",
 };
 
 export const ModalType = {
   STORAGE: "MODAL_STORAGE",
   PUBLISH: "MODAL_PUBLISH",
   QRTEST: "MODAL_QRTEST",
-  INSTANT_RUN: "MODAL_INSTANT_RUN"
+  INSTANT_RUN: "MODAL_INSTANT_RUN",
 };
 
 export const SpriteType = {
@@ -224,19 +229,19 @@ export const SpriteType = {
   BACKGROUND: "background",
   TEXT: "text",
   CUSTOM: "custom",
-  COMPONENT: "component"
+  COMPONENT: "component",
 };
 
 export const ErrorType = {
   PARAMETER_INVALID_TYPE: "PARAMETER_INVALID_TYPE",
   PARAMETER_UNDEFINED: "PARAMETER_UNDEFINED",
-  PARAMETER_NOT_FOUND: "PARAMETER_NOT_FOUND"
+  PARAMETER_NOT_FOUND: "PARAMETER_NOT_FOUND",
 };
 
 export const spamType = {
   SPAM_BAD_WORD: "badWord",
   SPAM_DUPLICATION: "duplication",
-  SPAM_TIME: "time"
+  SPAM_TIME: "time",
 };
 
 export const DEFAULT_PROFILE_IMAGES = [
@@ -249,7 +254,7 @@ export const DEFAULT_PROFILE_IMAGES = [
   "https://s3.ap-northeast-2.amazonaws.com/wizschool-images/profile-image-06.png",
   "https://s3.ap-northeast-2.amazonaws.com/wizschool-images/profile-image-07.png",
   "https://s3.ap-northeast-2.amazonaws.com/wizschool-images/profile-image-08.png",
-  "https://s3.ap-northeast-2.amazonaws.com/wizschool-images/profile-image-09.png"
+  "https://s3.ap-northeast-2.amazonaws.com/wizschool-images/profile-image-09.png",
 ];
 
 export const SIGNOUT_PROFILE_IMAGE =
@@ -263,7 +268,7 @@ export const EDITORMODE = {
   JAVASCRIPT: "javascript-wiz",
   JAVASCRIPT_3D: "javascript-wiz-3d",
   PYTHON: "python",
-  BLOCK: "block"
+  BLOCK: "block",
 };
 
 export const PAGETYPE = {
@@ -283,17 +288,17 @@ export const PAGETYPE = {
   TUTORIAL: "tutorial",
   QNA_READONLY: "qna_readonly",
   DREAMCLASS: "dreamclass",
-  MONITOR_1V4: "monitor_1v4"
+  MONITOR_1V4: "monitor_1v4",
 };
 
 export const GAMEPAGE_MODE = {
   NORMAL: "NORMAL",
   SEARCH: "SEARCH",
-  MORE: "MORE"
+  MORE: "MORE",
 };
 
 export const CHAT_MSG_TYPE = {
-  TEXT: "TEXT"
+  TEXT: "TEXT",
 };
 
 export const ChatbotMsgType = {
@@ -307,21 +312,21 @@ export const ChatbotMsgType = {
   GAME_SESSION: "GAME_SESSION",
   GAME_PRINT: "GAME_PRINT",
 
-  REQUEST_SOLUTION: "REQUEST_SOLUTION"
+  REQUEST_SOLUTION: "REQUEST_SOLUTION",
 };
 
 export const CHAT_TYPE = {
-  ALL: "all"
+  ALL: "all",
 };
 
 export const RESOURCE = {
   OCP_LEARNINGTOOL:
-    "https://d1tz4sj00zmgsb.cloudfront.net/%EB%B0%A9%ED%83%88%EC%B6%9C+-+%ED%95%99%EC%8A%B5%EB%A9%94%EB%89%B4%EB%8F%84%EA%B5%AC.zip"
+    "https://d1tz4sj00zmgsb.cloudfront.net/%EB%B0%A9%ED%83%88%EC%B6%9C+-+%ED%95%99%EC%8A%B5%EB%A9%94%EB%89%B4%EB%8F%84%EA%B5%AC.zip",
 };
 export const OCP_GRADE = {
   BEGINNER: "beginner",
   INTERMEDIATE: "intermediate",
-  ADVANCED: "advanced"
+  ADVANCED: "advanced",
 };
 
 export const OCP_IMAGES = {
@@ -332,9 +337,10 @@ export const OCP_IMAGES = {
       story:
         "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/beginner/1-1/1-1+%E1%84%89%E1%85%B3%E1%84%90%E1%85%A9%E1%84%85%E1%85%B5.png",
       tutorials: [...Array(9).keys()].map(
-        element =>
-          `${URL.S3_VIDEOCLASS}/ocp/${OCP_GRADE.BEGINNER
-          }/tutorial/tutorial_${element + 1}.png`
+        (element) =>
+          `${URL.S3_VIDEOCLASS}/ocp/${OCP_GRADE.BEGINNER}/tutorial/tutorial_${
+            element + 1
+          }.png`
       ),
       mission1:
         "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/beginner/1-1/1-1+%E1%84%86%E1%85%B5%E1%84%89%E1%85%A7%E1%86%AB%E1%84%89%E1%85%A9%E1%84%80%E1%85%A2_1.png",
@@ -344,7 +350,7 @@ export const OCP_IMAGES = {
       answer1:
         "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/beginner/1-1/1-1+%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%83%E1%85%A1%E1%86%B8_1.png",
       hint1:
-        "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/beginner/1-1/1-1+%E1%84%92%E1%85%B5%E1%86%AB%E1%84%90%E1%85%B3_1.png"
+        "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/beginner/1-1/1-1+%E1%84%92%E1%85%B5%E1%86%AB%E1%84%90%E1%85%B3_1.png",
     },
     level2: {
       cover:
@@ -378,7 +384,7 @@ export const OCP_IMAGES = {
       hint3:
         "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/beginner/1-2/1-2+%E1%84%92%E1%85%B5%E1%86%AB%E1%84%90%E1%85%B3_3.png",
       select1:
-        "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/beginner/1-2/1-2+%E1%84%89%E1%85%B3%E1%84%91%E1%85%B3%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%B3+%E1%84%89%E1%85%A5%E1%86%AF%E1%84%86%E1%85%A7%E1%86%BC_3_new.png"
+        "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/beginner/1-2/1-2+%E1%84%89%E1%85%B3%E1%84%91%E1%85%B3%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%B3+%E1%84%89%E1%85%A5%E1%86%AF%E1%84%86%E1%85%A7%E1%86%BC_3_new.png",
       // "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/beginner/1-2/1-2+%E1%84%89%E1%85%B3%E1%84%91%E1%85%B3%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%B3+%E1%84%89%E1%85%A5%E1%86%AF%E1%84%86%E1%85%A7%E1%86%BC_1.png"
     },
     level3: {
@@ -405,7 +411,7 @@ export const OCP_IMAGES = {
       hint2:
         "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/beginner/1-3/1-3+%E1%84%92%E1%85%B5%E1%86%AB%E1%84%90%E1%85%B3_2.png",
       select1:
-        "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/beginner/1-3/1-3+%E1%84%89%E1%85%B3%E1%84%91%E1%85%B3%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%B3+%E1%84%89%E1%85%A5%E1%86%AF%E1%84%86%E1%85%A7%E1%86%BC_2.png"
+        "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/beginner/1-3/1-3+%E1%84%89%E1%85%B3%E1%84%91%E1%85%B3%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%B3+%E1%84%89%E1%85%A5%E1%86%AF%E1%84%86%E1%85%A7%E1%86%BC_2.png",
       // "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/beginner/1-3/1-3+%E1%84%89%E1%85%B3%E1%84%91%E1%85%B3%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%B3+%E1%84%89%E1%85%A5%E1%86%AF%E1%84%86%E1%85%A7%E1%86%BC_1.png"
     },
     level4: {
@@ -453,7 +459,7 @@ export const OCP_IMAGES = {
       // "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/beginner/1-4/1-4+%E1%84%89%E1%85%B3%E1%84%91%E1%85%B3%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%B3+%E1%84%89%E1%85%A5%E1%86%AF%E1%84%86%E1%85%A7%E1%86%BC_1.png",
       select2:
         // "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/beginner/1-4/1-4+%E1%84%89%E1%85%B3%E1%84%91%E1%85%B3%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%B3+%E1%84%89%E1%85%A5%E1%86%AF%E1%84%86%E1%85%A7%E1%86%BC_2.png"
-        "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/beginner/1-4/1-4+%E1%84%89%E1%85%B3%E1%84%91%E1%85%B3%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%B3+%E1%84%89%E1%85%A5%E1%86%AF%E1%84%86%E1%85%A7%E1%86%BC_2_new.png"
+        "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/beginner/1-4/1-4+%E1%84%89%E1%85%B3%E1%84%91%E1%85%B3%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%B3+%E1%84%89%E1%85%A5%E1%86%AF%E1%84%86%E1%85%A7%E1%86%BC_2_new.png",
     },
     level5: {
       cover:
@@ -475,7 +481,7 @@ export const OCP_IMAGES = {
       hint1:
         "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/beginner/1-5/1-5+%E1%84%92%E1%85%B5%E1%86%AB%E1%84%90%E1%85%B3_1.png",
       hint2:
-        "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/beginner/1-5/1-5+%E1%84%92%E1%85%B5%E1%86%AB%E1%84%90%E1%85%B3_2.png"
+        "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/beginner/1-5/1-5+%E1%84%92%E1%85%B5%E1%86%AB%E1%84%90%E1%85%B3_2.png",
     },
     level6: {
       cover:
@@ -510,7 +516,7 @@ export const OCP_IMAGES = {
       hint3:
         "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/beginner/1-6/1-6+%E1%84%92%E1%85%B5%E1%86%AB%E1%84%90%E1%85%B3_3.png",
       select1:
-        "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/beginner/1-6/1-6+%E1%84%89%E1%85%B3%E1%84%91%E1%85%B3%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%B3+%E1%84%89%E1%85%A5%E1%86%AF%E1%84%86%E1%85%A7%E1%86%BC_3_new.png"
+        "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/beginner/1-6/1-6+%E1%84%89%E1%85%B3%E1%84%91%E1%85%B3%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%B3+%E1%84%89%E1%85%A5%E1%86%AF%E1%84%86%E1%85%A7%E1%86%BC_3_new.png",
       // "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/beginner/1-6/1-6+%E1%84%89%E1%85%B3%E1%84%91%E1%85%B3%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%B3+%E1%84%89%E1%85%A5%E1%86%AF%E1%84%86%E1%85%A7%E1%86%BC_1.png"
     },
     level7: {
@@ -543,7 +549,7 @@ export const OCP_IMAGES = {
       hint2:
         "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/beginner/1-7/1-7+%E1%84%92%E1%85%B5%E1%86%AB%E1%84%90%E1%85%B3_2.png",
       hint3:
-        "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/beginner/1-7/1-7+%E1%84%92%E1%85%B5%E1%86%AB%E1%84%90%E1%85%B3_3.png"
+        "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/beginner/1-7/1-7+%E1%84%92%E1%85%B5%E1%86%AB%E1%84%90%E1%85%B3_3.png",
     },
     level8: {
       cover:
@@ -565,7 +571,7 @@ export const OCP_IMAGES = {
       hint1:
         "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/beginner/1-8/1-8+%E1%84%92%E1%85%B5%E1%86%AB%E1%84%90%E1%85%B3_1.png",
       hint2:
-        "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/beginner/1-8/1-8+%E1%84%92%E1%85%B5%E1%86%AB%E1%84%90%E1%85%B3_2.png"
+        "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/beginner/1-8/1-8+%E1%84%92%E1%85%B5%E1%86%AB%E1%84%90%E1%85%B3_2.png",
     },
     level9: {
       cover:
@@ -581,7 +587,7 @@ export const OCP_IMAGES = {
       answer1:
         "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/beginner/1-9/1-9+%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%83%E1%85%A1%E1%86%B8_1.png",
       hint1:
-        "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/beginner/1-9/1-9+%E1%84%92%E1%85%B5%E1%86%AB%E1%84%90%E1%85%B3_1.png"
+        "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/beginner/1-9/1-9+%E1%84%92%E1%85%B5%E1%86%AB%E1%84%90%E1%85%B3_1.png",
     },
     level10: {
       cover:
@@ -596,8 +602,8 @@ export const OCP_IMAGES = {
       answer1:
         "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/beginner/1-10/1-10+%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%83%E1%85%A1%E1%86%B8_1.png",
       hint1:
-        "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/beginner/1-10/1-10+%E1%84%92%E1%85%B5%E1%86%AB%E1%84%90%E1%85%B3_1.png"
-    }
+        "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/beginner/1-10/1-10+%E1%84%92%E1%85%B5%E1%86%AB%E1%84%90%E1%85%B3_1.png",
+    },
   },
   intermediate: {
     level1: {
@@ -634,7 +640,7 @@ export const OCP_IMAGES = {
         "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/intermediate/2-1/2-1+%E1%84%89%E1%85%B3%E1%84%91%E1%85%B3%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%B3+%E1%84%89%E1%85%A5%E1%86%AF%E1%84%86%E1%85%A7%E1%86%BC_1_new.png",
       select2:
         // "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/intermediate/2-1/2-1+%E1%84%89%E1%85%B3%E1%84%91%E1%85%B3%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%B3+%E1%84%89%E1%85%A5%E1%86%AF%E1%84%86%E1%85%A7%E1%86%BC_2.png"
-        "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/intermediate/2-1/2-1+%E1%84%89%E1%85%B3%E1%84%91%E1%85%B3%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%B3+%E1%84%89%E1%85%A5%E1%86%AF%E1%84%86%E1%85%A7%E1%86%BC_2_new.png"
+        "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/intermediate/2-1/2-1+%E1%84%89%E1%85%B3%E1%84%91%E1%85%B3%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%B3+%E1%84%89%E1%85%A5%E1%86%AF%E1%84%86%E1%85%A7%E1%86%BC_2_new.png",
     },
     level2: {
       cover:
@@ -657,7 +663,7 @@ export const OCP_IMAGES = {
       hint1:
         "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/intermediate/2-2/2-2+%E1%84%92%E1%85%B5%E1%86%AB%E1%84%90%E1%85%B3_1.png",
       hint2:
-        "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/intermediate/2-2/2-2+%E1%84%92%E1%85%B5%E1%86%AB%E1%84%90%E1%85%B3_2.png"
+        "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/intermediate/2-2/2-2+%E1%84%92%E1%85%B5%E1%86%AB%E1%84%90%E1%85%B3_2.png",
     },
     level3: {
       cover:
@@ -687,7 +693,7 @@ export const OCP_IMAGES = {
       hint2:
         "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/intermediate/2-3/2-3+%E1%84%92%E1%85%B5%E1%86%AB%E1%84%90%E1%85%B3_2.png",
       hint3:
-        "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/intermediate/2-3/2-3+%E1%84%92%E1%85%B5%E1%86%AB%E1%84%90%E1%85%B3_3.png"
+        "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/intermediate/2-3/2-3+%E1%84%92%E1%85%B5%E1%86%AB%E1%84%90%E1%85%B3_3.png",
     },
     level4: {
       cover:
@@ -712,7 +718,7 @@ export const OCP_IMAGES = {
         "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/intermediate/2-4/2-4+%E1%84%92%E1%85%B5%E1%86%AB%E1%84%90%E1%85%B3_2.png",
       select1:
         // "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/intermediate/2-4/2-4+%E1%84%89%E1%85%B3%E1%84%91%E1%85%B3%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%B3+%E1%84%89%E1%85%A5%E1%86%AF%E1%84%86%E1%85%A7%E1%86%BC_1.png"
-        "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/intermediate/2-4/2-4+%E1%84%89%E1%85%B3%E1%84%91%E1%85%B3%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%B3+%E1%84%89%E1%85%A5%E1%86%AF%E1%84%86%E1%85%A7%E1%86%BC_1_new.png"
+        "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/intermediate/2-4/2-4+%E1%84%89%E1%85%B3%E1%84%91%E1%85%B3%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%B3+%E1%84%89%E1%85%A5%E1%86%AF%E1%84%86%E1%85%A7%E1%86%BC_1_new.png",
     },
     level5: {
       cover:
@@ -748,7 +754,7 @@ export const OCP_IMAGES = {
         "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/intermediate/2-5/2-5+%E1%84%89%E1%85%B3%E1%84%91%E1%85%B3%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%B3+%E1%84%89%E1%85%A5%E1%86%AF%E1%84%86%E1%85%A7%E1%86%BC_1_new.png",
       select2:
         // "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/intermediate/2-5/2-5+%E1%84%89%E1%85%B3%E1%84%91%E1%85%B3%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%B3+%E1%84%89%E1%85%A5%E1%86%AF%E1%84%86%E1%85%A7%E1%86%BC_2.png"
-        "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/intermediate/2-5/2-5+%E1%84%89%E1%85%B3%E1%84%91%E1%85%B3%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%B3+%E1%84%89%E1%85%A5%E1%86%AF%E1%84%86%E1%85%A7%E1%86%BC_2_new.png"
+        "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/intermediate/2-5/2-5+%E1%84%89%E1%85%B3%E1%84%91%E1%85%B3%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%B3+%E1%84%89%E1%85%A5%E1%86%AF%E1%84%86%E1%85%A7%E1%86%BC_2_new.png",
     },
     level6: {
       cover:
@@ -788,7 +794,7 @@ export const OCP_IMAGES = {
       hint3:
         "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/intermediate/2-6/2-6+%E1%84%92%E1%85%B5%E1%86%AB%E1%84%90%E1%85%B3_3.png",
       hint4:
-        "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/intermediate/2-6/2-6+%E1%84%92%E1%85%B5%E1%86%AB%E1%84%90%E1%85%B3_4.png"
+        "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/intermediate/2-6/2-6+%E1%84%92%E1%85%B5%E1%86%AB%E1%84%90%E1%85%B3_4.png",
     },
     level7: {
       cover:
@@ -818,7 +824,7 @@ export const OCP_IMAGES = {
       hint2:
         "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/intermediate/2-7/2-7+%E1%84%92%E1%85%B5%E1%86%AB%E1%84%90%E1%85%B3_2.png",
       hint3:
-        "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/intermediate/2-7/2-7+%E1%84%92%E1%85%B5%E1%86%AB%E1%84%90%E1%85%B3_3.png"
+        "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/intermediate/2-7/2-7+%E1%84%92%E1%85%B5%E1%86%AB%E1%84%90%E1%85%B3_3.png",
     },
     level8: {
       cover:
@@ -832,7 +838,7 @@ export const OCP_IMAGES = {
       answer1:
         "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/intermediate/2-8/2-8+%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%83%E1%85%A1%E1%86%B8_1.png",
       hint1:
-        "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/intermediate/2-8/2-8+%E1%84%92%E1%85%B5%E1%86%AB%E1%84%90%E1%85%B3_1.png"
+        "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/intermediate/2-8/2-8+%E1%84%92%E1%85%B5%E1%86%AB%E1%84%90%E1%85%B3_1.png",
     },
     level9: {
       cover:
@@ -862,7 +868,7 @@ export const OCP_IMAGES = {
       hint2:
         "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/intermediate/2-9/2-9+%E1%84%92%E1%85%B5%E1%86%AB%E1%84%90%E1%85%B3_2.png",
       hint3:
-        "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/intermediate/2-9/2-9+%E1%84%92%E1%85%B5%E1%86%AB%E1%84%90%E1%85%B3_3.png"
+        "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/intermediate/2-9/2-9+%E1%84%92%E1%85%B5%E1%86%AB%E1%84%90%E1%85%B3_3.png",
     },
     level10: {
       cover:
@@ -888,8 +894,8 @@ export const OCP_IMAGES = {
         "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/intermediate/2-10/2-10+%E1%84%92%E1%85%B5%E1%86%AB%E1%84%90%E1%85%B3_2_new.png",
       select1:
         // "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/intermediate/2-10/2-10+%E1%84%89%E1%85%B3%E1%84%91%E1%85%B3%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%B3+%E1%84%89%E1%85%A5%E1%86%AF%E1%84%86%E1%85%A7%E1%86%BC_1.png"
-        "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/intermediate/2-10/2-10+%E1%84%92%E1%85%B5%E1%86%AB%E1%84%90%E1%85%B3_2_new.png"
-    }
+        "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/intermediate/2-10/2-10+%E1%84%92%E1%85%B5%E1%86%AB%E1%84%90%E1%85%B3_2_new.png",
+    },
   },
   advanced: {
     level1: {
@@ -926,7 +932,7 @@ export const OCP_IMAGES = {
         "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/advanced/3-1/3-1+%E1%84%89%E1%85%B3%E1%84%91%E1%85%B3%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%B3+%E1%84%89%E1%85%A5%E1%86%AF%E1%84%86%E1%85%A7%E1%86%BC_1_new.png",
       select2:
         // "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/advanced/3-1/3-1+%E1%84%89%E1%85%B3%E1%84%91%E1%85%B3%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%B3+%E1%84%89%E1%85%A5%E1%86%AF%E1%84%86%E1%85%A7%E1%86%BC_2.png"
-        "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/advanced/3-1/3-1+%E1%84%89%E1%85%B3%E1%84%91%E1%85%B3%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%B3+%E1%84%89%E1%85%A5%E1%86%AF%E1%84%86%E1%85%A7%E1%86%BC_2_new.png"
+        "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/advanced/3-1/3-1+%E1%84%89%E1%85%B3%E1%84%91%E1%85%B3%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%B3+%E1%84%89%E1%85%A5%E1%86%AF%E1%84%86%E1%85%A7%E1%86%BC_2_new.png",
     },
     level2: {
       cover:
@@ -961,7 +967,7 @@ export const OCP_IMAGES = {
         "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/advanced/3-2/3-2+%E1%84%92%E1%85%B5%E1%86%AB%E1%84%90%E1%85%B3_3.png",
       select1:
         // "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/advanced/3-2/3-2+%E1%84%89%E1%85%B3%E1%84%91%E1%85%B3%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%B3+%E1%84%89%E1%85%A5%E1%86%AF%E1%84%86%E1%85%A7%E1%86%BC_1.png"
-        "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/advanced/3-2/3-2+%E1%84%89%E1%85%B3%E1%84%91%E1%85%B3%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%B3+%E1%84%89%E1%85%A5%E1%86%AF%E1%84%86%E1%85%A7%E1%86%BC_1_new.png"
+        "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/advanced/3-2/3-2+%E1%84%89%E1%85%B3%E1%84%91%E1%85%B3%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%B3+%E1%84%89%E1%85%A5%E1%86%AF%E1%84%86%E1%85%A7%E1%86%BC_1_new.png",
     },
     level3: {
       cover:
@@ -1001,7 +1007,7 @@ export const OCP_IMAGES = {
       hint3:
         "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/advanced/3-3/3-3+%E1%84%92%E1%85%B5%E1%86%AB%E1%84%90%E1%85%B3_3.png",
       hint4:
-        "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/advanced/3-3/3-3+%E1%84%92%E1%85%B5%E1%86%AB%E1%84%90%E1%85%B3_4.png"
+        "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/advanced/3-3/3-3+%E1%84%92%E1%85%B5%E1%86%AB%E1%84%90%E1%85%B3_4.png",
     },
     level4: {
       cover:
@@ -1028,7 +1034,7 @@ export const OCP_IMAGES = {
         "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/advanced/3-4/3-4+%E1%84%92%E1%85%B5%E1%86%AB%E1%84%90%E1%85%B3_2.png",
       select1:
         // "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/advanced/3-4/3-4+%E1%84%89%E1%85%B3%E1%84%91%E1%85%B3%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%B3+%E1%84%89%E1%85%A5%E1%86%AF%E1%84%86%E1%85%A7%E1%86%BC_1.png"
-        "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/advanced/3-4/3-4+%E1%84%89%E1%85%B3%E1%84%91%E1%85%B3%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%B3+%E1%84%89%E1%85%A5%E1%86%AF%E1%84%86%E1%85%A7%E1%86%BC_1_new.png"
+        "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/advanced/3-4/3-4+%E1%84%89%E1%85%B3%E1%84%91%E1%85%B3%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%B3+%E1%84%89%E1%85%A5%E1%86%AF%E1%84%86%E1%85%A7%E1%86%BC_1_new.png",
     },
     level5: {
       cover:
@@ -1055,7 +1061,7 @@ export const OCP_IMAGES = {
         "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/advanced/3-5/3-5+%E1%84%92%E1%85%B5%E1%86%AB%E1%84%90%E1%85%B3_2.png",
       select1:
         // "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/advanced/3-5/3-5+%E1%84%89%E1%85%B3%E1%84%91%E1%85%B3%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%B3+%E1%84%89%E1%85%A5%E1%86%AF%E1%84%86%E1%85%A7%E1%86%BC_1.png"
-        "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/advanced/3-5/3-5+%E1%84%89%E1%85%B3%E1%84%91%E1%85%B3%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%B3+%E1%84%89%E1%85%A5%E1%86%AF%E1%84%86%E1%85%A7%E1%86%BC_1_new.png"
+        "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/advanced/3-5/3-5+%E1%84%89%E1%85%B3%E1%84%91%E1%85%B3%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%B3+%E1%84%89%E1%85%A5%E1%86%AF%E1%84%86%E1%85%A7%E1%86%BC_1_new.png",
     },
     level6: {
       cover:
@@ -1088,7 +1094,7 @@ export const OCP_IMAGES = {
       hint2:
         "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/advanced/3-6/3-6+%E1%84%92%E1%85%B5%E1%86%AB%E1%84%90%E1%85%B3_2.png",
       hint3:
-        "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/advanced/3-6/3-6+%E1%84%92%E1%85%B5%E1%86%AB%E1%84%90%E1%85%B3_3.png"
+        "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/advanced/3-6/3-6+%E1%84%92%E1%85%B5%E1%86%AB%E1%84%90%E1%85%B3_3.png",
     },
     level7: {
       cover:
@@ -1112,7 +1118,7 @@ export const OCP_IMAGES = {
       hint1:
         "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/advanced/3-7/3-7+%E1%84%92%E1%85%B5%E1%86%AB%E1%84%90%E1%85%B3_1.png",
       hint2:
-        "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/advanced/3-7/3-7+%E1%84%92%E1%85%B5%E1%86%AB%E1%84%90%E1%85%B3_2.png"
+        "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/advanced/3-7/3-7+%E1%84%92%E1%85%B5%E1%86%AB%E1%84%90%E1%85%B3_2.png",
     },
     level8: {
       cover:
@@ -1136,7 +1142,7 @@ export const OCP_IMAGES = {
       hint1:
         "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/advanced/3-8/3-8+%E1%84%92%E1%85%B5%E1%86%AB%E1%84%90%E1%85%B3_1.png",
       hint2:
-        "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/advanced/3-8/3-8+%E1%84%92%E1%85%B5%E1%86%AB%E1%84%90%E1%85%B3_2.png"
+        "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/advanced/3-8/3-8+%E1%84%92%E1%85%B5%E1%86%AB%E1%84%90%E1%85%B3_2.png",
     },
     level9: {
       cover:
@@ -1160,7 +1166,7 @@ export const OCP_IMAGES = {
       hint1:
         "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/advanced/3-9/3-9+%E1%84%92%E1%85%B5%E1%86%AB%E1%84%90%E1%85%B3_1.png",
       hint2:
-        "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/advanced/3-9/3-9+%E1%84%92%E1%85%B5%E1%86%AB%E1%84%90%E1%85%B3_2.png"
+        "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/advanced/3-9/3-9+%E1%84%92%E1%85%B5%E1%86%AB%E1%84%90%E1%85%B3_2.png",
     },
     level10: {
       cover:
@@ -1188,23 +1194,23 @@ export const OCP_IMAGES = {
         "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/advanced/3-10/3-10+%E1%84%92%E1%85%B5%E1%86%AB%E1%84%90%E1%85%B3_2.png",
       select1:
         // "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/advanced/3-10/3-10+%E1%84%89%E1%85%B3%E1%84%91%E1%85%B3%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%B3+%E1%84%89%E1%85%A5%E1%86%AF%E1%84%86%E1%85%A7%E1%86%BC_1.png",
-        "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/advanced/3-10/3-10+%E1%84%89%E1%85%B3%E1%84%91%E1%85%B3%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%B3+%E1%84%89%E1%85%A5%E1%86%AF%E1%84%86%E1%85%A7%E1%86%BC_1_new.png"
-    }
-  }
+        "https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com/ocp/advanced/3-10/3-10+%E1%84%89%E1%85%B3%E1%84%91%E1%85%B3%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%B3+%E1%84%89%E1%85%A5%E1%86%AF%E1%84%86%E1%85%A7%E1%86%BC_1_new.png",
+    },
+  },
 };
 
 export const OCPv2 = {
   GAMETYPE: {
     ESCAPE: "escape",
     BLOCK: "block",
-    GAME: "game"
+    GAME: "game",
   },
 
   GRADE: {
     BEGINNER: "beginner",
     INTERMEDIATE: "intermediate",
-    ADVANCED: "advanced"
-  }
+    ADVANCED: "advanced",
+  },
 };
 
 export const OCPGame = {
@@ -1224,7 +1230,7 @@ export const OCPGame = {
         gameSrc:
           "https://wizschool-published.s3.ap-northeast-2.amazonaws.com/57afff78-18d7-4e7e-b80d-d011f348b3f1.html",
         guide: "https://d1tz4sj00zmgsb.cloudfront.net/ocp-block-beginner.pdf",
-        certificationImg: require("../../Page/OCP2/Assets/block/beginner/certification.png")
+        certificationImg: require("../../Page/OCP2/Assets/block/beginner/certification.png"),
       },
       intermediate: {
         title: "할로윈 마녀의 모험",
@@ -1233,7 +1239,7 @@ export const OCPGame = {
           "https://wizschool-published.s3.ap-northeast-2.amazonaws.com/22511b0f-f64f-4391-b241-951cf9e69a6e.html",
         guide:
           "https://d1tz4sj00zmgsb.cloudfront.net/ocp-block-intermediate.pdf",
-        certificationImg: require("../../Page/OCP2/Assets/block/intermediate/certification.png")
+        certificationImg: require("../../Page/OCP2/Assets/block/intermediate/certification.png"),
       },
       advanced: {
         thumbnail: require("../../Page/OCP2/Assets/game/advanced/thumbnail.png"),
@@ -1241,9 +1247,9 @@ export const OCPGame = {
         gameSrc:
           "https://wizschool-published.s3.ap-northeast-2.amazonaws.com/3770a31e-ab46-4251-8baa-70eb8e40e5ac.html",
         guide: "https://d1tz4sj00zmgsb.cloudfront.net/ocp-block-advanced.pdf",
-        certificationImg: require("../../Page/OCP2/Assets/block/advanced/certification.png")
-      }
-    }
+        certificationImg: require("../../Page/OCP2/Assets/block/advanced/certification.png"),
+      },
+    },
   },
   game: {
     title: "나도 게임회사 \n개발자!",
@@ -1261,7 +1267,7 @@ export const OCPGame = {
         gameSrc:
           "https://wizschool-published.s3.ap-northeast-2.amazonaws.com/57afff78-18d7-4e7e-b80d-d011f348b3f1.html",
         guide: "https://d1tz4sj00zmgsb.cloudfront.net/ocp-game-beginner.pdf",
-        certificationImg: require("../../Page/OCP2/Assets/game/beginner/certification.png")
+        certificationImg: require("../../Page/OCP2/Assets/game/beginner/certification.png"),
       },
       intermediate: {
         title: "할로윈 마녀의 모험",
@@ -1270,7 +1276,7 @@ export const OCPGame = {
           "https://wizschool-published.s3.ap-northeast-2.amazonaws.com/22511b0f-f64f-4391-b241-951cf9e69a6e.html",
         guide:
           "https://d1tz4sj00zmgsb.cloudfront.net/ocp-game-intermediate.pdf",
-        certificationImg: require("../../Page/OCP2/Assets/game/intermediate/certification.png")
+        certificationImg: require("../../Page/OCP2/Assets/game/intermediate/certification.png"),
       },
       advanced: {
         thumbnail: require("../../Page/OCP2/Assets/game/advanced/thumbnail.png"),
@@ -1278,9 +1284,9 @@ export const OCPGame = {
         gameSrc:
           "https://wizschool-published.s3.ap-northeast-2.amazonaws.com/3770a31e-ab46-4251-8baa-70eb8e40e5ac.html",
         guide: "https://d1tz4sj00zmgsb.cloudfront.net/ocp-game-advanced.pdf",
-        certificationImg: require("../../Page/OCP2/Assets/game/advanced/certification.png")
-      }
-    }
+        certificationImg: require("../../Page/OCP2/Assets/game/advanced/certification.png"),
+      },
+    },
   },
   escape: {
     title: "방탈출에 \n도전하라!",
@@ -1298,7 +1304,7 @@ export const OCPGame = {
         gameSrc:
           "https://wizschool-published.s3.ap-northeast-2.amazonaws.com/5ae60ab3-f5ae-4084-93ee-a59be680f184.html",
         guide: "https://d1tz4sj00zmgsb.cloudfront.net/ocp-escape-beginner.pdf",
-        certificationImg: require("../../Page/OCP2/Assets/escape/beginner/certification.png")
+        certificationImg: require("../../Page/OCP2/Assets/escape/beginner/certification.png"),
       },
       intermediate: {
         title: "‘몬텐노’의 \n금고를 열어라!",
@@ -1307,7 +1313,7 @@ export const OCPGame = {
           "https://wizschool-published.s3.ap-northeast-2.amazonaws.com/364d12bd-2af9-42e1-8eec-2005fbb063fa.html",
         guide:
           "https://d1tz4sj00zmgsb.cloudfront.net/ocp-escape-intermediate.pdf",
-        certificationImg: require("../../Page/OCP2/Assets/escape/intermediate/certification.png")
+        certificationImg: require("../../Page/OCP2/Assets/escape/intermediate/certification.png"),
       },
       advanced: {
         thumbnail: require("../../Page/OCP2/Assets/escape/advanced/thumbnail.png"),
@@ -1315,30 +1321,30 @@ export const OCPGame = {
         gameSrc:
           "https://wizschool-published.s3.ap-northeast-2.amazonaws.com/d858e0f6-85fc-4d53-b4e4-19b35090bbe7.html",
         guide: "https://d1tz4sj00zmgsb.cloudfront.net/ocp-escape-advanced.pdf",
-        certificationImg: require("../../Page/OCP2/Assets/escape/advanced/certification.png")
-      }
-    }
-  }
+        certificationImg: require("../../Page/OCP2/Assets/escape/advanced/certification.png"),
+      },
+    },
+  },
 };
 
 export const WIZLAB_APK_STATUS = {
   ONGOING: "ongoing",
   COMPLETE: "complete",
-  CANCEL: "cancel"
+  CANCEL: "cancel",
 };
 
 export const LEARNING_COMPLETE_ID = [
   "learning_oobc_c1",
   "learning_js_c1",
-  "learning_python_c1"
-]
+  "learning_python_c1",
+];
 
 export const USER_TYPE = {
   SUPER_ADMIN: "Z",
   ADMIN: "A",
   TUTOR: "T",
-  STUDENT: "S"
-}
+  STUDENT: "S",
+};
 
 export const isConnectProd = () => {
   return false;

@@ -7,22 +7,19 @@ import store from "../../../Builder/Store";
 import Field from "../Field";
 import ConditionsField from "./ConditionsField";
 import SlideField from "./SlideField";
-import OOBCHelper from "./OOBCHelper"
+import OOBCHelper from "./OOBCHelper";
 import "./index.scss";
 
 function TemplateEditor(props) {
-  useEffect(
-    () => {
-      let parsed;
-      try {
-        parsed = JSON.parse(props.defaultTemplate) || createEmptyTemplate();
-      } catch (err) {
-        parsed = createEmptyTemplate();
-      }
-      setMissions(parsed.missions || []);
-    },
-    [props.defaultTemplate]
-  );
+  useEffect(() => {
+    let parsed;
+    try {
+      parsed = JSON.parse(props.defaultTemplate) || createEmptyTemplate();
+    } catch (err) {
+      parsed = createEmptyTemplate();
+    }
+    setMissions(parsed.missions || []);
+  }, [props.defaultTemplate]);
 
   const [missions, setMissions] = useState([]);
   const [currentMissionIndex, setCurrentMissionIndex] = useState(-1);
@@ -30,21 +27,18 @@ function TemplateEditor(props) {
   const currentMissionNum = currentMissionIndex + 1;
   const maxMissionIndex = missions.length - 1;
   const maxMissionNum = maxMissionIndex + 1;
-  useEffect(
-    () => {
-      if (missions.length > 0) {
-        if (currentMissionIndex < 0) {
-          setCurrentMissionIndex(0);
-        }
-      } else {
-        setCurrentMissionIndex(-1);
+  useEffect(() => {
+    if (missions.length > 0) {
+      if (currentMissionIndex < 0) {
+        setCurrentMissionIndex(0);
       }
-      if (props.onChangeTotalMissionNum) {
-        props.onChangeTotalMissionNum(missions.length);
-      }
-    },
-    [missions]
-  );
+    } else {
+      setCurrentMissionIndex(-1);
+    }
+    if (props.onChangeTotalMissionNum) {
+      props.onChangeTotalMissionNum(missions.length);
+    }
+  }, [missions]);
 
   const isPrevEnabled = currentMissionNum > 1;
   const isNextEnabled = currentMissionNum < maxMissionNum;
@@ -91,68 +85,59 @@ function TemplateEditor(props) {
   const [mediaURL, setMediaURL] = useState("");
   const [slide, setSlide] = useState("");
   const [conditions, setConditions] = useState([]);
-  useEffect(
-    () => {
-      if (currentMission) {
-        setTitle(currentMission.title || "");
-        setPId(currentMission.pId || "");
-        setState(currentMission.state || "");
-        setSlide(currentMission.slide || "");
-        setConditions(currentMission.conditions || []);
-      } else {
-        setTitle("");
-        setPId("");
-        setState("");
-        setSlide("");
-        setConditions([]);
-      }
-      setMediaURL("");
-    },
-    [currentMission]
-  );
-  useEffect(
-    () => {
-      if (currentMission) {
-        currentMission.title = title;
-        currentMission.pId = pId;
-        currentMission.state = state;
-        currentMission.slide = slide;
-        currentMission.conditions = conditions;
-      }
-    },
-    [title, pId, state, slide, conditions]
-  );
-  useEffect(
-    () => {
-      if (state) {
-        try {
-          const parsedState = JSON.parse(state);
-          AssetLibrary.loadAssetsFromScene(parsedState.scene, () => {
-            props.setProject({ state: parsedState });
-          });
-        } catch (err) {}
-      }
-    },
-    [state]
-  );
+  useEffect(() => {
+    if (currentMission) {
+      setTitle(currentMission.title || "");
+      setPId(currentMission.pId || "");
+      setState(currentMission.state || "");
+      setSlide(currentMission.slide || "");
+      setConditions(currentMission.conditions || []);
+    } else {
+      setTitle("");
+      setPId("");
+      setState("");
+      setSlide("");
+      setConditions([]);
+    }
+    setMediaURL("");
+  }, [currentMission]);
+  useEffect(() => {
+    if (currentMission) {
+      currentMission.title = title;
+      currentMission.pId = pId;
+      currentMission.state = state;
+      currentMission.slide = slide;
+      currentMission.conditions = conditions;
+    }
+  }, [title, pId, state, slide, conditions]);
+  useEffect(() => {
+    if (state) {
+      try {
+        const parsedState = JSON.parse(state);
+        AssetLibrary.loadAssetsFromScene(parsedState.scene, () => {
+          props.setProject({ state: parsedState });
+        });
+      } catch (err) {}
+    }
+  }, [state]);
+
+  // 프로젝트 불러오기
   const onClickLoadDevelopingProject = () => {
     request
-      .getDevelopingProject({ pId })
-      .then(res => res.json())
-      .then(developingProject => {
-        setState(developingProject.state);
+      .getSaasDevelopingProject(pId)
+      .then((res) => res.json())
+      .then((developingProject) => {
+        setState(developingProject.data.projectInfo.state);
       });
   };
 
+  // 입력할 때 template 수정
   if (props.onChangeTemplate) {
-    useEffect(
-      () => {
-        const parsed = { missions };
-        const template = JSON.stringify(parsed);
-        props.onChangeTemplate(template);
-      },
-      [missions, title, pId, state, slide, conditions]
-    );
+    useEffect(() => {
+      const parsed = { missions };
+      const template = JSON.stringify(parsed);
+      props.onChangeTemplate(template);
+    }, [missions, title, pId, state, slide, conditions]);
   }
 
   return (
@@ -240,7 +225,7 @@ function TemplateEditor(props) {
               value={slide}
               onChange={setSlide}
             />
-            <OOBCHelper 
+            <OOBCHelper
               id="oobc"
               title="OOBC 컨텍스트 작성 도우미"
               comment="OOBC로 코딩한 후에 컨텍스트를 복사해서 슬라이드 마크다운에 붙여넣어주세요"
@@ -259,7 +244,7 @@ function TemplateEditor(props) {
 }
 
 function withProvider(Component) {
-  return function(props) {
+  return function (props) {
     return (
       <Provider store={store}>
         <Component {...props} />
@@ -268,10 +253,9 @@ function withProvider(Component) {
   };
 }
 export default withProvider(
-  connect(
-    state => ({ scene: state.scene }),
-    { setProject: projectActions.setProject }
-  )(TemplateEditor)
+  connect((state) => ({ scene: state.scene }), {
+    setProject: projectActions.setProject,
+  })(TemplateEditor)
 );
 
 function createEmptyMission() {
@@ -280,11 +264,11 @@ function createEmptyMission() {
     slide: "",
     pId: "",
     state: "",
-    conditions: []
+    conditions: [],
   };
 }
 function createEmptyTemplate() {
   return {
-    missions: [createEmptyMission()]
+    missions: [createEmptyMission()],
   };
 }

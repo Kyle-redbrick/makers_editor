@@ -8,34 +8,46 @@ class ProjectList extends Component {
     this.state = {
       courses: [],
       selectedElement: null,
-      unfolded: this.defaultUnfolded
+      unfolded: this.defaultUnfolded,
     };
   }
+
   componentDidMount() {
-    this.loadCourses();
     this.loadSelectedElement();
     this.loadUnfolded();
+    this.loadSaasCourses();
   }
-  loadCourses() {
+
+  loadSaasCourses() {
     request
-      .getDreamCourseDetails()
-      .then(res => res.json())
-      .then(courses => {
-        this.setState({ courses });
+      .getSaasAllCourse()
+      .then((res) => res.json())
+      .then((courses) => {
+        this.setState({ courses: courses.data.courseList });
       })
-      .catch(err => {
-        console.error(err);
+      .catch((err) => {
+        console.log(err);
         this.setState({ courses: [] });
       });
   }
+
   onClickRefresh = () => {
-    this.loadCourses();
+    this.loadSaasCourses();
   };
-  onChangeLocale = e => {
-    // localStorage.setItem("wizLang", e.target.value);
-    localStorage.setItem("wizLang", e.target.value);
-    window.location.reload();
-  }
+
+  onClickCouseAdd = () => {
+    const param = {
+      locale: "ko",
+      title: "새로운 코스가 생성되었습니다.",
+      thumbnailURL: "https://google.com",
+      description: "test",
+    };
+    request
+      .getNewCourse(param)
+      .then((res) => res.json())
+      .then((json) => console.log("json", json))
+      .then(this.onClickRefresh());
+  };
 
   componentDidUpdate(prevProps, prevState) {
     if (prevState.selectedElement !== this.state.selectedElement) {
@@ -54,6 +66,7 @@ class ProjectList extends Component {
     }
     this.saveSelectedElement();
   }
+
   saveSelectedElement() {
     if (this.state.selectedElement) {
       const { type, id } = this.state.selectedElement;
@@ -65,6 +78,7 @@ class ProjectList extends Component {
       localStorage.removeItem("dreamEditorSelectedElement");
     }
   }
+
   loadSelectedElement() {
     let selectedElement;
     try {
@@ -80,12 +94,14 @@ class ProjectList extends Component {
   onChangeUnfolded() {
     this.saveUnfolded();
   }
+
   saveUnfolded() {
     localStorage.setItem(
       "dreamEditorUnfolded",
       JSON.stringify(this.state.unfolded)
     );
   }
+
   loadUnfolded() {
     let unfolded;
     try {
@@ -110,35 +126,32 @@ class ProjectList extends Component {
       list.push(courseElement);
       if (courseElement.isFolded) continue;
 
-      for (let lecture of course.lectures || []) {
+      for (let lecture of course.courseLessonMappings || []) {
         const lectureElement = this.createElement("lecture", lecture);
         list.push(lectureElement);
-        if (lectureElement.isFolded) continue;
-
-        for (let project of lecture.projects || []) {
-          const projectElement = this.createElement("project", project);
-          list.push(projectElement);
-        }
       }
     }
 
     return list;
   }
+
   createElement(type, data) {
     return {
       type,
       data,
       isSelected: this.isElementSelected(type, data),
-      isFolded: this.isElementFolded(type, data)
+      isFolded: this.isElementFolded(type, data),
     };
   }
+
   isElementSelected(type, data) {
     return (
       this.state.selectedElement &&
       type === this.state.selectedElement.type &&
-      this.state.selectedElement.id === data.id
+      this.state.selectedElement.id === (data.id || data.lesson.id)
     );
   }
+
   isElementFolded(type, data) {
     switch (type) {
       case "course":
@@ -156,20 +169,21 @@ class ProjectList extends Component {
     return this.state.unfolded.lectureIds;
   }
 
-  onClickElement = element => {
+  onClickElement = (element) => {
     if (element === this.state.selectedElement) {
       this.setState({ selectedElement: null });
     } else {
       this.setState({
         selectedElement: {
           type: element.type,
-          id: element.data.id,
-          data: element.data
-        }
+          id: element.data.id || element.data.lesson.id,
+          data: element.data,
+        },
       });
     }
   };
-  onClickElementFold = element => {
+
+  onClickElementFold = (element) => {
     switch (element.type) {
       case "course":
         const courseIds = [...this.unfoldedCourseIds];
@@ -179,8 +193,8 @@ class ProjectList extends Component {
         } else {
           courseIds.push(element.data.id);
         }
-        this.setState(prevState => ({
-          unfolded: { ...prevState.unfolded, courseIds }
+        this.setState((prevState) => ({
+          unfolded: { ...prevState.unfolded, courseIds },
         }));
         break;
       case "lecture":
@@ -191,29 +205,31 @@ class ProjectList extends Component {
         } else {
           lectureIds.push(element.data.id);
         }
-        this.setState(prevState => ({
-          unfolded: { ...prevState.unfolded, lectureIds }
+        this.setState((prevState) => ({
+          unfolded: { ...prevState.unfolded, lectureIds },
         }));
         break;
       default:
         break;
     }
   };
-  onClickElementAdd = element => {
+
+  onClickElementAdd = (element) => {
     switch (element.type) {
       case "course":
         const courseId = element.data.id;
-        this.addLectureForCourse(courseId);
+        const newLessonOrder = element.data.courseLessonMappings.length;
+        this.addLecture(courseId, newLessonOrder);
+
+        this.saveSelectedElement(courseId);
         break;
-      case "lecture":
-        const lectureId = element.data.id;
-        this.addProjectForLecture(lectureId);
-        break;
+
       default:
         break;
     }
   };
-  onClickElementDelete = element => {
+
+  onClickElementDelete = (element) => {
     const confirmed = window.confirm("정말 삭제하시겠어요?");
     if (!confirmed) return;
 
@@ -222,56 +238,60 @@ class ProjectList extends Component {
         const lectureId = element.data.id;
         this.deleteLecture(lectureId);
         break;
-      case "project":
-        const projectId = element.data.id;
-        this.deleteProject(projectId);
-        break;
+
       default:
         break;
     }
   };
 
-  addLectureForCourse(courseId) {
+  addLecture(courseId, newLessonOrder) {
+    const order = newLessonOrder;
     request
-      .addDreamLectureForCourse(courseId)
-      .then(res => res.json())
-      .then(json => {
-        if (json.success) {
-          const { lecture } = json;
-          this.setState(prevState => {
-            for (let course of prevState.courses) {
-              if (course.id === courseId) {
-                if (course.lectures) {
-                  course.lectures.push(lecture);
-                } else {
-                  course.lectures = [lecture];
-                }
-              }
-            }
-            return true;
-          });
-        } else {
-          throw json;
-        }
+      .addLecture()
+      .then((res) => res.json())
+      .then((json) =>
+        request
+          .connectCourseAndLecture({
+            courseId,
+            lessonId: json.data.lessonInfo.id,
+            order,
+          })
+          .then((res) => res.json())
+          .then((json) => {
+            localStorage.setItem(
+              "dreamEditorSelectedElement",
+              JSON.stringify({ type: "lecture", id: json.mappingInfo.lessonId })
+            );
+            this.setState({
+              selectedElement: {
+                type: "lecture",
+                id: json.mappingInfo.lessonId,
+              },
+            });
+          })
+      )
+      .then(() => {
+        this.loadSaasCourses();
       })
-      .catch(err => {
+      .catch((err) => {
         console.error(err);
         window.alert(JSON.stringify(err));
       });
   }
+
   deleteLecture(lectureId) {
     request
       .deleteDreamLecture(lectureId)
-      .then(res => res.json())
-      .then(json => {
+      .then((res) => res.json())
+      .then((json) => {
         if (json.success) {
-          this.setState(prevState => {
+          this.setState((prevState) => {
             for (let course of prevState.courses) {
-              const index = course.lectures.findIndex(
-                lecture => lecture.id === lectureId
+              const index = course.courseLessonMappings.findIndex(
+                (lecture) => lecture.id === lectureId
               );
               if (index >= 0) {
-                course.lectures.splice(index, 1);
+                course.courseLessonMappings.splice(index, 1);
               }
             }
             return true;
@@ -280,65 +300,7 @@ class ProjectList extends Component {
           throw json;
         }
       })
-      .catch(err => {
-        console.error(err);
-        window.alert(JSON.stringify(err));
-      });
-  }
-  addProjectForLecture(lectureId) {
-    request
-      .addDreamProjectForLecture(lectureId)
-      .then(res => res.json())
-      .then(json => {
-        if (json.success) {
-          const { project } = json;
-          this.setState(prevState => {
-            for (let course of prevState.courses) {
-              for (let lecture of course.lectures || []) {
-                if (lecture.id === lectureId) {
-                  if (lecture.projects) {
-                    lecture.projects.push(project);
-                  } else {
-                    lecture.projects = [project];
-                  }
-                }
-              }
-            }
-            return true;
-          });
-        } else {
-          throw json;
-        }
-      })
-      .catch(err => {
-        console.error(err);
-        window.alert(JSON.stringify(err));
-      });
-  }
-  deleteProject(projectId) {
-    request
-      .deleteDreamProject(projectId)
-      .then(res => res.json())
-      .then(json => {
-        if (json.success) {
-          this.setState(prevState => {
-            for (let course of prevState.courses) {
-              for (let lecture of course.lectures || []) {
-                const index = lecture.projects.findIndex(
-                  project => project.id === projectId
-                );
-                if (index >= 0) {
-                  lecture.projects.splice(index, 1);
-                }
-              }
-            }
-            return true;
-          });
-        } else {
-          throw json;
-        }
-      })
-      .catch(err => {
+      .catch((err) => {
         console.error(err);
         window.alert(JSON.stringify(err));
       });
@@ -348,16 +310,14 @@ class ProjectList extends Component {
     return (
       <div className="dreamEditor_projectList">
         <div className="dreamEditor_projectList_header">
-          <div className="dreamEditor_projectList_title">프로젝트 목록</div>
-          <select
-            className="dreamEditor_projectList_locale"
-            value={localStorage.getItem("wizLang") || "en"}
-            onChange={this.onChangeLocale}
+          <div className="dreamEditor_projectList_title">코스 목록</div>
+
+          <div
+            className="dreamEditor_projectList_course_add"
+            onClick={this.onClickCouseAdd}
           >
-            {["en","jp"].map(locale => (
-              <option key={locale} value={locale}>{locale}</option>
-            ))}
-          </select>
+            코스 추가
+          </div>
           <div
             className="dreamEditor_projectList_refresh"
             onClick={this.onClickRefresh}
@@ -385,7 +345,7 @@ function List(props) {
     onClickElement,
     onClickElementFold,
     onClickElementAdd,
-    onClickElementDelete
+    onClickElementDelete,
   } = props;
   return (
     <div className="dreamEditor_projectList_list">
@@ -430,30 +390,16 @@ function Element(props) {
     case "course":
       const course = element.data;
       iconURL = course.iconURL;
-      title = `${
-        course.localized && course.localized[0]
-        ? course.localized[0].title
-        : course.title}`;
+      title = course.title;
       break;
     case "lecture":
       const lecture = element.data;
-      title = `${
-        lecture.localized && lecture.localized[0]
-        ? lecture.localized[0].title
-        : lecture.title}`;
-      break;
-    case "project":
-      const project = element.data;
-      title = `${
-        project.localized && project.localized[0]
-        ? project.localized[0].title
-        : project.title}`;
+      title = lecture.lesson.title;
       break;
     default:
       title = null;
       break;
   }
-
   return (
     <div
       className={`dreamEditor_projectList_element dreamEditor_projectList_element-${
@@ -465,10 +411,10 @@ function Element(props) {
         onClick(element);
       }}
     >
-      {isFoldable && (
+      {isFoldable && element.type === "course" && (
         <div
           className="dreamEditor_projectList_element_fold"
-          onClick={e => {
+          onClick={(e) => {
             e.stopPropagation();
             onClickFold(element);
           }}
@@ -488,7 +434,7 @@ function Element(props) {
       )}
       {element.isSelected && (
         <div className="dreamEditor_projectList_element_btns">
-          {isAddable && (
+          {isAddable && element.type === "course" && (
             <button
               className="dreamEditor_projectList_element_btn dreamEditor_projectList_element_btn-add"
               onClick={() => {
@@ -498,7 +444,7 @@ function Element(props) {
               추가
             </button>
           )}
-          {isDeletable && (
+          {/* {isDeletable && (
             <button
               className="dreamEditor_projectList_element_btn dreamEditor_projectList_element_btn-delete"
               onClick={() => {
@@ -507,7 +453,7 @@ function Element(props) {
             >
               삭제
             </button>
-          )}
+          )} */}
         </div>
       )}
     </div>

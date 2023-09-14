@@ -11,6 +11,7 @@ function Editor(props) {
     switch (element.type) {
       case "course":
         return <CourseEditor courseId={element.id} />;
+      // return <LectureEditor lectureId={element.id} />;
       case "lecture":
         return <LectureEditor lectureId={element.id} />;
       case "project":

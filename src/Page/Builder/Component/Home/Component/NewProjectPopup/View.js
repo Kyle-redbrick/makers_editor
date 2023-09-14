@@ -9,34 +9,58 @@ function View(props) {
     onChangeProjectName,
     onClickMake2DProject,
     gameDimension,
-    intl
+    intl,
   } = props;
   return (
     <div className="builder--home__newProjectPopup">
-      <div className="builder--popup--title">{intl.formatMessage({ id: "ID_BUILDER_NEW_PROJECT_TITLE" })}</div>
+      <div className="builder--popup--title">
+        {intl.formatMessage({ id: "ID_BUILDER_NEW_PROJECT_TITLE" })}
+      </div>
       {gameDimension === "2D" && (
         <div className="newGamePopup__row row--format">
-          <div className={intl.locale=="en"? "newGamePopup__row--title_en":"newGamePopup__row--title"}>{intl.formatMessage({ id: "ID_BUILDER_NEW_PROJECT_CHOOSE_LANG" })}</div>
+          <div
+            className={
+              intl.locale == "en"
+                ? "newGamePopup__row--title_en"
+                : "newGamePopup__row--title"
+            }
+          >
+            {intl.formatMessage({ id: "ID_BUILDER_NEW_PROJECT_CHOOSE_LANG" })}
+          </div>
           <div className="format__buttons">
             <button
-              className={`button__${editorFormat === "text" && "active"}`}
-              onClick={() => onClickEditorFormat("text")}
+              className={`button__${editorFormat === "JS" && "active"}`}
+              onClick={() => onClickEditorFormat("JS")}
             >
-              {intl.formatMessage({ id: "ID_BUILDER_NEW_PROJECT_TEXTCODING" })}
+              JS
             </button>
+            {/* <button
+              className={`button__${editorFormat === "PY" && "active"}`}
+              onClick={() => onClickEditorFormat("PY")}
+            >
+              PY
+            </button> */}
 
             <button
-              className={`button__${editorFormat === "block" && "active"}`}
-              onClick={() => onClickEditorFormat("block")}
+              className={`button__${editorFormat === "OOBC" && "active"}`}
+              onClick={() => onClickEditorFormat("OOBC")}
             >
-              {intl.formatMessage({ id: "ID_BUILDER_NEW_PROJECT_BLOCKCODING" })}
+              OOBC
             </button>
           </div>
         </div>
       )}
 
       <div className="newGamePopup__row row--name">
-        <div className={intl.locale=="en"? "newGamePopup__row--title_en":"newGamePopup__row--title"}>{intl.formatMessage({ id: "ID_BUILDER_NEW_PROJECT_PROJECT_NAME" })}</div>
+        <div
+          className={
+            intl.locale == "en"
+              ? "newGamePopup__row--title_en"
+              : "newGamePopup__row--title"
+          }
+        >
+          {intl.formatMessage({ id: "ID_BUILDER_NEW_PROJECT_PROJECT_NAME" })}
+        </div>
         <input type="text" onChange={onChangeProjectName} value={projectName} />
       </div>
       <div

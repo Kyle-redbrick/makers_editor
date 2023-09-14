@@ -11,7 +11,7 @@ import "./index.scss";
 import ButtonIndicator from "../ButtonIndicator";
 import ProjectList from "../ProjectListContainer";
 
-export default function(props) {
+export default function (props) {
   const {
     email,
     openProjectPopup,
@@ -37,7 +37,7 @@ export default function(props) {
     // isClickPublish,
     // clickPublishPopup,
     // openPublishGame,
-    handlechangeProjectName
+    handlechangeProjectName,
     // editorMode
   } = props;
   return (
@@ -50,7 +50,7 @@ export default function(props) {
               className="HeaderProjectItem"
               onClick={() => openProjectPopup()}
               data-tip={intl.formatMessage({
-                id: "ID_TOOLTIP_PROJECT_MANAGEMENT"
+                id: "ID_TOOLTIP_PROJECT_MANAGEMENT",
               })}
             >
               <ButtonIndicator buttonId="loadImg">
@@ -61,7 +61,7 @@ export default function(props) {
           {isTutor && (
             <p className="AppHeader__projectList" onClick={handleTemplateBtn}>
               {intl.formatMessage({
-                id: "ID_BUILDER_PROJECTLIST"
+                id: "ID_BUILDER_PROJECTLIST",
               })}
             </p>
           )}
@@ -69,13 +69,14 @@ export default function(props) {
             <ProjectList handleSelectTab={handleSelectTab} />
           )}
           <div
-            className={`HeaderProjectItem HeaderProjectName ${email &&
-              "HeaderChangeName"}`}
+            className={`HeaderProjectItem HeaderProjectName ${
+              email && "HeaderChangeName"
+            }`}
             onClick={() =>
               email && handlechangeProjectName(project.pId, project.name)
             }
           >
-            {project.name ? project.name : "WizLab"}
+            {project.title ? project.title : "WizLab"}
           </div>
 
           {/* <div
@@ -114,7 +115,7 @@ export default function(props) {
               </ButtonIndicator>
             </div>
           )}
-          {email ? (
+          {!email ? (
             <React.Fragment>
               {pageType !== "ocp2" && pageType !== "ocp" && (
                 <React.Fragment>
@@ -127,7 +128,7 @@ export default function(props) {
                       <img src={mobileImg} alt="mobileImg" />
                     </ButtonIndicator>
                   </div> */}
-                  <div
+                  {/* <div
                     className="HeaderProjectItem"
                     onClick={openSharePopup}
                     data-tip={intl.formatMessage({ id: "ID_SHARE_TITLE" })}
@@ -135,12 +136,12 @@ export default function(props) {
                     <ButtonIndicator buttonId="shareImg">
                       <img src={shareImg} alt="shareImg" />
                     </ButtonIndicator>
-                  </div>
+                  </div> */}
                   <div
                     className="HeaderProjectItem"
                     onClick={openPublishPopup}
                     data-tip={intl.formatMessage({
-                      id: "ID_BUILDER_PUBLISHING"
+                      id: "ID_BUILDER_PUBLISHING",
                     })}
                   >
                     <ButtonIndicator buttonId="publishImg">

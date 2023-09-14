@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { injectIntl } from "react-intl";
 import { HTML5toTouch } from "./utils/customHTML5toTouch";
-import { DndProvider } from 'react-dnd-multi-backend'
+import { DndProvider } from "react-dnd-multi-backend";
 import "react-toastify/dist/ReactToastify.css";
 import * as projectActions from "./Store/Reducer/project";
 import * as previewActions from "./Store/Reducer/preview";
@@ -31,7 +31,7 @@ class Container extends Component {
         soundBox: false,
         scene: false,
         animation: false,
-        qna: false
+        qna: false,
       };
     }
     popupStates = {
@@ -46,7 +46,7 @@ class Container extends Component {
       tutorial: props.location.path.split("/")[1] === PAGETYPE.TUTORIAL,
       live: props.location.path.split("/")[1] === PAGETYPE.WIZLIVE,
       live1v4: props.location.path.split("/")[1] === PAGETYPE.WIZLIVE_1V4,
-      monitor1v4: props.location.path.split("/")[1] === PAGETYPE.MONITOR_1V4
+      monitor1v4: props.location.path.split("/")[1] === PAGETYPE.MONITOR_1V4,
     };
 
     let popupZIndexes = JSON.parse(localStorage.getItem("popupZIndexes"));
@@ -67,7 +67,7 @@ class Container extends Component {
         "soundBox",
         "scene",
         "animation",
-        "qna"
+        "qna",
       ];
     }
 
@@ -85,6 +85,7 @@ class Container extends Component {
       currentTutorial: undefined,
       videoclassRef: undefined,
       isTooltipPositionLeft: false,
+      saasProjectList: [],
     };
 
     switch (this.state.pageType) {
@@ -116,6 +117,14 @@ class Container extends Component {
   }
 
   componentDidMount = async () => {
+    // request
+    //   .getMySaasProject()
+    //   .then((res) => res.json())
+    //   .then((json) => {
+    //     this.setState({ saasProjectList: json.data.projectList });
+    //     console.log("saasProjectList", this.state.saasProjectList);
+    //   });
+
     try {
       if (this.isIE) {
         this.props.history.replace("/" + PAGETYPE.BUILDER);
@@ -130,237 +139,18 @@ class Container extends Component {
         const regexRoomId = /(\w+)-(\w+)-(\w+)-(\w+)-(\w+)-(?<roomId>\w+)/;
 
         const {
-          groups: { roomId }
+          groups: { roomId },
         } = regexRoomId.exec(pId);
 
         this.roomId = roomId;
       }
 
-      // this.timer = setInterval(() => {
-      //   request.updateBuilderUsageTime({
-      //     email: this.props.email,
-      //     time: new Date().getTime()
-      //   });
-      // }, 1000);
-
-      // TrackingUtil.sendPageEvent("/" + pageType, this.props.email);
-
       switch (pageType) {
-        case PAGETYPE.WIZLIVE:
-          const wizLiveRoom = await request
-            .getWizLiveRoomId({ email })
-            .then(res => res.json());
-          if (wizLiveRoom && wizLiveRoom.roomId) {
-            wizLiveRoom.myLecture.lecture.guideVideo &&
-              this.props.setVideoURL(wizLiveRoom.myLecture.lecture.guideVideo);
-            this.setState(
-              {
-                reservationId: wizLiveRoom.id,
-                roomId: wizLiveRoom.roomId,
-                isTutor: wizLiveRoom.isTutor,
-                studentEmail: wizLiveRoom.studentEmail,
-                tutorEmail: wizLiveRoom.tutorEmail,
-                lectureVideos: JSON.parse(wizLiveRoom.myLecture.lecture.video),
-                lectureSlides: JSON.parse(wizLiveRoom.myLecture.lecture.slides),
-                lectureState: wizLiveRoom.myLecture.lecture.state,
-                lectureTitle: wizLiveRoom.myLecture.lecture.title,
-                isFreeTrial: wizLiveRoom.isFreeTrial
-              },
-              () => {
-                this.loadWizlab();
-              }
-            );
-          } else {
-            showPopUp(
-              <Popup.OneButton
-                intl={this.props.intl}
-                titleId="ID_BUILDER_ALERT_MSG_CLIVE_NOT_FOUND"
-                buttonNameId="ID_BUILDER_ALERT_CONFIRMBTN"
-                buttonAction={() => {
-                  if (pId)
-                    this.props.history.replace(`/${PAGETYPE.BUILDER}/${pId}`);
-                  else this.props.history.replace("/" + PAGETYPE.WIZLIVE);
-                }}
-              />
-            );
-          }
-          break;
-        case PAGETYPE.MONITOR_1V4:
-        case PAGETYPE.WIZLIVE_1V4:
-          let wizLive1v4Room;
-
-          if (pageType === PAGETYPE.MONITOR_1V4) {
-            email = window.prompt(
-              "튜터의 이메일을 입력해주세요",
-              "johnjs@wizschool.io"
-            );
-
-            wizLive1v4Room = await request
-              .getMonitorRoom1v4({ email })
-              .then(res => res.json());
-          } else {
-            // WIZLIVE_1v4
-            wizLive1v4Room = await request
-              .getWizLive1v4RoomId({ email, roomId: this.roomId })
-              .then(res => res.json());
-          }
-
-          if (wizLive1v4Room && wizLive1v4Room.roomId) {
-            // wizLiveRoom.myLecture.lecture.guideVideo &&
-            //   this.props.setVideoURL(wizLiveRoom.myLecture.lecture.guideVideo);
-            this.setState(
-              {
-                reservationId: wizLive1v4Room.id,
-                roomId: wizLive1v4Room.roomId,
-                isTutor:
-                  pageType === PAGETYPE.MONITOR_1V4
-                    ? false
-                    : wizLive1v4Room.isTutor,
-                studentEmail: wizLive1v4Room.studentEmail,
-                tutorEmail: wizLive1v4Room.tutorEmail,
-                lectureVideos: JSON.parse(
-                  wizLive1v4Room.myLecture.lecture.video
-                ),
-                lectureSlides: JSON.parse(
-                  wizLive1v4Room.myLecture.lecture.slides
-                ),
-                lectureState: wizLive1v4Room.myLecture.lecture.state,
-                lectureTitle: wizLive1v4Room.myLecture.lecture.title,
-                isFreeTrial: wizLive1v4Room.isFreeTrial
-              },
-              () => {
-                if (pageType === PAGETYPE.WIZLIVE_1V4) {
-                  this.loadWizlab();
-                } else if (pageType === PAGETYPE.MONITOR_1V4) {
-                  this.defaultMonitor();
-                }
-              }
-            );
-          } else {
-            showPopUp(
-              <Popup.OneButton
-                intl={this.props.intl}
-                titleId="ID_BUILDER_ALERT_MSG_CLIVE_NOT_FOUND"
-                buttonNameId="ID_BUILDER_ALERT_CONFIRMBTN"
-                buttonAction={() => {
-                  if (pId)
-                    this.props.history.replace(`/${PAGETYPE.BUILDER}/${pId}`);
-                  else this.props.history.replace("/" + PAGETYPE.WIZLIVE);
-                }}
-              />
-            );
-          }
-          break;
         case PAGETYPE.BUILDER:
-          this.loadWizlab();
+          // this.loadWizlab();
+          this.loadSaas();
           break;
-        case PAGETYPE.BUILDER_EDIT:
-          this.loadWizlab();
-          break;
-        case PAGETYPE.BUILDER_READONLY:
-          showPopUp(
-            <Popup.OneButton
-              intl={this.props.intl}
-              titleId="ID_BUILDER_ALERT_MSG_READONLY"
-              buttonNameId="ID_BUILDER_ALERT_CONFIRMBTN"
-            />
-          );
-          this.loadWizlab();
-          break;
-        case PAGETYPE.QNA_READONLY:
-          showPopUp(
-            <Popup.OneButton
-              intl={this.props.intl}
-              titleId="ID_BUILDER_ALERT_MSG_READONLY"
-              buttonNameId="ID_BUILDER_ALERT_CONFIRMBTN"
-            />
-          );
-          this.loadWizlabForQuestion();
-          break;
-        case PAGETYPE.VIDEOCLASS:
-          this.loadDefaultProject();
-          break;
-        case PAGETYPE.OCP:
-          const stage = require(`./utils/ocp/${grade}/stages/${
-            step > 10 ? 10 : step
-          }`);
-          let ocpClass = stage.data;
-          ocpClass.state = stage.state;
-          AssetLibrary.loadAssetsFromScene(ocpClass.state.scene, () => {
-            this.props.setProject({
-              state: ocpClass.state,
-              videoclass: ocpClass
-            });
-            this.setState({ isLoading: false });
-          });
-          break;
-        case PAGETYPE.OCP2:
-          try {
-            let ocp2Template;
-            if (this.props.location.path.split("/")[2] === PAGETYPE.BLOCK) {
-              ocp2Template = require(`./Component/OCP2/template/block/${grade}/${step}`);
-            } else if (this.props.location.path.split("/")[2] === PAGETYPE.JS) {
-              ocp2Template = require(`./Component/OCP2/template/${type}/${grade}/${step}`);
-            }
-            AssetLibrary.loadAssetsFromScene(ocp2Template.state.scene, () => {
-              this.props.setProject({
-                state: ocp2Template.state,
-                videoclass: ocp2Template.data
-              });
-              this.setState({ isLoading: false });
-            });
-          } catch (e) {
-            console.error(e);
-            showPopUp(
-              <Popup.OneButton
-                title="수업정보가 올바르지 않습니다"
-                buttonName="확인"
-              />
-            );
-          }
-          break;
-        case PAGETYPE.TUTORIAL:
-          if (!this.props.email) {
-            showPopUp(
-              <Popup.OneButton
-                title="로그인 후 이용해주세요"
-                buttonName="확인"
-              />
-            );
-            this.loadDefaultProject();
-            return;
-          }
-          this.loadTutorial();
-          break;
-        case PAGETYPE.RECORD_PLAYER:
-          const reservation = await request
-            .getReservationById({ reservationId })
-            .then(res => res.json());
-          this.setState({ reservation: reservation.reservation }, () => {
-            this.loadRecordProject();
-          });
-          break;
-        case PAGETYPE.MONITOR:
-          this.defaultMonitor();
-          break;
-        case PAGETYPE.DREAMCLASS:
-          this.setState({ 
-            isLoading: false, 
-            popupStates: {
-              video: false,
-              snippet: false,
-              api: false,
-              chat: false,
-              property: false,
-              spriteBox: false,
-              preview: false,
-              soundBox: false,
-              scene: false,
-              animation: false,
-              qna: false
-            } 
-          });
-          break;
+
         default:
           this.loadWizlab();
           break;
@@ -380,7 +170,7 @@ class Container extends Component {
     let myLevelInx = 0;
     let res = await request.getMyTutorialList({ email: this.props.email });
     let list = await res.json();
-    let completeArr = list.rows.filter(item => {
+    let completeArr = list.rows.filter((item) => {
       return item.isComplete;
     });
     if (completeArr.length) {
@@ -392,15 +182,15 @@ class Container extends Component {
     const levelItem = await request
       .getMyTutorial({
         email: this.props.email,
-        level: this.state.params.level
+        level: this.state.params.level,
       })
-      .then(res => res.json());
+      .then((res) => res.json());
 
     if (!levelItem) {
       if (myLevelInx + 1 === Number(this.state.params.level)) {
         await request.createTutorialItem({
           email: this.props.email,
-          level: this.state.params.level
+          level: this.state.params.level,
         });
         window.location.reload();
       } else {
@@ -418,7 +208,7 @@ class Container extends Component {
       AssetLibrary.loadAssetsFromScene(tutorialState.scene, () => {
         this.props.setProject({
           state: tutorialState,
-          videoclass: template
+          videoclass: template,
         });
         this.setState({ isLoading: false, currentTutorial: levelItem });
       });
@@ -442,18 +232,18 @@ class Container extends Component {
     }
   };
 
+  loadSaas = () => {
+    document.title = "SAAS";
+    const { pId } = this.state.params;
+    if (pId) {
+      this.loadSaasProject(pId);
+    } else {
+      this.setState({ isProjectPopupOpened: true });
+    }
+  };
+
   loadWizlab = () => {
     document.title = "Astro Coding Go!";
-    // const { pId } = this.state.params;
-    // if (pId) {
-    //   if (this.props.email) {
-    //     this.loadProject(pId);
-    //   } else {
-    //     this.handleDefaultCase();
-    //   }
-    // } else {
-    //   this.handleDefaultCase();
-    // }
     const { pId } = this.state.params;
     if (this.props.email) {
       if (pId) {
@@ -493,7 +283,7 @@ class Container extends Component {
       AssetLibrary.loadAssetsFromScene(projectState.scene, () => {
         const project = {
           state: projectState,
-          name: ""
+          name: "",
         };
         this.props.setProject(project);
         this.setState({ isLoading: false });
@@ -534,10 +324,26 @@ class Container extends Component {
     });
   };
 
-  loadProject = async pId => {
+  loadSaasProject = async (pId) => {
+    let response = await request.getSaasDevelopingProject(pId);
+    const ans = await response.json();
+    const project = ans.data.projectInfo;
+    console.log("project =>", project);
+
+    this.setBrowserTitle(project.title);
+    project.state = JSON.parse(project.state);
+
+    AssetLibrary.loadAssetsFromScene(project.state.scene, () => {
+      this.props.setProject(project);
+      this.setState({ isLoading: false });
+    });
+  };
+
+  loadProject = async (pId) => {
     try {
       let response = await request.getDevelopingProject({ pId });
       const project = await response.json();
+      console.log("원래 프로젝트 =>", project);
       if (project) {
         if (
           this.state.pageType === PAGETYPE.BUILDER_READONLY ||
@@ -553,7 +359,7 @@ class Container extends Component {
           this.state.pageType !== PAGETYPE.WIZLIVE_1V4
         ) {
           this.props.history.replace({
-            pathname: "/" + PAGETYPE.BUILDER
+            pathname: "/" + PAGETYPE.BUILDER,
           });
           return;
         }
@@ -574,7 +380,7 @@ class Container extends Component {
     }
   };
 
-  setBrowserTitle = title => {
+  setBrowserTitle = (title) => {
     document.title = `Astro Coding Go!`;
     if (title) document.title += ` - ${title}`;
   };
@@ -607,7 +413,7 @@ class Container extends Component {
       this.setBrowserTitle(project.name);
       project.state = JSON.parse(project.state);
       project.video = {
-        videoURL: DEFAULT_VIDEO_URL
+        videoURL: DEFAULT_VIDEO_URL,
       };
 
       AssetLibrary.loadAssetsFromScene(project.state.scene, () => {
@@ -627,7 +433,7 @@ class Container extends Component {
     this.setBrowserTitle(project.name);
     project.state = JSON.parse(project.state);
     project.video = {
-      videoURL: DEFAULT_VIDEO_URL
+      videoURL: DEFAULT_VIDEO_URL,
     };
     AssetLibrary.loadAssetsFromScene(project.state.scene, () => {
       this.props.setProject(project);
@@ -635,9 +441,9 @@ class Container extends Component {
     });
   };
 
-  loadTemplateProject = async templateId => {
+  loadTemplateProject = async (templateId) => {
     const response = await request.getDefaultTemplateProject({
-      id: templateId
+      id: templateId,
     });
     const project = await response.json();
 
@@ -645,7 +451,7 @@ class Container extends Component {
     this.setBrowserTitle(project.name);
     project.state = JSON.parse(project.state);
     project.video = {
-      videoURL: DEFAULT_VIDEO_URL
+      videoURL: DEFAULT_VIDEO_URL,
     };
     AssetLibrary.loadAssetsFromScene(project.state.scene, () => {
       this.props.setProject(project);
@@ -653,12 +459,12 @@ class Container extends Component {
     });
   };
 
-  handleSelectMainViewMode = mainViewMode => {
+  handleSelectMainViewMode = (mainViewMode) => {
     this.setState({ mainViewMode });
   };
 
-  handleChangeZIndex = name => {
-    const sort = arr => {
+  handleChangeZIndex = (name) => {
+    const sort = (arr) => {
       let indexes = arr.slice();
       for (let i = 0; i < indexes.length; i++) {
         if (name === indexes[i]) {
@@ -672,9 +478,9 @@ class Container extends Component {
     };
 
     this.setState(
-      state => {
+      (state) => {
         return {
-          popupZIndexes: sort(state.popupZIndexes)
+          popupZIndexes: sort(state.popupZIndexes),
         };
       },
       () => {
@@ -693,7 +499,7 @@ class Container extends Component {
         TrackingUtil.sendGAEvent({
           category: "Builder",
           action: `MenuActions`,
-          label: name[0].toUpperCase() + name.slice(1)
+          label: name[0].toUpperCase() + name.slice(1),
         });
       }
 
@@ -701,17 +507,17 @@ class Container extends Component {
         TrackingUtil.sendGAEvent({
           category: "Builder",
           action: `AddSprite`,
-          label: from
+          label: from,
         });
       }
     }
     this.setState(
-      state => {
+      (state) => {
         return {
           popupStates: {
             ...state.popupStates,
-            [name]: !state.popupStates[name]
-          }
+            [name]: !state.popupStates[name],
+          },
         };
       },
       () => {
@@ -721,7 +527,7 @@ class Container extends Component {
             ...this.state.popupStates,
             ocp: undefined,
             tutorial: undefined,
-            live: undefined
+            live: undefined,
           })
         );
         if (this.state.popupStates[name]) {
@@ -731,14 +537,14 @@ class Container extends Component {
     );
   };
 
-  showModal = modalContent => {
+  showModal = (modalContent) => {
     this.setState({ modalContent });
   };
-  handleHelp = isHelpOpened => {
+  handleHelp = (isHelpOpened) => {
     this.setState({ isHelpOpened });
   };
 
-  setVideoclassRef = ref => {
+  setVideoclassRef = (ref) => {
     this.setState({ videoclassRef: ref });
   };
 
@@ -763,7 +569,7 @@ class Container extends Component {
       currentTutorial,
       isFreeTrial,
       videoclassRef,
-      isTooltipPositionLeft
+      isTooltipPositionLeft,
     } = this.state;
     const { pId } = this.state.params;
     const {
@@ -774,16 +580,18 @@ class Container extends Component {
       handleChangeZIndex,
       handleSelectTab,
       showModal,
-      setVideoclassRef
+      setVideoclassRef,
     } = this;
 
-    const calculateNewPosition = pos => {
-      if(pos.left <= 0)  {
-        !isTooltipPositionLeft && this.setState({ isTooltipPositionLeft : true})
+    const calculateNewPosition = (pos) => {
+      if (pos.left <= 0) {
+        !isTooltipPositionLeft &&
+          this.setState({ isTooltipPositionLeft: true });
       } else {
-        isTooltipPositionLeft && this.setState({ isTooltipPositionLeft : false})
+        isTooltipPositionLeft &&
+          this.setState({ isTooltipPositionLeft: false });
       }
-      
+
       const newPosition = {
         top: pos.top,
         left: pos.left <= 0 ? 0 : pos.left,
@@ -791,13 +599,21 @@ class Container extends Component {
       return newPosition;
     };
 
-    window.addEventListener("dragover",function(e){
-      e.preventDefault();  
-    },false);
+    window.addEventListener(
+      "dragover",
+      function (e) {
+        e.preventDefault();
+      },
+      false
+    );
 
-    window.addEventListener("drop",function(e){
-      e.preventDefault();
-    },false);
+    window.addEventListener(
+      "drop",
+      function (e) {
+        e.preventDefault();
+      },
+      false
+    );
 
     return (
       <DndProvider options={HTML5toTouch}>
@@ -842,17 +658,17 @@ class Container extends Component {
 }
 
 export default connect(
-  state => ({
+  (state) => ({
     email: state.userinfo.email,
     name: state.userinfo.name,
     isTutor: state.userinfo.isTutor,
-    screenMode: state.preview.screenMode
+    screenMode: state.preview.screenMode,
   }),
   {
     setProject: projectActions.setProject,
     resetProject: projectActions.resetProject,
     setGameVolume: previewActions.setGameVolume,
     setLog: webrtcActions.setLog,
-    setVideoURL: videoActions.setVideoURL
+    setVideoURL: videoActions.setVideoURL,
   }
 )(injectIntl(Container));

@@ -1,137 +1,92 @@
 import React, { useEffect, useState } from "react";
 import * as request from "../../../../Common/Util/HTTPRequest";
 import Field from "../Field";
+import TemplateEditor from "../TemplateEditor";
 import "./index.scss";
 
 function LectureEditor(props) {
   const { lectureId } = props;
   const [lecture, setLecture] = useState(null);
-  useEffect(
-    () => {
-      request
-        .getDreamLecture(lectureId)
-        .then(res => res.json())
-        .then(setLecture);
-    },
-    [lectureId]
-  );
+  useEffect(() => {
+    request
+      .getLecture(lectureId)
+      .then((res) => res.json())
+      .then((json) => {
+        setLecture(json.data.lessonInfo);
+      });
+  }, [lectureId]);
 
   const [title, setTitle] = useState("");
   const [introduction, setIntroduction] = useState("");
-  const [level, setLevel] = useState("");
+  const [template, setTemplate] = useState("");
+  const [sampleGameURL, setSampleGameURL] = useState("");
+  const [defaultTemplate, setDefaultTemplate] = useState("");
+  const [language, setLanguage] = useState("");
   const [number, setNumber] = useState(0);
-  const [heroURL, setHeroURL] = useState("");
-  const [v_thumbnailURL, setVThumbnailURL] = useState("");
-  const [h_thumbnailURL, setHThumbnailURL] = useState("");
+  const [thumbnailURL, setThumbnailURL] = useState("");
   const [isHidden, setIsHidden] = useState(false);
-  const [isLive, setIsLive] = useState(false);
-  useEffect(
-    () => {
-      if (lecture) {
-        setLevel(lecture.level || "");
-        setNumber(lecture.number || 0);
-        setIsHidden(lecture.isHidden || false);
-        setIsLive(lecture.isLive || false);
-        
-        setTitle(
-          lecture.localized[0]
-          ? lecture.localized[0].title
-          : ""
-        );
-        setIntroduction(
-          lecture.localized[0]
-          ? lecture.localized[0].introduction
-          : ""
-        );
-        setHeroURL(
-          lecture.localized[0]
-          ? lecture.localized[0].heroURL
-          : ""
-        );
-        setVThumbnailURL(
-          lecture.localized[0]
-          ? lecture.localized[0].v_thumbnailURL
-          : ""
-        );
-        setHThumbnailURL(
-          lecture.localized[0]
-          ? lecture.localized[0].h_thumbnailURL
-          : ""
-        );
-      }
-    },
-    [lecture]
-  );
+  const [totalMissionNum, setTotalMissionNum] = useState(0);
+
+  console.log("totalMissionNum", totalMissionNum);
+
+  const lectureValues = {
+    title: title,
+    description: introduction,
+    template: template,
+    sampleGameURL: sampleGameURL,
+    language: language,
+    number: number,
+    thumbnailURL: thumbnailURL,
+    isHidden: isHidden,
+    totalMissionNum: totalMissionNum,
+  };
+
+  useEffect(() => {
+    if (lecture) {
+      setTitle(lecture.title || "");
+      setIntroduction(lecture.description || "");
+      setTemplate(lecture.template || "");
+      setDefaultTemplate(lecture.template || "");
+      setSampleGameURL(lecture.sampleGameURL || "");
+      setThumbnailURL(lecture.thumbnailURL || "");
+      setIsHidden(lecture.isVisible || "");
+      setLanguage(lecture.language || "");
+      setTotalMissionNum(lecture.totalMissionNum || 0);
+    }
+  }, [lecture]);
 
   const onClickSave = () => {
-    const updateValues = getUpdateValues();
     request
-      .updateDreamLecture(lectureId, updateValues)
-      .then(res => res.json())
-      .then(json => {
-        if (json.success) {
-          setLecture({
-            ...lecture,
-            ...updateValues,
-            localized: [
-              lecture.localized[0]
-              ? { ...lecture.localized[0], ...updateValues.localized }
-              : updateValues.localized
-            ]
-          });
+      .updateLecture(lectureId, lectureValues)
+      .then((res) => res.json())
+      .then((json) => {
+        if (json.result) {
           alert("저장되었습니다 :)");
-        } else {
-          throw json;
         }
-      })
-      .catch(err => {
-        console.error(err);
-        alert(JSON.stringify(err));
       });
   };
-  const getUpdateValues = () => {
-    const updateValues = {
-      localized: getUpdateLocalizedValues()
-    };
-    const values = {
-      level,
-      number: parseInt(number),
-      isHidden,
-      isLive
-    };
-    for (let key in values) {
-      if (values[key] !== lecture[key]) {
-        updateValues[key] = values[key];
-      }
-    }
-    return updateValues;
+
+  const onClickDelete = () => {
+    request
+      .deleteLesson(lectureId)
+      .then((res) => res.json())
+      .then((json) => {
+        console.log("json", json);
+        localStorage.clear();
+        window.location.reload();
+      });
   };
-  const getUpdateLocalizedValues = () => {
-    const origin = lecture.localized[0]
-    const values = {
-      title,
-      introduction,
-      heroURL,
-      v_thumbnailURL,
-      h_thumbnailURL
-    };
-    if(origin) {
-      const updateValues = {};
-      for (let key in values) {
-        if (values[key] !== lecture.localized[0][key]) {
-          updateValues[key] = values[key];
-        }
-      }
-      return updateValues;
-    } else {
-      return values;
-    }
-  }
 
   return (
     <div className="dreamEditor_editor dreamEditor_editor-lecture">
       <div className="dreamEditor_editor_header">
-        <div className="dreamEditor_editor_title">강의 수정하기</div>
+        <div className="dreamEditor_editor_title">레슨 수정하기</div>
+        <button
+          className="dreamEditor_editor_deleteBtn"
+          onClick={onClickDelete}
+        >
+          레슨 삭제하기
+        </button>
         <button className="dreamEditor_editor_saveBtn" onClick={onClickSave}>
           저장하기
         </button>
@@ -149,16 +104,28 @@ function LectureEditor(props) {
           value={introduction}
           onChange={setIntroduction}
         />
+        <Field.Input
+          id="title"
+          title="샘플 게임 url"
+          value={sampleGameURL}
+          onChange={setSampleGameURL}
+        />
+        {/* <Field.Textarea
+          id="template"
+          title="강의 템플릿"
+          value={template}
+          onChange={setTemplate}
+        /> */}
         <Field.Select
-          id="level"
-          title="강의 난이도"
-          value={level}
+          id="language"
+          title="언어"
+          value={language}
           options={[
-            { value: "easy", label: "초급" },
-            { value: "normal", label: "중급" },
-            { value: "hard", label: "고급" }
+            { value: "JS", label: "JS" },
+            { value: "PYTHON", label: "PYTHON" },
+            { value: "OOBC", label: "OOBC" },
           ]}
-          onChange={setLevel}
+          onChange={setLanguage}
         />
         <Field.Input
           id="number"
@@ -168,37 +135,31 @@ function LectureEditor(props) {
           onChange={setNumber}
         />
         <Field.File
-          id="heroURL"
-          title="메인 배너"
-          value={heroURL}
-          onChange={setHeroURL}
-        />
-        <Field.File
-          id="v_thumbnailURL"
-          title="세로 썸네일"
-          value={v_thumbnailURL}
-          onChange={setVThumbnailURL}
-        />
-        <Field.File
-          id="h_thumbnailURL"
-          title="가로 썸네일"
-          value={h_thumbnailURL}
-          onChange={setHThumbnailURL}
+          id="thumbnailURL"
+          title="썸네일"
+          value={thumbnailURL}
+          onChange={setThumbnailURL}
+          lectureName={title}
         />
         <Field.OnOff
           id="isHidden"
           title="콘텐츠 공개"
           value={!isHidden}
-          onChange={value => {
+          onChange={(value) => {
             setIsHidden(!value);
           }}
         />
-        <Field.OnOff
-          id="isLive"
-          title="콘텐츠 이용가능"
-          value={isLive}
-          onChange={setIsLive}
-        />
+
+        <div className="dreamEditor_editor_field dreamEditor_editor_field-template">
+          <div className="dreamEditor_editor_field_title">템플릿</div>
+          <div className="dreamEditor_editor_field_body">
+            <TemplateEditor
+              defaultTemplate={defaultTemplate}
+              onChangeTotalMissionNum={setTotalMissionNum}
+              onChangeTemplate={setTemplate}
+            />
+          </div>
+        </div>
       </div>
     </div>
   );

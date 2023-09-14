@@ -34,7 +34,7 @@ function View(props) {
     news,
     fetchMyProjects,
     setProjectName,
-    intl
+    intl,
   } = props;
 
   const bannerSlidSettings = {
@@ -46,13 +46,15 @@ function View(props) {
     autoplay: true,
     infinite: true,
     arrows: false,
-    dots: true
+    dots: true,
   };
   return (
     <div className="builder--home__main">
       <div className="main__top">
         <div className="main__making">
-          <div className="main__title">{intl.formatMessage({ id: "ID_BUILDER_MAIN_TITLE" })}</div>
+          <div className="main__title">
+            {intl.formatMessage({ id: "ID_BUILDER_MAIN_TITLE" })}
+          </div>
           <div className="making__items">
             <div className="making__item" onClick={onClick2DGame}>
               <img src={Game2dIcon} alt="2d game" />
@@ -61,14 +63,19 @@ function View(props) {
             {/* <div className="making__item" onClick={onClick3DGame}>
               <img src={Game3dIcon} alt="3d game" />
               <p>
-                {intl.formatMessage({ id: "ID_BUILDER_MAIN_3D_GAME" })} <span>{intl.formatMessage({ id: "ID_BUILDER_MAIN_BETA" })}</span>
+                {intl.formatMessage({ id: "ID_BUILDER_MAIN_3D_GAME" })}{" "}
+                <span>
+                  {intl.formatMessage({ id: "ID_BUILDER_MAIN_BETA" })}
+                </span>
               </p>
             </div> */}
           </div>
         </div>
         {news.length > 0 && (
           <div className="main__news">
-            <div className="main__title">{intl.formatMessage({ id: "ID_BUILDER_MAIN_NEWS" })}</div>
+            <div className="main__title">
+              {intl.formatMessage({ id: "ID_BUILDER_MAIN_NEWS" })}
+            </div>
             <div className="news__items">
               <Slider {...bannerSlidSettings} ref={setSlickRef}>
                 {news.map((item, index) => {
@@ -99,11 +106,11 @@ function View(props) {
                             <div className="newsItem__content__slide__controls">
                               <div
                                 className="newsLeftIcon"
-                                onClick={e => handlePrev(e)}
+                                onClick={(e) => handlePrev(e)}
                               />
                               <div
                                 className="newsRightIcon"
-                                onClick={e => handleNext(e)}
+                                onClick={(e) => handleNext(e)}
                               />
                             </div>
                             <div className="newsItem__content__slide__page">
@@ -122,7 +129,9 @@ function View(props) {
       </div>
       <div className="main__row row__myProjects">
         <div className="row__header">
-          <div className="main__title">{intl.formatMessage({ id: "ID_BUILDER_MAIN_LATELY_PROJECT" })}</div>
+          <div className="main__title">
+            {intl.formatMessage({ id: "ID_BUILDER_MAIN_LATELY_PROJECT" })}
+          </div>
           <div onClick={onClickMyProjectMore} className="myProjects__more">
             {intl.formatMessage({ id: "ID_BUILDER_MAIN_VIEW_MORE" })}
           </div>
@@ -155,7 +164,9 @@ function View(props) {
       </div>
       <div className="main__row row__myPublished">
         <div className="row__header">
-          <div className="main__title">{intl.formatMessage({ id: "ID_BUILDER_MAIN_PUBLISHING_APP" })}</div>
+          <div className="main__title">
+            {intl.formatMessage({ id: "ID_BUILDER_MAIN_PUBLISHING_APP" })}
+          </div>
           <div onClick={onClickMyPublishedMore} className="myPublished__more">
             {intl.formatMessage({ id: "ID_BUILDER_MAIN_VIEW_MORE" })}
           </div>
@@ -190,7 +201,7 @@ function View(props) {
   );
 }
 
-const ProjectItem = props => {
+const ProjectItem = (props) => {
   const {
     project,
     onClickProject,
@@ -204,42 +215,45 @@ const ProjectItem = props => {
     fetchMyProjects,
     type,
     setProjectName,
-    intl
+    intl,
   } = props;
+
   return (
     <div className="projectItem">
       <div
         className="projectItem__top"
-        onClick={e => {
+        onClick={(e) => {
           e.preventDefault();
-          onClickProject(project.pId, project.type);
+          onClickProject(project.id);
         }}
       >
         <img className="top__img" src={project.icon} alt="project" />
       </div>
       <div
         className="projectItem__bottom"
-        onClick={e => {
+        onClick={(e) => {
           e.preventDefault();
           onClickProject(project.pId, project.type);
         }}
       >
-        <div className="bottom__title">{project.name}</div>
+        <div className="bottom__title">{project.title}</div>
         <div className="bottom__time">
           {project.updatedAt &&
             project.updatedAt.split("T")[0].replaceAll("-", ".")}
         </div>
       </div>
       <div
-        className={`projectItem__detail ${selectProject.pId === project.pId &&
+        className={`projectItem__detail ${
+          selectProject.pId === project.pId &&
           selectProject.type === type &&
-          "selected"}`}
+          "selected"
+        }`}
         onClick={() => {
           onClickDetailBtn(project.pId, type);
         }}
       >
-        <img src={projectDetailIcon} alt="project Detail Icon" />
-        <ul className="projectItem__detail__list">
+        {/* <img src={projectDetailIcon} alt="project Detail Icon" /> */}
+        {/* <ul className="projectItem__detail__list">
           {type === "published" ? (
             <>
               <li onClick={() => onClickProjectEdit(project)}>
@@ -275,7 +289,7 @@ const ProjectItem = props => {
               </li>
             </>
           )}
-        </ul>
+        </ul> */}
       </div>
     </div>
   );

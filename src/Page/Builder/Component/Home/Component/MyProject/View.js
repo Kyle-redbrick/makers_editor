@@ -20,7 +20,7 @@ function View(props) {
     handleDelete,
     handleCopy,
     setProjectName,
-    intl
+    intl,
   } = props;
   return (
     <div
@@ -28,7 +28,9 @@ function View(props) {
       ref={projectsRef}
       onScroll={handleOnScroll}
     >
-      <p className="myProject__title">{intl.formatMessage({ id: "ID_BUILDER_MYPROJECT_OPEN" })}</p>
+      <p className="myProject__title">
+        {intl.formatMessage({ id: "ID_BUILDER_MYPROJECT_OPEN" })}
+      </p>
       <FilteringHeader setFilteringData={setFilteringData} />
       <div className="bottom__projectItems">
         {myProjects.length ? (
@@ -37,7 +39,7 @@ function View(props) {
               <div className="projectItem" key={index}>
                 <div
                   className="projectItem__top"
-                  onClick={e => {
+                  onClick={(e) => {
                     e.preventDefault();
                     onClickProject(item.pId, item.type);
                   }}
@@ -47,7 +49,7 @@ function View(props) {
 
                 <div
                   className="projectItem__bottom"
-                  onClick={e => {
+                  onClick={(e) => {
                     e.preventDefault();
                     onClickProject(item.pId, item.type);
                   }}
@@ -59,10 +61,11 @@ function View(props) {
                   </div>
                 </div>
                 <div
-                  className={`projectItem__detail ${selectProject.pId ===
-                    item.pId &&
+                  className={`projectItem__detail ${
+                    selectProject.pId === item.pId &&
                     selectProject.type !== "published" &&
-                    "selected"}`}
+                    "selected"
+                  }`}
                   onClick={() => {
                     onClickDetailBtn(item.pId);
                   }}
@@ -93,7 +96,9 @@ function View(props) {
             );
           })
         ) : (
-          <div className="project__Items no__Items">{intl.formatMessage({ id: "ID_BUILDER_MYPROJECT_NO_ITEM" })}</div>
+          <div className="project__Items no__Items">
+            {intl.formatMessage({ id: "ID_BUILDER_MYPROJECT_NO_ITEM" })}
+          </div>
         )}
       </div>
     </div>

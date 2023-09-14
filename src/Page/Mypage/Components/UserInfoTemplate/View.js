@@ -1,10 +1,10 @@
 import React from "react";
 import UserIconWrapper from "../../../../Common/Component/UserIconWrapper";
-import bitsIcon from "../../../../Image/dreamclass/ranking-icon-36-learning.svg"
+import bitsIcon from "../../../../Image/dreamclass/ranking-icon-36-learning.svg";
 import editIcon from "../../../../Image/profile-edit.svg";
-import publishedAppIcon from "../../../../Image/dreamclass/my-profile-publishing.svg"
-import followerIcon from "../../../../Image/dreamclass/my-profile-followers.svg"
-import followingIcon from "../../../../Image/dreamclass/my-profile-following.svg"
+import publishedAppIcon from "../../../../Image/dreamclass/my-profile-publishing.svg";
+import followerIcon from "../../../../Image/dreamclass/my-profile-followers.svg";
+import followingIcon from "../../../../Image/dreamclass/my-profile-following.svg";
 import PageBgImg from "../../../../Image/my-page-bg-img.png";
 import { FormattedNumber } from "react-intl";
 
@@ -16,10 +16,10 @@ export default function View(props) {
     subscribeInfo,
     handleSelectTab,
     selectedTab,
-    onClickSettingBtn
+    onClickSettingBtn,
   } = props;
 
-  if(!user) {
+  if (!user) {
     return <section className="UserInfoTemplate" />;
   }
 
@@ -43,7 +43,7 @@ export default function View(props) {
               {user.statusMessage ? user.statusMessage : ""}
             </div>
             {isMyPage && (
-              <div 
+              <div
                 className="UserInfoTemplate_UserInfo_setting_Btn"
                 onClick={onClickSettingBtn}
               >
@@ -52,7 +52,7 @@ export default function View(props) {
                   src={editIcon}
                   alt="img"
                 />
-                {intl.formatMessage({ id : "ID_USER_INFO_TEMPLATE_ITEM_EDIT" })}
+                {intl.formatMessage({ id: "ID_USER_INFO_TEMPLATE_ITEM_EDIT" })}
               </div>
             )}
           </div>
@@ -62,31 +62,24 @@ export default function View(props) {
   );
 }
 
-const ItemWrap = props => {
-  const {
-    intl,
-    mode,
-    count,
-    image,
-    handleSelectTab,
-    selectedTab
-  } = props;
-  
+const ItemWrap = (props) => {
+  const { intl, mode, count, image, handleSelectTab, selectedTab } = props;
+
   let num;
   let title;
 
   switch (mode) {
     case "publish":
-      num = count + intl.formatMessage({id: "ID_USER_INFO_TEMPLATE_UNIT01"});
-      title = intl.formatMessage({id: `ID_MYPAGE_USERINFO_PUBLISH`})
+      num = count + intl.formatMessage({ id: "ID_USER_INFO_TEMPLATE_UNIT01" });
+      title = intl.formatMessage({ id: `ID_MYPAGE_USERINFO_PUBLISH` });
       break;
     case "subscribe":
-      num = count + intl.formatMessage({id: "ID_USER_INFO_TEMPLATE_UNIT02"});
-      title = intl.formatMessage({id: `ID_MYPAGE_USERINFO_SUBSCRIBE`})
+      num = count + intl.formatMessage({ id: "ID_USER_INFO_TEMPLATE_UNIT02" });
+      title = intl.formatMessage({ id: `ID_MYPAGE_USERINFO_SUBSCRIBE` });
       break;
     case "interested":
-      num = count + intl.formatMessage({id: "ID_USER_INFO_TEMPLATE_UNIT02"});
-      title = intl.formatMessage({id: `ID_MYPAGE_USERINFO_INTERESTED`})
+      num = count + intl.formatMessage({ id: "ID_USER_INFO_TEMPLATE_UNIT02" });
+      title = intl.formatMessage({ id: `ID_MYPAGE_USERINFO_INTERESTED` });
       break;
     default:
       break;
@@ -94,15 +87,17 @@ const ItemWrap = props => {
 
   return (
     <div
-      className={`UserInfoTemplate_ItemWrap ${selectedTab === mode ? "active" : ""}`}
-      onClick={()=>handleSelectTab(mode)}
+      className={`UserInfoTemplate_ItemWrap ${
+        selectedTab === mode ? "active" : ""
+      }`}
+      onClick={() => handleSelectTab(mode)}
     >
-      <div
-        className="UserInfoTemplate_ItemWrap_Inner"
-      >
-        <img src={image} alt="" className="UserInfoTemplate_ItemWrap_Image"/>
+      <div className="UserInfoTemplate_ItemWrap_Inner">
+        <img src={image} alt="" className="UserInfoTemplate_ItemWrap_Image" />
         <div className="UserInfoTemplate_ItemWrap_TitleWrap">
-          <div className="UserInfoTemplate_ItemWrap_TitleWrap-title">{title}</div>
+          <div className="UserInfoTemplate_ItemWrap_TitleWrap-title">
+            {title}
+          </div>
         </div>
         <div className="UserInfoTemplate_ItemWrap_BottomWrap-num">{num}</div>
       </div>

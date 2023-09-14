@@ -12,13 +12,15 @@ function View(props) {
     onClick3DGame,
     onClickProject,
     setFilteringData,
-    intl
+    intl,
   } = props;
 
   return (
     <div className="builder--home__makingNew">
       <div className="makingNew__top">
-        <div className="makingNew__title">{intl.formatMessage({ id: "ID_BUILDER_MAIN_TITLE" })}</div>
+        <div className="makingNew__title">
+          {intl.formatMessage({ id: "ID_BUILDER_MAIN_TITLE" })}
+        </div>
         <div className="making__items">
           <div className="making__item" onClick={onClick2DGame}>
             <img src={Game2dIcon} alt="2d game" />
@@ -27,7 +29,8 @@ function View(props) {
           {/* <div className="making__item" onClick={onClick3DGame}>
             <img src={Game3dIcon} alt="3d game" />
             <p>
-            {intl.formatMessage({ id: "ID_BUILDER_MAIN_3D_GAME" })} <span>{intl.formatMessage({ id: "ID_BUILDER_MAIN_BETA" })}</span>
+              {intl.formatMessage({ id: "ID_BUILDER_MAIN_3D_GAME" })}{" "}
+              <span>{intl.formatMessage({ id: "ID_BUILDER_MAIN_BETA" })}</span>
             </p>
           </div> */}
         </div>

@@ -27,7 +27,7 @@ function Input(props) {
         type={type}
         placeholder={placeholder}
         value={value}
-        onChange={e => {
+        onChange={(e) => {
           onChange(e.currentTarget.value, id);
         }}
       />
@@ -43,7 +43,7 @@ function Textarea(props) {
       <textarea
         placeholder={placeholder}
         value={value}
-        onChange={e => {
+        onChange={(e) => {
           onChange(e.currentTarget.value, id);
         }}
       />
@@ -57,7 +57,7 @@ function Select(props) {
     <Base {...props} type="select">
       <select
         value={value}
-        onChange={e => {
+        onChange={(e) => {
           onChange(e.currentTarget.value, id);
         }}
       >
@@ -71,9 +71,33 @@ function Select(props) {
   );
 }
 
+const uploadFile = async (selectedFile, lectureName) => {
+  try {
+    const uploadResponse = await request.thumbnailUpload(lectureName);
+    const uploadData = await uploadResponse.json();
+    const putUrl = uploadData.data.uploadUrl;
+    const downloadUrl = uploadData.data.downloadUrl;
+
+    const putResponse = await fetch(putUrl, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "image/jpeg",
+      },
+      body: selectedFile,
+    });
+
+    console.log("PUT response", putResponse);
+
+    return downloadUrl;
+  } catch (error) {
+    console.error("파일 업로드 실패:", error);
+  }
+};
+
 function File(props) {
-  const { id, accept, value, onChange } = props;
+  const { id, accept, value, onChange, lectureName } = props;
   const fileInputRef = useRef();
+
   return (
     <Base {...props} type="file">
       <input
@@ -81,25 +105,12 @@ function File(props) {
         ref={fileInputRef}
         type="file"
         accept={accept}
-        onChange={e => {
+        onChange={(e) => {
           const selectedFile = e.target.files[0];
           if (!selectedFile) return;
-
-          const data = new FormData();
-          data.append("file", selectedFile);
-          request
-            .dreamUpload(data)
-            .then(res => res.json())
-            .then(json => {
-              if (json.success) {
-                onChange("/" + json.key, id);
-              } else {
-                throw json;
-              }
-            })
-            .catch(err => {
-              alert(JSON.stringify(err));
-            });
+          uploadFile(selectedFile, lectureName).then((res) => {
+            onChange(res);
+          });
         }}
         hidden
       />
@@ -113,7 +124,7 @@ function File(props) {
       {value && (
         <span>
           {value}
-          <img src={value.toDreamclassS3URL()} alt={value} />
+          <img src={value.THUMBNAIL_ALI()} alt={value} />
         </span>
       )}
     </Base>
@@ -144,6 +155,6 @@ const Field = {
   Textarea,
   Select,
   File,
-  OnOff
+  OnOff,
 };
 export default Field;

@@ -18,9 +18,9 @@ export default function View(props) {
     isMyPage,
     publisheds,
     onClickPublishedSetting,
-    handleProjectLive
+    handleProjectLive,
   } = props;
-  
+
   return (
     <div className="Publish">
       <p className="title">
@@ -49,17 +49,17 @@ export default function View(props) {
   );
 }
 
-const PublishItem = props => {
+const PublishItem = (props) => {
   const {
     intl,
     published,
     onClickPublishedSetting,
     isMyPage,
-    handleProjectLive
+    handleProjectLive,
   } = props;
   const isLive = published.live;
   const badgeIcon = (type) => {
-    switch(type) {
+    switch (type) {
       case "javascript":
         return badgeJsShadow;
       case "oobc":
@@ -69,7 +69,9 @@ const PublishItem = props => {
     }
   };
   return (
-    <div className={`Publish_GridItem ${isMyPage && "Publish_GridItem--mypage"}`}>
+    <div
+      className={`Publish_GridItem ${isMyPage && "Publish_GridItem--mypage"}`}
+    >
       {published.live ? (
         <Link
           className={`Publish_GridItem-wrap Publish_GridItem--clickable--on`}
@@ -81,7 +83,7 @@ const PublishItem = props => {
             src={published.icon}
             alt="img"
           />
-          <img className="typeIcon" src={badgeIcon('oobc')} alt="" />
+          <img className="typeIcon" src={badgeIcon("oobc")} alt="" />
         </Link>
       ) : (
         <div
@@ -92,7 +94,7 @@ const PublishItem = props => {
             src={published.icon}
             alt="img"
           />
-          <img className="typeIcon" src={badgeIcon('oobc')} alt="" />
+          <img className="typeIcon" src={badgeIcon("oobc")} alt="" />
         </div>
       )}
 
@@ -104,7 +106,10 @@ const PublishItem = props => {
               {published.likeCount}
             </div>
           </div>
-          <div className="Publish_GridItem_SubInfo_Item" style={{display: "none"}}>
+          <div
+            className="Publish_GridItem_SubInfo_Item"
+            style={{ display: "none" }}
+          >
             <img src={commentIcon} alt="img" />
             <div className="Publish_GridItem_SubInfo_Item-text">
               {published.commentCount}
@@ -130,20 +135,21 @@ const PublishItem = props => {
           <div className="Publish_GridItem_Bottom">
             <div className="Publish_GridItem_Live_Wrapper">
               <div
-                className={`Publish_GridItem_Live_Toggle ${isLive ? "On" : "Off"}`}
+                className={`Publish_GridItem_Live_Toggle ${
+                  isLive ? "On" : "Off"
+                }`}
                 onClick={() => handleProjectLive(published)}
               >
-                <span/>
+                <span />
               </div>
               <p className="Publish_GridItem_Live_Text">
-                {isLive ?
-                  intl.formatMessage({ id: "ID_MYPAGE_PROJECT_LIVE" }) :
-                  intl.formatMessage({ id: "ID_MYPAGE_PROJECT_NOLIVE" })
-                }
+                {isLive
+                  ? intl.formatMessage({ id: "ID_MYPAGE_PROJECT_LIVE" })
+                  : intl.formatMessage({ id: "ID_MYPAGE_PROJECT_NOLIVE" })}
               </p>
             </div>
 
-            <div 
+            <div
               className="Publish_GridItem_Edit"
               onClick={() => onClickPublishedSetting(published)}
             >

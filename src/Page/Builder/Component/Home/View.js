@@ -20,14 +20,14 @@ export default function View(props) {
     // canClose,
     // closeProjectPopup,
     handleDelete,
-    handleCopy
+    handleCopy,
   } = props;
 
   let content;
   switch (currentPageId) {
-    case "makingNew":
-      content = <MakingNew setCurrentPage={setCurrentPage} />;
-      break;
+    // case "makingNew":
+    //   content = <MakingNew setCurrentPage={setCurrentPage} />;
+    //   break;
     case "myProject":
       content = (
         <MyProject
@@ -50,7 +50,7 @@ export default function View(props) {
         />
       );
       break;
-    case "main":
+    // case "main":
     default:
       content = (
         <Main
@@ -92,7 +92,9 @@ export default function View(props) {
                       onClick={() => onClickPage(id)}
                     >
                       <img src={currentPageId === id ? onImg : offImg} alt="" />
-                      <div><FormattedMessage id={localeID} /></div>
+                      <div>
+                        <FormattedMessage id={localeID} />
+                      </div>
                     </div>
                   );
                 })}

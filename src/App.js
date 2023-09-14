@@ -75,7 +75,7 @@ const App = () => {
     AOS.refresh();
   }, []);
 
-  const token = localStorage.getItem("astroToken");
+  // const token = localStorage.getItem("astroToken");
   const lang = localStorage.getItem("lang");
 
   const vh = window.innerHeight * 0.01;
@@ -94,19 +94,24 @@ const App = () => {
           style={{ backgroundColor: "#282c36" }}
           lang={lang}
         >
-          {token ? (
+          {/* {token ? (
             <Route
               exact
               path="/"
-              render={() => <HandleQueryString Component={Learn} />}
+              render={() => <HandleQueryString Component={DreamEditor} />}
             />
           ) : (
             <Route
               exact
               path="/"
-              render={() => <HandleQueryString Component={Intro} />}
+              render={() => <HandleQueryString Component={DreamEditor} />}
             />
-          )}
+            )} */}
+          <Route
+            exact
+            path="/"
+            render={() => <HandleQueryString Component={DreamEditor} />}
+          />
 
           <Route exact path="/tutorial" component={Tutorial} />
           <Route

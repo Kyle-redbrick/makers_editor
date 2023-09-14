@@ -32,7 +32,7 @@ class Container extends Component {
     this.state = {
       currentTheme: getColorTheme(),
       isMenuEnabled,
-      isClickPublish: false
+      isClickPublish: false,
     };
   }
 
@@ -49,7 +49,7 @@ class Container extends Component {
       TrackingUtil.sendGAEvent({
         category: "Builder",
         action: `ChangeColorMode`,
-        label: getColorTheme()
+        label: getColorTheme(),
       });
     });
   };
@@ -58,12 +58,12 @@ class Container extends Component {
     TrackingUtil.sendGAEvent({
       category: "Builder",
       action: `MenuActions`,
-      label: "MobilePlay"
+      label: "MobilePlay",
     });
     showPopUp(<InstantMobileRun />, {
       store,
       defaultPadding: false,
-      dismissOverlay: true
+      dismissOverlay: true,
     });
   };
 
@@ -71,13 +71,13 @@ class Container extends Component {
     TrackingUtil.sendGAEvent({
       category: "Builder",
       action: `MenuActions`,
-      label: "Share"
+      label: "Share",
     });
     showPopUp(<QRPopup project={this.props.project} isBuilder={true} />, {
       store,
       defaultPadding: false,
       dismissOverlay: true,
-      overflow: true
+      overflow: true,
     });
   };
 
@@ -85,6 +85,7 @@ class Container extends Component {
     this.setState({ isClickPublish: !this.state.isClickPublish });
   };
 
+  //////////////openPublishPopup시작//////////////
   openPublishPopup = () => {
     this.setState({ isClickPublish: false });
     const isBlocked = checkBlockedUser(this.props.userinfo);
@@ -95,7 +96,7 @@ class Container extends Component {
       TrackingUtil.sendGAEvent({
         category: "Builder",
         action: `MenuActions`,
-        label: "Publishing"
+        label: "Publishing",
       });
 
       // 퍼블리싱 팝업 open
@@ -112,7 +113,7 @@ class Container extends Component {
             store,
             dismissOverlay: false,
             defaultPadding: false,
-            scrollable: true
+            scrollable: true,
           }
         );
       } else {
@@ -120,13 +121,55 @@ class Container extends Component {
           store,
           dismissOverlay: false,
           defaultPadding: false,
-          scrollable: true
+          scrollable: true,
         });
       }
     } else {
       this.openLoginPopup();
     }
   };
+  // openPublishPopup = () => {
+  //   this.setState({ isClickPublish: false });
+  //   const isBlocked = checkBlockedUser(this.props.userinfo);
+  //   if (isBlocked) {
+  //     return;
+  //   }
+  //   if (this.props.userinfo.email) {
+  //     TrackingUtil.sendGAEvent({
+  //       category: "Builder",
+  //       action: `MenuActions`,
+  //       label: "Publishing"
+  //     });
+
+  //     // 퍼블리싱 팝업 open
+  //     this.props.setLog({ publish: true });
+
+  //     if (this.pageType === PAGETYPE.TUTORIAL) {
+  //       showPopUp(
+  //         <Publish
+  //           isDeveloping={true}
+  //           isBuilder={true}
+  //           tutorialLevel={this.pageParams.level * 1}
+  //         />,
+  //         {
+  //           store,
+  //           dismissOverlay: false,
+  //           defaultPadding: false,
+  //           scrollable: true
+  //         }
+  //       );
+  //     } else {
+  //       showPopUp(<Publish isDeveloping={true} isBuilder={true} />, {
+  //         store,
+  //         dismissOverlay: false,
+  //         defaultPadding: false,
+  //         scrollable: true
+  //       });
+  //     }
+  //   } else {
+  //     this.openLoginPopup();
+  //   }
+  // };
 
   openPublishGame = () => {
     this.setState({ isClickPublish: false });
@@ -154,8 +197,8 @@ class Container extends Component {
   editProjectName = (pId, newName) => {
     request
       .updateDevelopingProject({ pId, name: newName })
-      .then(res => res.json)
-      .catch(e => console.error(e));
+      .then((res) => res.json)
+      .catch((e) => console.error(e));
     this.props.setProjectName(newName);
   };
 
@@ -165,7 +208,7 @@ class Container extends Component {
         titleId="ID_PROJECT_POPUP_EDIT_TITLE"
         defaultInput={name}
         buttonNameId="ID_PROJECT_POPUP_EDIT_OK"
-        buttonAction={newVal => {
+        buttonAction={(newVal) => {
           this.editProjectName(pId, newVal);
         }}
       />,
@@ -183,7 +226,7 @@ class Container extends Component {
       isAppModalOn,
       appModalType,
       handleSelectTab,
-      editorMode
+      editorMode,
     } = this.props;
     const {
       openInstantRunPopup,
@@ -195,7 +238,7 @@ class Container extends Component {
       handleChangeTheme,
       handleTemplateBtn,
       clickPublishPopup,
-      handlechangeProjectName
+      handlechangeProjectName,
     } = this;
     const { currentTheme, isMenuEnabled, isClickPublish } = this.state;
     return (
@@ -231,7 +274,7 @@ class Container extends Component {
 }
 
 export default connect(
-  state => ({
+  (state) => ({
     userinfo: state.userinfo,
     isTutor: state.userinfo.isTutor,
     email: state.userinfo.email,
@@ -240,12 +283,12 @@ export default connect(
     project: state.project,
     isAppModalOn: state.modal.isAppModalOn,
     appModalType: state.modal.appModalType,
-    editorMode: state.scene.editorMode
+    editorMode: state.scene.editorMode,
   }),
   {
     updateUserInfo: userInfoActions.updateUserInfo,
     setIsAppModalOn: modalActions.setIsAppModalOn,
     setLog: webrtcActions.setLog,
-    setProjectName: projectActions.setProjectName
+    setProjectName: projectActions.setProjectName,
   }
 )(injectIntl(withRouter(Container)));

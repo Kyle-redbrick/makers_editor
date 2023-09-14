@@ -9,8 +9,8 @@ class Container extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      editorFormat: "text",
-      projectName: ""
+      editorFormat: "JS",
+      projectName: "",
     };
   }
   componentDidMount = () => {
@@ -20,20 +20,46 @@ class Container extends Component {
         {
           randomChar: String.fromCharCode(
             Math.floor(Math.random() * Math.floor(48)) + 48
-          )
+          ),
         }
-      )
+      ),
     });
   };
-  onChangeProjectName = e => {
+  onChangeProjectName = (e) => {
     this.setState({ projectName: e.target.value });
   };
 
-  onClickEditorFormat = type => {
+  onClickEditorFormat = (type) => {
     this.setState({ editorFormat: type });
   };
   onClickMake2DProject = () => {
-    this.createNewProject();
+    // this.createNewProject();
+    this.createNewSaasProject();
+  };
+
+  createNewSaasProject = async () => {
+    let type = this.state.editorFormat === "JS" || "PY" ? "JS" : "wizlabOOBC";
+
+    let res = await request.getTemplateProjectsByType({ type });
+    let template = await res.json();
+
+    if (!template) return;
+    let emptyTemplate = template.filter(
+      (item) => item.description === "empty"
+    )[0];
+    if (!emptyTemplate) return;
+
+    let getNewProject = await request.createNewProject({
+      title: this.state.projectName,
+      editorFormat: this.state.editorFormat,
+    });
+    let getNewProjectData = await getNewProject.json();
+    let newProjectId = getNewProjectData.data.projectInfo.id;
+
+    let pageURL = `/${PAGETYPE.BUILDER}/${newProjectId}`;
+
+    window.history.replaceState({}, "", pageURL);
+    window.location.reload();
   };
 
   createNewProject = async () => {
@@ -48,9 +74,10 @@ class Container extends Component {
     let template = await res.json();
     if (!template) return;
     let emptyTemplate = template.filter(
-      item => item.description === "empty"
+      (item) => item.description === "empty"
     )[0];
     if (!emptyTemplate) return;
+    ////////////////////////////////////////////////////////////////////
     if (this.props.email) {
       this.createNewProjectFromServer(emptyTemplate.id);
     } else {
@@ -64,13 +91,13 @@ class Container extends Component {
     }
   };
 
-  createNewProjectFromServer = async templateId => {
+  createNewProjectFromServer = async (templateId) => {
     const { projectName } = this.state;
     let params = {
       pId: generatePID(this.props.email),
       email: this.props.email,
       name: projectName,
-      templateId
+      templateId,
     };
     try {
       const response = await request.postDevelopingProject(params);
@@ -92,11 +119,8 @@ class Container extends Component {
 
   render() {
     const { editorFormat, projectName } = this.state;
-    const {
-      onChangeProjectName,
-      onClickEditorFormat,
-      onClickMake2DProject
-    } = this;
+    const { onChangeProjectName, onClickEditorFormat, onClickMake2DProject } =
+      this;
     const { gameDimension } = this.props;
     return (
       <View

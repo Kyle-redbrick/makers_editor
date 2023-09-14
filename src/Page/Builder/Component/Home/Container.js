@@ -18,14 +18,16 @@ import openOffIcon from "../../../../Image/icon-open-default.svg";
 import publishingOnIcon from "../../../../Image/icon-publishing-pressed.svg";
 import publishingOffIcon from "../../../../Image/icon-publishing-default.svg";
 
+import NewProjectPopup from "./Component/NewProjectPopup";
+
 class Container extends Component {
   constructor(props) {
     super(props);
     this.state = {
       currentPageId: props.email ? "main" : "makingNew",
-      selectProject: {}
+      selectProject: {},
     };
-    if (props.email) {
+    if (!props.email) {
       this.pageList = [
         { title: "홈", id: "main", onImg: homeOnIcon, offImg: homeOffIcon },
         // {
@@ -38,14 +40,20 @@ class Container extends Component {
           title: "열기",
           id: "myProject",
           onImg: openOnIcon,
-          offImg: openOffIcon
+          offImg: openOffIcon,
         },
         {
           title: "퍼블리싱 앱",
           id: "myPublished",
           onImg: publishingOnIcon,
-          offImg: publishingOffIcon
-        }
+          offImg: publishingOffIcon,
+        },
+        {
+          title: "새로 만들기",
+          id: "makingNew",
+          onImg: createOnIcon,
+          offImg: createOffIcon,
+        },
       ];
     } else {
       this.pageList = [
@@ -53,17 +61,21 @@ class Container extends Component {
           title: "새로 만들기",
           id: "makingNew",
           onImg: createOnIcon,
-          offImg: createOffIcon
-        }
+          offImg: createOffIcon,
+        },
       ];
     }
   }
-  onClickPage = pageId => {
+  onClickPage = (pageId) => {
+    console.log("pageId?", pageId);
+    if (pageId === "makingNew") {
+      showPopUp(<NewProjectPopup gameDimension="2D" />);
+    }
     this.resetSelectProject();
     this.setCurrentPage(pageId);
   };
 
-  setCurrentPage = pageId => {
+  setCurrentPage = (pageId) => {
     this.setState({ currentPageId: pageId });
   };
 
@@ -78,7 +90,7 @@ class Container extends Component {
         titleId="ID_PROJECT_POPUP_EDIT_TITLE"
         defaultInput={name}
         buttonNameId="ID_PROJECT_POPUP_EDIT_OK"
-        buttonAction={newVal => {
+        buttonAction={(newVal) => {
           this.editProject(pId, newVal, callback);
         }}
       />,
@@ -89,17 +101,17 @@ class Container extends Component {
     this.resetSelectProject();
     request
       .updateDevelopingProject({ pId, name: newName })
-      .then(res => res.json)
-      .then(json => {
+      .then((res) => res.json)
+      .then((json) => {
         callback(pId, newName);
         // this.getMyProjects({
         //   currentPage: this.state.currentPage,
         //   keyword: this.state.keyword
         // });
       })
-      .catch(e => console.error(e));
+      .catch((e) => console.error(e));
   };
-  onClickProjectEdit = published => {
+  onClickProjectEdit = (published) => {
     showPopUp(
       <PublishPopup
         pId={published.pId}
@@ -121,16 +133,16 @@ class Container extends Component {
   handleDelete = async (pId, callback) => {
     await request.deleteDevelopingProject({
       pId,
-      email: this.props.email
+      email: this.props.email,
     });
     // let result = await res.json();
     request
       .deleteDevelopingProject({ pId, email: this.props.email })
-      .then(res => res.json())
+      .then((res) => res.json())
       .then(() => {
         callback();
       })
-      .catch(e => {
+      .catch((e) => {
         console.error(e);
       });
   };
@@ -145,16 +157,16 @@ class Container extends Component {
         name: `${project.name} copy`,
         state: project.state,
         url: project.url,
-        useCustomIcon: project.useCustomIcon
+        useCustomIcon: project.useCustomIcon,
       };
 
       request
         .copyDevelopingProject({ param })
-        .then(res => res.json())
+        .then((res) => res.json())
         .then(() => {
           callback();
         })
-        .catch(e => console.error(e));
+        .catch((e) => console.error(e));
     }
   };
 
@@ -169,7 +181,7 @@ class Container extends Component {
       onClickDetailBtn,
       resetSelectProject,
       handleDelete,
-      handleCopy
+      handleCopy,
     } = this;
     const { currentPageId, selectProject } = this.state;
     return (
@@ -192,6 +204,6 @@ class Container extends Component {
   }
 }
 export default connect(
-  state => ({ email: state.userinfo.email, userId: state.userinfo.id }),
+  (state) => ({ email: state.userinfo.email, userId: state.userinfo.id }),
   {}
 )(injectIntl(withRouter(Container)));
