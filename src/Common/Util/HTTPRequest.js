@@ -300,6 +300,14 @@ export const getMySaasProject = (params) => {
   );
 };
 
+export const getMyPublishedSaasProject = (params) => {
+  return fetchSaasRequest(
+    URL.API_SAAS_SERVER +
+      `project/educator/my/list/published?limit=${params.limit}&offset=${params.offset}`,
+    "GET"
+  );
+};
+
 export const getSaasDevelopingProject = (pId) => {
   return fetchSaasRequest(
     URL.API_SAAS_SERVER + `project/educator/info?id=${pId}`,
