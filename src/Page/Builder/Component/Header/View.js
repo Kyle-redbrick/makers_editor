@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from "react";
 import { PAGETYPE } from "../../../../Common/Util/Constant";
 import loadImg from "../../../../Image/builder/folder.svg";
@@ -48,7 +49,7 @@ export default function (props) {
           {pageType !== "ocp" && pageType !== "wizlive" && (
             <div
               className="HeaderProjectItem"
-              onClick={() => openProjectPopup()}
+              onClick={() => (window.location.href = "/builder")}
               data-tip={intl.formatMessage({
                 id: "ID_TOOLTIP_PROJECT_MANAGEMENT",
               })}

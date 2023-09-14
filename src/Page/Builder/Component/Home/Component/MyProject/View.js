@@ -54,7 +54,7 @@ function View(props) {
                     onClickProject(item.pId, item.type);
                   }}
                 >
-                  <div className="bottom__title">{item.name}</div>
+                  <div className="bottom__title">{item.title}</div>
                   <div className="bottom__time">
                     {item.updatedAt &&
                       item.updatedAt.split("T")[0].replaceAll("-", ".")}
@@ -70,7 +70,7 @@ function View(props) {
                     onClickDetailBtn(item.pId);
                   }}
                 >
-                  <img src={projectDetailIcon} alt="project Detail Icon" />
+                  {/* <img src={projectDetailIcon} alt="project Detail Icon" />
                   <ul className="projectItem__detail__list">
                     <li
                       onClick={() =>
@@ -90,7 +90,7 @@ function View(props) {
                       <img src={deleteIcon} alt="" />
                       {intl.formatMessage({ id: "ID_BUILDER_MAIN_DELETE" })}
                     </li>
-                  </ul>
+                  </ul> */}
                 </div>
               </div>
             );

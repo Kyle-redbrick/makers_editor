@@ -67,7 +67,6 @@ class Container extends Component {
     }
   }
   onClickPage = (pageId) => {
-    console.log("pageId?", pageId);
     if (pageId === "makingNew") {
       showPopUp(<NewProjectPopup gameDimension="2D" />);
     }

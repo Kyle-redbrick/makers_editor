@@ -13,7 +13,7 @@ class Container extends Component {
       myProjects: [],
       currentPage: 1,
       dataType: [],
-      keyword: ""
+      keyword: "",
     };
     this.pageSize = 10;
     this.projectsRef = React.createRef();
@@ -23,31 +23,49 @@ class Container extends Component {
   };
 
   fetchMyProjects = async () => {
-    let { currentPage, dataType, keyword } = this.state;
+    let { currentPage } = this.state;
     let pageOffset = Math.ceil((currentPage - 1) * this.pageSize);
     let params = {
-      type: dataType,
-      email: this.props.email,
       offset: pageOffset,
-      limit: this.isFirstFetchData ? 60 : this.pageSize,
-      keyword
+      limit: this.pageSize,
     };
+
     try {
-      let res = await request.getDevelopingProjectsByType(params);
-      let myProjects = await res.json();
-      return myProjects.rows;
+      let res = await request.getMySaasProject(params);
+      let myProject = await res.json();
+      return myProject.data.projectList;
     } catch (error) {
       console.log(error);
       return [];
     }
   };
+
+  // fetchMyProjects = async () => {
+  //   let { currentPage, dataType, keyword } = this.state;
+  //   let pageOffset = Math.ceil((currentPage - 1) * this.pageSize);
+  //   let params = {
+  //     type: dataType,
+  //     email: this.props.email,
+  //     offset: pageOffset,
+  //     limit: this.isFirstFetchData ? 60 : this.pageSize,
+  //     keyword
+  //   };
+  //   try {
+  //     let res = await request.getDevelopingProjectsByType(params);
+  //     let myProjects = await res.json();
+  //     return myProjects.rows;
+  //   } catch (error) {
+  //     console.log(error);
+  //     return [];
+  //   }
+  // };
   isFirstFetchData = () => {
     let { currentPage } = this.state;
     return currentPage === 1;
   };
   //TODO : have to refactoring
   setFilteringData = (
-    filteredType = ["js3d", "js", "wizlabOOBC"],
+    filteredType = ["js3d", "js", "wizlabOOBC", "OOBC"],
     keyword = ""
   ) => {
     this.setState(
@@ -62,7 +80,7 @@ class Container extends Component {
     this.props.history.replace({
       pathname: `/${
         type === "js3d" ? PAGETYPE.BUILDER3D : PAGETYPE.BUILDER
-      }/${pId}`
+      }/${pId}`,
     });
     type !== "js3d" && window.location.reload();
   };
@@ -75,13 +93,13 @@ class Container extends Component {
       container.scrollHeight
     ) {
       this.setState(
-        prev => ({
-          currentPage: prev.currentPage + 1
+        (prev) => ({
+          currentPage: prev.currentPage + 1,
         }),
         async () => {
           let data = await this.fetchMyProjects();
-          this.setState(prev => ({
-            myProjects: prev.myProjects.concat(data)
+          this.setState((prev) => ({
+            myProjects: prev.myProjects.concat(data),
           }));
         }
       );
@@ -89,13 +107,13 @@ class Container extends Component {
   };
 
   setProjectName = (pId, newName) => {
-    this.setState(prev => ({
+    this.setState((prev) => ({
       myProjects: prev.myProjects.map((item, index) => {
         if (item.pId === pId) {
           item.name = newName;
         }
         return item;
-      })
+      }),
     }));
   };
   render() {
@@ -104,7 +122,7 @@ class Container extends Component {
       onClickDetailBtn,
       selectProject,
       handleDelete,
-      handleCopy
+      handleCopy,
     } = this.props;
     const { myProjects } = this.state;
     const {
@@ -112,7 +130,7 @@ class Container extends Component {
       handleOnScroll,
       projectsRef,
       setFilteringData,
-      setProjectName
+      setProjectName,
     } = this;
     return (
       <View
@@ -132,6 +150,6 @@ class Container extends Component {
   }
 }
 export default connect(
-  state => ({ email: state.userinfo.email }),
+  (state) => ({ email: state.userinfo.email }),
   {}
 )(injectIntl(withRouter(Container)));

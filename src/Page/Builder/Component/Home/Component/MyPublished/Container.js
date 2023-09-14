@@ -15,7 +15,7 @@ class Container extends Component {
       dataType: [],
       keyword: "",
       myPublisheds: [],
-      currentPage: 1
+      currentPage: 1,
     };
     this.pageSize = 10;
     this.projectsRef = React.createRef();
@@ -24,35 +24,55 @@ class Container extends Component {
   componentDidMount = () => {
     if (!this.props.email) return;
   };
-  fetchMyPublisheds = async () => {
-    let { currentPage, dataType, keyword } = this.state;
-    let pageOffset = Math.ceil((currentPage - 1) * this.pageSize);
 
+  fetchMyPublisheds = async () => {
+    let { currentPage } = this.state;
+    let pageOffset = Math.ceil((currentPage - 1) * this.pageSize);
     let params = {
-      type: dataType,
-      email: this.props.email,
       offset: pageOffset,
-      limit: this.isFirstFetchData ? 60 : this.pageSize,
-      keyword
+      limit: this.pageSize,
     };
+    console.log("offset", params.offset);
+    console.log("limit", params.limit);
     try {
-      let res = await request.getPublishedProjectsByType(params);
-      let myPublisheds = await res.json();
-      return myPublisheds.rows.map(p => {
-        p.type = p.project.type;
-        return p;
-      });
+      let res = await request.getMyPublishedSaasProject(params);
+      let myPublished = await res.json();
+      return myPublished.data.projectList;
     } catch (error) {
       console.log(error);
       return [];
     }
   };
 
+  // fetchMyPublisheds = async () => {
+  //   let { currentPage, dataType, keyword } = this.state;
+  //   let pageOffset = Math.ceil((currentPage - 1) * this.pageSize);
+
+  //   let params = {
+  //     type: dataType,
+  //     email: this.props.email,
+  //     offset: pageOffset,
+  //     limit: this.isFirstFetchData ? 60 : this.pageSize,
+  //     keyword
+  //   };
+  //   try {
+  //     let res = await request.getPublishedProjectsByType(params);
+  //     let myPublisheds = await res.json();
+  //     return myPublisheds.rows.map(p => {
+  //       p.type = p.project.type;
+  //       return p;
+  //     });
+  //   } catch (error) {
+  //     console.log(error);
+  //     return [];
+  //   }
+  // };
+
   isFirstFetchData = () => {
     let { currentPage } = this.state;
     return currentPage === 1;
   };
-  onClickShowProject = pId => {
+  onClickShowProject = (pId) => {
     if (!pId) return;
     this.props.history.push(`?pId=${pId}`);
   };
@@ -61,31 +81,33 @@ class Container extends Component {
     this.props.history.replace({
       pathname: `/${
         type === "js3d" ? PAGETYPE.BUILDER3D : PAGETYPE.BUILDER
-      }/${pId}`
+      }/${pId}`,
     });
     type !== "js3d" && window.location.reload();
   };
   //TODO : have to refactoring
   handleOnScroll = () => {
+    console.log("스크롤 함수 실행");
+
     const container = this.projectsRef.current;
     if (
       container.offsetHeight + container.scrollTop >=
       container.scrollHeight
     ) {
       this.setState(
-        prev => ({
-          currentPage: prev.currentPage + 1
+        (prev) => ({
+          currentPage: prev.currentPage + 1,
         }),
         async () => {
           let data = await this.fetchMyPublisheds();
-          this.setState(prev => ({
-            myPublisheds: prev.myPublisheds.concat(data)
+          this.setState((prev) => ({
+            myPublisheds: prev.myPublisheds.concat(data),
           }));
         }
       );
     }
   };
-  handleProjectLive = async published => {
+  handleProjectLive = async (published) => {
     published.live = !published.live;
     if (!published.tags) {
       published.tags = [];
@@ -98,7 +120,7 @@ class Container extends Component {
     }
   };
 
-  onClickProjectEdit = published => {
+  onClickProjectEdit = (published) => {
     showPopUp(
       <PublishPopup
         pId={published.pId}
@@ -109,18 +131,18 @@ class Container extends Component {
       { defaultPadding: false, scrollable: true }
     );
   };
-  updateItemInfo = params => {
-    this.setState(state => ({
-      myPublisheds: state.myPublisheds.map(item => {
+  updateItemInfo = (params) => {
+    this.setState((state) => ({
+      myPublisheds: state.myPublisheds.map((item) => {
         if (item.pId === params.pId) {
           return {
             ...item,
-            ...params
+            ...params,
           };
         } else {
           return item;
         }
-      })
+      }),
     }));
   };
 
@@ -142,7 +164,7 @@ class Container extends Component {
       handleOnScroll,
       projectsRef,
       handleProjectLive,
-      setFilteringData
+      setFilteringData,
     } = this;
     const { myPublisheds } = this.state;
     return (
@@ -162,6 +184,6 @@ class Container extends Component {
   }
 }
 export default connect(
-  state => ({ email: state.userinfo.email }),
+  (state) => ({ email: state.userinfo.email }),
   {}
 )(injectIntl(withRouter(Container)));
