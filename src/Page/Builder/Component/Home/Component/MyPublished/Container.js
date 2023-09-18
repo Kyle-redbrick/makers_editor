@@ -87,8 +87,6 @@ class Container extends Component {
   };
   //TODO : have to refactoring
   handleOnScroll = () => {
-    console.log("스크롤 함수 실행");
-
     const container = this.projectsRef.current;
     if (
       container.offsetHeight + container.scrollTop >=
@@ -105,6 +103,8 @@ class Container extends Component {
           }));
         }
       );
+    } else {
+      alert("스크롤 이벤트 실패");
     }
   };
   handleProjectLive = async (published) => {

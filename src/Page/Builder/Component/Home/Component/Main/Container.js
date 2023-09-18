@@ -70,22 +70,13 @@ class Container extends Component {
   // };
 
   fetchMyPublished = async () => {
-    if (!this.props.email) return;
-    let params = {
-      email: this.props.email,
-      offset: 0,
-      limit: this.limit,
-    };
+    let params = { offset: 0, limit: 10 };
+
     try {
-      let res = await request.getPublishedProjectsByLive(params);
-      let publisheds = await res.json();
-      this.setState({
-        myPublisheds:
-          publisheds.rows.map((p) => {
-            p.type = p.project.type;
-            return p;
-          }) || [],
-      });
+      let res = await request.getMyPublishedSaasProject(params);
+      let myProjects = await res.json();
+      // console.log("myProjects", myProjects.data.projectList);
+      this.setState({ myPublisheds: myProjects.data.projectList || [] });
     } catch (error) {
       console.log(error);
       this.setState({ myPublisheds: [] });

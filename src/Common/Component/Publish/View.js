@@ -3,11 +3,11 @@ import { injectIntl } from "react-intl";
 import closeImg from "../../../Image/builder/x-copy-3.svg";
 import closeImg_darkmode from "../../../Image/dreamclass/close-preview.svg";
 import { getColorTheme } from "../../../Page/Builder/utils/colorThemeUtil";
-import deleteTagIcon from "../../../Image/dreamclass/delete-tag.svg"
+import deleteTagIcon from "../../../Image/dreamclass/delete-tag.svg";
 import badgeJsShadow from "../../../Image/dreamclass/badge-js-shadow@2x.png";
 import badgePuzzleShadow from "../../../Image/dreamclass/badge-oobc-shadow@2x.png";
 
-const View = props => {
+const View = (props) => {
   const {
     name,
     description,
@@ -27,12 +27,12 @@ const View = props => {
     onDeleteTag,
     popularTags,
     nameValidation,
-    descriptionValidation
+    descriptionValidation,
   } = props;
   const colorTheme = getColorTheme();
 
   const badgeIcon = (type) => {
-    switch(type) {
+    switch (type) {
       case "javascript":
         return badgeJsShadow;
       case "oobc":
@@ -40,7 +40,7 @@ const View = props => {
       default:
         break;
     }
-  }
+  };
 
   return (
     <div className="publishpopup">
@@ -67,17 +67,18 @@ const View = props => {
             name="name"
             value={name}
             placeholder={props.intl.formatMessage({
-              id: "ID_BUILDER_EDITPOP_TITLE_PH"
+              id: "ID_BUILDER_EDITPOP_TITLE_PH",
             })}
             onChange={handleInputChange}
-            className={`publishform__input ${!nameValidation &&
-              "validationFalse"}`}
+            className={`publishform__input ${
+              !nameValidation && "validationFalse"
+            }`}
             autoComplete="off"
           />
           {!nameValidation && (
             <p className="publishform__validation_check">
               {props.intl.formatMessage({
-                id: "ID_BUILDER_EDITPOP_TITLE_VALIDATION"
+                id: "ID_BUILDER_EDITPOP_TITLE_VALIDATION",
               })}
             </p>
           )}
@@ -93,16 +94,17 @@ const View = props => {
             name="description"
             value={description}
             onChange={handleInputChange}
-            className={`publishform__textarea ${!descriptionValidation &&
-              "validationFalse"}`}
+            className={`publishform__textarea ${
+              !descriptionValidation && "validationFalse"
+            }`}
             placeholder={props.intl.formatMessage({
-              id: "ID_BUILDER_EDITPOP_DESC_PH"
+              id: "ID_BUILDER_EDITPOP_DESC_PH",
             })}
           />
           {!descriptionValidation && (
             <p className="publishform__validation_check">
               {props.intl.formatMessage({
-                id: "ID_BUILDER_EDITPOP_DESC_VALIDATION"
+                id: "ID_BUILDER_EDITPOP_DESC_VALIDATION",
               })}
             </p>
           )}
@@ -123,7 +125,7 @@ const View = props => {
                   alt="icon"
                   onClick={handleImgClick}
                 />
-                <img className="thumbnailIcon" src={badgeIcon("oobc")} alt=""/>
+                <img className="thumbnailIcon" src={badgeIcon("oobc")} alt="" />
               </div>
               <div className="publishform__icon__buttons">
                 {isDeveloping ? (
@@ -133,7 +135,7 @@ const View = props => {
                       onClick={handleAddClick}
                     >
                       {props.intl.formatMessage({
-                        id: "ID_BUILDER_EDITPOP_IMAGE_CHANGE"
+                        id: "ID_BUILDER_EDITPOP_IMAGE_CHANGE",
                       })}
                     </div>
                     <div
@@ -141,7 +143,7 @@ const View = props => {
                       onClick={handleFileDelete}
                     >
                       {props.intl.formatMessage({
-                        id: "ID_BUILDER_EDITPOP_IMAGE_DELETE"
+                        id: "ID_BUILDER_EDITPOP_IMAGE_DELETE",
                       })}
                     </div>
                   </React.Fragment>
@@ -151,11 +153,10 @@ const View = props => {
                     onClick={handleAddClick}
                   >
                     {props.intl.formatMessage({
-                      id: "ID_BUILDER_EDITPOP_IMAGE_CHANGE"
+                      id: "ID_BUILDER_EDITPOP_IMAGE_CHANGE",
                     })}
                   </div>
                 )}
-
               </div>
               <input
                 id="PublishForm__icon__input"
@@ -169,7 +170,7 @@ const View = props => {
         )}
 
         {/* tag */}
-        <div className="publishform__row">
+        {/* <div className="publishform__row">
           <div className="publishform__title__wrapper">
             <p className="publishform__title publishform__title__tag">
               {props.intl.formatMessage({
@@ -220,7 +221,7 @@ const View = props => {
               );
             })}
           </div>
-        </div>
+        </div> */}
 
         {/* code open */}
         <div className="publishform__row">
@@ -232,21 +233,22 @@ const View = props => {
 
           <div className="publishform__code_allow__wrapper">
             <div
-              className={`publishform__code_allow ${isCopyAllowed ? "On" : "Off"}`}
+              className={`publishform__code_allow ${
+                isCopyAllowed ? "On" : "Off"
+              }`}
               onClick={handleIsCopyAllowedChange}
             >
-              <span/>
+              <span />
             </div>
 
             <span className="text">
-              {isCopyAllowed ? 
-                props.intl.formatMessage({
-                  id: "ID_BUILDER_EDITPOP_CODE_OPEN"
-                }) :
-                props.intl.formatMessage({
-                  id: "ID_BUILDER_EDITPOP_CODE_CLOSE"
-                })
-              }
+              {isCopyAllowed
+                ? props.intl.formatMessage({
+                    id: "ID_BUILDER_EDITPOP_CODE_OPEN",
+                  })
+                : props.intl.formatMessage({
+                    id: "ID_BUILDER_EDITPOP_CODE_CLOSE",
+                  })}
             </span>
           </div>
         </div>

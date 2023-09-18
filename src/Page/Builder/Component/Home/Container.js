@@ -30,12 +30,12 @@ class Container extends Component {
     if (!props.email) {
       this.pageList = [
         { title: "홈", id: "main", onImg: homeOnIcon, offImg: homeOffIcon },
-        // {
-        //   title: "새로 만들기",
-        //   id: "makingNew",
-        //   onImg: createOnIcon,
-        //   offImg: createOffIcon
-        // },
+        {
+          title: "새로 만들기",
+          id: "makingNew",
+          onImg: createOnIcon,
+          offImg: createOffIcon,
+        },
         {
           title: "열기",
           id: "myProject",
@@ -47,12 +47,6 @@ class Container extends Component {
           id: "myPublished",
           onImg: publishingOnIcon,
           offImg: publishingOffIcon,
-        },
-        {
-          title: "새로 만들기",
-          id: "makingNew",
-          onImg: createOnIcon,
-          offImg: createOffIcon,
         },
       ];
     } else {

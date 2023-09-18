@@ -92,7 +92,7 @@ class Container extends Component {
     if (isBlocked) {
       return;
     }
-    if (this.props.userinfo.email) {
+    if (!this.props.userinfo.email) {
       TrackingUtil.sendGAEvent({
         category: "Builder",
         action: `MenuActions`,
