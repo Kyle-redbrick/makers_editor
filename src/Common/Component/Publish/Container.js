@@ -35,49 +35,49 @@ class Container extends Component {
     }
   }
   componentDidMount = async () => {
-    const pId = this.getPID();
-    request
-      .getPublishedProject({ pId })
-      .then((res) => res.json())
-      .then((json) => {
-        if (json) {
-          const { name, description, category, icon, isCopyAllowed } = json;
-          let tag = json.tag.map((item) => {
-            return item.gameTag.name;
-          });
-          this.setState({
-            name,
-            description,
-            category,
-            icon,
-            isCopyAllowed,
-            tags: tag,
-          });
-          if (this.props.isDeveloping) {
-            this.props.setScreenshotURL(icon, this.props.project.useCustomIcon);
-          }
-        } else {
-          this.setState({ isCopyAllowed: true });
-        }
-      })
-      .catch((e) => console.error(e));
+    // const pId = this.getPID();
+    // request
+    //   .getPublishedProject({ pId })
+    //   .then((res) => res.json())
+    //   .then((json) => {
+    //     if (json) {
+    //       const { name, description, category, icon, isCopyAllowed } = json;
+    //       let tag = json.tag.map((item) => {
+    //         return item.gameTag.name;
+    //       });
+    //       this.setState({
+    //         name,
+    //         description,
+    //         category,
+    //         icon,
+    //         isCopyAllowed,
+    //         tags: tag,
+    //       });
+    //       if (this.props.isDeveloping) {
+    //         this.props.setScreenshotURL(icon, this.props.project.useCustomIcon);
+    //       }
+    //     } else {
+    //       this.setState({ isCopyAllowed: true });
+    //     }
+    //   })
+    //   .catch((e) => console.error(e));
 
-    request
-      .getPopularTag()
-      .then((res) => res.json())
-      .then((json) => {
-        let popular = json.map((item) => {
-          return item.name;
-        });
-        this.setState({ popularTags: popular.slice(0, 5) });
-      });
+    // request
+    //   .getPopularTag()
+    //   .then((res) => res.json())
+    //   .then((json) => {
+    //     let popular = json.map((item) => {
+    //       return item.name;
+    //     });
+    //     this.setState({ popularTags: popular.slice(0, 5) });
+    //   });
 
-    request
-      .checkAttendEventChallenge({ pId })
-      .then((res) => res.json())
-      .then((json) => {
-        if (json) this.setState({ challengeEventAttend: true });
-      });
+    // request
+    //   .checkAttendEventChallenge({ pId })
+    //   .then((res) => res.json())
+    //   .then((json) => {
+    //     if (json) this.setState({ challengeEventAttend: true });
+    //   });
     /*for css */
     const popup = document
       .querySelector(".publishpopup")
@@ -108,219 +108,284 @@ class Container extends Component {
     document.getElementById("PublishForm__icon__input").click();
   };
 
-  // handleSubmit = async (e) => {
-  //   e.preventDefault();
-  //   const {
-  //     name,
-  //     description,
-  //     isCopyAllowed,
-  //     category = "Game",
-  //     tags,
-  //     challengeEventAttend,
-  //   } = this.state;
+  handleSubmit = async (e) => {
+    e.preventDefault();
+    const {
+      name,
+      description,
+      isCopyAllowed,
+      category = "Game",
+      tags,
+      challengeEventAttend,
+    } = this.state;
 
-  //   // input validation
-  //   if (!name) {
-  //     this.setState({ nameValidation: false });
-  //     return;
-  //   } else if (!description) {
-  //     this.setState({ descriptionValidation: false });
-  //     return;
-  //   }
+    // input validation
+    // if (!name) {
+    //   this.setState({ nameValidation: false });
+    //   return;
+    // } else if (!description) {
+    //   this.setState({ descriptionValidation: false });
+    //   return;
+    // }
 
-  //   const pId = this.getPID();
-  //   let icon = this.getIcon();
+    // let icon = this.getIcon();
 
-  //   // create tutorial developingProject
-  //   const { email, tutorialLevel } = this.props;
-  //   let decodedEmail = "";
+    // // update custom icon
+    // if (!this.props.isDeveloping & this.state.iconUpdated) {
+    //   await request.postDevelopingProject({
+    //     pId,
+    //     icon,
+    //     useCustomIcon: true,
+    //   });
+    // }
+    const pId = window.location.pathname.split("/")[2];
+    let state;
+    if (this.props.scene) {
+      state = {
+        interaction: this.props.interaction,
+        scene: {
+          editorMode: this.props.scene.editorMode,
+          scenes: this.props.scene.scenes,
+          sceneIds: this.props.scene.sceneIds,
+          soundIds: this.props.scene.soundIds,
+          timeStamp: this.props.scene.timeStamp,
+        },
+        preview: this.props.preview,
+      };
+    }
 
-  //   if (!email) {
-  //     const token = localStorage.getItem("astroToken");
-  //     const decoded = jwt_decode(token);
-  //     decodedEmail = decoded.email;
-  //   }
+    let params;
+    if (name && this.state.icon) {
+      params = {
+        title: name,
+        state: state,
+        isVisible: isCopyAllowed,
+        icon: this.state.icon,
+      };
+    } else if (name) {
+      params = { title: name, state: state, isVisible: isCopyAllowed };
+    } else if (this.state.icon) {
+      params = {
+        state: state,
+        isVisible: isCopyAllowed,
+        icon: this.state.icon,
+      };
+    } else {
+      params = { state: state, isVisible: isCopyAllowed };
+    }
 
-  //   const emailData = email ? email : decodedEmail;
+    try {
+      console.log("icon =>", this.state.icon);
+      console.log("params => ", params);
+      request
+        .updateSaasProject({ params, pId })
+        .then((res) => res.json())
+        .then((json) => console.log("json", json));
+    } catch (e) {
+      console.error(e);
+    }
+    // // create/update publishedProject
+    // let params = {
+    //   pId,
+    //   email: emailData,
+    //   icon,
+    //   name,
+    //   description,
+    //   category,
+    //   isCopyAllowed,
+    //   tags,
+    //   live: true,
+    // };
+    // if (this.props.organization) {
+    //   params.isSsafy = this.props.organization.toLowerCase() === "ssafy";
+    // }
+    // if (this.props.organization) {
+    //   params.isJJ = this.props.organization.includes("전주");
+    // }
 
-  //   if (tutorialLevel) {
-  //     icon = this.props.project.screenshotURL;
-  //     const name = this.props.intl.formatMessage({ id: "ID_PUBLISH_TUTORIAL" });
-  //     const state = stringify({
-  //       scene: this.props.scene,
-  //       preview: this.props.preview,
-  //       interaction: this.props.interaction,
-  //     });
-  //     const useCustomIcon = this.props.project.useCustomIcon;
-  //     await request.postDevelopingProject({
-  //       pId,
-  //       icon,
-  //       email: emailData,
-  //       name,
-  //       state,
-  //       useCustomIcon,
-  //     });
-  //   }
+    // let publishedURL = undefined;
+    // if (this.props.scene) {
+    //   const state = {
+    //     editorMode: this.props.scene.editorMode,
+    //     scene: {
+    //       scenes: this.props.scene.scenes,
+    //       sceneIds: this.props.scene.sceneIds,
+    //       soundIds: this.props.scene.soundIds,
+    //     },
+    //     preview: {
+    //       screenMode: this.props.preview.screenMode,
+    //     },
+    //   };
+    //   const gameMeta = { pId, gameTitle: name };
+    //   const doc = await generateGamePage(
+    //     state,
+    //     gameMeta,
+    //     null,
+    //     this.props.intl
+    //   );
+    //   let url = await request.uploadPublished({ doc });
+    //   url = await url.json();
+    //   url = url.url;
+    //   publishedURL = url;
+    // }
+    // if (publishedURL) {
+    //   params["url"] = publishedURL;
+    //   params["copyStateFromDev"] = true;
+    // }
 
-  //   // update custom icon
-  //   if (!this.props.isDeveloping & this.state.iconUpdated) {
-  //     await request.postDevelopingProject({
-  //       pId,
-  //       icon,
-  //       useCustomIcon: true,
-  //     });
-  //   }
+    // try {
+    //   request
+    //     .postPublishedProject(params)
+    //     .then((res) => res.json())
+    //     .then((json) => {
+    //       this.handleCloseBtn();
+    //       if (this.props.publishProject) {
+    //         this.props.publishProject();
+    //       }
+    //       if (this.props.publishCallback) {
+    //         this.props.publishCallback({
+    //           pId,
+    //           icon,
+    //           email: emailData,
+    //           name,
+    //           description,
+    //           category,
+    //           isCopyAllowed,
+    //         });
+    //       }
+    //       showPopUp(
+    //         <PopUp.OneButton
+    //           title={this.props.intl.formatMessage({
+    //             id: "ID_BUILDER_ALERT_MSG_SUCC",
+    //           })}
+    //           buttonName={this.props.intl.formatMessage({
+    //             id: "ID_BUILDER_ALERT_CONFIRMBTN",
+    //           })}
+    //           buttonAction={this.props.buttonAction}
+    //         />,
+    //         {
+    //           dismissButton: false,
+    //           darkmode: getColorTheme() === "darkMode",
+    //         }
+    //       );
 
-  //   // create/update publishedProject
-  //   let params = {
-  //     pId,
-  //     email: emailData,
-  //     icon,
-  //     name,
-  //     description,
-  //     category,
-  //     isCopyAllowed,
-  //     tags,
-  //     live: true,
-  //   };
-  //   if (this.props.organization) {
-  //     params.isSsafy = this.props.organization.toLowerCase() === "ssafy";
-  //   }
-  //   if (this.props.organization) {
-  //     params.isJJ = this.props.organization.includes("전주");
-  //   }
-
-  //   let publishedURL = undefined;
-  //   if (this.props.scene) {
-  //     const state = {
-  //       editorMode: this.props.scene.editorMode,
-  //       scene: {
-  //         scenes: this.props.scene.scenes,
-  //         sceneIds: this.props.scene.sceneIds,
-  //         soundIds: this.props.scene.soundIds,
-  //       },
-  //       preview: {
-  //         screenMode: this.props.preview.screenMode,
-  //       },
-  //     };
-  //     const gameMeta = { pId, gameTitle: name };
-  //     const doc = await generateGamePage(
-  //       state,
-  //       gameMeta,
-  //       null,
-  //       this.props.intl
-  //     );
-  //     let url = await request.uploadPublished({ doc });
-  //     url = await url.json();
-  //     url = url.url;
-  //     publishedURL = url;
-  //   }
-  //   if (publishedURL) {
-  //     params["url"] = publishedURL;
-  //     params["copyStateFromDev"] = true;
-  //   }
-
-  //   try {
-  //     request
-  //       .postPublishedProject(params)
-  //       .then((res) => res.json())
-  //       .then((json) => {
-  //         this.handleCloseBtn();
-  //         if (this.props.publishProject) {
-  //           this.props.publishProject();
-  //         }
-  //         if (this.props.publishCallback) {
-  //           this.props.publishCallback({
-  //             pId,
-  //             icon,
-  //             email: emailData,
-  //             name,
-  //             description,
-  //             category,
-  //             isCopyAllowed,
-  //           });
-  //         }
-  //         showPopUp(
-  //           <PopUp.OneButton
-  //             title={this.props.intl.formatMessage({
-  //               id: "ID_BUILDER_ALERT_MSG_SUCC",
-  //             })}
-  //             buttonName={this.props.intl.formatMessage({
-  //               id: "ID_BUILDER_ALERT_CONFIRMBTN",
-  //             })}
-  //             buttonAction={this.props.buttonAction}
-  //           />,
-  //           {
-  //             dismissButton: false,
-  //             darkmode: getColorTheme() === "darkMode",
-  //           }
-  //         );
-
-  //         // /** event request */
-  //         if (challengeEventAttend) {
-  //           request.addChallenge({ pId });
-  //           showPopUp(
-  //             <PopUp.OneButton
-  //               title={this.props.intl.formatMessage({
-  //                 id: "ID_BUILDER_CONFIRM_INFO",
-  //               })}
-  //               buttonName={this.props.intl.formatMessage({
-  //                 id: "ID_BUILDER_ALERT_CONFIRMBTN",
-  //               })}
-  //             />,
-  //             {
-  //               dismissButton: false,
-  //               darkmode: getColorTheme() === "darkMode",
-  //             }
-  //           );
-  //         }
-  //       });
-  //   } catch (e) {
-  //     console.error(e);
-  //     showPopUp(
-  //       <PopUp.OneButton
-  //         title={this.props.intl.formatMessage({
-  //           id: "ID_BUILDER_ALERT_MSG_RETRY",
-  //         })}
-  //         buttonName="확인"
-  //       />,
-  //       {
-  //         dismissButton: false,
-  //         darkmode: getColorTheme() === "darkMode",
-  //       }
-  //     );
-  //   }
-  // };
+    //       // /** event request */
+    //       if (challengeEventAttend) {
+    //         request.addChallenge({ pId });
+    //         showPopUp(
+    //           <PopUp.OneButton
+    //             title={this.props.intl.formatMessage({
+    //               id: "ID_BUILDER_CONFIRM_INFO",
+    //             })}
+    //             buttonName={this.props.intl.formatMessage({
+    //               id: "ID_BUILDER_ALERT_CONFIRMBTN",
+    //             })}
+    //           />,
+    //           {
+    //             dismissButton: false,
+    //             darkmode: getColorTheme() === "darkMode",
+    //           }
+    //         );
+    //       }
+    //     });
+    // } catch (e) {
+    //   console.error(e);
+    //   showPopUp(
+    //     <PopUp.OneButton
+    //       title={this.props.intl.formatMessage({
+    //         id: "ID_BUILDER_ALERT_MSG_RETRY",
+    //       })}
+    //       buttonName="확인"
+    //     />,
+    //     {
+    //       dismissButton: false,
+    //       darkmode: getColorTheme() === "darkMode",
+    //     }
+    //   );
+    // }
+  };
   handleCloseBtn = () => {
     // 퍼블리싱 팝업 종료
     this.props.setLog({ publish: false });
     this.props.dismiss();
   };
+
+  // const uploadFile = async (selectedFile, lectureName) => {
+  //   try {
+  //     const uploadResponse = await request.thumbnailUpload(lectureName);
+  //     const uploadData = await uploadResponse.json();
+  //     const putUrl = uploadData.data.uploadUrl;
+  //     const downloadUrl = uploadData.data.downloadUrl;
+
+  //     const putResponse = await fetch(putUrl, {
+  //       method: "PUT",
+  //       headers: {
+  //         "Content-Type": "image/jpeg",
+  //       },
+  //       body: selectedFile,
+  //     });
+
+  //     console.log("PUT response", putResponse);
+
+  //     return downloadUrl;
+  //   } catch (error) {
+  //     console.error("파일 업로드 실패:", error);
+  //   }
+  // };
+  // 게임 썸네일 등록하기 (수정)
   handleFileInput = async (e) => {
+    console.log("pId", window.location.pathname.split("/")[2]);
     const selectedFile = e.target.files[0];
     if (!selectedFile) return;
-    const data = new FormData();
-    let compressed = await ImageCompressor(selectedFile);
-    data.append("file", compressed);
-    const { isDeveloping } = this.props;
-    if (isDeveloping) {
-      try {
-        const response = await request.upload(data);
-        const json = await response.json();
-        const icon = json.url;
-        const { pId } = this.props.project;
-        const params = { pId, icon, useCustomIcon: true };
-        request.updateDevelopingProject(params);
-        this.props.setScreenshotURL(icon, true);
-      } catch (e) {
-        console.error(e);
-      }
-    } else {
-      const response = await request.upload(data);
-      const json = await response.json();
-      const icon = json.url;
-      this.setState({ icon, iconUpdated: true });
+
+    try {
+      const uploadResponse = await request.projectIconUpload(
+        window.location.pathname.split("/")[2]
+      );
+      const uploadData = await uploadResponse.json();
+      const temporaryPutUrl = uploadData.data.uploadUrl;
+      const putUrl = temporaryPutUrl.slice(0, 4) + temporaryPutUrl.slice(5);
+      const temporaryDownloadUrl = uploadData.data.downloadUrl;
+
+      const downloadUrl =
+        "http://redbrick-makers.oss-ap-northeast-2.aliyuncs.com/" +
+        temporaryDownloadUrl;
+
+      const putResponse = await fetch(putUrl, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "image/jpeg",
+        },
+        body: selectedFile,
+      });
+
+      console.log("putResponse", putResponse);
+      this.setState({ icon: downloadUrl });
+    } catch (error) {
+      console.error("파일 업로드 실패 : ", error);
     }
+
+    // const { isDeveloping } = this.props;
+    // console.log("isDeveloping", this.props.isDeveloping);
+    // if (isDeveloping) {
+    //   try {
+    //     const response = await request.upload(data);
+    //     const json = await response.json();
+    //     const icon = json.url;
+    //     // const { pId } = this.props.project;
+    //     // const params = { pId, icon, useCustomIcon: true };
+    //     // request.updateDevelopingProject(params);
+    //     this.props.setScreenshotURL(icon, true);
+    //   } catch (e) {
+    //     console.log("에러다 ㅜㅜ");
+    //     console.error(e);
+    //   }
+    // } else {
+    //   const response = await request.upload(data);
+    //   const json = await response.json();
+    //   const icon = json.url;
+    //   this.setState({ icon, iconUpdated: true });
+    // }
   };
   handleFileDelete = () => {
     const { isDeveloping } = this.props;
@@ -381,7 +446,7 @@ class Container extends Component {
       nameValidation,
       descriptionValidation,
     } = this.state;
-    const icon = this.getIcon();
+    const icon = this.state.icon;
     const { isDeveloping, isTutorial, project } = this.props;
     return (
       <div>
@@ -398,7 +463,7 @@ class Container extends Component {
           handleIsCopyAllowedChange={this.handleIsCopyAllowedChange}
           handleImgClick={this.handleImgClick}
           handleAddClick={this.handleAddClick}
-          // handleSubmit={this.handleSubmit}
+          handleSubmit={this.handleSubmit}
           handleCloseBtn={this.handleCloseBtn}
           handleFileInput={this.handleFileInput}
           handleFileDelete={this.handleFileDelete}

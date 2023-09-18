@@ -30,6 +30,21 @@ export const fetchSaasRequest = (url, method, param) => {
 ///////////////////////////////////////////////////////////////////////////////
 /** SAAS */
 
+export const projectIconUpload = (pId) => {
+  return fetchSaasRequest(
+    URL.API_SAAS_SERVER + `project/educator/icon/upload?projectId=${pId}`,
+    "GET"
+  );
+};
+
+export const updateSaasProject = ({ params, pId }) => {
+  return fetchSaasRequest(
+    URL.API_SAAS_SERVER + `project/educator?projectId=${pId}`,
+    "PUT",
+    params
+  );
+};
+
 export const createNewProject = (props) => {
   const param = {
     title: props.title ? props.title : "testTemplate",

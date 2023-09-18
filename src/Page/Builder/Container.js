@@ -328,7 +328,6 @@ class Container extends Component {
     let response = await request.getSaasDevelopingProject(pId);
     const ans = await response.json();
     const project = ans.data.projectInfo;
-    console.log("project =>", project);
 
     this.setBrowserTitle(project.title);
     project.state = JSON.parse(project.state);

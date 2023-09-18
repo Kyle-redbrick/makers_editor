@@ -39,8 +39,7 @@ import DreamBuilder from "./Component/DreamBuilder";
 import Tabs from "./Component/Tabs";
 import MultiSocket from "./Component/MultiSocket";
 
-
-export default function(props) {
+export default function (props) {
   const {
     isLoading,
     location,
@@ -70,7 +69,7 @@ export default function(props) {
     email,
     name,
     calculateNewPosition,
-    isTooltipPositionLeft
+    isTooltipPositionLeft,
   } = props;
 
   const liveProps = {
@@ -85,7 +84,7 @@ export default function(props) {
     isFreeTrial,
     pageType,
     email,
-    name
+    name,
   };
   const popupZIndexOffset = 2;
 
@@ -294,7 +293,13 @@ export default function(props) {
             />
           )}
           <ToastContainer autoClose={2000} />
-          <ReactToolTip className={isTooltipPositionLeft ? "left" : ""} multiline={true} place="bottom" effect="solid" overridePosition={calculateNewPosition} />
+          <ReactToolTip
+            className={isTooltipPositionLeft ? "left" : ""}
+            multiline={true}
+            place="bottom"
+            effect="solid"
+            overridePosition={calculateNewPosition}
+          />
         </div>
       );
     }

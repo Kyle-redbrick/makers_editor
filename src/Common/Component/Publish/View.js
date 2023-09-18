@@ -66,9 +66,10 @@ const View = (props) => {
             type="text"
             name="name"
             value={name}
-            placeholder={props.intl.formatMessage({
-              id: "ID_BUILDER_EDITPOP_TITLE_PH",
-            })}
+            // placeholder={props.intl.formatMessage({
+            //   id: "ID_BUILDER_EDITPOP_TITLE_PH",
+            // })}
+            placeholder="게임 이름을 변경할 시에만 입력하세요"
             onChange={handleInputChange}
             className={`publishform__input ${
               !nameValidation && "validationFalse"
@@ -84,7 +85,7 @@ const View = (props) => {
           )}
         </div>
         {/* desc */}
-        <div className="publishform__row">
+        {/* <div className="publishform__row">
           <p className="publishform__title">
             {props.intl.formatMessage({ id: "ID_BUILDER_EDITPOP_DESC" })}
           </p>
@@ -108,46 +109,32 @@ const View = (props) => {
               })}
             </p>
           )}
-        </div>
+        </div> */}
 
         {/* icon */}
-        {icon && (
-          <div className="publishform__row">
-            <p className="publishform__title">
-              {props.intl.formatMessage({ id: "ID_BUILDER_EDITPOP_ICON" })}
-            </p>
 
-            <div className="publishform__icon">
-              <div className="publishform__icon__img__wrapper">
-                <img
-                  className="publishform__icon__img"
-                  src={icon}
-                  alt="icon"
-                  onClick={handleImgClick}
-                />
-                <img className="thumbnailIcon" src={badgeIcon("oobc")} alt="" />
-              </div>
-              <div className="publishform__icon__buttons">
-                {isDeveloping ? (
-                  <React.Fragment>
-                    <div
-                      className="publishform__icon__button"
-                      onClick={handleAddClick}
-                    >
-                      {props.intl.formatMessage({
-                        id: "ID_BUILDER_EDITPOP_IMAGE_CHANGE",
-                      })}
-                    </div>
-                    <div
-                      className="publishform__icon__button"
-                      onClick={handleFileDelete}
-                    >
-                      {props.intl.formatMessage({
-                        id: "ID_BUILDER_EDITPOP_IMAGE_DELETE",
-                      })}
-                    </div>
-                  </React.Fragment>
-                ) : (
+        <div className="publishform__row">
+          <p className="publishform__title">
+            {props.intl.formatMessage({ id: "ID_BUILDER_EDITPOP_ICON" })}
+          </p>
+
+          <div className="publishform__icon">
+            <div className="publishform__icon__img__wrapper">
+              <img
+                className="publishform__icon__img"
+                src={
+                  icon
+                    ? icon
+                    : "https://png.pngtree.com/thumb_back/fh260/background/20200821/pngtree-pure-black-background-wallpaper-image_396550.jpg"
+                }
+                alt="icon"
+                onClick={handleImgClick}
+              />
+              {/* <img className="thumbnailIcon" src={badgeIcon("oobc")} alt="" /> */}
+            </div>
+            <div className="publishform__icon__buttons">
+              {isDeveloping ? (
+                <React.Fragment>
                   <div
                     className="publishform__icon__button"
                     onClick={handleAddClick}
@@ -156,18 +143,35 @@ const View = (props) => {
                       id: "ID_BUILDER_EDITPOP_IMAGE_CHANGE",
                     })}
                   </div>
-                )}
-              </div>
-              <input
-                id="PublishForm__icon__input"
-                className="publishform__icon__input"
-                type="file"
-                accept=".jpg,.jpeg,.png"
-                onChange={handleFileInput}
-              />
+                  {/* <div
+                    className="publishform__icon__button"
+                    onClick={handleFileDelete}
+                  >
+                    {props.intl.formatMessage({
+                      id: "ID_BUILDER_EDITPOP_IMAGE_DELETE",
+                    })}
+                  </div> */}
+                </React.Fragment>
+              ) : (
+                <div
+                  className="publishform__icon__button"
+                  onClick={handleAddClick}
+                >
+                  {props.intl.formatMessage({
+                    id: "ID_BUILDER_EDITPOP_IMAGE_CHANGE",
+                  })}
+                </div>
+              )}
             </div>
+            <input
+              id="PublishForm__icon__input"
+              className="publishform__icon__input"
+              type="file"
+              accept=".jpg,.jpeg,.png"
+              onChange={handleFileInput}
+            />
           </div>
-        )}
+        </div>
 
         {/* tag */}
         {/* <div className="publishform__row">
