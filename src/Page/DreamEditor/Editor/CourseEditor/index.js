@@ -11,7 +11,7 @@ function CourseEditor(props) {
       .getCourseInfo(lectureId)
       .then((res) => res.json())
       .then((json) => {
-        setLecture(json.courseInfo);
+        setLecture(json.data.courseInfo);
       });
   }, [lectureId]);
 
