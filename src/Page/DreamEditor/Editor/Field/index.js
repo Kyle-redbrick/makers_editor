@@ -73,10 +73,30 @@ function Select(props) {
 
 const uploadFile = async (selectedFile, lectureName) => {
   try {
+    // const uploadData = await uploadResponse.json();
+    //   const temporaryPutUrl = uploadData.data.uploadUrl;
+    //   const putUrl = temporaryPutUrl.slice(0, 4) + temporaryPutUrl.slice(5);
+    //   const temporaryDownloadUrl = uploadData.data.downloadUrl;
+    //   const putResponse = await fetch(putUrl, {
+    //     method: "PUT",
+    //     headers: {
+    //       "Content-Type": "image/jpeg",
+    //     },
+    //     body: selectedFile,
+    //   });
+
+    //   const downloadUrl =
+    //     "http://redbrick-makers.oss-ap-northeast-2.aliyuncs.com/" +
+    //     temporaryDownloadUrl;
+
+    //   console.log("putResponse", putResponse);
     const uploadResponse = await request.thumbnailUpload(lectureName);
     const uploadData = await uploadResponse.json();
-    const putUrl = uploadData.data.uploadUrl;
+    const temporaryPutUrl = uploadData.data.uploadUrl;
+    const putUrl = temporaryPutUrl.slice(0, 4) + temporaryPutUrl.slice(5);
     const downloadUrl = uploadData.data.downloadUrl;
+    console.log("putUrl", putUrl);
+    console.log("downloadUrl", downloadUrl);
 
     const putResponse = await fetch(putUrl, {
       method: "PUT",

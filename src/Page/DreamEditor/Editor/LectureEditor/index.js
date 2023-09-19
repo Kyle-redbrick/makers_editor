@@ -12,6 +12,8 @@ function LectureEditor(props) {
       .getLecture(lectureId)
       .then((res) => res.json())
       .then((json) => {
+        console.log("현재 lesson의 정보 ######################");
+        console.log(json.data.lessonInfo);
         setLecture(json.data.lessonInfo);
       });
   }, [lectureId]);
@@ -27,8 +29,6 @@ function LectureEditor(props) {
   const [thumbnailURL, setThumbnailURL] = useState("");
   const [isHidden, setIsHidden] = useState(false);
   const [totalMissionNum, setTotalMissionNum] = useState(0);
-
-  console.log("totalMissionNum", totalMissionNum);
 
   const lectureValues = {
     title: title,
@@ -111,32 +111,30 @@ function LectureEditor(props) {
           value={sampleGameURL}
           onChange={setSampleGameURL}
         />
-        <Field.Input id="tag" title="태그" value={tag} onChange={setTag} />
-        <div>,로 구분해서 입력해 주세요. (예시 : )</div>
-        {/* <Field.Textarea
-          id="template"
-          title="강의 템플릿"
-          value={template}
-          onChange={setTemplate}
-        /> */}
+        <Field.Input
+          id="tag"
+          title="태그"
+          value={tag}
+          onChange={setTag}
+          comment={`반드시 \`,\`로 구분해주세요. 예) playAnimation,say`}
+        />
         <Field.Select
           id="language"
           title="언어"
           value={language}
           options={[
             { value: "JS", label: "JS" },
-            // { value: "PYTHON", label: "PYTHON" },
             { value: "OOBC", label: "OOBC" },
           ]}
           onChange={setLanguage}
         />
-        <Field.Input
+        {/* <Field.Input
           id="number"
           type="number"
           title="강의 순서"
           value={number}
           onChange={setNumber}
-        />
+        /> */}
         <Field.File
           id="thumbnailURL"
           title="썸네일"
