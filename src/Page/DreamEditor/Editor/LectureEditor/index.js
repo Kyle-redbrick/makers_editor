@@ -20,6 +20,7 @@ function LectureEditor(props) {
   const [introduction, setIntroduction] = useState("");
   const [template, setTemplate] = useState("");
   const [sampleGameURL, setSampleGameURL] = useState("");
+  const [tag, setTag] = useState("");
   const [defaultTemplate, setDefaultTemplate] = useState("");
   const [language, setLanguage] = useState("");
   const [number, setNumber] = useState(0);
@@ -110,6 +111,8 @@ function LectureEditor(props) {
           value={sampleGameURL}
           onChange={setSampleGameURL}
         />
+        <Field.Input id="tag" title="태그" value={tag} onChange={setTag} />
+        <div>,로 구분해서 입력해 주세요. (예시 : )</div>
         {/* <Field.Textarea
           id="template"
           title="강의 템플릿"
@@ -122,7 +125,7 @@ function LectureEditor(props) {
           value={language}
           options={[
             { value: "JS", label: "JS" },
-            { value: "PYTHON", label: "PYTHON" },
+            // { value: "PYTHON", label: "PYTHON" },
             { value: "OOBC", label: "OOBC" },
           ]}
           onChange={setLanguage}
