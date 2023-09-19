@@ -356,6 +356,7 @@ const ko = {
   ID_BUILDER_ALERT_CANCELBTN: "취소",
   ID_BUILDER_ALERT_MSG_RETRY: "다시 시도해주세요.",
   ID_BUILDER_ALERT_MSG_SUCC: "앱이 성공적으로 퍼블리싱 되었습니다.",
+  ID_BUILDER_ALERT_MSG_SUCC_SAVE: "앱이 성공적으로 저장 되었습니다.",
   ID_BUILDER_ALERT_MSG_TITLE: "앱의 이름을 만들어주세요.",
   ID_BUILDER_ALERT_MSG_DESC: "앱을 설명해주세요.",
   ID_BUILDER_ALERT_MSG_QRWARN: "핸드폰 번호를 확인해주세요.",

@@ -239,6 +239,40 @@ class Container extends Component {
     //   params["copyStateFromDev"] = true;
     // }
 
+    if (isCopyAllowed) {
+      showPopUp(
+        <PopUp.OneButton
+          title={this.props.intl.formatMessage({
+            id: "ID_BUILDER_ALERT_MSG_SUCC",
+          })}
+          buttonName={this.props.intl.formatMessage({
+            id: "ID_BUILDER_ALERT_CONFIRMBTN",
+          })}
+          buttonAction={this.props.buttonAction}
+        />,
+        {
+          dismissButton: false,
+          darkmode: getColorTheme() === "darkMode",
+        }
+      );
+    } else {
+      showPopUp(
+        <PopUp.OneButton
+          title={this.props.intl.formatMessage({
+            id: "ID_BUILDER_ALERT_MSG_SUCC_SAVE",
+          })}
+          buttonName={this.props.intl.formatMessage({
+            id: "ID_BUILDER_ALERT_CONFIRMBTN",
+          })}
+          buttonAction={this.props.buttonAction}
+        />,
+        {
+          dismissButton: false,
+          darkmode: getColorTheme() === "darkMode",
+        }
+      );
+    }
+
     // try {
     //   request
     //     .postPublishedProject(params)
