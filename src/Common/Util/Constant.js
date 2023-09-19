@@ -3,6 +3,7 @@ export const URL = {
   SOCKET_SERVER: `https://astro-sock.wizclass.com/`,
   NOTIFICATION_SOCKET_SERVER: `https://astroboy-api-dev.wizclass.com:3002/`,
   API_SERVER: `https://astro-api.wizclass.com/`,
+  // API_SAAS_SERVER: `http://8.213.132.25:3001/`,
   API_SAAS_SERVER: `http://nlb-1rcn4n272bsiyjk4g3.ap-northeast-2.nlb.aliyuncs.com/`,
   LIVE_TEST: `https://${subdomain}wizlab.net/liveTest/`,
   WIZ_APP: `https://en.astro-coding-go.com/game?pId=`,

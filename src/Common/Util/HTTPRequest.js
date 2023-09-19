@@ -793,16 +793,27 @@ export const assetsById = (param) => {
   return fetchRequest(URL.API_SERVER + "asset/getByIds", "POST", param);
 };
 
-export const assetsByCategory = (param) => {
-  return fetchRequest(URL.API_SERVER + `assets/${param.categoryId}`, "GET");
-};
+// export const assetsByCategory = (param) => {
+//   return fetchRequest(URL.API_SERVER + `assets/${param.categoryId}`, "GET");
+// };
 
-export const getCategories = (param) => {
-  return fetchRequest(URL.API_SERVER + `categories`, "GET");
-};
+// export const getCategories = (param) => {
+//   return fetchRequest(URL.API_SERVER + `categories`, "GET");
+// };
 
 export const addAsset = (param) => {
   return fetchRequest(URL.API_SERVER + "asset", "POST", param);
+};
+
+export const assetsByCategory = (param) => {
+  return fetchRequest(
+    `https://apiserver.wizlab.net/assets/${param.categoryId}`,
+    "GET"
+  );
+};
+
+export const getCategories = (param) => {
+  return fetchRequest(`https://apiserver.wizlab.net/categories`, "GET");
 };
 
 /*** billing */

@@ -153,7 +153,6 @@ class Container extends Component {
         preview: this.props.preview,
       };
     }
-
     let params;
     if (name && this.state.icon) {
       params = {
@@ -163,7 +162,11 @@ class Container extends Component {
         icon: this.state.icon,
       };
     } else if (name) {
-      params = { title: name, state: state, isVisible: isCopyAllowed };
+      params = {
+        title: name,
+        state: state,
+        isVisible: isCopyAllowed,
+      };
     } else if (this.state.icon) {
       params = {
         state: state,
@@ -171,12 +174,15 @@ class Container extends Component {
         icon: this.state.icon,
       };
     } else {
-      params = { state: state, isVisible: isCopyAllowed };
+      params = {
+        state: state,
+        isVisible: isCopyAllowed,
+      };
     }
-
+    if (description) {
+      params.description = description;
+    }
     try {
-      console.log("icon =>", this.state.icon);
-      console.log("params => ", params);
       request
         .updateSaasProject({ params, pId })
         .then((res) => res.json())
@@ -336,6 +342,7 @@ class Container extends Component {
   handleFileInput = async (e) => {
     console.log("pId", window.location.pathname.split("/")[2]);
     const selectedFile = e.target.files[0];
+
     if (!selectedFile) return;
 
     try {
@@ -346,11 +353,6 @@ class Container extends Component {
       const temporaryPutUrl = uploadData.data.uploadUrl;
       const putUrl = temporaryPutUrl.slice(0, 4) + temporaryPutUrl.slice(5);
       const temporaryDownloadUrl = uploadData.data.downloadUrl;
-
-      const downloadUrl =
-        "http://redbrick-makers.oss-ap-northeast-2.aliyuncs.com/" +
-        temporaryDownloadUrl;
-
       const putResponse = await fetch(putUrl, {
         method: "PUT",
         headers: {
@@ -358,6 +360,10 @@ class Container extends Component {
         },
         body: selectedFile,
       });
+
+      const downloadUrl =
+        "http://redbrick-makers.oss-ap-northeast-2.aliyuncs.com/" +
+        temporaryDownloadUrl;
 
       console.log("putResponse", putResponse);
       this.setState({ icon: downloadUrl });

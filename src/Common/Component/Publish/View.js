@@ -85,7 +85,7 @@ const View = (props) => {
           )}
         </div>
         {/* desc */}
-        {/* <div className="publishform__row">
+        <div className="publishform__row">
           <p className="publishform__title">
             {props.intl.formatMessage({ id: "ID_BUILDER_EDITPOP_DESC" })}
           </p>
@@ -109,7 +109,7 @@ const View = (props) => {
               })}
             </p>
           )}
-        </div> */}
+        </div>
 
         {/* icon */}
 
