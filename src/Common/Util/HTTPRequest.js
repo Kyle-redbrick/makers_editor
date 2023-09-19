@@ -269,8 +269,7 @@ export const addLecture = () => {
 export const connectCourseAndLecture = ({ courseId, lessonId, order }) => {
   const param = {
     courseId,
-    lessonId,
-    order: order + 1,
+    lessonList: [{ id: lessonId, order: order + 1 }],
   };
   return fetchSaasRequest(
     URL.API_SAAS_SERVER + `course/register/lesson`,

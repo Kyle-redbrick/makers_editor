@@ -218,6 +218,7 @@ class ProjectList extends Component {
   onClickElementAdd = (element) => {
     switch (element.type) {
       case "course":
+        console.log("element", element.data.id);
         const courseId = element.data.id;
         const newLessonOrder = element.data.courseLessonMappings.length;
         this.addLecture(courseId, newLessonOrder);
@@ -276,7 +277,7 @@ class ProjectList extends Component {
       })
       .catch((err) => {
         console.error(err);
-        window.alert(JSON.stringify(err));
+        // window.alert(JSON.stringify(err));
       });
   }
 
@@ -303,7 +304,7 @@ class ProjectList extends Component {
       })
       .catch((err) => {
         console.error(err);
-        window.alert(JSON.stringify(err));
+        // window.alert(JSON.stringify(err));
       });
   }
 
