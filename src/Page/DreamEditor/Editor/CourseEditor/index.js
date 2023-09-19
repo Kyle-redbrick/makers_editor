@@ -11,7 +11,7 @@ function CourseEditor(props) {
       .getCourseInfo(lectureId)
       .then((res) => res.json())
       .then((json) => {
-        setLecture(json.data.courseInfo);
+        setLecture(json.courseInfo);
       });
   }, [lectureId]);
 
@@ -58,7 +58,7 @@ function CourseEditor(props) {
       });
   };
 
-  const onClickDelete = (lectureId) => {
+  const onClickDelete = () => {
     request
       .deleteCourse(lectureId)
       .then((res) => res.json())
@@ -114,7 +114,7 @@ function CourseEditor(props) {
           value={language}
           options={[
             { value: "JS", label: "JS" },
-            { value: "PYTHON", label: "PYTHON" },
+            // { value: "PYTHON", label: "PYTHON" },
             { value: "OOBC", label: "OOBC" },
           ]}
           onChange={setLanguage}

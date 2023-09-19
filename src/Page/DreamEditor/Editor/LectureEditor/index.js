@@ -7,14 +7,14 @@ import "./index.scss";
 function LectureEditor(props) {
   const { lectureId } = props;
   const [lecture, setLecture] = useState(null);
+
   useEffect(() => {
     request
       .getLecture(lectureId)
       .then((res) => res.json())
       .then((json) => {
-        console.log("현재 lesson의 정보 ######################");
-        console.log(json.data.lessonInfo);
         setLecture(json.data.lessonInfo);
+        setTag(json.data.lessonInfo.lessonTags);
       });
   }, [lectureId]);
 
@@ -57,6 +57,13 @@ function LectureEditor(props) {
   }, [lecture]);
 
   const onClickSave = () => {
+    if (typeof tag === "string") {
+      const tags = tag.split(",").map(function (tag) {
+        return tag.trim();
+      });
+      console.log("tags", tags);
+      request.tagUpdate(lectureId, tags);
+    }
     request
       .updateLecture(lectureId, lectureValues)
       .then((res) => res.json())

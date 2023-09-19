@@ -30,6 +30,14 @@ export const fetchSaasRequest = (url, method, param) => {
 ///////////////////////////////////////////////////////////////////////////////
 /** SAAS */
 
+export const tagUpdate = (lessonId, tags) => {
+  const params = {
+    tags: tags,
+    lessonId: lessonId,
+  };
+  return fetchSaasRequest(URL.API_SAAS_SERVER + `lesson/tag`, "POST", params);
+};
+
 export const projectIconUpload = (pId) => {
   return fetchSaasRequest(
     URL.API_SAAS_SERVER + `project/educator/icon/upload?projectId=${pId}`,
@@ -227,7 +235,11 @@ export const deleteLesson = (param) => {
 };
 
 export const getSaasAllCourse = () => {
-  return fetchRequest(URL.API_SAAS_SERVER + "course/list?locale=ko", "GET");
+  return fetchSaasRequest(
+    URL.API_SAAS_SERVER + "course/list/available?offset=0&limit=100",
+    "GET"
+  );
+  // return fetchRequest(URL.API_SAAS_SERVER + "course/list?locale=ko", "GET");
 };
 
 export const getNewCourse = (param) => {

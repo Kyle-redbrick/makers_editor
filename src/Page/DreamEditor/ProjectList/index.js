@@ -23,7 +23,8 @@ class ProjectList extends Component {
       .getSaasAllCourse()
       .then((res) => res.json())
       .then((courses) => {
-        this.setState({ courses: courses.data.courseList });
+        // this.setState({ courses: courses.data.courseList });
+        this.setState({ courses: courses.courseList });
       })
       .catch((err) => {
         console.log(err);
