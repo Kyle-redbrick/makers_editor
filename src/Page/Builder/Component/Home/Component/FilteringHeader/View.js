@@ -2,6 +2,7 @@ import React from "react";
 import { injectIntl } from "react-intl";
 import "./index.scss";
 import dropdownIcon from "../../../../../../Image/icon-drop-down.svg";
+import searchIcon from "../../../../../../Image/builder-icon-search.svg";
 
 function View(props) {
   const {
@@ -15,6 +16,7 @@ function View(props) {
     isClickedDropDown,
     onClickTitle,
     intl,
+    onClickSearch,
   } = props;
   return (
     <div className="filteringHeader">
@@ -110,6 +112,7 @@ function View(props) {
             id: "ID_PROJECT_SEARCH",
           })}
         />
+        <img src={searchIcon} alt="" onClick={onClickSearch} />
       </div>
     </div>
   );

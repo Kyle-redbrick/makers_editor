@@ -10,7 +10,7 @@ class Container extends Component {
       dimension: "ALL",
       editorFormat: "ALL",
       keyword: "",
-      isClickedDropDown: ""
+      isClickedDropDown: "",
     };
     this.dimensionType = { ALL: "ALL", "3D": "3D", "2D": "2D" };
     this.editorType = { ALL: "ALL", BLOCK: "BLOCK", TEXT: "TEXT" };
@@ -19,24 +19,28 @@ class Container extends Component {
     this.setFilteringCondition();
   };
 
-  onClickDimension = dimension => {
+  onClickDimension = (dimension) => {
     this.setState({ dimension }, () => {
       this.setFilteringCondition();
     });
   };
-  onClickEditorFormat = editorFormat => {
+  onClickEditorFormat = (editorFormat) => {
     this.setState({ editorFormat }, () => {
       this.setFilteringCondition();
     });
   };
-  onChangeSearch = e => {
-    this.setState({ keyword: e.target.value }, () => {
-      this.setFilteringCondition();
-    });
+  onChangeSearch = (e) => {
+    this.setState({ keyword: e.target.value });
+    // this.setState({ keyword: e.target.value }, () => {
+    //   this.setFilteringCondition();
+    // });
   };
-  onClickTitle = type => {
+  onClickSearch = () => {
+    this.setFilteringCondition({ keyword: this.state.keyword });
+  };
+  onClickTitle = (type) => {
     this.setState({
-      isClickedDropDown: type
+      isClickedDropDown: type,
     });
   };
 
@@ -87,7 +91,8 @@ class Container extends Component {
       editorType,
       onClickEditorFormat,
       onChangeSearch,
-      onClickTitle
+      onClickTitle,
+      onClickSearch,
     } = this;
 
     return (
@@ -102,11 +107,12 @@ class Container extends Component {
         onChangeSearch={onChangeSearch}
         isClickedDropDown={isClickedDropDown}
         onClickTitle={onClickTitle}
+        onClickSearch={onClickSearch}
       />
     );
   }
 }
 export default connect(
-  state => ({ email: state.userinfo.email }),
+  (state) => ({ email: state.userinfo.email }),
   {}
 )(injectIntl(Container));
