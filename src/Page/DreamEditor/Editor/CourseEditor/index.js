@@ -119,20 +119,20 @@ function CourseEditor(props) {
           ]}
           onChange={setLanguage}
         />
-        <Field.Input
+        {/* <Field.Input
           id="number"
           type="number"
           title="강의 순서"
           value={number}
           onChange={setNumber}
-        />
-        <Field.File
+        /> */}
+        {/* <Field.File
           id="thumbnailURL"
           title="썸네일"
           value={thumbnailURL}
           onChange={setThumbnailURL}
           lectureName={title}
-        />
+        /> */}
         <Field.OnOff
           id="isHidden"
           title="콘텐츠 공개"

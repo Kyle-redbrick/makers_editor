@@ -401,6 +401,7 @@ class Container extends Component {
         "http://redbrick-makers.oss-ap-northeast-2.aliyuncs.com/" +
         temporaryDownloadUrl;
 
+      console.log("downloadUrl", downloadUrl);
       console.log("putResponse", putResponse);
       this.setState({ icon: downloadUrl });
     } catch (error) {
