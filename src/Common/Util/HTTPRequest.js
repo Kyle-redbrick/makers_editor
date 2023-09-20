@@ -319,19 +319,35 @@ export const putThumbnail = (putUrl, data) => {
 };
 
 export const getMySaasProject = (params) => {
-  return fetchSaasRequest(
-    URL.API_SAAS_SERVER +
-      `project/educator/my/list?limit=${params.limit}&offset=${params.offset}`,
-    "GET"
-  );
+  if (params.keyword) {
+    return fetchSaasRequest(
+      URL.API_SAAS_SERVER +
+        `project/educator/my/list?limit=${params.limit}&offset=${params.offset}&searchType=title&keyword=${params.keyword}`,
+      "GET"
+    );
+  } else {
+    return fetchSaasRequest(
+      URL.API_SAAS_SERVER +
+        `project/educator/my/list?limit=${params.limit}&offset=${params.offset}`,
+      "GET"
+    );
+  }
 };
 
 export const getMyPublishedSaasProject = (params) => {
-  return fetchSaasRequest(
-    URL.API_SAAS_SERVER +
-      `project/educator/my/list/published?limit=${params.limit}&offset=${params.offset}`,
-    "GET"
-  );
+  if (params.keyword) {
+    return fetchSaasRequest(
+      URL.API_SAAS_SERVER +
+        `project/educator/my/list/published?limit=${params.limit}&offset=${params.offset}&searchType=title&keyword=${params.keyword}`,
+      "GET"
+    );
+  } else {
+    return fetchSaasRequest(
+      URL.API_SAAS_SERVER +
+        `project/educator/my/list/published?limit=${params.limit}&offset=${params.offset}`,
+      "GET"
+    );
+  }
 };
 
 export const getSaasDevelopingProject = (pId) => {

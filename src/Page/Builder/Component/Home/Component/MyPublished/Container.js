@@ -26,7 +26,6 @@ class Container extends Component {
   };
 
   fetchMyPublisheds = async () => {
-    console.log("fetchMyPublisheds");
     let { currentPage } = this.state;
     let pageOffset = Math.ceil((currentPage - 1) * this.pageSize);
     let params = {
@@ -34,9 +33,16 @@ class Container extends Component {
       limit: this.pageSize,
     };
     try {
-      let res = await request.getMyPublishedSaasProject(params);
-      let myPublished = await res.json();
-      return myPublished.data.projectList;
+      if (this.state.keyword) {
+        params.keyword = this.state.keyword;
+        let res = await request.getMyPublishedSaasProject(params);
+        let myPublished = await res.json();
+        return myPublished.data.projectList;
+      } else {
+        let res = await request.getMyPublishedSaasProject(params);
+        let myPublished = await res.json();
+        return myPublished.data.projectList;
+      }
     } catch (error) {
       console.log(error);
       return [];
