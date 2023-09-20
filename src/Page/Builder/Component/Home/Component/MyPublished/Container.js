@@ -17,7 +17,7 @@ class Container extends Component {
       myPublisheds: [],
       currentPage: 1,
     };
-    this.pageSize = 10;
+    this.pageSize = 15;
     this.projectsRef = React.createRef();
   }
 
@@ -26,14 +26,13 @@ class Container extends Component {
   };
 
   fetchMyPublisheds = async () => {
+    console.log("fetchMyPublisheds");
     let { currentPage } = this.state;
     let pageOffset = Math.ceil((currentPage - 1) * this.pageSize);
     let params = {
       offset: pageOffset,
       limit: this.pageSize,
     };
-    console.log("offset", params.offset);
-    console.log("limit", params.limit);
     try {
       let res = await request.getMyPublishedSaasProject(params);
       let myPublished = await res.json();
@@ -88,6 +87,11 @@ class Container extends Component {
   //TODO : have to refactoring
   handleOnScroll = () => {
     const container = this.projectsRef.current;
+    console.log(
+      "container.offsetHeight + container.scrollTop",
+      container.offsetHeight + container.scrollTop
+    );
+    console.log("container.scrollHeight", container.scrollHeight);
     if (
       container.offsetHeight + container.scrollTop >=
       container.scrollHeight
@@ -103,8 +107,8 @@ class Container extends Component {
           }));
         }
       );
-    } else {
-      alert("스크롤 이벤트 실패");
+      // } else {
+      //   alert("스크롤 이벤트 실패");
     }
   };
   handleProjectLive = async (published) => {

@@ -1,5 +1,8 @@
 .builder--home__myPublished {
+  position: relative;
   height: 100%;
+  width: 100%;
+  max-width: 100%;
   overflow-y: auto;
 
   .myPublished__title {
@@ -14,7 +17,8 @@
   .bottom__projectItems {
     display: flex;
     flex-wrap: wrap;
-    width: calc(100vw - 268px);
+    // width: calc(100vw - 268px);
+    width: 100%;
   }
 
   .projectItem__toggle {

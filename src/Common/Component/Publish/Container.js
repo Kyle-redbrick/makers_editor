@@ -376,6 +376,7 @@ class Container extends Component {
   handleFileInput = async (e) => {
     console.log("pId", window.location.pathname.split("/")[2]);
     const selectedFile = e.target.files[0];
+    console.log("file =>", selectedFile);
 
     if (!selectedFile) return;
 
@@ -390,6 +391,7 @@ class Container extends Component {
       const putResponse = await fetch(putUrl, {
         method: "PUT",
         headers: {
+          // "Content-Type": "multipart/form-data",
           "Content-Type": "image/jpeg",
         },
         body: selectedFile,

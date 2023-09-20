@@ -15,7 +15,7 @@ class Container extends Component {
       dataType: [],
       keyword: "",
     };
-    this.pageSize = 10;
+    this.pageSize = 15;
     this.projectsRef = React.createRef();
   }
   componentDidMount = () => {
@@ -23,6 +23,7 @@ class Container extends Component {
   };
 
   fetchMyProjects = async () => {
+    console.log("fetchMyProjects");
     let { currentPage } = this.state;
     let pageOffset = Math.ceil((currentPage - 1) * this.pageSize);
     let params = {
@@ -88,6 +89,11 @@ class Container extends Component {
   //TODO : have to refactoring
   handleOnScroll = () => {
     const container = this.projectsRef.current;
+    console.log(
+      "container.offsetHeight + container.scrollTop",
+      container.offsetHeight + container.scrollTop
+    );
+    console.log("container.scrollHeight", container.scrollHeight);
     if (
       container.offsetHeight + container.scrollTop >=
       container.scrollHeight
