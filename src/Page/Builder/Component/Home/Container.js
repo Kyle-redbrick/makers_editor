@@ -115,11 +115,11 @@ class Container extends Component {
       { defaultPadding: false, scrollable: true }
     );
   };
-  onClickDetailBtn = (pId, type) => {
-    if (this.state.selectProject.pId === pId) {
+  onClickDetailBtn = (id) => {
+    if (this.state.selectProject.id === id) {
       this.resetSelectProject();
     } else {
-      this.setState({ selectProject: { pId, type } });
+      this.setState({ selectProject: { id } });
     }
   };
 

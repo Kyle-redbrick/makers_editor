@@ -233,7 +233,7 @@ const ProjectItem = (props) => {
         className="projectItem__bottom"
         onClick={(e) => {
           e.preventDefault();
-          onClickProject(project.pId, project.type);
+          onClickProject(project.id);
         }}
       >
         <div className="bottom__title">{project.title}</div>
@@ -244,52 +244,41 @@ const ProjectItem = (props) => {
       </div>
       <div
         className={`projectItem__detail ${
-          selectProject.pId === project.pId &&
-          selectProject.type === type &&
-          "selected"
+          selectProject.id === project.id && "selected"
         }`}
         onClick={() => {
-          onClickDetailBtn(project.pId, type);
+          onClickDetailBtn(project.id);
         }}
       >
-        {/* <img src={projectDetailIcon} alt="project Detail Icon" /> */}
-        {/* <ul className="projectItem__detail__list">
-          {type === "published" ? (
-            <>
-              <li onClick={() => onClickProjectEdit(project)}>
-                <img src={editIcon} alt="edit" />
-                {intl.formatMessage({ id: "ID_BUILDER_MAIN_EDIT" })}
-              </li>
-            </>
-          ) : (
-            <>
-              <li
-                onClick={() =>
-                  handleEdit(project.pId, project.name, setProjectName)
-                }
-              >
-                <img src={editIcon} alt="edit" />
-                {intl.formatMessage({ id: "ID_BUILDER_MAIN_EDIT" })}
-              </li>
-              <li
-                onClick={() => {
-                  handleDelete(project.pId, fetchMyProjects);
-                }}
-              >
-                <img src={deleteIcon} alt="" />
-                {intl.formatMessage({ id: "ID_BUILDER_MAIN_DELETE" })}
-              </li>
-              <li
-                onClick={() => {
-                  handleCopy(project.pId, fetchMyProjects);
-                }}
-              >
-                <img src={copyIcon} alt="" />
-                {intl.formatMessage({ id: "ID_BUILDER_MAIN_COPY" })}
-              </li>
-            </>
-          )}
-        </ul> */}
+        <img src={projectDetailIcon} alt="project Detail Icon" />
+        <ul className="projectItem__detail__list">
+          <>
+            <li
+              onClick={() =>
+                handleEdit(project.pId, project.name, setProjectName)
+              }
+            >
+              <img src={editIcon} alt="edit" />
+              {intl.formatMessage({ id: "ID_BUILDER_MAIN_EDIT" })}
+            </li>
+            <li
+              onClick={() => {
+                handleDelete(project.pId, fetchMyProjects);
+              }}
+            >
+              <img src={deleteIcon} alt="" />
+              {intl.formatMessage({ id: "ID_BUILDER_MAIN_DELETE" })}
+            </li>
+            <li
+              onClick={() => {
+                handleCopy(project.pId, fetchMyProjects);
+              }}
+            >
+              <img src={copyIcon} alt="" />
+              {intl.formatMessage({ id: "ID_BUILDER_MAIN_COPY" })}
+            </li>
+          </>
+        </ul>
       </div>
     </div>
   );
