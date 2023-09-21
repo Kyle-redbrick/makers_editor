@@ -27,6 +27,7 @@ function View(props) {
     fetchMyProjects,
     setProjectName,
     intl,
+    fetchMyPublished,
   } = props;
 
   return (
@@ -69,6 +70,7 @@ function View(props) {
                   handleDelete={handleDelete}
                   handleCopy={handleCopy}
                   key={index}
+                  fetchMyPublished={fetchMyPublished}
                   fetchMyProjects={fetchMyProjects}
                   setProjectName={setProjectName}
                   intl={intl}
@@ -135,6 +137,7 @@ const ProjectItem = (props) => {
     handleDelete,
     handleCopy,
     fetchMyProjects,
+    fetchMyPublished,
     type,
     setProjectName,
     intl,
@@ -177,7 +180,7 @@ const ProjectItem = (props) => {
           <>
             <li
               onClick={
-                () => handleEdit(project.id)
+                () => handleEdit(project.id, fetchMyProjects, fetchMyPublished)
                 // handleEdit(project.pId, project.name, setProjectName)
               }
             >

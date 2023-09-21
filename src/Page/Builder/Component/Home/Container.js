@@ -76,37 +76,31 @@ class Container extends Component {
     this.setState({ selectProject: {} });
   };
 
-  handleEdit = (id, name, callback) => {
+  handleEdit = (id, callback1, callback2) => {
     this.resetSelectProject();
     showPopUp(
       <PopUp.OneInput
         titleId="ID_PROJECT_POPUP_EDIT_TITLE"
-        defaultInput={name}
         buttonNameId="ID_PROJECT_POPUP_EDIT_OK"
         buttonAction={(newVal) => {
-          this.editProject(id, newVal, callback);
+          this.editProject(id, newVal, callback1, callback2);
         }}
       />,
       { dismissOverlay: true }
     );
   };
-  editProject = (id, title) => {
+  editProject = (id, title, callback1, callback2) => {
     this.resetSelectProject();
     const params = {
       title: title,
     };
-    request.updateSaasProject({ params, pId: id }).then((res) => res.json());
-    // request
-    //   .updateDevelopingProject({ pId, name: newName })
-    //   .then((res) => res.json)
-    //   .then((json) => {
-    //     callback(pId, newName);
-    //     // this.getMyProjects({
-    //     //   currentPage: this.state.currentPage,
-    //     //   keyword: this.state.keyword
-    //     // });
-    //   })
-    //   .catch((e) => console.error(e));
+    request
+      .updateSaasProject({ params, pId: id })
+      .then((res) => res.json())
+      .then(() => {
+        callback1();
+        callback2();
+      });
   };
   onClickProjectEdit = (published) => {
     showPopUp(
@@ -132,7 +126,6 @@ class Container extends Component {
       pId,
       email: this.props.email,
     });
-    // let result = await res.json();
     request
       .deleteDevelopingProject({ pId, email: this.props.email })
       .then((res) => res.json())

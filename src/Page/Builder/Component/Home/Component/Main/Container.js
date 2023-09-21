@@ -177,6 +177,7 @@ class Container extends Component {
       handleNext,
       fetchMyProjects,
       setProjectName,
+      fetchMyPublished,
     } = this;
     return (
       <View
@@ -202,6 +203,7 @@ class Container extends Component {
         handleDelete={handleDelete}
         handleCopy={handleCopy}
         fetchMyProjects={fetchMyProjects}
+        fetchMyPublished={fetchMyPublished}
         setProjectName={setProjectName}
       />
     );
