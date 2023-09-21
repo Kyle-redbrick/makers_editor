@@ -121,20 +121,28 @@ class Container extends Component {
     }
   };
 
-  handleDelete = async (pId, callback) => {
-    await request.deleteDevelopingProject({
-      pId,
-      email: this.props.email,
-    });
+  handleDelete = async (id, callback1, callback2) => {
+    this.resetSelectProject();
     request
-      .deleteDevelopingProject({ pId, email: this.props.email })
+      .deleteSaasProject(id)
       .then((res) => res.json())
       .then(() => {
-        callback();
-      })
-      .catch((e) => {
-        console.error(e);
+        callback1();
+        callback2();
       });
+    // await request.deleteDevelopingProject({
+    //   pId,
+    //   email: this.props.email,
+    // });
+    // request
+    //   .deleteDevelopingProject({ pId, email: this.props.email })
+    //   .then((res) => res.json())
+    //   .then(() => {
+    //     callback();
+    //   })
+    //   .catch((e) => {
+    //     console.error(e);
+    //   });
   };
   handleCopy = async (pId, callback) => {
     const res = await request.getDevelopingProject({ pId });

@@ -53,6 +53,13 @@ export const updateSaasProject = ({ params, pId }) => {
   );
 };
 
+export const deleteSaasProject = (id) => {
+  return fetchSaasRequest(
+    URL.API_SAAS_SERVER + `project/educator?projectId=${id}`,
+    "DELETE"
+  );
+};
+
 export const createNewProject = (props) => {
   const param = {
     title: props.title ? props.title : "testTemplate",

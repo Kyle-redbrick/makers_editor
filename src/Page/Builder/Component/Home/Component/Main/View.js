@@ -189,7 +189,7 @@ const ProjectItem = (props) => {
             </li>
             <li
               onClick={() => {
-                handleDelete(project.pId, fetchMyProjects);
+                handleDelete(project.id, fetchMyProjects, fetchMyPublished);
               }}
             >
               <img src={deleteIcon} alt="" />
