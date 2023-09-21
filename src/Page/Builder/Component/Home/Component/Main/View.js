@@ -1,26 +1,19 @@
 import React from "react";
 import { injectIntl } from "react-intl";
 import "./index.scss";
-import { Link } from "react-router-dom";
-import Slider from "react-slick";
 
 import Game2dIcon from "../../../../../../Image/icon-2d.svg";
-import Game3dIcon from "../../../../../../Image/icon-3d.svg";
+
 import projectDetailIcon from "../../../../../../Image/icon-more.svg";
 import editIcon from "../../../../../../Image/icon-edit.svg";
-import viewAppIcon from "../../../../../../Image/icon-view-app.svg";
 import copyIcon from "../../../../../../Image/copy.svg";
 import deleteIcon from "../../../../../../Image/delete.svg";
 
 function View(props) {
   const {
     onClick2DGame,
-    onClick3DGame,
     onClickMyProjectMore,
     onClickMyPublishedMore,
-    setSlickRef,
-    handlePrev,
-    handleNext,
     onClickDetailBtn,
     onClickProject,
     onClickPublishProject,
@@ -31,24 +24,13 @@ function View(props) {
     selectProject,
     myProjects,
     myPublisheds,
-    news,
     fetchMyProjects,
     setProjectName,
     intl,
   } = props;
 
-  const bannerSlidSettings = {
-    fade: true,
-    speed: 500,
-    autoplaySpeed: 5000,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    infinite: true,
-    arrows: false,
-    dots: true,
-  };
   return (
+    // 새로 만들기
     <div className="builder--home__main">
       <div className="main__top">
         <div className="main__making">
@@ -60,18 +42,11 @@ function View(props) {
               <img src={Game2dIcon} alt="2d game" />
               {intl.formatMessage({ id: "ID_BUILDER_MAIN_2D_GAME" })}
             </div>
-            {/* <div className="making__item" onClick={onClick3DGame}>
-              <img src={Game3dIcon} alt="3d game" />
-              <p>
-                {intl.formatMessage({ id: "ID_BUILDER_MAIN_3D_GAME" })}{" "}
-                <span>
-                  {intl.formatMessage({ id: "ID_BUILDER_MAIN_BETA" })}
-                </span>
-              </p>
-            </div> */}
           </div>
         </div>
       </div>
+
+      {/* 최근 프로젝트 */}
       <div className="main__row row__myProjects">
         <div className="row__header">
           <div className="main__title">
@@ -107,6 +82,8 @@ function View(props) {
           )}
         </div>
       </div>
+
+      {/* 퍼블리싱 앱 */}
       <div className="main__row row__myPublished">
         <div className="row__header">
           <div className="main__title">
@@ -187,7 +164,7 @@ const ProjectItem = (props) => {
             project.updatedAt.split("T")[0].replaceAll("-", ".")}
         </div>
       </div>
-      {/* <div
+      <div
         className={`projectItem__detail ${
           selectProject.id === project.id && "selected"
         }`}
@@ -199,8 +176,9 @@ const ProjectItem = (props) => {
         <ul className="projectItem__detail__list">
           <>
             <li
-              onClick={() =>
-                handleEdit(project.pId, project.name, setProjectName)
+              onClick={
+                () => handleEdit(project.id)
+                // handleEdit(project.pId, project.name, setProjectName)
               }
             >
               <img src={editIcon} alt="edit" />
@@ -224,7 +202,7 @@ const ProjectItem = (props) => {
             </li>
           </>
         </ul>
-      </div> */}
+      </div>
     </div>
   );
 };

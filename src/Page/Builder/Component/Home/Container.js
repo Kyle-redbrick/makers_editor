@@ -76,7 +76,7 @@ class Container extends Component {
     this.setState({ selectProject: {} });
   };
 
-  handleEdit = (pId, name, callback) => {
+  handleEdit = (id, name, callback) => {
     this.resetSelectProject();
     showPopUp(
       <PopUp.OneInput
@@ -84,25 +84,29 @@ class Container extends Component {
         defaultInput={name}
         buttonNameId="ID_PROJECT_POPUP_EDIT_OK"
         buttonAction={(newVal) => {
-          this.editProject(pId, newVal, callback);
+          this.editProject(id, newVal, callback);
         }}
       />,
       { dismissOverlay: true }
     );
   };
-  editProject = (pId, newName, callback) => {
+  editProject = (id, title) => {
     this.resetSelectProject();
-    request
-      .updateDevelopingProject({ pId, name: newName })
-      .then((res) => res.json)
-      .then((json) => {
-        callback(pId, newName);
-        // this.getMyProjects({
-        //   currentPage: this.state.currentPage,
-        //   keyword: this.state.keyword
-        // });
-      })
-      .catch((e) => console.error(e));
+    const params = {
+      title: title,
+    };
+    request.updateSaasProject({ params, pId: id }).then((res) => res.json());
+    // request
+    //   .updateDevelopingProject({ pId, name: newName })
+    //   .then((res) => res.json)
+    //   .then((json) => {
+    //     callback(pId, newName);
+    //     // this.getMyProjects({
+    //     //   currentPage: this.state.currentPage,
+    //     //   keyword: this.state.keyword
+    //     // });
+    //   })
+    //   .catch((e) => console.error(e));
   };
   onClickProjectEdit = (published) => {
     showPopUp(
