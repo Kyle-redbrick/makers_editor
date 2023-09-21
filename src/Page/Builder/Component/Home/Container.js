@@ -113,11 +113,11 @@ class Container extends Component {
       { defaultPadding: false, scrollable: true }
     );
   };
-  onClickDetailBtn = (id) => {
+  onClickDetailBtn = (id, type) => {
     if (this.state.selectProject.id === id) {
       this.resetSelectProject();
     } else {
-      this.setState({ selectProject: { id } });
+      this.setState({ selectProject: { id, type } });
     }
   };
 
@@ -144,28 +144,28 @@ class Container extends Component {
     //     console.error(e);
     //   });
   };
-  handleCopy = async (pId, callback) => {
-    const res = await request.getDevelopingProject({ pId });
-    const project = await res.json();
-    if (project) {
-      const param = {
-        pId: generatePID(this.props.email),
-        email: project.email,
-        icon: project.icon,
-        name: `${project.name} copy`,
-        state: project.state,
-        url: project.url,
-        useCustomIcon: project.useCustomIcon,
-      };
-
-      request
-        .copyDevelopingProject({ param })
-        .then((res) => res.json())
-        .then(() => {
-          callback();
-        })
-        .catch((e) => console.error(e));
-    }
+  handleCopy = async (pId, callback1, callback2) => {
+    console.log("copy 예정");
+    // const res = await request.getDevelopingProject({ pId });
+    // const project = await res.json();
+    // if (project) {
+    //   const param = {
+    //     pId: generatePID(this.props.email),
+    //     email: project.email,
+    //     icon: project.icon,
+    //     name: `${project.name} copy`,
+    //     state: project.state,
+    //     url: project.url,
+    //     useCustomIcon: project.useCustomIcon,
+    //   };
+    //   request
+    //     .copyDevelopingProject({ param })
+    //     .then((res) => res.json())
+    //     .then(() => {
+    //       callback();
+    //     })
+    //     .catch((e) => console.error(e));
+    // }
   };
 
   render() {

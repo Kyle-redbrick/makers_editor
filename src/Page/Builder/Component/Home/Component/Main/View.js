@@ -74,6 +74,7 @@ function View(props) {
                   fetchMyProjects={fetchMyProjects}
                   setProjectName={setProjectName}
                   intl={intl}
+                  type="project"
                 />
               );
             })
@@ -108,7 +109,10 @@ function View(props) {
                   handleEdit={handleEdit}
                   onClickProjectEdit={onClickProjectEdit}
                   selectProject={selectProject}
+                  fetchMyPublished={fetchMyPublished}
+                  fetchMyProjects={fetchMyProjects}
                   key={index}
+                  handleDelete={handleDelete}
                   type="published"
                   intl={intl}
                 />
@@ -169,10 +173,12 @@ const ProjectItem = (props) => {
       </div>
       <div
         className={`projectItem__detail ${
-          selectProject.id === project.id && "selected"
+          selectProject.id === project.id &&
+          selectProject.type === type &&
+          "selected"
         }`}
         onClick={() => {
-          onClickDetailBtn(project.id);
+          onClickDetailBtn(project.id, type);
         }}
       >
         <img src={projectDetailIcon} alt="project Detail Icon" />
@@ -197,7 +203,7 @@ const ProjectItem = (props) => {
             </li>
             <li
               onClick={() => {
-                handleCopy(project.pId, fetchMyProjects);
+                handleCopy(project.id, fetchMyProjects, fetchMyPublished);
               }}
             >
               <img src={copyIcon} alt="" />
