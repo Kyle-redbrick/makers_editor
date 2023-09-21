@@ -311,6 +311,14 @@ export const thumbnailUpload = (lectureName) => {
   );
 };
 
+export const templateFilesUpload = (params) => {
+  return fetchSaasRequest(
+    URL.API_SAAS_SERVER + `lesson/templatefiles/upload`,
+    "POST",
+    params
+  );
+};
+
 export const putThumbnail = (putUrl, data) => {
   return fetch(putUrl, {
     method: "PUT",

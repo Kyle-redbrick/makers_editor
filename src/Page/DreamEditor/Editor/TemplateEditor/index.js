@@ -216,8 +216,9 @@ function TemplateEditor(props) {
               id="mediaURL"
               title="업로드하기"
               value={mediaURL}
-              comment="* 업로드해서 나오는 URL을 복사해서 마크다운에 입력해주세요"
+              comment="* 업로드해서 나오는 URL을 복사해서 마크다운에 입력해주세요 (확장자는 jpg, png, mp4, gif 가능해요)"
               onChange={setMediaURL}
+              templateState={true}
             />
             <SlideField
               id="slide"

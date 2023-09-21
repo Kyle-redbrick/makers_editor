@@ -71,84 +71,132 @@ function Select(props) {
   );
 }
 
-const uploadFile = async (selectedFile, lectureName) => {
+const uploadFile = async ({
+  selectedFile,
+  lectureName = "",
+  lectureId = "",
+  templateState = false,
+}) => {
   try {
-    // const uploadData = await uploadResponse.json();
-    //   const temporaryPutUrl = uploadData.data.uploadUrl;
-    //   const putUrl = temporaryPutUrl.slice(0, 4) + temporaryPutUrl.slice(5);
-    //   const temporaryDownloadUrl = uploadData.data.downloadUrl;
-    //   const putResponse = await fetch(putUrl, {
-    //     method: "PUT",
-    //     headers: {
-    //       "Content-Type": "image/jpeg",
-    //     },
-    //     body: selectedFile,
-    //   });
+    // 템플릿 에디터에 사진, 영상 업로드하는 경우
+    if (templateState) {
+      const params = {
+        lessonId: lectureId,
+        fileType:
+          selectedFile.name.split(".")[selectedFile.name.split(".").length - 1],
+        mimeType: selectedFile.type,
+      };
+      const uploadResponse = await request.templateFilesUpload(params);
+      const uploadData = await uploadResponse.json();
+      const putUrl = uploadData.data.uploadUrl;
+      const downloadUrl = uploadData.data.downloadUrl;
+      const putResponse = await fetch(putUrl, {
+        method: "PUT",
+        headers: {
+          "Content-Type": selectedFile.type,
+        },
+        body: selectedFile,
+      });
+      console.log("PUT response", putResponse);
+      return downloadUrl;
+    } else {
+      const uploadResponse = await request.thumbnailUpload(lectureName);
+      const uploadData = await uploadResponse.json();
+      const temporaryPutUrl = uploadData.data.uploadUrl;
+      const putUrl = temporaryPutUrl.slice(0, 4) + temporaryPutUrl.slice(5);
+      const downloadUrl = uploadData.data.downloadUrl;
 
-    //   const downloadUrl =
-    //     "http://redbrick-makers.oss-ap-northeast-2.aliyuncs.com/" +
-    //     temporaryDownloadUrl;
-
-    //   console.log("putResponse", putResponse);
-    const uploadResponse = await request.thumbnailUpload(lectureName);
-    const uploadData = await uploadResponse.json();
-    const temporaryPutUrl = uploadData.data.uploadUrl;
-    const putUrl = temporaryPutUrl.slice(0, 4) + temporaryPutUrl.slice(5);
-    const downloadUrl = uploadData.data.downloadUrl;
-    console.log("putUrl", putUrl);
-    console.log("downloadUrl", downloadUrl);
-
-    const putResponse = await fetch(putUrl, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "image/jpeg",
-      },
-      body: selectedFile,
-    });
-
-    console.log("PUT response", putResponse);
-
-    return downloadUrl;
+      const putResponse = await fetch(putUrl, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "image/jpeg",
+        },
+        body: selectedFile,
+      });
+      console.log("PUT response", putResponse);
+      return downloadUrl;
+    }
   } catch (error) {
     console.error("파일 업로드 실패:", error);
   }
 };
 
 function File(props) {
-  const { id, accept, value, onChange, lectureName } = props;
+  const { id, accept, value, onChange, lectureName, templateState } = props;
   const fileInputRef = useRef();
 
-  return (
-    <Base {...props} type="file">
-      <input
-        id={id}
-        ref={fileInputRef}
-        type="file"
-        accept={accept}
-        onChange={(e) => {
-          const selectedFile = e.target.files[0];
-          if (!selectedFile) return;
-          uploadFile(selectedFile, lectureName).then((res) => {
-            onChange(res);
-          });
-        }}
-        hidden
-      />
-      <button
-        onClick={() => {
-          fileInputRef.current.click();
-        }}
-      >
-        업로드
-      </button>
-      {value && (
-        <span>
-          {value}
-          <img src={value.THUMBNAIL_ALI()} alt={value} />
-        </span>
-      )}
-    </Base>
-  );
+  if (templateState) {
+    const lectureInfo = JSON.parse(
+      localStorage.getItem("dreamEditorSelectedElement")
+    );
+    const lectureId = lectureInfo.id;
+
+    return (
+      <Base {...props} type="file">
+        <input
+          id={id}
+          ref={fileInputRef}
+          type="file"
+          accept=".jpg, .jpeg, .png, .gif, .mp4"
+          onChange={(e) => {
+            const selectedFile = e.target.files[0];
+            if (!selectedFile) return;
+            uploadFile({ selectedFile, lectureId, templateState }).then(
+              (res) => {
+                onChange(res);
+              }
+            );
+          }}
+          hidden
+        />
+        <button
+          onClick={() => {
+            fileInputRef.current.click();
+          }}
+        >
+          업로드
+        </button>
+        {value && (
+          <span>
+            {value}
+            <img src={value.THUMBNAIL_ALI()} alt={value} />
+          </span>
+        )}
+      </Base>
+    );
+  } else {
+    return (
+      <Base {...props} type="file">
+        <input
+          id={id}
+          ref={fileInputRef}
+          type="file"
+          accept=".jpg, .jpeg, .png"
+          onChange={(e) => {
+            const selectedFile = e.target.files[0];
+            if (!selectedFile) return;
+            uploadFile({ selectedFile, lectureName }).then((res) => {
+              onChange(res);
+            });
+          }}
+          hidden
+        />
+        <button
+          onClick={() => {
+            fileInputRef.current.click();
+          }}
+        >
+          업로드
+        </button>
+        {value && (
+          <span>
+            {value}
+            <img src={value.THUMBNAIL_ALI()} alt={value} />
+          </span>
+        )}
+      </Base>
+    );
+  }
 }
 
 function OnOff(props) {

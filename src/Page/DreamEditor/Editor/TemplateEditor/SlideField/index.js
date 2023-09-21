@@ -43,13 +43,16 @@ class SlideField extends Component {
     this.setState({ shouldRerender: true }, () => {
       this.setState({ shouldRerender: false });
     });
-  }
+  };
 
   render() {
     return (
       <Field.Base {...this.props} type="slide">
         <div className="slide_viewer">
-          <DreamSlide markdown={this.props.value} shouldRerender={this.state.shouldRerender}/>
+          <DreamSlide
+            markdown={this.props.value}
+            shouldRerender={this.state.shouldRerender}
+          />
         </div>
         <div id={this.editorId} className="slide_editor" />
       </Field.Base>

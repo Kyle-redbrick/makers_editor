@@ -374,9 +374,7 @@ class Container extends Component {
   // };
   // 게임 썸네일 등록하기 (수정)
   handleFileInput = async (e) => {
-    console.log("pId", window.location.pathname.split("/")[2]);
     const selectedFile = e.target.files[0];
-    console.log("file =>", selectedFile);
 
     if (!selectedFile) return;
 

@@ -71,61 +71,6 @@ function View(props) {
             </div> */}
           </div>
         </div>
-        {news.length > 0 && (
-          <div className="main__news">
-            <div className="main__title">
-              {intl.formatMessage({ id: "ID_BUILDER_MAIN_NEWS" })}
-            </div>
-            <div className="news__items">
-              <Slider {...bannerSlidSettings} ref={setSlickRef}>
-                {news.map((item, index) => {
-                  return (
-                    <Link
-                      to={`/news/detail/${item.id}`}
-                      target="_blank"
-                      className="newsItem__link"
-                      key={index}
-                    >
-                      <div className="newsItem">
-                        <img
-                          className="newsItem__img"
-                          src={item.thumbnail}
-                          alt=""
-                        />
-                        <div className="newsItem__content">
-                          <div className="newsItem__content__topic">
-                            {item.topic}
-                          </div>
-                          <div className="newsItem__content__title">
-                            {item.title}
-                          </div>
-                          <div className="newsItem__content__subTitle">
-                            {item.subtitle}
-                          </div>
-                          <div className="newsItem__content__slide">
-                            <div className="newsItem__content__slide__controls">
-                              <div
-                                className="newsLeftIcon"
-                                onClick={(e) => handlePrev(e)}
-                              />
-                              <div
-                                className="newsRightIcon"
-                                onClick={(e) => handleNext(e)}
-                              />
-                            </div>
-                            <div className="newsItem__content__slide__page">
-                              {index + 1} / {news.length}
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </Link>
-                  );
-                })}
-              </Slider>
-            </div>
-          </div>
-        )}
       </div>
       <div className="main__row row__myProjects">
         <div className="row__header">
@@ -242,7 +187,7 @@ const ProjectItem = (props) => {
             project.updatedAt.split("T")[0].replaceAll("-", ".")}
         </div>
       </div>
-      <div
+      {/* <div
         className={`projectItem__detail ${
           selectProject.id === project.id && "selected"
         }`}
@@ -279,7 +224,7 @@ const ProjectItem = (props) => {
             </li>
           </>
         </ul>
-      </div>
+      </div> */}
     </div>
   );
 };

@@ -8,17 +8,17 @@ import { Block } from "../OOBCEditor/Component/Block";
 import playImg from "../../../Image/builder/group-2.svg";
 import emptyBlockImg from "../../../Image/dreamclass/slide_block_empty.svg";
 
-const getBlockProcessingInstruction = options => ({
-  shouldProcessNode: node => {
+const getBlockProcessingInstruction = (options) => ({
+  shouldProcessNode: (node) => {
     return node.name === "oobc";
   },
-  processNode: node => {
+  processNode: (node) => {
     const { getSpriteIcon } = options || {};
     const { type, data, data2 } = node.attribs;
     const block = OOBC.Block.fromJSON({
       constructor: type,
       state: OOBC.TYPE.STATE.PROTOTYPE,
-      data
+      data,
     });
 
     switch (type) {
@@ -35,7 +35,7 @@ const getBlockProcessingInstruction = options => ({
         break;
     }
 
-    if(block.type === "Block") {
+    if (block.type === "Block") {
       block.backgroundImg = emptyBlockImg;
     }
 
@@ -44,42 +44,40 @@ const getBlockProcessingInstruction = options => ({
         <Block block={block} />
       </span>
     );
-  }
+  },
 });
 
 const iconSrcMap = {
-  play: playImg
+  play: playImg,
 };
 const iconProcessingInstruction = {
-  shouldProcessNode: node => {
+  shouldProcessNode: (node) => {
     return node.name === "icon";
   },
   processNode: (node, children) => {
     const { type } = node.attribs;
     const src = iconSrcMap[type];
     return <img className="inline_icon" src={src} alt={type} />;
-  }
+  },
 };
 
 const videoProcessingInstruction = {
-  shouldProcessNode: node => {
+  shouldProcessNode: (node) => {
     return node.name === "video";
   },
+  // eslint-disable-next-line react/display-name
   processNode: (node, children) => {
-    const {
-      src,
-      poster,
-      loop,
-      muted,
-      autoplay,
-      ...otherAttribs
-    } = node.attribs;
+    const { src, poster, loop, muted, autoplay, ...otherAttribs } =
+      node.attribs;
+    console.log("src.THUMBNAIL_ALI()", src.THUMBNAIL_ALI());
     return (
       <video
-        { ...otherAttribs }
+        {...otherAttribs}
         className="media_video"
-        src={src && src.toDreamclassS3URL()}
-        poster={poster && poster.toDreamclassS3URL()}
+        src={src && src.THUMBNAIL_ALI()}
+        poster={poster && poster.THUMBNAIL_ALI()}
+        // src={src && src.toDreamclassS3URL()}
+        // poster={poster && poster.toDreamclassS3URL()}
         loop={loop === "true" || false}
         muted={muted === "true" || true}
         autoPlay={autoplay === "true" || false}
@@ -88,17 +86,19 @@ const videoProcessingInstruction = {
         playsInline
       />
     );
-  }
+  },
 };
 
 const imgProcessingInstruction = {
-  shouldProcessNode: node => {
+  shouldProcessNode: (node) => {
     return node.name === "img";
   },
+  // eslint-disable-next-line react/display-name
   processNode: (node, children) => {
     let src = node.attribs.src;
     if (src && !src.startsWith("http")) {
-      src = src.toDreamclassS3URL();
+      src = src.THUMBNAIL_ALI();
+      // src = src.toDreamclassS3URL();
     }
     return (
       <img
@@ -108,25 +108,25 @@ const imgProcessingInstruction = {
         alt={node.attribs.src}
       />
     );
-  }
+  },
 };
 
 const processNodeDefinitions = new HtmlToReact.ProcessNodeDefinitions(React);
 
 const defaultProcessingIntructions = {
   shouldProcessNode: () => true,
-  processNode: processNodeDefinitions.processDefaultNode
+  processNode: processNodeDefinitions.processDefaultNode,
 };
 
-export const htmlParserWith = options => {
+export const htmlParserWith = (options) => {
   return HtmlParser({
-    isValidNode: node => node.type !== "script",
+    isValidNode: (node) => node.type !== "script",
     processingInstructions: [
       getBlockProcessingInstruction(options),
       iconProcessingInstruction,
       videoProcessingInstruction,
       imgProcessingInstruction,
-      defaultProcessingIntructions
-    ]
+      defaultProcessingIntructions,
+    ],
   });
 };

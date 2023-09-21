@@ -167,7 +167,7 @@ const View = (props) => {
               id="PublishForm__icon__input"
               className="publishform__icon__input"
               type="file"
-              accept=".jpg,.jpeg,.png"
+              accept=".jpg,.jpeg,.png,.mov"
               onChange={handleFileInput}
             />
           </div>

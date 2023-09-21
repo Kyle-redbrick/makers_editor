@@ -7,18 +7,15 @@ import "./index.scss";
 function ProjectEditor(props) {
   const { projectId } = props;
   const [project, setProject] = useState(null);
-  useEffect(
-    () => {
-      request
-        .getDreamProject(projectId)
-        .then(res => res.json())
-        .then(project => {
-          project.tags = project.tags ? project.tags.map(tag => tag.tag) : [];
-          setProject(project);
-        });
-    },
-    [projectId]
-  );
+  useEffect(() => {
+    request
+      .getDreamProject(projectId)
+      .then((res) => res.json())
+      .then((project) => {
+        project.tags = project.tags ? project.tags.map((tag) => tag.tag) : [];
+        setProject(project);
+      });
+  }, [projectId]);
 
   let courseType;
   try {
@@ -38,128 +35,106 @@ function ProjectEditor(props) {
   const [programmingConcepts, setProgrammingConcepts] = useState("");
   const [isHidden, setIsHidden] = useState(false);
   const [isLive, setIsLive] = useState(false);
-  useEffect(
-    () => {
-      if (project) {
-        setNumber(project.number || 0);
-        setTotalMissionNum(project.totalMissionNum || 0);
-        setIsHidden(project.isHidden || false);
-        setIsLive(project.isLive || false);
-        
-        setTitle(
-          project.localized[0]
-          ? project.localized[0].title
-          : ""
-        );
-        setIntroduction(
-          project.localized[0]
-          ? project.localized[0].introduction
-          : ""
-        );
-        setDefaultTemplate(
-          project.localized[0]
-          ? project.localized[0].template
-          : ""
-        );
-        setTemplate(
-          project.localized[0]
-          ? project.localized[0].template
-          : ""
-        );
-        setSampleGameURL(
-          project.localized[0]
-          ? project.localized[0].sampleGameURL
-          : ""
-        );
-        setThumbnailURL(
-          project.localized[0]
-          ? project.localized[0].thumbnailURL
-          : ""
-        );
-        
-        setAPICommands(
-          project.tags
-            .filter(tag => tag.type === "apiCommand")
-            .map(tag => tag.name)
-            .join(",") || ""
-        );
-        setProgrammingConcepts(
-          project.tags
-            .filter(tag => tag.type === "programmingConcept")
-            .map(tag => tag.name)
-            .join(",") || ""
-        );
-      }
-    },
-    [project]
-  );
-  useEffect(
-    () => {
-      const tags = [];
+  useEffect(() => {
+    if (project) {
+      setNumber(project.number || 0);
+      setTotalMissionNum(project.totalMissionNum || 0);
+      setIsHidden(project.isHidden || false);
+      setIsLive(project.isLive || false);
 
-      apiCommands
-        .split(",")
-        .map(apiCommand => apiCommand.trim())
-        .filter(apiCommand => !!apiCommand)
-        .forEach(apiCommand => {
-          tags.push({ type: "apiCommand", name: apiCommand });
+      setTitle(project.localized[0] ? project.localized[0].title : "");
+      setIntroduction(
+        project.localized[0] ? project.localized[0].introduction : ""
+      );
+      setDefaultTemplate(
+        project.localized[0] ? project.localized[0].template : ""
+      );
+      setTemplate(project.localized[0] ? project.localized[0].template : "");
+      setSampleGameURL(
+        project.localized[0] ? project.localized[0].sampleGameURL : ""
+      );
+      setThumbnailURL(
+        project.localized[0] ? project.localized[0].thumbnailURL : ""
+      );
+
+      setAPICommands(
+        project.tags
+          .filter((tag) => tag.type === "apiCommand")
+          .map((tag) => tag.name)
+          .join(",") || ""
+      );
+      setProgrammingConcepts(
+        project.tags
+          .filter((tag) => tag.type === "programmingConcept")
+          .map((tag) => tag.name)
+          .join(",") || ""
+      );
+    }
+  }, [project]);
+  useEffect(() => {
+    const tags = [];
+
+    apiCommands
+      .split(",")
+      .map((apiCommand) => apiCommand.trim())
+      .filter((apiCommand) => !!apiCommand)
+      .forEach((apiCommand) => {
+        tags.push({ type: "apiCommand", name: apiCommand });
+      });
+
+    programmingConcepts
+      .split(",")
+      .map((programmingConcept) => programmingConcept.trim())
+      .filter((programmingConcept) => !!programmingConcept)
+      .forEach((programmingConcept) => {
+        tags.push({
+          type: "programmingConcept",
+          name: programmingConcept,
         });
+      });
 
-      programmingConcepts
-        .split(",")
-        .map(programmingConcept => programmingConcept.trim())
-        .filter(programmingConcept => !!programmingConcept)
-        .forEach(programmingConcept => {
-          tags.push({
-            type: "programmingConcept",
-            name: programmingConcept
-          });
-        });
-
-      setTags(tags);
-    },
-    [apiCommands, programmingConcepts]
-  );
+    setTags(tags);
+  }, [apiCommands, programmingConcepts]);
 
   const onClickSave = () => {
     const updateValues = getUpdatedValues();
     request
       .updateDreamProject(projectId, updateValues)
-      .then(res => res.json())
-      .then(json => {
+      .then((res) => res.json())
+      .then((json) => {
         if (json.success) {
           setProject({
             ...project,
             ...updateValues,
             localized: [
               project.localized[0]
-              ? { ...project.localized[0], ...updateValues.localized }
-              : updateValues.localized
-            ]
+                ? { ...project.localized[0], ...updateValues.localized }
+                : updateValues.localized,
+            ],
           });
           alert("저장되었습니다 :)");
         } else {
           throw json;
         }
       })
-      .catch(err => {
+      .catch((err) => {
         console.error(err);
         alert(JSON.stringify(err));
       });
   };
   const getUpdatedValues = () => {
     const updatedValues = {
-      localized: getUpdateLocalizedValues()
+      localized: getUpdateLocalizedValues(),
     };
-    
+
     const values = {
       number: parseInt(number),
       totalMissionNum,
       tags,
       isHidden,
-      isLive
+      isLive,
     };
-    
+
     for (let key in values) {
       if (isUpdated(key, values[key])) {
         updatedValues[key] = values[key];
@@ -168,7 +143,7 @@ function ProjectEditor(props) {
     return updatedValues;
   };
   const getUpdateLocalizedValues = () => {
-    const origin = project.localized[0]
+    const origin = project.localized[0];
 
     const values = {
       title,
@@ -176,11 +151,11 @@ function ProjectEditor(props) {
       sampleGameURL,
       thumbnailURL,
     };
-    if(courseType !== "python") {
+    if (courseType !== "python") {
       values.template = template;
     }
 
-    if(origin) {
+    if (origin) {
       const updateValues = {};
       for (let key in values) {
         if (values[key] !== project.localized[0][key]) {
@@ -191,7 +166,7 @@ function ProjectEditor(props) {
     } else {
       return values;
     }
-  }
+  };
   const isUpdated = (key, value) => {
     switch (key) {
       case "tags":
@@ -204,7 +179,7 @@ function ProjectEditor(props) {
 
         const isTagEqual = (a, b) => a.type === b.type && a.name === b.name;
         for (let nextTag of nextTags) {
-          if (prevTags.find(prevTag => isTagEqual(prevTag, nextTag))) {
+          if (prevTags.find((prevTag) => isTagEqual(prevTag, nextTag))) {
             continue;
           } else {
             return true;
@@ -275,7 +250,7 @@ function ProjectEditor(props) {
           id="isHidden"
           title="콘텐츠 공개"
           value={!isHidden}
-          onChange={value => {
+          onChange={(value) => {
             setIsHidden(!value);
           }}
         />
