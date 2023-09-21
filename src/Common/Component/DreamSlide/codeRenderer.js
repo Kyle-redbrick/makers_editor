@@ -17,19 +17,18 @@ class CodeRenderer extends PureComponent {
     super(props);
     this.state = {
       isFolded: true,
-      isShow: false,
+      isShow: true,
     };
   }
 
   async componentDidMount() {
-    const tokenInfo = jwt_decode(localStorage.getItem("astroToken"));
-
-    if(tokenInfo.userType === USER_TYPE.STUDENT) {
-      const res = await request.getProjectShowHintState(this.props.projectId);
-      this.setState({isShow: res.isShow})
-    } else {
-      this.setState({isShow: true})
-    }
+    // const tokenInfo = jwt_decode(localStorage.getItem("astroToken"));
+    // if(tokenInfo.userType === USER_TYPE.STUDENT) {
+    //   const res = await request.getProjectShowHintState(this.props.projectId);
+    //   this.setState({isShow: res.isShow})
+    // } else {
+    //   this.setState({isShow: true})
+    // }
   }
 
   get id() {
@@ -58,7 +57,7 @@ class CodeRenderer extends PureComponent {
   };
   onClickCopy = () => {
     Clipboard.copy(this.code);
-  }
+  };
 
   render() {
     return (
@@ -79,7 +78,7 @@ class CodeRenderer extends PureComponent {
         </div>
         {this.state.isFolded || (
           <div className="codeblock_body">
-            {this.state.isShow ?
+            {this.state.isShow ? (
               <Code
                 id={this.id}
                 isShow={this.state.isShow}
@@ -87,14 +86,16 @@ class CodeRenderer extends PureComponent {
                 code={this.code}
                 getSpriteIcon={this.props.getSpriteIcon}
               />
-              : 
+            ) : (
               <div className="not_show_codeblock">
                 <img src={lockImg} alt="" />
               </div>
-            }
-            {this.language !== "oobc" && <div className="codeblock_body_copy" onClick={this.onClickCopy}>
-              <img src={copyIcon} alt="copy" />
-            </div>}
+            )}
+            {this.language !== "oobc" && (
+              <div className="codeblock_body_copy" onClick={this.onClickCopy}>
+                <img src={copyIcon} alt="copy" />
+              </div>
+            )}
           </div>
         )}
       </div>
@@ -120,11 +121,11 @@ function OOBCCode(props) {
 
     if (getSpriteIcon) {
       OOBC.Context.traverse(context, {
-        onBlock: block => {
-          if(block instanceof OOBC.GameObject) {
+        onBlock: (block) => {
+          if (block instanceof OOBC.GameObject) {
             block.thumbnailSrc = getSpriteIcon(block.data);
           }
-        }
+        },
       });
     }
 
@@ -132,7 +133,7 @@ function OOBCCode(props) {
       <div className="codeblock_oobc oobceditor">
         <Context>
           <LineGroup>
-            {context.getDisplayLines().map(line => (
+            {context.getDisplayLines().map((line) => (
               <Line key={line.id} line={line}>
                 <BlockGroup context={context} block={line.block} />
               </Line>
@@ -147,7 +148,6 @@ function OOBCCode(props) {
   }
 }
 class DefaultCode extends Component {
-
   componentDidMount() {
     this.initEditor();
   }
