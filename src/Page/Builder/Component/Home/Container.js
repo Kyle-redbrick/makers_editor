@@ -5,7 +5,6 @@ import { withRouter } from "react-router-dom";
 import * as request from "../../../../Common/Util/HTTPRequest";
 import PopUp, { showPopUp } from "../../../../Common/Component/PopUp";
 import PublishPopup from "../../../../Common/Component/Publish";
-import generatePID from "../../../../Common/Util/PIDGenerator";
 
 import View from "./View";
 
@@ -130,42 +129,13 @@ class Container extends Component {
         callback1();
         callback2();
       });
-    // await request.deleteDevelopingProject({
-    //   pId,
-    //   email: this.props.email,
-    // });
-    // request
-    //   .deleteDevelopingProject({ pId, email: this.props.email })
-    //   .then((res) => res.json())
-    //   .then(() => {
-    //     callback();
-    //   })
-    //   .catch((e) => {
-    //     console.error(e);
-    //   });
   };
-  handleCopy = async (pId, callback1, callback2) => {
-    console.log("copy 예정");
-    // const res = await request.getDevelopingProject({ pId });
-    // const project = await res.json();
-    // if (project) {
-    //   const param = {
-    //     pId: generatePID(this.props.email),
-    //     email: project.email,
-    //     icon: project.icon,
-    //     name: `${project.name} copy`,
-    //     state: project.state,
-    //     url: project.url,
-    //     useCustomIcon: project.useCustomIcon,
-    //   };
-    //   request
-    //     .copyDevelopingProject({ param })
-    //     .then((res) => res.json())
-    //     .then(() => {
-    //       callback();
-    //     })
-    //     .catch((e) => console.error(e));
-    // }
+  handleCopy = async (pId, callback) => {
+    this.resetSelectProject();
+    request
+      .copySaasProject(pId)
+      .then((res) => res.json())
+      .then(() => callback());
   };
 
   render() {

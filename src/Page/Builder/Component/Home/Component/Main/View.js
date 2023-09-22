@@ -203,7 +203,7 @@ const ProjectItem = (props) => {
             </li>
             <li
               onClick={() => {
-                handleCopy(project.id, fetchMyProjects, fetchMyPublished);
+                handleCopy(project.id, fetchMyProjects);
               }}
             >
               <img src={copyIcon} alt="" />

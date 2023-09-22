@@ -29,6 +29,14 @@ export const fetchSaasRequest = (url, method, param) => {
 
 ///////////////////////////////////////////////////////////////////////////////
 /** SAAS */
+export const copySaasProject = (pId) => {
+  const param = { projectId: pId };
+  return fetchSaasRequest(
+    URL.API_SAAS_SERVER + `project/educator/copy`,
+    "POST",
+    param
+  );
+};
 
 export const tagUpdate = (lessonId, tags) => {
   const params = {
