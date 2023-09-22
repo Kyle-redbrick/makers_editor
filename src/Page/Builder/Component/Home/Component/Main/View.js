@@ -185,9 +185,8 @@ const ProjectItem = (props) => {
         <ul className="projectItem__detail__list">
           <>
             <li
-              onClick={
-                () => handleEdit(project.id, fetchMyProjects, fetchMyPublished)
-                // handleEdit(project.pId, project.name, setProjectName)
+              onClick={() =>
+                handleEdit(project.id, fetchMyProjects, fetchMyPublished)
               }
             >
               <img src={editIcon} alt="edit" />

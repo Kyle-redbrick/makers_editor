@@ -23,6 +23,7 @@ class Container extends Component {
   };
 
   fetchMyProjects = async () => {
+    console.log("fetchMyProjects 실행");
     let { currentPage } = this.state;
     let pageOffset = Math.ceil((currentPage - 1) * this.pageSize);
     let params = {
@@ -35,10 +36,12 @@ class Container extends Component {
         params.keyword = this.state.keyword;
         let res = await request.getMySaasProject(params);
         let myProject = await res.json();
+        this.setState({ myProjects: myProject.data.projectList });
         return myProject.data.projectList;
       } else {
         let res = await request.getMySaasProject(params);
         let myProject = await res.json();
+        this.setState({ myProjects: myProject.data.projectList });
         return myProject.data.projectList;
       }
     } catch (error) {
@@ -83,13 +86,12 @@ class Container extends Component {
       }
     );
   };
-  onClickProject = (pId, type) => {
+  onClickProject = (id) => {
+    if (!id) return;
     this.props.history.replace({
-      pathname: `/${
-        type === "js3d" ? PAGETYPE.BUILDER3D : PAGETYPE.BUILDER
-      }/${pId}`,
+      pathname: `/${PAGETYPE.BUILDER}/${id}`,
     });
-    type !== "js3d" && window.location.reload();
+    window.location.reload();
   };
 
   //TODO : have to refactoring
@@ -138,6 +140,7 @@ class Container extends Component {
       projectsRef,
       setFilteringData,
       setProjectName,
+      fetchMyProjects,
     } = this;
     return (
       <View
@@ -152,6 +155,7 @@ class Container extends Component {
         handleDelete={handleDelete}
         handleCopy={handleCopy}
         setProjectName={setProjectName}
+        fetchMyProjects={fetchMyProjects}
       />
     );
   }

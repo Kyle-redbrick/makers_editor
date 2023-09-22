@@ -98,7 +98,7 @@ class Container extends Component {
       .then((res) => res.json())
       .then(() => {
         callback1();
-        callback2();
+        callback2 && callback2();
       });
   };
   onClickProjectEdit = (published) => {
@@ -127,7 +127,7 @@ class Container extends Component {
       .then((res) => res.json())
       .then(() => {
         callback1();
-        callback2();
+        callback2 && callback2();
       });
   };
   handleCopy = async (pId, callback) => {

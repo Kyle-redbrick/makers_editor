@@ -21,6 +21,7 @@ function View(props) {
     handleCopy,
     setProjectName,
     intl,
+    fetchMyProjects,
   } = props;
   return (
     <div
@@ -41,7 +42,7 @@ function View(props) {
                   className="projectItem__top"
                   onClick={(e) => {
                     e.preventDefault();
-                    onClickProject(item.pId, item.type);
+                    onClickProject(item.id);
                   }}
                 >
                   <img className="top__img" src={item.icon} alt="icon" />
@@ -62,35 +63,27 @@ function View(props) {
                 </div>
                 <div
                   className={`projectItem__detail ${
-                    selectProject.pId === item.pId &&
-                    selectProject.type !== "published" &&
-                    "selected"
+                    selectProject.id === item.id && "selected"
                   }`}
                   onClick={() => {
-                    onClickDetailBtn(item.pId);
+                    onClickDetailBtn(item.id);
                   }}
                 >
-                  {/* <img src={projectDetailIcon} alt="project Detail Icon" />
+                  <img src={projectDetailIcon} alt="project Detail Icon" />
                   <ul className="projectItem__detail__list">
-                    <li
-                      onClick={() =>
-                        handleEdit(item.pId, item.name, setProjectName)
-                      }
-                    >
+                    <li onClick={() => handleEdit(item.id, fetchMyProjects)}>
                       <img src={editIcon} alt="" />
                       {intl.formatMessage({ id: "ID_BUILDER_MAIN_EDIT" })}
                     </li>
-                    <li onClick={() => handleCopy(item.pId, setFilteringData)}>
+                    <li onClick={() => handleCopy(item.id, fetchMyProjects)}>
                       <img src={copyIcon} alt="" />
                       {intl.formatMessage({ id: "ID_BUILDER_MAIN_COPY" })}
                     </li>
-                    <li
-                      onClick={() => handleDelete(item.pId, setFilteringData)}
-                    >
+                    <li onClick={() => handleDelete(item.id, fetchMyProjects)}>
                       <img src={deleteIcon} alt="" />
                       {intl.formatMessage({ id: "ID_BUILDER_MAIN_DELETE" })}
                     </li>
-                  </ul> */}
+                  </ul>
                 </div>
               </div>
             );

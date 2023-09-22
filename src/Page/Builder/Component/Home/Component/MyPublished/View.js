@@ -6,6 +6,8 @@ import projectDetailIcon from "../../../../../../Image/icon-more.svg";
 import editIcon from "../../../../../../Image/icon-edit.svg";
 import viewAppIcon from "../../../../../../Image/icon-view-app.svg";
 import { injectIntl } from "react-intl";
+import copyIcon from "../../../../../../Image/copy.svg";
+import deleteIcon from "../../../../../../Image/delete.svg";
 
 function View(props) {
   const {
@@ -20,6 +22,10 @@ function View(props) {
     onClickDetailBtn,
     selectProject,
     intl,
+    handleCopy,
+    handleDelete,
+    handleEdit,
+    fetchMyPublisheds,
   } = props;
   return (
     <div
@@ -43,7 +49,7 @@ function View(props) {
               >
                 <div
                   className="projectItem__top"
-                  onClick={() => onClickProject(item.pId, item.type)}
+                  onClick={() => onClickProject(item.id)}
                 >
                   <img src={item.icon} className="top__img" alt="icon" />
                 </div>
@@ -57,21 +63,29 @@ function View(props) {
                 </div>
                 <div
                   className={`projectItem__detail ${
-                    selectProject.pId === item.pId &&
-                    selectProject.type === "published" &&
-                    "selected"
+                    selectProject.id === item.id && "selected"
                   }`}
                   onClick={() => {
-                    onClickDetailBtn(item.pId, "published");
+                    onClickDetailBtn(item.id);
                   }}
                 >
-                  {/* <img src={projectDetailIcon} alt="project Detail Icon" />
+                  <img src={projectDetailIcon} alt="project Detail Icon" />
                   <ul className="projectItem__detail__list">
-                    <li onClick={() => onClickProjectEdit(item)}>
+                    <li onClick={() => handleEdit(item.id, fetchMyPublisheds)}>
                       <img src={editIcon} alt="" />
                       {intl.formatMessage({ id: "ID_BUILDER_MAIN_EDIT" })}
                     </li>
-                  </ul> */}
+                    {/* <li onClick={() => handleCopy(item.id, fetchMyPublisheds)}>
+                      <img src={copyIcon} alt="" />
+                      {intl.formatMessage({ id: "ID_BUILDER_MAIN_COPY" })}
+                    </li> */}
+                    <li
+                      onClick={() => handleDelete(item.id, fetchMyPublisheds)}
+                    >
+                      <img src={deleteIcon} alt="" />
+                      {intl.formatMessage({ id: "ID_BUILDER_MAIN_DELETE" })}
+                    </li>
+                  </ul>
                 </div>
               </div>
             );

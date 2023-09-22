@@ -37,10 +37,12 @@ class Container extends Component {
         params.keyword = this.state.keyword;
         let res = await request.getMyPublishedSaasProject(params);
         let myPublished = await res.json();
+        this.setState({ myPublisheds: myPublished.data.projectList });
         return myPublished.data.projectList;
       } else {
         let res = await request.getMyPublishedSaasProject(params);
         let myPublished = await res.json();
+        this.setState({ myPublisheds: myPublished.data.projectList });
         return myPublished.data.projectList;
       }
     } catch (error) {
@@ -48,30 +50,6 @@ class Container extends Component {
       return [];
     }
   };
-
-  // fetchMyPublisheds = async () => {
-  //   let { currentPage, dataType, keyword } = this.state;
-  //   let pageOffset = Math.ceil((currentPage - 1) * this.pageSize);
-
-  //   let params = {
-  //     type: dataType,
-  //     email: this.props.email,
-  //     offset: pageOffset,
-  //     limit: this.isFirstFetchData ? 60 : this.pageSize,
-  //     keyword
-  //   };
-  //   try {
-  //     let res = await request.getPublishedProjectsByType(params);
-  //     let myPublisheds = await res.json();
-  //     return myPublisheds.rows.map(p => {
-  //       p.type = p.project.type;
-  //       return p;
-  //     });
-  //   } catch (error) {
-  //     console.log(error);
-  //     return [];
-  //   }
-  // };
 
   isFirstFetchData = () => {
     let { currentPage } = this.state;
@@ -81,14 +59,12 @@ class Container extends Component {
     if (!pId) return;
     this.props.history.push(`?pId=${pId}`);
   };
-  onClickProject = (pId, type) => {
-    if (!pId) return;
+  onClickProject = (id) => {
+    if (!id) return;
     this.props.history.replace({
-      pathname: `/${
-        type === "js3d" ? PAGETYPE.BUILDER3D : PAGETYPE.BUILDER
-      }/${pId}`,
+      pathname: `/${PAGETYPE.BUILDER}/${id}`,
     });
-    type !== "js3d" && window.location.reload();
+    window.location.reload();
   };
   //TODO : have to refactoring
   handleOnScroll = () => {
@@ -167,7 +143,14 @@ class Container extends Component {
     );
   };
   render() {
-    const { onClickProjectEdit, onClickDetailBtn, selectProject } = this.props;
+    const {
+      onClickProjectEdit,
+      onClickDetailBtn,
+      selectProject,
+      handleDelete,
+      handleCopy,
+      handleEdit,
+    } = this.props;
     const {
       onClickProject,
       onClickShowProject,
@@ -175,6 +158,7 @@ class Container extends Component {
       projectsRef,
       handleProjectLive,
       setFilteringData,
+      fetchMyPublisheds,
     } = this;
     const { myPublisheds } = this.state;
     return (
@@ -186,9 +170,13 @@ class Container extends Component {
         handleOnScroll={handleOnScroll}
         projectsRef={projectsRef}
         handleProjectLive={handleProjectLive}
+        handleCopy={handleCopy}
+        handleEdit={handleEdit}
+        handleDelete={handleDelete}
         onClickProjectEdit={onClickProjectEdit}
         onClickDetailBtn={onClickDetailBtn}
         selectProject={selectProject}
+        fetchMyPublisheds={fetchMyPublisheds}
       />
     );
   }

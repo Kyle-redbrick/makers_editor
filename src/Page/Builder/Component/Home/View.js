@@ -46,6 +46,9 @@ export default function View(props) {
           setCurrentPage={setCurrentPage}
           onClickProjectEdit={onClickProjectEdit}
           onClickDetailBtn={onClickDetailBtn}
+          handleEdit={handleEdit}
+          handleDelete={handleDelete}
+          handleCopy={handleCopy}
           selectProject={selectProject}
         />
       );
