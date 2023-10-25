@@ -150,9 +150,52 @@
 .bottom__time {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   font-size: 12px;
   letter-spacing: -0.22px;
   color: #afafaf;
+}
+
+.publishform__code_allow {
+  position: relative;
+  width: 23px;
+  height: 12px;
+  background-color: rgba(131, 131, 131, 0.3);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.5s all;
+
+  span {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: inline-block;
+    box-sizing: border-box;
+    width: 12px;
+    height: 12px;
+    border-radius: 8px;
+    box-shadow: 0 3px 1px 0 rgba(0, 0, 0, 0.06),
+      0 3px 8px 0 rgba(0, 0, 0, 0.15);
+    border: solid 0.5px rgba(0, 0, 0, 0.04);
+    background-color: #ffffff;
+    transition: 0.5s all;
+  }
+
+  &.On {
+    background-color: #00c47a;
+    span {
+      left: calc(100% - 11px);
+    }
+  }
+}
+
+.code__allow {
+  display: flex;
+  align-items: center;
+
+  > p {
+    margin-right: 5px;
+  }
 }
 
 .projectItem__detail {

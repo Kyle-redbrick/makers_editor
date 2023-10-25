@@ -1,7 +1,7 @@
 import React from "react";
 import { injectIntl } from "react-intl";
 import "./index.scss";
-
+import { useState } from "react";
 import Game2dIcon from "../../../../../../Image/icon-2d.svg";
 
 import projectDetailIcon from "../../../../../../Image/icon-more.svg";
@@ -130,6 +130,8 @@ function View(props) {
 }
 
 const ProjectItem = (props) => {
+  const [codeAllow, setCodeAllow] = useState(false)
+  const onClickCodeAllow = () => setCodeAllow(!codeAllow)
   const {
     project,
     onClickProject,
@@ -169,7 +171,24 @@ const ProjectItem = (props) => {
         <div className="bottom__time">
           {project.updatedAt &&
             project.updatedAt.split("T")[0].replaceAll("-", ".")}
-            {type === "published" && <div>HI</div>}
+            <div className="code__allow">
+            {type === "published" ? (codeAllow? <p>공개</p> : <p>비공개</p>) : undefined}
+            {type === "published" &&           
+              <div className="publishform__code_allow__wrapper">
+                <div
+                  className={`publishform__code_allow ${
+                    codeAllow ? "On" : "Off"
+                  }`}
+                  onClick={event => {
+                    event.stopPropagation();
+                    onClickCodeAllow();
+                  }
+                }>
+                  <span />
+                </div>
+              </div>
+            }
+          </div>
         </div>
       </div>
       <div
