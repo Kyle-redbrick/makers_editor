@@ -31,6 +31,11 @@ class UserInfoContainer extends React.Component {
   }
 
   componentDidMount = () => {
+    const makersToken = this.getMakersToken()
+
+    if (makersToken) {
+      localStorage.setItem("makersToken", makersToken)
+    }
     window.addEventListener("focus", this.handleWindowFocus);
     window.addEventListener("blur", this.handleWindowBlur);
     window.addEventListener("message", this.onMessage, false);
@@ -43,6 +48,10 @@ class UserInfoContainer extends React.Component {
         this.setState({ mounted: true });
       }
     }
+    const searchParams = new URLSearchParams(this.props.location.search)
+    searchParams.delete("makersToken")
+    const newUrl = `${this.props.location.pathname}`
+    this.props.history.push(newUrl)
   };
 
   // checkUnreadBingoEvents = () => {
@@ -86,6 +95,8 @@ class UserInfoContainer extends React.Component {
       }
     }
   };
+
+  getMakersToken = () => new URLSearchParams(this.props.location.search).get("makersToken")
 
   handleLoginByToken = async e => {
     const token = localStorage.getItem("astroToken");

@@ -13,15 +13,18 @@ const View = (props) => {
     description,
     tags,
     isCopyAllowed,
+    isCodeCopyAllowed,
     icon,
     isDeveloping,
     handleInputChange,
     handleIsCopyAllowedChange,
+    handleIsCodeCopyAllowedChange,
     handleImgClick,
     handleAddClick,
     handleSubmit,
     handleCloseBtn,
     handleFileInput,
+    iconUpdated,
     handleFileDelete,
     onAddTag,
     onDeleteTag,
@@ -85,7 +88,7 @@ const View = (props) => {
           )}
         </div>
         {/* desc */}
-        <div className="publishform__row">
+        {/* <div className="publishform__row">
           <p className="publishform__title">
             {props.intl.formatMessage({ id: "ID_BUILDER_EDITPOP_DESC" })}
           </p>
@@ -109,7 +112,7 @@ const View = (props) => {
               })}
             </p>
           )}
-        </div>
+        </div> */}
 
         {/* icon */}
 
@@ -123,6 +126,7 @@ const View = (props) => {
               <img
                 className="publishform__icon__img"
                 src={
+                  iconUpdated? iconUpdated :
                   icon
                     ? icon
                     : "https://png.pngtree.com/thumb_back/fh260/background/20200821/pngtree-pure-black-background-wallpaper-image_396550.jpg"
@@ -227,11 +231,11 @@ const View = (props) => {
           </div>
         </div> */}
 
-        {/* code open */}
+        {/* publishing */}
         <div className="publishform__row">
           <div className="publishform__title__wrapper">
             <p className="publishform__title">
-              {props.intl.formatMessage({ id: "ID_BUILDER_EDITPOP_CODE" })}
+              퍼블리싱
             </p>
           </div>
 
@@ -247,6 +251,36 @@ const View = (props) => {
 
             <span className="text">
               {isCopyAllowed
+                ? props.intl.formatMessage({
+                    id: "ID_BUILDER_EDITPOP_CODE_OPEN",
+                  })
+                : props.intl.formatMessage({
+                    id: "ID_BUILDER_EDITPOP_CODE_CLOSE",
+                  })}
+            </span>
+          </div>
+        </div>
+
+        {/* code open */}
+        <div className="publishform__row">
+          <div className="publishform__title__wrapper">
+            <p className="publishform__title">
+              {props.intl.formatMessage({ id: "ID_BUILDER_EDITPOP_CODE" })}
+            </p>
+          </div>
+
+          <div className="publishform__code_allow__wrapper">
+            <div
+              className={`publishform__code_allow ${
+                isCodeCopyAllowed ? "On" : "Off"
+              }`}
+              onClick={handleIsCodeCopyAllowedChange}
+            >
+              <span />
+            </div>
+
+            <span className="text">
+              {isCodeCopyAllowed
                 ? props.intl.formatMessage({
                     id: "ID_BUILDER_EDITPOP_CODE_OPEN",
                   })

@@ -4,11 +4,17 @@ import Achievement from "./Achievement";
 import { useState } from "react";
 
 export const fetchSaasRequest = (url, method, param) => {
-  var headers = {
+  // var headers = {
+  //   "Content-Type": "application/json; charset=utf-8",
+  //   Authorization:
+  //     "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Im5OaEpQRXNSTmtaZVJSZ1lRL2dvNVBLMnU1NEhNaDhkZkxGV0VNemNBYkk9IiwibmFtZSI6Ik1BS0VSUyIsInRva2VuRm9yIjoiRURVQ0FUT1IiLCJpYXQiOjE2OTQ2NTQyNTEsImV4cCI6MjU1ODU2Nzg1MX0.VKFEREcGwLbsGf9dOujdK8Se5hBxSwLCHpSH6zJuYGM",
+  // };
+  let headers = {
     "Content-Type": "application/json; charset=utf-8",
-    Authorization:
-      "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Im5OaEpQRXNSTmtaZVJSZ1lRL2dvNVBLMnU1NEhNaDhkZkxGV0VNemNBYkk9IiwibmFtZSI6Ik1BS0VSUyIsInRva2VuRm9yIjoiRURVQ0FUT1IiLCJpYXQiOjE2OTQ2NTQyNTEsImV4cCI6MjU1ODU2Nzg1MX0.VKFEREcGwLbsGf9dOujdK8Se5hBxSwLCHpSH6zJuYGM",
-  };
+  }
+  if (localStorage.getItem("makersToken")) {
+    headers["Authorization"] = `Bearer ${localStorage.getItem("makersToken")}`;
+  }
 
   const requestInfo = {
     method: method,

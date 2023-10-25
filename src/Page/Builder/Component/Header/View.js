@@ -49,7 +49,7 @@ export default function (props) {
           {pageType !== "ocp" && pageType !== "wizlive" && (
             <div
               className="HeaderProjectItem"
-              onClick={() => (window.location.href = "/builder")}
+              onClick={() => (window.location.href = "/")}
               data-tip={intl.formatMessage({
                 id: "ID_TOOLTIP_PROJECT_MANAGEMENT",
               })}

@@ -148,6 +148,8 @@
 }
 
 .bottom__time {
+  display: flex;
+  justify-content: space-between;
   font-size: 12px;
   letter-spacing: -0.22px;
   color: #afafaf;

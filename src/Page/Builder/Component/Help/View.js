@@ -122,7 +122,7 @@ const MainModal = props => {
   } = props;
   return (
     <div className={`help_mainModal ${animOn ? "help_mainModal-anim" : ""}`}>
-      <img className={`help_mainModal_img ${currentStep.display === "end" ? "help_mainModal_img_end" : "" }` } src={currentStep.display === "start" ? helpMainImg : helpEndImg } alt="helpMainImg" />
+      {/* <img className={`help_mainModal_img ${currentStep.display === "end" ? "help_mainModal_img_end" : "" }` } src={currentStep.display === "start" ? helpMainImg : helpEndImg } alt="helpMainImg" /> */}
       <div className="help_mainModal_frame">
         <div className="help_mainModal_content">
           <div className="help_mainModal_title">{title}</div>

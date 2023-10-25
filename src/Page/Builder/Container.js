@@ -146,13 +146,13 @@ class Container extends Component {
       }
 
       switch (pageType) {
-        case PAGETYPE.BUILDER:
-          // this.loadWizlab();
-          this.loadSaas();
-          break;
+        // case PAGETYPE.BUILDER:
+        //   // this.loadWizlab();
+        //   this.loadSaas();
+        //   break;
 
         default:
-          this.loadWizlab();
+          this.loadSaas();
           break;
       }
     } catch (err) {
@@ -380,7 +380,7 @@ class Container extends Component {
   };
 
   setBrowserTitle = (title) => {
-    document.title = `Astro Coding Go!`;
+    document.title = `SAAS`;
     if (title) document.title += ` - ${title}`;
   };
 

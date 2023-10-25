@@ -56,7 +56,8 @@ class Container extends Component {
     let getNewProjectData = await getNewProject.json();
     let newProjectId = getNewProjectData.data.projectInfo.id;
 
-    let pageURL = `/${PAGETYPE.BUILDER}/${newProjectId}`;
+    // let pageURL = `/${PAGETYPE.BUILDER}/${newProjectId}`;
+    let pageURL = `/${newProjectId}`;
 
     window.history.replaceState({}, "", pageURL);
     window.location.reload();

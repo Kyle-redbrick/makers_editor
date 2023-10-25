@@ -67,7 +67,8 @@ class Container extends Component {
   onClickProject = (id) => {
     if (!id) return;
     this.props.history.replace({
-      pathname: `/${PAGETYPE.BUILDER}/${id}`,
+      pathname: `/${id}`,
+      // pathname: `/${PAGETYPE.BUILDER}/${id}`,
     });
     window.location.reload();
   };

@@ -169,6 +169,7 @@ const ProjectItem = (props) => {
         <div className="bottom__time">
           {project.updatedAt &&
             project.updatedAt.split("T")[0].replaceAll("-", ".")}
+            {type === "published" && <div>HI</div>}
         </div>
       </div>
       <div
