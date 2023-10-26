@@ -13,7 +13,6 @@ import { SubscribeManager } from "./Common/Util/Subscribe";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-
 const Builder = lazy(() => import("./Page/Builder"));
 const DreamEditor = lazy(() => import("./Page/DreamEditor"));
 
@@ -63,6 +62,10 @@ const App = () => {
               "/:pId",
               "/builder",
               "/builder/:pId",
+              "/dreamclass/:id",
+              "/dreamclass/:id/:email",
+              "/class/:id",
+              "/class/:id/:email",
             ]}
             render={() => <HandleQueryString Component={Builder} />}
           />

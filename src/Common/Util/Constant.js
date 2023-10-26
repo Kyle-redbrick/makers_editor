@@ -291,6 +291,7 @@ export const PAGETYPE = {
   TUTORIAL: "tutorial",
   QNA_READONLY: "qna_readonly",
   DREAMCLASS: "dreamclass",
+  CLASS: "class",
   MONITOR_1V4: "monitor_1v4",
 };
 

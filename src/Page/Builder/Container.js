@@ -88,31 +88,6 @@ class Container extends Component {
       saasProjectList: [],
     };
 
-    switch (this.state.pageType) {
-      case PAGETYPE.WIZLIVE:
-        this.state.reservationId = null;
-        this.state.roomId = null;
-        this.state.isTutor = null;
-        this.state.studentEmail = null;
-        this.state.tutorEmail = null;
-        this.state.isFreeTrial = null;
-        break;
-      case PAGETYPE.WIZLIVE_1V4:
-      case PAGETYPE.MONITOR_1V4:
-        this.state.reservationId = null;
-        this.state.roomId = null;
-        this.state.isTutor = null;
-        this.state.studentEmail = null;
-        this.state.tutorEmail = null;
-        this.state.isFreeTrial = null;
-        break;
-      case PAGETYPE.RECORD_PLAYER:
-        this.state.reservationId = this.state.params.reservationId;
-        break;
-      default:
-        break;
-    }
-
     this.isIE = detectIE();
   }
 
@@ -150,6 +125,23 @@ class Container extends Component {
         //   // this.loadWizlab();
         //   this.loadSaas();
         //   break;
+        case PAGETYPE.CLASS:
+          this.setState({
+            isLoading: false,
+            popupStates: {
+              video: false,
+              snippet: false,
+              api: false,
+              chat: false,
+              property: false,
+              spriteBox: false,
+              preview: false,
+              soundBox: false,
+              scene: false,
+              animation: false,
+              qna: false,
+            },
+          });
 
         default:
           this.loadSaas();

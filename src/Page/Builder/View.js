@@ -107,7 +107,7 @@ export default function (props) {
       </div>
     );
   } else {
-    if (pageType === PAGETYPE.DREAMCLASS) {
+    if (pageType === PAGETYPE.CLASS) {
       return <DreamBuilder {...props} />;
     } else if (isOCPPage(pageType)) {
       return <OCPView {...props} />;
