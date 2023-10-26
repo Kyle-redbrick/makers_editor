@@ -59,6 +59,24 @@ function View(props) {
                   <div className="bottom__time">
                     {item.updatedAt &&
                       item.updatedAt.split("T")[0].replaceAll("-", ".")}
+                    <div className="code__allow">
+                      {item.isVisible ? <p>공개</p> : <p>비공개</p>}
+                      {
+                        <div className="publishform__code_allow__wrapper">
+                          <div
+                            className={`publishform__code_allow ${
+                              item.isVisible ? "On" : "Off"
+                            }`}
+                            onClick={(event) => {
+                              // event.stopPropagation();
+                              // onClickCodeAllow();
+                            }}
+                          >
+                            <span />
+                          </div>
+                        </div>
+                      }
+                    </div>
                   </div>
                 </div>
                 <div
