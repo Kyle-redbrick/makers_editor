@@ -53,7 +53,7 @@ class Container extends Component {
   async loadDevelopingProject(pId) {
     let project = await request
       .getDevelopingProject({ pId })
-      .then(res => res.json());
+      .then((res) => res.json());
     if (!project) {
       project = await this.createDevelopingProject(pId);
     }
@@ -67,7 +67,7 @@ class Container extends Component {
     const params = { pId, email, name, type, templateId };
     const project = await request
       .postDevelopingProject(params)
-      .then(res => res.json());
+      .then((res) => res.json());
     return project;
   }
   getTemplateIdFromUrlParams() {
@@ -77,7 +77,7 @@ class Container extends Component {
   async loadTemplateProject(templateId) {
     const templateProject = await request
       .getDefaultTemplateProject({ id: templateId })
-      .then(res => res.json());
+      .then((res) => res.json());
     return templateProject;
   }
   setProject(project) {
@@ -88,8 +88,8 @@ class Container extends Component {
     this.setState({ isLoading: false });
     // });
   }
-  setBrowserTitle = title => {
-    document.title = `Astro Coding Go!`;
+  setBrowserTitle = (title) => {
+    document.title = `SAAS`;
     if (title) document.title += ` - ${title}`;
   };
   replaceToBuilderMain(shouldAlert = false) {
@@ -106,7 +106,6 @@ class Container extends Component {
   }
 }
 
-export default connect(
-  state => ({ email: state.userinfo.email }),
-  { setProject: projectActions.setProject }
-)(withRouter(Container));
+export default connect((state) => ({ email: state.userinfo.email }), {
+  setProject: projectActions.setProject,
+})(withRouter(Container));
