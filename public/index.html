@@ -11,7 +11,7 @@
     />
     <meta name="theme-color" content="#000000" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Astro Coding Go!" />
+    <meta property="og:title" content="SAAS" />
     <meta
       property="og:description"
       content="Learn to Code with Go Astro Boy Go! Astro Coding Go! (ACG) is a K-12 coding education platform aligned to CSTA standards"
@@ -54,13 +54,13 @@
     <!-- Event snippet for 기타 conversion page -->
     <script>
       gtag("event", "conversion", {
-        send_to: "AW-623322625/3VtBCPW3v9wBEIHMnKkC"
+        send_to: "AW-623322625/3VtBCPW3v9wBEIHMnKkC",
       });
     </script>
 
     <!-- Google Tag Manager -->
     <script>
-      (function(w, d, s, l, i) {
+      (function (w, d, s, l, i) {
         w[l] = w[l] || [];
         w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
         var f = d.getElementsByTagName(s)[0],
@@ -81,7 +81,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/url-search-params/1.1.0/url-search-params.js"></script>
     <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=default,Array.prototype.find,Array.prototype.findIndex"></script>
-    
+
     <!-- Kakao share -->
     <script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
     <script>
@@ -89,22 +89,26 @@
     </script>
 
     <!-- Facebook share -->
-    <script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
+    <script
+      async
+      defer
+      src="https://connect.facebook.net/en_US/sdk.js"
+    ></script>
     <script>
-      window.fbAsyncInit = function() {
+      window.fbAsyncInit = function () {
         FB.init({
           appId: "330485461262524",
           autoLogAppEvents: true,
           xfbml: true,
-          version: "v8.0"
+          version: "v8.0",
         });
       };
     </script>
 
     <!-- play audio widthout user interaction-->
     <audio id="dream-python-bgm">
-      <source src="" type="audio/mpeg">
-   </audio>
+      <source src="" type="audio/mpeg" />
+    </audio>
 
     <script
       type="text/javascript"
@@ -135,11 +139,11 @@
         }
       }
       setViewPortSize();
-      window.onload = function() {
+      window.onload = function () {
         setViewPortSize();
         // alert("onload");
       };
-      window.onresize = function() {
+      window.onresize = function () {
         setViewPortSize();
         // alert("onresize" + document.documentElement.clientWidth);
       };
@@ -147,17 +151,17 @@
       if (!Array.prototype.includes) {
         Object.defineProperty(Array.prototype, "includes", {
           enumerable: false,
-          value: function(obj) {
-            var newArr = this.filter(function(el) {
+          value: function (obj) {
+            var newArr = this.filter(function (el) {
               return el == obj;
             });
             return newArr.length > 0;
-          }
+          },
         });
       }
       if (!Array.prototype.find) {
         Object.defineProperty(Array.prototype, "find", {
-          value: function(predicate) {
+          value: function (predicate) {
             // 1. Let O be ? ToObject(this value).
             if (this == null) {
               throw new TypeError('"this" is null or not defined');
@@ -189,7 +193,7 @@
 
             // 7. Return undefined.
             return undefined;
-          }
+          },
         });
       }
     </script>
@@ -209,7 +213,7 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>Astro Coding Go!</title>
+    <title>SAAS</title>
   </head>
   <script src="%PUBLIC_URL%/rollbar.js"></script>
   <script type="text/javascript">
@@ -240,7 +244,7 @@
       );
     }
   </script>
-  
+
   <body>
     <noscript> You need to enable JavaScript to run this app. </noscript>
     <div id="alert"></div>
@@ -261,7 +265,7 @@
         src="https://www.googletagmanager.com/ns.html?id=GTM-52KRVKL"
         height="0"
         width="0"
-        style="display: none; visibility: hidden;"
+        style="display: none; visibility: hidden"
       ></iframe
     ></noscript>
     <!-- End Google Tag Manager (noscript) -->

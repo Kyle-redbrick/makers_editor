@@ -235,7 +235,7 @@ class Container extends Component {
   };
 
   loadWizlab = () => {
-    document.title = "Astro Coding Go!";
+    document.title = "SAAS";
     const { pId } = this.state.params;
     if (this.props.email) {
       if (pId) {
