@@ -36,11 +36,20 @@ class Container extends Component {
     }
   }
   componentDidMount = async () => {
-    const pId = window.location.pathname.slice(1)
-    request.getSaasDevelopingProject(pId).then(res => res.json()).then(json=>{
-      const {title, icon, isVisible} = json.data.projectInfo
-      this.setState({name: title, icon: icon, isCopyAllowed: isVisible})
-    })
+    const pId = window.location.pathname.slice(1);
+    request
+      .getSaasDevelopingProject(pId)
+      .then((res) => res.json())
+      .then((json) => {
+        const { title, icon, isVisible, isCodeCopiable } =
+          json.data.projectInfo;
+        this.setState({
+          name: title,
+          icon: icon,
+          isCopyAllowed: isVisible,
+          isCodeCopyAllowed: isCodeCopiable,
+        });
+      });
 
     const popup = document
       .querySelector(".publishpopup")
@@ -85,8 +94,11 @@ class Container extends Component {
       category = "Game",
       tags,
       challengeEventAttend,
+      isCodeCopyAllowed,
     } = this.state;
-    const pId = window.location.pathname.split("/")[2] || window.location.pathname.slice(1);
+    const pId =
+      window.location.pathname.split("/")[2] ||
+      window.location.pathname.slice(1);
     let state;
     if (this.props.scene) {
       state = {
@@ -108,27 +120,28 @@ class Container extends Component {
         state: state,
         isVisible: isCopyAllowed,
         icon: this.state.icon,
+        isCodeCopiable: isCodeCopyAllowed,
       };
     } else if (name) {
       params = {
         title: name,
         state: state,
         isVisible: isCopyAllowed,
+        isCodeCopiable: isCodeCopyAllowed,
       };
     } else if (this.state.icon) {
       params = {
         state: state,
         isVisible: isCopyAllowed,
         icon: this.state.icon,
+        isCodeCopiable: isCodeCopyAllowed,
       };
     } else {
       params = {
         state: state,
         isVisible: isCopyAllowed,
+        isCodeCopiable: isCodeCopyAllowed,
       };
-    }
-    if (description) {
-      params.description = description;
     }
     try {
       request
@@ -172,7 +185,6 @@ class Container extends Component {
         }
       );
     }
-
   };
   handleCloseBtn = () => {
     // 퍼블리싱 팝업 종료
@@ -184,18 +196,19 @@ class Container extends Component {
   handleFileInput = async (e) => {
     const selectedFile = e.target.files[0];
     if (selectedFile) {
-      let reader = new FileReader()
+      let reader = new FileReader();
       reader.onload = () => {
-        this.setState({iconUpdated: reader.result})
-      }
-      reader.readAsDataURL(e.target.files[0])
+        this.setState({ iconUpdated: reader.result });
+      };
+      reader.readAsDataURL(e.target.files[0]);
     }
 
     if (!selectedFile) return;
 
     try {
       const uploadResponse = await request.projectIconUpload(
-        window.location.pathname.split("/")[2] || window.location.pathname.slice(1)
+        window.location.pathname.split("/")[2] ||
+          window.location.pathname.slice(1)
       );
       const uploadData = await uploadResponse.json();
       const putUrl = uploadData.data.uploadUrl;

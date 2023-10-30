@@ -133,6 +133,12 @@ class Container extends Component {
     }));
   };
 
+  onClickCodeCopy = async (params, pId) => {
+    const res = await request.updateSaasProject({ params, pId });
+    const codeCopyResult = await res.json();
+    console.log("codeCopyResult", codeCopyResult);
+  };
+
   //TODO : have to refactoring
   setFilteringData = (filteredType = [], keyword = "") => {
     this.setState(
@@ -160,6 +166,7 @@ class Container extends Component {
       handleProjectLive,
       setFilteringData,
       fetchMyPublisheds,
+      onClickCodeCopy,
     } = this;
     const { myPublisheds } = this.state;
     return (
@@ -178,6 +185,7 @@ class Container extends Component {
         onClickDetailBtn={onClickDetailBtn}
         selectProject={selectProject}
         fetchMyPublisheds={fetchMyPublisheds}
+        onClickCodeCopy={onClickCodeCopy}
       />
     );
   }

@@ -28,6 +28,7 @@ function View(props) {
     setProjectName,
     intl,
     fetchMyPublished,
+    onClickCodeCopy,
   } = props;
 
   return (
@@ -115,6 +116,7 @@ function View(props) {
                   handleDelete={handleDelete}
                   type="published"
                   intl={intl}
+                  onClickCodeCopy={onClickCodeCopy}
                 />
               );
             })
@@ -130,8 +132,6 @@ function View(props) {
 }
 
 const ProjectItem = (props) => {
-  const [codeAllow, setCodeAllow] = useState(false)
-  const onClickCodeAllow = () => setCodeAllow(!codeAllow)
   const {
     project,
     onClickProject,
@@ -147,8 +147,10 @@ const ProjectItem = (props) => {
     type,
     setProjectName,
     intl,
+    onClickCodeCopy,
   } = props;
-
+  const [isCodeCopiable, setIsCodeCopiable] = useState(project.isCodeCopiable);
+  const onClickCodeAllow = () => setIsCodeCopiable(!isCodeCopiable);
   return (
     <div className="projectItem">
       <div
@@ -171,23 +173,33 @@ const ProjectItem = (props) => {
         <div className="bottom__time">
           {project.updatedAt &&
             project.updatedAt.split("T")[0].replaceAll("-", ".")}
-            <div className="code__allow">
-            {type === "published" ? (codeAllow? <p>공개</p> : <p>비공개</p>) : undefined}
-            {type === "published" &&           
+          <div className="code__allow">
+            {type === "published" ? (
+              isCodeCopiable ? (
+                <p>공개</p>
+              ) : (
+                <p>비공개</p>
+              )
+            ) : undefined}
+            {type === "published" && (
               <div className="publishform__code_allow__wrapper">
                 <div
                   className={`publishform__code_allow ${
-                    codeAllow ? "On" : "Off"
+                    isCodeCopiable ? "On" : "Off"
                   }`}
-                  onClick={event => {
+                  onClick={(event) => {
                     event.stopPropagation();
                     onClickCodeAllow();
-                  }
-                }>
+                    onClickCodeCopy(
+                      { isCodeCopiable: !isCodeCopiable },
+                      project.id
+                    );
+                  }}
+                >
                   <span />
                 </div>
               </div>
-            }
+            )}
           </div>
         </div>
       </div>

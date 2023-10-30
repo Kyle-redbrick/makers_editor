@@ -73,6 +73,12 @@ class Container extends Component {
     window.location.reload();
   };
 
+  onClickCodeCopy = async (params, pId) => {
+    const res = await request.updateSaasProject({ params, pId });
+    const codeCopyResult = await res.json();
+    console.log("codeCopyResult", codeCopyResult);
+  };
+
   onClickPublishProject = (pId) => {
     if (!pId) return;
     this.props.history.push(`?pId=${pId}`);
@@ -122,6 +128,7 @@ class Container extends Component {
       fetchMyProjects,
       setProjectName,
       fetchMyPublished,
+      onClickCodeCopy,
     } = this;
     return (
       <View
@@ -149,6 +156,7 @@ class Container extends Component {
         fetchMyProjects={fetchMyProjects}
         fetchMyPublished={fetchMyPublished}
         setProjectName={setProjectName}
+        onClickCodeCopy={onClickCodeCopy}
       />
     );
   }
