@@ -31,7 +31,7 @@ function View(props) {
   } = props;
 
   const projectItem = (item, index) => {
-    const [isCodeCopiable, setIsCodeCopiable] = useState(item.isCodeCopiable);
+    // const [isCodeCopiable, setIsCodeCopiable] = useState(item.isCodeCopiable);
     return (
       <React.Fragment key={index}>
         <div
@@ -49,7 +49,7 @@ function View(props) {
             <div className="bottom__time">
               {item.updatedAt &&
                 item.updatedAt.split("T")[0].replaceAll("-", ".")}
-              <div className="code__allow">
+              {/* <div className="code__allow">
                 {isCodeCopiable ? <p>공개</p> : <p>비공개</p>}
                 {
                   <div className="publishform__code_allow__wrapper">
@@ -69,7 +69,7 @@ function View(props) {
                     </div>
                   </div>
                 }
-              </div>
+              </div> */}
             </div>
           </div>
           <div

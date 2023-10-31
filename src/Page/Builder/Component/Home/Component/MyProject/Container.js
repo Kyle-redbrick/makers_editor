@@ -23,7 +23,6 @@ class Container extends Component {
   };
 
   fetchMyProjects = async () => {
-    console.log("fetchMyProjects 실행");
     let { currentPage } = this.state;
     let pageOffset = Math.ceil((currentPage - 1) * this.pageSize);
     let params = {
@@ -36,12 +35,16 @@ class Container extends Component {
         params.keyword = this.state.keyword;
         let res = await request.getMySaasProject(params);
         let myProject = await res.json();
-        this.setState({ myProjects: myProject.data.projectList });
+        this.setState((prev) => ({
+          myProjects: prev.myProjects.concat(myProject.data.projectList),
+        }));
         return myProject.data.projectList;
       } else {
         let res = await request.getMySaasProject(params);
         let myProject = await res.json();
-        this.setState({ myProjects: myProject.data.projectList });
+        this.setState((prev) => ({
+          myProjects: prev.myProjects.concat(myProject.data.projectList),
+        }));
         return myProject.data.projectList;
       }
     } catch (error) {
@@ -50,25 +53,6 @@ class Container extends Component {
     }
   };
 
-  // fetchMyProjects = async () => {
-  //   let { currentPage, dataType, keyword } = this.state;
-  //   let pageOffset = Math.ceil((currentPage - 1) * this.pageSize);
-  //   let params = {
-  //     type: dataType,
-  //     email: this.props.email,
-  //     offset: pageOffset,
-  //     limit: this.isFirstFetchData ? 60 : this.pageSize,
-  //     keyword
-  //   };
-  //   try {
-  //     let res = await request.getDevelopingProjectsByType(params);
-  //     let myProjects = await res.json();
-  //     return myProjects.rows;
-  //   } catch (error) {
-  //     console.log(error);
-  //     return [];
-  //   }
-  // };
   isFirstFetchData = () => {
     let { currentPage } = this.state;
     return currentPage === 1;
