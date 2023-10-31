@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
 import "./index.scss";
-import { useState } from "react";
 import FilteringHeader from "../FilteringHeader";
 
 import projectDetailIcon from "../../../../../../Image/icon-more.svg";
@@ -30,10 +29,9 @@ function View(props) {
     onClickCodeCopy,
   } = props;
 
-  const projectItem = (item, index) => {
-    // const [isCodeCopiable, setIsCodeCopiable] = useState(item.isCodeCopiable);
+  const projectItem = (item) => {
     return (
-      <React.Fragment key={index}>
+      <React.Fragment key={item.id}>
         <div
           className={`projectItem projectItem__${item.live ? "" : "unactive"}`}
         >
@@ -49,27 +47,6 @@ function View(props) {
             <div className="bottom__time">
               {item.updatedAt &&
                 item.updatedAt.split("T")[0].replaceAll("-", ".")}
-              {/* <div className="code__allow">
-                {isCodeCopiable ? <p>공개</p> : <p>비공개</p>}
-                {
-                  <div className="publishform__code_allow__wrapper">
-                    <div
-                      className={`publishform__code_allow ${
-                        isCodeCopiable ? "On" : "Off"
-                      }`}
-                      onClick={(event) => {
-                        setIsCodeCopiable(!isCodeCopiable);
-                        onClickCodeCopy(
-                          { isCodeCopiable: !isCodeCopiable },
-                          item.id
-                        );
-                      }}
-                    >
-                      <span />
-                    </div>
-                  </div>
-                }
-              </div> */}
             </div>
           </div>
           <div
@@ -109,8 +86,8 @@ function View(props) {
       <FilteringHeader setFilteringData={setFilteringData} />
       <div className="bottom__projectItems">
         {myPublisheds.length ? (
-          myPublisheds.map((item, index) => {
-            return projectItem(item, index);
+          myPublisheds.map((item) => {
+            return projectItem(item);
           })
         ) : (
           <div className="project__Items no__Items">
