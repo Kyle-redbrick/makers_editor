@@ -1,5 +1,5 @@
 import React from "react";
-import QueryString from "query-string";
+import QueryString, { stringify } from "query-string";
 import { withRouter } from "react-router-dom";
 import { URL } from "../../Util/Constant.js";
 import { connect } from "react-redux";
@@ -31,10 +31,24 @@ class UserInfoContainer extends React.Component {
   }
 
   componentDidMount = () => {
-    const makersToken = this.getMakersToken()
+    const makersToken = this.getMakersToken();
 
     if (makersToken) {
-      localStorage.setItem("makersToken", makersToken)
+      localStorage.setItem("makersToken", makersToken);
+
+      const userInfo = () => {
+        request
+          .getUserInfo()
+          .then((res) => res.json())
+          .then((json) => {
+            localStorage.setItem(
+              "userInfo",
+              JSON.stringify(json.data.userInfo)
+            );
+          });
+      };
+
+      userInfo();
     }
     window.addEventListener("focus", this.handleWindowFocus);
     window.addEventListener("blur", this.handleWindowBlur);
@@ -48,10 +62,10 @@ class UserInfoContainer extends React.Component {
         this.setState({ mounted: true });
       }
     }
-    const searchParams = new URLSearchParams(this.props.location.search)
-    searchParams.delete("makersToken")
-    const newUrl = `${this.props.location.pathname}`
-    this.props.history.push(newUrl)
+    const searchParams = new URLSearchParams(this.props.location.search);
+    searchParams.delete("makersToken");
+    const newUrl = `${this.props.location.pathname}`;
+    this.props.history.push(newUrl);
   };
 
   // checkUnreadBingoEvents = () => {
@@ -73,7 +87,7 @@ class UserInfoContainer extends React.Component {
     window.removeEventListener("message", this.onMessage);
   }
 
-  onMessage = e => {
+  onMessage = (e) => {
     // console.log("UserInfoContainer onMessage", e);
     if (e.origin === URL.WIZLIVE || e.origin === URL.WIZLIVE_WWW) {
       if (e.data.type === "ready") {
@@ -96,9 +110,10 @@ class UserInfoContainer extends React.Component {
     }
   };
 
-  getMakersToken = () => new URLSearchParams(this.props.location.search).get("makersToken")
+  getMakersToken = () =>
+    new URLSearchParams(this.props.location.search).get("makersToken");
 
-  handleLoginByToken = async e => {
+  handleLoginByToken = async (e) => {
     const token = localStorage.getItem("astroToken");
     // console.log("login by token", token);
     if (token) {
@@ -148,11 +163,11 @@ class UserInfoContainer extends React.Component {
     OcpToken.updateOcpToken();
   };
 
-  handleWindowBlur = e => {
+  handleWindowBlur = (e) => {
     this.windowFocused = false;
   };
 
-  handleWindowFocus = e => {
+  handleWindowFocus = (e) => {
     const isNeedUpdate = this.windowFocused === false;
     this.windowFocused = true;
     const token = localStorage.getItem("astroToken");
@@ -163,7 +178,7 @@ class UserInfoContainer extends React.Component {
         window.location.reload();
       } else {
         if (isNeedUpdate) {
-         // this.checkUnreadBingoEvents();
+          // this.checkUnreadBingoEvents();
         }
       }
     }
@@ -206,10 +221,10 @@ class UserInfoContainer extends React.Component {
 }
 
 export default connect(
-  state => ({
-    userinfo: state.userinfo
+  (state) => ({
+    userinfo: state.userinfo,
   }),
   {
-    updateUserInfo: action.updateUserInfo
+    updateUserInfo: action.updateUserInfo,
   }
 )(withRouter(UserInfoContainer));

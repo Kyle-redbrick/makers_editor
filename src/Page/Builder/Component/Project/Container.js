@@ -23,7 +23,7 @@ class Container extends Component {
       projectItemWidth: 180,
       lastItemIndex: 0, // for More Popup Position
 
-      isLoading: false
+      isLoading: false,
     };
     this.pageSize = 50;
     this.projectsRef = React.createRef();
@@ -34,13 +34,13 @@ class Container extends Component {
     this.getMyProjects({ currentPage: 1, keyword: "" });
     request
       .getTemplateProjects()
-      .then(res => res.json())
-      .then(json => {
+      .then((res) => res.json())
+      .then((json) => {
         this.setState({ templateProjects: json }, () => {
           this.loadTemplateByHome();
         });
       })
-      .catch(e => {
+      .catch((e) => {
         console.error(e);
       });
     this.onSizeChange();
@@ -64,11 +64,11 @@ class Container extends Component {
 
     this.setState({
       projectItemWidth,
-      lastItemIndex: itemCount
+      lastItemIndex: itemCount,
     });
   };
 
-  getMyProjects = props => {
+  getMyProjects = (props) => {
     if (!this.props.email) return;
     let { currentPage, keyword } = props;
     let pageOffset = Math.ceil((currentPage - 1) * this.pageSize);
@@ -79,23 +79,23 @@ class Container extends Component {
       email: this.props.email,
       offset: pageOffset,
       limit: limit,
-      keyword: keyword
+      keyword: keyword,
     };
     request
       .getDevelopingProjects(params)
-      .then(res => res.json())
-      .then(result => {
+      .then((res) => res.json())
+      .then((result) => {
         const { count, rows } = result;
-        this.setState(prev => {
+        this.setState((prev) => {
           return {
             myprojects: currentPage === 1 ? rows : prev.myprojects.concat(rows),
-            myprojectCnt: count
+            myprojectCnt: count,
           };
         });
       })
-      .catch(err => console.error(err));
+      .catch((err) => console.error(err));
   };
-  createNewProject = template => {
+  createNewProject = (template) => {
     const { email } = this.props;
     const is3dProject = template.type === "js3d";
     if (email) {
@@ -103,7 +103,7 @@ class Container extends Component {
       TrackingUtil.sendGAEvent({
         category: "Builder",
         action: `Create${isEmptyTemplete ? "New" : "Templete"}Project`,
-        label: isEmptyTemplete ? undefined : template.name
+        label: isEmptyTemplete ? undefined : template.name,
       });
       let pageURL = `/${
         is3dProject ? PAGETYPE.BUILDER3D : PAGETYPE.BUILDER
@@ -113,7 +113,7 @@ class Container extends Component {
       }
 
       this.props.history.replace({
-        pathname: pageURL
+        pathname: pageURL,
       });
       if (!is3dProject) window.location.reload();
     } else {
@@ -122,7 +122,7 @@ class Container extends Component {
       }?t=${template.id}`;
 
       this.props.history.replace({
-        pathname: pageURL
+        pathname: pageURL,
       });
       window.location.reload();
     }
@@ -132,23 +132,25 @@ class Container extends Component {
     const is3dProject = type === "js3d";
     TrackingUtil.sendGAEvent({
       category: "Builder",
-      action: `LoadProject`
+      action: `LoadProject`,
     });
     this.props.history.replace({
-      pathname: `/${is3dProject ? PAGETYPE.BUILDER3D : PAGETYPE.BUILDER}/${pId}`
+      pathname: `/${
+        is3dProject ? PAGETYPE.BUILDER3D : PAGETYPE.BUILDER
+      }/${pId}`,
     });
     if (!is3dProject) window.location.reload();
   };
 
   loadMore = () => {
     this.setState(
-      prev => {
+      (prev) => {
         return { currentPage: prev.currentPage + 1 };
       },
       () => {
         this.getMyProjects({
           currentPage: this.state.currentPage,
-          keyword: this.state.keyword
+          keyword: this.state.keyword,
         });
       }
     );
@@ -156,7 +158,7 @@ class Container extends Component {
 
   loadTemplateByHome = () => {
     if (this.templateId && this.state.templateProjects.length > 0) {
-      this.state.templateProjects.forEach(element => {
+      this.state.templateProjects.forEach((element) => {
         if (element.id === Number(this.templateId)) {
           this.createNewProject(element);
           localStorage.removeItem("templateId");
@@ -166,7 +168,7 @@ class Container extends Component {
     }
   };
 
-  handleKeywordChange = e => {
+  handleKeywordChange = (e) => {
     this.setState({ keyword: e.target.value, currentPage: 1 }, () => {
       if (this.searchTimer) {
         clearTimeout(this.searchTimer);
@@ -174,12 +176,12 @@ class Container extends Component {
       this.searchTimer = setTimeout(() => {
         TrackingUtil.sendGAEvent({
           category: "Builder",
-          action: `SearchProject`
+          action: `SearchProject`,
         });
 
         this.getMyProjects({
           currentPage: this.state.currentPage,
-          keyword: this.state.keyword
+          keyword: this.state.keyword,
         });
       }, 500);
     });
@@ -195,11 +197,11 @@ class Container extends Component {
     }
   };
 
-  handleCopy = pId => {
+  handleCopy = (pId) => {
     TrackingUtil.sendGAEvent({
       category: "Builder",
       action: `ProjectActions`,
-      label: "Copy"
+      label: "Copy",
     });
     showPopUp(
       <PopUp.TwoButton
@@ -216,14 +218,14 @@ class Container extends Component {
     TrackingUtil.sendGAEvent({
       category: "Builder",
       action: `ProjectActions`,
-      label: "Edit"
+      label: "Edit",
     });
     showPopUp(
       <PopUp.OneInput
         titleId="ID_PROJECT_POPUP_EDIT_TITLE"
         defaultInput={name}
         buttonNameId="ID_PROJECT_POPUP_EDIT_OK"
-        buttonAction={newVal => {
+        buttonAction={(newVal) => {
           this.editProject(pId, newVal);
         }}
       />,
@@ -234,7 +236,7 @@ class Container extends Component {
     TrackingUtil.sendGAEvent({
       category: "Builder",
       action: `ProjectActions`,
-      label: "Remove"
+      label: "Remove",
     });
     showPopUp(
       <PopUp.TwoButton
@@ -249,76 +251,70 @@ class Container extends Component {
     );
   };
 
-  deleteProject = pId => {
+  deleteProject = (pId) => {
     request
       .deleteDevelopingProject({ pId, email: this.props.email })
-      .then(res => res.json())
-      .then(json => {
+      .then((res) => res.json())
+      .then((json) => {
         this.getMyProjects({
           currentPage: this.state.currentPage,
-          keyword: this.state.keyword
+          keyword: this.state.keyword,
         });
       })
-      .catch(e => {
+      .catch((e) => {
         console.error(e);
       });
   };
 
-  copyProject = async pId => {
+  copyProject = async (pId) => {
     let project = await request
       .getDevelopingProject({ pId })
-      .then(res => res.json());
+      .then((res) => res.json());
     let param = {
       pId: generatePID(this.props.email),
       email: project.email,
-      icon: project.icon,
+      thumbnailURL: project.thumbnailURL,
       name: `${project.name} copy`,
       state: project.state,
       url: project.url,
-      useCustomIcon: project.useCustomIcon
+      useCustomIcon: project.useCustomIcon,
     };
 
     request
       .copyDevelopingProject({ param })
-      .then(res => res.json())
-      .then(json => {
+      .then((res) => res.json())
+      .then((json) => {
         this.getMyProjects({
           currentPage: this.state.currentPage,
-          keyword: this.state.keyword
+          keyword: this.state.keyword,
         });
       })
-      .catch(e => console.error(e));
+      .catch((e) => console.error(e));
   };
 
   editProject = (pId, newName) => {
     request
       .updateDevelopingProject({ pId, name: newName })
-      .then(res => res.json)
-      .then(json => {
+      .then((res) => res.json)
+      .then((json) => {
         this.getMyProjects({
           currentPage: this.state.currentPage,
-          keyword: this.state.keyword
+          keyword: this.state.keyword,
         });
       })
-      .catch(e => console.error(e));
+      .catch((e) => console.error(e));
   };
 
   render() {
-    const {
-      canClose,
-      closeProjectPopup,
-      intl,
-      userId,
-      email,
-      pageType
-    } = this.props;
+    const { canClose, closeProjectPopup, intl, userId, email, pageType } =
+      this.props;
     const {
       myprojects,
       myprojectCnt,
       templateProjects,
       keyword,
       projectItemWidth,
-      lastItemIndex
+      lastItemIndex,
     } = this.state;
     const {
       getMyProjects,
@@ -330,7 +326,7 @@ class Container extends Component {
       loadProject,
       handleCopy,
       handleEdit,
-      handleRemove
+      handleRemove,
     } = this;
     return (
       <View
@@ -362,6 +358,6 @@ class Container extends Component {
 }
 
 export default connect(
-  state => ({ email: state.userinfo.email, userId: state.userinfo.id }),
+  (state) => ({ email: state.userinfo.email, userId: state.userinfo.id }),
   {}
 )(injectIntl(withRouter(Container)));

@@ -45,7 +45,11 @@ function View(props) {
                     onClickProject(item.id);
                   }}
                 >
-                  <img className="top__img" src={item.icon} alt="icon" />
+                  <img
+                    className="top__img"
+                    src={item.thumbnailURL}
+                    alt="icon"
+                  />
                 </div>
 
                 <div

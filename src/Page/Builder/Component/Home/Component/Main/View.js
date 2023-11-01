@@ -160,7 +160,7 @@ const ProjectItem = (props) => {
           onClickProject(project.id);
         }}
       >
-        <img className="top__img" src={project.icon} alt="project" />
+        <img className="top__img" src={project.thumbnailURL} alt="project" />
       </div>
       <div
         className="projectItem__bottom"

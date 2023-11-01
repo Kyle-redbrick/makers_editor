@@ -11,7 +11,7 @@ export const fetchSaasRequest = (url, method, param) => {
   // };
   let headers = {
     "Content-Type": "application/json; charset=utf-8",
-  }
+  };
   if (localStorage.getItem("makersToken")) {
     headers["Authorization"] = `Bearer ${localStorage.getItem("makersToken")}`;
   }
@@ -37,11 +37,7 @@ export const fetchSaasRequest = (url, method, param) => {
 /** SAAS */
 export const copySaasProject = (pId) => {
   const param = { projectId: pId };
-  return fetchSaasRequest(
-    URL.API_SAAS_SERVER + `project/educator/copy`,
-    "POST",
-    param
-  );
+  return fetchSaasRequest(URL.API_SAAS_SERVER + `project/copy`, "POST", param);
 };
 
 export const tagUpdate = (lessonId, tags) => {
@@ -54,14 +50,16 @@ export const tagUpdate = (lessonId, tags) => {
 
 export const projectIconUpload = (pId) => {
   return fetchSaasRequest(
-    URL.API_SAAS_SERVER + `project/educator/icon/upload?projectId=${pId}`,
+    // URL.API_SAAS_SERVER + `project/educator/icon/upload?projectId=${pId}`,
+    URL.API_SAAS_SERVER +
+      `project/thumbnail/upload?projectId=${pId}&fileType=jpg&mimeType=image/jpeg`,
     "GET"
   );
 };
 
 export const updateSaasProject = ({ params, pId }) => {
   return fetchSaasRequest(
-    URL.API_SAAS_SERVER + `project/educator?projectId=${pId}`,
+    URL.API_SAAS_SERVER + `project?projectId=${pId}`,
     "PUT",
     params
   );
@@ -69,7 +67,7 @@ export const updateSaasProject = ({ params, pId }) => {
 
 export const deleteSaasProject = (id) => {
   return fetchSaasRequest(
-    URL.API_SAAS_SERVER + `project/educator?projectId=${id}`,
+    URL.API_SAAS_SERVER + `project?projectId=${id}`,
     "DELETE"
   );
 };
@@ -78,9 +76,11 @@ export const createNewProject = (props) => {
   const param = {
     title: props.title ? props.title : "testTemplate",
     useCustomIcon: 1, //or 0
-    icon: "https://wizschool-images.s3.ap-northeast-2.amazonaws.com/ff78050de9c8f0715750c4590cbf9640.jpg",
+    thumbnailURL:
+      "https://wizschool-images.s3.ap-northeast-2.amazonaws.com/ff78050de9c8f0715750c4590cbf9640.jpg",
     url: "",
     language: props.language ? props.language : "JS", //or OOBC
+    locale: "ko",
     state:
       props.editorFormat === "JS"
         ? {
@@ -234,11 +234,7 @@ export const createNewProject = (props) => {
           },
   };
 
-  return fetchSaasRequest(
-    URL.API_SAAS_SERVER + `project/educator`,
-    "POST",
-    param
-  );
+  return fetchSaasRequest(URL.API_SAAS_SERVER + `project`, "POST", param);
 };
 
 export const deleteCourse = (param) => {
@@ -351,13 +347,13 @@ export const getMySaasProject = (params) => {
   if (params.keyword) {
     return fetchSaasRequest(
       URL.API_SAAS_SERVER +
-        `project/educator/my/list?limit=${params.limit}&offset=${params.offset}&searchType=title&keyword=${params.keyword}`,
+        `project/my/list?limit=${params.limit}&offset=${params.offset}&searchType=title&keyword=${params.keyword}`,
       "GET"
     );
   } else {
     return fetchSaasRequest(
       URL.API_SAAS_SERVER +
-        `project/educator/my/list?limit=${params.limit}&offset=${params.offset}`,
+        `project/my/list?limit=${params.limit}&offset=${params.offset}`,
       "GET"
     );
   }
@@ -367,23 +363,31 @@ export const getMyPublishedSaasProject = (params) => {
   if (params.keyword) {
     return fetchSaasRequest(
       URL.API_SAAS_SERVER +
-        `project/educator/my/list/published?limit=${params.limit}&offset=${params.offset}&searchType=title&keyword=${params.keyword}`,
+        `project/my/list/published?limit=${params.limit}&offset=${params.offset}&searchType=title&keyword=${params.keyword}`,
       "GET"
     );
   } else {
     return fetchSaasRequest(
       URL.API_SAAS_SERVER +
-        `project/educator/my/list/published?limit=${params.limit}&offset=${params.offset}`,
+        `project/my/list/published?limit=${params.limit}&offset=${params.offset}`,
       "GET"
     );
   }
 };
 
 export const getSaasDevelopingProject = (pId) => {
+  const userInfo = JSON.parse(localStorage.getItem("userInfo"));
   return fetchSaasRequest(
-    URL.API_SAAS_SERVER + `project/educator/info?id=${pId}`,
+    URL.API_SAAS_SERVER +
+      `project/info?projectId=${pId}&projectType=${
+        userInfo.role || "EDUCATOR"
+      }`,
     "GET"
   );
+};
+
+export const getUserInfo = () => {
+  return fetchSaasRequest(URL.API_SAAS_SERVER + "user/info", "GET");
 };
 
 ///////////////////////////////////////////////////////////////////////////////

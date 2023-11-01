@@ -41,11 +41,11 @@ class Container extends Component {
       .getSaasDevelopingProject(pId)
       .then((res) => res.json())
       .then((json) => {
-        const { title, icon, isVisible, isCodeCopiable } =
+        const { title, thumbnailURL, isVisible, isCodeCopiable } =
           json.data.projectInfo;
         this.setState({
           name: title,
-          icon: icon,
+          icon: thumbnailURL,
           isCopyAllowed: isVisible,
           isCodeCopyAllowed: isCodeCopiable,
         });
@@ -119,7 +119,7 @@ class Container extends Component {
         title: name,
         state: state,
         isVisible: isCopyAllowed,
-        icon: this.state.icon,
+        thumbnailURL: this.state.icon,
         isCodeCopiable: isCodeCopyAllowed,
       };
     } else if (name) {
@@ -133,7 +133,7 @@ class Container extends Component {
       params = {
         state: state,
         isVisible: isCopyAllowed,
-        icon: this.state.icon,
+        thumbnailURL: this.state.icon,
         isCodeCopiable: isCodeCopyAllowed,
       };
     } else {
@@ -211,8 +211,9 @@ class Container extends Component {
           window.location.pathname.slice(1)
       );
       const uploadData = await uploadResponse.json();
-      const putUrl = uploadData.data.uploadUrl;
-      const temporaryDownloadUrl = uploadData.data.downloadUrl;
+      console.log("uploadData : ", uploadData);
+      const putUrl = uploadData.url.uploadUrl;
+      const downloadUrl = uploadData.url.downloadUrl;
       const putResponse = await fetch(putUrl, {
         method: "PUT",
         headers: {
@@ -221,10 +222,6 @@ class Container extends Component {
         },
         body: selectedFile,
       });
-
-      const downloadUrl =
-        "https://redbrick-makers.oss-ap-northeast-2.aliyuncs.com/" +
-        temporaryDownloadUrl;
 
       console.log("putResponse", putResponse);
       this.setState({ icon: downloadUrl });
