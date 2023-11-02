@@ -142,6 +142,7 @@ class Container extends Component {
               qna: false,
             },
           });
+          break;
 
         default:
           this.loadSaas();
