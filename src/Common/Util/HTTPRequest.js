@@ -35,6 +35,13 @@ export const fetchSaasRequest = (url, method, param) => {
 
 ///////////////////////////////////////////////////////////////////////////////
 /** SAAS */
+
+export const getMyLessonInfo = (progressId) => {
+  return fetchSaasRequest(
+    URL.API_SAAS_SERVER + `progress/myLesson?progressId=${progressId}`
+  );
+};
+
 export const copySaasProject = (pId) => {
   const param = { projectId: pId };
   return fetchSaasRequest(URL.API_SAAS_SERVER + `project/copy`, "POST", param);

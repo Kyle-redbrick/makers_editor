@@ -64,7 +64,9 @@ class UserInfoContainer extends React.Component {
     }
     const searchParams = new URLSearchParams(this.props.location.search);
     searchParams.delete("makersToken");
-    const newUrl = `${this.props.location.pathname}`;
+    const newUrl = searchParams
+      ? `${this.props.location.pathname + "?" + searchParams}`
+      : `${this.props.location.pathname}`;
     this.props.history.push(newUrl);
   };
 

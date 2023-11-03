@@ -16,12 +16,12 @@ import "./index.scss";
 function View(props) {
   return (
     <div className="Page--BUILDER dream">
-      {props.isTutorialShow && (
+      {/* {props.isTutorialShow && (
         <Tutorial
           project={props.project}
           hiddenTutorial={props.hiddenTutorial}
         />
-      )}
+      )} */}
       {props.isAstroBoyProject && (
         <VideoPopup
           src={"/astroboy_ep.34.mp4".toDreamclassS3URL()}

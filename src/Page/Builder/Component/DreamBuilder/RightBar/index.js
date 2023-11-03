@@ -8,12 +8,19 @@ import propertyImg from "../../../../../Image/builder/property.svg";
 import apiActiveImg from "../../../../../Image/builder/api-w.svg";
 import propertyActiveImg from "../../../../../Image/builder/property-w.svg";
 import { EDITORMODE } from "../../../../../Common/Util/Constant";
-import "./index.scss"
+import "./index.scss";
 
-function RightBar({popupStates, showTutorial, handleSelectTab, intl, editorMode, isPropertyTabHidden }) {
+function RightBar({
+  popupStates,
+  showTutorial,
+  handleSelectTab,
+  intl,
+  editorMode,
+  isPropertyTabHidden,
+}) {
   return (
     <div className={`RightBar RightBar_${editorMode}`}>
-      {editorMode !== EDITORMODE.BLOCK && 
+      {editorMode !== EDITORMODE.BLOCK && (
         <div
           onClick={() => handleSelectTab("api")}
           className={`btn ${popupStates.api && "btnActive"}`}
@@ -21,23 +28,28 @@ function RightBar({popupStates, showTutorial, handleSelectTab, intl, editorMode,
         >
           <img src={popupStates.api ? apiActiveImg : apiImg} alt="img" />
         </div>
-      }
-      
-      <div className="RightBar__tutorial btn" onClick={showTutorial}>
+      )}
+
+      {/* <div className="RightBar__tutorial btn" onClick={showTutorial}>
         <img src={questionImg} alt="question img" />
-      </div>
+      </div> */}
 
       <div
         onClick={() => handleSelectTab("property")}
-        className={`btn ${popupStates.property && "btnActive"} ${isPropertyTabHidden && "hidden"}`}
+        className={`btn ${popupStates.property && "btnActive"} ${
+          isPropertyTabHidden && "hidden"
+        }`}
         data-tip={intl.formatMessage({ id: "ID_RIGHTBAR_PROPERTY" })}
       >
-        <img src={popupStates.property ? propertyActiveImg : propertyImg} alt="img" />
+        <img
+          src={popupStates.property ? propertyActiveImg : propertyImg}
+          alt="img"
+        />
       </div>
     </div>
   );
 }
 
-export default connect(state => ({ editorMode: state.scene.editorMode }))(
+export default connect((state) => ({ editorMode: state.scene.editorMode }))(
   injectIntl(RightBar)
 );

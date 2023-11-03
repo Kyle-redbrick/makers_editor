@@ -23,46 +23,109 @@ class Container extends Component {
       it: "",
       stem: "",
       sdg: "",
+      progressId: "",
     };
   }
   componentDidMount() {
-    this.load();
+    this.saasload();
+    // this.load();
   }
-  load() {
-    const { id: myDreamLectureProjectId, email } = this.props.match.params;
+
+  saasload() {
+    const { progressId } = this.props.match.params;
+
     request
-      .getMyDreamProject(myDreamLectureProjectId + "/" + email)
+      .getMyLessonInfo(progressId)
       .then((res) => res.json())
-      .then((myDreamProject) => {
-        if (!myDreamProject) {
-          window.alert("no myDreamProject");
-          return;
-        }
+      .then((json) => {
+        const lessonTemplate = {
+          id: progressId,
+          email: json.data.studentId,
+          lastStudiedAt: "",
+          studiedMinutes: "",
+          completedMissionNum: json.data.completedMissionNumber,
+          completedAt: null,
+          project: {
+            id: json.data.lesson.id,
+            title: json.data.lesson.title,
+            introduction: json.data.lesson.description,
+            template: json.data.lesson.template,
+            totalMissionNum: json.data.lesson.totalMissionNumber,
+            sampleGameURL: json.data.lesson.sampleGameURL,
+            thumbnailURL: json.data.lesson.thumbnailURL,
+            localized: [
+              {
+                locale: "ko",
+                title: json.data.lesson.title,
+                introduction: json.data.lesson.description,
+                template: json.data.lesson.template,
+                sampleGameURL: json.data.lesson.sampleGameURL,
+                thumbnailURL: json.data.lesson.thumbnailURL,
+              },
+            ],
+            lecture: {
+              id: "",
+              title: json.data.course.title,
+              number: "",
+              localized: [
+                {
+                  locale: "ko",
+                  title: json.data.course.title,
+                },
+              ],
+              course: {
+                id: "",
+                type: json.data.lesson.language,
+                iconURL: json.data.lesson.thumbnailURL,
+              },
+            },
+          },
+          developing: null,
+        };
 
-        // temp: 테스트 계정의 프로젝트는 유저 인증 생략하기
-        // if (myDreamProject.email !== "test@wizschool.io" && myDreamProject.email !== this.props.email) {
-        //   window.alert("invalid user");
-        //   return;
-        // }
-        // if(myDreamProject.email !== this.props.email) {
-        //   window.alert("invalid user");
-        //   return;
-        // }
-
-        try {
-          myDreamProject.project.template = JSON.parse(
-            myDreamProject.project.localized[0].template
-          );
-        } catch (err) {
-          window.alert("wrong template");
-          return;
-        }
-
-        this.props.setMyDreamProject(myDreamProject);
+        this.props.setMyDreamProject(lessonTemplate);
       });
   }
 
+  // load() {
+  //   const { id: myDreamLectureProjectId, email } = this.props.match.params;
+
+  //   request
+  //     .getMyDreamProject(myDreamLectureProjectId + "/" + email)
+  //     .then((res) => res.json())
+  //     .then((myDreamProject) => {
+  //       if (!myDreamProject) {
+  //         window.alert("no myDreamProject");
+  //         return;
+  //       }
+
+  //       // temp: 테스트 계정의 프로젝트는 유저 인증 생략하기
+  //       // if (myDreamProject.email !== "test@wizschool.io" && myDreamProject.email !== this.props.email) {
+  //       //   window.alert("invalid user");
+  //       //   return;
+  //       // }
+  //       // if(myDreamProject.email !== this.props.email) {
+  //       //   window.alert("invalid user");
+  //       //   return;
+  //       // }
+
+  //       try {
+  //         myDreamProject.project.template = JSON.parse(
+  //           myDreamProject.project.localized[0].template
+  //         );
+  //       } catch (err) {
+  //         window.alert("wrong template");
+  //         return;
+  //       }
+
+  //       this.props.setMyDreamProject(myDreamProject);
+  //     });
+  // }
+
   componentDidUpdate(prevProps, prevState) {
+    // prevProps && console.log("prevProps.myProject : ", prevProps.myProject);
+    // console.log("this.props.myProject : ", this.props.myProject);
+
     if (this.props.myProject) {
       if (
         !prevProps.myProject ||
@@ -80,18 +143,18 @@ class Container extends Component {
       }
     }
     if (prevProps.editorMode !== this.props.editorMode) {
-      this.didShowTutorialPopup();
+      // this.didShowTutorialPopup(); // 팝업 잠시 차단
     }
   }
   didSetMyProject() {
     const { myProject } = this.props;
 
-    const missions = (myProject.project.template.missions || []).map(
-      (mission, index) => ({
-        ...mission,
-        isCompleted: index < myProject.completedMissionNum,
-      })
-    );
+    const missions = (
+      JSON.parse(myProject.project.template).missions || []
+    ).map((mission, index) => ({
+      ...mission,
+      isCompleted: index < myProject.completedMissionNum,
+    }));
 
     let currentMissionIndex = this.props.isReplaying
       ? 0

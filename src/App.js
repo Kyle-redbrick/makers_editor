@@ -64,8 +64,8 @@ const App = () => {
               "/builder/:pId",
               "/dreamclass/:id",
               "/dreamclass/:id/:email",
-              "/class/:pId",
-              "/class/:pId/:email",
+              "/class",
+              "/class/:progressId",
             ]}
             render={() => <HandleQueryString Component={Builder} />}
           />
