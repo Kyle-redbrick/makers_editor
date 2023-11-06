@@ -40,6 +40,7 @@ class Container extends Component {
       .then((json) => {
         const lessonTemplate = {
           id: progressId,
+          status: json.data.status,
           email: json.data.studentId,
           lastStudiedAt: "",
           studiedMinutes: "",
@@ -82,50 +83,11 @@ class Container extends Component {
           },
           developing: null,
         };
-
         this.props.setMyDreamProject(lessonTemplate);
       });
   }
 
-  // load() {
-  //   const { id: myDreamLectureProjectId, email } = this.props.match.params;
-
-  //   request
-  //     .getMyDreamProject(myDreamLectureProjectId + "/" + email)
-  //     .then((res) => res.json())
-  //     .then((myDreamProject) => {
-  //       if (!myDreamProject) {
-  //         window.alert("no myDreamProject");
-  //         return;
-  //       }
-
-  //       // temp: 테스트 계정의 프로젝트는 유저 인증 생략하기
-  //       // if (myDreamProject.email !== "test@wizschool.io" && myDreamProject.email !== this.props.email) {
-  //       //   window.alert("invalid user");
-  //       //   return;
-  //       // }
-  //       // if(myDreamProject.email !== this.props.email) {
-  //       //   window.alert("invalid user");
-  //       //   return;
-  //       // }
-
-  //       try {
-  //         myDreamProject.project.template = JSON.parse(
-  //           myDreamProject.project.localized[0].template
-  //         );
-  //       } catch (err) {
-  //         window.alert("wrong template");
-  //         return;
-  //       }
-
-  //       this.props.setMyDreamProject(myDreamProject);
-  //     });
-  // }
-
   componentDidUpdate(prevProps, prevState) {
-    // prevProps && console.log("prevProps.myProject : ", prevProps.myProject);
-    // console.log("this.props.myProject : ", this.props.myProject);
-
     if (this.props.myProject) {
       if (
         !prevProps.myProject ||
@@ -226,12 +188,13 @@ class Container extends Component {
     });
   }
   save(values) {
-    const { id: myDreamLectureProjectId } = this.props.match.params;
+    const { progressId } = this.props.match.params;
+
     request
-      .saveAstroMission(myDreamLectureProjectId, values)
+      .saveSaasMission(progressId, values)
       .then((res) => res.json())
       .then((json) => {
-        if (json.success) {
+        if (json.result) {
           console.log(
             this.props.intl.formatMessage({
               id: "ID_DREAMBUILDER_SAVE_LECTURE",
@@ -271,35 +234,48 @@ class Container extends Component {
     }, 2000);
   }
   alertProjectClear() {
-    request
-      .getAstroMissionCompleteInfo(this.props.project.id)
-      .then((res) => res.json())
-      .then((json) => {
-        console.log(111, json);
-        this.setState({ it: json.it });
-        this.setState({ stem: json.stem });
-        this.setState({ sdg: json.sdg });
-        this.setState({ certficate: json.certficate });
+    showPopUp(
+      <ProjectClearPopUp
+        onClickConfirm={() => {
+          window.opener = null;
+          window.open("", "_self");
+          window.close();
+        }}
+      />,
+      {
+        dismissButton: false,
+        defaultPadding: false,
+      }
+    );
+    // request
+    //   .getAstroMissionCompleteInfo(this.props.project.id)
+    //   .then((res) => res.json())
+    //   .then((json) => {
+    //     console.log(111, json);
+    //     this.setState({ it: json.it });
+    //     this.setState({ stem: json.stem });
+    //     this.setState({ sdg: json.sdg });
+    //     this.setState({ certficate: json.certficate });
 
-        // setTimeout(() => {
-        showPopUp(
-          <ProjectClearPopUp
-            it={json.it}
-            stem={json.stem}
-            sdg={json.sdg}
-            certificate={json.certificate}
-            onClickConfirm={() => {
-              window.opener = null;
-              window.open("", "_self");
-              window.close();
-            }}
-          />,
-          {
-            dismissButton: false,
-            defaultPadding: false,
-          }
-        );
-      }, 1000);
+    //     // setTimeout(() => {
+    //     showPopUp(
+    //       <ProjectClearPopUp
+    //         it={json.it}
+    //         stem={json.stem}
+    //         sdg={json.sdg}
+    //         certificate={json.certificate}
+    //         onClickConfirm={() => {
+    //           window.opener = null;
+    //           window.open("", "_self");
+    //           window.close();
+    //         }}
+    //       />,
+    //       {
+    //         dismissButton: false,
+    //         defaultPadding: false,
+    //       }
+    //     );
+    //   }, 1000);
     // });
   }
 

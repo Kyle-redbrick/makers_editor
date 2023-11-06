@@ -10,46 +10,46 @@ const ACTION = {
   DREAM_SET_IS_CODE_CONDITIONS_CLEAR: "setIsCodeConditionsClear",
 };
 
-export const setMyDreamProject = myProject => ({
+export const setMyDreamProject = (myProject) => ({
   type: ACTION.DREAM_SET_MYPROJECT,
-  payload: { myProject }
+  payload: { myProject },
 });
 
-export const updateMyDreamProject = values => ({
+export const updateMyDreamProject = (values) => ({
   type: ACTION.DREAM_UPDATE_MYPROJECT,
-  payload: { values }
+  payload: { values },
 });
 
 export const openDreamMenu = () => ({
-  type: ACTION.DREAM_OPEN_MENU
+  type: ACTION.DREAM_OPEN_MENU,
 });
 
 export const closeDreamMenu = () => ({
-  type: ACTION.DREAM_CLOSE_MENU
+  type: ACTION.DREAM_CLOSE_MENU,
 });
 
-export const setDreamMissions = missions => ({
+export const setDreamMissions = (missions) => ({
   type: ACTION.DREAM_SET_MISSIONS,
-  payload: { missions }
+  payload: { missions },
 });
 
-export const setCurrentDreamMissionIndex = index => ({
+export const setCurrentDreamMissionIndex = (index) => ({
   type: ACTION.DREAM_SET_CURRENT_MISSION_INDEX,
-  payload: { index }
+  payload: { index },
 });
 
 export const completeCurrentDreamMission = () => ({
-  type: ACTION.DREAM_COMPLETE_CURRENT_MISSION
+  type: ACTION.DREAM_COMPLETE_CURRENT_MISSION,
 });
 
-export const setIsConditionsClear = isConditionsClear => ({
+export const setIsConditionsClear = (isConditionsClear) => ({
   type: ACTION.DREAM_SET_IS_CONDITIONS_CLEAR,
-  payload: { isConditionsClear }
+  payload: { isConditionsClear },
 });
 
-export const setIsCodeConditionsClear = isCodeConditionsClear => ({
+export const setIsCodeConditionsClear = (isCodeConditionsClear) => ({
   type: ACTION.DREAM_SET_IS_CODE_CONDITIONS_CLEAR,
-  payload: { isCodeConditionsClear }
+  payload: { isCodeConditionsClear },
 });
 
 const initialState = {
@@ -60,33 +60,38 @@ const initialState = {
   currentMissionIndex: -1,
   currentMission: null,
   isConditionsClear: false,
-  isCodeConditionsClear: false
+  isCodeConditionsClear: false,
 };
 
 const dream = (state = initialState, action) => {
   const { type, payload = {} } = action;
   switch (type) {
     case ACTION.DREAM_SET_MYPROJECT:
-      return { ...state, myProject: payload.myProject, isReplaying: !!payload.myProject.completedAt };
+      return {
+        ...state,
+        myProject: payload.myProject,
+        isReplaying: !!(payload.myProject.status === "FINISHED"),
+      };
     case ACTION.DREAM_UPDATE_MYPROJECT:
-      return { ...state, myProject: { ...state.myProject, ...(payload.values || {}) } };
+      return {
+        ...state,
+        myProject: { ...state.myProject, ...(payload.values || {}) },
+      };
     case ACTION.DREAM_OPEN_MENU:
       return { ...state, isMenuOpen: true };
     case ACTION.DREAM_CLOSE_MENU:
       return { ...state, isMenuOpen: false };
     case ACTION.DREAM_SET_MISSIONS:
-      return { 
+      return {
         ...state,
-        missions: Array.isArray(payload.missions)
-          ? payload.missions
-          : []
+        missions: Array.isArray(payload.missions) ? payload.missions : [],
       };
     case ACTION.DREAM_SET_CURRENT_MISSION_INDEX:
-      if(state.missions[payload.index]) {
-        return { 
+      if (state.missions[payload.index]) {
+        return {
           ...state,
           currentMissionIndex: payload.index,
-          currentMission: state.missions[payload.index]
+          currentMission: state.missions[payload.index],
         };
       } else {
         return { ...state };
@@ -95,9 +100,9 @@ const dream = (state = initialState, action) => {
       state.currentMission.isCompleted = true;
       return { ...state };
     case ACTION.DREAM_SET_IS_CONDITIONS_CLEAR:
-      return { ...state, isConditionsClear: payload.isConditionsClear};
+      return { ...state, isConditionsClear: payload.isConditionsClear };
     case ACTION.DREAM_SET_IS_CODE_CONDITIONS_CLEAR:
-      return { ...state, isCodeConditionsClear: payload.isCodeConditionsClear};
+      return { ...state, isCodeConditionsClear: payload.isCodeConditionsClear };
     default:
       return state;
   }
