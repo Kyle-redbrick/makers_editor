@@ -2,7 +2,8 @@ const subdomain = "dreamdev.";
 export const URL = {
   SOCKET_SERVER: `https://astro-sock.wizclass.com/`,
   NOTIFICATION_SOCKET_SERVER: `https://astroboy-api-dev.wizclass.com:3002/`,
-  API_SERVER: `https://astro-api.wizclass.com/`,
+  API_SERVER: `https://api.wizclass.com/`,
+  // API_SERVER: `https://astro-api.wizclass.com/`,
   // API_SAAS_SERVER: `https://api.redbrickmakers.com/`,
   API_SAAS_SERVER: `https://dev-api.redbrickmakers.com/`,
   LIVE_TEST: `https://${subdomain}wizlab.net/liveTest/`,
@@ -26,16 +27,11 @@ export const URL = {
   S3_VIDEOCLASS: `https://wizschool-videoclass.s3.ap-northeast-2.amazonaws.com`,
   S3_WIZLABAPK: "https://wizlab-apk.s3.ap-northeast-2.amazonaws.com",
   get S3_DREAMCLASS() {
-    // const locale = localStorage.getItem("wizLang");
-    // if(locale === "zh") {
-    //   return "https://tianchengai-etc.oss-cn-beijing.aliyuncs.com"
-    // } else {
-    //   return "https://d21hhf2g9kirkh.cdfront.net"
-    // }
     return "https://d21hhf2g9kirkh.cloudfront.net";
   },
   get THUMBNAIL_ALI() {
-    return `https://redbrick-makers.oss-ap-northeast-2.aliyuncs.com/`;
+    return `https://storage-dev.redbrickmakers.com/legacy`;
+    // return `https://redbrick-makers.oss-ap-northeast-2.aliyuncs.com/`;
   },
 };
 

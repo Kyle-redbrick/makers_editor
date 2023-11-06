@@ -69,7 +69,6 @@ const videoProcessingInstruction = {
   processNode: (node, children) => {
     const { src, poster, loop, muted, autoplay, ...otherAttribs } =
       node.attribs;
-    console.log("src.THUMBNAIL_ALI()", src.THUMBNAIL_ALI());
     return (
       <video
         {...otherAttribs}
