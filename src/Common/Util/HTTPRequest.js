@@ -36,6 +36,18 @@ export const fetchSaasRequest = (url, method, param) => {
 ///////////////////////////////////////////////////////////////////////////////
 /** SAAS */
 
+export const saveSaasMission = (progressId, values) => {
+  let body = {};
+  if (values && values.completedMissionNum) {
+    body["completedMissionNumber"] = values.completedMissionNum;
+  }
+  return fetchSaasRequest(
+    URL.API_SAAS_SERVER + `progress/lesson?progressId=${progressId}`,
+    "PUT",
+    body
+  );
+};
+
 export const getMyLessonInfo = (progressId) => {
   return fetchSaasRequest(
     URL.API_SAAS_SERVER + `progress/myLesson?progressId=${progressId}`
