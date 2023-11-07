@@ -20,15 +20,11 @@ class Container extends Component {
       shouldSlideRerender: false,
       isTutorialShow: false,
       isAstroBoyProject: false,
-      it: "",
-      stem: "",
-      sdg: "",
       progressId: "",
     };
   }
   componentDidMount() {
     this.saasload();
-    // this.load();
   }
 
   saasload() {
@@ -247,36 +243,6 @@ class Container extends Component {
         defaultPadding: false,
       }
     );
-    // request
-    //   .getAstroMissionCompleteInfo(this.props.project.id)
-    //   .then((res) => res.json())
-    //   .then((json) => {
-    //     console.log(111, json);
-    //     this.setState({ it: json.it });
-    //     this.setState({ stem: json.stem });
-    //     this.setState({ sdg: json.sdg });
-    //     this.setState({ certficate: json.certficate });
-
-    //     // setTimeout(() => {
-    //     showPopUp(
-    //       <ProjectClearPopUp
-    //         it={json.it}
-    //         stem={json.stem}
-    //         sdg={json.sdg}
-    //         certificate={json.certificate}
-    //         onClickConfirm={() => {
-    //           window.opener = null;
-    //           window.open("", "_self");
-    //           window.close();
-    //         }}
-    //       />,
-    //       {
-    //         dismissButton: false,
-    //         defaultPadding: false,
-    //       }
-    //     );
-    //   }, 1000);
-    // });
   }
 
   createDeveloping(callback) {
