@@ -30,57 +30,112 @@ class Container extends Component {
   saasload() {
     const { progressId } = this.props.match.params;
 
-    request
-      .getMyLessonInfo(progressId)
-      .then((res) => res.json())
-      .then((json) => {
-        const lessonTemplate = {
-          id: progressId,
-          status: json.data.status,
-          email: json.data.studentId,
-          lastStudiedAt: "",
-          studiedMinutes: "",
-          completedMissionNum: json.data.completedMissionNumber,
-          completedAt: null,
-          project: {
-            id: json.data.lesson.id,
-            title: json.data.lesson.title,
-            introduction: json.data.lesson.description,
-            template: json.data.lesson.template,
-            totalMissionNum: json.data.lesson.totalMissionNumber,
-            sampleGameURL: json.data.lesson.sampleGameURL,
-            thumbnailURL: json.data.lesson.thumbnailURL,
-            localized: [
-              {
-                locale: "ko",
-                title: json.data.lesson.title,
-                introduction: json.data.lesson.description,
-                template: json.data.lesson.template,
-                sampleGameURL: json.data.lesson.sampleGameURL,
-                thumbnailURL: json.data.lesson.thumbnailURL,
-              },
-            ],
-            lecture: {
-              id: "",
-              title: json.data.course.title,
-              number: "",
+    if (window.location.pathname.includes("educator")) {
+      request
+        .getLecture(progressId)
+        .then((res) => res.json())
+        .then((json) => {
+          console.log("json : ", json.data.lessonInfo);
+          const lessonTemplate = {
+            id: "",
+            status: "FINISHED",
+            email: JSON.parse(localStorage.getItem("userInfo")).email,
+            lastStudiedAt: "",
+            studiedMinutes: "",
+            completedMissionNum: json.data.lessonInfo.totalMissionNumber,
+            completedAt: null,
+            project: {
+              id: json.data.lessonInfo.id,
+              title: json.data.lessonInfo.title,
+              introduction: json.data.lessonInfo.description,
+              template: json.data.lessonInfo.template,
+              totalMissionNum: json.data.lessonInfo.totalMissionNumber,
+              sampleGameURL: json.data.lessonInfo.sampleGameURL,
+              thumbnailURL: json.data.lessonInfo.thumbnailURL,
               localized: [
                 {
                   locale: "ko",
-                  title: json.data.course.title,
+                  title: json.data.lessonInfo.title,
+                  introduction: json.data.lessonInfo.description,
+                  template: json.data.lessonInfo.template,
+                  sampleGameURL: json.data.lessonInfo.sampleGameURL,
+                  thumbnailURL: json.data.lessonInfo.thumbnailURL,
                 },
               ],
-              course: {
+              lecture: {
                 id: "",
-                type: json.data.lesson.language,
-                iconURL: json.data.lesson.thumbnailURL,
+                title: json.data.lessonInfo.title,
+                number: "",
+                localized: [
+                  {
+                    locale: "ko",
+                    title: json.data.lessonInfo.title,
+                  },
+                ],
+                course: {
+                  id: "",
+                  type: json.data.lessonInfo.language,
+                  iconURL: "",
+                },
               },
             },
-          },
-          developing: null,
-        };
-        this.props.setMyDreamProject(lessonTemplate);
-      });
+            developing: null,
+          };
+          this.props.setMyDreamProject(lessonTemplate);
+        });
+    } else {
+      request
+        .getMyLessonInfo(progressId)
+        .then((res) => res.json())
+        .then((json) => {
+          const lessonTemplate = {
+            id: progressId,
+            status: json.data.status,
+            email: json.data.studentId,
+            lastStudiedAt: "",
+            studiedMinutes: "",
+            completedMissionNum: json.data.completedMissionNumber,
+            completedAt: null,
+            project: {
+              id: json.data.lesson.id,
+              title: json.data.lesson.title,
+              introduction: json.data.lesson.description,
+              template: json.data.lesson.template,
+              totalMissionNum: json.data.lesson.totalMissionNumber,
+              sampleGameURL: json.data.lesson.sampleGameURL,
+              thumbnailURL: json.data.lesson.thumbnailURL,
+              localized: [
+                {
+                  locale: "ko",
+                  title: json.data.lesson.title,
+                  introduction: json.data.lesson.description,
+                  template: json.data.lesson.template,
+                  sampleGameURL: json.data.lesson.sampleGameURL,
+                  thumbnailURL: json.data.lesson.thumbnailURL,
+                },
+              ],
+              lecture: {
+                id: "",
+                title: json.data.course.title,
+                number: "",
+                localized: [
+                  {
+                    locale: "ko",
+                    title: json.data.course.title,
+                  },
+                ],
+                course: {
+                  id: "",
+                  type: json.data.lesson.language,
+                  iconURL: json.data.lesson.thumbnailURL,
+                },
+              },
+            },
+            developing: null,
+          };
+          this.props.setMyDreamProject(lessonTemplate);
+        });
+    }
   }
 
   componentDidUpdate(prevProps, prevState) {

@@ -62,10 +62,9 @@ const App = () => {
               "/:pId",
               "/builder",
               "/builder/:pId",
-              "/dreamclass/:id",
-              "/dreamclass/:id/:email",
               "/class",
               "/class/:progressId",
+              "/class/educator/:progressId",
             ]}
             render={() => <HandleQueryString Component={Builder} />}
           />
