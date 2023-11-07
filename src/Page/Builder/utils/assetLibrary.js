@@ -27,7 +27,7 @@ class AssetLibrary {
     { id: "Song Myung", name: "ID_FONT_SM" },
     { id: "Stylish", name: "ID_FONT_STYLISH" },
     { id: "Sunflower", name: "ID_FONT_SUNFLOWER" },
-    { id: "Yeon Sung", name: "ID_FONT_YEONSUNG" }
+    { id: "Yeon Sung", name: "ID_FONT_YEONSUNG" },
   ];
   categories = [];
   sprites = {};
@@ -76,23 +76,23 @@ class AssetLibrary {
   loadCategories(callback) {
     request
       .getCategories()
-      .then(res => res.json())
-      .then(categories => {
+      .then((res) => res.json())
+      .then((categories) => {
         this.categories = categories.filter(
-          c => c.name !== "wizlive" && c.name !== "template"
+          (c) => c.name !== "wizlive" && c.name !== "template"
         );
         if (callback) callback();
       })
-      .catch(err => console.error(err));
+      .catch((err) => console.error(err));
   }
 
   loadAllSounds(callback) {
     this.loadCategories(() => {
       const soundCategories = this.categories.filter(
-        c => c.name === "sfx" || c.name === "bgm"
+        (c) => c.name === "sfx" || c.name === "bgm"
       );
       let i = 0;
-      const load = name => {
+      const load = (name) => {
         this.loadAssetsByCategory(name, () => {
           i++;
           if (soundCategories.length > i) {
@@ -114,12 +114,12 @@ class AssetLibrary {
 
     request
       .assetsByCategory({ categoryId: category })
-      .then(res => res.json())
-      .then(json => {
+      .then((res) => res.json())
+      .then((json) => {
         if (!this.categoryItems[category]) {
           this.categoryItems[category] = [];
         }
-        json.forEach(subItem => {
+        json.forEach((subItem) => {
           const assets = subItem.assets;
           this.categoryItems[subItem.name] = [];
           for (var i in assets) {
@@ -137,7 +137,7 @@ class AssetLibrary {
             this.categoryItems[subItem.name].push({
               assetId: asset.assetId,
               type: asset.type,
-              subtype: asset.subtype
+              subtype: asset.subtype,
             });
 
             if (!assetBundle[asset.assetId]) {
@@ -150,15 +150,14 @@ class AssetLibrary {
 
           this.categoryItems[category] = [
             ...this.categoryItems[category],
-            ...this.categoryItems[subItem.name]
+            ...this.categoryItems[subItem.name],
           ];
         });
 
         if (category === "template" || category === "illust") {
           this.firstTemplateName = json[0].name;
-          this.categoryItems[category] = this.categoryItems[
-            this.firstTemplateName
-          ];
+          this.categoryItems[category] =
+            this.categoryItems[this.firstTemplateName];
         }
 
         callback(this.categoryItems[category]);
@@ -167,26 +166,33 @@ class AssetLibrary {
 
   loadAssetsFromScene(state, callback) {
     const spriteAssetIds = [];
+
+    let param = "?";
+
     for (var i in state.sceneIds) {
       const spriteIds = state.scenes[state.sceneIds[i]].spriteIds;
       const sprites = state.scenes[state.sceneIds[i]].sprites;
       for (var j in spriteIds) {
         if (spriteAssetIds.indexOf(sprites[spriteIds[j]].assetId) === -1) {
           spriteAssetIds.push(sprites[spriteIds[j]].assetId);
+          param = param + `spriteIds=${sprites[spriteIds[j]].assetId}&`;
         }
       }
     }
 
     const params = {
       spriteIds: spriteAssetIds,
-      soundIds: state.soundIds
+      soundIds: state.soundIds,
     };
 
+    param = param + `soundIds=${state.soundIds}`;
+
     request
-      .assetsById(params)
-      .then(res => res.json())
-      .then(json => {
-        const sprites = json.sprites;
+      .getAssetsById(param)
+      // .assetsById(params)
+      .then((res) => res.json())
+      .then((json) => {
+        const sprites = json.data.sprites;
         let i = 0;
         let asset = undefined;
         for (i in sprites) {
@@ -195,7 +201,7 @@ class AssetLibrary {
           this.sprites[asset.assetId] = asset;
         }
 
-        const sounds = json.sounds;
+        const sounds = json.data.sounds;
         for (i in sounds) {
           asset = sounds[i];
           asset = this.convertSoundAsset(asset);
@@ -248,7 +254,7 @@ class AssetLibrary {
       data = { sprites: {}, sounds: {} };
       const params = {
         spriteIds: spriteAssetIds,
-        soundIds: state.soundIds
+        soundIds: state.soundIds,
       };
       const response = await request.assetsById(params);
       const json = await response.json();
@@ -269,17 +275,17 @@ class AssetLibrary {
       }
     }
 
-    return new Promise(function(resolve) {
+    return new Promise(function (resolve) {
       resolve(data);
     });
   }
 
-  convertSoundAsset = asset => {
+  convertSoundAsset = (asset) => {
     asset.path = this.baseURL + asset.path;
     asset.id = asset.assetId;
     return asset;
   };
-  convertSpriteAsset = asset => {
+  convertSpriteAsset = (asset) => {
     if (asset.bodySize) {
       asset.bodySize = JSON.parse(asset.bodySize);
     }
@@ -304,7 +310,7 @@ class AssetLibrary {
     return this.baseURL + "/sprite/sprite-text.svg";
   }
 
-  getAsset = id => {
+  getAsset = (id) => {
     return this.sprites[id];
   };
   loadAsset = (id, callback) => {
@@ -316,8 +322,8 @@ class AssetLibrary {
     } else {
       request
         .assetsById({ spriteIds: [id] })
-        .then(res => res.json())
-        .then(json => {
+        .then((res) => res.json())
+        .then((json) => {
           for (let sprite of json.sprites) {
             this.sprites[id] = this.convertSpriteAsset(sprite);
           }
@@ -326,11 +332,11 @@ class AssetLibrary {
     }
   };
 
-  getSoundAsset = id => {
+  getSoundAsset = (id) => {
     return this.sounds[id];
   };
 
-  addAsset = asset => {
+  addAsset = (asset) => {
     asset = this.convertSpriteAsset(asset);
     this.sprites[asset.assetId] = asset;
   };
@@ -345,7 +351,7 @@ class AssetLibrary {
     this.sounds = { ...this.sounds, ...sounds };
   }
 
-  getAssetByName = name => {
+  getAssetByName = (name) => {
     for (let id in this.sprites) {
       let sprite = this.sprites[id];
       if (sprite.defaultName === name) {
@@ -354,7 +360,7 @@ class AssetLibrary {
     }
   };
 
-  getSoundAssetByName = name => {
+  getSoundAssetByName = (name) => {
     for (let id in this.sounds) {
       let sound = this.sounds[id];
       if (sound.defaultName === name) {
