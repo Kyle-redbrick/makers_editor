@@ -35,7 +35,6 @@ class Container extends Component {
         .getLecture(progressId)
         .then((res) => res.json())
         .then((json) => {
-          console.log("json : ", json.data.lessonInfo);
           const lessonTemplate = {
             id: "",
             status: "FINISHED",

@@ -211,7 +211,6 @@ class Container extends Component {
           window.location.pathname.slice(1)
       );
       const uploadData = await uploadResponse.json();
-      console.log("uploadData : ", uploadData);
       const putUrl = uploadData.url.uploadUrl;
       const downloadUrl = uploadData.url.downloadUrl;
       const putResponse = await fetch(putUrl, {

@@ -61,7 +61,6 @@ function LectureEditor(props) {
       const tags = tag.split(",").map(function (tag) {
         return tag.trim();
       });
-      console.log("tags", tags);
       request.tagUpdate(lectureId, tags);
     }
     request

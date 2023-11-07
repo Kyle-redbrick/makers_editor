@@ -335,7 +335,6 @@ class Container extends Component {
     try {
       let response = await request.getDevelopingProject({ pId });
       const project = await response.json();
-      console.log("원래 프로젝트 =>", project);
       if (project) {
         if (
           this.state.pageType === PAGETYPE.BUILDER_READONLY ||
