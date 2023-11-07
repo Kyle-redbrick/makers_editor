@@ -1,88 +1,37 @@
-
-.popup_contents .dream_projectClear {
-  padding: 10px 0px 22px;
-  background: linear-gradient(146.74deg, #5B16CC -3.82%, #56B1CC 99.59%);
-  width: 390px;
-  font-family: "Poppins", sans-serif;
-}
-
 .popup_container .dream_projectClear {
-
   display: flex;
   flex-direction: column;
-  
-  
+  width: 352px;
+
   .dream_projectClear_image {
     margin: 0 auto;
-    height: 198px;
-    width: 274px;
+    height: 240px;
   }
 
   .popup_title {
-    margin-top: 2px;
-    margin-bottom: 8px;
-    font-size: 32px;
-    font-weight: 700;
-    line-height: 48px;
+    margin-bottom: 30px;
+    font-size: 35px;
+    font-weight: 900;
     text-align: center;
     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.25), 0 1px 0 rgba(255, 255, 255, 0.5), 0 -1px 1px rgba(29, 182, 255, 0.6), 0 -1px 1px rgba(0, 0, 0, 0.2);
   }
 
   .popup_subtitle {
-    margin: 0 auto 26px;
-    width: 336px;
+    margin-top: 0;
     text-align: center;
     font-size: 14px;
-    font-weight: 400;
-    line-height: 18px;
+    line-height: 1.57;
     color: rgba(255, 255, 255, 0.8);
   }
 
-  .popup_buttons {
-    margin: 0 28px;
-  }
-
   .popup_button {
-    height: 100%;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Noto Sans KR', sans-serif;
     border-radius: 50px;
-    border: none;
-    // margin-top: 30px;
+    margin-top: 30px;
     font-size: 14px;
     font-weight: 500;
   }
   .popup_button-cancel {
     margin-right: 18px;
-  }
-
-  .questClear_popup_details {
-    padding: 15px 24px 2px;
-    margin: 0 auto 24px;
-    width: 334px;
-    display: flex;
-    flex-direction: column;
-    background: #EEF2FF;
-    border: 2px solid rgba(48, 156, 255, 0.4);
-    box-sizing: border-box;
-    border-radius: 8px;
-  }
-
-  .questClear_popup_details_row {
-    display: flex;
-    margin-bottom: 18px;
-
-  }
-
-  .questClear_popup_details_category {
-    font-weight: bold;
-    text-align: center;
-    text-transform: uppercase;
-    color: #4C4C4C;
-    width: 25%;
-  }
-
-  .questClear_popup_details_info {
-    color: #4D4D4D;
-    width: 75%;
   }
 }
