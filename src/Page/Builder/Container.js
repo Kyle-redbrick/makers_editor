@@ -226,7 +226,7 @@ class Container extends Component {
   };
 
   loadSaas = () => {
-    document.title = "SAAS";
+    document.title = "redbrickmakers";
     const { pId } = this.state.params;
     if (pId) {
       this.loadSaasProject(pId);
@@ -236,7 +236,7 @@ class Container extends Component {
   };
 
   loadWizlab = () => {
-    document.title = "SAAS";
+    document.title = "redbrickmakers";
     const { pId } = this.state.params;
     if (this.props.email) {
       if (pId) {
