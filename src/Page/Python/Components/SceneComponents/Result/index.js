@@ -6,15 +6,23 @@ import "./index.scss";
 import fileIcon from "../../../../../Image/newPython/ic-file-png@2x.png";
 import successText from "../../../../../Image/newPython/sucess-top@2x.png";
 
-const Result = props => {
-  const { currentScriptData, onClickProjectReplay, onClickNextProjectPlay, intl } = props;
+const Result = (props) => {
+  const {
+    currentScriptData,
+    onClickProjectReplay,
+    onClickNextProjectPlay,
+    intl,
+  } = props;
 
   const changePointText = (text, pointText) => {
-    if(text.includes(pointText)){
-      let data = text.replaceAll(pointText, `<span class="pointText">${pointText}</span>`);
-      return ReactHtmlParser(data)
+    if (text.includes(pointText)) {
+      let data = text.replaceAll(
+        pointText,
+        `<span class="pointText">${pointText}</span>`
+      );
+      return ReactHtmlParser(data);
     } else {
-      return text
+      return text;
     }
   };
 
@@ -33,9 +41,7 @@ const Result = props => {
             {currentScriptData.list.map((list, i) => {
               return (
                 <li key={list + i}>
-                  <span>
-                    {changePointText(list.text, list.pointText)}
-                  </span>
+                  <span>{changePointText(list.text, list.pointText)}</span>
                 </li>
               );
             })}
@@ -46,7 +52,7 @@ const Result = props => {
           <button className="replayBtn" onClick={onClickProjectReplay}>
             {intl.formatMessage({ id: "ID_PYTHON_RESULT_REPLAY_BTN" })}
           </button>
-          <button className="nextQuestBtn" onClick={() => {onClickNextProjectPlay()}}>
+          <button className="nextQuestBtn" onClick={() => {}}>
             {intl.formatMessage({ id: "ID_PYTHON_RESULT_NEXT_QUEST_BTN" })}
           </button>
         </div>

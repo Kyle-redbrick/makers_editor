@@ -15,6 +15,7 @@ import "aos/dist/aos.css";
 
 const Builder = lazy(() => import("./Page/Builder"));
 const DreamEditor = lazy(() => import("./Page/DreamEditor"));
+const PythonPage = lazy(() => import("./Page/Python"));
 
 const SplashView = () => {
   return (
@@ -66,6 +67,14 @@ const App = () => {
               "/class/educator/:progressId",
             ]}
             render={() => <HandleQueryString Component={Builder} />}
+          />
+          <Route
+            exact
+            path={[
+              "/pythonClass/:progressId",
+              "/pythonClass/educator/:progressId",
+            ]}
+            component={PythonPage}
           />
         </div>
         <ToastContainer />

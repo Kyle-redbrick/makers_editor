@@ -3,7 +3,14 @@ import * as request from "../../Common/Util/HTTPRequest";
 import { SCENE_MODE } from "./Util/Constant";
 import pyodideloader from "./pyodide";
 import View from "./View";
-import { playScriptEffect, playClearEffect, playFailEffect, playSuccessEffect, playBgm, stopBgm } from "./Util/PlaySound";
+import {
+  playScriptEffect,
+  playClearEffect,
+  playFailEffect,
+  playSuccessEffect,
+  playBgm,
+  stopBgm,
+} from "./Util/PlaySound";
 // import SampleJson from "./sample.json";
 
 export default function Container(props) {
@@ -45,29 +52,27 @@ export default function Container(props) {
 
   // infoPopUpdata
   const [infoPopupData, setInfoPopupData] = useState({});
-  const [isShowAnswerCode, setIsShowAnswerCode] = useState(false); 
+  const [isShowAnswerCode, setIsShowAnswerCode] = useState(false);
 
   // show clear
-  const [isShowClear, setIsShowClear] = useState(false); 
-
+  const [isShowClear, setIsShowClear] = useState(false);
 
   // project ItemList
-  const [isShowProjectItems, setIsShowProjectItems] = useState(false); 
-
+  const [isShowProjectItems, setIsShowProjectItems] = useState(false);
 
   // play Music
-  const [isPlayBGM, setIsPlayBGM] = useState(true); 
-  const [BgmSrc, setBgmSrc] = useState(""); 
-  const [isPlayEffect, setIsPlayEffect] = useState(true); 
+  const [isPlayBGM, setIsPlayBGM] = useState(true);
+  const [BgmSrc, setBgmSrc] = useState("");
+  const [isPlayEffect, setIsPlayEffect] = useState(true);
 
-  const [studiedMinutes, setStudiedMinutes] = useState(0)
+  const [studiedMinutes, setStudiedMinutes] = useState(0);
   const [clearedProject, setClearedProject] = useState(false);
 
   useEffect(() => {
-    pyodideloader()
+    pyodideloader();
     getDefaultContentBoxOffset();
     setIsCodeEditorOpen(false);
-    getData(props.match.params.myDreamProjectId);
+    getData(props.match.params.progressId);
     checkBeforeSoundSetting();
     window.addEventListener("resize", getDefaultContentBoxOffset);
     return () => {
@@ -77,37 +82,49 @@ export default function Container(props) {
 
   useEffect(() => {
     handleSceneData();
-  }, [lectureScript, currentSceneIdx, currentScriptIdx, isShowClear, isPlayBGM, isPlayEffect]);
+  }, [
+    lectureScript,
+    currentSceneIdx,
+    currentScriptIdx,
+    isShowClear,
+    isPlayBGM,
+    isPlayEffect,
+  ]);
 
   const getData = (_myDreamProjectId) => {
     request
-      .getMyDreamProject(_myDreamProjectId)
-      .then(res => res.json())
-      .then(json => {
-        const { project, studiedMinutes, completedMissionNum, completedAt } = json;
-        const { id, title } = project;
-        const { goal, outro, scenes } = JSON.parse(project.localized[0].template);
+      .getMyLessonInfo(_myDreamProjectId)
+      .then((res) => res.json())
+      .then((json) => {
+        const id = json.data.lessonId;
+        const title = json.data.lesson.title;
+        const studiedMinutes = "";
+        const completedMissionNum = json.data.completedMissionNumber;
+        const status = json.data.status;
+        const { goal, outro, scenes } = JSON.parse(json.data.lesson.template);
 
-        if(completedAt) {
+        if (status === "FINISHED") {
           setClearedProject(true);
           setIsShowProjectItems(true);
         }
-        if(scenes.length > completedMissionNum) setCurrentScene(completedMissionNum)
-        setStudiedMinutes(studiedMinutes)
-        setProjectId(id)
-        setProjectTitle(title)
+
+        if (scenes.length > completedMissionNum)
+          setCurrentScene(completedMissionNum);
+        setStudiedMinutes(studiedMinutes);
+        setProjectId(id);
+        setProjectTitle(title);
         setLectureScript({
-          goal : goal, 
-          outro : outro, 
-          scenes : scenes
-        })
+          goal: goal,
+          outro: outro,
+          scenes: scenes,
+        });
       })
-      .catch(e => {
+      .catch((e) => {
         console.error(e);
       });
-  }
+  };
 
-  const handleSceneMode = mode => {
+  const handleSceneMode = (mode) => {
     setSceneMode(mode);
   };
 
@@ -115,8 +132,8 @@ export default function Container(props) {
     setIsCodeEditorOpen(!isCodeEditorOpen);
   };
 
-  const handleExecWindow = mode => {
-    if(!isShowAnswerCode) setIsShowAnswerCode(true)
+  const handleExecWindow = (mode) => {
+    if (!isShowAnswerCode) setIsShowAnswerCode(true);
     setIsExecWindowOpen(mode ? mode : !isExecWindowOpen);
   };
 
@@ -124,30 +141,31 @@ export default function Container(props) {
     setIsInfoPopupOpen(!isInfoPopupOpen);
   };
 
-  const handleClueBtn = mode => {
+  const handleClueBtn = (mode) => {
     setIsShowClueBtn(mode ? mode : !isShowClueBtn);
   };
 
   const handleCloseAllWindows = () => {
-    isCodeEditorOpen && handleCodeEditor() // 코드창 닫기
-    isInfoPopupOpen && handleInfoPopup() // 정보창 닫기
-    isShowClueBtn && handleClueBtn() // 단서창 닫기
-  }
+    isCodeEditorOpen && handleCodeEditor(); // 코드창 닫기
+    isInfoPopupOpen && handleInfoPopup(); // 정보창 닫기
+    isShowClueBtn && handleClueBtn(); // 단서창 닫기
+  };
 
   const handleSceneData = () => {
-    if(!lectureScript) return null
-    const {goal, outro, scenes} = lectureScript
+    if (!lectureScript) return null;
+    const { goal, outro, scenes } = lectureScript;
 
-    if(isShowFailScript) setShowFailScript(false)
-    const currentSceneMode = scenes[currentSceneIdx].scripts[currentScriptIdx].type;
+    if (isShowFailScript) setShowFailScript(false);
+    const currentSceneMode =
+      scenes[currentSceneIdx].scripts[currentScriptIdx].type;
     const currentScriptData = scenes[currentSceneIdx].scripts[currentScriptIdx];
 
-    if(currentSceneMode === "result") playSuccessEffect();
-    
-    if(isPlayBGM) {
-      if(currentScriptData.media){
-        if(currentScriptData.media.backgroundMusic) {
-          if(BgmSrc !== currentScriptData.media.backgroundMusic) {
+    if (currentSceneMode === "result") playSuccessEffect();
+
+    if (isPlayBGM) {
+      if (currentScriptData.media) {
+        if (currentScriptData.media.backgroundMusic) {
+          if (BgmSrc !== currentScriptData.media.backgroundMusic) {
             setBgmSrc(currentScriptData.media.backgroundMusic);
             playBgm(currentScriptData.media.backgroundMusic);
           }
@@ -157,33 +175,43 @@ export default function Container(props) {
       stopBgm();
     }
 
-    setAnswerFailScript(scenes[currentSceneIdx].answerFail[0])
-    setSampleData(scenes[currentSceneIdx].data)
-    
-    if(sceneMaxLength-1 === currentSceneIdx && scriptMaxLength-1 === currentScriptIdx) { // 마지막 대사일떄
-      if(outroMedia) { // 아웃트로 종료
-        setOutroMedia(undefined)
+    setAnswerFailScript(scenes[currentSceneIdx].answerFail[0]);
+    setSampleData(scenes[currentSceneIdx].data);
+
+    if (
+      sceneMaxLength - 1 === currentSceneIdx &&
+      scriptMaxLength - 1 === currentScriptIdx
+    ) {
+      // 마지막 대사일떄
+      if (outroMedia) {
+        // 아웃트로 종료
+        setOutroMedia(undefined);
         setSceneMode(currentSceneMode);
         setCurrentScriptData(currentScriptData);
-      } else { // 아웃트로 플레이
+      } else {
+        // 아웃트로 플레이
         setSceneMode("outro");
-        setOutroMedia(outro)
+        setOutroMedia(outro);
       }
-    } else { // 일반대사
-      if(currentScriptData.type === "success") {
-        if(outroMedia) { // 아웃트로 종료
-          let resultData = scenes[currentSceneIdx].scripts[currentScriptIdx+1];
-          if(resultData) {
-            setOutroMedia(undefined)
+    } else {
+      // 일반대사
+      if (currentScriptData.type === "success") {
+        if (outroMedia) {
+          // 아웃트로 종료
+          let resultData =
+            scenes[currentSceneIdx].scripts[currentScriptIdx + 1];
+          if (resultData) {
+            setOutroMedia(undefined);
             setSceneMode("result");
             setCurrentScriptData(resultData);
           }
-        } else { // 아웃트로 플레이
+        } else {
+          // 아웃트로 플레이
           setSceneMode("outro");
-          setOutroMedia(outro)
+          setOutroMedia(outro);
         }
       } else {
-        setOutroMedia(undefined)
+        setOutroMedia(undefined);
         setLevelName(goal);
         setSceneMode(currentSceneMode);
         setCurrentScriptData(currentScriptData);
@@ -196,9 +224,11 @@ export default function Container(props) {
       currentScriptData.type === "announce" ||
       currentScriptData.type === "chat"
     ) {
-       // 대화기록으로 이동할 경우이 이미 존재하는 history는 중복해서 넣을 필요 없음
-      const isExist = chatHistory.find(item => item.id === currentScriptData.id)
-      if(!isExist) setChatHistory([...chatHistory, currentScriptData]);
+      // 대화기록으로 이동할 경우이 이미 존재하는 history는 중복해서 넣을 필요 없음
+      const isExist = chatHistory.find(
+        (item) => item.id === currentScriptData.id
+      );
+      if (!isExist) setChatHistory([...chatHistory, currentScriptData]);
     }
 
     if (currentScriptData.timeOut) {
@@ -212,18 +242,29 @@ export default function Container(props) {
     }
 
     if (!isShowClear && currentScriptData.targetNoti) {
-      if(["playBtn","submitBtn","resetBtn"].includes(currentScriptData.targetNoti)) setIsCodeEditorOpen(true)
+      if (
+        ["playBtn", "submitBtn", "resetBtn"].includes(
+          currentScriptData.targetNoti
+        )
+      )
+        setIsCodeEditorOpen(true);
       setConditionCheck(currentScriptData.targetNoti);
     }
 
-    if(currentScriptData.type === "mediaSlide") {
-      setClueMedia(currentScriptData.media.src)
+    if (currentScriptData.type === "mediaSlide") {
+      setClueMedia(currentScriptData.media.src);
     }
 
     // infoPopup 에서 사용될 data binding
-    const {missionGoal , hint, templateCode, hintCode} = scenes[currentSceneIdx]
-    setInfoPopupData({missionGoal:missionGoal, hint:hint, templateCode:templateCode, hintCode:hintCode})
-    setTemplateCode(templateCode)
+    const { missionGoal, hint, templateCode, hintCode } =
+      scenes[currentSceneIdx];
+    setInfoPopupData({
+      missionGoal: missionGoal,
+      hint: hint,
+      templateCode: templateCode,
+      hintCode: hintCode,
+    });
+    setTemplateCode(templateCode);
   };
 
   const requestFullscreen = () => {
@@ -243,38 +284,49 @@ export default function Container(props) {
     }
   };
 
-  const handleNextDestination = destination => {
+  const handleNextDestination = (destination) => {
     // const _sampleJson = SampleJson;
     const _sampleJson = lectureScript;
-    const _index = _sampleJson.scenes[currentSceneIdx].scripts.findIndex(function(_scripts, i){
-      return _scripts.id === destination
-    });
+    const _index = _sampleJson.scenes[currentSceneIdx].scripts.findIndex(
+      function (_scripts, i) {
+        return _scripts.id === destination;
+      }
+    );
 
-    if(_sampleJson.scenes[currentSceneIdx].scripts[_index].type !== "success") {
-      setCurrentScript(_index)
+    if (
+      _sampleJson.scenes[currentSceneIdx].scripts[_index].type !== "success"
+    ) {
+      setCurrentScript(_index);
     } else {
-      isShowClear && setCurrentScript(currentScriptIdx + 1)
+      isShowClear && setCurrentScript(currentScriptIdx + 1);
     }
   };
 
-  const handleNextScript = num => {
-    const {/*goal, outro, */scenes} = lectureScript
-    if(conditionCheck !== "") return;
-    
-    if(isShowClear) { // 정답을 맞추고 clear이미지를 클릭헀을때
-      if(scenes.length === currentSceneIdx+1) { // 마지막 미션의 정답을 맞췄다면
+  const handleNextScript = (num) => {
+    const { /*goal, outro, */ scenes } = lectureScript;
+    if (conditionCheck !== "") return;
+
+    if (isShowClear) {
+      // 정답을 맞추고 clear이미지를 클릭헀을때
+      if (scenes.length === currentSceneIdx + 1) {
+        // 마지막 미션의 정답을 맞췄다면
         setIsShowClear(false);
-        const _index = scenes[currentSceneIdx].scripts.findIndex(function(_scripts, i){
-          return _scripts.type === "success"
+        const _index = scenes[currentSceneIdx].scripts.findIndex(function (
+          _scripts,
+          i
+        ) {
+          return _scripts.type === "success";
         });
 
-        if(_index === -1) {
-          const isNoExistSuccess = scenes[currentSceneIdx].scripts.findIndex(function(_scripts, i){
-            return _scripts.type === "result"
-          });
+        if (_index === -1) {
+          const isNoExistSuccess = scenes[currentSceneIdx].scripts.findIndex(
+            function (_scripts, i) {
+              return _scripts.type === "result";
+            }
+          );
 
-          setShowFailScript(false)
-          setCurrentScript(isNoExistSuccess) // 다음 스크립트
+          setShowFailScript(false);
+          setCurrentScript(isNoExistSuccess); // 다음 스크립트
         } else {
           setCurrentScript(_index);
         }
@@ -282,34 +334,38 @@ export default function Container(props) {
         handleNextScene();
         setIsShowAnswerCode(false);
       }
-    } else if(outroMedia) { // outro영상을 다 봤을때
-      handleSceneData()
-    } else if (currentScriptIdx + 1 < scriptMaxLength) { // 다음 스크립트가 있는지 확인
-      let _currentScript = scenes[currentSceneIdx].scripts[currentScriptIdx]
-      let _nextScript = scenes[currentSceneIdx].scripts[currentScriptIdx + 1]
-      if(["success", "result"].includes(_nextScript.type)) { // 다음 스크립트가 성공이미지가 아닐때
-        setShowFailScript(false)
-        isShowClear && setCurrentScript(num ? num : currentScriptIdx + 1) // 다음 스크립트
-      } else { // 성공 이미지 혹은 아이템 결과 창일때
+    } else if (outroMedia) {
+      // outro영상을 다 봤을때
+      handleSceneData();
+    } else if (currentScriptIdx + 1 < scriptMaxLength) {
+      // 다음 스크립트가 있는지 확인
+      let _currentScript = scenes[currentSceneIdx].scripts[currentScriptIdx];
+      let _nextScript = scenes[currentSceneIdx].scripts[currentScriptIdx + 1];
+      if (["success", "result"].includes(_nextScript.type)) {
+        // 다음 스크립트가 성공이미지가 아닐때
+        setShowFailScript(false);
+        isShowClear && setCurrentScript(num ? num : currentScriptIdx + 1); // 다음 스크립트
+      } else {
+        // 성공 이미지 혹은 아이템 결과 창일때
         playScriptEffect();
-        
-        if(_currentScript.destination) {
-          handleNextDestination(_currentScript.destination)
+
+        if (_currentScript.destination) {
+          handleNextDestination(_currentScript.destination);
         } else {
-          setCurrentScript(num ? num : currentScriptIdx + 1);  // 다음 스크립트로 넘기기
+          setCurrentScript(num ? num : currentScriptIdx + 1); // 다음 스크립트로 넘기기
         }
       }
     }
   };
 
-  const handleNextScene = num => {
+  const handleNextScene = (num) => {
     if (currentSceneIdx < sceneMaxLength - 1) {
       setCurrentScene(num !== undefined ? num : currentSceneIdx + 1);
       setCurrentScript(0);
       setChatHistory([]);
-      setIsShowClear(false)
-      setShowFailScript(false)
-      setClueMedia(undefined)
+      setIsShowClear(false);
+      setShowFailScript(false);
+      setClueMedia(undefined);
     }
   };
 
@@ -322,10 +378,10 @@ export default function Container(props) {
     setClueMedia(undefined);
     setIsCodeEditorOpen(false);
     setIsExecWindowOpen(false);
-    setIsInfoPopupOpen(false)
+    setIsInfoPopupOpen(false);
   };
 
-  const changeContentFontSize = width => {
+  const changeContentFontSize = (width) => {
     let changeFontSize = 10 + ((width - 424) / 112) * 2;
     if (changeFontSize < 10) changeFontSize = 10;
     if (changeFontSize > 22) changeFontSize = 22;
@@ -360,92 +416,101 @@ export default function Container(props) {
   };
 
   const checkAnswer = (_codeResult) => {
-    const {scenes} = lectureScript
+    const { scenes } = lectureScript;
     const _scriptAnswer = scenes[currentSceneIdx].answer;
 
-    let _sortedCodeResult = _codeResult.split("\n").filter((Element)=> Element !== "").sort().join();
+    let _sortedCodeResult = _codeResult
+      .split("\n")
+      .filter((Element) => Element !== "")
+      .sort()
+      .join();
 
-    if(_sortedCodeResult === _scriptAnswer.sort().join()) {
+    if (_sortedCodeResult === _scriptAnswer.sort().join()) {
       playClearEffect();
-      setIsShowClear(true)
-      setShowFailScript(false)
-      handleCloseAllWindows()
+      setIsShowClear(true);
+      setShowFailScript(false);
+      handleCloseAllWindows();
 
-      if(scenes.length === currentSceneIdx+1) setIsShowProjectItems(true);
+      if (scenes.length === currentSceneIdx + 1) setIsShowProjectItems(true);
 
-      if(!clearedProject) saveCompletedMission();
+      if (!clearedProject) saveCompletedMission();
     } else {
       playFailEffect();
       setSceneMode("chat");
-      setShowFailScript(true)
-      if(answerFailScript.targetNoti) setConditionCheck(answerFailScript.targetNoti);
+      setShowFailScript(true);
+      if (answerFailScript.targetNoti)
+        setConditionCheck(answerFailScript.targetNoti);
     }
-  }
+  };
 
   const onClickProjectReplay = () => {
     setCurrentScene(0);
     setCurrentScript(0);
-  }
+  };
 
   const onClickNextProjectPlay = () => {
     request
       .getNextMyDreamProject(projectId)
-      .then(res => res.json())
-      .then(json => { 
-        if(!json) {
+      .then((res) => res.json())
+      .then((json) => {
+        if (!json) {
           // 등록된 다음 Lecture(project)가 없을때.
-          alert("다음수업이 없습니다.")
+          alert("다음수업이 없습니다.");
         } else {
-          window.location.replace(`/pythonPage/${json.id}`); 
+          window.location.replace(`/pythonPage/${json.id}`);
         }
       })
-      .catch(e => {
+      .catch((e) => {
         console.error(e);
       });
-  }
+  };
 
-  const onSaveSettings = ({playBGM, playEffect}) => {
+  const onSaveSettings = ({ playBGM, playEffect }) => {
     setIsPlayBGM(playBGM);
     setIsPlayEffect(playEffect);
-    localStorage.setItem("pythonBuilderSound", JSON.stringify({playBGM:playBGM ,playEffect:playEffect }));
-    const currentScriptData = lectureScript.scenes[currentSceneIdx].scripts[currentScriptIdx];
-    
-    if(isPlayBGM !== playBGM) {
-      if(!playBGM) return;
+    localStorage.setItem(
+      "pythonBuilderSound",
+      JSON.stringify({ playBGM: playBGM, playEffect: playEffect })
+    );
+    const currentScriptData =
+      lectureScript.scenes[currentSceneIdx].scripts[currentScriptIdx];
+
+    if (isPlayBGM !== playBGM) {
+      if (!playBGM) return;
       try {
-        if(currentScriptData.media.backgroundMusic) {
+        if (currentScriptData.media.backgroundMusic) {
           setBgmSrc(currentScriptData.media.backgroundMusic);
           playBgm(currentScriptData.media.backgroundMusic);
-        } 
+        }
       } catch (error) {
-        console.error(error)
+        console.error(error);
       }
     }
-  }
+  };
 
   const checkBeforeSoundSetting = () => {
     let builderSound = localStorage.getItem("pythonBuilderSound");
-    if(builderSound) {
+    if (builderSound) {
       try {
-        const { playBGM, playEffect } = JSON.parse(builderSound) 
-        setIsPlayBGM(playBGM)
-        setIsPlayEffect(playEffect)
+        const { playBGM, playEffect } = JSON.parse(builderSound);
+        setIsPlayBGM(playBGM);
+        setIsPlayEffect(playEffect);
       } catch (error) {
-        console.error(error)
+        console.error(error);
       }
-    } 
-  }
-  
+    }
+  };
+
   const saveCompletedMission = () => {
-    const {scenes} = lectureScript
-    const values = { completedMissionNum : currentSceneIdx + 1 }
-    if (scenes.length === currentSceneIdx+1) {
+    const { scenes } = lectureScript;
+    const values = { completedMissionNum: currentSceneIdx + 1 };
+    if (scenes.length === currentSceneIdx + 1) {
       values.completed = true;
       setClearedProject(true);
     }
-
-    request.saveMyDreamProject(props.match.params.myDreamProjectId, values);
-  }
+    request.saveSaasMission(props.match.params.progressId, values);
+    // request.saveMyDreamProject(props.match.params.myDreamProjectId, values);
+  };
 
   return (
     <View
@@ -495,8 +560,8 @@ export default function Container(props) {
       isShowFailScript={isShowFailScript}
       answerFailScript={answerFailScript}
       // finished project
-      onClickProjectReplay = { onClickProjectReplay }
-      onClickNextProjectPlay={ onClickNextProjectPlay }
+      onClickProjectReplay={onClickProjectReplay}
+      onClickNextProjectPlay={onClickNextProjectPlay}
       // project Items
       isShowProjectItems={isShowProjectItems}
       // play sound
