@@ -91,37 +91,71 @@ export default function Container(props) {
     isPlayEffect,
   ]);
 
-  const getData = (_myDreamProjectId) => {
-    request
-      .getMyLessonInfo(_myDreamProjectId)
-      .then((res) => res.json())
-      .then((json) => {
-        const id = json.data.lessonId;
-        const title = json.data.lesson.title;
-        const studiedMinutes = "";
-        const completedMissionNum = json.data.completedMissionNumber;
-        const status = json.data.status;
-        const { goal, outro, scenes } = JSON.parse(json.data.lesson.template);
+  const getData = (progressId) => {
+    if (window.location.pathname.includes("educator")) {
+      request
+        .getLecture(progressId)
+        .then((res) => res.json())
+        .then((json) => {
+          const id = json.data.lessonInfo.id;
+          const title = json.data.lessonInfo.title;
+          const studiedMinutes = "";
+          const completedMissionNum = json.data.lessonInfo.totalMissionNumber;
+          const status = "FINISHED";
+          const { goal, outro, scenes } = JSON.parse(
+            json.data.lessonInfo.template
+          );
+          if (status === "FINISHED") {
+            setClearedProject(true);
+            setIsShowProjectItems(true);
+          }
 
-        if (status === "FINISHED") {
-          setClearedProject(true);
-          setIsShowProjectItems(true);
-        }
-
-        if (scenes.length > completedMissionNum)
-          setCurrentScene(completedMissionNum);
-        setStudiedMinutes(studiedMinutes);
-        setProjectId(id);
-        setProjectTitle(title);
-        setLectureScript({
-          goal: goal,
-          outro: outro,
-          scenes: scenes,
+          if (scenes.length > completedMissionNum)
+            setCurrentScene(completedMissionNum);
+          setStudiedMinutes(studiedMinutes);
+          setProjectId(id);
+          setProjectTitle(title);
+          setLectureScript({
+            goal: goal,
+            outro: outro,
+            scenes: scenes,
+          });
+        })
+        .catch((e) => {
+          console.error(e);
         });
-      })
-      .catch((e) => {
-        console.error(e);
-      });
+    } else {
+      request
+        .getMyLessonInfo(progressId)
+        .then((res) => res.json())
+        .then((json) => {
+          const id = json.data.lessonId;
+          const title = json.data.lesson.title;
+          const studiedMinutes = "";
+          const completedMissionNum = json.data.completedMissionNumber;
+          const status = json.data.status;
+          const { goal, outro, scenes } = JSON.parse(json.data.lesson.template);
+
+          if (status === "FINISHED") {
+            setClearedProject(true);
+            setIsShowProjectItems(true);
+          }
+
+          if (scenes.length > completedMissionNum)
+            setCurrentScene(completedMissionNum);
+          setStudiedMinutes(studiedMinutes);
+          setProjectId(id);
+          setProjectTitle(title);
+          setLectureScript({
+            goal: goal,
+            outro: outro,
+            scenes: scenes,
+          });
+        })
+        .catch((e) => {
+          console.error(e);
+        });
+    }
   };
 
   const handleSceneMode = (mode) => {
