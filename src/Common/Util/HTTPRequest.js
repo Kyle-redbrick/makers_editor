@@ -873,7 +873,7 @@ export const assetsById = (param) => {
 };
 
 export const getAssetsById = (param) => {
-  return fetchSaasRequest(URL.API_SAAS_SERVER + "asset/info" + param, "GET");
+  return fetchSaasRequest(URL.API_SAAS_SERVER + "asset/list" + param, "GET");
 };
 
 // export const assetsByCategory = (param) => {
