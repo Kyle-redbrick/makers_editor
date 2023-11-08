@@ -180,16 +180,16 @@ class AssetLibrary {
       }
     }
 
-    const params = {
-      spriteIds: spriteAssetIds,
-      soundIds: state.soundIds,
-    };
+    if (state.soundIds.length) {
+      param = param + `soundIds=${state.soundIds}`;
+    }
 
-    param = param + `soundIds=${state.soundIds}`;
+    if (param.charAt(param.length - 1) === "&") {
+      param = param.slice(0, -1);
+    }
 
     request
       .getAssetsById(param)
-      // .assetsById(params)
       .then((res) => res.json())
       .then((json) => {
         const sprites = json.data.sprites;
