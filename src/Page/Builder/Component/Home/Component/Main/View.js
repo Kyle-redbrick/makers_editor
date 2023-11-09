@@ -162,14 +162,16 @@ const ProjectItem = (props) => {
       >
         <img className="top__img" src={project.thumbnailURL} alt="project" />
       </div>
-      <div
-        className="projectItem__bottom"
-        onClick={(e) => {
-          e.preventDefault();
-          onClickProject(project.id);
-        }}
-      >
-        <div className="bottom__title">{project.title}</div>
+      <div className="projectItem__bottom">
+        <div
+          className="bottom__title"
+          onClick={(e) => {
+            e.preventDefault();
+            onClickProject(project.id);
+          }}
+        >
+          {project.title}
+        </div>
         <div className="bottom__time">
           {project.updatedAt &&
             project.updatedAt.split("T")[0].replaceAll("-", ".")}
