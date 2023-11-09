@@ -78,7 +78,7 @@ class AssetLibrary {
       .getCategories()
       .then((res) => res.json())
       .then((categories) => {
-        this.categories = categories.filter(
+        this.categories = categories.data.filter(
           (c) => c.name !== "wizlive" && c.name !== "template"
         );
         if (callback) callback();
@@ -119,8 +119,8 @@ class AssetLibrary {
         if (!this.categoryItems[category]) {
           this.categoryItems[category] = [];
         }
-        json.forEach((subItem) => {
-          const assets = subItem.assets;
+        json.data.forEach((subItem) => {
+          const assets = subItem.assetCategoryItems;
           this.categoryItems[subItem.name] = [];
           for (var i in assets) {
             let asset = assets[i].asset;

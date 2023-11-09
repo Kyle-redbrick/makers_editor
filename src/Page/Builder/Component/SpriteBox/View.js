@@ -1,3 +1,5 @@
+// src/Page/Builder/Component/SpriteBox
+
 import React from "react";
 import AssetLibrary from "../../utils/assetLibrary";
 import closeImg from "../../../../Image/builder/x-copy-3.svg";
@@ -23,7 +25,7 @@ function getLocalName(item) {
   return title;
 }
 
-export default function(props) {
+export default function (props) {
   const {
     currentCategory,
     currentSubCategory,
@@ -40,12 +42,13 @@ export default function(props) {
     inputValue,
     email,
     hoverAsset,
-    handleAnimationHide
+    handleAnimationHide,
   } = props;
   const category = AssetLibrary.categories.find(
-    category => category.name === currentCategory
+    (category) => category.name === currentCategory
   );
-  let subCategories = category.subCategories;
+
+  let subCategories = category.assetSubCategories;
   if (category.name === "new") {
     subCategories = [];
   } else {
@@ -56,10 +59,10 @@ export default function(props) {
           ko: "전체",
           zh: "All",
           ja: "すべて",
-          default: "All"
-        })
+          default: "All",
+        }),
       },
-      ...subCategories
+      ...subCategories,
     ];
   }
   let currentCategoryName, currentSubCategoryName;
@@ -100,15 +103,16 @@ export default function(props) {
           </div>
           <div className="SpriteBoxCategoryList">
             {AssetLibrary.getCategories(email)
-              .filter(c => c.name !== "bgm" && c.name !== "sfx")
+              .filter((c) => c.name !== "bgm" && c.name !== "sfx")
               .map((category, index) => {
                 let isSelected = category.name === currentCategory;
                 if (isSelected) currentCategoryName = getLocalName(category);
                 return (
                   <div
                     key={index}
-                    className={`SpriteBoxCategoryItem ${isSelected &&
-                      "SpriteBoxCategoryItemActive"}`}
+                    className={`SpriteBoxCategoryItem ${
+                      isSelected && "SpriteBoxCategoryItemActive"
+                    }`}
                   >
                     <ButtonIndicator buttonId={category.name}>
                       <div
@@ -134,8 +138,9 @@ export default function(props) {
                           return (
                             <div
                               key={index}
-                              className={`SpriteBoxSubCategoryItem ${isSelected &&
-                                "SpriteBoxSubCategoryItemActive"}`}
+                              className={`SpriteBoxSubCategoryItem ${
+                                isSelected && "SpriteBoxSubCategoryItemActive"
+                              }`}
                               onClick={() => {
                                 if (subCategory.name !== "ALL") {
                                   setCurrentCategory(
@@ -197,7 +202,7 @@ export default function(props) {
           </div>
           <div className="SpriteBoxAssets">
             {assets
-              .filter(c => c.type !== "sound")
+              .filter((c) => c.type !== "sound")
               .map((_asset, index) => {
                 const assetId = _asset.assetId;
                 const asset = AssetLibrary.getAsset(assetId);

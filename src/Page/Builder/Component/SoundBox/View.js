@@ -25,7 +25,7 @@ function getLocalName(item) {
   return title;
 }
 
-export default function(props) {
+export default function (props) {
   const {
     handleSelectTab,
     currentCategory,
@@ -38,7 +38,7 @@ export default function(props) {
     soundIds,
     categories,
     jukebox,
-    handleChangeZIndex
+    handleChangeZIndex,
   } = props;
   let currentCategoryName, currentSubCategoryName;
   const colorTheme = getColorTheme();
@@ -75,16 +75,17 @@ export default function(props) {
                   {getLocalName(category)}
                 </div>
                 <div className="SoundBoxSubCategories">
-                  {category.subCategories.map((subCategory, index) => {
+                  {category.assetSubCategories.map((subCategory, index) => {
                     if (subCategory.name === currentSubCategory) {
                       currentSubCategoryName = getLocalName(subCategory);
                     }
                     return (
                       <div
                         key={index}
-                        className={`SoundBoxSubCategoryItem ${subCategory.name ===
-                          currentSubCategory &&
-                          "SoundBoxSubCategoryItemActive"}`}
+                        className={`SoundBoxSubCategoryItem ${
+                          subCategory.name === currentSubCategory &&
+                          "SoundBoxSubCategoryItemActive"
+                        }`}
                         onClick={() => {
                           if (subCategory.name !== "ALL") {
                             setCurrentCategory(category.name, subCategory.name);
@@ -115,7 +116,7 @@ export default function(props) {
           </div>
           <div className="SoundBoxAssets">
             {assets
-              .filter(c => c.type === "sound")
+              .filter((c) => c.type === "sound")
               .map((_asset, index) => {
                 const assetId = _asset.assetId;
                 const asset = AssetLibrary.getSoundAsset(assetId);

@@ -876,28 +876,30 @@ export const getAssetsById = (param) => {
   return fetchSaasRequest(URL.API_SAAS_SERVER + "asset/list" + param, "GET");
 };
 
-// export const assetsByCategory = (param) => {
-//   return fetchRequest(URL.API_SERVER + `assets/${param.categoryId}`, "GET");
-// };
-
-// export const getCategories = (param) => {
-//   return fetchRequest(URL.API_SERVER + `categories`, "GET");
-// };
-
 export const addAsset = (param) => {
   return fetchRequest(URL.API_SERVER + "asset", "POST", param);
 };
 
+export const getCategories = () => {
+  return fetchSaasRequest(URL.API_SAAS_SERVER + "assetCategory/list", "GET");
+};
+
 export const assetsByCategory = (param) => {
-  return fetchRequest(
-    `https://apiserver.wizlab.net/assets/${param.categoryId}`,
-    "GET"
+  return fetchSaasRequest(
+    URL.API_SAAS_SERVER + `asset/category/list?categoryId=${param.categoryId}`
   );
 };
 
-export const getCategories = (param) => {
-  return fetchRequest(`https://apiserver.wizlab.net/categories`, "GET");
-};
+// export const getCategories = (param) => {
+//   return fetchRequest(`https://apiserver.wizlab.net/categories`, "GET");
+// };
+
+// export const assetsByCategory = (param) => {
+//   return fetchRequest(
+//     `https://apiserver.wizlab.net/assets/${param.categoryId}`,
+//     "GET"
+//   );
+// };
 
 /*** billing */
 export const billingHoldPayment = (param) => {

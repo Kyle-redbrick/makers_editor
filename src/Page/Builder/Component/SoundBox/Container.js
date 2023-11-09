@@ -15,33 +15,33 @@ class Container extends Component {
       currentSubCategory: "bgm",
       assets: [],
       selectedAssetId: undefined,
-      categories: []
+      categories: [],
     };
   }
 
   componentDidMount() {
     AssetLibrary.loadAllSounds(() => {
       let categories = AssetLibrary.categories.filter(
-        c => c.name === "sfx" || c.name === "bgm"
+        (c) => c.name === "sfx" || c.name === "bgm"
       );
       this.setState({
-        categories: categories.map(category => {
+        categories: categories.map((category) => {
           return {
             ...category,
-            subCategories: [
+            assetSubCategories: [
               {
                 name: category.name,
                 localeName: JSON.stringify({
                   ko: "전체",
                   zh: "All",
                   ja: "すべて",
-                  default: "All"
-                })
+                  default: "All",
+                }),
               },
-              ...category.subCategories
-            ]
+              ...category.assetSubCategories,
+            ],
           };
-        })
+        }),
       });
       this.loadAssets(this.state.currentSubCategory);
     });
@@ -70,7 +70,7 @@ class Container extends Component {
 
   loadAssets = (subcate, callback) => {
     if (subcate) {
-      AssetLibrary.loadAssetsByCategory(subcate, assets => {
+      AssetLibrary.loadAssetsByCategory(subcate, (assets) => {
         if (callback) {
           callback();
         } else {
@@ -80,22 +80,22 @@ class Container extends Component {
     }
   };
 
-  handleSelectAsset = assetId => {
+  handleSelectAsset = (assetId) => {
     if (assetId !== this.state.selectedAssetId) {
       this.setState({ selectedAssetId: assetId });
       const item = AssetLibrary.getSoundAsset(assetId);
       this.props.playSound({
         id: item.id,
         path: item.path,
-        type: item.type
+        type: item.type,
       });
     } else {
       this.setState({ selectedAssetId: undefined }, this.props.stopSound);
     }
   };
 
-  handleAddAsset = asset => {
-    if (this.props.soundIds.find(id => id === asset.assetId)) {
+  handleAddAsset = (asset) => {
+    if (this.props.soundIds.find((id) => id === asset.assetId)) {
       return;
     }
     const { assetId, type, subtype } = asset;
@@ -105,11 +105,11 @@ class Container extends Component {
     }
   };
 
-  handleRemoveAsset = assetId => {
+  handleRemoveAsset = (assetId) => {
     this.props.removeSound(assetId);
   };
 
-  setSpriteInfo = item => {
+  setSpriteInfo = (item) => {
     const asset = AssetLibrary.getSoundAsset(item.assetId);
     const type = asset.type;
     const subtype = asset.subtype;
@@ -118,7 +118,7 @@ class Container extends Component {
     return { name, assetId, type, subtype };
   };
 
-  reduceBasket = assets => {
+  reduceBasket = (assets) => {
     return assets.reduce(
       (acc, cur) => {
         if (cur.subtype === "camera") {
@@ -154,20 +154,20 @@ class Container extends Component {
       zIndex,
       isOn,
       handleSelectTab,
-      handleChangeZIndex
+      handleChangeZIndex,
     } = this.props;
     const {
       currentCategory,
       currentSubCategory,
       assets,
       selectedAssetId,
-      categories
+      categories,
     } = this.state;
     const {
       setCurrentCategory,
       handleSelectAsset,
       handleAddAsset,
-      handleRemoveAsset
+      handleRemoveAsset,
     } = this;
 
     if (!isOn) {
@@ -205,18 +205,18 @@ class Container extends Component {
 }
 
 export default connect(
-  state => ({
+  (state) => ({
     jukebox: state.interaction.jukebox,
     selectedSceneId: state.interaction.selected.scene,
     selectedObject:
       state.interaction.selected.objects[state.interaction.selected.scene],
     sprites: state.scene.scenes[state.interaction.selected.scene].sprites,
-    soundIds: state.scene.soundIds
+    soundIds: state.scene.soundIds,
   }),
   {
     playSound: interactionActions.playSound,
     stopSound: interactionActions.stopSound,
     removeSound: sceneActions.removeSound,
-    addSounds: sceneActions.addSounds
+    addSounds: sceneActions.addSounds,
   }
 )(onClickOutside(Container));
