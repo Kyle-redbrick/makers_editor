@@ -1,18 +1,22 @@
 import React from "react";
 import { injectIntl } from "react-intl";
-import "./index.scss"
+import "./index.scss";
 
-import clearImg from "../../../../../../Image/dream_questClear.svg"
+import clearImg from "../../../../../../Image/dream_questClear.svg";
 
 function ProjectClear(props) {
-  return  (
+  return (
     <div className="dream_projectClear">
-      <img className="dream_projectClear_image" src={clearImg} alt="clear"/>
-      <p className="popup_title">{props.intl.formatMessage({ id: "ID_DREAM_BUILDER_QUEST_CLEAR" })}</p>
+      <img className="dream_projectClear_image" src={clearImg} alt="clear" />
+      <p className="popup_title">
+        {props.intl.formatMessage({ id: "ID_DREAM_BUILDER_QUEST_CLEAR" })}
+      </p>
       <div className="popup_subtitle">
-        {props.intl.formatMessage({ id: "ID_DREAM_BUILDER_QUEST_CLEAR_SUBTITLE" })}
+        {props.intl.formatMessage({
+          id: "ID_DREAM_BUILDER_QUEST_CLEAR_SUBTITLE",
+        })}
       </div>
-      <div className="popup_buttons">
+      {/* <div className="popup_buttons">
         <button
           className="popup_button popup_button-cancel"
           onClick={() => {
@@ -31,7 +35,7 @@ function ProjectClear(props) {
         >
           {props.intl.formatMessage({ id: "ID_DREAM_BUILDER_QUEST_CLEAR_CONFIRM_BUTTON" })}
         </button>
-      </div>
+      </div> */}
     </div>
   );
 }

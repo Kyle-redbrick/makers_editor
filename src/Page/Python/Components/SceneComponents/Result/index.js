@@ -52,9 +52,9 @@ const Result = (props) => {
           <button className="replayBtn" onClick={onClickProjectReplay}>
             {intl.formatMessage({ id: "ID_PYTHON_RESULT_REPLAY_BTN" })}
           </button>
-          <button className="nextQuestBtn" onClick={() => {}}>
+          {/* <button className="nextQuestBtn" onClick={() => {}}>
             {intl.formatMessage({ id: "ID_PYTHON_RESULT_NEXT_QUEST_BTN" })}
-          </button>
+          </button> */}
         </div>
       </div>
     </div>
