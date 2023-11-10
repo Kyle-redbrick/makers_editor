@@ -272,7 +272,8 @@ export const deleteLesson = (param) => {
 
 export const getSaasAllCourse = () => {
   return fetchSaasRequest(
-    URL.API_SAAS_SERVER + "course/list/available?offset=0&limit=100",
+    URL.API_SAAS_SERVER +
+      "course/list/available?offset=0&limit=100&classification=created",
     "GET"
   );
   // return fetchRequest(URL.API_SAAS_SERVER + "course/list?locale=ko", "GET");

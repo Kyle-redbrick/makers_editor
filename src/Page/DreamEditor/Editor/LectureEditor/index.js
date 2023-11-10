@@ -27,7 +27,7 @@ function LectureEditor(props) {
   const [language, setLanguage] = useState("");
   const [number, setNumber] = useState(0);
   const [thumbnailURL, setThumbnailURL] = useState("");
-  const [isHidden, setIsHidden] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
   const [totalMissionNum, setTotalMissionNum] = useState(0);
 
   const lectureValues = {
@@ -38,7 +38,7 @@ function LectureEditor(props) {
     language: language,
     number: number,
     thumbnailURL: thumbnailURL,
-    isHidden: isHidden,
+    isVisible: isVisible,
     totalMissionNum: totalMissionNum,
   };
 
@@ -50,26 +50,28 @@ function LectureEditor(props) {
       setDefaultTemplate(lecture.template || "");
       setSampleGameURL(lecture.sampleGameURL || "");
       setThumbnailURL(lecture.thumbnailURL || "");
-      setIsHidden(lecture.isVisible || "");
+      setIsVisible(lecture.isVisible || "");
       setLanguage(lecture.language || "");
       setTotalMissionNum(lecture.totalMissionNum || 0);
     }
   }, [lecture]);
 
-  const onClickSave = () => {
+  const onClickSave = async () => {
     if (typeof tag === "string") {
       const tags = tag.split(",").map(function (tag) {
         return tag.trim();
       });
-      request.tagUpdate(lectureId, tags);
+      await request.tagUpdate(lectureId, tags);
     }
-    request
+
+    await request
       .updateLecture(lectureId, lectureValues)
       .then((res) => res.json())
       .then((json) => {
-        if (json.result) {
-          alert("저장되었습니다 :)");
-        }
+        console.log("json :", json.data.lessonInfo.id);
+        localStorage.removeItem("dreamEditorSelectedElement");
+        alert("저장되었습니다. :)");
+        window.location.reload();
       });
   };
 
@@ -79,8 +81,8 @@ function LectureEditor(props) {
       .then((res) => res.json())
       .then((json) => {
         console.log("json", json);
-        localStorage.clear();
-        window.location.reload();
+        localStorage.removeItem("dreamEditorSelectedElement");
+        // window.location.reload();
       });
   };
 
@@ -149,12 +151,10 @@ function LectureEditor(props) {
           lectureName={title}
         />
         <Field.OnOff
-          id="isHidden"
+          id="isVisible"
           title="콘텐츠 공개"
-          value={!isHidden}
-          onChange={(value) => {
-            setIsHidden(!value);
-          }}
+          value={isVisible}
+          onChange={setIsVisible}
         />
 
         <div className="dreamEditor_editor_field dreamEditor_editor_field-template">
