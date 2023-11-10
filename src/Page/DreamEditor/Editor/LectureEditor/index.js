@@ -7,7 +7,6 @@ import "./index.scss";
 function LectureEditor(props) {
   const { lectureId } = props;
   const [lecture, setLecture] = useState(null);
-
   useEffect(() => {
     request
       .getLecture(lectureId)
@@ -149,6 +148,7 @@ function LectureEditor(props) {
           value={thumbnailURL}
           onChange={setThumbnailURL}
           lectureName={title}
+          lectureId={lectureId}
         />
         <Field.OnOff
           id="isVisible"

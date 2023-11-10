@@ -74,11 +74,10 @@ function Select(props) {
 const uploadFile = async ({
   selectedFile,
   lectureName = "",
-  lectureId = "",
+  lectureId,
   templateState = false,
 }) => {
   try {
-    // 템플릿 에디터에 사진, 영상 업로드하는 경우
     if (templateState) {
       const params = {
         lessonId: lectureId,
@@ -100,11 +99,10 @@ const uploadFile = async ({
       console.log("PUT response", putResponse);
       return downloadUrl;
     } else {
-      const uploadResponse = await request.thumbnailUpload(lectureName);
+      const uploadResponse = await request.thumbnailUpload(lectureId);
       const uploadData = await uploadResponse.json();
-      const temporaryPutUrl = uploadData.data.uploadUrl;
-      const putUrl = temporaryPutUrl.slice(0, 4) + temporaryPutUrl.slice(5);
-      const downloadUrl = uploadData.data.downloadUrl;
+      const putUrl = uploadData.url.uploadUrl;
+      const downloadUrl = uploadData.url.downloadUrl;
 
       const putResponse = await fetch(putUrl, {
         method: "PUT",
@@ -122,15 +120,10 @@ const uploadFile = async ({
 };
 
 function File(props) {
-  const { id, accept, value, onChange, lectureName, templateState } = props;
+  const { id, accept, value, onChange, lectureName, templateState, lectureId } =
+    props;
   const fileInputRef = useRef();
-
   if (templateState) {
-    const lectureInfo = JSON.parse(
-      localStorage.getItem("dreamEditorSelectedElement")
-    );
-    const lectureId = lectureInfo.id;
-
     return (
       <Base {...props} type="file">
         <input
@@ -175,7 +168,7 @@ function File(props) {
           onChange={(e) => {
             const selectedFile = e.target.files[0];
             if (!selectedFile) return;
-            uploadFile({ selectedFile, lectureName }).then((res) => {
+            uploadFile({ selectedFile, lectureName, lectureId }).then((res) => {
               onChange(res);
             });
           }}

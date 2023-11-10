@@ -337,14 +337,11 @@ export const updateCourse = (lectureId, lectureValues) => {
   );
 };
 
-export const thumbnailUpload = (lectureName) => {
-  const param = {
-    lessonName: lectureName,
-  };
+export const thumbnailUpload = (lessonId) => {
   return fetchSaasRequest(
-    URL.API_SAAS_SERVER + `lesson/thumbnail/upload`,
-    "POST",
-    param
+    URL.API_SAAS_SERVER +
+      `lesson/thumbnail/upload?lessonId=${lessonId}&fileType=jpg&mimeType=image/jpeg`,
+    "GET"
   );
 };
 
