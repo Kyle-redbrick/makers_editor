@@ -181,7 +181,9 @@ class AssetLibrary {
     }
 
     if (state.soundIds.length) {
-      param = param + `soundIds=${state.soundIds}`;
+      for (i = 0; i < state.soundIds.length; i++) {
+        param = param + `soundIds=${state.soundIds[i]}&`;
+      }
     }
 
     if (param.charAt(param.length - 1) === "&") {
@@ -333,6 +335,7 @@ class AssetLibrary {
   };
 
   getSoundAsset = (id) => {
+    console.log("this.sounds :", this.sounds);
     return this.sounds[id];
   };
 
