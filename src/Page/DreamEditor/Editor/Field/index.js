@@ -201,6 +201,7 @@ function File(props) {
 
 function OnOff(props) {
   const { id, value: isOn, /*title_on, title_off,*/ onChange } = props;
+
   return (
     <Base {...props} type="onoff">
       <div className={`onoff onoff-${isOn ? "on" : "off"}`}>

@@ -22,7 +22,7 @@ function CourseEditor(props) {
   const [language, setLanguage] = useState("");
   const [number, setNumber] = useState(0);
   const [thumbnailURL, setThumbnailURL] = useState("");
-  const [isHidden, setIsHidden] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
 
   const lectureValues = {
     title: title,
@@ -32,7 +32,7 @@ function CourseEditor(props) {
     // language: language,
     // number: number,
     thumbnailURL: thumbnailURL,
-    isHidden: isHidden,
+    isVisible: isVisible,
   };
 
   useEffect(() => {
@@ -42,7 +42,7 @@ function CourseEditor(props) {
       setTemplate(lecture.template || "");
       setSampleGameURL(lecture.sampleGameURL || "");
       setThumbnailURL(lecture.thumbnailURL || "");
-      setIsHidden(lecture.isVisible || "");
+      setIsVisible(lecture.isVisible || "");
       setLanguage(lecture.locale || "");
     }
   }, [lecture]);
@@ -64,7 +64,7 @@ function CourseEditor(props) {
       .then((res) => res.json())
       .then((json) => {
         console.log("JSON", json);
-        localStorage.clear();
+        localStorage.removeItem("dreamEditorSelectedElement");
         window.location.reload();
       });
   };
@@ -108,7 +108,7 @@ function CourseEditor(props) {
           value={template}
           onChange={setTemplate}
         /> */}
-        <Field.Select
+        {/* <Field.Select
           id="language"
           title="언어"
           value={language}
@@ -118,7 +118,7 @@ function CourseEditor(props) {
             { value: "OOBC", label: "OOBC" },
           ]}
           onChange={setLanguage}
-        />
+        /> */}
         {/* <Field.Input
           id="number"
           type="number"
@@ -134,12 +134,10 @@ function CourseEditor(props) {
           lectureName={title}
         /> */}
         <Field.OnOff
-          id="isHidden"
+          id="isVisible"
           title="콘텐츠 공개"
-          value={!isHidden}
-          onChange={(value) => {
-            setIsHidden(!value);
-          }}
+          value={isVisible}
+          onChange={setIsVisible}
         />
       </div>
     </div>
