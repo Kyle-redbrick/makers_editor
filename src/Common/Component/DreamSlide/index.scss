@@ -1,5 +1,5 @@
 .dreamslide {
-  font-size: 18px;
+  font-size: 16px;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -119,21 +119,15 @@
     }
   }
 
-  strong {
-    display: flex;
-    align-items: center;
-  }
-
   .inline_icon {
-    height: 35px;
-    margin: 0 5px;
-    vertical-align: middle;
+    height: 24px;
+    vertical-align: bottom;
   }
   .inline_oobc {
     .oobceditor_block {
-      --oobceditorBlockHeight: 40px;
+      --oobceditorBlockHeight: 30px;
       display: inline-flex;
-      vertical-align: middle;
+      vertical-align: top;
       margin: 0;
       font-weight: bold;
       pointer-events: none;
