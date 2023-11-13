@@ -81,7 +81,7 @@ function LectureEditor(props) {
       .then((json) => {
         console.log("json", json);
         localStorage.removeItem("dreamEditorSelectedElement");
-        // window.location.reload();
+        window.location.reload();
       });
   };
 
