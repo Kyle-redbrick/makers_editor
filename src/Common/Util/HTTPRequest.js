@@ -265,7 +265,7 @@ export const deleteCourse = (param) => {
 
 export const deleteLesson = (param) => {
   return fetchSaasRequest(
-    URL.API_SAAS_SERVER + `lesson?lessonId=${param}`,
+    URL.API_SAAS_SERVER + `lesson/force?lessonId=${param}`,
     "DELETE"
   );
 };
