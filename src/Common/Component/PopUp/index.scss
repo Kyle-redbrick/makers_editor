@@ -62,6 +62,8 @@
   .inner {
     position: relative;
     border-radius: 20px;
+    padding: 55px 44px;
+    background-color: #393e4f;
   }
 
   .popup_contents_opacity {
@@ -107,7 +109,7 @@
     white-space: pre-wrap;
   }
   .popup_subtitle {
-    margin-top: 23px;
+    margin: 23px 0;
     font-size: 13px;
     white-space: pre-wrap;
   }
@@ -123,7 +125,7 @@
     font-size: 16px;
     font-weight: bold;
     color: #fff;
-    background-color: #4313ab;
+    background-color: #fa323c;
     border: none;
     box-sizing: border-box;
     white-space: pre;
@@ -135,9 +137,9 @@
     opacity: 0.75;
   }
   .popup_button-cancel {
-    // background: transparent;
-    // color: #1db6ff;
-    // border: 1px solid #1db6ff;
+    background: transparent;
+    color: #fa323c;
+    border: 1px solid #fa323c;
   }
   .popup_button-cancel:hover {
     opacity: 0.6;
