@@ -16,7 +16,7 @@ function ProjectClear(props) {
           id: "ID_DREAM_BUILDER_QUEST_CLEAR_SUBTITLE",
         })}
       </div>
-      {/* <div className="popup_buttons">
+      <div className="popup_buttons">
         <button
           className="popup_button popup_button-cancel"
           onClick={() => {
@@ -24,7 +24,9 @@ function ProjectClear(props) {
             if (props.dismiss) props.dismiss();
           }}
         >
-          {props.intl.formatMessage({ id: "ID_DREAM_BUILDER_QUEST_CLEAR_CANCEL_BUTTON" })}
+          {props.intl.formatMessage({
+            id: "ID_DREAM_BUILDER_QUEST_CLEAR_CANCEL_BUTTON",
+          })}
         </button>
         <button
           className="popup_button"
@@ -33,9 +35,11 @@ function ProjectClear(props) {
             if (props.dismiss) props.dismiss();
           }}
         >
-          {props.intl.formatMessage({ id: "ID_DREAM_BUILDER_QUEST_CLEAR_CONFIRM_BUTTON" })}
+          {props.intl.formatMessage({
+            id: "ID_DREAM_BUILDER_QUEST_CLEAR_CONFIRM_BUTTON",
+          })}
         </button>
-      </div> */}
+      </div>
     </div>
   );
 }
