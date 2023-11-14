@@ -39,7 +39,11 @@ function View(props) {
             className="projectItem__top"
             onClick={() => onClickProject(item.id)}
           >
-            <img src={item.thumbnailURL} className="top__img" alt="icon" />
+            <img
+              src={item.thumbnailURL.THUMBNAIL_ALI()}
+              className="top__img"
+              alt="icon"
+            />
           </div>
 
           <div className="projectItem__bottom">

@@ -47,7 +47,7 @@ function View(props) {
                 >
                   <img
                     className="top__img"
-                    src={item.thumbnailURL}
+                    src={item.thumbnailURL.THUMBNAIL_ALI()}
                     alt="icon"
                   />
                 </div>

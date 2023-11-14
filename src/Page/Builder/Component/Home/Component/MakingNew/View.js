@@ -48,7 +48,11 @@ function View(props) {
                 }}
               >
                 <div className="projectItem__top">
-                  <img className="top__img" src={item.thumbnailURL} alt="top" />
+                  <img
+                    className="top__img"
+                    src={item.thumbnailURL.THUMBNAIL_ALI()}
+                    alt="top"
+                  />
                 </div>
                 <div className="projectItem__bottom">
                   <div className="bottom__title">{item.name}</div>
