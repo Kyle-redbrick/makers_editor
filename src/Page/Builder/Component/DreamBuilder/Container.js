@@ -27,6 +27,16 @@ class Container extends Component {
     this.saasload();
   }
 
+  goToCreatePage() {
+    const pId = localStorage.getItem("createPid");
+    request
+      .copySaasProject(pId)
+      .then((res) => res.json())
+      .then((json) => {
+        window.location.replace(`/${json.data.projectInfo.id}`);
+      });
+  }
+
   saasload() {
     const { progressId } = this.props.match.params;
 
@@ -35,6 +45,13 @@ class Container extends Component {
         .getLecture(progressId)
         .then((res) => res.json())
         .then((json) => {
+          let nowTemplate = JSON.parse(json.data.lessonInfo.template).missions;
+          if (nowTemplate[nowTemplate.length - 1].pId) {
+            localStorage.setItem(
+              "createPid",
+              nowTemplate[nowTemplate.length - 1].pId
+            );
+          }
           const lessonTemplate = {
             id: "",
             status: "FINISHED",
@@ -87,6 +104,13 @@ class Container extends Component {
         .getMyLessonInfo(progressId)
         .then((res) => res.json())
         .then((json) => {
+          let nowTemplate = JSON.parse(json.data.lesson.template).missions;
+          if (nowTemplate[nowTemplate.length - 1].pId) {
+            localStorage.setItem(
+              "createPid",
+              nowTemplate[nowTemplate.length - 1].pId
+            );
+          }
           const lessonTemplate = {
             id: progressId,
             status: json.data.status,
@@ -286,11 +310,12 @@ class Container extends Component {
   alertProjectClear() {
     showPopUp(
       <ProjectClearPopUp
-        onClickConfirm={() => {
-          window.opener = null;
-          window.open("", "_self");
-          window.close();
-        }}
+        onClickConfirm={() => this.goToCreatePage()}
+        // onClickConfirm={() => {
+        //   window.opener = null;
+        //   window.open("", "_self");
+        //   window.close();
+        // }}
       />,
       {
         dismissButton: false,
