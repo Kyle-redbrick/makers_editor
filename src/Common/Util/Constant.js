@@ -30,8 +30,7 @@ export const URL = {
     return "https://d21hhf2g9kirkh.cloudfront.net";
   },
   get THUMBNAIL_ALI() {
-    return `https://storage-dev.redbrickmakers.com/legacy`;
-    // return `https://redbrick-makers.oss-ap-northeast-2.aliyuncs.com/`;
+    return `https://storage-dev.redbrickmakers.com`;
   },
 };
 
