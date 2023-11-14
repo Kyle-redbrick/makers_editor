@@ -160,7 +160,11 @@ const ProjectItem = (props) => {
           onClickProject(project.id);
         }}
       >
-        <img className="top__img" src={project.thumbnailURL} alt="project" />
+        <img
+          className="top__img"
+          src={project.thumbnailURL.THUMBNAIL_ALI()}
+          alt="project"
+        />
       </div>
       <div className="projectItem__bottom">
         <div

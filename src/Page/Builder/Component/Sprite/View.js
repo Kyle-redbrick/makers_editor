@@ -8,7 +8,7 @@ import "./index.scss";
 import ButtonIndicator from "../ButtonIndicator";
 import { getColorTheme } from "../../utils/colorThemeUtil";
 
-export default function(props) {
+export default function (props) {
   const {
     sprites,
     spriteIds,
@@ -20,7 +20,7 @@ export default function(props) {
     handleSelectTab,
     handleRemoveAll,
     handleHideLocks,
-    isSceneToolHidden
+    isSceneToolHidden,
   } = props;
   const imgUrl = selectedScene.preview
     ? selectedScene.preview
@@ -32,7 +32,7 @@ export default function(props) {
         <ButtonIndicator buttonId="sceneThumb">
           <div className="SpriteContainer_SceneImg">
             <img
-              src={imgUrl}
+              src={imgUrl.THUMBNAIL_ALI()}
               alt="scene thumb"
               onClick={() => handleSelectTab("scene")}
             />
@@ -67,8 +67,14 @@ export default function(props) {
           );
         })}
       </div>
-      <div className={`SpriteContainer_Line ${isSceneToolHidden && "hidden"}`} />
-      <div className={`SpriteContainer_SceneTools ${isSceneToolHidden && "hidden"}`}>
+      <div
+        className={`SpriteContainer_Line ${isSceneToolHidden && "hidden"}`}
+      />
+      <div
+        className={`SpriteContainer_SceneTools ${
+          isSceneToolHidden && "hidden"
+        }`}
+      >
         <ButtonIndicator buttonId="addImg">
           <div
             className="Sprite_Add"

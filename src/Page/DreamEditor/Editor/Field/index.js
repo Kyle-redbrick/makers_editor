@@ -74,9 +74,12 @@ function Select(props) {
 const uploadFile = async ({
   selectedFile,
   lectureName = "",
-  lectureId,
   templateState = false,
 }) => {
+  const lectureInfo = JSON.parse(
+    localStorage.getItem("dreamEditorSelectedElement")
+  );
+  const lectureId = lectureInfo.id;
   try {
     if (templateState) {
       const params = {
