@@ -88,7 +88,7 @@ const View = (props) => {
           )}
         </div>
         {/* desc */}
-        {/* <div className="publishform__row">
+        <div className="publishform__row">
           <p className="publishform__title">
             {props.intl.formatMessage({ id: "ID_BUILDER_EDITPOP_DESC" })}
           </p>
@@ -112,7 +112,7 @@ const View = (props) => {
               })}
             </p>
           )}
-        </div> */}
+        </div>
 
         {/* icon */}
 
@@ -126,8 +126,9 @@ const View = (props) => {
               <img
                 className="publishform__icon__img"
                 src={
-                  iconUpdated? iconUpdated :
-                  icon
+                  iconUpdated
+                    ? iconUpdated
+                    : icon
                     ? icon
                     : "https://png.pngtree.com/thumb_back/fh260/background/20200821/pngtree-pure-black-background-wallpaper-image_396550.jpg"
                 }
@@ -234,9 +235,7 @@ const View = (props) => {
         {/* publishing */}
         <div className="publishform__row">
           <div className="publishform__title__wrapper">
-            <p className="publishform__title">
-              퍼블리싱
-            </p>
+            <p className="publishform__title">퍼블리싱</p>
           </div>
 
           <div className="publishform__code_allow__wrapper">

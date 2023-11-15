@@ -41,13 +41,14 @@ class Container extends Component {
       .getSaasDevelopingProject(pId)
       .then((res) => res.json())
       .then((json) => {
-        const { title, thumbnailURL, isVisible, isCodeCopiable } =
+        const { title, thumbnailURL, isVisible, isCodeCopiable, description } =
           json.data.projectInfo;
         this.setState({
           name: title,
           icon: thumbnailURL,
           isCopyAllowed: isVisible,
           isCodeCopyAllowed: isCodeCopiable,
+          description: description,
         });
       });
 
@@ -121,6 +122,7 @@ class Container extends Component {
         isVisible: isCopyAllowed,
         thumbnailURL: this.state.icon,
         isCodeCopiable: isCodeCopyAllowed,
+        description: description,
       };
     } else if (name) {
       params = {
@@ -128,6 +130,7 @@ class Container extends Component {
         state: state,
         isVisible: isCopyAllowed,
         isCodeCopiable: isCodeCopyAllowed,
+        description: description,
       };
     } else if (this.state.icon) {
       params = {
@@ -135,12 +138,14 @@ class Container extends Component {
         isVisible: isCopyAllowed,
         thumbnailURL: this.state.icon,
         isCodeCopiable: isCodeCopyAllowed,
+        description: description,
       };
     } else {
       params = {
         state: state,
         isVisible: isCopyAllowed,
         isCodeCopiable: isCodeCopyAllowed,
+        description: description,
       };
     }
     try {
