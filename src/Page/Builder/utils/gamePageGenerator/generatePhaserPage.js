@@ -1,7 +1,7 @@
 import {
   URL,
   EDITORMODE,
-  WizSpritePrefix
+  WizSpritePrefix,
 } from "../../../../Common/Util/Constant";
 import OOBC from "../../../../Common/Component/OOBCEditor/OOBC";
 import AssetLibrary from "../assetLibrary";
@@ -9,15 +9,14 @@ import Parser from "../parser";
 import obfuscate from "./obfuscate";
 import isDev from "./isDev";
 
-
 /**
  * @param {Object} state - 프로젝트 스테이트
  * @param {Object} gameMeta - 게임 페이지 메타 데이터, { pId, gameTitle, liveTest = false, isFromWizlab = false, systemVolume }
  * @param {function} parserErrorHandler - 게임 코드 파싱 중 에러 발생 시 호출할 콜백
  */
-export default async function(state, gameMeta, parserErrorHandler, intl) {
+export default async function (state, gameMeta, parserErrorHandler, intl) {
   // parse gameData into pId, gameName, state, screenMode
-  
+
   const { pId, gameTitle, liveTest = false, isFromWizlab = false } = gameMeta;
   const systemVolume = isNaN(gameMeta.systemVolume)
     ? 100
@@ -33,9 +32,9 @@ export default async function(state, gameMeta, parserErrorHandler, intl) {
 
   // User's code is going to be parsed by the Parser
   let userDefinedFunction = "var userDefinedFunction = {};";
-  stateObj.scene.sceneIds.forEach(sceneId => {
+  stateObj.scene.sceneIds.forEach((sceneId) => {
     userDefinedFunction += `userDefinedFunction["${sceneId}"] = {};`;
-    stateObj.scene.scenes[sceneId].spriteIds.forEach(spriteId => {
+    stateObj.scene.scenes[sceneId].spriteIds.forEach((spriteId) => {
       try {
         let code = stateObj.scene.scenes[sceneId].sprites[spriteId].code;
         let parsedCode;
@@ -631,11 +630,11 @@ export default async function(state, gameMeta, parserErrorHandler, intl) {
             type="text"
             class="InputBox--input"
             name="InputBox--input"
-            placeholder="${intl.formatMessage({ id: "ID_PHASERPAGE_PLACEHOLDER" })}"
+            placeholder="Please Enter Value"
             onkeydown="onInputKeyDown();"
           />
-          <button class="InputBoxBtn InputBoxbtn--${screenMode} InputBoxBtn--cancel" onclick="onclickInputCancel();" >${intl.formatMessage({ id: "ID_PHASERPAGE_CANCEL" })}</button>
-          <button class="InputBoxBtn InputBoxbtn--${screenMode} InputBoxBtn--confirm" onclick="onclickInputConfirm();">${intl.formatMessage({ id: "ID_PHASERPAGE_CONFIRM" })}</button>
+          <button class="InputBoxBtn InputBoxbtn--${screenMode} InputBoxBtn--cancel" onclick="onclickInputCancel();" >Cancel</button>
+          <button class="InputBoxBtn InputBoxbtn--${screenMode} InputBoxBtn--confirm" onclick="onclickInputConfirm();">Confirm</button>
         </div>
     </div>
     ${loadingScreenElement}
