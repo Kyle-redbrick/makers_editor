@@ -106,6 +106,9 @@ export default function (props) {
               .filter((c) => c.name !== "bgm" && c.name !== "sfx")
               .map((category, index) => {
                 let isSelected = category.name === currentCategory;
+                if (category.name === "illust") {
+                  return null;
+                }
                 if (isSelected) currentCategoryName = getLocalName(category);
                 return (
                   <div
