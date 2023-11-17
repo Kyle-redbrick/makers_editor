@@ -59,6 +59,15 @@ export const copySaasProject = (pId) => {
   return fetchSaasRequest(URL.API_SAAS_SERVER + `project/copy`, "POST", param);
 };
 
+export const copyAndGoToCreatePage = ({ lessonId, projectId }) => {
+  const params = { lessonId, projectId };
+  return fetchSaasRequest(
+    URL.API_SAAS_SERVER + `lesson/copyProject`,
+    "POST",
+    params
+  );
+};
+
 export const tagUpdate = (lessonId, tags) => {
   const params = {
     tags: tags,
