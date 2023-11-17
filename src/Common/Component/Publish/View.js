@@ -129,7 +129,7 @@ const View = (props) => {
                   iconUpdated
                     ? iconUpdated
                     : icon
-                    ? icon
+                    ? icon.THUMBNAIL_ALI()
                     : "https://png.pngtree.com/thumb_back/fh260/background/20200821/pngtree-pure-black-background-wallpaper-image_396550.jpg"
                 }
                 alt="icon"
