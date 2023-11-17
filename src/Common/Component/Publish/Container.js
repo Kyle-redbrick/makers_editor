@@ -100,6 +100,30 @@ class Container extends Component {
     const pId =
       window.location.pathname.split("/")[2] ||
       window.location.pathname.slice(1);
+
+    if (isCopyAllowed) {
+      let publishedURL = undefined;
+      if (this.props.scene) {
+        const state = {
+          editorMode: this.props.scene.editorMode,
+          scene: {
+            scenes: this.props.scene.scenes,
+            sceneIds: this.props.scene.sceneIds,
+            soundIds: this.props.scene.soundIds,
+            soundNames: this.props.scene.soundNames,
+          },
+          preview: {
+            screenMode: this.props.preview.screenMode,
+          },
+        };
+        const gameMeta = { pId, gameTitle: name };
+        const doc = await generateGamePage(state, gameMeta);
+        let url = await request.uploadSaasPublished({ projectId: pId, doc });
+        url = await url.json();
+        console.log("url : ", url);
+      }
+    }
+
     let state;
     if (this.props.scene) {
       state = {

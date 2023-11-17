@@ -828,6 +828,18 @@ export const uploadPublished = (param) => {
   return fetchRequest(URL.API_SERVER + "upload/published", "POST", param);
 };
 
+export const uploadSaasPublished = ({ projectId, doc }) => {
+  let params = {
+    projectId,
+    docs: doc,
+  };
+  return fetchSaasRequest(
+    URL.API_SAAS_SERVER + "project/play/upload",
+    "POST",
+    params
+  );
+};
+
 /*** basic class */
 export const getBasicClasses = (param) => {
   return fetchRequest(URL.API_SERVER + `basic`, "GET");
