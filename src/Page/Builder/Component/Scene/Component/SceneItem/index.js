@@ -14,7 +14,7 @@ class SceneItem extends Component {
       handleSelectScene,
       // handleSelectTab,
       sceneId,
-      scene
+      scene,
       // isOpened
     } = this.props;
 
@@ -36,7 +36,11 @@ class SceneItem extends Component {
         <div className="SceneInfo" onClick={() => handleSelectScene(sceneId)}>
           {/* thumb */}
           <div className="Scene_Thumb">
-            <img className="Scene_Thumb_Img" src={imgUrl} alt="thumb" />
+            <img
+              className="Scene_Thumb_Img"
+              src={imgUrl.THUMBNAIL_ALI()}
+              alt="thumb"
+            />
           </div>
 
           {/* name */}
