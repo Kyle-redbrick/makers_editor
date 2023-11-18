@@ -59,8 +59,20 @@ export const copySaasProject = (pId) => {
   return fetchSaasRequest(URL.API_SAAS_SERVER + `project/copy`, "POST", param);
 };
 
-export const copyAndGoToCreatePage = ({ lessonId, projectId }) => {
-  const params = { lessonId, projectId };
+export const copyAndGoToCreatePage = ({
+  lessonId,
+  projectId,
+  classId,
+  courseId,
+}) => {
+  let params;
+  let userInfo = JSON.parse(localStorage.getItem("userInfo"));
+  let userRole = userInfo.role;
+  if (userRole === "EDUCATOR") {
+    params = { lessonId, projectId };
+  } else {
+    params = { lessonId, projectId, classId, courseId };
+  }
   return fetchSaasRequest(
     URL.API_SAAS_SERVER + `lesson/copyProject`,
     "POST",

@@ -30,8 +30,10 @@ class Container extends Component {
   goToCreatePage() {
     const pId = localStorage.getItem("createPid");
     const lessonId = localStorage.getItem("createLessonId");
+    const courseId = localStorage.getItem("createCourseId");
+    const classId = localStorage.getItem("createClassId");
     request
-      .copyAndGoToCreatePage({ lessonId, projectId: pId })
+      .copyAndGoToCreatePage({ lessonId, projectId: pId, courseId, classId })
       .then((res) => res.json())
       .then((json) => {
         console.log("new project id : ", json.data.projectInfo);
@@ -108,6 +110,8 @@ class Container extends Component {
         .then((res) => res.json())
         .then((json) => {
           localStorage.setItem("createLessonId", json.data.lessonId);
+          localStorage.setItem("createCourseId", json.data.courseId);
+          localStorage.setItem("createClassId", json.data.classId);
           let nowTemplate = JSON.parse(json.data.lesson.template).missions;
           if (nowTemplate[nowTemplate.length - 1].pId) {
             localStorage.setItem(
