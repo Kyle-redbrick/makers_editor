@@ -88,6 +88,18 @@ export const tagUpdate = (lessonId, tags) => {
   return fetchSaasRequest(URL.API_SAAS_SERVER + `lesson/tag`, "POST", params);
 };
 
+export const keyCommandsUpdate = (lessonId, keyCommands) => {
+  const params = {
+    keyCommands,
+    lessonId,
+  };
+  return fetchSaasRequest(
+    URL.API_SAAS_SERVER + `lesson/keyCommand`,
+    "POST",
+    params
+  );
+};
+
 export const projectIconUpload = (pId) => {
   return fetchSaasRequest(
     // URL.API_SAAS_SERVER + `project/educator/icon/upload?projectId=${pId}`,

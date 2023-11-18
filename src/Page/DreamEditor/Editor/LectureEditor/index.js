@@ -14,6 +14,7 @@ function LectureEditor(props) {
       .then((json) => {
         setLecture(json.data.lessonInfo);
         setTag(json.data.lessonInfo.lessonTags);
+        setKeyCommand(json.data.lessonInfo.lessonKeyCommands);
       });
   }, [lectureId]);
 
@@ -22,6 +23,7 @@ function LectureEditor(props) {
   const [template, setTemplate] = useState("");
   const [sampleGameURL, setSampleGameURL] = useState("");
   const [tag, setTag] = useState("");
+  const [keyCommand, setKeyCommand] = useState("");
   const [defaultTemplate, setDefaultTemplate] = useState("");
   const [language, setLanguage] = useState("");
   const [number, setNumber] = useState(0);
@@ -56,6 +58,14 @@ function LectureEditor(props) {
   }, [lecture]);
 
   const onClickSave = async () => {
+    if (typeof keyCommand === "string") {
+      const keyCommands = keyCommand.split(",").map(function (keyCommand) {
+        return keyCommand.trim();
+      });
+      console.log("keyCommands : ", keyCommands);
+      await request.keyCommandsUpdate(lectureId, keyCommands);
+    }
+
     if (typeof tag === "string") {
       const tags = tag.split(",").map(function (tag) {
         return tag.trim();
@@ -124,6 +134,13 @@ function LectureEditor(props) {
           value={tag}
           onChange={setTag}
           comment={`반드시 \`,\`로 구분해주세요. 예) playAnimation,say`}
+        />
+        <Field.Input
+          id="command"
+          title="주요 명령어"
+          value={keyCommand}
+          onChange={setKeyCommand}
+          comment={`반드시 \`,\`로 구분해주세요.`}
         />
         <Field.Select
           id="language"
