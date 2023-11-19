@@ -89,9 +89,10 @@ class Container extends Component {
         }),
         async () => {
           let data = await this.fetchMyPublisheds();
-          this.setState((prev) => ({
-            myPublisheds: prev.myPublisheds.concat(data),
-          }));
+          console.log("published data : ", data);
+          // this.setState((prev) => ({
+          //   myPublisheds: prev.myPublisheds.concat(data),
+          // }));
         }
       );
       // } else {
