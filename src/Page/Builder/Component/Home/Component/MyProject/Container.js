@@ -92,9 +92,11 @@ class Container extends Component {
         }),
         async () => {
           let data = await this.fetchMyProjects();
-          this.setState((prev) => ({
-            myProjects: prev.myProjects.concat(data),
-          }));
+          console.log("data : ", data);
+          console.log("allProjects : ", this.state.myProjects);
+          // this.setState((prev) => ({
+          //   myProjects: prev.myProjects.concat(data),
+          // }));
         }
       );
     }
