@@ -335,7 +335,6 @@ class AssetLibrary {
   };
 
   getSoundAsset = (id) => {
-    console.log("this.sounds :", this.sounds);
     return this.sounds[id];
   };
 

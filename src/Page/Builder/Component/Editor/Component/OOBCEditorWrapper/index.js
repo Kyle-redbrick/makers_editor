@@ -50,7 +50,6 @@ function OOBCEditorWrapper(props) {
     }
 
     for (let soundId of soundIds) {
-      console.log("soundId :", soundId);
       const soundAsset = AssetLibrary.getSoundAsset(soundId);
       const soundName = soundAsset.defaultName;
       gameObjects.push({ type: "sound", name: soundName });
