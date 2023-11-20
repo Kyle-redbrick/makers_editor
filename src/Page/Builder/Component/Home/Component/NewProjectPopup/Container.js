@@ -38,7 +38,7 @@ class Container extends Component {
   };
 
   createNewSaasProject = async () => {
-    let type = this.state.editorFormat === "JS" || "PY" ? "JS" : "wizlabOOBC";
+    let type = this.state.editorFormat === "JS" || "OOBC";
 
     let res = await request.getTemplateProjectsByType({ type });
     let template = await res.json();
@@ -56,7 +56,6 @@ class Container extends Component {
     let getNewProjectData = await getNewProject.json();
     let newProjectId = getNewProjectData.data.projectInfo.id;
 
-    // let pageURL = `/${PAGETYPE.BUILDER}/${newProjectId}`;
     let pageURL = `/${newProjectId}`;
 
     window.history.replaceState({}, "", pageURL);
