@@ -40,7 +40,7 @@ function LectureEditor(props) {
     number: number,
     thumbnailURL: thumbnailURL,
     isVisible: isVisible,
-    totalMissionNum: totalMissionNum,
+    totalMissionNumber: totalMissionNum,
   };
 
   useEffect(() => {
@@ -53,7 +53,7 @@ function LectureEditor(props) {
       setThumbnailURL(lecture.thumbnailURL || "");
       setIsVisible(lecture.isVisible || "");
       setLanguage(lecture.language || "");
-      setTotalMissionNum(lecture.totalMissionNum || 0);
+      setTotalMissionNum(lecture.totalMissionNumber || 0);
     }
   }, [lecture]);
 
