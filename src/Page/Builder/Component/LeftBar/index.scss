@@ -7,6 +7,9 @@
     z-index: 2;
     width: 100%;
     max-width: 200px;
+    &.class {
+      max-width: 140px;
+    }
   }
   .LeftBarButtons {
     border-right: 1px solid var(--W_Gray01);

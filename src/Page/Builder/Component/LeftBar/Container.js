@@ -6,20 +6,25 @@ import * as TrackingUtil from "../../../../Common/Util/TrackingUtil";
 
 export const LeftBarTab = {
   SCENES: "SceneSprite",
-  SOUNDS: "Sound"
+  SOUNDS: "Sound",
 };
 
 class Container extends Component {
   constructor(props) {
     super(props);
-    this.state = { selectedLeftTab: LeftBarTab.SCENES };
+    this.state = { selectedLeftTab: LeftBarTab.SCENES, isClass: false };
   }
 
-  handleSelectLeftTab = tab => {
+  componentDidMount() {
+    const isClass = window.location.pathname.includes("class");
+    this.setState({ isClass: isClass });
+  }
+
+  handleSelectLeftTab = (tab) => {
     TrackingUtil.sendGAEvent({
       category: "Builder",
       action: `SpriteMenu`,
-      label: tab
+      label: tab,
     });
 
     if (this.state.selectedLeftTab !== tab) {
@@ -32,7 +37,8 @@ class Container extends Component {
   render() {
     const { selectedLeftTab } = this.state;
     const { handleSelectLeftTab } = this;
-    const { handleSelectTab, isLeftBarButtonsHidden, isSceneToolHidden } = this.props;
+    const { handleSelectTab, isLeftBarButtonsHidden, isSceneToolHidden } =
+      this.props;
     return (
       <View
         selectedLeftTab={selectedLeftTab}
@@ -41,12 +47,10 @@ class Container extends Component {
         intl={this.props.intl}
         isLeftBarButtonsHidden={isLeftBarButtonsHidden}
         isSceneToolHidden={isSceneToolHidden}
+        isClass={this.state.isClass}
       />
     );
   }
 }
 
-export default connect(
-  state => ({}),
-  {}
-)(injectIntl(Container));
+export default connect((state) => ({}), {})(injectIntl(Container));

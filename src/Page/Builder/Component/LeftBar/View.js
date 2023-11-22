@@ -13,9 +13,11 @@ export default function (props) {
     intl,
     isLeftBarButtonsHidden,
     isSceneToolHidden,
+    isClass,
   } = props;
+
   return (
-    <div className="LeftBar">
+    <div className={`LeftBar ${isClass && "class"}`}>
       <div className={`LeftBarButtons ${isLeftBarButtonsHidden && "hidden"}`}>
         <ButtonIndicator buttonId="sceneImg">
           <div
