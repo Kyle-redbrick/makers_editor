@@ -38,20 +38,10 @@ class Container extends Component {
   };
 
   createNewSaasProject = async () => {
-    let type = this.state.editorFormat === "JS" || "OOBC";
-
-    let res = await request.getTemplateProjectsByType({ type });
-    let template = await res.json();
-
-    if (!template) return;
-    let emptyTemplate = template.filter(
-      (item) => item.description === "empty"
-    )[0];
-    if (!emptyTemplate) return;
-
     let getNewProject = await request.createNewProject({
       title: this.state.projectName,
       editorFormat: this.state.editorFormat,
+      language: this.state.editorFormat,
     });
     let getNewProjectData = await getNewProject.json();
     let newProjectId = getNewProjectData.data.projectInfo.id;

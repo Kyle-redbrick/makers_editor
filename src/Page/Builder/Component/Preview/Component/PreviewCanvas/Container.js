@@ -24,7 +24,7 @@ class Container extends Component {
 
     const {
       worldWidth = WORLD.DEFAULT_WIDTH,
-      worldHeight = WORLD.DEFAULT_HEIGHT
+      worldHeight = WORLD.DEFAULT_HEIGHT,
     } = props.selectedScene || {};
     this.WORLD_WIDTH = worldWidth;
     this.WORLD_HEIGHT = worldHeight;
@@ -122,7 +122,7 @@ class Container extends Component {
       Object.keys(nextSprites).forEach((key, index) => {
         this.refreshSprites.push({
           type: "ADD",
-          id: key
+          id: key,
         });
       });
     } else {
@@ -131,7 +131,7 @@ class Container extends Component {
         if (nextSprites[currentSpriteIds[i]] === undefined) {
           this.refreshSprites.push({
             type: "REMOVE",
-            id: currentSpriteIds[i]
+            id: currentSpriteIds[i],
           });
         }
       }
@@ -139,7 +139,7 @@ class Container extends Component {
         if (currentSprites[nextSpriteIds[i]] === undefined) {
           this.refreshSprites.push({
             type: "ADD",
-            id: nextSpriteIds[i]
+            id: nextSpriteIds[i],
           });
         } else {
           const currentPreview = currentSprites[nextSpriteIds[i]].preview;
@@ -151,7 +151,7 @@ class Container extends Component {
               if (currentPreview[key] !== nextPreview[key]) {
                 this.refreshSprites.push({
                   type: "REFRESH",
-                  id: nextSpriteIds[i]
+                  id: nextSpriteIds[i],
                 });
                 break;
               }
@@ -195,7 +195,7 @@ class Container extends Component {
     if (!selectedScene) return;
     const {
       worldWidth = WORLD.DEFAULT_WIDTH,
-      worldHeight = WORLD.DEFAULT_HEIGHT
+      worldHeight = WORLD.DEFAULT_HEIGHT,
     } = selectedScene;
     this.WORLD_WIDTH = worldWidth;
     this.WORLD_HEIGHT = worldHeight;
@@ -205,7 +205,7 @@ class Container extends Component {
       { width: "100%", height: "100%" },
       { cssOnly: true }
     );
-    this.previewCanvas.getObjects().forEach(object => {
+    this.previewCanvas.getObjects().forEach((object) => {
       if (object.type === SpriteType.BACKGROUND) {
         const _width =
           object.fill.source.width < this.WORLD_WIDTH
@@ -248,20 +248,20 @@ class Container extends Component {
     // this.previewCanvas.on("object:rotating", this.onModified);
     this.previewCanvas.isMouseDown = false;
   }
-  onModified = event => {
+  onModified = (event) => {
     if (event.target) {
       this.exportPreviewData(event.target);
     }
   };
-  onTextChanged = event => {
+  onTextChanged = (event) => {
     if (event.target) {
       this.exportPreviewData(event.target);
     }
   };
-  onMouseUp = event => {
+  onMouseUp = (event) => {
     this.previewCanvas.isMouseDown = false;
   };
-  onMouseDown = event => {
+  onMouseDown = (event) => {
     this.props.handleChangeZIndex("preview");
     this.previewCanvas.isMouseDown = true;
     if (event.target) {
@@ -276,7 +276,7 @@ class Container extends Component {
           TrackingUtil.sendGAEvent({
             category: "Builder",
             action: `ClickSprite`,
-            label: "Preview"
+            label: "Preview",
           });
           this.props.selectSprite(selectedSceneId, name, type);
         }
@@ -286,7 +286,7 @@ class Container extends Component {
 
   drawFabric() {
     const { sprites, selectedObject } = this.props;
-    this.refreshSprites.forEach(sprite => {
+    this.refreshSprites.forEach((sprite) => {
       switch (sprite.type) {
         case "ADD":
           this.drawSprite(sprites[sprite.id], sprite.id);
@@ -337,7 +337,7 @@ class Container extends Component {
   }
   drawSprites() {
     const { sprites, spriteIds } = this.props;
-    spriteIds.forEach(id => {
+    spriteIds.forEach((id) => {
       this.drawSprite(sprites[id], id);
     });
   }
@@ -362,7 +362,7 @@ class Container extends Component {
         width: image.width,
         height: image.height,
         left: WORLD.DEFAULT_WIDTH / 2,
-        top: WORLD.DEFAULT_HEIGHT / 2
+        top: WORLD.DEFAULT_HEIGHT / 2,
       });
 
       img.name = name;
@@ -387,7 +387,7 @@ class Container extends Component {
         cornerStrokeColor: "#8592A6",
         padding: 5,
         borderScaleFactor: 2,
-        transparentCorners: false
+        transparentCorners: false,
       });
 
       img.setControlVisible("mb", false);
@@ -440,7 +440,7 @@ class Container extends Component {
         "fill",
         new fabric.Pattern({
           source: img,
-          repeat: "repeat"
+          repeat: "repeat",
         })
       );
       //add to canvas
@@ -474,7 +474,7 @@ class Container extends Component {
         borderScaleFactor: 2,
         transparentCorners: false,
         selectable: sprite.locked ? !sprite.locked : true,
-        editable: sprite.locked ? !sprite.locked : true
+        editable: sprite.locked ? !sprite.locked : true,
       });
 
       const prevTexture = sprite.preview;
@@ -495,10 +495,10 @@ class Container extends Component {
     WebFont.load({
       google: {
         families: [preview.fontFamily],
-        text: preview.textValue
+        text: preview.textValue,
       },
       fontactive: draw,
-      fontinactive: draw
+      fontinactive: draw,
     });
   }
   removeSprite(name) {
@@ -540,7 +540,7 @@ class Container extends Component {
       fontFamily,
       fontSize,
       fontStyle,
-      fontWeight
+      fontWeight,
     } = preview;
     const isText = fontColor !== undefined;
     if (left === undefined) return;
@@ -573,7 +573,7 @@ class Container extends Component {
               fontFamily,
               fontSize,
               fontStyle,
-              fontWeight
+              fontWeight,
             });
             this.previewCanvas.renderAll();
           };
@@ -581,10 +581,10 @@ class Container extends Component {
           WebFont.load({
             google: {
               families: [fontFamily],
-              text: textValue
+              text: textValue,
             },
             fontactive: draw,
-            fontinactive: draw
+            fontinactive: draw,
           });
         } else {
           this.previewCanvas.renderAll();
@@ -602,7 +602,7 @@ class Container extends Component {
       const { spriteIds } = this.props;
       const addedSprites = this.previewCanvas.getObjects();
       if (spriteIds.length === addedSprites.length) {
-        this.previewCanvas.getObjects().forEach(object => {
+        this.previewCanvas.getObjects().forEach((object) => {
           const fabricZorder = this.getZorder(object);
           const spriteIndex = spriteIds.indexOf(object.name);
           if (fabricZorder !== spriteIndex) {
@@ -686,7 +686,7 @@ class Container extends Component {
       );
 
       if (shouldAdjust) {
-        this.previewCanvas.getObjects().forEach(object => {
+        this.previewCanvas.getObjects().forEach((object) => {
           if (object.type === SpriteType.BACKGROUND) {
             const previewHeight = height;
             const previewWidth = width;
@@ -715,8 +715,8 @@ class Container extends Component {
     }
   }
 
-  exportPreviewData = sprite => {
-    let mapper = item => {
+  exportPreviewData = (sprite) => {
+    let mapper = (item) => {
       const {
         name,
         type,
@@ -728,7 +728,7 @@ class Container extends Component {
         scaleY,
         width,
         height,
-        opacity
+        opacity,
       } = item;
       return {
         name,
@@ -741,7 +741,7 @@ class Container extends Component {
         scaleY,
         width,
         height,
-        opacity
+        opacity,
       };
     };
     const { selectedSceneId } = this.props;
@@ -800,17 +800,12 @@ class Container extends Component {
           this.updateCycleMills = this.commonUpdateCycleMills;
         }
         try {
+          const projectId = window.location.pathname.slice(1);
           const screenShotdata = this.previewCanvas.toDataURL({
             format: "jpeg",
-            quality: 0.7
+            quality: 0.7,
           });
-          const icon = await this.uploadScreenshot(screenShotdata);
-          if (this.props.email && !this.props.useCustomIcon) {
-            const { pId } = this.props;
-            const params = { pId, icon, useCustomIcon: false };
-            request.updateDevelopingProject(params);
-            this.props.setScreenshotURL(icon, false);
-          }
+          const icon = await this.uploadScreenshot(screenShotdata, projectId);
           this.props.setScenePreview(this.props.selectedSceneId, icon);
         } catch (e) {
           console.error(e);
@@ -819,7 +814,7 @@ class Container extends Component {
       immediate ? 0 : this.updateCycleMills
     );
   };
-  uploadScreenshot = async screenshotData => {
+  uploadScreenshot = async (screenshotData, projectId) => {
     let byteString;
     if (screenshotData.split(",")[0].indexOf("base64") >= 0) {
       byteString = atob(screenshotData.split(",")[1]);
@@ -827,10 +822,7 @@ class Container extends Component {
       byteString = unescape(screenshotData.split(",")[1]);
     }
     // separate out the mime component
-    const mimeString = screenshotData
-      .split(",")[0]
-      .split(":")[1]
-      .split(";")[0];
+    const mimeString = screenshotData.split(",")[0].split(":")[1].split(";")[0];
     // write the bytes of the string to a typed array
     let ia = new Uint8Array(byteString.length);
     for (let i = 0; i < byteString.length; i++) {
@@ -842,9 +834,19 @@ class Container extends Component {
     data.append("file", blob);
     let url = undefined;
     try {
-      const response = await request.upload(data);
+      const response = await request.sceneUpload(projectId);
       const json = await response.json();
-      url = json.url;
+      const uploadUrl = await json.url.uploadUrl;
+      const downloadUrl = await json.url.downloadUrl;
+      const putResponse = await fetch(uploadUrl, {
+        method: "PUT",
+        headers: {
+          "Content-Type": mimeString,
+        },
+        body: blob,
+      });
+      console.log("putResponse : ", putResponse);
+      url = downloadUrl;
     } catch (e) {
       console.error(e);
     }
@@ -872,16 +874,15 @@ class Container extends Component {
     this.setState({ previewStyle: this.createPreviewStyle() });
   };
   getPreviewContainerElement = () => {
-    const previewContainerElement = document.getElementById(
-      "preview_container"
-    );
+    const previewContainerElement =
+      document.getElementById("preview_container");
     return previewContainerElement;
   };
   getPreviewContatinerRect = () => {
     const previewContainerElement = this.getPreviewContainerElement();
     return previewContainerElement.getBoundingClientRect();
   };
-  onResize = e => {
+  onResize = (e) => {
     this.updatePreviewStyle();
   };
 
@@ -898,7 +899,7 @@ class Container extends Component {
 }
 
 export default connect(
-  state => ({
+  (state) => ({
     selectedSceneId: state.interaction.selected.scene,
     selectedScene: state.scene.scenes[state.interaction.selected.scene],
     sprites: state.scene.scenes[state.interaction.selected.scene].sprites,
@@ -910,12 +911,12 @@ export default connect(
     email: state.userinfo.email,
     timeStamp: state.project.timeStamp,
     screenshotURL: state.project.screenshotURL,
-    useCustomIcon: state.project.useCustomIcon
+    useCustomIcon: state.project.useCustomIcon,
   }),
   {
     setSpritePreview: sceneActions.setSpritePreview,
     selectSprite: interactionActions.selectSprite,
     setScreenshotURL: projectActions.setScreenshotURL,
-    setScenePreview: sceneActions.setScenePreview
+    setScenePreview: sceneActions.setScenePreview,
   }
 )(injectIntl(Container));

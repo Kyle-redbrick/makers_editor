@@ -36,6 +36,14 @@ export const fetchSaasRequest = (url, method, param) => {
 ///////////////////////////////////////////////////////////////////////////////
 /** SAAS */
 
+export const sceneUpload = (projectId) => {
+  return fetchSaasRequest(
+    URL.API_SAAS_SERVER +
+      `project/scene/upload?projectId=${projectId}&fileType=jpeg&mimeType=image/jpeg`,
+    "GET"
+  );
+};
+
 export const saveSaasMission = (progressId, values) => {
   let body = {};
   if (values && values.completedMissionNum) {
