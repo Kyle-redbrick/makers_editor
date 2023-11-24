@@ -137,7 +137,7 @@ export const createNewProject = (props) => {
     title: props.title ? props.title : "testTemplate",
     useCustomIcon: 1, //or 0
     thumbnailURL:
-      "https://wizschool-images.s3.ap-northeast-2.amazonaws.com/ff78050de9c8f0715750c4590cbf9640.jpg",
+      "https://wizschool-images.s3.ap-northeast-2.amazonaws.com/c59fb10cb7918db05336bb614cd3a278.jpg",
     url: "",
     language: props.language ? props.language : "JS", //or OOBC
     locale: "ko",

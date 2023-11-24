@@ -1,10 +1,9 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./index.scss";
 
 import helpMainImg from "../../../../Image/builder/help/help_main.png";
-import helpEndImg from "../../../../Image/builder/help/help_end.png";
 
-export default function(props) {
+export default function (props) {
   const {
     animOn,
     currentStepNum,
@@ -12,45 +11,42 @@ export default function(props) {
     currentStep,
     darkmode,
     onClickNext,
-    onClickSkip
+    onClickSkip,
   } = props;
-  const language = localStorage.getItem("lang");
-
   const getText = (type) => {
-    const language = localStorage.getItem("lang"); ;
+    const language = localStorage.getItem("wizLang");
 
-    if(language === "ko") {
-      return currentStep[type]
+    if (language === "ko") {
+      return currentStep[type];
     } else {
-      if(!currentStep[`${type}_localized`]){
-        return ""
-      } if(currentStep[`${type}_localized`][language] === undefined) {
-        return currentStep[type]
+      if (!currentStep[`${type}_localized`]) {
+        return "";
+      }
+      if (currentStep[`${type}_localized`][language] === undefined) {
+        return currentStep[type];
       } else {
-        return currentStep[`${type}_localized`][language]
+        return currentStep[`${type}_localized`][language];
       }
     }
-  }
+  };
 
   const getSubModalButtonText = (type) => {
-    const language = localStorage.getItem("lang"); 
+    const language = localStorage.getItem("wizLang");
     const subModalButtonText = {
-      "next" : {
-        "ko" : "다음",
-        "ja" : "次へ",
-        "zh" : "下一页",
-        "en" : "Next"
+      next: {
+        ko: "다음",
+        zh: "下一页",
+        en: "next",
       },
-      "skip" : {
-        "ko" : "스킵하기",
-        "ja" : "スキップする",
-        "zh" : "跳过",
-        "en" : "Skip"
-      }
-    }
+      skip: {
+        ko: "스킵하기",
+        zh: "跳过",
+        en: "skip",
+      },
+    };
 
-    return subModalButtonText[type][language]
-  }
+    return subModalButtonText[type][language];
+  };
 
   return (
     <div className="Help">
@@ -63,7 +59,6 @@ export default function(props) {
           onClickNext={onClickNext}
           onClickSkip={onClickSkip}
           animOn={animOn}
-          currentStep={currentStep}
         />
       ) : (
         <SubModal
@@ -84,22 +79,15 @@ export default function(props) {
           className="help_imgModal"
           style={{
             ...currentStep.imageStyle,
-            darkImg_ko: undefined,
-            darkImg_ja: undefined,
-            darkImg_en: undefined,
-            img: undefined
+            darkImg: undefined,
+            img: undefined,
           }}
         >
           <img
             src={
-              currentStepNum == 1 ? ( darkmode
-                ? (language === "ja" ? 
-                    currentStep.imageStyle.darkImg_ja
-                  :
-                    currentStep.imageStyle.darkImg_en
-                )
-                : currentStep.imageStyle.img ) 
-                : (darkmode ?  currentStep.imageStyle.darkImg  : currentStep.imageStyle.img )
+              darkmode
+                ? currentStep.imageStyle.darkImg
+                : currentStep.imageStyle.img
             }
             alt={currentStep.title}
           />
@@ -109,7 +97,7 @@ export default function(props) {
   );
 }
 
-const MainModal = props => {
+const MainModal = (props) => {
   const {
     title,
     subtitle,
@@ -118,11 +106,10 @@ const MainModal = props => {
     onClickNext,
     onClickSkip,
     animOn,
-    currentStep,
   } = props;
   return (
     <div className={`help_mainModal ${animOn ? "help_mainModal-anim" : ""}`}>
-      {/* <img className={`help_mainModal_img ${currentStep.display === "end" ? "help_mainModal_img_end" : "" }` } src={currentStep.display === "start" ? helpMainImg : helpEndImg } alt="helpMainImg" /> */}
+      <img className="help_mainModal_img" src={helpMainImg} alt="helpMainImg" />
       <div className="help_mainModal_frame">
         <div className="help_mainModal_content">
           <div className="help_mainModal_title">{title}</div>
@@ -131,7 +118,7 @@ const MainModal = props => {
             className="help_button help_button-active"
             onClick={onClickNext}
           >
-            {activeButtonTitle}
+            {/* {activeButtonTitle} */}다음
           </button>
           {inactiveButtonTitle && (
             <button
@@ -147,7 +134,7 @@ const MainModal = props => {
   );
 };
 
-const SubModal = props => {
+const SubModal = (props) => {
   const {
     title,
     subtitle,
@@ -158,7 +145,7 @@ const SubModal = props => {
     onClickSkip,
     modalStyle,
     anchorStyle,
-    animOn
+    animOn,
   } = props;
   return (
     <div
@@ -166,9 +153,7 @@ const SubModal = props => {
       style={modalStyle}
     >
       <div
-        className={`help_subModal_anchor help_subModal_anchor-${
-          anchorStyle.type
-        }`}
+        className={`help_subModal_anchor help_subModal_anchor-${anchorStyle.type}`}
         style={{ ...anchorStyle, type: undefined }}
       />
       <div className="help_subModal_frame">
@@ -179,13 +164,13 @@ const SubModal = props => {
           className="help_button help_button-inactive"
           onClick={onClickSkip}
         >
-          {inactiveButtonTitle}
+          {/* {inactiveButtonTitle} */}스킵하기
         </button>
         <button
           className="help_button help_button-active"
           onClick={onClickNext}
         >
-          {activeButtonTitle}
+          {/* {activeButtonTitle} */}다음
         </button>
       </div>
     </div>

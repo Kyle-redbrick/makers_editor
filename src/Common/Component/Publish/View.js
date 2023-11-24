@@ -69,9 +69,6 @@ const View = (props) => {
             type="text"
             name="name"
             value={name}
-            // placeholder={props.intl.formatMessage({
-            //   id: "ID_BUILDER_EDITPOP_TITLE_PH",
-            // })}
             placeholder="게임 이름을 변경할 시에만 입력하세요"
             onChange={handleInputChange}
             className={`publishform__input ${
@@ -115,7 +112,6 @@ const View = (props) => {
         </div>
 
         {/* icon */}
-
         <div className="publishform__row">
           <p className="publishform__title">
             {props.intl.formatMessage({ id: "ID_BUILDER_EDITPOP_ICON" })}
@@ -135,7 +131,6 @@ const View = (props) => {
                 alt="icon"
                 onClick={handleImgClick}
               />
-              {/* <img className="thumbnailIcon" src={badgeIcon("oobc")} alt="" /> */}
             </div>
             <div className="publishform__icon__buttons">
               {isDeveloping ? (
@@ -148,14 +143,6 @@ const View = (props) => {
                       id: "ID_BUILDER_EDITPOP_IMAGE_CHANGE",
                     })}
                   </div>
-                  {/* <div
-                    className="publishform__icon__button"
-                    onClick={handleFileDelete}
-                  >
-                    {props.intl.formatMessage({
-                      id: "ID_BUILDER_EDITPOP_IMAGE_DELETE",
-                    })}
-                  </div> */}
                 </React.Fragment>
               ) : (
                 <div
@@ -177,116 +164,62 @@ const View = (props) => {
             />
           </div>
         </div>
-
-        {/* tag */}
-        {/* <div className="publishform__row">
-          <div className="publishform__title__wrapper">
-            <p className="publishform__title publishform__title__tag">
-              {props.intl.formatMessage({
-                id: "ID_BUILDER_EDITPOP_TAG"
-              })}
-            </p>
-          </div>
-          <div className="tag--added">
-            {tags.map((item, index) => {
-              return (
-                <span
-                  key={index}
-                  className="tag--added__item"
-                >
-                  {`#${item}`}
-                  <img src={deleteTagIcon} alt="" onClick={() => {onDeleteTag(index);}}/>
-                </span>
-              );
-            })}
-          </div>
-          <input
-            type="text"
-            name="tag"
-            placeholder={props.intl.formatMessage({
-              id: "ID_BUILDER_EDITPOP_TAG_PLACEHOLDER"
-            })}
-            onChange={handleInputChange}
-            className="publishform__input tag"
-            autoComplete="off"
-            onKeyDown={e => {
-              const tag = e.target.value;
-              if (e.keyCode === 13 && tag !== "") {
-                onAddTag(tag);
-                e.target.value = "";
-              } else if (e.keyCode === 8 && tag === "" && tags.length > 0) {
-                onDeleteTag(tags.length - 1);
-              }
-            }}
-          />
-          <div className="tag--recommend">
-            {popularTags.map((item, index) => {
-              return (
-                <span
-                  key={index}
-                  className="tag--recommend__item"
-                  onClick={() => onAddTag(item)}
-                >{`#${item}`}</span>
-              );
-            })}
-          </div>
-        </div> */}
-
-        {/* publishing */}
-        <div className="publishform__row">
-          <div className="publishform__title__wrapper">
-            <p className="publishform__title">퍼블리싱</p>
-          </div>
-
-          <div className="publishform__code_allow__wrapper">
-            <div
-              className={`publishform__code_allow ${
-                isCopyAllowed ? "On" : "Off"
-              }`}
-              onClick={handleIsCopyAllowedChange}
-            >
-              <span />
+        <div style={{ width: "50%", display: "flex" }}>
+          {/* code open */}
+          <div className="publishform__row">
+            <div className="publishform__title__wrapper">
+              <p className="publishform__title">
+                {props.intl.formatMessage({ id: "ID_BUILDER_EDITPOP_CODE" })}
+              </p>
             </div>
 
-            <span className="text">
-              {isCopyAllowed
-                ? props.intl.formatMessage({
-                    id: "ID_BUILDER_EDITPOP_CODE_OPEN",
-                  })
-                : props.intl.formatMessage({
-                    id: "ID_BUILDER_EDITPOP_CODE_CLOSE",
-                  })}
-            </span>
-          </div>
-        </div>
+            <div className="publishform__code_allow__wrapper">
+              <div
+                className={`publishform__code_allow ${
+                  isCodeCopyAllowed ? "On" : "Off"
+                }`}
+                onClick={handleIsCodeCopyAllowedChange}
+              >
+                <span />
+              </div>
 
-        {/* code open */}
-        <div className="publishform__row">
-          <div className="publishform__title__wrapper">
-            <p className="publishform__title">
-              {props.intl.formatMessage({ id: "ID_BUILDER_EDITPOP_CODE" })}
-            </p>
+              <span className="text">
+                {isCodeCopyAllowed
+                  ? props.intl.formatMessage({
+                      id: "ID_BUILDER_EDITPOP_CODE_OPEN",
+                    })
+                  : props.intl.formatMessage({
+                      id: "ID_BUILDER_EDITPOP_CODE_CLOSE",
+                    })}
+              </span>
+            </div>
           </div>
-
-          <div className="publishform__code_allow__wrapper">
-            <div
-              className={`publishform__code_allow ${
-                isCodeCopyAllowed ? "On" : "Off"
-              }`}
-              onClick={handleIsCodeCopyAllowedChange}
-            >
-              <span />
+          {/* publishing */}
+          <div className="publishform__row">
+            <div className="publishform__title__wrapper">
+              <p className="publishform__title">퍼블리싱</p>
             </div>
 
-            <span className="text">
-              {isCodeCopyAllowed
-                ? props.intl.formatMessage({
-                    id: "ID_BUILDER_EDITPOP_CODE_OPEN",
-                  })
-                : props.intl.formatMessage({
-                    id: "ID_BUILDER_EDITPOP_CODE_CLOSE",
-                  })}
-            </span>
+            <div className="publishform__code_allow__wrapper">
+              <div
+                className={`publishform__code_allow ${
+                  isCopyAllowed ? "On" : "Off"
+                }`}
+                onClick={handleIsCopyAllowedChange}
+              >
+                <span />
+              </div>
+
+              <span className="text">
+                {isCopyAllowed
+                  ? props.intl.formatMessage({
+                      id: "ID_BUILDER_EDITPOP_CODE_OPEN",
+                    })
+                  : props.intl.formatMessage({
+                      id: "ID_BUILDER_EDITPOP_CODE_CLOSE",
+                    })}
+              </span>
+            </div>
           </div>
         </div>
 
