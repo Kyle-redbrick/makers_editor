@@ -46,7 +46,7 @@ class Container extends Component {
 
     if (window.location.pathname.includes("educator")) {
       request
-        .getLecture(progressId)
+        .getLessonInfoForClass(progressId)
         .then((res) => res.json())
         .then((json) => {
           let nowTemplate = JSON.parse(json.data.lessonInfo.template).missions;

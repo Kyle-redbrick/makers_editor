@@ -362,6 +362,12 @@ export const getLecture = (lectureId) => {
   );
 };
 
+export const getLessonInfoForClass = (lectureId) => {
+  return fetchSaasRequest(
+    URL.API_SAAS_SERVER + `lesson/info/learn?lessonId=${lectureId}`
+  );
+};
+
 export const updateLecture = (lectureId, lectureValues) => {
   return fetchSaasRequest(
     URL.API_SAAS_SERVER + `lesson?lessonId=${lectureId}`,
