@@ -3,12 +3,12 @@ export const URL = {
   SOCKET_SERVER: `https://astro-sock.wizclass.com/`,
   NOTIFICATION_SOCKET_SERVER: `https://astroboy-api-dev.wizclass.com:3002/`,
   API_SERVER: `https://api.wizclass.com/`,
-  // API_SERVER: `https://astro-api.wizclass.com/`,
-  // API_SAAS_SERVER: `https://api.redbrickmakers.com/`,
   API_SAAS_SERVER: `https://dev-api.redbrickmakers.com/`,
+  // API_SAAS_SERVER: `https://api.redbrickmakers.com/`,
+  GAME_SRC: `https://dev-builder.redbrickmakers.com/`,
+  // GAME_SRC: `https://builder.redbrickmakers.com/`,
   LIVE_TEST: `https://${subdomain}wizlab.net/liveTest/`,
   WIZ_APP: `https://en.astro-coding-go.com/game?pId=`,
-  GAME_SRC: `https://${subdomain}wizlab.net/`,
   ORIGIN: `https://${subdomain}wizlab.net/`,
   WIZLIVE: `https://${subdomain}wizlive.com`,
   WIZLIVE_WWW: `https://www.${subdomain}wizlive.com`,
@@ -31,6 +31,7 @@ export const URL = {
   },
   get THUMBNAIL_ALI() {
     return `https://storage-dev.redbrickmakers.com`;
+    // return `https://storage.redbrickmakers.com`;
   },
 };
 
