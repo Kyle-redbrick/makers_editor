@@ -88,61 +88,35 @@ class Container extends Component {
 
   handleSubmit = async (e) => {
     e.preventDefault();
-    const {
-      name,
-      description,
-      isCopyAllowed,
-      category = "Game",
-      tags,
-      challengeEventAttend,
-      isCodeCopyAllowed,
-    } = this.state;
+    const { name, description, isCopyAllowed, isCodeCopyAllowed } = this.state;
     const pId =
       window.location.pathname.split("/")[2] ||
       window.location.pathname.slice(1);
 
-    if (isCopyAllowed) {
-      let publishedURL = undefined;
-      if (this.props.scene) {
-        const state = {
-          editorMode: this.props.scene.editorMode,
-          scene: {
-            scenes: this.props.scene.scenes,
-            sceneIds: this.props.scene.sceneIds,
-            soundIds: this.props.scene.soundIds,
-            soundNames: this.props.scene.soundNames,
-          },
-          preview: {
-            screenMode: this.props.preview.screenMode,
-          },
-        };
-        const gameMeta = { pId, gameTitle: name };
-        const doc = await generateGamePage(state, gameMeta);
-        let url = await request.uploadSaasPublished({ projectId: pId, doc });
-        url = await url.json();
-        console.log("url : ", url);
-      }
-    }
-
-    let state;
     if (this.props.scene) {
-      state = {
-        interaction: this.props.interaction,
+      const state = {
+        editorMode: this.props.scene.editorMode,
         scene: {
-          editorMode: this.props.scene.editorMode,
           scenes: this.props.scene.scenes,
           sceneIds: this.props.scene.sceneIds,
           soundIds: this.props.scene.soundIds,
-          timeStamp: this.props.scene.timeStamp,
+          soundNames: this.props.scene.soundNames,
         },
-        preview: this.props.preview,
+        preview: {
+          screenMode: this.props.preview.screenMode,
+        },
       };
+      const gameMeta = { pId, gameTitle: name };
+      const doc = await generateGamePage(state, gameMeta);
+      let url = await request.uploadSaasPublished({ projectId: pId, doc });
+      url = await url.json();
+      console.log("url : ", url);
     }
+
     let params;
     if (name && this.state.icon) {
       params = {
         title: name,
-        state: state,
         isVisible: isCopyAllowed,
         thumbnailURL: this.state.icon,
         isCodeCopiable: isCodeCopyAllowed,
@@ -151,14 +125,12 @@ class Container extends Component {
     } else if (name) {
       params = {
         title: name,
-        state: state,
         isVisible: isCopyAllowed,
         isCodeCopiable: isCodeCopyAllowed,
         description: description,
       };
     } else if (this.state.icon) {
       params = {
-        state: state,
         isVisible: isCopyAllowed,
         thumbnailURL: this.state.icon,
         isCodeCopiable: isCodeCopyAllowed,
@@ -166,7 +138,6 @@ class Container extends Component {
       };
     } else {
       params = {
-        state: state,
         isVisible: isCopyAllowed,
         isCodeCopiable: isCodeCopyAllowed,
         description: description,
@@ -181,39 +152,21 @@ class Container extends Component {
       console.error(e);
     }
 
-    if (isCopyAllowed) {
-      showPopUp(
-        <PopUp.OneButton
-          title={this.props.intl.formatMessage({
-            id: "ID_BUILDER_ALERT_MSG_SUCC",
-          })}
-          buttonName={this.props.intl.formatMessage({
-            id: "ID_BUILDER_ALERT_CONFIRMBTN",
-          })}
-          buttonAction={this.props.buttonAction}
-        />,
-        {
-          dismissButton: false,
-          darkmode: getColorTheme() === "darkMode",
-        }
-      );
-    } else {
-      showPopUp(
-        <PopUp.OneButton
-          title={this.props.intl.formatMessage({
-            id: "ID_BUILDER_ALERT_MSG_SUCC_SAVE",
-          })}
-          buttonName={this.props.intl.formatMessage({
-            id: "ID_BUILDER_ALERT_CONFIRMBTN",
-          })}
-          buttonAction={this.props.buttonAction}
-        />,
-        {
-          dismissButton: false,
-          darkmode: getColorTheme() === "darkMode",
-        }
-      );
-    }
+    showPopUp(
+      <PopUp.OneButton
+        title={this.props.intl.formatMessage({
+          id: "ID_BUILDER_ALERT_MSG_SUCC",
+        })}
+        buttonName={this.props.intl.formatMessage({
+          id: "ID_BUILDER_ALERT_CONFIRMBTN",
+        })}
+        buttonAction={this.props.buttonAction}
+      />,
+      {
+        dismissButton: false,
+        darkmode: getColorTheme() === "darkMode",
+      }
+    );
   };
   handleCloseBtn = () => {
     // 퍼블리싱 팝업 종료

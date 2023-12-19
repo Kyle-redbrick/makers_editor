@@ -129,7 +129,7 @@ export default function (props) {
                       <img src={mobileImg} alt="mobileImg" />
                     </ButtonIndicator>
                   </div> */}
-                  {/* <div
+                  <div
                     className="HeaderProjectItem"
                     onClick={openSharePopup}
                     data-tip={intl.formatMessage({ id: "ID_SHARE_TITLE" })}
@@ -137,7 +137,7 @@ export default function (props) {
                     <ButtonIndicator buttonId="shareImg">
                       <img src={shareImg} alt="shareImg" />
                     </ButtonIndicator>
-                  </div> */}
+                  </div>
                   <div
                     className="HeaderProjectItem"
                     onClick={openPublishPopup}

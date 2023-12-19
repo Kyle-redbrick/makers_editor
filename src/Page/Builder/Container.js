@@ -92,14 +92,6 @@ class Container extends Component {
   }
 
   componentDidMount = async () => {
-    // request
-    //   .getMySaasProject()
-    //   .then((res) => res.json())
-    //   .then((json) => {
-    //     this.setState({ saasProjectList: json.data.projectList });
-    //     console.log("saasProjectList", this.state.saasProjectList);
-    //   });
-
     try {
       if (this.isIE) {
         this.props.history.replace("/" + PAGETYPE.BUILDER);
@@ -121,10 +113,6 @@ class Container extends Component {
       }
 
       switch (pageType) {
-        // case PAGETYPE.BUILDER:
-        //   // this.loadWizlab();
-        //   this.loadSaas();
-        //   break;
         case PAGETYPE.CLASS:
           this.setState({
             isLoading: false,
@@ -372,7 +360,7 @@ class Container extends Component {
   };
 
   setBrowserTitle = (title) => {
-    document.title = `SAAS`;
+    document.title = `MAKERS`;
     if (title) document.title += ` - ${title}`;
   };
 
@@ -652,6 +640,7 @@ export default connect(
   (state) => ({
     email: state.userinfo.email,
     name: state.userinfo.name,
+    project: state.project,
     isTutor: state.userinfo.isTutor,
     screenMode: state.preview.screenMode,
   }),

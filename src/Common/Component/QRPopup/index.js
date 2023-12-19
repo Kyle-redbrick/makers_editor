@@ -10,6 +10,8 @@ import closeImg from "../../../Image/builder/x-copy-3.svg";
 import closeImg_darkmode from "../../../Image/builder/x-copy-3_darkmode.svg";
 import * as TrackingUtil from "../../Util/TrackingUtil";
 import { getColorTheme } from "../../../Page/Builder/utils/colorThemeUtil";
+import shareCopyImg from "../../../Image/share_icon_copy.png";
+
 import "./index.scss";
 
 class QRPopup extends Component {
@@ -21,7 +23,7 @@ class QRPopup extends Component {
     this.state = {
       phoneNum: "",
       countryCode: "+1",
-      copied: false
+      copied: false,
     };
   }
 
@@ -33,18 +35,18 @@ class QRPopup extends Component {
     dismissBtn.style.display = "none";
   };
 
-  handleInputChange = e => {
+  handleInputChange = (e) => {
     const target = e.target;
     this.setState(
-      state => ({
-        [target.name]: target.value
+      (state) => ({
+        [target.name]: target.value,
       }),
       () => {}
     );
   };
-  handleCountryChange = countryCode => {
+  handleCountryChange = (countryCode) => {
     this.setState({
-      countryCode
+      countryCode,
     });
   };
 
@@ -54,7 +56,19 @@ class QRPopup extends Component {
     return phoneNum && phoneNum.length >= 11;
   };
 
-  handleSubmit = e => {
+  copyUrl = () => {
+    // const { pId } = this.props.project;
+    // const url = URL.REDBRICK_URL + "/wizapp/" + pId;
+    const url = "https://www.redbrickmakers.com";
+    navigator.clipboard.writeText(url);
+    this.setState({ copied: true }, () => {
+      setTimeout(() => {
+        this.setState({ copied: false });
+      }, 1500);
+    });
+  };
+
+  handleSubmit = (e) => {
     e.preventDefault();
     // TODO: phoneNum validation check
 
@@ -76,12 +90,12 @@ class QRPopup extends Component {
     const params = { countryCode, localNumber, url, name };
 
     smsPlayLink(params)
-      .then(response => {
+      .then((response) => {
         if (response.status === 200) {
           TrackingUtil.sendGAEvent({
             category: "Builder",
             action: `Share`,
-            label: "SMS"
+            label: "SMS",
           });
           showPopUp(
             <PopUp.OneButton
@@ -98,7 +112,7 @@ class QRPopup extends Component {
           );
         }
       })
-      .catch(error => {
+      .catch((error) => {
         console.error("Error:", error);
       });
   };
@@ -133,23 +147,14 @@ class QRPopup extends Component {
           <div className="QR__desc">
             <FormattedMessage id="ID_QRTITLE" />
           </div>
-          <form className="QRPopupForm">
-            <PhoneDropDown
-              phoneNum={phoneNum}
-              countryCode={countryCode}
-              handleSelectItem={this.handleCountryChange}
-              handleInputChange={this.handleInputChange}
-            />
-            <input
-              className="QRPopupForm__submitBtn"
-              type="submit"
-              onClick={this.handleSubmit}
-              value=""
-            />
-          </form>
         </div>
         <div className={`QRPopupCopied ${copied && "QRPopupCopiedShow"}`}>
           <FormattedMessage id="ID_SHARE_COPIED" />
+        </div>
+        <div className="QRPopupSNS">
+          <div onClick={this.copyUrl} className="QRPopupSNSItem">
+            <img src={shareCopyImg} alt="share fb" />
+          </div>
         </div>
       </div>
     );
@@ -157,8 +162,8 @@ class QRPopup extends Component {
 }
 
 export default connect(
-  state => ({
-    email: state.userinfo.email
+  (state) => ({
+    email: state.userinfo.email,
   }),
   {}
 )(injectIntl(QRPopup));

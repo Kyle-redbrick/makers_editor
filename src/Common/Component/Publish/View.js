@@ -195,7 +195,7 @@ const View = (props) => {
             </div>
           </div>
           {/* publishing */}
-          <div className="publishform__row">
+          {/* <div className="publishform__row">
             <div className="publishform__title__wrapper">
               <p className="publishform__title">퍼블리싱</p>
             </div>
@@ -220,7 +220,7 @@ const View = (props) => {
                     })}
               </span>
             </div>
-          </div>
+          </div> */}
         </div>
 
         <div className="publishform__row button_wrapper">
