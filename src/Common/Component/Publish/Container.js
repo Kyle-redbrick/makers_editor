@@ -30,6 +30,7 @@ class Container extends Component {
       challengeEventAttend: false,
       nameValidation: true,
       descriptionValidation: true,
+      isCustomThumbnail: false,
     };
     if (this.props.isBuilder) {
       require("./index_builder.scss");
@@ -143,6 +144,9 @@ class Container extends Component {
         description: description,
       };
     }
+    if (this.state.isCustomThumbnail) {
+      params.isCustomThumbnail = true;
+    }
     try {
       request
         .updateSaasProject({ params, pId })
@@ -206,6 +210,7 @@ class Container extends Component {
 
       console.log("putResponse", putResponse);
       this.setState({ icon: downloadUrl });
+      this.setState({ isCustomThumbnail: true });
     } catch (error) {
       console.error("파일 업로드 실패 : ", error);
     }

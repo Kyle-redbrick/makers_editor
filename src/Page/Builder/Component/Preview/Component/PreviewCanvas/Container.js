@@ -774,23 +774,6 @@ class Container extends Component {
   };
 
   updateScreenshotData = (immediate = false) => {
-    // if (this.thumbTimer) clearTimeout(this.thumbTimer);
-    // this.thumbTimer = setTimeout(() => {
-    //   let screenShotdata = undefined;
-    //   try {
-    //     screenShotdata = this.previewCanvas.toDataURL({
-    //       format: "jpeg",
-    //       quality: 0.7
-    //     });
-    //   } catch (e) {
-    //     console.error(e);
-    //   }
-    //   this.previewCanvas.renderAll();
-    // }, 100);
-
-    // if (!this.props.email) {
-    //   return;
-    // }
     if (this.updateScreenshotTimer) {
       clearTimeout(this.updateScreenshotTimer);
     }
@@ -833,6 +816,7 @@ class Container extends Component {
     let data = new FormData();
     data.append("file", blob);
     let url = undefined;
+    let isCustomThumbnail = localStorage.getItem("isCustomThumbnail");
     try {
       const response = await request.sceneUpload(projectId);
       const json = await response.json();
@@ -847,6 +831,34 @@ class Container extends Component {
       });
       console.log("putResponse : ", putResponse);
       url = downloadUrl;
+      if (isCustomThumbnail === "false") {
+        let pId =
+          window.location.pathname.split("/")[2] ||
+          window.location.pathname.slice(1);
+        const uploadResponse = await request.projectIconUpload(pId);
+        const uploadData = await uploadResponse.json();
+        const putUrl = uploadData.url.uploadUrl;
+        const downloadUrl = uploadData.url.downloadUrl;
+        const putResponse = await fetch(putUrl, {
+          method: "PUT",
+          headers: {
+            "Content-Type": "image/jpeg",
+          },
+          body: blob,
+        });
+        console.log("putResponse", putResponse);
+        let params = {
+          thumbnailURL: downloadUrl,
+        };
+        try {
+          request
+            .updateSaasProject({ params, pId })
+            .then((res) => res.json())
+            .then((json) => console.log("json", json));
+        } catch (e) {
+          console.error(e);
+        }
+      }
     } catch (e) {
       console.error(e);
     }

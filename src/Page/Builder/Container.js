@@ -312,6 +312,7 @@ class Container extends Component {
 
     this.setBrowserTitle(project.title);
     project.state = JSON.parse(project.state);
+    localStorage.setItem("isCustomThumbnail", project.isCustomThumbnail);
 
     AssetLibrary.loadAssetsFromScene(project.state.scene, () => {
       this.props.setProject(project);
