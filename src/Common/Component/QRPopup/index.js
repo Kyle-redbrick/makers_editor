@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { FormattedMessage, injectIntl } from "react-intl";
 import QRCode from "qrcode.react";
 import { URL } from "../../Util/Constant";
-import { smsPlayLink /*, checkShareBingo*/ } from "../../Util/HTTPRequest";
+import * as request from "../../Util/HTTPRequest";
 import PopUp, { showPopUp } from "../PopUp";
 import PhoneDropDown from "./PhoneDropDown";
 import closeImg from "../../../Image/builder/x-copy-3.svg";
@@ -24,10 +24,27 @@ class QRPopup extends Component {
       phoneNum: "",
       countryCode: "+1",
       copied: false,
+      QRLink: "",
     };
   }
 
+  loadSaasProject = async (pId) => {
+    let response = await request.getSaasDevelopingProject(pId);
+    const ans = await response.json();
+    const project = ans.data.projectInfo;
+    let screenMode = project.screenMode;
+    screenMode = screenMode.toLowerCase();
+    let sampleGame = project.sampleGameURL.split("/")[2];
+
+    this.setState({
+      // QRLink: `http://localhost:3000/sample/${screenMode}/${sampleGame}`,
+      QRLink: `https://dev-builder.redbrickmakers.com/sample/${screenMode}/${sampleGame}`,
+    });
+  };
+
   componentDidMount = () => {
+    const pId = window.location.pathname.slice(1);
+    this.loadSaasProject(pId);
     /*for css */
     const popup = document.querySelector(".QRPopup").closest(".popup_contents");
     popup.style.borderRadius = "20px";
@@ -59,7 +76,7 @@ class QRPopup extends Component {
   copyUrl = () => {
     // const { pId } = this.props.project;
     // const url = URL.REDBRICK_URL + "/wizapp/" + pId;
-    const url = "https://www.redbrickmakers.com";
+    const url = this.state.QRLink;
     navigator.clipboard.writeText(url);
     this.setState({ copied: true }, () => {
       setTimeout(() => {
@@ -83,13 +100,15 @@ class QRPopup extends Component {
     }
 
     let { pId, name } = this.props.project;
-    let url = URL.WIZ_APP + pId;
+    // let url = URL.WIZ_APP + pId;
+    let url = this.state.QRLink;
 
     const countryCode = this.state.countryCode;
     const localNumber = this.state.phoneNum;
     const params = { countryCode, localNumber, url, name };
 
-    smsPlayLink(params)
+    request
+      .smsPlayLink(params)
       .then((response) => {
         if (response.status === 200) {
           TrackingUtil.sendGAEvent({
@@ -120,7 +139,8 @@ class QRPopup extends Component {
   render() {
     const { phoneNum, countryCode, copied } = this.state;
     let { pId } = this.props.project;
-    let url = URL.WIZ_APP + pId;
+    let url = this.state.QRLink;
+    // let url = URL.WIZ_APP + pId;
     const colorTheme = getColorTheme();
 
     return (

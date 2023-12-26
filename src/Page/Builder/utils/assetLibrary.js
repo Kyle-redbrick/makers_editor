@@ -1,7 +1,8 @@
 import * as request from "../../../Common/Util/HTTPRequest";
 
 class AssetLibrary {
-  baseURL = "https://wizschool-assets.s3.ap-northeast-2.amazonaws.com";
+  baseURL = "https://storage-dev.redbrickmakers.com";
+  // baseURL = "https://wizschool-assets.s3.ap-northeast-2.amazonaws.com";
   // baseURL = "assets";
   fonts = [
     { id: "Black And White Picture", name: "ID_FONT_BNWP" },

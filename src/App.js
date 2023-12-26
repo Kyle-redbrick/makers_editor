@@ -12,6 +12,7 @@ import WizAppDetail from "./Common/Component/WizAppDetail";
 import { SubscribeManager } from "./Common/Util/Subscribe";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Sample from "./Page/Sample";
 
 const Builder = lazy(() => import("./Page/Builder"));
 const DreamEditor = lazy(() => import("./Page/DreamEditor"));
@@ -33,7 +34,6 @@ const App = () => {
     AOS.refresh();
   }, []);
 
-  // const token = localStorage.getItem("astroToken");
   const lang = localStorage.getItem("lang");
 
   const vh = window.innerHeight * 0.01;
@@ -56,6 +56,7 @@ const App = () => {
             path="/"
             render={() => <HandleQueryString Component={Builder} />}
           />
+          <Route exact path="/sample/:mode/:sampleGame" component={Sample} />
           <Route
             exact
             path={[
