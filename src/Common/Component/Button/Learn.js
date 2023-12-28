@@ -128,7 +128,15 @@ const getRedirectURLOf = (myDreamProject) => {
   }
 };
 
-export const Learn = ({ id: projectId, isShowVideo, videoURL, lectureId, title, fixed, ...props }) => {
+export const Learn = ({
+  id: projectId,
+  isShowVideo,
+  videoURL,
+  lectureId,
+  title,
+  fixed,
+  ...props
+}) => {
   const handleClick = useCallback(() => {
     // if(isShowVideo){
     //   Popup.showPopUp(<IntroPopup btnAction={onClickSkipBtn} url={videoURL} />, {
@@ -149,7 +157,9 @@ export const Learn = ({ id: projectId, isShowVideo, videoURL, lectureId, title, 
       .then((myDreamProject) => {
         const redirectURL = getRedirectURLOf(myDreamProject);
         if (redirectURL) {
-          const didIntroPopup = localStorage.getItem(`didIntroPopup_${myDreamProject.project.lecture.course.type}`);
+          const didIntroPopup = localStorage.getItem(
+            `didIntroPopup_${myDreamProject.project.lecture.course.type}`
+          );
 
           if (isMobileOnly) {
             return Popup.showPopUp(<AlertPopup />, {
@@ -159,11 +169,14 @@ export const Learn = ({ id: projectId, isShowVideo, videoURL, lectureId, title, 
           }
 
           if (isShowVideo) {
-            Popup.showPopUp(<IntroPopup redirectURL={redirectURL} url={videoURL} />, {
-              defaultPadding: false,
-              darkmode: true,
-              mobileFullscreen: true,
-            });
+            Popup.showPopUp(
+              <IntroPopup redirectURL={redirectURL} url={videoURL} />,
+              {
+                defaultPadding: false,
+                darkmode: true,
+                mobileFullscreen: true,
+              }
+            );
           } else {
             window.open(redirectURL, "_blank");
           }
@@ -195,7 +208,13 @@ export const Learn = ({ id: projectId, isShowVideo, videoURL, lectureId, title, 
   };
 
   return (
-    <Self onClick={handleClick} type="button" fixed={fixed} title={title} {...props}>
+    <Self
+      onClick={handleClick}
+      type="button"
+      fixed={fixed}
+      title={title}
+      {...props}
+    >
       {title}
     </Self>
   );
@@ -203,20 +222,40 @@ export const Learn = ({ id: projectId, isShowVideo, videoURL, lectureId, title, 
 
 export const LearnAgain = ({ ...props }) => {
   const intl = useIntl();
-  return <Learn title={intl.formatMessage({ id: "ID_LEAEN_BUTTON_LEARN_AGAIN" })} {...props} />;
+  return (
+    <Learn
+      title={intl.formatMessage({ id: "ID_LEAEN_BUTTON_LEARN_AGAIN" })}
+      {...props}
+    />
+  );
 };
 
 export const LearnNow = ({ ...props }) => {
   const intl = useIntl();
-  return <Learn title={intl.formatMessage({ id: "ID_LEAEN_BUTTON_LEARN_NOW" })} {...props} />;
+  return (
+    <Learn
+      title={intl.formatMessage({ id: "ID_LEAEN_BUTTON_LEARN_NOW" })}
+      {...props}
+    />
+  );
 };
 
 export const LearnContinue = ({ ...props }) => {
   const intl = useIntl();
-  return <Learn title={intl.formatMessage({ id: "ID_LEAEN_BUTTON_LEARN_CONTINUE" })} {...props} />;
+  return (
+    <Learn
+      title={intl.formatMessage({ id: "ID_LEAEN_BUTTON_LEARN_CONTINUE" })}
+      {...props}
+    />
+  );
 };
 
 export const LearnExperience = ({ ...props }) => {
   const intl = useIntl();
-  return <Learn title={intl.formatMessage({ id: "ID_LEAEN_BUTTON_LEARN_EXPERIENCE" })} {...props} />;
+  return (
+    <Learn
+      title={intl.formatMessage({ id: "ID_LEAEN_BUTTON_LEARN_EXPERIENCE" })}
+      {...props}
+    />
+  );
 };

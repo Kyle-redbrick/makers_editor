@@ -1,14 +1,7 @@
 import { URL } from "./Constant";
 import { detectIE } from "./detectBrowser";
-import Achievement from "./Achievement";
-import { useState } from "react";
 
 export const fetchSaasRequest = (url, method, param) => {
-  // var headers = {
-  //   "Content-Type": "application/json; charset=utf-8",
-  //   Authorization:
-  //     "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Im5OaEpQRXNSTmtaZVJSZ1lRL2dvNVBLMnU1NEhNaDhkZkxGV0VNemNBYkk9IiwibmFtZSI6Ik1BS0VSUyIsInRva2VuRm9yIjoiRURVQ0FUT1IiLCJpYXQiOjE2OTQ2NTQyNTEsImV4cCI6MjU1ODU2Nzg1MX0.VKFEREcGwLbsGf9dOujdK8Se5hBxSwLCHpSH6zJuYGM",
-  // };
   let headers = {
     "Content-Type": "application/json; charset=utf-8",
   };
@@ -26,7 +19,6 @@ export const fetchSaasRequest = (url, method, param) => {
   return new Promise((resolve, reject) => {
     fetch(url, requestInfo)
       .then((res) => {
-        Achievement.handleResponse(res);
         resolve(res);
       })
       .catch((error) => reject(error));
@@ -110,7 +102,6 @@ export const keyCommandsUpdate = (lessonId, keyCommands) => {
 
 export const projectIconUpload = (pId) => {
   return fetchSaasRequest(
-    // URL.API_SAAS_SERVER + `project/educator/icon/upload?projectId=${pId}`,
     URL.API_SAAS_SERVER +
       `project/thumbnail/upload?projectId=${pId}&fileType=jpg&mimeType=image/jpeg`,
     "GET"
@@ -317,7 +308,6 @@ export const getSaasAllCourse = () => {
       "course/list/available?offset=0&limit=100&classification=created",
     "GET"
   );
-  // return fetchRequest(URL.API_SAAS_SERVER + "course/list?locale=ko", "GET");
 };
 
 export const getNewCourse = (param) => {
@@ -483,7 +473,7 @@ export const fetchOriginRequest = (url, method, param) => {
   return new Promise((resolve, reject) => {
     fetch(url, requestInfo)
       .then((res) => {
-        Achievement.handleResponse(res);
+        // Achievement.handleResponse(res);
         resolve(res);
       })
       .catch((error) => {
@@ -521,7 +511,6 @@ export const fetchRequest = (url, method, param) => {
   return new Promise((resolve, reject) => {
     fetch(url, requestInfo)
       .then((res) => {
-        Achievement.handleResponse(res);
         resolve(res);
       })
       .catch((error) => {
