@@ -33,10 +33,15 @@ class Container extends Component {
       currentTheme: getColorTheme(),
       isMenuEnabled,
       isClickPublish: false,
+      isTrial: false,
     };
   }
 
   componentDidMount() {
+    const userEmail = JSON.parse(localStorage.getItem("userInfo")).email;
+    if (userEmail === "trial_student@redbrick.space") {
+      this.setState({ isTrial: true });
+    }
     const didReadHelp = localStorage.getItem("didReadHelp");
     if (!didReadHelp && this.pageType !== PAGETYPE.OCP2) {
       this.openHelp();
@@ -240,9 +245,10 @@ class Container extends Component {
       clickPublishPopup,
       handlechangeProjectName,
     } = this;
-    const { currentTheme, isMenuEnabled, isClickPublish } = this.state;
+    const { currentTheme, isMenuEnabled, isClickPublish, isTrial } = this.state;
     return (
       <View
+        isTrial={isTrial}
         email={userinfo.email}
         name={userinfo.name}
         icon={userinfo.icon}

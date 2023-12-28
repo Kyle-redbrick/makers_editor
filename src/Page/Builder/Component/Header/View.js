@@ -39,6 +39,7 @@ export default function (props) {
     // clickPublishPopup,
     // openPublishGame,
     handlechangeProjectName,
+    isTrial,
     // editorMode
   } = props;
   return (
@@ -55,7 +56,7 @@ export default function (props) {
               })}
             >
               <ButtonIndicator buttonId="loadImg">
-                <img src={loadImg} alt="load" />
+                {!isTrial && <img src={loadImg} alt="load" />}
               </ButtonIndicator>
             </div>
           )}
