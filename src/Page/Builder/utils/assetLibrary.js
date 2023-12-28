@@ -255,13 +255,28 @@ class AssetLibrary {
 
     if (shouldLoad) {
       data = { sprites: {}, sounds: {} };
-      const params = {
-        spriteIds: spriteAssetIds,
-        soundIds: state.soundIds,
-      };
-      const response = await request.assetsById(params);
+
+      let param = "?";
+      if (state.soundIds.length) {
+        for (i = 0; i < state.soundIds.length; i++) {
+          param = param + `soundIds=${state.soundIds[i]}&`;
+        }
+      }
+      if (spriteAssetIds) {
+        for (i = 0; i < spriteAssetIds.length; i++) {
+          param = param + `spriteIds=${spriteAssetIds[i]}&`;
+        }
+      }
+
+      if (param.charAt(param.length - 1) === "&") {
+        param = param.slice(0, -1);
+      }
+
+      const response = await request.getAssetsById(param);
+
       const json = await response.json();
-      const sprites = json.sprites;
+
+      const sprites = json.data.sprites;
       i = 0;
       let asset = undefined;
       for (i in sprites) {
@@ -270,7 +285,7 @@ class AssetLibrary {
         data.sprites[asset.assetId] = asset;
       }
 
-      const sounds = json.sounds;
+      const sounds = json.data.sounds;
       for (i in sounds) {
         asset = sounds[i];
         asset = this.convertSoundAsset(asset);
@@ -324,8 +339,9 @@ class AssetLibrary {
       callback(asset);
     } else {
       request
-        .assetsById({ spriteIds: [id] })
+        .getAssetsById(`?spriteIds=${id}`)
         .then((res) => res.json())
+        .then((json) => json.data)
         .then((json) => {
           for (let sprite of json.sprites) {
             this.sprites[id] = this.convertSpriteAsset(sprite);

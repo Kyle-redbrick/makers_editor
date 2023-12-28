@@ -3,10 +3,8 @@ export const URL = {
   SOCKET_SERVER: `https://astro-sock.wizclass.com/`,
   NOTIFICATION_SOCKET_SERVER: `https://astroboy-api-dev.wizclass.com:3002/`,
   API_SERVER: `https://api.wizclass.com/`,
-  API_SAAS_SERVER: `https://dev-api.redbrickmakers.com/`,
-  // API_SAAS_SERVER: `https://api.redbrickmakers.com/`,
-  GAME_SRC: `https://dev-builder.redbrickmakers.com/`,
-  // GAME_SRC: `https://builder.redbrickmakers.com/`,
+  API_SAAS_SERVER: process.env.REACT_APP_API_SERVER,
+  GAME_SRC: process.env.REACT_APP_GAME_SRC,
   LIVE_TEST: `https://${subdomain}wizlab.net/liveTest/`,
   WIZ_APP: `https://en.astro-coding-go.com/game?pId=`,
   ORIGIN: `https://${subdomain}wizlab.net/`,
@@ -30,8 +28,7 @@ export const URL = {
     return "https://d21hhf2g9kirkh.cloudfront.net";
   },
   get THUMBNAIL_ALI() {
-    return `https://storage-dev.redbrickmakers.com`;
-    // return `https://storage.redbrickmakers.com`;
+    return process.env.REACT_APP_THUMBNAIL_ALI;
   },
 };
 
