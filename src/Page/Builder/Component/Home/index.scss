@@ -33,6 +33,18 @@
     overflow-y: auto;
     overflow-x: hidden;
   }
+  .content--right--no__Auth {
+    width: calc(100vw - 269px);
+    padding: 42px 60px;
+    margin-left: auto;
+
+    background: #2f3443;
+    color: #afafaf;
+    font-size: 40px;
+    font-weight: 600;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
   .pageList__item {
     display: flex;
     margin-bottom: 26px;
@@ -174,8 +186,7 @@
     width: 12px;
     height: 12px;
     border-radius: 3px;
-    box-shadow: 0 3px 1px 0 rgba(0, 0, 0, 0.06),
-      0 3px 8px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: 0 3px 1px 0 rgba(0, 0, 0, 0.06), 0 3px 8px 0 rgba(0, 0, 0, 0.15);
     border: solid 0.5px rgba(0, 0, 0, 0.04);
     background-color: #ffffff;
     transition: 0.5s all;

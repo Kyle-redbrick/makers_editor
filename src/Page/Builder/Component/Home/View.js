@@ -21,13 +21,11 @@ export default function View(props) {
     // closeProjectPopup,
     handleDelete,
     handleCopy,
+    isTrial,
   } = props;
 
   let content;
   switch (currentPageId) {
-    // case "makingNew":
-    //   content = <MakingNew setCurrentPage={setCurrentPage} />;
-    //   break;
     case "myProject":
       content = (
         <MyProject
@@ -72,13 +70,6 @@ export default function View(props) {
   return (
     <div className="builder--home">
       <div className="builder--home__inner">
-        {/* <div className="home--header">
-          {canClose && (
-            <div className="header--close" onClick={closeProjectPopup}>
-              닫기
-            </div>
-          )}
-        </div> */}
         <div className="home--content">
           <div className="content--left">
             <div className="pageList">
@@ -103,7 +94,12 @@ export default function View(props) {
                 })}
             </div>
           </div>
-          <div className="content--right">{content}</div>
+          {!isTrial && <div className="content--right">{content}</div>}
+          {isTrial && (
+            <div className="content--right--no__Auth">
+              권한이 없는 페이지입니다.
+            </div>
+          )}
         </div>
       </div>
     </div>

@@ -25,6 +25,7 @@ class Container extends Component {
     this.state = {
       currentPageId: props.email ? "main" : "makingNew",
       selectProject: {},
+      isTrial: false,
     };
     if (!props.email) {
       this.pageList = [
@@ -57,6 +58,12 @@ class Container extends Component {
           offImg: createOffIcon,
         },
       ];
+    }
+  }
+  componentDidMount() {
+    let userEmail = JSON.parse(localStorage.getItem("userInfo")).email;
+    if (userEmail === "trial_student@redbrick.space") {
+      this.setState({ isTrial: true });
     }
   }
   onClickPage = (pageId) => {
@@ -151,9 +158,11 @@ class Container extends Component {
       handleDelete,
       handleCopy,
     } = this;
+    const { isTrial } = this.state;
     const { currentPageId, selectProject } = this.state;
     return (
       <View
+        isTrial={isTrial}
         pageList={pageList}
         onClickPage={onClickPage}
         currentPageId={currentPageId}
