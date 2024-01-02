@@ -828,7 +828,7 @@ const PythonCollection = (props) => {
       ],
     },
   ];
-  console.log("PYId :", PYId);
+
   useEffect(() => {
     getPythonItemBook();
     setItemBookList(PYItemBook);
@@ -850,7 +850,6 @@ const PythonCollection = (props) => {
         let flag = false;
         for (let i = 0; i < 5; i++) {
           for (let j = 0; j < json[i].itemBooks.length; j++) {
-            console.log("json[i]['itemBooks'][j] :", json[i]["itemBooks"][j]);
             if (json[i]["itemBooks"][j].lessonId === lessonId) {
               setPYId(json[i]["itemBooks"][j].lessonItemBookId);
               flag = true;
