@@ -214,7 +214,7 @@ class Container extends Component {
   };
 
   loadSaas = () => {
-    document.title = "redbrickmakers";
+    document.title = process.env.REACT_APP_INDEX_TITLE + " 빌더";
     const { pId } = this.state.params;
     if (pId) {
       this.loadSaasProject(pId);
@@ -224,7 +224,7 @@ class Container extends Component {
   };
 
   loadWizlab = () => {
-    document.title = "redbrickmakers";
+    // document.title = "redbrickmakers";
     const { pId } = this.state.params;
     if (this.props.email) {
       if (pId) {

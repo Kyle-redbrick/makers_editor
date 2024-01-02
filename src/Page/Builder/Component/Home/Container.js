@@ -61,7 +61,11 @@ class Container extends Component {
     }
   }
   componentDidMount() {
-    let userEmail = JSON.parse(localStorage.getItem("userInfo")).email;
+    let userEmail;
+    let userInfo = localStorage.getItem("userInfo");
+    if (userInfo) {
+      userEmail = JSON.parse(localStorage.getItem("userInfo")).email;
+    }
     if (userEmail === "trial_student@redbrick.space") {
       this.setState({ isTrial: true });
     }

@@ -28,6 +28,10 @@ export const fetchSaasRequest = (url, method, param) => {
 ///////////////////////////////////////////////////////////////////////////////
 /** SAAS */
 
+export const getPythonItembooks = () => {
+  return fetchSaasRequest(URL.API_SAAS_SERVER + `itemBook/list`, "GET");
+};
+
 export const sceneUpload = (projectId) => {
   return fetchSaasRequest(
     URL.API_SAAS_SERVER +
