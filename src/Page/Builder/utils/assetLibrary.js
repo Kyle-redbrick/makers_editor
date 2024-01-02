@@ -1,9 +1,7 @@
 import * as request from "../../../Common/Util/HTTPRequest";
 
 class AssetLibrary {
-  baseURL = "https://storage-dev.redbrickmakers.com";
-  // baseURL = "https://wizschool-assets.s3.ap-northeast-2.amazonaws.com";
-  // baseURL = "assets";
+  baseURL = `${process.env.REACT_APP_THUMBNAIL_ALI}`;
   fonts = [
     { id: "Black And White Picture", name: "ID_FONT_BNWP" },
     { id: "Black Han Sans", name: "ID_FONT_BHS" },
