@@ -102,6 +102,8 @@ export default function Container(props) {
           const studiedMinutes = "";
           const completedMissionNum = json.data.lessonInfo.totalMissionNumber;
           const status = "FINISHED";
+          const PYLessonId = json.data.lessonInfo.originalId;
+          localStorage.setItem("PYLessonId", PYLessonId);
           const { goal, outro, scenes } = JSON.parse(
             json.data.lessonInfo.template
           );
@@ -135,6 +137,8 @@ export default function Container(props) {
           const completedMissionNum = json.data.completedMissionNumber;
           const status = json.data.status;
           const { goal, outro, scenes } = JSON.parse(json.data.lesson.template);
+          const PYLessonId = json.data.lesson.originalId;
+          localStorage.setItem("PYLessonId", PYLessonId);
 
           if (status === "FINISHED") {
             setClearedProject(true);
