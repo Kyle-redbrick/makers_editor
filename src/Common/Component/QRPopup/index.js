@@ -34,11 +34,13 @@ class QRPopup extends Component {
     const project = ans.data.projectInfo;
     let screenMode = project.screenMode;
     screenMode = screenMode.toLowerCase();
-    let sampleGame = project.sampleGameURL.split("/")[2];
+    let sampleGame =
+      project.sampleGameURL.split("/")[
+        project.sampleGameURL.split("/").length - 1
+      ];
 
     this.setState({
-      // QRLink: `http://localhost:3000/sample/${screenMode}/${sampleGame}`,
-      QRLink: `https://dev-builder.redbrickmakers.com/sample/${screenMode}/${sampleGame}`,
+      QRLink: `${process.env.REACT_APP_QR_LINK}/${screenMode}/${sampleGame}`,
     });
   };
 
