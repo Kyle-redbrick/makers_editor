@@ -44,7 +44,7 @@ function WizSprite(param) {
   this.prevDegreeForVFD = 0;
   this.prevForceForVFD = 0;
 
-  this.sendGameEvent = function(event) {
+  this.sendGameEvent = function (event) {
     this.gameScene.sendGameEvent(
       Object.assign({ spriteId: this.spriteName }, event)
     );
@@ -53,7 +53,7 @@ function WizSprite(param) {
   setFunctions.call(this);
 }
 
-WizSprite.prototype.setAnimations = function() {
+WizSprite.prototype.setAnimations = function () {
   if (this.type !== SpriteType.PLAIN && this.type !== SpriteType.SPRITE) {
     return;
   }
@@ -69,7 +69,7 @@ WizSprite.prototype.setAnimations = function() {
   }
 };
 
-WizSprite.prototype.setBodySize = function() {
+WizSprite.prototype.setBodySize = function () {
   if (this.type !== SpriteType.PLAIN && this.type !== SpriteType.SPRITE) {
     return;
   }
@@ -84,7 +84,7 @@ WizSprite.prototype.setBodySize = function() {
   }
 };
 
-WizSprite.prototype.runCode = function() {
+WizSprite.prototype.runCode = function () {
   var sandbox = {
     cameraFollow: this.cameraFollow,
     fixToCamera: this.fixToCamera,
@@ -284,7 +284,7 @@ WizSprite.prototype.runCode = function() {
     openCamera: this.openCamera,
     closeCamera: this.closeCamera,
     switchCamera: this.switchCamera,
-    onFaceDetect: this.onFaceDetect
+    onFaceDetect: this.onFaceDetect,
   };
 
   var func = userDefinedFunction[this.gameScene.sceneId][this.originalName];
@@ -305,18 +305,18 @@ WizSprite.prototype.runCode = function() {
 /*************************************/
 //internal functions
 
-WizSprite.prototype.getDistance = function(x1, y1, x2, y2) {
+WizSprite.prototype.getDistance = function (x1, y1, x2, y2) {
   var a = x1 - x2;
   var b = y1 - y2;
   return Math.sqrt(a * a + b * b);
 };
 
-WizSprite.prototype.getTimeSec = function(x1, y1, x2, y2) {
+WizSprite.prototype.getTimeSec = function (x1, y1, x2, y2) {
   var distance = this.getDistance(x1, y1, x2, y2);
   return distance / this.speed / 10; // speed = px / 0.1s
 };
 
-WizSprite.prototype.update = function() {
+WizSprite.prototype.update = function () {
   if (this.sayBgSprite && this.saySprite) {
     if (408 / 196 < this.saySprite.width / this.saySprite.height) {
       this.sayBgSprite.width = this.saySprite.width * 1.2;
@@ -381,7 +381,7 @@ WizSprite.prototype.update = function() {
       this.sendGameEvent({
         api: "onJoystick",
         degree: degree,
-        force: this.sprite.pad.stick.force
+        force: this.sprite.pad.stick.force,
       });
     } else {
       this.joystickCallback(0, 0);
@@ -420,56 +420,56 @@ WizSprite.prototype.update = function() {
 
 /*************************************/
 //callbacks from game scene
-WizSprite.prototype.onKeyRelease = function(key) {
+WizSprite.prototype.onKeyRelease = function (key) {
   if (this.onKeyUpListener[key]) {
     this.sendGameEvent({ api: "onKeyUp", key });
     this.onKeyUpListener[key]();
   }
 };
 
-WizSprite.prototype.onKeyDown = function(key) {
+WizSprite.prototype.onKeyDown = function (key) {
   if (this.onKeyListener[key]) {
     this.sendGameEvent({ api: "onKey", key });
     this.onKeyListener[key]();
   }
 };
 
-WizSprite.prototype.onClicked = function() {
+WizSprite.prototype.onClicked = function () {
   this.isClicked = true;
   if (this.onClickListener) {
     this.onClickListener();
     this.sendGameEvent({
-      api: "onClick"
+      api: "onClick",
     });
   }
 };
 
-WizSprite.prototype.onClickedUp = function() {
+WizSprite.prototype.onClickedUp = function () {
   this.isClicked = false;
   if (this.onClickUpListener) {
     this.onClickUpListener();
     this.sendGameEvent({
-      api: "onClickUp"
+      api: "onClickUp",
     });
   }
 };
 
-WizSprite.prototype.onScreenClicked = function() {
+WizSprite.prototype.onScreenClicked = function () {
   if (this.onScreenClickListener) {
     this.onScreenClickListener();
     this.sendGameEvent({
-      api: "onScreenClick"
+      api: "onScreenClick",
     });
   }
 };
 
-WizSprite.prototype.onScreenClickedUp = function() {
+WizSprite.prototype.onScreenClickedUp = function () {
   if (this.onScreenClickUpListener) {
     this.onScreenClickUpListener();
   }
 };
 
-WizSprite.prototype.onReceive = function(name) {
+WizSprite.prototype.onReceive = function (name) {
   if (this.isCodeRun) {
     if (this.signalReceiver[name]) {
       this.signalReceiver[name]();
@@ -479,20 +479,20 @@ WizSprite.prototype.onReceive = function(name) {
   }
 };
 
-WizSprite.prototype.onSlide = function(direction) {
+WizSprite.prototype.onSlide = function (direction) {
   if (this.swipeHandler[direction]) {
     this.swipeHandler[direction]();
   }
 };
 
-WizSprite.prototype.getErrorName = function(msg) {
+WizSprite.prototype.getErrorName = function (msg) {
   const sceneId = this.game.state.current;
   const spriteId = this.spriteName;
   const api = msg;
   return { sceneId, spriteId, api };
 };
 
-WizSprite.prototype.calculateAngle = function(point, targetPoint) {
+WizSprite.prototype.calculateAngle = function (point, targetPoint) {
   var deltaY = point.y - targetPoint.y;
   var deltaX = targetPoint.x - point.x;
   var result = (Math.atan2(deltaY, deltaX) * 180) / Math.PI;
@@ -500,7 +500,7 @@ WizSprite.prototype.calculateAngle = function(point, targetPoint) {
   return degree;
 };
 
-WizSprite.prototype.sendMessageToParent = function(payload) {
+WizSprite.prototype.sendMessageToParent = function (payload) {
   payload = JSON.stringify(payload);
   try {
     //android
@@ -511,7 +511,7 @@ WizSprite.prototype.sendMessageToParent = function(payload) {
     //ios
     if (window.webkit) {
       window.webkit.messageHandlers.onGameEvent.postMessage({
-        payload: payload
+        payload: payload,
       });
     }
 
@@ -520,7 +520,7 @@ WizSprite.prototype.sendMessageToParent = function(payload) {
       {
         message: payload,
         source: "wizlab",
-        type: "gameEvent"
+        type: "gameEvent",
       },
       "*"
     );
@@ -529,44 +529,44 @@ WizSprite.prototype.sendMessageToParent = function(payload) {
   }
 };
 
-WizSprite.prototype.onGyroChanged = function(x, y) {
+WizSprite.prototype.onGyroChanged = function (x, y) {
   if (this.onGyroListener) {
     this.onGyroListener(x, y);
   }
 };
 
-WizSprite.prototype.onListeningResult = function(msg) {
+WizSprite.prototype.onListeningResult = function (msg) {
   if (this.onListeningListener) {
     this.onListeningListener(msg);
   }
 };
 
-WizSprite.prototype.onShaked = function() {
+WizSprite.prototype.onShaked = function () {
   if (this.onShakeListener) {
     this.onShakeListener();
   }
 };
 
-WizSprite.prototype.onFaceDetected = function(face) {
+WizSprite.prototype.onFaceDetected = function (face) {
   if (this.onFaceDetectListener) {
     this.onFaceDetectListener(JSON.parse(face));
   }
 };
 
-WizSprite.prototype.onSaveGameData = function() {
+WizSprite.prototype.onSaveGameData = function () {
   if (this.onSaveGameDataListener) {
     this.onSaveGameDataListener();
   }
 };
 
-WizSprite.prototype.onResetGameData = function() {
+WizSprite.prototype.onResetGameData = function () {
   if (this.onResetGameDataListener) {
     this.server.data = serverData;
     this.onResetGameDataListener();
   }
 };
 
-WizSprite.prototype.onLoadGameData = function() {
+WizSprite.prototype.onLoadGameData = function () {
   if (this.onLoadGameDataListener) {
     this.server.data = serverData;
     this.onLoadGameDataListener();
@@ -578,14 +578,14 @@ WizSprite.prototype.onLoadGameData = function() {
 
 //1.motions
 function setFunctions() {
-  this.cameraFollow = function() {
+  this.cameraFollow = function () {
     this.game.camera.follow(this.sprite);
   }.bind(this);
-  this.fixToCamera = function() {
+  this.fixToCamera = function () {
     this.sprite.fixedToCamera = true;
   }.bind(this);
 
-  this.moveForward = function(steps) {
+  this.moveForward = function (steps) {
     // error handler ->
     if (steps === undefined) {
       this.errorHandler(
@@ -610,15 +610,15 @@ function setFunctions() {
     this.sendGameEvent({ api: "moveForward", steps });
 
     return new Promise(
-      function(resolve) {
-        this.moveTo(x, y).then(function() {
+      function (resolve) {
+        this.moveTo(x, y).then(function () {
           resolve();
         });
       }.bind(this)
     );
   }.bind(this);
 
-  this.moveX = function(steps) {
+  this.moveX = function (steps) {
     // error handler ->
     if (steps === undefined) {
       this.errorHandler(
@@ -645,8 +645,8 @@ function setFunctions() {
       var y = this.sprite.y;
       this.sendGameEvent({ api: "moveX", steps: steps });
       return new Promise(
-        function(resolve) {
-          this.moveTo(x, y).then(function() {
+        function (resolve) {
+          this.moveTo(x, y).then(function () {
             resolve();
           });
         }.bind(this)
@@ -654,7 +654,7 @@ function setFunctions() {
     }
   }.bind(this);
 
-  this.moveY = function(steps) {
+  this.moveY = function (steps) {
     // error handler ->
     if (steps === undefined) {
       this.errorHandler(
@@ -681,8 +681,8 @@ function setFunctions() {
       var y = this.sprite.y + steps;
       this.sendGameEvent({ api: "moveY", steps: steps });
       return new Promise(
-        function(resolve) {
-          this.moveTo(x, y).then(function() {
+        function (resolve) {
+          this.moveTo(x, y).then(function () {
             resolve();
           });
         }.bind(this)
@@ -690,7 +690,7 @@ function setFunctions() {
     }
   }.bind(this);
 
-  this.turn = function(degree) {
+  this.turn = function (degree) {
     // error handler ->
     if (degree === undefined) {
       this.errorHandler(
@@ -713,7 +713,7 @@ function setFunctions() {
     this.sendGameEvent({ api: "turn", degree: degree });
   }.bind(this);
 
-  this.turnToSprite = function(spriteName) {
+  this.turnToSprite = function (spriteName) {
     if (!this.sprite.body) {
       return;
     }
@@ -736,14 +736,14 @@ function setFunctions() {
     this.sendGameEvent({ api: "turnToSprite", spriteName: spriteName });
   }.bind(this);
 
-  this.turnToMousePointer = function() {
+  this.turnToMousePointer = function () {
     if (!this.sprite.body) {
       return;
     }
     var point = this.sprite.body.center;
     var targetPoint = {
       x: this.game.input.activePointer.x,
-      y: this.game.input.activePointer.y
+      y: this.game.input.activePointer.y,
     };
     var degree = this.calculateAngle(point, targetPoint);
     this.setDegree(360 - degree);
@@ -751,7 +751,7 @@ function setFunctions() {
     this.sendGameEvent({ api: "turnToMousePointer" });
   }.bind(this);
 
-  this.setFlipX = function(isFlipped) {
+  this.setFlipX = function (isFlipped) {
     if (isFlipped === undefined) {
       this.errorHandler(
         ErrorType.PARAMETER_UNDEFINED,
@@ -765,7 +765,7 @@ function setFunctions() {
     this.sendGameEvent({ api: "setFlipX", isFlipped: isFlipped });
   }.bind(this);
 
-  this.setFlipY = function(isFlipped) {
+  this.setFlipY = function (isFlipped) {
     if (isFlipped === undefined) {
       this.errorHandler(
         ErrorType.PARAMETER_UNDEFINED,
@@ -779,15 +779,15 @@ function setFunctions() {
     this.sendGameEvent({ api: "setFlipY", isFlipped: isFlipped });
   }.bind(this);
 
-  this.getFlipX = function() {
+  this.getFlipX = function () {
     return this.sprite.scale.x < 0;
   }.bind(this);
 
-  this.getFlipX = function() {
+  this.getFlipX = function () {
     return this.sprite.scale.y < 0;
   }.bind(this);
 
-  this.setHorizontalFlip = function(isFlipped) {
+  this.setHorizontalFlip = function (isFlipped) {
     if (isFlipped === undefined) {
       this.errorHandler(
         ErrorType.PARAMETER_UNDEFINED,
@@ -800,7 +800,7 @@ function setFunctions() {
     this.sprite.scale.x = x;
   }.bind(this);
 
-  this.setVerticalFlip = function(isFlipped) {
+  this.setVerticalFlip = function (isFlipped) {
     if (isFlipped === undefined) {
       this.errorHandler(
         ErrorType.PARAMETER_UNDEFINED,
@@ -813,7 +813,7 @@ function setFunctions() {
     this.sprite.scale.y = y;
   }.bind(this);
 
-  this.setDegree = function(degree) {
+  this.setDegree = function (degree) {
     // error handler ->
     if (degree === undefined) {
       this.errorHandler(
@@ -834,11 +834,11 @@ function setFunctions() {
     this.sprite.angle = degree;
   }.bind(this);
 
-  this.getDegree = function() {
+  this.getDegree = function () {
     return this.sprite.angle;
   }.bind(this);
 
-  this.setMoveSpeed = function(speed) {
+  this.setMoveSpeed = function (speed) {
     // error handler ->
     if (speed === undefined) {
       this.errorHandler(
@@ -860,11 +860,11 @@ function setFunctions() {
     this.sendGameEvent({ api: "setMoveSpeed", speed: speed });
   }.bind(this);
 
-  this.getMoveSpeed = function() {
+  this.getMoveSpeed = function () {
     return this.speed;
   }.bind(this);
 
-  this.goForward = function(steps) {
+  this.goForward = function (steps) {
     // error handler ->
     if (steps === undefined) {
       this.errorHandler(
@@ -889,7 +889,7 @@ function setFunctions() {
     this.goTo(x, y);
   }.bind(this);
 
-  this.goX = function(steps) {
+  this.goX = function (steps) {
     // error handler ->
     if (steps === undefined) {
       this.errorHandler(
@@ -917,7 +917,7 @@ function setFunctions() {
     this.sendGameEvent({ api: "goX", steps: steps });
   }.bind(this);
 
-  this.goY = function(steps) {
+  this.goY = function (steps) {
     // error handler ->
     if (steps === undefined) {
       this.errorHandler(
@@ -945,7 +945,7 @@ function setFunctions() {
     this.sendGameEvent({ api: "goY", steps: steps });
   }.bind(this);
 
-  this.goTo = function(x, y) {
+  this.goTo = function (x, y) {
     // error handler ->
     if (x === undefined || y === undefined) {
       this.errorHandler(
@@ -968,7 +968,7 @@ function setFunctions() {
     this.sendGameEvent({ api: "goTo", x: x, y: y });
   }.bind(this);
 
-  this.goToSprite = function(spriteName) {
+  this.goToSprite = function (spriteName) {
     // error handler ->
     if (spriteName === undefined) {
       this.errorHandler(
@@ -988,14 +988,14 @@ function setFunctions() {
     }
   }.bind(this);
 
-  this.goToMousePointer = function() {
+  this.goToMousePointer = function () {
     var x = this.game.input.activePointer.x;
     var y = this.game.input.activePointer.y;
     this.goTo(x, y);
     this.sendGameEvent({ api: "goToMousePointer" });
   }.bind(this);
 
-  this.goToRandom = function() {
+  this.goToRandom = function () {
     var isHorizontal = this.getWorldWidth() > this.getWorldHeight();
     var x = isHorizontal ? this.getRandom(0, 1280) : this.getRandom(0, 720);
     var y = isHorizontal ? this.getRandom(0, 720) : this.getRandom(0, 1280);
@@ -1003,7 +1003,7 @@ function setFunctions() {
     this.sendGameEvent({ api: "goToRandom" });
   }.bind(this);
 
-  this.setX = function(x) {
+  this.setX = function (x) {
     if (x === undefined) {
       this.errorHandler(
         ErrorType.PARAMETER_UNDEFINED,
@@ -1029,7 +1029,7 @@ function setFunctions() {
     this.sendGameEvent({ api: "setX", x });
   }.bind(this);
 
-  this.setY = function(y) {
+  this.setY = function (y) {
     if (y === undefined) {
       this.errorHandler(
         ErrorType.PARAMETER_UNDEFINED,
@@ -1055,15 +1055,15 @@ function setFunctions() {
     this.sendGameEvent({ api: "setY", y });
   }.bind(this);
 
-  this.getX = function() {
+  this.getX = function () {
     return this.sprite.x;
   }.bind(this);
 
-  this.getY = function() {
+  this.getY = function () {
     return this.sprite.y;
   }.bind(this);
 
-  this.moveTo = function(x, y) {
+  this.moveTo = function (x, y) {
     // error handler ->
     if (x === undefined || y === undefined) {
       this.errorHandler(
@@ -1090,17 +1090,17 @@ function setFunctions() {
     this.sendGameEvent({ api: "moveTo", x, y });
 
     return new Promise(
-      function(resolve) {
+      function (resolve) {
         var tween = this.game.add.tween(this.sprite.position);
         tween.to({ x: x, y: y }, secs * 1000, Phaser.Easing.Linear.None, true);
-        tween.onComplete.addOnce(function() {
+        tween.onComplete.addOnce(function () {
           resolve();
         });
       }.bind(this)
     );
   }.bind(this);
 
-  this.moveToSprite = function(spriteName) {
+  this.moveToSprite = function (spriteName) {
     // error handler ->
     if (spriteName === undefined) {
       this.errorHandler(
@@ -1117,8 +1117,8 @@ function setFunctions() {
       var x = targetSprite.sprite.position.x;
       var y = targetSprite.sprite.position.y;
       return new Promise(
-        function(resolve) {
-          this.moveTo(x, y).then(function() {
+        function (resolve) {
+          this.moveTo(x, y).then(function () {
             resolve();
           });
         }.bind(this)
@@ -1126,34 +1126,34 @@ function setFunctions() {
     }
   }.bind(this);
 
-  this.moveToMousePointer = function() {
+  this.moveToMousePointer = function () {
     this.sendGameEvent({ api: "moveToMousePointer" });
     var x = this.game.input.activePointer.x;
     var y = this.game.input.activePointer.y;
     return new Promise(
-      function(resolve) {
-        this.moveTo(x, y).then(function() {
+      function (resolve) {
+        this.moveTo(x, y).then(function () {
           resolve();
         });
       }.bind(this)
     );
   }.bind(this);
 
-  this.moveToRandom = function() {
+  this.moveToRandom = function () {
     this.sendGameEvent({ api: "moveToRandom" });
     var isHorizontal = this.getWorldWidth() > this.getWorldHeight();
     var x = isHorizontal ? this.getRandom(0, 1280) : this.getRandom(0, 720);
     var y = isHorizontal ? this.getRandom(0, 720) : this.getRandom(0, 1280);
     return new Promise(
-      function(resolve) {
-        this.moveTo(x, y).then(function() {
+      function (resolve) {
+        this.moveTo(x, y).then(function () {
           resolve();
         });
       }.bind(this)
     );
   }.bind(this);
 
-  this.setDraggable = function(enabled) {
+  this.setDraggable = function (enabled) {
     // error handler ->
     if (enabled === undefined) {
       this.errorHandler(
@@ -1176,12 +1176,12 @@ function setFunctions() {
     this.sprite._drag = enabled;
   }.bind(this);
 
-  this.getDraggable = function() {
+  this.getDraggable = function () {
     return this.sprite._drag;
   }.bind(this);
 
   //2.form
-  this.say = function(message, sec) {
+  this.say = function (message, sec) {
     if (message === undefined) {
       this.errorHandler(
         ErrorType.PARAMETER_UNDEFINED,
@@ -1203,7 +1203,7 @@ function setFunctions() {
     }
     var style = {
       fill: "#555555",
-      font: "32px Arial"
+      font: "32px Arial",
     };
 
     this.sayBgSprite = this.game.add.sprite(0, 0, "say_bg");
@@ -1219,7 +1219,7 @@ function setFunctions() {
     if (sec) {
       this.sendGameEvent({ api: "say", message: message, sec: sec });
       this.sayTimer = setTimeout(
-        function() {
+        function () {
           this.stopSay();
         }.bind(this),
         sec * 1000
@@ -1227,7 +1227,7 @@ function setFunctions() {
     }
   }.bind(this);
 
-  this.stopSay = function() {
+  this.stopSay = function () {
     if (this.saySprite) {
       this.saySprite.kill();
       this.saySprite = undefined;
@@ -1238,7 +1238,7 @@ function setFunctions() {
     }
   }.bind(this);
 
-  this.playAnimation = function(name, isLoop) {
+  this.playAnimation = function (name, isLoop) {
     if (!this.sprite.body) {
       return;
     }
@@ -1287,21 +1287,21 @@ function setFunctions() {
     this.sendGameEvent({
       api: "playAnimation",
       name,
-      isLoop: isLoop
+      isLoop: isLoop,
     });
     if (!isLoop) {
-      this.sprite.animations._anims[name].onComplete.addOnce(function() {
+      this.sprite.animations._anims[name].onComplete.addOnce(function () {
         this.sprite.frame = 0;
       }, this);
     }
   }.bind(this);
 
-  this.stopAnimation = function() {
+  this.stopAnimation = function () {
     this.sprite.animations.stop();
     this.sprite.frame = 0;
   }.bind(this);
 
-  this.getCurrentAnimation = function() {
+  this.getCurrentAnimation = function () {
     if (
       this.sprite.animations &&
       this.sprite.animations.currentAnim &&
@@ -1313,7 +1313,7 @@ function setFunctions() {
     }
   }.bind(this);
 
-  this.setSize = function(percent) {
+  this.setSize = function (percent) {
     // error handler ->
     if (percent === undefined) {
       this.errorHandler(
@@ -1343,7 +1343,7 @@ function setFunctions() {
     this.sprite.scale.setTo(x, y);
   }.bind(this);
 
-  this.addSize = function(percent) {
+  this.addSize = function (percent) {
     // error handler ->
     if (percent === undefined) {
       this.errorHandler(
@@ -1363,11 +1363,11 @@ function setFunctions() {
     this.setSize(this.getSize() + percent);
   }.bind(this);
 
-  this.getSize = function() {
+  this.getSize = function () {
     return parseInt(Math.abs(this.sprite.scale.x * 100));
   }.bind(this);
 
-  this.show = function() {
+  this.show = function () {
     this.sprite.alpha = 1;
     this.sprite.inputEnabled = true;
     this.sendGameEvent({ api: "show" });
@@ -1377,7 +1377,7 @@ function setFunctions() {
     // this.sprite.visible = true;
   }.bind(this);
 
-  this.hide = function() {
+  this.hide = function () {
     this.stopSay();
     this.sprite.alpha = 0;
     this.sprite.inputEnabled = false;
@@ -1385,19 +1385,19 @@ function setFunctions() {
     // this.sprite.visible = false;
   }.bind(this);
 
-  this.getX = function() {
+  this.getX = function () {
     return this.sprite.position.x;
   }.bind(this);
 
-  this.bringToTop = function() {
+  this.bringToTop = function () {
     this.sprite.bringToTop();
   }.bind(this);
 
-  this.getY = function() {
+  this.getY = function () {
     return this.sprite.position.y;
   }.bind(this);
 
-  this.setWidth = function(width) {
+  this.setWidth = function (width) {
     if (width === undefined) {
       this.errorHandler(
         ErrorType.PARAMETER_UNDEFINED,
@@ -1417,7 +1417,7 @@ function setFunctions() {
     this.sendGameEvent({ api: "setWidth", width });
   }.bind(this);
 
-  this.setHeight = function(height) {
+  this.setHeight = function (height) {
     if (height === undefined) {
       this.errorHandler(
         ErrorType.PARAMETER_UNDEFINED,
@@ -1436,31 +1436,31 @@ function setFunctions() {
     this.sendGameEvent({ api: "setHeight", height });
   }.bind(this);
 
-  this.getWidth = function() {
+  this.getWidth = function () {
     return this.sprite.width;
   }.bind(this);
 
-  this.getHeight = function() {
+  this.getHeight = function () {
     return this.sprite.height;
   }.bind(this);
 
-  this.getWorldWidth = function() {
+  this.getWorldWidth = function () {
     return this.game.width;
   }.bind(this);
 
-  this.getWorldHeight = function() {
+  this.getWorldHeight = function () {
     return this.game.height;
   }.bind(this);
 
-  this.getMousePointerX = function() {
+  this.getMousePointerX = function () {
     return this.game.input.activePointer.x;
   }.bind(this);
 
-  this.getMousePointerY = function() {
+  this.getMousePointerY = function () {
     return this.game.input.activePointer.y;
   }.bind(this);
 
-  this.shake = function() {
+  this.shake = function () {
     this.game.camera.shake(
       0.02,
       200,
@@ -1469,33 +1469,33 @@ function setFunctions() {
       true
     );
     this.sendGameEvent({
-      api: "shake"
+      api: "shake",
     });
   }.bind(this);
 
-  this.flash = function() {
+  this.flash = function () {
     this.game.camera.flash(0xffffff, 200, false);
   }.bind(this);
 
   // swipe
-  this.onSwipe = function(direction, callback) {
+  this.onSwipe = function (direction, callback) {
     this.swipeHandler[direction] = callback;
   }.bind(this);
 
   //3.event
-  this.onFrame = function(fn) {
+  this.onFrame = function (fn) {
     this.gameScene.updateFunctions.push(fn);
   }.bind(this);
 
-  this.onSignal = function(name, callback) {
+  this.onSignal = function (name, callback) {
     this.signalReceiver[name] = callback;
     this.sendGameEvent({
       api: "onSignal",
-      name
+      name,
     });
   }.bind(this);
 
-  this.sendSignal = function(name) {
+  this.sendSignal = function (name) {
     // error handler ->
     if (name === undefined) {
       this.errorHandler(
@@ -1507,25 +1507,25 @@ function setFunctions() {
     //  <- error handler
     this.sendGameEvent({
       api: "sendSignal",
-      name
+      name,
     });
     this.gameScene.sendSignal(name);
   }.bind(this);
 
-  this.onOut = function(fn) {
+  this.onOut = function (fn) {
     this.sprite.checkWorldBounds = true;
     this.sprite.events.onOutOfBounds.add(fn, this);
   }.bind(this);
 
-  this.onOutStage = function(fn) {
+  this.onOutStage = function (fn) {
     this.sprite.checkWorldBounds = true;
-    this.sprite.events.onOutOfBounds.add(function() {
+    this.sprite.events.onOutOfBounds.add(function () {
       this.sendGameEvent({ api: "onOutStage" });
       fn();
     }, this);
   }.bind(this);
 
-  this.changeScene = function(sceneId) {
+  this.changeScene = function (sceneId) {
     // error handler ->
     if (sceneId === undefined) {
       this.errorHandler(
@@ -1547,24 +1547,24 @@ function setFunctions() {
     this.sendGameEvent({ api: "changeScene", name: sceneId });
   }.bind(this);
 
-  this.kill = function() {
+  this.kill = function () {
     this.stopSay();
     this.sprite.kill();
     this.sendGameEvent({ api: "kill" });
   }.bind(this);
 
-  this.revive = function() {
+  this.revive = function () {
     this.sprite.revive();
     this.sendGameEvent({ api: "revive" });
   }.bind(this);
 
-  this.clone = function() {
+  this.clone = function () {
     this.sendGameEvent({ api: "clone" });
     return this.gameScene.cloneSprite(this);
   }.bind(this);
 
   //4.control
-  this.wait = function(secs) {
+  this.wait = function (secs) {
     // error handler ->
     if (secs === undefined) {
       this.errorHandler(
@@ -1587,39 +1587,39 @@ function setFunctions() {
 
     this.sendGameEvent({ api: "wait", secs: secs });
 
-    return new Promise(function(resolve) {
-      setTimeout(function() {
+    return new Promise(function (resolve) {
+      setTimeout(function () {
         resolve();
       }, secs * 1000);
     });
   }.bind(this);
 
   //5.perception
-  this.onClick = function(fn) {
+  this.onClick = function (fn) {
     this.onClickListener = fn;
   }.bind(this);
 
-  this.onClickUp = function(fn) {
+  this.onClickUp = function (fn) {
     this.onClickUpListener = fn;
   }.bind(this);
 
-  this.onTouch = function(fn) {
+  this.onTouch = function (fn) {
     this.onClickListener = fn;
   }.bind(this);
 
-  this.onTouchUp = function(fn) {
+  this.onTouchUp = function (fn) {
     this.onClickUpListener = fn;
   }.bind(this);
 
-  this.onScreenClick = function(fn) {
+  this.onScreenClick = function (fn) {
     this.onScreenClickListener = fn;
   }.bind(this);
 
-  this.onScreenClickUp = function(fn) {
+  this.onScreenClickUp = function (fn) {
     this.onScreenClickUpListener = fn;
   }.bind(this);
 
-  this.onKey = function(name, callback) {
+  this.onKey = function (name, callback) {
     if (name === undefined) {
       this.errorHandler(
         ErrorType.PARAMETER_UNDEFINED,
@@ -1629,12 +1629,12 @@ function setFunctions() {
     this.onKeyListener[name] = callback;
   }.bind(this);
 
-  this.onKeyUp = function(name, callback) {
+  this.onKeyUp = function (name, callback) {
     this.onKeyUpListener[name] = callback;
   }.bind(this);
 
   //6.operation
-  this.getRandom = function(min, max) {
+  this.getRandom = function (min, max) {
     // error handler ->
     if (min === undefined || max === undefined) {
       this.errorHandler(
@@ -1658,19 +1658,19 @@ function setFunctions() {
     return this.game.rnd.integerInRange(min, max);
   }.bind(this);
 
-  this.getName = function() {
+  this.getName = function () {
     return this.originalName;
   }.bind(this);
 
-  this.print = function(message) {
+  this.print = function (message) {
     console.log("%c " + message, "background: #555; color: #bada55");
     parent.postMessage({ message: message, source: "wizlab", type: "chatbot" });
   };
 
-  this.input = function(message) {
+  this.input = function (message) {
     this.sendGameEvent({ api: "input", resolved: false });
-    return new Promise(resolve => {
-      onclickInputShow(message, value => {
+    return new Promise((resolve) => {
+      onclickInputShow(message, (value) => {
         this.sendGameEvent({ api: "input", resolved: true });
         resolve(value);
       });
@@ -1678,7 +1678,7 @@ function setFunctions() {
   }.bind(this);
 
   //7.parameters
-  this.getSprite = function(spriteName) {
+  this.getSprite = function (spriteName) {
     // error handler ->
     if (spriteName === undefined) {
       this.errorHandler(
@@ -1693,7 +1693,7 @@ function setFunctions() {
   }.bind(this);
 
   //8.physics
-  this.setCollideScene = function(enable) {
+  this.setCollideScene = function (enable) {
     if (!this.sprite.body) {
       return;
     }
@@ -1711,7 +1711,7 @@ function setFunctions() {
     this.sendGameEvent({ api: "setCollideScene", enable: enable });
   }.bind(this);
 
-  this.setCollideWorldBounds = function(enable) {
+  this.setCollideWorldBounds = function (enable) {
     if (!this.sprite.body) {
       return;
     }
@@ -1728,7 +1728,7 @@ function setFunctions() {
     this.sprite.body.collideWorldBounds = enable;
   }.bind(this);
 
-  this.setCollision = function(targetName) {
+  this.setCollision = function (targetName) {
     // error handler ->
     if (targetName === undefined) {
       this.errorHandler(
@@ -1751,7 +1751,7 @@ function setFunctions() {
     }
   }.bind(this);
 
-  this.setCheckCollision = function(direction, enabled) {
+  this.setCheckCollision = function (direction, enabled) {
     if (!this.sprite.body) {
       return;
     }
@@ -1793,7 +1793,7 @@ function setFunctions() {
     }
   }.bind(this);
 
-  this.setCollideSide = function(direction, enabled) {
+  this.setCollideSide = function (direction, enabled) {
     if (!this.sprite.body) {
       return;
     }
@@ -1835,7 +1835,7 @@ function setFunctions() {
     }
   }.bind(this);
 
-  this.onOverlap = function(targetName, fn) {
+  this.onOverlap = function (targetName, fn) {
     // error handler ->
     if (targetName === undefined) {
       this.errorHandler(
@@ -1858,7 +1858,7 @@ function setFunctions() {
     }
   }.bind(this);
 
-  this.onOverlapOnce = function(targetName, fn) {
+  this.onOverlapOnce = function (targetName, fn) {
     // error handler ->
     if (targetName === undefined) {
       this.errorHandler(
@@ -1881,7 +1881,7 @@ function setFunctions() {
     }
   }.bind(this);
 
-  this.setImmovable = function(enable) {
+  this.setImmovable = function (enable) {
     if (!this.sprite.body) {
       return;
     }
@@ -1898,7 +1898,7 @@ function setFunctions() {
     this.sprite.body.immovable = enable;
   }.bind(this);
 
-  this.setMovable = function(enable) {
+  this.setMovable = function (enable) {
     if (!this.sprite.body) {
       return;
     }
@@ -1916,11 +1916,11 @@ function setFunctions() {
     this.sendGameEvent({ api: "setMovable", enable: enable });
   }.bind(this);
 
-  this.getMovable = function() {
+  this.getMovable = function () {
     return !this.sprite.body.immovable;
   }.bind(this);
 
-  this.setMass = function(value) {
+  this.setMass = function (value) {
     if (!this.sprite.body) {
       return;
     }
@@ -1944,11 +1944,11 @@ function setFunctions() {
     this.sprite.body.mass = value;
   }.bind(this);
 
-  this.getMass = function() {
+  this.getMass = function () {
     return this.sprite.body.mass;
   }.bind(this);
 
-  this.setGravityX = function(value) {
+  this.setGravityX = function (value) {
     if (!this.sprite.body) {
       return;
     }
@@ -1972,7 +1972,7 @@ function setFunctions() {
     if (this.sprite.body) this.sprite.body.gravity.x = value;
   }.bind(this);
 
-  this.setGravityY = function(value) {
+  this.setGravityY = function (value) {
     if (!this.sprite.body) {
       return;
     }
@@ -1999,7 +1999,7 @@ function setFunctions() {
     }
   }.bind(this);
 
-  this.getGravityX = function() {
+  this.getGravityX = function () {
     if (this.sprite.body) {
       return this.sprite.body.gravity.x;
     } else {
@@ -2007,7 +2007,7 @@ function setFunctions() {
     }
   }.bind(this);
 
-  this.getGravityY = function() {
+  this.getGravityY = function () {
     if (this.sprite.body) {
       return this.sprite.body.gravity.y;
     } else {
@@ -2015,7 +2015,7 @@ function setFunctions() {
     }
   }.bind(this);
 
-  this.setVelocityX = function(value) {
+  this.setVelocityX = function (value) {
     if (!this.sprite.body) {
       return;
     }
@@ -2042,7 +2042,7 @@ function setFunctions() {
     }
   }.bind(this);
 
-  this.setVelocityY = function(value) {
+  this.setVelocityY = function (value) {
     if (!this.sprite.body) {
       return;
     }
@@ -2069,29 +2069,29 @@ function setFunctions() {
     }
   }.bind(this);
 
-  this.getVelocityX = function() {
+  this.getVelocityX = function () {
     if (!this.sprite.body) {
       return 0;
     }
     return this.sprite.body.velocity.x;
   }.bind(this);
 
-  this.getVelocityY = function() {
+  this.getVelocityY = function () {
     if (!this.sprite.body) {
       return 0;
     }
     return this.sprite.body.velocity.y;
   }.bind(this);
 
-  this.getVelocityX = function() {
+  this.getVelocityX = function () {
     return this.sprite.body.velocity.x;
   }.bind(this);
 
-  this.getVelocityY = function() {
+  this.getVelocityY = function () {
     return this.sprite.body.velocity.y;
   }.bind(this);
 
-  this.setBounceX = function(value) {
+  this.setBounceX = function (value) {
     if (!this.sprite.body) {
       return;
     }
@@ -2116,7 +2116,7 @@ function setFunctions() {
     this.sendGameEvent({ api: "setBounceX", value: value });
   }.bind(this);
 
-  this.setBounceY = function(value) {
+  this.setBounceY = function (value) {
     if (!this.sprite.body) {
       return;
     }
@@ -2141,7 +2141,7 @@ function setFunctions() {
     this.sendGameEvent({ api: "setBounceY", value: value });
   }.bind(this);
 
-  this.getBounceX = function() {
+  this.getBounceX = function () {
     if (this.sprite.body) {
       return this.sprite.body.bounce.x;
     } else {
@@ -2149,7 +2149,7 @@ function setFunctions() {
     }
   }.bind(this);
 
-  this.getBounceY = function() {
+  this.getBounceY = function () {
     if (this.sprite.body) {
       return this.sprite.body.bounce.y;
     } else {
@@ -2157,7 +2157,7 @@ function setFunctions() {
     }
   }.bind(this);
 
-  this.setAccelerationX = function(value) {
+  this.setAccelerationX = function (value) {
     if (!this.sprite.body) {
       return;
     }
@@ -2181,7 +2181,7 @@ function setFunctions() {
     this.sendGameEvent({ api: "setAccelerationX", value: value });
   }.bind(this);
 
-  this.setAccelerationY = function(value) {
+  this.setAccelerationY = function (value) {
     if (!this.sprite.body) {
       return;
     }
@@ -2206,16 +2206,16 @@ function setFunctions() {
     this.sendGameEvent({ api: "setAccelerationY", value: value });
   }.bind(this);
 
-  this.getAccelerationX = function() {
+  this.getAccelerationX = function () {
     return this.sprite.body.acceleration.x;
   }.bind(this);
 
-  this.getAccelerationY = function() {
+  this.getAccelerationY = function () {
     return this.sprite.body.acceleration.y;
   }.bind(this);
 
   //9.sound
-  this.playSound = function(name, isLoop) {
+  this.playSound = function (name, isLoop) {
     // error handler ->
     if (name === undefined) {
       this.errorHandler(
@@ -2237,11 +2237,11 @@ function setFunctions() {
     this.sendGameEvent({
       api: "playSound",
       name,
-      isLoop
+      isLoop,
     });
   }.bind(this);
 
-  this.restartSound = function(name) {
+  this.restartSound = function (name) {
     // error handler ->
     if (name === undefined) {
       this.errorHandler(
@@ -2261,7 +2261,7 @@ function setFunctions() {
     this.gameScene.restartSound(name);
   }.bind(this);
 
-  this.stopSound = function(name) {
+  this.stopSound = function (name) {
     // error handler ->
     if (name === undefined) {
       this.errorHandler(
@@ -2281,7 +2281,7 @@ function setFunctions() {
     this.gameScene.stopSound(name);
   }.bind(this);
 
-  this.pauseSound = function(name) {
+  this.pauseSound = function (name) {
     // error handler ->
     if (name === undefined) {
       this.errorHandler(
@@ -2302,7 +2302,7 @@ function setFunctions() {
     this.sendGameEvent({ api: "pauseSound", name: name });
   }.bind(this);
 
-  this.resumeSound = function(name) {
+  this.resumeSound = function (name) {
     // error handler ->
     if (name === undefined) {
       this.errorHandler(
@@ -2323,11 +2323,11 @@ function setFunctions() {
     this.sendGameEvent({ api: "resumeSound", name: name });
   }.bind(this);
 
-  this.stopAllSounds = function() {
+  this.stopAllSounds = function () {
     this.game.sound.stopAll();
   }.bind(this);
 
-  this.setSoundVolume = function(value) {
+  this.setSoundVolume = function (value) {
     // error handler ->
     if (value === undefined) {
       this.errorHandler(
@@ -2353,7 +2353,7 @@ function setFunctions() {
     this.game.sound.volume = (this.game.gameVolume * systemVolume) / 100;
   }.bind(this);
 
-  this.addSoundVolume = function(value) {
+  this.addSoundVolume = function (value) {
     // error handler ->
     if (value === undefined) {
       this.errorHandler(
@@ -2375,11 +2375,11 @@ function setFunctions() {
     this.setSoundVolume(newVolume);
   }.bind(this);
 
-  this.getSoundVolume = function() {
+  this.getSoundVolume = function () {
     return this.game.gameVolume;
   }.bind(this);
 
-  this.setText = function(text) {
+  this.setText = function (text) {
     // error handler ->
     if (text === undefined) {
       this.errorHandler(
@@ -2397,7 +2397,7 @@ function setFunctions() {
     }
   }.bind(this);
 
-  this.getText = function() {
+  this.getText = function () {
     if (this.type === SpriteType.TEXT) {
       this.sendGameEvent({ api: "getText" });
       return this.sprite.text;
@@ -2406,7 +2406,7 @@ function setFunctions() {
     }
   }.bind(this);
 
-  this.appendText = function(text) {
+  this.appendText = function (text) {
     // error handler ->
     if (text === undefined) {
       this.errorHandler(
@@ -2423,14 +2423,14 @@ function setFunctions() {
     }
   }.bind(this);
 
-  this.clearText = function() {
+  this.clearText = function () {
     if (this.type === SpriteType.TEXT) {
       this.sprite.text = "";
       this.sendGameEvent({ api: "clearText" });
     }
   }.bind(this);
 
-  this.setTextColor = function(color) {
+  this.setTextColor = function (color) {
     if (color === undefined) {
       this.errorHandler(
         ErrorType.PARAMETER_UNDEFINED,
@@ -2446,12 +2446,12 @@ function setFunctions() {
     }
   }.bind(this);
 
-  this.setRandomTextColor = function() {
+  this.setRandomTextColor = function () {
     var rndColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
     this.setTextColor(rndColor);
   }.bind(this);
 
-  this.getTextColor = function() {
+  this.getTextColor = function () {
     if (this.type === SpriteType.TEXT) {
       if (this.sprite.colors[0]) {
         return this.sprite.colors[0];
@@ -2462,60 +2462,60 @@ function setFunctions() {
   }.bind(this);
 
   //date
-  this.getYear = function() {
+  this.getYear = function () {
     return new Date().getFullYear();
   }.bind(this);
 
-  this.getMonth = function() {
+  this.getMonth = function () {
     return new Date().getMonth() + 1;
   }.bind(this);
 
-  this.getDay = function() {
+  this.getDay = function () {
     return new Date().getDate();
   }.bind(this);
 
-  this.getHour = function() {
+  this.getHour = function () {
     return new Date().getHours();
   }.bind(this);
 
-  this.getMin = function() {
+  this.getMin = function () {
     return new Date().getMinutes();
   }.bind(this);
 
-  this.getSec = function() {
+  this.getSec = function () {
     return new Date().getSeconds();
   }.bind(this);
 
-  this.startTimer = function() {
+  this.startTimer = function () {
     this.sendGameEvent({ api: "startTimer" });
     this.gameScene.startTimer();
   }.bind(this);
 
-  this.pauseTimer = function() {
+  this.pauseTimer = function () {
     this.sendGameEvent({ api: "pauseTimer" });
     this.gameScene.pauseTimer();
   }.bind(this);
 
-  this.resumeTimer = function() {
+  this.resumeTimer = function () {
     this.sendGameEvent({ api: "resumeTimer" });
     this.gameScene.resumeTimer();
   }.bind(this);
 
-  this.resetTimer = function() {
+  this.resetTimer = function () {
     this.sendGameEvent({ api: "resetTimer" });
     this.gameScene.resetTimer();
   }.bind(this);
 
-  this.getTimer = function() {
+  this.getTimer = function () {
     this.sendGameEvent({ api: "getTimer" });
     return this.gameScene.getTimer();
   }.bind(this);
 
-  this.isClickedSprite = function() {
+  this.isClickedSprite = function () {
     return this.isClicked;
   }.bind(this);
 
-  this.isPressedKey = function(key) {
+  this.isPressedKey = function (key) {
     if (this.gameScene.pressedKeys[key]) {
       return true;
     } else {
@@ -2523,11 +2523,11 @@ function setFunctions() {
     }
   }.bind(this);
 
-  this.isClickedMouse = function() {
+  this.isClickedMouse = function () {
     return this.game.input.activePointer.isDown;
   }.bind(this);
 
-  this.isOverlapped = function(targetName) {
+  this.isOverlapped = function (targetName) {
     // error handler ->
     if (targetName === undefined) {
       this.errorHandler(
@@ -2542,19 +2542,19 @@ function setFunctions() {
   }.bind(this);
 
   //joystick
-  this.onJoystick = function(callback) {
+  this.onJoystick = function (callback) {
     if (this.subtype === "analog") {
       this.joystickCallback = callback;
     }
   }.bind(this);
 
-  this.onDpad = function(callback) {
+  this.onDpad = function (callback) {
     if (this.subtype === "dpad") {
       this.dpadCallback = callback;
     }
   }.bind(this);
 
-  this.setVelocityFromDegree = function(degree, force, maxSpeed) {
+  this.setVelocityFromDegree = function (degree, force, maxSpeed) {
     if (!this.sprite.body) {
       return;
     }
@@ -2572,12 +2572,12 @@ function setFunctions() {
         api: "setVelocityFromDegree",
         degree: degree,
         force: force,
-        maxSpeed: maxSpeed
+        maxSpeed: maxSpeed,
       });
     }
   }.bind(this);
 
-  this.setAccelerationFromDegree = function(degree, force, maxSpeed) {
+  this.setAccelerationFromDegree = function (degree, force, maxSpeed) {
     if (!this.sprite.body) {
       return;
     }
@@ -2590,7 +2590,7 @@ function setFunctions() {
   }.bind(this);
 
   /*** pen */
-  this.startPen = function() {
+  this.startPen = function () {
     if (!this.pen) {
       //add graphics
       var pen = this.game.add.graphics(0, 0);
@@ -2616,14 +2616,15 @@ function setFunctions() {
     }
   }.bind(this);
 
-  this.endPen = function() {
+  this.endPen = function () {
     if (this.pen) {
       this.pen = undefined;
       // this.pen.lineStyle(0, 0, 0);
+      this.sendGameEvent({ api: "endPen" });
     }
   }.bind(this);
 
-  this.setPenColor = function(color) {
+  this.setPenColor = function (color) {
     // error handler ->
     if (color === undefined) {
       this.errorHandler(
@@ -2641,10 +2642,12 @@ function setFunctions() {
     this.penColor = color;
     if (this.pen) {
       this.pen.lineStyle(this.penSize, this.penColor, 1);
+
+      this.sendGameEvent({ api: "setPenColor" });
     }
   }.bind(this);
 
-  this.setRandomPenColor = function() {
+  this.setRandomPenColor = function () {
     var colorKeys = Object.keys(HTML_Colors);
     var rnd = colorKeys[Math.floor(Math.random() * colorKeys.length)];
     // var rndColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
@@ -2652,7 +2655,7 @@ function setFunctions() {
     this.setPenColor(HTML_Colors[rnd]);
   }.bind(this);
 
-  this.getPenColor = function() {
+  this.getPenColor = function () {
     if (this.pen) {
       var color = String(this.pen.lineColor);
       color = color.replace("0x", "#");
@@ -2660,7 +2663,7 @@ function setFunctions() {
     }
   }.bind(this);
 
-  this.setPenSize = function(size) {
+  this.setPenSize = function (size) {
     // error handler ->
     if (size === undefined) {
       this.errorHandler(
@@ -2677,11 +2680,11 @@ function setFunctions() {
     }
   }.bind(this);
 
-  this.getPenSize = function() {
+  this.getPenSize = function () {
     return this.penSize;
   }.bind(this);
 
-  this.addPenSize = function(size) {
+  this.addPenSize = function (size) {
     if (size === undefined) {
       this.errorHandler(
         ErrorType.PARAMETER_UNDEFINED,
@@ -2692,7 +2695,7 @@ function setFunctions() {
     this.setPenSize(this.penSize + size);
   }.bind(this);
 
-  this.erasePen = function() {
+  this.erasePen = function () {
     for (var i = this.gameScene.spriteGroup.children.length - 1; i >= 0; i--) {
       var child = this.gameScene.spriteGroup.children[i];
       if (child.lineAlpha) {
@@ -2710,79 +2713,80 @@ function setFunctions() {
         this.startPen();
       }
     }
+    this.sendGameEvent({ api: "erasePen" });
   }.bind(this);
 
-  this.saveScore = function(score) {
+  this.saveScore = function (score) {
     // if (this.subtype === "ranking") {
     this.sendMessageToParent({ type: "saveScore", data: score });
     this.sendGameEvent({ api: "saveScore", score: score });
     // }
   }.bind(this);
 
-  this.showRanking = function() {
+  this.showRanking = function () {
     // if (this.subtype === "ranking") {
     this.sendMessageToParent({ type: "showRanking" });
     this.sendGameEvent({ api: "showRanking" });
     // }
   }.bind(this);
 
-  this.showRankingAscending = function() {
+  this.showRankingAscending = function () {
     // if (this.subtype === "ranking") {
     this.sendMessageToParent({ type: "showRankingAscending" });
     // }
   }.bind(this);
 
-  this.hideRanking = function() {
+  this.hideRanking = function () {
     // if (this.subtype === "ranking") {
     this.sendMessageToParent({ type: "hideRanking" });
     // }
   }.bind(this);
 
-  this.vibrate = function() {
+  this.vibrate = function () {
     this.sendMessageToParent({ type: "vibrate" });
   }.bind(this);
 
-  this.onGyro = function(fn) {
+  this.onGyro = function (fn) {
     this.onGyroListener = fn;
     this.sendMessageToParent({ type: "onGyro" });
   }.bind(this);
 
-  this.startListening = function() {
+  this.startListening = function () {
     this.sendMessageToParent({ type: "startListening" });
   }.bind(this);
 
-  this.onListening = function(fn) {
+  this.onListening = function (fn) {
     this.onListeningListener = fn;
   }.bind(this);
 
-  this.onShake = function(fn) {
+  this.onShake = function (fn) {
     this.sendMessageToParent({ type: "onShake" });
     this.onShakeListener = fn;
   }.bind(this);
 
-  this.translate = function(text, lang, callback) {
+  this.translate = function (text, lang, callback) {
     var param = { text: text, lang: lang };
     fetch(TRANSLATE_URL, {
       method: "POST",
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify(param)
+      body: JSON.stringify(param),
     })
-      .then(function(response) {
+      .then(function (response) {
         return response.json();
       })
-      .then(function(json) {
+      .then(function (json) {
         callback(json.text);
       });
   };
 
-  this.speak = function(msg) {
+  this.speak = function (msg) {
     this.sendMessageToParent({ type: "speak", data: msg });
   }.bind(this);
 
   //camera
-  this.openCamera = function(facing) {
+  this.openCamera = function (facing) {
     if (
       this.asset &&
       this.asset.type === "component" &&
@@ -2798,12 +2802,12 @@ function setFunctions() {
       }
       this.sendMessageToParent({
         type: "openCamera",
-        data: { x: x, y: y, width: width, facing: facing }
+        data: { x: x, y: y, width: width, facing: facing },
       });
     }
   }.bind(this);
 
-  this.closeCamera = function() {
+  this.closeCamera = function () {
     if (
       this.asset &&
       this.asset.type == "component" &&
@@ -2814,7 +2818,7 @@ function setFunctions() {
     }
   }.bind(this);
 
-  this.switchCamera = function() {
+  this.switchCamera = function () {
     if (
       this.asset &&
       this.asset.type == "component" &&
@@ -2825,7 +2829,7 @@ function setFunctions() {
     }
   }.bind(this);
 
-  this.onFaceDetect = function(fn) {
+  this.onFaceDetect = function (fn) {
     if (
       this.asset &&
       this.asset.type == "component" &&
@@ -2836,7 +2840,7 @@ function setFunctions() {
     }
   }.bind(this);
 
-  this.loadGameData = function(fn) {
+  this.loadGameData = function (fn) {
     this.onLoadGameDataListener = fn;
 
     if (this.loadTimer) {
@@ -2844,14 +2848,14 @@ function setFunctions() {
     }
 
     this.loadTimer = setTimeout(
-      function() {
+      function () {
         this.sendMessageToParent({ type: "loadGameData" });
       }.bind(this),
       1000
     );
   }.bind(this);
 
-  this.saveGameData = function(fn) {
+  this.saveGameData = function (fn) {
     this.onSaveGameDataListener = fn;
 
     if (this.saveTimer) {
@@ -2859,17 +2863,17 @@ function setFunctions() {
     }
 
     this.saveTimer = setTimeout(
-      function() {
+      function () {
         this.sendMessageToParent({
           type: "saveGameData",
-          data: JSON.stringify(serverData)
+          data: JSON.stringify(serverData),
         });
       }.bind(this),
       1000
     );
   }.bind(this);
 
-  this.resetGameData = function(fn) {
+  this.resetGameData = function (fn) {
     this.onResetGameDataListener = fn;
     this.sendMessageToParent({ type: "resetGameData" });
   }.bind(this);
@@ -2878,48 +2882,48 @@ function setFunctions() {
     data: serverData,
     load: this.loadGameData,
     save: this.saveGameData,
-    reset: this.resetGameData
+    reset: this.resetGameData,
   };
 
   this.socket = {
-    connect: function(fn) {
+    connect: function (fn) {
       this.socketManager.connect(fn);
     }.bind(this),
 
-    disconnect: function() {
+    disconnect: function () {
       this.socketManager.disconnect();
     }.bind(this),
 
-    isConnected: function() {
+    isConnected: function () {
       return this.socketManager.isConnected();
     }.bind(this),
 
-    emit: function(data) {
+    emit: function (data) {
       this.socketManager.emit(data);
     }.bind(this),
 
-    onReceive: function(fn) {
+    onReceive: function (fn) {
       this.socketManager.onReceive = fn;
     }.bind(this),
 
-    getData: function(fn) {
+    getData: function (fn) {
       this.socketManager.getData(fn);
     }.bind(this),
 
-    setData: function(data) {
+    setData: function (data) {
       this.socketManager.setData(data);
     }.bind(this),
 
-    joinRoom: function(roomId) {
+    joinRoom: function (roomId) {
       this.socketManager.joinRoom(roomId);
     }.bind(this),
 
-    leaveRoom: function(roomId) {
+    leaveRoom: function (roomId) {
       this.socketManager.leaveRoom(roomId);
     }.bind(this),
 
-    emitRoom: function(roomId, data) {
+    emitRoom: function (roomId, data) {
       this.socketManager.emitRoom(roomId, data);
-    }.bind(this)
+    }.bind(this),
   };
 }
