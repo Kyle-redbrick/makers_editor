@@ -739,15 +739,10 @@ export const uploadPublished = (param) => {
   return fetchRequest(URL.API_SERVER + "upload/published", "POST", param);
 };
 
-export const uploadSaasPublished = ({ projectId, doc }) => {
-  let params = {
-    projectId,
-    docs: doc,
-  };
+export const uploadSaasPublished = () => {
   return fetchSaasRequest(
-    URL.API_SAAS_SERVER + "project/play/upload",
-    "POST",
-    params
+    URL.API_SAAS_SERVER + "project/sampleGame/upload",
+    "GET"
   );
 };
 

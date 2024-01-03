@@ -93,7 +93,7 @@ class Container extends Component {
     const pId =
       window.location.pathname.split("/")[2] ||
       window.location.pathname.slice(1);
-
+    let downloadUrl;
     if (this.props.scene) {
       const state = {
         editorMode: this.props.scene.editorMode,
@@ -109,43 +109,35 @@ class Container extends Component {
       };
       const gameMeta = { pId, gameTitle: name };
       const doc = await generateGamePage(state, gameMeta);
-      let url = await request.uploadSaasPublished({ projectId: pId, doc });
+      let url = await request.uploadSaasPublished();
       url = await url.json();
-      console.log("url : ", url);
+      const uploadUrl = url.url.uploadUrl;
+      downloadUrl = url.url.downloadUrl;
+      const putResponse = await fetch(uploadUrl, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "html",
+        },
+        body: doc,
+      });
+      console.log("putResponse :", putResponse);
     }
-
-    let params;
-    if (name && this.state.icon) {
-      params = {
-        title: name,
-        isVisible: isCopyAllowed,
-        thumbnailURL: this.state.icon,
-        isCodeCopiable: isCodeCopyAllowed,
-        description: description,
-      };
-    } else if (name) {
-      params = {
-        title: name,
-        isVisible: isCopyAllowed,
-        isCodeCopiable: isCodeCopyAllowed,
-        description: description,
-      };
-    } else if (this.state.icon) {
-      params = {
-        isVisible: isCopyAllowed,
-        thumbnailURL: this.state.icon,
-        isCodeCopiable: isCodeCopyAllowed,
-        description: description,
-      };
-    } else {
-      params = {
-        isVisible: isCopyAllowed,
-        isCodeCopiable: isCodeCopyAllowed,
-        description: description,
-      };
+    let params = {
+      isVisible: isCopyAllowed,
+      isCodeCopiable: isCodeCopyAllowed,
+      description: description,
+    };
+    if (name) {
+      params.title = name;
+    }
+    if (this.state.icon) {
+      params.thumbnailURL = this.state.icon;
     }
     if (this.state.isCustomThumbnail) {
       params.isCustomThumbnail = true;
+    }
+    if (downloadUrl) {
+      params.sampleGameURL = downloadUrl;
     }
     try {
       request
