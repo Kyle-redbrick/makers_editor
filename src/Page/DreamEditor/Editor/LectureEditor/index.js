@@ -62,17 +62,16 @@ function LectureEditor(props) {
       const keyCommands = keyCommand.split(",").map(function (keyCommand) {
         return keyCommand.trim();
       });
-      console.log("keyCommands : ", keyCommands);
-      await request.keyCommandsUpdate(lectureId, keyCommands);
+      lectureValues.keyCommands = keyCommands;
     }
 
     if (typeof tag === "string") {
       const tags = tag.split(",").map(function (tag) {
         return tag.trim();
       });
-      await request.tagUpdate(lectureId, tags);
+      lectureValues.tags = tags;
     }
-
+    console.log("lectureValues :", lectureValues);
     await request
       .updateLecture(lectureId, lectureValues)
       .then((res) => res.json())

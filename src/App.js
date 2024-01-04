@@ -54,7 +54,7 @@ const App = () => {
           <Route
             exact
             path="/"
-            render={() => <HandleQueryString Component={Builder} />}
+            render={() => <HandleQueryString Component={DreamEditor} />}
           />
           <Route exact path="/sample/:mode/:sampleGame" component={Sample} />
           <Route
