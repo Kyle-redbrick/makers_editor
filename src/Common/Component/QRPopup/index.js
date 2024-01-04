@@ -158,6 +158,9 @@ class QRPopup extends Component {
             onClick={this.props.dismiss}
           />
         </div>
+        <div className="QR_NOTICE">
+          <FormattedMessage id="ID_QRNOTICE" />
+        </div>
         <div className="QR__wrapper">
           <QRCode
             className="QRPopup__qrcode"
@@ -168,9 +171,6 @@ class QRPopup extends Component {
         <div className="QRPopupBottom">
           <div className="QR__desc">
             <FormattedMessage id="ID_QRTITLE" />
-          </div>
-          <div className="QR__desc">
-            <FormattedMessage id="ID_QRNOTICE" />
           </div>
         </div>
         <div className={`QRPopupCopied ${copied && "QRPopupCopiedShow"}`}>
