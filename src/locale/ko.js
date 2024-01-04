@@ -341,6 +341,7 @@ const ko = {
   ID_PARAMETER: "데이터",
   ID_PEN: "펜",
   ID_QRTITLE: "QR코드를 스캔하세요!",
+  ID_QRNOTICE: "먼저 퍼블리싱한 후에 공유할 수 있습니다.",
   ID_QRDESC: "모바일 테스트",
   ID_QR_SUBMITBTN: "보내기",
   ID_QR_LINK_COPY: "링크 복사하기",

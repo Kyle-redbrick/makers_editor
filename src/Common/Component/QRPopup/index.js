@@ -169,6 +169,9 @@ class QRPopup extends Component {
           <div className="QR__desc">
             <FormattedMessage id="ID_QRTITLE" />
           </div>
+          <div className="QR__desc">
+            <FormattedMessage id="ID_QRNOTICE" />
+          </div>
         </div>
         <div className={`QRPopupCopied ${copied && "QRPopupCopiedShow"}`}>
           <FormattedMessage id="ID_SHARE_COPIED" />
