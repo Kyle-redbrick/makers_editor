@@ -149,8 +149,8 @@ const ProjectItem = (props) => {
     intl,
     onClickCodeCopy,
   } = props;
-  const [isCodeCopiable, setIsCodeCopiable] = useState(project.isCodeCopiable);
-  const onClickCodeAllow = () => setIsCodeCopiable(!isCodeCopiable);
+  const [isVisible, setIsVisble] = useState(project.isVisible);
+  const onClickCodeAllow = () => setIsVisble(!isVisible);
   return (
     <div className="projectItem">
       <div
@@ -181,7 +181,7 @@ const ProjectItem = (props) => {
             project.updatedAt.split("T")[0].replaceAll("-", ".")}
           <div className="code__allow">
             {type === "published" ? (
-              isCodeCopiable ? (
+              isVisible ? (
                 <p>공개</p>
               ) : (
                 <p>비공개</p>
@@ -191,15 +191,12 @@ const ProjectItem = (props) => {
               <div className="publishform__code_allow__wrapper">
                 <div
                   className={`publishform__code_allow ${
-                    isCodeCopiable ? "On" : "Off"
+                    isVisible ? "On" : "Off"
                   }`}
                   onClick={(event) => {
                     event.stopPropagation();
                     onClickCodeAllow();
-                    onClickCodeCopy(
-                      { isCodeCopiable: !isCodeCopiable },
-                      project.id
-                    );
+                    onClickCodeCopy({ isVisible: !isVisible }, project.id);
                   }}
                 >
                   <span />
