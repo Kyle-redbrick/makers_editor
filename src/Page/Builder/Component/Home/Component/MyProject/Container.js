@@ -15,7 +15,7 @@ class Container extends Component {
       dataType: [],
       keyword: "",
     };
-    this.pageSize = 15;
+    this.pageSize = 25;
     this.projectsRef = React.createRef();
   }
   componentDidMount = () => {
