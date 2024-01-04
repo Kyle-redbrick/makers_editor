@@ -74,13 +74,8 @@ class Container extends Component {
   //TODO : have to refactoring
   handleOnScroll = () => {
     const container = this.projectsRef.current;
-    console.log(
-      "container.offsetHeight + container.scrollTop",
-      container.offsetHeight + container.scrollTop
-    );
-    console.log("container.scrollHeight", container.scrollHeight);
     if (
-      container.offsetHeight + container.scrollTop >=
+      container.offsetHeight + container.scrollTop + 1 >=
       container.scrollHeight
     ) {
       this.setState(

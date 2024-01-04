@@ -83,7 +83,7 @@ class Container extends Component {
   handleOnScroll = () => {
     const container = this.projectsRef.current;
     if (
-      container.offsetHeight + container.scrollTop >=
+      container.offsetHeight + container.scrollTop + 1 >=
       container.scrollHeight
     ) {
       this.setState(
