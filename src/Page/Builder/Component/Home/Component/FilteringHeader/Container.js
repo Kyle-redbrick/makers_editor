@@ -44,6 +44,12 @@ class Container extends Component {
     });
   };
 
+  onKeyPressSearch = (e) => {
+    if (e.key === "Enter") {
+      this.onClickSearch();
+    }
+  };
+
   getTemplateType = () => {
     const { dimension, editorFormat } = this.state;
     let type = [];
@@ -93,6 +99,7 @@ class Container extends Component {
       onChangeSearch,
       onClickTitle,
       onClickSearch,
+      onKeyPressSearch,
     } = this;
 
     return (
@@ -108,6 +115,7 @@ class Container extends Component {
         isClickedDropDown={isClickedDropDown}
         onClickTitle={onClickTitle}
         onClickSearch={onClickSearch}
+        onKeyPressSearch={onKeyPressSearch}
       />
     );
   }

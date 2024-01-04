@@ -17,6 +17,7 @@ function View(props) {
     onClickTitle,
     intl,
     onClickSearch,
+    onKeyPressSearch,
   } = props;
   return (
     <div className="filteringHeader">
@@ -108,6 +109,7 @@ function View(props) {
       <div className="header__search">
         <input
           onChange={onChangeSearch}
+          onKeyPress={onKeyPressSearch}
           placeholder={intl.formatMessage({
             id: "ID_PROJECT_SEARCH",
           })}
