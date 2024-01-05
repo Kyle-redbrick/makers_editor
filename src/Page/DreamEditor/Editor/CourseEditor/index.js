@@ -126,13 +126,13 @@ function CourseEditor(props) {
           value={number}
           onChange={setNumber}
         /> */}
-        {/* <Field.File
+        <Field.FileCourse
           id="thumbnailURL"
           title="썸네일"
           value={thumbnailURL}
           onChange={setThumbnailURL}
           lectureName={title}
-        /> */}
+        />
         <Field.OnOff
           id="isVisible"
           title="콘텐츠 공개"

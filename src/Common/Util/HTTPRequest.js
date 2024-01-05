@@ -386,6 +386,14 @@ export const thumbnailUpload = (lessonId) => {
   );
 };
 
+export const courseThumbnailUpload = (courseId) => {
+  return fetchSaasRequest(
+    URL.API_SAAS_SERVER +
+      `course/thumbnail/upload?courseId=${courseId}&fileType=jpg&mimeType=image/jpeg`,
+    "GET"
+  );
+};
+
 export const templateFilesUpload = (params) => {
   return fetchSaasRequest(
     URL.API_SAAS_SERVER + `lesson/templatefiles/upload`,

@@ -71,11 +71,7 @@ function Select(props) {
   );
 }
 
-const uploadFile = async ({
-  selectedFile,
-  lectureName = "",
-  templateState = false,
-}) => {
+const uploadFile = async ({ selectedFile, templateState = false }) => {
   const lectureInfo = JSON.parse(
     localStorage.getItem("dreamEditorSelectedElement")
   );
@@ -122,9 +118,33 @@ const uploadFile = async ({
   }
 };
 
+const uploadCourseFile = async ({ selectedFile, templateState = false }) => {
+  const courseInfo = JSON.parse(
+    localStorage.getItem("dreamEditorSelectedElement")
+  );
+  const courseId = courseInfo.id;
+  try {
+    const uploadResponse = await request.courseThumbnailUpload(courseId);
+    const uploadData = await uploadResponse.json();
+    const putUrl = uploadData.url.uploadUrl;
+    const downloadUrl = uploadData.url.downloadUrl;
+
+    const putResponse = await fetch(putUrl, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "image/jpeg",
+      },
+      body: selectedFile,
+    });
+    console.log("PUT response", putResponse);
+    return downloadUrl;
+  } catch (error) {
+    console.error("파일 업로드 실패:", error);
+  }
+};
+
 function File(props) {
-  const { id, accept, value, onChange, lectureName, templateState, lectureId } =
-    props;
+  const { id, accept, value, onChange, templateState, lectureId } = props;
   const fileInputRef = useRef();
   if (templateState) {
     return (
@@ -171,7 +191,79 @@ function File(props) {
           onChange={(e) => {
             const selectedFile = e.target.files[0];
             if (!selectedFile) return;
-            uploadFile({ selectedFile, lectureName, lectureId }).then((res) => {
+            uploadFile({ selectedFile, lectureId }).then((res) => {
+              onChange(res);
+            });
+          }}
+          hidden
+        />
+        <button
+          onClick={() => {
+            fileInputRef.current.click();
+          }}
+        >
+          업로드
+        </button>
+        {value && (
+          <span>
+            {value}
+            <img src={value.THUMBNAIL_ALI()} alt={value} />
+          </span>
+        )}
+      </Base>
+    );
+  }
+}
+
+function FileCourse(props) {
+  const { id, value, onChange, templateState, courseId } = props;
+  const fileInputRef = useRef();
+  if (templateState) {
+    return (
+      <Base {...props} type="file">
+        <input
+          id={id}
+          ref={fileInputRef}
+          type="file"
+          accept=".jpg, .jpeg, .png, .gif, .mp4"
+          onChange={(e) => {
+            const selectedFile = e.target.files[0];
+            if (!selectedFile) return;
+            uploadCourseFile({ selectedFile, courseId, templateState }).then(
+              (res) => {
+                onChange(res);
+              }
+            );
+          }}
+          hidden
+        />
+        <button
+          onClick={() => {
+            fileInputRef.current.click();
+          }}
+        >
+          업로드
+        </button>
+        {value && (
+          <span>
+            {value}
+            <img src={value.THUMBNAIL_ALI()} alt={value} />
+          </span>
+        )}
+      </Base>
+    );
+  } else {
+    return (
+      <Base {...props} type="file">
+        <input
+          id={id}
+          ref={fileInputRef}
+          type="file"
+          accept=".jpg, .jpeg, .png"
+          onChange={(e) => {
+            const selectedFile = e.target.files[0];
+            if (!selectedFile) return;
+            uploadCourseFile({ selectedFile, courseId }).then((res) => {
               onChange(res);
             });
           }}
@@ -220,6 +312,7 @@ const Field = {
   Textarea,
   Select,
   File,
+  FileCourse,
   OnOff,
 };
 export default Field;
