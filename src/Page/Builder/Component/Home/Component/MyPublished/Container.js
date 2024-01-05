@@ -37,16 +37,28 @@ class Container extends Component {
         params.keyword = this.state.keyword;
         let res = await request.getMyPublishedSaasProject(params);
         let myPublished = await res.json();
-        this.setState((prev) => ({
-          myPublisheds: prev.myPublisheds.concat(myPublished.data.projectList),
-        }));
+        if (currentPage === 1) {
+          this.setState({ myPublisheds: myPublished.data.projectList });
+        } else {
+          this.setState((prev) => ({
+            myPublisheds: prev.myPublisheds.concat(
+              myPublished.data.projectList
+            ),
+          }));
+        }
         return myPublished.data.projectList;
       } else {
         let res = await request.getMyPublishedSaasProject(params);
         let myPublished = await res.json();
-        this.setState((prev) => ({
-          myPublisheds: prev.myPublisheds.concat(myPublished.data.projectList),
-        }));
+        if (currentPage === 1) {
+          this.setState({ myPublisheds: myPublished.data.projectList });
+        } else {
+          this.setState((prev) => ({
+            myPublisheds: prev.myPublisheds.concat(
+              myPublished.data.projectList
+            ),
+          }));
+        }
         return myPublished.data.projectList;
       }
     } catch (error) {

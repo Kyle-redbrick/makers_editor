@@ -221,7 +221,12 @@ const ProjectItem = (props) => {
           <>
             <li
               onClick={() =>
-                handleEdit(project.id, fetchMyProjects, fetchMyPublished)
+                handleEdit(
+                  project.id,
+                  project.title,
+                  fetchMyProjects,
+                  fetchMyPublished
+                )
               }
             >
               <img src={editIcon} alt="edit" />

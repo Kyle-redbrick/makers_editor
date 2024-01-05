@@ -75,7 +75,11 @@ function View(props) {
                 >
                   <img src={projectDetailIcon} alt="project Detail Icon" />
                   <ul className="projectItem__detail__list">
-                    <li onClick={() => handleEdit(item.id, fetchMyProjects)}>
+                    <li
+                      onClick={() =>
+                        handleEdit(item.id, item.title, fetchMyProjects)
+                      }
+                    >
                       <img src={editIcon} alt="" />
                       {intl.formatMessage({ id: "ID_BUILDER_MAIN_EDIT" })}
                     </li>

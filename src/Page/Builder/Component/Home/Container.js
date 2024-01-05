@@ -86,11 +86,12 @@ class Container extends Component {
     this.setState({ selectProject: {} });
   };
 
-  handleEdit = (id, callback1, callback2) => {
+  handleEdit = (id, title, callback1, callback2) => {
     this.resetSelectProject();
     showPopUp(
       <PopUp.OneInput
         titleId="ID_PROJECT_POPUP_EDIT_TITLE"
+        defaultInput={title}
         buttonNameId="ID_PROJECT_POPUP_EDIT_OK"
         buttonAction={(newVal) => {
           this.editProject(id, newVal, callback1, callback2);
