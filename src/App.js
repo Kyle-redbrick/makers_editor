@@ -1,10 +1,5 @@
 import React, { lazy, Suspense, Component, Fragment, useEffect } from "react";
-import {
-  withRouter,
-  BrowserRouter as Router,
-  Route,
-  Redirect,
-} from "react-router-dom";
+import { withRouter, BrowserRouter as Router, Route } from "react-router-dom";
 import QueryString from "query-string";
 import { ToastContainer } from "react-toastify";
 
@@ -12,11 +7,8 @@ import WizAppDetail from "./Common/Component/WizAppDetail";
 import { SubscribeManager } from "./Common/Util/Subscribe";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import Sample from "./Page/Sample";
 
-const Builder = lazy(() => import("./Page/Builder"));
 const DreamEditor = lazy(() => import("./Page/DreamEditor"));
-const PythonPage = lazy(() => import("./Page/Python"));
 
 const SplashView = () => {
   return (
@@ -54,28 +46,7 @@ const App = () => {
           <Route
             exact
             path="/"
-            render={() => <HandleQueryString Component={Builder} />}
-          />
-          <Route exact path="/sample/:mode/:sampleGame" component={Sample} />
-          <Route
-            exact
-            path={[
-              "/:pId",
-              "/builder",
-              "/builder/:pId",
-              "/class",
-              "/class/:progressId",
-              "/class/educator/:progressId",
-            ]}
-            render={() => <HandleQueryString Component={Builder} />}
-          />
-          <Route
-            exact
-            path={[
-              "/pythonClass/:progressId",
-              "/pythonClass/educator/:progressId",
-            ]}
-            component={PythonPage}
+            render={() => <HandleQueryString Component={DreamEditor} />}
           />
         </div>
         <ToastContainer />

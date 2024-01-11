@@ -10,15 +10,6 @@ import TwoInput from "./TwoInput";
 import Agreement from "./Agreement";
 import dismissImg from "../../../Image/popup_dismiss.svg";
 
-// python Page
-import PythonAlert from "../../../Page/Python/Components/PopupComponents/AlertPopup";
-import PythonOneButtonAlert from "../../../Page/Python/Components/PopupComponents/OneButtonAlertPopup";
-import PythonExecResult from "../../../Page/Python/Components/PopupComponents/ExecResultPopup";
-import PythonCollection from "../../../Page/Python/Components/PopupComponents/CollectionPopup";
-import PythonInfo from "../../../Page/Python/Components/PopupComponents/InfoPopup";
-import PythonSetting from "../../../Page/Python/Components/PopupComponents/SettingPopup";
-import PythonClue from "../../../Page/Python/Components/PopupComponents/CluePopup";
-
 import "./index.scss";
 import locale from "../../../locale";
 
@@ -196,11 +187,4 @@ export default {
   TwoButton,
   OneInput,
   TwoInput,
-  PythonAlert,
-  PythonOneButtonAlert,
-  PythonInfo,
-  PythonCollection,
-  PythonExecResult,
-  PythonSetting,
-  PythonClue,
 };
