@@ -212,6 +212,12 @@ function TemplateEditor(props) {
               value={state}
               onChange={setState}
             />
+            {/* <Field.Textarea2
+              id="state"
+              title="템플릿 state for soda"
+              value={state}
+              onChange={setState}
+            /> */}
             <Field.File
               id="mediaURL"
               title="업로드하기"

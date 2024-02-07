@@ -50,6 +50,20 @@ function Textarea(props) {
     </Base>
   );
 }
+function Textarea2(props) {
+  const { id, placeholder, value, onChange } = props;
+  return (
+    <Base {...props} type="textarea">
+      <textarea
+        placeholder={placeholder}
+        value={JSON.stringify(value)}
+        onChange={(e) => {
+          onChange(e.currentTarget.value, id);
+        }}
+      />
+    </Base>
+  );
+}
 
 function Select(props) {
   const { id, value, options, onChange } = props;
@@ -310,6 +324,7 @@ const Field = {
   Base,
   Input,
   Textarea,
+  Textarea2,
   Select,
   File,
   FileCourse,

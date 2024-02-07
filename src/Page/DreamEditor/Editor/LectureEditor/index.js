@@ -27,6 +27,7 @@ function LectureEditor(props) {
   const [defaultTemplate, setDefaultTemplate] = useState("");
   const [language, setLanguage] = useState("");
   const [number, setNumber] = useState(0);
+  const [projectId, setProjectId] = useState("");
   const [thumbnailURL, setThumbnailURL] = useState("");
   const [isVisible, setIsVisible] = useState(false);
   const [totalMissionNum, setTotalMissionNum] = useState(0);
@@ -35,12 +36,13 @@ function LectureEditor(props) {
     title: title,
     description: introduction,
     template: template,
-    sampleGameURL: sampleGameURL,
+    // sampleGameURL: sampleGameURL,
     language: language,
-    number: number,
+    // number: number,
     thumbnailURL: thumbnailURL,
     isVisible: isVisible,
     totalMissionNumber: totalMissionNum,
+    projectId: projectId,
   };
 
   useEffect(() => {
@@ -51,9 +53,10 @@ function LectureEditor(props) {
       setDefaultTemplate(lecture.template || "");
       setSampleGameURL(lecture.sampleGameURL || "");
       setThumbnailURL(lecture.thumbnailURL || "");
-      setIsVisible(lecture.isVisible || "");
+      setIsVisible(lecture.isVisible || true);
       setLanguage(lecture.language || "");
       setTotalMissionNum(lecture.totalMissionNumber || 0);
+      setProjectId(lecture.projectId || "");
     }
   }, [lecture]);
 
@@ -71,15 +74,19 @@ function LectureEditor(props) {
       });
       lectureValues.tags = tags;
     }
-    console.log("lectureValues :", lectureValues);
+
     await request
       .updateLecture(lectureId, lectureValues)
       .then((res) => res.json())
       .then((json) => {
-        console.log("json :", json.data.lessonInfo.id);
+        console.log("json :", json);
         localStorage.removeItem("dreamEditorSelectedElement");
-        alert("저장되었습니다. :)");
-        window.location.reload();
+        if (json && json.message && json.message === "project does not exist") {
+          alert("유효하지 않은 프로젝트입니다.");
+        } else {
+          alert("저장되었습니다. :)");
+          window.location.reload();
+        }
       });
   };
 
@@ -126,6 +133,12 @@ function LectureEditor(props) {
           title="샘플 게임 url"
           value={sampleGameURL}
           onChange={setSampleGameURL}
+        />
+        <Field.Input
+          id="projectId"
+          title="프로젝트 ID"
+          value={projectId}
+          onChange={setProjectId}
         />
         <Field.Input
           id="tag"
