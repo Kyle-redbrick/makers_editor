@@ -36,7 +36,7 @@ function LectureEditor(props) {
     title: title,
     description: introduction,
     template: template,
-    // sampleGameURL: sampleGameURL,
+    sampleGameURL: sampleGameURL,
     language: language,
     // number: number,
     thumbnailURL: thumbnailURL,
@@ -129,16 +129,16 @@ function LectureEditor(props) {
           onChange={setIntroduction}
         />
         <Field.Input
-          id="title"
-          title="샘플 게임 url"
-          value={sampleGameURL}
-          onChange={setSampleGameURL}
-        />
-        <Field.Input
           id="projectId"
           title="프로젝트 ID"
           value={projectId}
           onChange={setProjectId}
+        />
+        <Field.Input
+          id="title"
+          title="샘플 게임 url"
+          value={sampleGameURL}
+          onChange={setSampleGameURL}
         />
         <Field.Input
           id="tag"

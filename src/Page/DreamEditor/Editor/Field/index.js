@@ -20,7 +20,15 @@ function Base(props) {
 }
 
 function Input(props) {
-  const { id, type = "text", placeholder, value, onChange, children } = props;
+  const {
+    id,
+    type = "text",
+    placeholder,
+    value,
+    onChange,
+    children,
+    title,
+  } = props;
   return (
     <Base {...props} type="input">
       <input
@@ -30,6 +38,7 @@ function Input(props) {
         onChange={(e) => {
           onChange(e.currentTarget.value, id);
         }}
+        disabled={title === "샘플 게임 url" ? true : false}
       />
       {children}
     </Base>
