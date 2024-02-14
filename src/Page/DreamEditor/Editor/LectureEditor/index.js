@@ -36,13 +36,13 @@ function LectureEditor(props) {
     title: title,
     description: introduction,
     template: template,
-    sampleGameURL: sampleGameURL,
+    // sampleGameURL: sampleGameURL,
     language: language,
     // number: number,
     thumbnailURL: thumbnailURL,
     isVisible: isVisible,
     totalMissionNumber: totalMissionNum,
-    projectId: projectId,
+    projectId: projectId === "" ? null : projectId,
   };
 
   useEffect(() => {
@@ -79,10 +79,23 @@ function LectureEditor(props) {
       .updateLecture(lectureId, lectureValues)
       .then((res) => res.json())
       .then((json) => {
-        console.log("json :", json);
         localStorage.removeItem("dreamEditorSelectedElement");
         if (json && json.message && json.message === "project does not exist") {
           alert("유효하지 않은 프로젝트입니다.");
+        } else if (json && json.message) {
+          if (json.errors) {
+            const searchKey = "projectId";
+            const isKeyIncluded = json.errors.some(function (error) {
+              return error.hasOwnProperty(searchKey);
+            });
+            if (isKeyIncluded) {
+              alert("유효하지 않은 프로젝트입니다.");
+            } else {
+              alert("에러가 발생했습니다.");
+            }
+          } else {
+            alert("에러가 발생했습니다.");
+          }
         } else {
           alert("저장되었습니다. :)");
           window.location.reload();
