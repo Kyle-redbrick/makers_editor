@@ -79,7 +79,7 @@ function LectureEditor(props) {
       .updateLecture(lectureId, lectureValues)
       .then((res) => res.json())
       .then((json) => {
-        localStorage.removeItem("dreamEditorSelectedElement");
+        // localStorage.removeItem("dreamEditorSelectedElement");
         if (json && json.message && json.message === "project does not exist") {
           alert("유효하지 않은 프로젝트입니다.");
         } else if (json && json.message) {
@@ -98,6 +98,10 @@ function LectureEditor(props) {
           }
         } else {
           alert("저장되었습니다. :)");
+          localStorage.setItem(
+            "dreamEditorSelectedElement",
+            JSON.stringify({ type: "lecture", id: json.data.lessonInfo.id })
+          );
           window.location.reload();
         }
       });
