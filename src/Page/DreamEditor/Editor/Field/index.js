@@ -176,7 +176,7 @@ function File(props) {
           id={id}
           ref={fileInputRef}
           type="file"
-          accept=".jpg, .jpeg, .png, .gif, .mp4"
+          accept=".jpg, .jpeg, .png, .gif, .mp4, .mov"
           onChange={(e) => {
             const selectedFile = e.target.files[0];
             if (!selectedFile) return;
@@ -248,7 +248,7 @@ function FileCourse(props) {
           id={id}
           ref={fileInputRef}
           type="file"
-          accept=".jpg, .jpeg, .png, .gif, .mp4"
+          accept=".jpg, .jpeg, .png, .gif, .mp4, .mov"
           onChange={(e) => {
             const selectedFile = e.target.files[0];
             if (!selectedFile) return;

@@ -124,7 +124,12 @@ function LectureEditor(props) {
         <div className="dreamEditor_editor_title">레슨 수정하기</div>
         <button
           className="dreamEditor_editor_deleteBtn"
-          onClick={onClickDelete}
+          onClick={() => {
+            if (window.confirm("레슨을 삭제하시겠습니까?")) {
+              onClickDelete();
+              alert("삭제되었습니다.");
+            }
+          }}
         >
           레슨 삭제하기
         </button>

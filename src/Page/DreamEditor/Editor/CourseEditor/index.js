@@ -75,7 +75,12 @@ function CourseEditor(props) {
         <div className="dreamEditor_editor_title">코스 수정하기</div>
         <button
           className="dreamEditor_editor_deleteBtn"
-          onClick={onClickDelete}
+          onClick={() => {
+            if (window.confirm("코스를 삭제하시겠습니까?")) {
+              onClickDelete();
+              alert("삭제되었습니다.");
+            }
+          }}
         >
           코스 삭제하기
         </button>
